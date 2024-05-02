@@ -1,0 +1,320 @@
+Spells,Level,School,Ritual,Casting Time
+Acid Arrow,2,Evocation,,Action
+Acid Splash,0,Conjuration,,Action
+Aid,2,Abjuration,,Action
+Alarm,1,Abjuration,Y,1 Minute
+Alter Self,2,Transmutation,,Action
+Animall Friendship,1,Enchantment,,Action
+Animal Messenger,2,Enchantment,Y,Action
+Animal Shapes,8,Transmutation,,Action
+Animate Dead,3,Necromancy,,1 Minute
+Animate Objects,5,Transmutation,,Action
+Antilife Shell,5,Abjuration,,Action
+Antimagic Field,8,Abjuration,,Action
+Antipathy OR Sympathy,8,Enchantment,,1 Hour
+Arcane Eye,4,Divination,,Action
+Arcane Hand,5,Evocation,,Action
+Arcane Lock,2,Abjuration,,Action
+Arcane Sword,7,Evocation,,Action
+Arcanist's Magic Aura,2,Illusion,,Action
+Astral Projection,9,Necromancy,,1 Hour
+Augury,2,Divination,Y,1 Minute
+Awaken,5,Transmutation,,8 Hours
+Bane,1,Enchantment,,Action
+Banishment,4,Abjuration,,Action
+Barkskin,2,Transmutation,,Action
+Beacon of Hope,3,Abjuration,,Action
+Bestow Curse,3,Necromancy,,Action
+Black Tentacles,4,Conjuration,,Action
+Blade Barrier,6,Evocation,,Action
+Bless,1,Enchantment,,Action
+Blight,4,Necromancy,,Action
+Blindess OR Deafness,2,Necromancy,,Action
+Blink,3,Transmutation,,Action
+Blur,2,Illusion,,Action
+Branding Smite,2,Evocation,,Bonus Action
+Burning Hands,1,Evocation,,Action
+Call Lightning,3,Conjuration,,Action
+Calm Emotions,2,Enchantment,,Action
+Chain Lightning,6,Evocation,,Action
+Charm Person,1,Enchantment,,Action
+Chill Touch,0,Necromancy,,Action
+Circle of Death,6,Necromancy,,Action
+Clairvoyance,3,Divination,,10 Minutes
+Clone,8,Necromancy,,1 Hour
+Cloudkill,5,Conjuration,,Action
+Color Spray,1,Illusion,,Action
+Command,1,Enchantment,,Action
+Commune,5,Divination,Y,1 Minute
+Commune With Nature,5,Divination,Y,1 Minute
+Comprehend Languages,1,Divination,Y,Action
+Compulsion,4,Enchantment,,Action
+Cone of Cold,5,Evocation,,Action
+Confusion,4,Enchantment,,Action
+Conjure Animals,3,Conjuration,,Action
+Conjure Celestial,7,Conjuration,,1 Minute
+Conjure Elemental,5,Conjuration,,1 Minute
+Conjure Fey,6,Conjuration,,1 Minute
+Conjure Minor Elementals,4,Conjuration,,1 Minute
+Conjure Woodland Beings,4,Conjuration,,Action
+Contact Other Plane,5,Divination,Y,1 Minute
+Contagion,5,Necromancy,,Action
+Contingency,6,Evocation,,10 Minutes
+Continual Flame,2,Evocation,,Action
+Control Water,4,Transmutation,,Action
+Control Weather,8,Transmutation,,10 Minutes
+Counterspell,3,Abjuration,,Reaction
+Create Food and Water,3,Conjuration,,Action
+Create or Destroy Water,1,Transmutation,,Action
+Create Undead,6,Necromancy,,1 Minute
+Creation,5,Illusion,,1 Minute
+Cure Wounds,1,Evocation,,Action
+Dancing Lights,0,Evocation,,Action
+Darkness,2,Evocation,,Action
+Darkvision,2,Transmutation,,Action
+Daylight,3,Evocation,,Action
+Death Ward,4,Abjuration,,Action
+Delayed Blast Fireball,7,Evocation,,Action
+Demiplane,8,Conjuration,,Action
+Detect Good and Evil,1,Divination,,Action
+Detect Magic,1,Divination,Y,Action
+Detect Poison and Disease,1,Divination,Y,Action
+Detect Thoughts,1,Divination,,Action
+Dimension Door,4,Conjuration,,Action
+Disguise Self,1,Illusion,,Action
+Disintergrate,6,Transmutation,,Action
+Dispel Evil and Good,5,Abjuration,,Action
+Dispel Magic,3,Abjuration,,Action
+Divination,4,Divination,Y,Action
+Divine Favor,1,Evocation,,Bonus Action
+Divine Word,7,Evocation,,Bonus Action
+Dominate Beast,4,Enchantment,,Action
+Dominate Monster,8,Enchantment,,Action
+Dominate Person,5,Enchantment,,Action
+Dream,5,Illusion,,1 Minute
+Druidcraft,0,Transmutation,,Action
+Earthquake,8,Evocation,,Action
+Eldritch Blast,0,Evocation,,Action
+Enhance Ability,2,Transmutation,,Action
+Enlarge OR Reduce,2,Transmutation,,Action
+Entangle,1,Conjuration,,Action
+Enthrall,2,Enchantment,,Action
+Etherealness,7,Transmutation,,Action
+Expeditious Retreat,1,Transmutation,,Bonus Action
+Eyebite,6,Necromancy,,Action
+Fabricate,4,Transmutation,,10 MInutes
+Faerie Fire,1,Evocation,,Action
+Faithful Hound,4,Conjuration,,Action
+False Life,1,Necromancy,,Action
+Fear,3,Illusion,,Action
+Feather Fall,1,Transmutation,,Reaction
+Feeblemind,8,Enchantment,,Action
+Find Familiar,1,Conjuration,Y,1 Hour
+Find Steed,2,Conjuration,,10 Minutes
+Find the Path,6,Divination,,1 Minute
+Find Traps,2,Divination,,Action
+Finger of Death,7,Necromancy,,Action
+Fireball,3,Evocation,,Action
+Fire Bolt,0,Evocation,,Action
+Fire Shield,4,Evocation,,Action
+Fire Storm,7,Evocation,,Action
+Flame Blades,2,Evocation,,Bonus Action
+Flame Strike,5,Evocation,,Action
+Flaming Sphere,2,Conjuration,,Action
+Flesh to Stone,6,Transmutation,,Action
+Floating Disk,1,Conjuration,Y,Action
+Fly,3,Transmutation,,Action
+Fog Cloud,1,Conjuration,,Action
+Forbiddance,6,Abjuration,Y,10 Minutes
+Forcecage,7,Evocation,,Action
+Foresight,9,Divination,,1 Minute
+Freedom of Movement,4,Abjuration,,Action
+Freezing Sphere,6,Evocation,,Action
+Gaseous Form,3,Transmutation,,Action
+Gate,9,Conjuration,,Action
+Geas,5,Enchantment,,1 Minute
+Gentle Repose,2,Necromancy,Y,Action
+Giant Insect,4,Transmutation,,Action
+Glibness,8,Transmutation,,Action
+Globe of Invulnerability,6,Abjuration,,Action
+Glyph of Warding,3,Abjuration,,1 Hour
+Goodberry,1,Transmutation,,Action
+Grease,1,Conjuration,,Action
+Greater Invisibility,4,Illusion,,Action
+Greater Restoration,5,Abjuration,,Action
+Guardians of Faith,4,Conjuration,,Action
+Guards and Wards,6,Abjuration,,10 Minutes
+Guidance,0,Divination,,Action
+Guiding Bolt,1,Evocation,,Action
+Gust of Wind,2,Evocation,,Action
+Hallow,5,Evocation,,24 Hours
+Hallucinatory Terrain,4,Illusion,,10 Minutes
+Harm,6,Necromancy,,Action
+Haste,3,Transmutation,,Action
+Heal,6,Evocation,,Action
+Healing Word,1,Evocation,,Bonus Action
+Heat Metal,2,Transmutation,,Action
+Hellish Rebuke,1,Evocation,,Reaction
+Heroes' Feat,6,Conjuration,,10 Minutes
+Heroism,1,Enchantment,,Action
+Hideous Laughter,1,Enchantment,,Action
+Hold Monster,5,Enchantment,,Action
+Hold Person,2,Enchantment,,Action
+Holy Aura,8,Abjuration,,Action
+Hunter's Mark,1,Divination,,Bonus Action
+Hypnotic Pattern,3,Illusion,,Action
+Ice Storm,4,Evocation,,Action
+Identify,1,Divination,Y,1 Minute
+Illusory Script,1,Illusion,Y,1 Minute
+Imprisonment,9,Abjuration,,1 Minute
+Incendiary Cloud,8,Conjuration,,Action
+Inflict Wounds,1,Necromancy,,Action
+Insect Plague,5,Conjuration,,Action
+Instant Summons,6,Conjuration,Y,1 Minute
+Invisibility,2,Illusion,,Action
+Irresistible Dance,6,Enchantment,,Action
+Jump,1,Transmutation,,Action
+Knock,2,Transmutation,,Action
+Legend Lore,5,Divination,,10 Minutes
+Lesser Restoration,2,Abjuration,,Action
+Levitate,2,Transmutation,,Action
+Light,0,Evocation,,Action
+Lightning Bolt,3,Evocation,,Action
+Locate Animals or Plants,2,Divination,Y,Action
+Locate Create,4,Divination,,Action
+Locate Object,2,Divination,,Action
+Longstrider,1,Transmutation,,Action
+Mage Armor,1,Abjuration,,Action
+Mage Hand,0,Conjuration,,Action
+Magic Circle,3,Abjuration,,1 Minute
+Magic Jar,6,Necromancy,,1 Minute
+Magic Missile,1,Evocation,,Action
+Magic Mouth,2,Illusion,Y,1 Minute
+Magic Weapon,2,Transmutation,,Bonus Action
+Magnificent Mansion,7,Conjuration,,1 Minute
+Major Image,3,Illusion,,Action
+Mass Cure Wounds,5,Evocation,,Action
+Mass Heal,9,Evocation,,Action
+Mass Healing Word,3,Evocation,,Bonus Action
+Mass Suggestion,6,Enchantment,,Action
+Maze,8,Conjuration,,Action
+Meld into Stone,3,Transmutation,Y,Action
+Mending,0,Transmutation,,1 Minute
+Message,0,Transmutation,,Action
+Meteor Swarm,9,Evocation,,Action
+Mind Blank,8,Abjuration,,Action
+Minor Illusion,0,Illusion,,Action
+Mirage Arcane,7,Illusion,,10 Minutes
+Mirror Image,2,Illusion,,Action
+Mislead,5,Illusion,,Action
+Misty Step,2,Conjuration,,Bonus Action
+Modify Memory,5,Enchantment,,Action
+Moonbeam,2,Evocation,,Action
+Move Earth,6,Transmutation,,Action
+Nondetection,3,Abjuration,,Action
+Pass without Trace,2,Abjuration,,Action
+Passwall,5,Transmutation,,Action
+Phantasmal Killer,4,Illusion,,Action
+Phantom Steed,3,Illusion,Y,1 Minute
+Planar Ally,6,Conjuration,,10 Minutes
+Planar Binding,5,Abjuration,,1 Hour
+Plane Shift,7,Conjuration,,Action
+Plant Growth,3,Transmutation,,Action
+Poison Spray,0,Conjuration,,Action
+Polymorph,4,Transmutation,,Action
+Power Word Kill,9,Enchantment,,Action
+Power Word Stun,8,Enchantment,,Action
+Prayer of Healing,2,Evocation,,10 Minutes
+Prestidigitation,0,Transmutation,,Action
+Prismatic Spray,7,Evocation,,Action
+Prismatic Wall,9,Abjuration,,Action
+Private Sanctum,4,Abjuration,,10 Minutes
+Produce Flame,0,Conjuration,,Action
+Programmed Illusion,6,Illusion,,Action
+Project Image,7,Illusion,,Action
+Protection from Energy,3,Abjuration,,Action
+Protection from Evil and Good,1,Abjuration,,Action
+Protection from Poison,2,Abjuration,,Action
+Purify Food and Drink,1,Transmutation,Y,Action
+Raise Dead,5,Necromancy,,Action
+Ray of Enfeeblement,2,Necromancy,,Action
+Ray of Frost,0,Evocation,,Action
+Regenerate,7,Transmutation,,1 Minute
+Reincarnate,5,Transmutation,,1 Hour
+Remove Curse,3,Abjuration,,Action
+Resillient Sphere,4,Evocation,,Action
+Resistance,0,Abjuration,,Action
+Resurrection,7,Necromancy,,1 Hour
+Reverse Gravity,7,Transmutation,,Action
+Revivify,3,Necromancy,,Action
+Rope Trick,2,Transmutation,,Action
+Sacred Flame,0,Evocation,,Action
+Sanctuary,1,Abjuration,,Bonus Action
+Scorching Ray,2,Evocation,,Action
+Scrying,5,Divination,,10 Minutes
+Secret Chest,4,Conjuration,,Action
+See Invisibility,2,Divination,,Action
+Seeming,5,Illusion,,Action
+Sending,3,Evocation,,Action
+Sequester,7,Transmutation,,Action
+Shapechange,9,Transmutation,,Action
+Shatter,2,Evocation,,Action
+Shield,1,Abjuration,,Reaction
+Shield of Faith,1,Abjuration,,Bonus Action
+Shillelagh,0,Transmutation,,Bonus Action
+Shocking Grasp,0,Evocation,,Action
+Silence,2,Illusion,Y,Action
+Silent Image,1,Illusion,,Action
+Simulacrum,7,Illusion,,12 Hours
+Sleep,1,Enchantment,,Action
+Sleet Storm,3,Conjuration,,Action
+Slow,3,Transmutation,,Action
+Spare the Dying,0,Necromancy,,Action
+Speak with Animals,1,Divination,Y,Action
+Speak with Dead,3,Necromancy,,Action
+Speak with Plants,3,Transmutation,,Action
+Spider Climb,2,Transmutation,,Action
+Spike Growth,2,Transmutation,,Action
+Spirit Guardians,3,Conjuration,,Action
+Spiritual Weapon,2,Evocation,,Bonus Action
+Stinking Cloud,3,Conjuration,,Action
+Stone Shape,4,Transmutation,,Action
+Stoneskin,4,Abjuration,,Action
+Storm of Vengeance,9,Conjuration,,Action
+Suggestion,2,Enchantment,,Action
+Sunbeam,6,Evocation,,Action
+Sunburst,8,Evocation,,Action
+Symbol,7,Abjuration,,1 Minute
+Telekinesis,5,Transmutation,,Action
+Telepathic Bond,5,Divination,Y,Action
+Teleport,7,Conjuration,,Action
+Teleporation Circle,5,Conjuration,,1 Minute
+Thaumaturgy,0,Transmutation,,Action
+Thunderwave,1,Evocation,,Action
+Time Stop,9,Transmutation,,Action
+Tiny Hut,3,Evocation,Y,1 Minute
+Tongues,3,Divination,,Action
+Transport via Plants,6,Conjuration,,Action
+Tree Stride,5,Conjuration,,Action
+True Polymorph,9,Transmutation,,Action
+True Resurrection,9,Necromancy,,1 Hour
+True Seeing,6,Divination,,Action
+True Strike,0,Divination,,Action
+Unseen Servant,1,Conjuration,Y,Action
+Vampiric Touch,3,Necromancy,,Action
+Vicious Mockery,0,Enchantment,,Action
+Wall of Fire,4,Evocation,,Action
+Wall of Force,5,Evocation,,Action
+Wall of Ice,6,Evocation,,Action
+Wall of Stone,5,Evocation,,Action
+Wall of Thorns,6,Conjuration,,Action
+Warding Bond,2,Abjuration,,Action
+Water Breathing,3,Transmutation,Y,Action
+Water Walk,3,Transmutation,Y,Action
+Web,2,Conjuration,,Action
+Weird,9,Illusion,,Action
+Wind Walk,6,Transmutation,,1 Minute
+Wind Wall,3,Evocation,,Action
+Wish,9,Conjuration,,Action
+Word of Recall,6,Conjuration,,Action
+Zone of Truth,2,Enchantment,,Action
