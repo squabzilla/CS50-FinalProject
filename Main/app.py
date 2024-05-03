@@ -14,4 +14,5 @@ def home():
     pass_hash = generate_password_hash(pass_test)
     output_string = "pass_test is: " + pass_test + " and pass_hash is: " + pass_hash
     #return output_string
-    return "hello, world"
+    #return "hello, world"
+    return render_template("template.html")
