@@ -13,4 +13,5 @@ def home():
     pass_test = "abc123"
     pass_hash = generate_password_hash(pass_test)
     output_string = "pass_test is: " + pass_test + " and pass_hash is: " + pass_hash
-    return output_string
+    #return output_string
+    return "hello, world"
