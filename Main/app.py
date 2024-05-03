@@ -15,4 +15,5 @@ def home():
     output_string = "pass_test is: " + pass_test + " and pass_hash is: " + pass_hash
     #return output_string
     #return "hello, world"
-    return render_template("template.html")
+    #return render_template("template.html")
+    return render_template("index.html")
