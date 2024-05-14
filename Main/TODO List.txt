@@ -1,0 +1,17 @@
+generate spells_db from CSV
+make CSV and turn into DB for all class spells
+make CSV and turn into DB for items
+make login for website
+login creates unique ID for person
+	-> this creates character_sheet database for person: person_[uniqueID]_characterSheet
+		-> determine what's in this database
+	-> creates inventory_items database for this person: person_[uniqueID]_items
+		-> one-to-many on the "many" side,
+			-> will have column for character_id and column for item_id
+				-> charater_id references person_[uniqueID]_characterSheet db
+				-> item_id references Items_All db
+	-> creates spells database for this person: person_[uniqueID]_spells
+		-> one-to-many on the "many" side,
+			-> will have column for character_id and column for spell_id
+				-> charater_id references person_[uniqueID]_characterSheet db
+				-> spell_id references Spells_AllList db
