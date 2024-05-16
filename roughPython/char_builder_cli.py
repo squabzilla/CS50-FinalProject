@@ -1,4 +1,7 @@
 import char_builder_libs
+import char_builders_creator
+from char_builders_creator import create_character
+import char_builders_load
 
 def homescreen():
     print(\
@@ -32,17 +35,11 @@ def homescreen():
 
 
 
-def create_character():
-    ### TODO ###
-    print("TODO: create_character")
-    return 1
 
 
 
-def load_character():
-    ### TODO ###
-    print("TODO: load_character")
-    return 1
+
+
 
 def main():
     while True: homescreen()
