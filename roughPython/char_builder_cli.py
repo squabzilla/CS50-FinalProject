@@ -1,7 +1,8 @@
 import char_builder_libs
-import char_builders_creator
+#import char_builders_creator
 from char_builders_creator import create_character
-import char_builders_load
+#import char_builders_load
+from char_builders_load import load_character
 
 def homescreen():
     print(\
