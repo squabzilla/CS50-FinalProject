@@ -1,3 +1,5 @@
+import char_builder_libs
+
 def homescreen():
     print(\
         "Welcome to the character creator!\n"\
