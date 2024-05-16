@@ -4,6 +4,11 @@ from char_builders_creator import create_character
 #import char_builders_load
 from char_builders_load import load_character
 
+'''
+to run:
+py char_builder_cli.py
+'''
+
 def homescreen():
     print(\
         "Welcome to the character creator!\n"\
