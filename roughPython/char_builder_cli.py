@@ -17,11 +17,30 @@ def homescreen():
         print("error: invalid input - please input a number from 1 to 3")
         return 1
     var_choice = int(var_choice)
+    if var_choice == 1:
+        create_character()
+        return 0
+    if var_choice == 2:
+        load_character()
+        return 0
     if var_choice == 3:
         print("Quit")
         exit()
     print("here")
 
+
+
+def create_character():
+    ### TODO ###
+    print("TODO: create_character")
+    return 1
+
+
+
+def load_character():
+    ### TODO ###
+    print("TODO: load_character")
+    return 1
 
 def main():
     while True: homescreen()
