@@ -51,7 +51,11 @@ and modified it from there
       {% if error %}
         <p class=error><strong>Error:</strong> {{ error }}
       {% endif %}
-      {% block main %}{% endblock %}
+      {% block main %}
+        {% if error %}
+          <p class=error><strong>Error:</strong> {{ error }}
+        {% endif %}
+      {% endblock %}
     </main>
     
     <footer>
