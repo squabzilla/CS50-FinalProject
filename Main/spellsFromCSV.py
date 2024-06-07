@@ -11,7 +11,8 @@ with open("spell_list.csv", "r") as var_file:
 	# do stuff with file
 	var_reader = csv.reader(var_file)
 	next(var_reader)
-
+	db.execute("INSERT INTO list_races (\
+     race_id, race_name) VALUES (10, 'goblin')")
 	for var_row in var_reader:
 		spell_id = var_row[0]
 		spell_name = var_row[1]
