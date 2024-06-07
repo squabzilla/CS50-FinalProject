@@ -28,7 +28,11 @@ and modified it from there
       <a class="nav-link link-dark" href="mage.html"><u>Mage</u></a>
       <a class="nav-link link-dark" href="character.html"><b><u>Create A Character</u></b></a>
       <a class="nav-link link-dark">|</a>
-      <a class="nav-link link-dark">{% block title %}{% endblock %}</a>
+      <a class="nav-link link-dark" id="Current_Page"></a>
+      <script>
+        var page_title = document.getElementById('Page_Title').innerHTML;
+        document.getElementById('Current_Page').innerHTML = "<i>Current page: </i><b>" + page_title +"</b>";
+      </script>
   </nav>
     
     <header>{% block header %}{% endblock %}</header>
