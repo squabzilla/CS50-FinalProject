@@ -159,8 +159,8 @@ def register():
                 # return apology("Error: Username already exists")
         # Check that passwords match
         if register_password_1 != register_password_2:
-            # return render_template("register.html", error="Passwords do not match."), 400
-            return apology("Error: Passwords do not match")
+            return render_template("register.html", error="Passwords do not match."), 400
+            # return apology("Error: Passwords do not match")
 
         # Create password hash - now that we've checked that they match
         password_hash = generate_password_hash(register_password_1)
