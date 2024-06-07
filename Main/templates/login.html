@@ -5,15 +5,12 @@ the original login.html being the one provided to us by CS50 as part of the CS50
 
 {% extends "layout.html" %}
 
-{% block title %}
-    Log In
-{% endblock %}
+{% block title %}Log In{% endblock %}
+
+{% block header %}Log In{% endblock %}
 
 {% block main %}
     <h1>Login</h1>
-    {% if error %}
-        <p class=error><strong>Error:</strong> {{ error }}
-    {% endif %}
     <form action="/login" method="post">
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
@@ -28,3 +25,5 @@ the original login.html being the one provided to us by CS50 as part of the CS50
         But most importantly, server-side input-validation also exists
     -->
 {% endblock %}
+
+{% block footer %}{% endblock %}
