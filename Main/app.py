@@ -26,6 +26,19 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///RPG_characters.db")
 
+# caching documentation:
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#use_cases
+@app.after_request
+def after_request(response):
+    """Ensure responses aren't cached"""
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Expires"] = 0
+    return response
+# this should be enough coverage to prevent caching of responses
+# I might want caching of non-login entries, but we can worry about that later
+# while to some extent this was copied from from finance-problem app.py, I also looked into it a bit myself,
+# and chose not to include ["]response.headers["Pragma"] = "no-cache"], as it's apparently depreciated
+
 @app.route("/")
 def home():
     pass_test = "abc123"
