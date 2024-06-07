@@ -1,3 +1,6 @@
+<!--
+copied register.html file from the register.html I created for the CS50 finance-problem
+-->
 {% extends "layout.html" %}
 
 {% block title %}
@@ -23,4 +26,8 @@
             <button class="btn btn-primary" type="submit">Register</button>
         </div>
     </form>
+    <!--
+        Note: there is a little client-side input-validation here, that can be relatively easily bypassed by a savy-user
+        But most importantly, server-side input-validation also exists
+    -->
 {% endblock %}
