@@ -3,7 +3,7 @@ import csv
 from cs50 import SQL
 #import cs50
 
-with open("some_data_file.csv", "r") as var_file:
+with open("spellsFromCSV.py", "r") as var_file:
 	# do stuff with file
 	var_reader = csv.reader(var_file)
 	next(var_reader)
