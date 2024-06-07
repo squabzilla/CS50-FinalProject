@@ -1,3 +1,4 @@
+Spell_ID,Spells	Level,School,Ritual,Casting Time,Bard,Cleric,Druid,Paladin,Ranger,Sorcerer,Warlock,Wizard
 1,Acid Splash,0,Conjuration,0,Action,0,0,0,0,0,1,0,1
 2,Aid,2,Abjuration,0,Action,0,1,0,1,0,0,0,0
 3,Alarm,1,Abjuration,1,1 Minute,0,0,0,0,1,0,0,1
