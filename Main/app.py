@@ -1,12 +1,12 @@
 #########################################################################################
-### below: copied imported libraries from the CS50 finance-problem app.py that was provided to us by CS50 
+### below: copied imported libraries from CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 import os
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
-### above: copied imported libraries from finance-problem app.py 
+### above: copied imported libraries from CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 #########################################################################################
 
 
@@ -16,14 +16,14 @@ app = Flask(__name__)
 
 
 #########################################################################################
-### below: copied configuration settings from from finance-problem app.py that was provided to us by CS50,
+### below: copied configuration settings from CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50),
 ### then modified it upon reviewing configuration documentation
 # configure session settings
 # flask-session configuration documentation:
 # https://flask-session.readthedocs.io/en/latest/config.html
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "cachelib"
-### above: copied configuration settings from from finance-problem app.py that was provided to us by CS50,
+### above: copied configuration settings from CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50),
 ### then modified it upon reviewing configuration documentation
 #########################################################################################
 
@@ -37,7 +37,7 @@ db = SQL("sqlite:///RPG_characters.db")
 
 
 #########################################################################################
-### below: copied the app.after_request from finance-problem app.py that was provided to us by CS50,
+### below: copied the app.after_request from CS50 finance-problem app.py (that was provided to us by CS50),
 ### then modified it upon reviewing caching documentation
 #
 # caching documentation:
@@ -53,7 +53,7 @@ def after_request(response):
 # while to some extent this was copied from from finance-problem app.py, I also looked into it a bit myself,
 # and chose not to include ["]response.headers["Pragma"] = "no-cache"], as it's apparently depreciated
 #
-### above: copied the app.after_request from finance-problem app.py that was provided to us by CS50,
+### above: copied the app.after_request from CS50 finance-problem app.py (that was provided to us by CS50),
 ### then modified it upon reviewing caching documentation
 #########################################################################################
 
@@ -127,7 +127,7 @@ def logout():
 #########################################################################################
 
 #########################################################################################
-### below: copied (and slightly modified) the register function I created for finance-problem in app.py
+### below: copied (and slightly modified) the register function in app.py I created for the CS50 finance-problem
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
