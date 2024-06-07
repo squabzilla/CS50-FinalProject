@@ -58,3 +58,13 @@ with open("spell_list.csv", "r") as var_file:
 #	sorcerer_spell INTEGER,
 #	warlock_spell INTEGER,
 #	wizard_spell INTEGER);
+
+# db.execute("INSERT INTO transactions (\
+                   # transaction_type, user_id,\
+                   # symbol, quantity, price, total_price,\
+                   # year, month, day, hour, minute, second)\
+                   # VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                   # transaction_type, user_id,
+                   # symbol_text, buy_quantity, symbol_price, total_price,
+                   # year, month, day, hour, minute, second
+                   # )
