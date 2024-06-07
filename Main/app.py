@@ -31,6 +31,7 @@ db = SQL("sqlite:///RPG_characters.db")
 
 #########################################################################################
 ### below: copied the app.after_request from finance-problem app.py, after reviewing caching documentation
+#
 # caching documentation:
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#use_cases
 @app.after_request
@@ -43,6 +44,9 @@ def after_request(response):
 # I might want caching of non-login entries, but we can worry about that later
 # while to some extent this was copied from from finance-problem app.py, I also looked into it a bit myself,
 # and chose not to include ["]response.headers["Pragma"] = "no-cache"], as it's apparently depreciated
+#
+### above: copied the app.after_request from finance-problem app.py, after reviewing caching documentation
+#########################################################################################
 
 @app.route("/")
 def home():
