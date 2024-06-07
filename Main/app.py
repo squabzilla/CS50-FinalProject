@@ -1,5 +1,5 @@
 #########################################################################################
-### below: copied imported libraries from finance-problem app.py 
+### below: copied imported libraries from the CS50 finance-problem app.py that was provided to us by CS50 
 import os
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
@@ -16,7 +16,8 @@ app = Flask(__name__)
 
 
 #########################################################################################
-### below: copied configuration settings from from finance-problem app.py, after reviewing configuration documentation
+### below: copied configuration settings from from finance-problem app.py that was provided to us by CS50,
+### then modified it upon reviewing configuration documentation
 # configure session settings
 # flask-session configuration documentation:
 # https://flask-session.readthedocs.io/en/latest/config.html
