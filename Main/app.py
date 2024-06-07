@@ -110,8 +110,7 @@ def login():
             #return render_template("login.html", error="invalid username and/or password."), 403
             error="invalid username and/or password."
             flash(error)
-            #return render_template("login.html", error), 403
-            return render_template("login.html", error="invalid username and/or password."), 403
+            return render_template("login.html"), 403
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["user_id"]
