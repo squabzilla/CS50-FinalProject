@@ -5,6 +5,8 @@ from cs50 import SQL
 
 # Configure CS50 Library to use SQLite database
 #db = SQL("sqlite:///finance.db")
+# this code is messy and has a bunch of comments from stuff I referenced
+# because it's only ever intended to be run once
 db = SQL("sqlite:///RPG_characters.db")
 
 with open("spell_list.csv", "r") as var_file:
