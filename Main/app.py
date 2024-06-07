@@ -29,6 +29,8 @@ Session(app)
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///RPG_characters.db")
 
+#########################################################################################
+### below: copied the app.after_request from finance-problem app.py, after reviewing caching documentation
 # caching documentation:
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#use_cases
 @app.after_request
