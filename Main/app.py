@@ -61,7 +61,7 @@ def home():
     #return output_string
     #return "hello, world"
     #return render_template("template.html")
-    return render_template("index.html")
+    return render_template("index.html", error = "test-error")
 
 #########################################################################################
 ### below: copied the "login" and "logout" functionality from finance-problem app.py 
@@ -127,27 +127,27 @@ def register():
         register_username = request.form.get("username")
         # Whoops, I gotta use the apology function
         if not register_username:
-            # return render_template("register.html", error="No username entered."), 400
-            return apology("Error: no username entered")
+            return render_template("register.html", error="No username entered."), 400
+            # return apology("Error: no username entered")
         register_password_1 = request.form.get("password")
         if not register_password_1:
-            # return render_template("register.html", error="Password cannot be empty"), 400
-            return apology("Error: password cannot be empty")
+            return render_template("register.html", error="Password cannot be empty"), 400
+            # return apology("Error: password cannot be empty")
         register_password_2 = request.form.get("confirmation")
         if not register_password_2:
-            # return render_template("register.html", error="Please confirm your password"), 400
-            return apology("Error: need to confirm password")
+            return render_template("register.html", error="Please confirm your password"), 400
+            # return apology("Error: need to confirm password")
         # In case we somehow have accepted blank input, reject that
         if register_username == "" or register_password_1 == "" or register_password_2 == "":
-            # return render_template("register.html", error="Input cannot be blank.")
-            return apology("Error: Input cannot be blank")
+            return render_template("register.html", error="Input cannot be blank.")
+            # return apology("Error: Input cannot be blank")
 
         # Check that username does not already exist
         existing_usernames = db.execute("SELECT username FROM users")
         for existing_username in existing_usernames:
             if register_username == existing_username['username']:
-                # return render_template("register.html", error="Existing username."), 400
-                return apology("Error: Username already exists")
+                return render_template("register.html", error="Existing username."), 400
+                # return apology("Error: Username already exists")
         # Check that passwords match
         if register_password_1 != register_password_2:
             # return render_template("register.html", error="Passwords do not match."), 400
