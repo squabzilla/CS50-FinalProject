@@ -1,6 +1,6 @@
 import os
 import csv
-#from cs50 import SQL
+from cs50 import SQL
 #import cs50
 
 with open("spell_list.csv", "r") as var_file:
