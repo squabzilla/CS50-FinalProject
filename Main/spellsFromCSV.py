@@ -23,4 +23,5 @@ with open("spell_list.csv", "r") as var_file:
 #db.execute("UPDATE users SET cash = ? WHERE id = ?", new_client_cash, client_id)
 #DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
 
-db.execute("INSERT INTO list_races (race_id, race_name) VALUES (10, 'goblin')")
+#db.execute("INSERT INTO list_races (race_id, race_name) VALUES (10, 'goblin')")
+db.execute("DELETE FROM list_races WHERE race_id = 10")
