@@ -43,6 +43,8 @@ db = SQL("sqlite:///RPG_characters.db")
 #
 # caching documentation:
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#use_cases
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expires
+# https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Pragma
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
