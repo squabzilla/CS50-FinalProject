@@ -14,6 +14,8 @@ from flask import Flask
 app = Flask(__name__)
 
 # configure session settings
+# flask-session configuration documentation:
+# https://flask-session.readthedocs.io/en/latest/config.html
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "SqlAlchemySessionInterface"
 
@@ -111,3 +113,53 @@ def logout():
 ### above:  copied the "login" and "logout" functionality from finance-problem app.py
 #########################################################################################
 
+#########################################################################################
+### below: copied (and slightly modified) the register function I created for finance-problem in app.py
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    """Register user"""
+    if request.method == "POST":
+
+        # Input validation: acquire input and validate that it exists:
+        register_username = request.form.get("username")
+        # Whoops, I gotta use the apology function
+        if not register_username:
+            # return render_template("register.html", error="No username entered."), 400
+            return apology("Error: no username entered")
+        register_password_1 = request.form.get("password")
+        if not register_password_1:
+            # return render_template("register.html", error="Password cannot be empty"), 400
+            return apology("Error: password cannot be empty")
+        register_password_2 = request.form.get("confirmation")
+        if not register_password_2:
+            # return render_template("register.html", error="Please confirm your password"), 400
+            return apology("Error: need to confirm password")
+        # In case we somehow have accepted blank input, reject that
+        if register_username == "" or register_password_1 == "" or register_password_2 == "":
+            # return render_template("register.html", error="Input cannot be blank.")
+            return apology("Error: Input cannot be blank")
+
+        # Check that username does not already exist
+        existing_usernames = db.execute("SELECT username FROM users")
+        for existing_username in existing_usernames:
+            if register_username == existing_username['username']:
+                # return render_template("register.html", error="Existing username."), 400
+                return apology("Error: Username already exists")
+        # Check that passwords match
+        if register_password_1 != register_password_2:
+            # return render_template("register.html", error="Passwords do not match."), 400
+            return apology("Error: Passwords do not match")
+
+        # Create password hash - now that we've checked that they match
+        password_hash = generate_password_hash(register_password_1)
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)",
+                   register_username, password_hash)
+        # Make my username: William
+        # Make my password: password
+        # Yes, google keeps telling me this is insecure,
+        # but for testing purposes for something never to be hosted on a real server, it works
+        return render_template("login.html")
+    else:
+        return render_template("register.html")
+### above:  copied (and slightly modified) the register function I created for finance-problem in app.py
+#########################################################################################
