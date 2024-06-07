@@ -28,15 +28,11 @@ app.config["SESSION_TYPE"] = "cachelib"
 
 # start flask app after configuration settings done
 Session(app)
-# session cleanup notes:
-# Run the the following command regularly with a cron job or scheduler
-# such as Heroku Scheduler to clean up expired sessions.
-# This is the recommended way to clean up expired sessions.
-# command is: flask session_cleanup
 
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///RPG_characters.db")
+
 
 #########################################################################################
 ### below: copied the app.after_request from finance-problem app.py, after reviewing caching documentation
