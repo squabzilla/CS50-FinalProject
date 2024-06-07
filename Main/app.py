@@ -69,8 +69,8 @@ def home():
     return render_template("index.html")
 
 #########################################################################################
-### below: copied the "login" and "logout" functionality from finance-problem app.py 
-# modified the error messages tho
+### below: copied the "login" and "logout" functionality from finance-problem app.py that was provided to us by CS50,
+### although I modified the error messages
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
@@ -122,7 +122,8 @@ def logout():
 
     # Redirect user to login form
     return redirect("/")
-### above:  copied the "login" and "logout" functionality from finance-problem app.py
+### above: copied the "login" and "logout" functionality from finance-problem app.py that was provided to us by CS50,
+### although I modified the error messages
 #########################################################################################
 
 #########################################################################################
