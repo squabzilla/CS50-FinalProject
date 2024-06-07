@@ -21,7 +21,7 @@ app = Flask(__name__)
 # flask-session configuration documentation:
 # https://flask-session.readthedocs.io/en/latest/config.html
 app.config["SESSION_PERMANENT"] = False
-app.config["SESSION_TYPE"] = "SqlAlchemySessionInterface"
+app.config["SESSION_TYPE"] = "CacheLibSessionInterface"
 ### above: copied configuration settings from from finance-problem app.py, after reviewing configuration documentation
 #########################################################################################
 
