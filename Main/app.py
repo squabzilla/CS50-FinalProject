@@ -84,13 +84,18 @@ def login():
         # Ensure username was submitted
         if not request.form.get("username"):
             # return apology("must provide username", 403)
-            return render_template("login.html", error="No username entered."), 403
-            #return render_template("login.html", error="No username entered."), flash("error"), 403
+            #return render_template("login.html", error="No username entered."), 403
+            error="No username entered."
+            flash(error)
+            return render_template("login.html", error), 403
 
         # Ensure password was submitted
         elif not request.form.get("password"):
             # return apology("must provide password", 403)
-            return render_template("login.html", error="No password entered."), 403
+            #return render_template("login.html", error="No password entered."), 403
+            error="No password entered."
+            flash(error)
+            return render_template("login.html", error), 403
 
         # Query database for username
         rows = db.execute(
@@ -102,7 +107,10 @@ def login():
             rows[0]["hash"], request.form.get("password")
         ):
             # return apology("invalid username and/or password", 403)
-            return render_template("login.html", error="invalid username and/or password."), 403
+            #return render_template("login.html", error="invalid username and/or password."), 403
+            error="invalid username and/or password."
+            flash(error)
+            return render_template("login.html", error), 403
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["user_id"]
@@ -138,31 +146,48 @@ def register():
         # Input validation: acquire input and validate that it exists:
         register_username = request.form.get("username")
         if not register_username:
-            return render_template("register.html", error="No username entered."), 400
             # return apology("Error: no username entered")
+            #return render_template("register.html", error="No username entered."), 400
+            error="No username entered."
+            flash(error)
+            return render_template("register.html", error), 400
         register_password_1 = request.form.get("password")
         if not register_password_1:
-            return render_template("register.html", error="Password cannot be empty"), 400
             # return apology("Error: password cannot be empty")
+            #return render_template("register.html", error="Password cannot be empty."), 400
+            error="Password cannot be empty."
+            flash(error)
+            return render_template("register.html", error), 400
         register_password_2 = request.form.get("confirmation")
         if not register_password_2:
-            return render_template("register.html", error="Please confirm your password"), 400
             # return apology("Error: need to confirm password")
+            #return render_template("register.html", error="Please confirm your password"), 400
+            error="Please confirm your password"
+            flash(error)
+            return render_template("register.html", error), 400
         # In case we somehow have accepted blank input, reject that
         if register_username == "" or register_password_1 == "" or register_password_2 == "":
-            return render_template("register.html", error="Input cannot be blank."), 400
             # return apology("Error: Input cannot be blank")
+            #return render_template("register.html", error="Input cannot be blank."), 400
+            error="Input cannot be blank."
+            flash(error)
+            return render_template("register.html", error), 400
 
         # Check that username does not already exist
         existing_usernames = db.execute("SELECT username FROM users")
         for existing_username in existing_usernames:
             if register_username == existing_username['username']:
-                return render_template("register.html", error="Existing username."), 400
                 # return apology("Error: Username already exists")
+                #return render_template("register.html", error="Existing username."), 400
+                error="Existing username."
+                flash(error)
+                return render_template("register.html", error), 400
         # Check that passwords match
         if register_password_1 != register_password_2:
-            return render_template("register.html", error="Passwords do not match."), 400
             # return apology("Error: Passwords do not match")
+            #return render_template("register.html", error="Passwords do not match."), 400
+            error="Passwords do not match."
+            return render_template("register.html", error), 400
 
         # Create password hash - now that we've checked that they match
         password_hash = generate_password_hash(register_password_1)
