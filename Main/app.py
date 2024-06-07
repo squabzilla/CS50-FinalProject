@@ -70,7 +70,7 @@ def home():
 
 #########################################################################################
 ### below: copied the "login" and "logout" functionality from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50),
-### although I modified the error messages
+### although I modified the error messages, and a few sql-interacting-bits to match my database
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
@@ -103,7 +103,7 @@ def login():
             return render_template("login.html", error="invalid username and/or password."), 403
 
         # Remember which user has logged in
-        session["user_id"] = rows[0]["id"]
+        session["user_id"] = rows[0]["user_id"]
 
         # Redirect user to home page
         return redirect("/")
@@ -123,7 +123,7 @@ def logout():
     # Redirect user to login form
     return redirect("/")
 ### above: copied the "login" and "logout" functionality from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50),
-### although I modified the error messages
+### although I modified the error messages, and a few sql-interacting-bits to match my database
 #########################################################################################
 
 #########################################################################################
@@ -135,7 +135,6 @@ def register():
 
         # Input validation: acquire input and validate that it exists:
         register_username = request.form.get("username")
-        # Whoops, I gotta use the apology function
         if not register_username:
             return render_template("register.html", error="No username entered."), 400
             # return apology("Error: no username entered")
