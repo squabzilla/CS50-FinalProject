@@ -1,5 +1,1 @@
-Create html pages:
-login.html
-register.html
-
 Make website pretty with style.css located in static-folder
