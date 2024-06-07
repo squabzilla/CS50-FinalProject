@@ -50,8 +50,8 @@ def after_request(response):
     return response
 # this should be enough coverage to prevent caching of responses
 # I might want caching of non-login entries, but we can worry about that later
-# while to some extent this was copied from from finance-problem app.py, I also looked into it a bit myself,
-# and chose not to include ["]response.headers["Pragma"] = "no-cache"], as it's apparently depreciated
+# while to some extent this was copied from CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50),
+# I also looked into it a bit myself and chose not to include ["]response.headers["Pragma"] = "no-cache"], as it's apparently depreciated
 #
 ### above: copied the app.after_request from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50),
 ### then modified it upon reviewing caching documentation
