@@ -148,7 +148,7 @@ def register():
             # return apology("Error: need to confirm password")
         # In case we somehow have accepted blank input, reject that
         if register_username == "" or register_password_1 == "" or register_password_2 == "":
-            return render_template("register.html", error="Input cannot be blank.")
+            return render_template("register.html", error="Input cannot be blank."), 400
             # return apology("Error: Input cannot be blank")
 
         # Check that username does not already exist

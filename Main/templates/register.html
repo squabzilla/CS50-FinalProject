@@ -9,9 +9,6 @@ copied register.html file from the register.html I created for the CS50 Week 9 C
 
 {% block main %}
     <h1>Register</h1>
-    {% if error %}
-        <p class=error><strong>Error:</strong> {{ error }}
-    {% endif %}
     <form action="/register" method="post">
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text" required="required">
