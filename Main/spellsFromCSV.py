@@ -37,7 +37,7 @@ with open("spell_list.csv", "r") as var_file:
 		db.execute("INSERT INTO list_spells (\
              spell_id, spell_name, spell_level, spell_school, ritual, casting_time,\
                  bard_spell, cleric_spell, druid_spell, paladin_spell, ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)\
-                 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                  var_spell_id, var_spell_name, var_spell_level, var_spell_school, var_ritual, var_casting_time,
                  var_bard_spell, var_cleric_spell, var_druid_spell, var_paladin_spell, var_ranger_spell, var_sorcerer_spell, var_warlock_spell, var_wizard_spell)
 		break
