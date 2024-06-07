@@ -23,6 +23,7 @@ app = Flask(__name__)
 # https://flask-session.readthedocs.io/en/latest/config.html
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "cachelib"
+# documentation says that "filesystem" is depreciated in favor of CacheLib, so changed it to that
 ### above: copied configuration settings from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50),
 ### then modified it upon reviewing configuration documentation
 #########################################################################################
@@ -66,7 +67,6 @@ def home():
     #return "hello, world"
     #return render_template("template.html")
     # return render_template("index.html", error = "test-error")
-    flash("soup")
     return render_template("home.html")
 
 #########################################################################################
