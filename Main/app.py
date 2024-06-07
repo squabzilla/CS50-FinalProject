@@ -12,6 +12,7 @@ app = Flask(__name__)
 
 # configure session settings
 app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "CacheLibSessionInterface"
 Session(app)
 
 # session cleanup notes:
