@@ -23,7 +23,8 @@ app = Flask(__name__)
 # https://flask-session.readthedocs.io/en/latest/config.html
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "cachelib"
-### above: copied configuration settings from from finance-problem app.py, after reviewing configuration documentation
+### above: copied configuration settings from from finance-problem app.py that was provided to us by CS50,
+### then modified it upon reviewing configuration documentation
 #########################################################################################
 
 
@@ -36,7 +37,8 @@ db = SQL("sqlite:///RPG_characters.db")
 
 
 #########################################################################################
-### below: copied the app.after_request from finance-problem app.py, after reviewing caching documentation
+### below: copied the app.after_request from finance-problem app.py that was provided to us by CS50,
+### then modified it upon reviewing caching documentation
 #
 # caching documentation:
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control#use_cases
@@ -51,7 +53,8 @@ def after_request(response):
 # while to some extent this was copied from from finance-problem app.py, I also looked into it a bit myself,
 # and chose not to include ["]response.headers["Pragma"] = "no-cache"], as it's apparently depreciated
 #
-### above: copied the app.after_request from finance-problem app.py, after reviewing caching documentation
+### above: copied the app.after_request from finance-problem app.py that was provided to us by CS50,
+### then modified it upon reviewing caching documentation
 #########################################################################################
 
 @app.route("/")
