@@ -66,7 +66,7 @@ def home():
     #return "hello, world"
     #return render_template("template.html")
     # return render_template("index.html", error = "test-error")
-    return render_template("home.html"), get_flashed_messages("soup")
+    return render_template("home.html")
 
 #########################################################################################
 ### below: copied the "login" and "logout" functionality from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50),
@@ -83,7 +83,7 @@ def login():
         # Ensure username was submitted
         if not request.form.get("username"):
             # return apology("must provide username", 403)
-            return render_template("login.html", error="No username entered."), 403
+            return render_template("login.html", error="No username entered."), flash("error"), 403
 
         # Ensure password was submitted
         elif not request.form.get("password"):
