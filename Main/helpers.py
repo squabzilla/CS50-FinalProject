@@ -1,5 +1,5 @@
 #########################################################################################
-### below: copied login_required function from finance-problem helpers.py
+### below: copied login_required function from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 
 def login_required(f):
     """
@@ -15,5 +15,5 @@ def login_required(f):
         return f(*args, **kwargs)
 
     return decorated_function
-### above: copied login_required function from finance-problem helpers.py
+### above: copied login_required function from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 #########################################################################################
