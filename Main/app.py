@@ -9,24 +9,31 @@ from helpers import login_required
 ### above: copied imported libraries from finance-problem app.py 
 #########################################################################################
 
+
 # configure flask application
 from flask import Flask
 app = Flask(__name__)
 
+
+#########################################################################################
+### below: copied configuration settings from from finance-problem app.py, after reviewing configuration documentation
 # configure session settings
 # flask-session configuration documentation:
 # https://flask-session.readthedocs.io/en/latest/config.html
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "SqlAlchemySessionInterface"
+### above: copied configuration settings from from finance-problem app.py, after reviewing configuration documentation
+#########################################################################################
+
 
 # start flask app after configuration settings done
 Session(app)
-
 # session cleanup notes:
 # Run the the following command regularly with a cron job or scheduler
 # such as Heroku Scheduler to clean up expired sessions.
 # This is the recommended way to clean up expired sessions.
 # command is: flask session_cleanup
+
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///RPG_characters.db")
