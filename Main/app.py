@@ -13,6 +13,8 @@ app = Flask(__name__)
 # configure session settings
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "SqlAlchemySessionInterface"
+
+# start flask app after configuration settings done
 Session(app)
 
 # session cleanup notes:
