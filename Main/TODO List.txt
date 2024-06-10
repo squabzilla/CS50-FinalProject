@@ -1,1 +1,5 @@
+class features for Ranger, Fighter, Rogue up to level 5
+
+Actually add character-creation functionality and visibility
+
 Make website pretty with style.css located in static-folder
