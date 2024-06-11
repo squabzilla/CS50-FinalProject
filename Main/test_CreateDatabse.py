@@ -42,13 +42,25 @@ db = SQL(sql_path)
 # other useful SQL command to remember: DELETE FROM table WHERE condition;
 print("DONE")
 
+print("Creating list_pc_features table...", end="")
+db.execute("CREATE TABLE list_pc_features (\
+    pc_feature_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
+    pc_feature_name TEXT NOT NULL, \
+    list_level INTEGER, \
+    pc_feature_description TEXT NOT NULL \
+    );")
+db.execute("CREATE UNIQUE INDEX pc_feature ON list_pc_features (pc_feature_name);")
+print("DONE")
+
 ones_count = 0
 tens_count = 0
 hundreds_count = 0
-print("importing pc features...", end="")
+#print("importing pc features...", end="")
+print("importing pc features...")
 with open(pc_features_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
+    print("n: ", hundreds_count, tens_count, ones_count, "  ", sep="", end="")
     next(var_reader)
     # skip header line, import everything
     for var_row in var_reader:
