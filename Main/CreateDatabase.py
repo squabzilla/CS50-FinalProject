@@ -15,24 +15,31 @@ spell_list_name = "spell_list.csv"
 spell_list_csv = os.path.join(spell_list_folder, spell_list_name)
 
 # if database exists, remove it so we can start from scratch
+print("Checking for existing database...", end="")
 if os.path.isfile(name_of_database) == True:
     os.remove(name_of_database)
+    print("removing existing database...", end="")
 # now create database
 with open(name_of_database, 'w') as fp:
-    pass
+    print("creating new database...", end="")
 
 # database path to pass to CS50 SQL library - easier to grasp seeing it this way
+print("Connecting to SQL database...", end="")
 sql_path = "sqlite:///" + name_of_database
 db = SQL(sql_path)
 # other useful SQL command to remember: DELETE FROM table WHERE condition;
+print("DONE")
 
 # users table
+print("Creating users table...", end="")
 db.execute("CREATE TABLE users (\
     user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
         username TEXT NOT NULL, hash TEXT NOT NULL);")
 db.execute("CREATE UNIQUE INDEX usernames ON users (username);")
+print("DONE")
 
 # create list of spells
+print("Creating list_spells table...", end="")
 db.execute("CREATE TABLE list_spells (\
 spell_id INTEGER PRIMARY KEY, \
 spell_name TEXT NOT NULL, \
@@ -57,6 +64,7 @@ wizard_spell INTEGER);")
 db.execute("CREATE UNIQUE INDEX spell_names ON list_spells (spell_name);")
 
 # import spells
+print("importing spells...", end="")
 #with open("spell_list.csv", "r") as var_file:
 with open(spell_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
@@ -99,38 +107,48 @@ with open(spell_list_csv, "r") as var_file:
             var_verbal, var_somatic, var_focus, var_duration, var_concentration,
             var_bard_spell, var_cleric_spell, var_druid_spell, var_paladin_spell, 
             var_ranger_spell, var_sorcerer_spell, var_warlock_spell, var_wizard_spell)
+print("DONE")
 
 # create list of races and add values
+print("Creating and populating list_races table...", end="")
 db.execute("CREATE TABLE list_races (race_id INTEGER PRIMARY KEY, race_name TEXT NOT NULL);")
 db.execute("CREATE UNIQUE INDEX race ON list_races (race_name);")
 db.execute("INSERT INTO list_races (race_id, race_name) VALUES \
     (0, 'Dwarf'), (1, 'Elf'), (2, 'Orc'), (3, 'Halfling'), (4, 'Human'), (5, 'Dragonborn'), \
     (6, 'Gnome'), (7, 'Half-Elf'), (8, 'Half-Orc'), (9, 'Tiefling');")
+print("DONE")
 
 # create list of attributes and add values
+print("Creating and populating list_attributes table...", end="")
 db.execute("CREATE TABLE list_attributes(attrib_id INTEGER PRIMARY KEY, attrib_name TEXT, attrib_abbrev TEXT);")
 db.execute("CREATE UNIQUE INDEX name_of_attrib ON list_attributes (attrib_name);")
 db.execute("CREATE UNIQUE INDEX abbrev_of_attrib ON list_attributes (attrib_abbrev);")
 db.execute("INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrev) VALUES \
     (0, 'Strength', 'STR'), (1, 'Dexterity', 'DEX'), (2, 'Constitution', 'CON'), \
     (3, 'Intelligence', 'INT'), (4, 'Wisdom', 'WIS'), (5, 'Charisma', 'CHA');")
+print("DONE")
 
 # create list of PC classes and add values
+print("Creating and populating list_pc_classes table...", end="")
 db.execute("CREATE TABLE list_pc_classes (pc_class_id INTEGER PRIMARY KEY, pc_class_name TEXT NOT NULL);")
 db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_name);")
 db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name) VALUES \
     (0, 'Barbarian'), (1, 'Bard'), (2, 'Cleric'), (3, 'Druid'), (4, 'Fighter'), (5, 'Monk'), \
     (6, 'Paladin'), (7, 'Ranger'), (8, 'Rogue'), (9, 'Sorcerer'), (10, 'Warlock'), (11, 'Wizard');")
+print("DONE")
 
 # create list of backgrounds and add values
+print("Creating and populating list_backgrounds table...", end="")
 db.execute("CREATE TABLE list_backgrounds (background_id INTEGER PRIMARY KEY, background_name TEXT NOT NULL);")
 db.execute("CREATE UNIQUE INDEX background ON list_backgrounds (background_name);")
 db.execute("INSERT INTO list_backgrounds (background_id, background_name) VALUES \
     (0, 'Acolyte'), (1, 'Charlatan'), (2, 'Criminal'), (3, 'Entertainer'), (4, 'Folk Hero'), \
     (5, 'Guild Artisan'), (6, 'Hermit'), (7, 'Noble'), (8, 'Outlander'), \
     (9, 'Sage'), (10, 'Sailor'), (11, 'Soldier'), (12, 'Street Urchin');")
+print("DONE")
 
 # create list of characters, linking all foreign keys
+print("Creating list_characters table and linking all foreign keys...", end="")
 db.execute("CREATE TABLE list_characters (\
     character_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
     character_user_id INTEGER, character_name TEXT NOT NULL, \
@@ -141,11 +159,14 @@ db.execute("CREATE TABLE list_characters (\
     FOREIGN KEY(character_class_id) REFERENCES list_pc_classes(pc_class_id), \
     FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id) \
     );")
+print("DONE")
 
 # create spellbook, which links characters with their spells known
+print("Creating spellbook table and linking all foreign keys...", end="")
 db.execute("CREATE TABLE spellbook (\
 spellbook_caster_id INTEGER, spellbook_spell_id INTEGER, spell_prepared INTEGER, spellcasting_attribute INT, \
 FOREIGN KEY(spellbook_caster_id) REFERENCES list_characters(character_id), \
 FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
 FOREIGN KEY(spellcasting_attribute) REFERENCES list_attributes(attrib_id) \
 );")
+print("DONE")
