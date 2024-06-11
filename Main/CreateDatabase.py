@@ -160,12 +160,12 @@ print("DONE")
 
 # create list of PC classes and add values
 print("Creating and populating list_pc_classes table...", end="")
-db.execute("CREATE TABLE list_pc_classes (pc_class_id INTEGER PRIMARY KEY, pc_class_name TEXT NOT NULL);")
+db.execute("CREATE TABLE list_pc_classes (pc_class_id INTEGER PRIMARY KEY, pc_class_name TEXT NOT NULL, pc_class_hitdie INTEGER);")
 db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_name);")
 #db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name) VALUES \
 #    (0, 'Barbarian'), (1, 'Bard'), (2, 'Cleric'), (3, 'Druid'), (4, 'Fighter'), (5, 'Monk'), \
 #    (6, 'Paladin'), (7, 'Ranger'), (8, 'Rogue'), (9, 'Sorcerer'), (10, 'Warlock'), (11, 'Wizard');")
-with open(race_list_csv, "r") as var_file:
+with open(class_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
     next(var_reader)
@@ -173,8 +173,9 @@ with open(race_list_csv, "r") as var_file:
     for var_row in var_reader:
         var_pc_class_id = var_row[0]
         var_pc_class_name = var_row[1]
-        db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name) VALUES(?, ?)", 
-                   var_pc_class_id, var_pc_class_name)
+        var_pc_class_hitdie = var_row[2]
+        db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name, pc_class_hitdie) VALUES(?, ?, ?)", 
+                   var_pc_class_id, var_pc_class_name, var_pc_class_hitdie)
 print("DONE")
 
 # create list of backgrounds and add values
