@@ -253,6 +253,9 @@ db.execute("CREATE TABLE list_pc_features (\
 db.execute("CREATE UNIQUE INDEX pc_feature ON list_pc_features (pc_feature_name);")
 print("DONE")
 
+ones_count = 0
+tens_count = 0
+hundreds_count = 0
 print("importing pc features...", end="")
 with open(pc_features_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
@@ -260,6 +263,14 @@ with open(pc_features_list_csv, "r") as var_file:
     next(var_reader)
     # skip header line, import everything
     for var_row in var_reader:
+        ones_count += 1
+        if ones_count == 10:
+            ones_count = 0
+            tens_count += 1
+        if tens_count == 10:
+            tens_count = 0
+            hundreds_count += 1
+        print("n: ", hundreds_count, tens_count, ones_count, end="  ")
         var_pc_feature_id = var_row[0]
         var_pc_feature_name = var_row[1]
         var_list_level = var_row[2]
