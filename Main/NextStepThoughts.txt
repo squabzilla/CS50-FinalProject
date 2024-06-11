@@ -10,3 +10,10 @@ THEN WE GOTTA WRITE PYTHON CODE FOR CREATING AND LEVELING UP THESE CHARACTERS
 
 python code will handle what options are available, some of them will just be hard-coded in python
 preferably in a global variable, but still
+
+need to open:
+PC_Features.xlsx
+from:
+D:\GitProjects\CS50-FinalProject\Main\static\CSVs
+
+also that's more of an excel-folder then CSV, but whatever, renaming it means changing code and I don't want to do that lol
