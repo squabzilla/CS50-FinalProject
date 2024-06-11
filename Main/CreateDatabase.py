@@ -128,10 +128,8 @@ db.execute("CREATE UNIQUE INDEX race ON list_races (race_name);")
 with open(race_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
-    # this is a CSV file
     next(var_reader)
-    # skip header line
-    # import everything
+    # skip header line, import everything
     for var_row in var_reader:
         var_race_id = var_row[0]
         var_race_name = var_row[1]
@@ -150,15 +148,13 @@ db.execute("CREATE UNIQUE INDEX abbrev_of_attrib ON list_attributes (attrib_abbr
 with open(attribute_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
-    # this is a CSV file
     next(var_reader)
-    # skip header line
-    # import everything
+    # skip header line, import everything
     for var_row in var_reader:
         var_attrib_id = var_row[0]
         var_attrib_name = var_row[1]
         var_attrib_abbrev = var_row[2]
-        db.execute("INSERT INTO list_races (race_id, race_name) VALUES(?, ?, ?)", 
+        db.execute("INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrev) VALUES(?, ?, ?)", 
                    var_attrib_id, var_attrib_name, var_attrib_abbrev)
 print("DONE")
 
@@ -166,19 +162,35 @@ print("DONE")
 print("Creating and populating list_pc_classes table...", end="")
 db.execute("CREATE TABLE list_pc_classes (pc_class_id INTEGER PRIMARY KEY, pc_class_name TEXT NOT NULL);")
 db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_name);")
-db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name) VALUES \
-    (0, 'Barbarian'), (1, 'Bard'), (2, 'Cleric'), (3, 'Druid'), (4, 'Fighter'), (5, 'Monk'), \
-    (6, 'Paladin'), (7, 'Ranger'), (8, 'Rogue'), (9, 'Sorcerer'), (10, 'Warlock'), (11, 'Wizard');")
+#db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name) VALUES \
+#    (0, 'Barbarian'), (1, 'Bard'), (2, 'Cleric'), (3, 'Druid'), (4, 'Fighter'), (5, 'Monk'), \
+#    (6, 'Paladin'), (7, 'Ranger'), (8, 'Rogue'), (9, 'Sorcerer'), (10, 'Warlock'), (11, 'Wizard');")
+with open(race_list_csv, "r") as var_file:
+    # open file, doing "with open" means I don't have to close it
+    var_reader = csv.reader(var_file)
+    next(var_reader)
+    # skip header line, import everything
+    for var_row in var_reader:
+        var_pc_class_id = var_row[0]
+        var_pc_class_name = var_row[1]
+        db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name) VALUES(?, ?)", 
+                   var_pc_class_id, var_pc_class_name)
 print("DONE")
 
 # create list of backgrounds and add values
 print("Creating and populating list_backgrounds table...", end="")
 db.execute("CREATE TABLE list_backgrounds (background_id INTEGER PRIMARY KEY, background_name TEXT NOT NULL);")
 db.execute("CREATE UNIQUE INDEX background ON list_backgrounds (background_name);")
-db.execute("INSERT INTO list_backgrounds (background_id, background_name) VALUES \
-    (0, 'Acolyte'), (1, 'Charlatan'), (2, 'Criminal'), (3, 'Entertainer'), (4, 'Folk Hero'), \
-    (5, 'Guild Artisan'), (6, 'Hermit'), (7, 'Noble'), (8, 'Outlander'), \
-    (9, 'Sage'), (10, 'Sailor'), (11, 'Soldier'), (12, 'Street Urchin');")
+#db.execute("INSERT INTO list_backgrounds (background_id, background_name) VALUES \
+#    (0, 'Acolyte'), (1, 'Charlatan'), (2, 'Criminal'), (3, 'Entertainer'), (4, 'Folk Hero'), \
+#    (5, 'Guild Artisan'), (6, 'Hermit'), (7, 'Noble'), (8, 'Outlander'), \
+#    (9, 'Sage'), (10, 'Sailor'), (11, 'Soldier'), (12, 'Street Urchin');")
+with open(background_list_csv, "r") as var_file:
+    for var_row in var_reader:
+        var_background_id = var_row[0]
+        var_background_name = var_row[1]
+        db.execute("INSERT INTO list_backgrounds (background_id, background_name) VALUES(?, ?)",
+                   var_background_id, var_background_name)
 print("DONE")
 
 # create list of characters, linking all foreign keys
