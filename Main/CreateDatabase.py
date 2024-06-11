@@ -251,7 +251,7 @@ db.execute("CREATE TABLE list_pc_features (\
     pc_feature_description_line_1 TEXT NOT NULL, \
     pc_feature_description_line_2 TEXT, \
     pc_feature_description_line_3 TEXT, \
-    pc_feature_description_line_4 TEXT, \
+    pc_feature_description_line_4 TEXT \
     );")
 db.execute("CREATE UNIQUE INDEX pc_feature ON list_pc_features (pc_feature_name);")
 print("DONE")
