@@ -9,10 +9,20 @@ from cs50 import SQL
 # name of database
 name_of_database = "RPG_characters.db"
 
-# csv of spells
-spell_list_folder = "static"
-spell_list_name = "spell_list.csv"
-spell_list_csv = os.path.join(spell_list_folder, spell_list_name)
+# csv folder
+csv_folder = "static/CSVs"
+
+# csv file names
+spell_list_csv = "spell_list.csv"
+spell_list_csv = os.path.join(csv_folder, spell_list_csv)
+race_list_csv = "race_list.csv"
+race_list_csv = os.path.join(csv_folder, race_list_csv)
+attribute_list_csv = "attribute_list.csv"
+attribute_list_csv = os.path.join(csv_folder, attribute_list_csv)
+class_list_csv = "class_list.csv"
+class_list_csv = os.path.join(csv_folder, class_list_csv)
+background_list_csv = "background_list.csv"
+background_list_csv = os.path.join(csv_folder, background_list_csv)
 
 # if database exists, remove it so we can start from scratch
 print("Checking for existing database...", end="")
@@ -113,9 +123,18 @@ print("DONE")
 print("Creating and populating list_races table...", end="")
 db.execute("CREATE TABLE list_races (race_id INTEGER PRIMARY KEY, race_name TEXT NOT NULL);")
 db.execute("CREATE UNIQUE INDEX race ON list_races (race_name);")
-db.execute("INSERT INTO list_races (race_id, race_name) VALUES \
-    (0, 'Dwarf'), (1, 'Elf'), (2, 'Orc'), (3, 'Halfling'), (4, 'Human'), (5, 'Dragonborn'), \
-    (6, 'Gnome'), (7, 'Half-Elf'), (8, 'Half-Orc'), (9, 'Tiefling');")
+#db.execute("INSERT INTO list_races (race_id, race_name) VALUES \
+#    (0, 'Dwarf'), (1, 'Elf'), (2, 'Orc'), (3, 'Halfling'), (4, 'Human'), (5, 'Dragonborn'), \
+#    (6, 'Gnome'), (7, 'Half-Elf'), (8, 'Half-Orc'), (9, 'Tiefling');")
+with open(spell_list_csv, "r") as var_file:
+    # open file, doing "with open" means I don't have to close it
+    var_reader = csv.reader(var_file)
+    # this is a CSV file
+    next(var_reader)
+    # skip header line
+    add_new_race = False
+    # import everything
+    for var_row in var_reader:
 print("DONE")
 
 # create list of attributes and add values
