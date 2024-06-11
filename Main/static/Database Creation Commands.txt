@@ -29,9 +29,9 @@ INSERT INTO list_races (race_id, race_name) VALUES
 (6, 'Gnome'), (7, 'Half-Elf'), (8, 'Half-Orc'), (9, 'Tiefling');
 
 CREATE TABLE list_attributes(attrib_id INTEGER PRIMARY KEY, attrib_name TEXT, attrib_abbrev TEXT);
-CREATE UNIQUE INDEX name_of_attrib ON list_attributes;
-CREATE UNIQUE INDEX abbrev_of_attrib ON list_attributes;
-INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrv) VALUES
+CREATE UNIQUE INDEX name_of_attrib ON list_attributes (attrib_name);
+db.execute("CREATE UNIQUE INDEX abbrev_of_attrib ON list_attributes (attrib_abbrev);
+INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrev) VALUES
 (0, 'Strength', 'STR'), (1, 'Dexterity', 'DEX'), (2, 'Constitution', 'CON'),
 (3, 'Intelligence', 'INT'), (4, 'Wisdom', 'WIS'), (5, 'Charisma', 'CHA');
 

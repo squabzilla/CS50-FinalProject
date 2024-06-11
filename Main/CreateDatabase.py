@@ -109,9 +109,9 @@ db.execute("INSERT INTO list_races (race_id, race_name) VALUES \
 
 # create list of attributes and add values
 db.execute("CREATE TABLE list_attributes(attrib_id INTEGER PRIMARY KEY, attrib_name TEXT, attrib_abbrev TEXT);")
-db.execute("CREATE UNIQUE INDEX name_of_attrib ON list_attributes;")
-db.execute("CREATE UNIQUE INDEX abbrev_of_attrib ON list_attributes;")
-db.execute("INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrv) VALUES \
+db.execute("CREATE UNIQUE INDEX name_of_attrib ON list_attributes (attrib_name);")
+db.execute("CREATE UNIQUE INDEX abbrev_of_attrib ON list_attributes (attrib_abbrev);")
+db.execute("INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrev) VALUES \
     (0, 'Strength', 'STR'), (1, 'Dexterity', 'DEX'), (2, 'Constitution', 'CON'), \
     (3, 'Intelligence', 'INT'), (4, 'Wisdom', 'WIS'), (5, 'Charisma', 'CHA');")
 
