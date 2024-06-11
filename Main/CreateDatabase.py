@@ -248,14 +248,14 @@ db.execute("CREATE TABLE list_pc_features (\
     pc_feature_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
     pc_feature_name TEXT NOT NULL, \
     list_level INTEGER, \
-    pc_feature_description TEXT NOT NULL \
+    pc_feature_description_line_1 TEXT NOT NULL, \
+    pc_feature_description_line_2 TEXT, \
+    pc_feature_description_line_3 TEXT, \
+    pc_feature_description_line_4 TEXT, \
     );")
 db.execute("CREATE UNIQUE INDEX pc_feature ON list_pc_features (pc_feature_name);")
 print("DONE")
 
-ones_count = 0
-tens_count = 0
-hundreds_count = 0
 print("importing pc features...", end="")
 with open(pc_features_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
@@ -263,18 +263,17 @@ with open(pc_features_list_csv, "r") as var_file:
     next(var_reader)
     # skip header line, import everything
     for var_row in var_reader:
-        ones_count += 1
-        if ones_count == 10:
-            ones_count = 0
-            tens_count += 1
-        if tens_count == 10:
-            tens_count = 0
-            hundreds_count += 1
-        print("n: ", hundreds_count, tens_count, ones_count, end="  ")
         var_pc_feature_id = var_row[0]
         var_pc_feature_name = var_row[1]
         var_list_level = var_row[2]
-        var_pc_feature_description = var_row[3]
-        db.execute("INSERT INTO list_pc_features (pc_feature_id, pc_feature_name, list_level, pc_feature_description) VALUES(?, ?, ?, ?)", 
-                   var_pc_feature_id, var_pc_feature_name, var_list_level, var_pc_feature_description)
+        var_pc_feature_description_line_1 = var_row[3]
+        var_pc_feature_description_line_2 = var_row[4]
+        var_pc_feature_description_line_3 = var_row[5]
+        var_pc_feature_description_line_4 = var_row[6]
+        db.execute("INSERT INTO list_pc_features (\
+            pc_feature_id, pc_feature_name, list_level, \
+            pc_feature_description_line_1, pc_feature_description_line_2, pc_feature_description_line_3, pc_feature_description_line_4\
+            ) VALUES(?, ?, ?, ?, ?, ?, ?)", 
+            var_pc_feature_id, var_pc_feature_name, var_list_level, 
+            var_pc_feature_description_line_1, var_pc_feature_description_line_2, var_pc_feature_description_line_3, var_pc_feature_description_line_4)
 print("DONE")
