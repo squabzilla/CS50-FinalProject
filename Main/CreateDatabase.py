@@ -82,7 +82,6 @@ with open(spell_list_csv, "r") as var_file:
     # this is a CSV file
     next(var_reader)
     # skip header line
-    add_new_race = False
     # import everything
     for var_row in var_reader:
         var_spell_id = var_row[0]
@@ -126,15 +125,18 @@ db.execute("CREATE UNIQUE INDEX race ON list_races (race_name);")
 #db.execute("INSERT INTO list_races (race_id, race_name) VALUES \
 #    (0, 'Dwarf'), (1, 'Elf'), (2, 'Orc'), (3, 'Halfling'), (4, 'Human'), (5, 'Dragonborn'), \
 #    (6, 'Gnome'), (7, 'Half-Elf'), (8, 'Half-Orc'), (9, 'Tiefling');")
-with open(spell_list_csv, "r") as var_file:
+with open(race_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
     # this is a CSV file
     next(var_reader)
     # skip header line
-    add_new_race = False
     # import everything
     for var_row in var_reader:
+        var_race_id = var_row[0]
+        var_race_name = var_row[1]
+        db.execute("INSERT INTO list_races (race_id, race_name) VALUES(?, ?)", 
+                   var_race_id, var_race_name)
 print("DONE")
 
 # create list of attributes and add values
@@ -142,9 +144,22 @@ print("Creating and populating list_attributes table...", end="")
 db.execute("CREATE TABLE list_attributes(attrib_id INTEGER PRIMARY KEY, attrib_name TEXT, attrib_abbrev TEXT);")
 db.execute("CREATE UNIQUE INDEX name_of_attrib ON list_attributes (attrib_name);")
 db.execute("CREATE UNIQUE INDEX abbrev_of_attrib ON list_attributes (attrib_abbrev);")
-db.execute("INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrev) VALUES \
-    (0, 'Strength', 'STR'), (1, 'Dexterity', 'DEX'), (2, 'Constitution', 'CON'), \
-    (3, 'Intelligence', 'INT'), (4, 'Wisdom', 'WIS'), (5, 'Charisma', 'CHA');")
+#db.execute("INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrev) VALUES \
+#    (0, 'Strength', 'STR'), (1, 'Dexterity', 'DEX'), (2, 'Constitution', 'CON'), \
+#    (3, 'Intelligence', 'INT'), (4, 'Wisdom', 'WIS'), (5, 'Charisma', 'CHA');")
+with open(attribute_list_csv, "r") as var_file:
+    # open file, doing "with open" means I don't have to close it
+    var_reader = csv.reader(var_file)
+    # this is a CSV file
+    next(var_reader)
+    # skip header line
+    # import everything
+    for var_row in var_reader:
+        var_attrib_id = var_row[0]
+        var_attrib_name = var_row[1]
+        var_attrib_abbrev = var_row[2]
+        db.execute("INSERT INTO list_races (race_id, race_name) VALUES(?, ?, ?)", 
+                   var_attrib_id, var_attrib_name, var_attrib_abbrev)
 print("DONE")
 
 # create list of PC classes and add values
