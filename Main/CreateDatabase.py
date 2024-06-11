@@ -244,13 +244,13 @@ db.execute("CREATE TABLE spellbook (\
 print("DONE")
 
 print("Creating pc_feature_list table...", end="")
-db.execute("CREATE TABLE pc_feature_list (\
+db.execute("CREATE TABLE list_pc_features (\
     pc_feature_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
     pc_feature_name TEXT NOT NULL, \
     list_level INTEGER, \
-    pc_feature_description TEXT NOT NULL) \
+    pc_feature_description TEXT NOT NULL \
     );")
-db.execute("CREATE UNIQUE INDEX pc_feature ON pc_feature_list (pc_feature_name);")
+db.execute("CREATE UNIQUE INDEX pc_feature ON list_pc_features (pc_feature_name);")
 print("DONE")
 
 print("importing pc features...", end="")
