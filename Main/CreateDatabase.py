@@ -277,3 +277,24 @@ with open(pc_features_list_csv, "r") as var_file:
             var_pc_feature_id, var_pc_feature_name, var_list_level, 
             var_pc_feature_description_line_1, var_pc_feature_description_line_2, var_pc_feature_description_line_3, var_pc_feature_description_line_4)
 print("DONE")
+
+# the database below is a many-to-many database, linking a character with their features
+# I don't like how I've called PC's "characters" instead of PCs or something, but it's too late to change it now lol
+# character_id: foreign-key references list_characters (character_id)
+# pc_feature_id: foreign-key refereces list_pc_features (pc_feature_id)
+# order: the order that the features are display for the feature
+# list_hierarchy: how it's display - is it Title? Subtitle? Heading 1? Heading 2? etc
+# basically, because certain abilities are like subsets of an overarching ability,
+# this will let me know how to display them
+# 0 is the highest level like "this is a title ability in the character ability",
+# and ascending numbers represent descending priorities
+print("Creating individual_character_features table...", end="")
+db.execute("CREATE TABLE individual_character_features (\
+    character_id INTEGER, \
+    pc_feature_id INTEGER, \
+    individual_character_feature_order INTEGER, \
+    list_hierarchy INTEGER, \
+    FOREIGN KEY(character_id) REFERENCES list_characters(character_id), \
+    FOREIGN KEY(pc_feature_id) REFERENCES list_pc_features(pc_feature_id) \
+    )")
+print("DONE")
