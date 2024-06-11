@@ -23,6 +23,8 @@ class_list_csv = "class_list.csv"
 class_list_csv = os.path.join(csv_folder, class_list_csv)
 background_list_csv = "background_list.csv"
 background_list_csv = os.path.join(csv_folder, background_list_csv)
+pc_features_list_csv = "pc_features_list.csv"
+pc_features_list_csv = os.path.join(csv_folder, pc_features_list_csv)
 
 # if database exists, remove it so we can start from scratch
 print("Checking for existing database...", end="")
@@ -249,3 +251,6 @@ db.execute("CREATE TABLE pc_feature_list (\
     pc_feature_description TEXT NOT NULL) \
     );")
 db.execute("CREATE UNIQUE INDEX pc_feature ON pc_feature_list (pc_feature_name);")
+print("DONE")
+
+print("importing pc features...", end="")
