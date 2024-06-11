@@ -254,3 +254,16 @@ db.execute("CREATE UNIQUE INDEX pc_feature ON pc_feature_list (pc_feature_name);
 print("DONE")
 
 print("importing pc features...", end="")
+with open(pc_features_list_csv, "r") as var_file:
+    # open file, doing "with open" means I don't have to close it
+    var_reader = csv.reader(var_file)
+    next(var_reader)
+    # skip header line, import everything
+    for var_row in var_reader:
+        var_pc_feature_id = var_row[0]
+        var_pc_feature_name = var_row[1]
+        var_list_level = var_row[2]
+        var_pc_feature_description = var_row[3]
+        db.execute("INSERT INTO list_attributes (pc_feature_id, pc_feature_name, list_level, pc_feature_description) VALUES(?, ?, ?, ?)", 
+                   var_pc_feature_id, var_pc_feature_name, var_list_level, var_pc_feature_description)
+print("DONE")
