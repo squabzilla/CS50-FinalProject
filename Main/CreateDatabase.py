@@ -40,29 +40,6 @@ db = SQL(sql_path)
 # other useful SQL command to remember: DELETE FROM table WHERE condition;
 print("DONE")
 
-#####################################
-# create list of backgrounds and add values
-print("Creating and populating list_backgrounds table...", end="")
-db.execute("CREATE TABLE list_backgrounds (background_id INTEGER PRIMARY KEY, background_name TEXT NOT NULL);")
-db.execute("CREATE UNIQUE INDEX background ON list_backgrounds (background_name);")
-#db.execute("INSERT INTO list_backgrounds (background_id, background_name) VALUES \
-#    (0, 'Acolyte'), (1, 'Charlatan'), (2, 'Criminal'), (3, 'Entertainer'), (4, 'Folk Hero'), \
-#    (5, 'Guild Artisan'), (6, 'Hermit'), (7, 'Noble'), (8, 'Outlander'), \
-#    (9, 'Sage'), (10, 'Sailor'), (11, 'Soldier'), (12, 'Street Urchin');")
-with open(background_list_csv, "r") as var_file:
-    # open file, doing "with open" means I don't have to close it
-    var_reader = csv.reader(var_file)
-    next(var_reader)
-    for var_row in var_reader:
-        var_background_id = var_row[0]
-        var_background_name = var_row[1]
-        print("Importing background", end="")
-        print(var_row[1])
-        db.execute("INSERT INTO list_backgrounds (background_id, background_name) VALUES(?, ?)",
-                   var_background_id, var_background_name)
-print("DONE")
-#####################################
-
 # users table
 print("Creating users table...", end="")
 db.execute("CREATE TABLE users (\
@@ -215,8 +192,6 @@ with open(background_list_csv, "r") as var_file:
     for var_row in var_reader:
         var_background_id = var_row[0]
         var_background_name = var_row[1]
-        print("Importing background", end="")
-        print(var_row[1])
         db.execute("INSERT INTO list_backgrounds (background_id, background_name) VALUES(?, ?)",
                    var_background_id, var_background_name)
 print("DONE")
