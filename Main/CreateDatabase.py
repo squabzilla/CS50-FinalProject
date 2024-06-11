@@ -243,7 +243,7 @@ db.execute("CREATE TABLE spellbook (\
     );")
 print("DONE")
 
-print("Creating pc_feature_list table...", end="")
+print("Creating list_pc_features table...", end="")
 db.execute("CREATE TABLE list_pc_features (\
     pc_feature_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
     pc_feature_name TEXT NOT NULL, \
@@ -264,6 +264,6 @@ with open(pc_features_list_csv, "r") as var_file:
         var_pc_feature_name = var_row[1]
         var_list_level = var_row[2]
         var_pc_feature_description = var_row[3]
-        db.execute("INSERT INTO list_attributes (pc_feature_id, pc_feature_name, list_level, pc_feature_description) VALUES(?, ?, ?, ?)", 
+        db.execute("INSERT INTO list_pc_features (pc_feature_id, pc_feature_name, list_level, pc_feature_description) VALUES(?, ?, ?, ?)", 
                    var_pc_feature_id, var_pc_feature_name, var_list_level, var_pc_feature_description)
 print("DONE")
