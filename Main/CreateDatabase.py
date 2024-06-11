@@ -57,7 +57,8 @@ wizard_spell INTEGER);")
 db.execute("CREATE UNIQUE INDEX spell_names ON list_spells (spell_name);")
 
 # import spells
-with open("spell_list.csv", "r") as var_file:
+#with open("spell_list.csv", "r") as var_file:
+with open(spell_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
     # this is a CSV file

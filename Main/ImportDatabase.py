@@ -3,6 +3,8 @@ import csv
 from cs50 import SQL
 #import cs50
 
+# sqlite3 RPG_characters.db
+
 # Configure CS50 Library to use SQLite database
 # this code is messy and has a bunch of comments from stuff I referenced
 # because it's only ever intended to be run once
