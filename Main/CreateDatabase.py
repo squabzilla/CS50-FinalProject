@@ -44,7 +44,8 @@ print("DONE")
 print("Creating users table...", end="")
 db.execute("CREATE TABLE users (\
     user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
-        username TEXT NOT NULL, hash TEXT NOT NULL);")
+    username TEXT NOT NULL, hash TEXT NOT NULL\
+    );")
 db.execute("CREATE UNIQUE INDEX usernames ON users (username);")
 print("DONE")
 
@@ -120,7 +121,10 @@ print("DONE")
 
 # create list of races and add values
 print("Creating and populating list_races table...", end="")
-db.execute("CREATE TABLE list_races (race_id INTEGER PRIMARY KEY, race_name TEXT NOT NULL);")
+db.execute("CREATE TABLE list_races (\
+    race_id INTEGER PRIMARY KEY, \
+    race_name TEXT NOT NULL\
+    );")
 db.execute("CREATE UNIQUE INDEX race ON list_races (race_name);")
 #db.execute("INSERT INTO list_races (race_id, race_name) VALUES \
 #    (0, 'Dwarf'), (1, 'Elf'), (2, 'Orc'), (3, 'Halfling'), (4, 'Human'), (5, 'Dragonborn'), \
@@ -139,7 +143,10 @@ print("DONE")
 
 # create list of attributes and add values
 print("Creating and populating list_attributes table...", end="")
-db.execute("CREATE TABLE list_attributes(attrib_id INTEGER PRIMARY KEY, attrib_name TEXT, attrib_abbrev TEXT);")
+db.execute("CREATE TABLE list_attributes(\
+    attrib_id INTEGER PRIMARY KEY, \
+    attrib_name TEXT, attrib_abbrev TEXT\
+    );")
 db.execute("CREATE UNIQUE INDEX name_of_attrib ON list_attributes (attrib_name);")
 db.execute("CREATE UNIQUE INDEX abbrev_of_attrib ON list_attributes (attrib_abbrev);")
 #db.execute("INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrev) VALUES \
@@ -160,7 +167,11 @@ print("DONE")
 
 # create list of PC classes and add values
 print("Creating and populating list_pc_classes table...", end="")
-db.execute("CREATE TABLE list_pc_classes (pc_class_id INTEGER PRIMARY KEY, pc_class_name TEXT NOT NULL, pc_class_hitdie INTEGER);")
+db.execute("CREATE TABLE list_pc_classes (\
+    pc_class_id INTEGER PRIMARY KEY, \
+    pc_class_name TEXT NOT NULL, \
+    pc_class_hitdie INTEGER)\
+    ;")
 db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_name);")
 #db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name) VALUES \
 #    (0, 'Barbarian'), (1, 'Bard'), (2, 'Cleric'), (3, 'Druid'), (4, 'Fighter'), (5, 'Monk'), \
@@ -180,7 +191,10 @@ print("DONE")
 
 # create list of backgrounds and add values
 print("Creating and populating list_backgrounds table...", end="")
-db.execute("CREATE TABLE list_backgrounds (background_id INTEGER PRIMARY KEY, background_name TEXT NOT NULL);")
+db.execute("CREATE TABLE list_backgrounds (\
+    background_id INTEGER PRIMARY KEY, \
+    background_name TEXT NOT NULL\
+    );")
 db.execute("CREATE UNIQUE INDEX background ON list_backgrounds (background_name);")
 #db.execute("INSERT INTO list_backgrounds (background_id, background_name) VALUES \
 #    (0, 'Acolyte'), (1, 'Charlatan'), (2, 'Criminal'), (3, 'Entertainer'), (4, 'Folk Hero'), \
@@ -201,8 +215,11 @@ print("DONE")
 print("Creating list_characters table and linking all foreign keys...", end="")
 db.execute("CREATE TABLE list_characters (\
     character_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
-    character_user_id INTEGER, character_name TEXT NOT NULL, \
-    character_race_id INTEGER, character_class_id INTEGER, character_background_id INTEGER, \
+    character_user_id INTEGER, \
+    character_name TEXT NOT NULL, \
+    character_race_id INTEGER, \
+    character_class_id INTEGER, \
+    character_background_id INTEGER, \
     character_level INTEGER DEFAULT 1, \
     FOREIGN KEY(character_user_id) REFERENCES users(user_id), \
     FOREIGN KEY(character_race_id) REFERENCES list_races(race_id), \
@@ -214,9 +231,21 @@ print("DONE")
 # create spellbook, which links characters with their spells known
 print("Creating spellbook table and linking all foreign keys...", end="")
 db.execute("CREATE TABLE spellbook (\
-spellbook_caster_id INTEGER, spellbook_spell_id INTEGER, spell_prepared INTEGER, spellcasting_attribute INT, \
-FOREIGN KEY(spellbook_caster_id) REFERENCES list_characters(character_id), \
-FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
-FOREIGN KEY(spellcasting_attribute) REFERENCES list_attributes(attrib_id) \
-);")
+    spellbook_caster_id INTEGER, \
+    spellbook_spell_id INTEGER, \
+    spell_prepared INTEGER, \
+    spellcasting_attribute INT, \
+    FOREIGN KEY(spellbook_caster_id) REFERENCES list_characters(character_id), \
+    FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
+    FOREIGN KEY(spellcasting_attribute) REFERENCES list_attributes(attrib_id) \
+    );")
 print("DONE")
+
+print("Creating pc_feature_list table...", end="")
+db.execute("CREATE TABLE pc_feature_list (\
+    pc_feature_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
+    pc_feature_name TEXT NOT NULL, \
+    list_level INTEGER, \
+    pc_feature_description TEXT NOT NULL) \
+    );")
+db.execute("CREATE UNIQUE INDEX pc_feature ON pc_feature_list (pc_feature_name);")
