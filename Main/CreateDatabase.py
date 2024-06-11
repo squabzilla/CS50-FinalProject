@@ -50,6 +50,9 @@ db.execute("CREATE UNIQUE INDEX background ON list_backgrounds (background_name)
 #    (5, 'Guild Artisan'), (6, 'Hermit'), (7, 'Noble'), (8, 'Outlander'), \
 #    (9, 'Sage'), (10, 'Sailor'), (11, 'Soldier'), (12, 'Street Urchin');")
 with open(background_list_csv, "r") as var_file:
+    # open file, doing "with open" means I don't have to close it
+    var_reader = csv.reader(var_file)
+    next(var_reader)
     for var_row in var_reader:
         var_background_id = var_row[0]
         var_background_name = var_row[1]
@@ -206,6 +209,9 @@ db.execute("CREATE UNIQUE INDEX background ON list_backgrounds (background_name)
 #    (5, 'Guild Artisan'), (6, 'Hermit'), (7, 'Noble'), (8, 'Outlander'), \
 #    (9, 'Sage'), (10, 'Sailor'), (11, 'Soldier'), (12, 'Street Urchin');")
 with open(background_list_csv, "r") as var_file:
+    # open file, doing "with open" means I don't have to close it
+    var_reader = csv.reader(var_file)
+    next(var_reader)
     for var_row in var_reader:
         var_background_id = var_row[0]
         var_background_name = var_row[1]
