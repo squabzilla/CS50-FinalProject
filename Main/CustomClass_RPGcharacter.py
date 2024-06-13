@@ -85,9 +85,10 @@ def class_spells_by_spell_level(class_column, spell_level):
     list_spell_ids = []
     for item in list_spells:
         #spell_id = list_spells[item].get("spell_id")
-        spell = list_spells[item]
-        print(spell)
-        #list_spell_ids.append(spell_id)
+        spell_id = item.get("spell_id")
+        #spell = list_spells[item]
+        #print(spell)
+        list_spell_ids.append(spell_id)
     return list_spell_ids
 
 def spells_class_column(class_id):
