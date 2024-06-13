@@ -19,6 +19,7 @@ class rpg_char_global_counts:
     def get_db(self, var_db):
         self.sql_db = var_db
     def get_maxes(self):
+        self.race_count = db.execute("SELECT COUNT(*) FROM list_races;")[0].get("COUNT(*)")
         self.class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
         self.background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
         self.spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
@@ -29,6 +30,7 @@ class rpg_char_global_counts:
         self.spells_count = int(self.spells_count)
         self.features_count = int(self.features_count)
     def print_maxes(self):
+        print("Race count is:", self.race_count)
         print("Class count is:", self.class_count)
         print("Background count is:", self.background_count)
         print("Spells count is:", self.spells_count)
@@ -69,6 +71,7 @@ class rpg_character:
     def validate_entries(self, var_global_maxes):
         if self.race_id >= var_global_maxes.class_count: return "Error: class_id out of bounds."
         if self.class_id >= var_global_maxes.class_count: return "Error: class_id out of bounds."
+        #if
 
 def validate_rpgCharacter_entry(entry_value, maximum_value):
     try: entry_value = int(entry_value)
