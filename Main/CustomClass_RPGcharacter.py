@@ -43,27 +43,37 @@ class known_spell:
         self.attrib_id = attrib_id          # spellcasting_attrib_id INT,   FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes(attrib_id)
         
 class rpg_character:
-    def __init__(self, sql_db = None, name = None, race_id = None, class_id = None, background_id = None,):
+    def __init__(self, sql_db = None, user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1, spells_known = [], features = []):
         self.sql_db = sql_db
+        self.user_id = user_id
         # self.character_id - no, this is auto-incremented when entry is added
         # self.user_id - no, each logged-in user has their own unique user_id which we can retrieve 
         self.name = name                    # character_name,           TEXT NOT NULL
         self.race_id = race_id              # character_race_id,        INTEGER and FOREIGN KEY(character_race_id) REFERENCES list_races(race_id)
         self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_pc_classes(pc_class_id)
         self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
-        self.spells_known = []  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
+        self.char_level = char_level        # character_level           INTEGER DEFAULT 1 - class sets default values to 1
+        self.spells_known = spells_known  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
+        # NOTE: I also need the class one is learning the spell from to insert it to spellbook table, which will just be class_id
+        # this will become more complicated when multiclassing is added, but that's a later problem
+        # I mean, honestly, aside from knowing what list_value to start from when adding features, this class can handle everything needed for a multi-class level-up
         #self.features = {}      # dictionary where we will store { pc_feature_id:list_order } pairs
-        self.features = [] # realistically, if they're just stored in the correct order here, I can grab the list_order value from the count while looping through it
+        self.features = features # realistically, if they're just stored in the correct order here, I can grab the list_order value from the count while looping through it
         # features reference:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
         # self.feature.pc_feature_id:   stored in above dictionary  ref: INTEGER
         # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(pc_feature_id) REFERENCES list_pc_features(pc_feature_id)
     def get_db(self, var_db):
         self.sql_db = var_db
+    def get_user_id(self, var_user_id):
+        self.user_id = var_user_id
     def verify_data_types(self):
         try: str(self.name)
         except:
             print("Error: cannot turn self.name value into string")
+            return False
+        if len(self.name) <= 0:
+            print("Error: self.name value cannot be empty")
             return False
         try: int(self.race_id)
         except:
@@ -109,6 +119,11 @@ class rpg_character:
                 print("Error: one or more feature_id is out of bounds.")
                 return False
         return True
+    def add_to_database(self):
+        db.execute("INSERT INTO list_characters (\
+            character_user_id, character_name, character_race_id, character_class_id, character_level\
+            ) VALUES(?, ?, ?, ?, ?)",
+            self.user_id, self.name, self.race_id, self.class_id, self.char_level)
 
 def validate_rpgCharacter_entry(entry_value, maximum_value):
     try: entry_value = int(entry_value)

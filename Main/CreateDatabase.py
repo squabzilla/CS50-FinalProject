@@ -172,7 +172,8 @@ print("DONE")
 print("Creating and populating list_attributes table...", end="")
 db.execute("CREATE TABLE list_attributes(\
     attrib_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
-    attrib_name TEXT, attrib_abbrev TEXT\
+    attrib_name TEXT,\
+    attrib_abbrev TEXT\
     );")
 db.execute("CREATE UNIQUE INDEX name_of_attrib ON list_attributes (attrib_name);")
 db.execute("CREATE UNIQUE INDEX abbrev_of_attrib ON list_attributes (attrib_abbrev);")
@@ -193,12 +194,14 @@ with open(attribute_list_csv, "r") as var_file:
 print("DONE")
 
 # create list of PC classes and add values
-print("Creating and populating list_pc_classes table...", end="")
+print("Creating list_pc_classes table, linking all foreign keys, populating table...", end="")
 db.execute("CREATE TABLE list_pc_classes (\
     pc_class_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
     pc_class_name TEXT NOT NULL, \
-    pc_class_hitdie INTEGER)\
-    ;")
+    pc_class_hitdie INTEGER,\
+    casting_attrib_id INTEGER,\
+    FOREIGN KEY(casting_attrib_id) REFERENCES list_attributes(attrib_id) \
+    );")
 db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_name);")
 #db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name) VALUES \
 #    (0, 'Barbarian'), (1, 'Bard'), (2, 'Cleric'), (3, 'Druid'), (4, 'Fighter'), (5, 'Monk'), \
@@ -261,10 +264,10 @@ db.execute("CREATE TABLE spellbook (\
     spellbook_caster_id INTEGER, \
     spellbook_spell_id INTEGER, \
     spell_prepared INTEGER, \
-    spellcasting_attrib_id INT, \
+    spellcasting_class_id INT, \
     FOREIGN KEY(spellbook_caster_id) REFERENCES list_characters(character_id), \
     FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
-    FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes(attrib_id) \
+    FOREIGN KEY(spellcasting_class_id) REFERENCES list_pc_classes(casting_attrib_id) \
     );")
 print("DONE")
 
