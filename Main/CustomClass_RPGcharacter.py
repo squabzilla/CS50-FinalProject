@@ -14,8 +14,8 @@ class rpg_character:
         self.name = name                    # character_name,           TEXT NOT NULL
         self.race_id = race_id              # character_race_id,        INTEGER and FOREIGN KEY(character_race_id) REFERENCES list_races(race_id)
         self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_pc_classes(pc_class_id)
-        self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_pc_classes(pc_class_id)
-        self.spells_known = []  # list where we will store items of the known_spell class
+        self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
+        self.spells_known = []  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
         self.features = {}      # dictionary where we will store { pc_feature_id:list_order } pairs
         # features reference:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
@@ -40,6 +40,8 @@ def valid_race_id(db):
     values_dict.update(race_query[0])
     race_count = db.execute("SELECT COUNT(*) FROM list_races;")[0].get("COUNT(*)")
     class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
+    background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
+    spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
     # okay so db.execute returns a list of dicts, so I grab the first element of that dict, and grab the value-pair of that dict
     # gods that is cursed, but it works lmao
     print("Race count is: ", race_count)
