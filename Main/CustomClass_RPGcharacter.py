@@ -92,8 +92,8 @@ class rpg_character:
                 print("Error: one or more spell_ids is out of bounds.")
                 return False
         for i in range(len(self.features)):
-            if self.spells_known[i] >= var_global_maxes.features_count:
-                print("Error: one or more spell_ids is out of bounds.")
+            if self.features[i] >= var_global_maxes.features_count:
+                print("Error: one or more feature_ids is out of bounds.")
                 return False
         return True
 
@@ -160,6 +160,8 @@ def main():
     maxes.get_maxes()
     maxes.numberify()
     maxes.print_maxes()
+    Barzard = rpg_character()
+    Barzard.get_db(db)
     #test_dict={}
     #level_5_fighter_dict = {0:0, 2:1, 7:2, 9:3}
 # cars = {'Toyota':['Camry','Turcel','Tundra','Tacoma'],'Ford':['Mustang','Capri','OrRepairDaily'],'Chev':['Malibu','Corvette']}
