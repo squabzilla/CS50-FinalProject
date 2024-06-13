@@ -69,6 +69,8 @@ class rpg_character:
                 int(self.spells_known[i])
         except: return "Error: one or more spells_known is not an integer"
         return True
+        # we aren't verifying the features because the features shouldn't be directly added by the user
+        # but also because verifying the features is hard lol
     def validate_entries(self, var_global_maxes):
         if self.race_id >= var_global_maxes.class_count:
             print("Error: class_id out of bounds.")
@@ -148,5 +150,32 @@ def main():
     maxes.get_maxes()
     maxes.numberify()
     maxes.print_maxes()
+    #test_dict={}
+    cars = {'Toyota':['Camry','Turcel','Tundra','Tacoma'],'Ford':['Mustang','Capri','OrRepairDaily'],'Chev':['Malibu','Corvette']}
+    vals = list( cars.values() )
+    keyz = list( cars.keys() )
+    cnt = 0
+    for val in vals:
+        print('[_' + keyz[cnt] + '_]')
+        if len(val)>1:
+            for part in val:
+                print(part)
+        else:
+            print( val[0] )
+        cnt += 1
 
 main()
+
+
+# cars = {'Toyota':['Camry','Turcel','Tundra','Tacoma'],'Ford':['Mustang','Capri','OrRepairDaily'],'Chev':['Malibu','Corvette']}
+    # vals = list( cars.values() )
+    # keyz = list( cars.keys() )
+    # cnt = 0
+    # for val in vals:
+        # print('[_' + keyz[cnt] + '_]')
+        # if len(val)>1:
+            # for part in val:
+                # print(part)
+        # else:
+            # print( val[0] )
+        # cnt += 1
