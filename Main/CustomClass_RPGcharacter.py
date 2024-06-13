@@ -73,17 +73,22 @@ def highest_spell_slot(var_class_id, var_char_level):
 ######### Prepared casters:
 #   druid, cleric, paladin
 
-def druid_spells_by_spell_level(level):
-    level = level * 2
+def druid_spells_by_spell_level(spell_level):
+    var_true_val = 1
+    spell_list = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = var1 AND spell_level = var2 VALUES(?, ?)",
+                            spell_level, var_true_val)
+    return spell_list
 
 class rpg_char_global_counts:
-    def __init__(self, race_count = None, class_count = None, background_count = None, spells_count = None, features_count = None, sql_db = None):
+    def __init__(self, sql_db = None,
+                 race_count = None, class_count = None, background_count = None,
+                 spells_count = None, features_count = None):
+        self.sql_db = sql_db
         self.race_count = race_count
         self.class_count = class_count
         self.background_count = background_count
         self.spells_count = spells_count
         self.features_count = features_count
-        self.sql_db = sql_db
     def get_db(self, var_db):
         self.sql_db = var_db
     def get_maxes(self):
