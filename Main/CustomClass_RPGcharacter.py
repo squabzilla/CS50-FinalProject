@@ -95,8 +95,6 @@ def class_spells_by_spell_level(class_id, spell_level):
     if class_id == 10: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE sorcerer_spell = 1 AND spell_level = ?", spell_level)
     if class_id == 11: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE warlock_spell = 1 AND spell_level = ?", spell_level)
     if class_id == 12: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE wizard_spell = 1 AND spell_level = ?", spell_level)
-    
-    #print("list_spells: ", list_spells)
     list_spell_ids = []
     for item in list_spells:
         #spell_id = list_spells[item].get("spell_id")
@@ -105,6 +103,14 @@ def class_spells_by_spell_level(class_id, spell_level):
         #print(spell)
         list_spell_ids.append(spell_id)
     return list_spell_ids
+# CS50 sql documentation:
+# source: https://cs50.readthedocs.io/libraries/cs50/python/
+# How come I can’t use parameter markers as placeholders for tables’ or columns’ names?
+# Parameter markers (e.g., ?) can only be used as placeholders for “literals” like integers and strings,
+# not for “identifiers” like tables’ and columns’ names.
+# If a user’s input will determine the table or column on which you execute a statement,
+# you can use a format string (f-string) instead,
+# but you must validate the user’s input first, to ensure the table or column exists, lest you risk a SQL-injection attack
 
 #bard_spell, cleric_spell, druid_spell, paladin_spell,\
 #            ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
