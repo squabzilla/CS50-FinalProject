@@ -80,6 +80,7 @@ def class_spells_by_spell_level(class_column, spell_level):
     class_column = str(class_column)
     print("class_column: ", class_column)
     print("spell_level: ", spell_level)
+    class_column = "druid_spell"
     list_spells = db.execute("SELECT spell_id FROM list_spells WHERE ? = 1 AND spell_level = ?", class_column, spell_level)
     print("list_spells_v1: ", list_spells)
     list_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = 1")
