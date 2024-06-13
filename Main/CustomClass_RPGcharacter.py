@@ -121,8 +121,27 @@ def class_spells_by_spell_level(class_id, spell_level):
 # you can use a format string (f-string) instead,
 # but you must validate the user’s input first, to ensure the table or column exists, lest you risk a SQL-injection attack
 
-#bard_spell, cleric_spell, druid_spell, paladin_spell,\
-#            ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
+# bard_spell, cleric_spell, druid_spell, paladin_spell,\
+# ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
+
+class new_bard_spells(self):
+    # bard cantrips known: 2
+    # bard spells known: 4
+    def __init__(self, cantrips_known = [], spells_known = [], list_bard_cantrips = [], list_bard_spells = [],
+                 cantrip_1 = None, cantrip_2 = None, spell_1 = None, spell_2 = None, spell_3 = None, spell_4 = None):
+        self.cantrips_known = cantrips_known
+        self.spells_known = spells_known
+        self.list_bard_cantrips = list_bard_cantrips
+        self.list_bard_spells = list_bard_spells
+        self.cantrip_1 = cantrip_1
+        self.cantrip_2 = cantrip_2
+        self.spell_1 = spell_1
+        self.spell_2 = spell_2
+        self.spell_3 = spell_3
+        self.spell_4 = spell_4
+    def retrieve_bard_spell_list(self):
+        self.list_bard_cantrips = class_spells_by_spell_level(2,0)
+        list_bard_spells = class_spells_by_spell_level(2,1)
 
 class rpg_char_global_counts:
     def __init__(self, sql_db = None,
@@ -171,6 +190,7 @@ class rpg_char_create:
         self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_pc_classes(pc_class_id)
         self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
         self.char_level = char_level        # character_level           INTEGER DEFAULT 1 - class sets default values to 1
+        self.var_spells = var_spells
         self.list_spells = list_spells  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
         # NOTE: I also need the class one is learning the spell from to insert it to spellbook table, which will just be class_id
         # this will become more complicated when multiclassing is added, but that's a later problem
