@@ -72,19 +72,29 @@ def highest_spell_slot(var_class_id, var_char_level):
 
 ######### Prepared casters:
 #   druid, cleric, paladin
-def class_spells_by_spell_level(class_column, spell_level):
+def class_spells_by_spell_level(class_id, spell_level):
     try: spell_level = int(spell_level)
     except:
         print("Invalid spell-level")
         return False
-    class_column = str(class_column)
-    print("class_column: ", class_column)
-    print("spell_level: ", spell_level)
-    class_column = "druid_spell"
-    list_spells = db.execute("SELECT spell_id FROM list_spells WHERE ? = 1 AND spell_level = ?", class_column, spell_level)
-    print("list_spells_v1: ", list_spells)
-    list_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = 1")
-    print("list_spells_v2: ", list_spells)
+    # class_column = str(class_column)
+    # print("class_column: ", class_column)
+    # print("spell_level: ", spell_level)
+    # class_column = "druid_spell"
+    # list_spells = db.execute("SELECT spell_id FROM list_spells WHERE ? = 1 AND spell_level = ?", class_column, spell_level)
+    # print("list_spells_v1: ", list_spells)
+    # list_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = 1")
+    # print("list_spells_v2: ", list_spells)
+    list_spells = []
+    #if class_id not in [2,3,4,7,8,10,11,12]: return False
+    if class_id == 2: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE bard_spell = 1 AND spell_level = ?", spell_level)
+    if class_id == 3: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE cleric_spell = 1 AND spell_level = ?", spell_level)
+    if class_id == 4: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = ?", spell_level)
+    if class_id == 7: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE ranger_spell = 1 AND spell_level = ?", spell_level)
+    if class_id == 8: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = ?", spell_level)
+    if class_id == 10: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE sorcerer_spell = 1 AND spell_level = ?", spell_level)
+    if class_id == 11: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE warlock_spell = 1 AND spell_level = ?", spell_level)
+    if class_id == 12: list_spells = db.execute("SELECT spell_id FROM list_spells WHERE wizard_spell = 1 AND spell_level = ?", spell_level)
     
     #print("list_spells: ", list_spells)
     list_spell_ids = []
@@ -96,25 +106,13 @@ def class_spells_by_spell_level(class_column, spell_level):
         list_spell_ids.append(spell_id)
     return list_spell_ids
 
-def spells_class_column(class_id):
-    class_column = False
-    if class_id == 2: class_column = "bard_spell"
-    if class_id == 3: class_column = "cleric_spell"
-    if class_id == 4: class_column = "druid_spell"
-    if class_id == 7: class_column = "paladin_spell"
-    if class_id == 8: class_column = "ranger_spell"
-    if class_id == 10: class_column = "sorcerer_spell"
-    if class_id == 11: class_column = "warlock_spell"
-    if class_id == 12: class_column = "wizard_spell"
-    return class_column
-
 #bard_spell, cleric_spell, druid_spell, paladin_spell,\
 #            ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
 
 def druid_spells_by_spell_level(spell_level):
     druid_class_id = 4
-    class_column = spells_class_column(druid_class_id)
-    druid_spells = class_spells_by_spell_level(class_column, spell_level)
+    #class_column = spells_class_column(druid_class_id)
+    druid_spells = class_spells_by_spell_level(druid_class_id, spell_level)
     return druid_spells
 
 class rpg_char_global_counts:
