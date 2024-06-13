@@ -133,5 +133,8 @@ def main():
     #print("Hello, world")
     maxes = rpg_char_global_counts()
     maxes.get_db(db)
+    maxes.get_maxes()
+    maxes.numberify()
+    maxes.print_maxes()
 
 main()
