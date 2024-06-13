@@ -161,7 +161,7 @@ class known_spell:
         self.attrib_id = attrib_id          # spellcasting_attrib_id INT,   FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes(attrib_id)
         
 class rpg_char_create:
-    def __init__(self, sql_db = None, user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1, spells_known = [], features = []):
+    def __init__(self, sql_db = None, user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1, var_spells = None, list_spells = [], features = []):
         self.sql_db = sql_db
         self.user_id = user_id
         # self.character_id - no, this is auto-incremented when entry is added
@@ -171,7 +171,7 @@ class rpg_char_create:
         self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_pc_classes(pc_class_id)
         self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
         self.char_level = char_level        # character_level           INTEGER DEFAULT 1 - class sets default values to 1
-        self.spells_known = spells_known  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
+        self.list_spells = list_spells  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
         # NOTE: I also need the class one is learning the spell from to insert it to spellbook table, which will just be class_id
         # this will become more complicated when multiclassing is added, but that's a later problem
         # I mean, honestly, aside from knowing what list_value to start from when adding features, this class can handle everything needed for a multi-class level-up
@@ -207,8 +207,8 @@ class rpg_char_create:
             print("Error: self.background_id not an integer")
             return False
         try:
-            for i in range(len(self.spells_known)):
-                int(self.spells_known[i])
+            for i in range(len(self.list_spells)):
+                int(self.list_spells[i])
         except:
             print("Error: one or more spell_id is not an integer")
             return False
@@ -229,8 +229,8 @@ class rpg_char_create:
         if self.background_id >= var_global_maxes.class_count:
             print("Error: background_id out of bounds.")
             return False
-        for i in range(len(self.spells_known)):
-            if self.spells_known[i] >= var_global_maxes.spells_count:
+        for i in range(len(self.list_spells)):
+            if self.list_spells[i] >= var_global_maxes.spells_count:
                 print("Error: one or more spell_id is out of bounds.")
                 return False
         for i in range(len(self.features)):
@@ -247,29 +247,31 @@ class rpg_char_create:
             except:
                 print("Error: ", spell_id, "is an invalid spell-id")
                 return False
-            #if spell_id not in self.spells_known: self.spells_known.append(spell_id)
-            if spell_id not in self.spells_known:
+            #if spell_id not in self.list_spells: self.list_spells.append(spell_id)
+            if spell_id not in self.list_spells:
                 continue
             else:
-                self.spells_known.append(spell_id)
+                self.list_spells.append(spell_id)
     def add_spells_byList(self, spell_id_list):
         for spell_id in spell_id_list:
             try: spell_id = int(spell_id)
             except:
                 print("Error: ", spell_id, "is an invalid spell-id")
                 return False
-            #if spell_id not in self.spells_known: self.spells_known.append(spell_id)
-            if spell_id in self.spells_known:
+            #if spell_id not in self.list_spells: self.list_spells.append(spell_id)
+            if spell_id in self.list_spells:
                 continue
             else:
-                self.spells_known.append(spell_id)
+                self.list_spells.append(spell_id)
+    def reset_spells(self):
+        self.list_spells = []
     def add_to_database(self):
         db.execute("INSERT INTO list_characters (\
             character_user_id, character_name, character_race_id, character_class_id, character_level\
             ) VALUES(?, ?, ?, ?, ?)",
             self.user_id, self.name, self.race_id, self.class_id, self.char_level)
         # spells_prepared_casters = [int(1),]
-        # for spell in self.spells_known:
+        # for spell in self.list_spells:
             # db.execute("INSERT INTO spellbook (\
                 # )")
 
