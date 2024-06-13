@@ -156,8 +156,25 @@ def highest_spell_slot(var_class_id, var_char_level):
     full_caster_IDs = [bard_id, cleric_id, druid_id, sorcerer_id, warlock_id, wizard_id]
     half_caster_IDs = [paladin_id, ranger_id]
     third_caster_IDs = []
-    caster_multiplier = 0
-    if var_class_id in full_caster_IDs: caster_multiplier
+    caster_level_multiplied = 0
+    max_spell = 0
+    if var_class_id in full_caster_IDs: caster_level_multiplied = var_char_level * 3
+    if var_class_id in half_caster_IDs: caster_level_multiplied = var_char_level * 2
+    if var_class_id in third_caster_IDs: caster_level_multiplied = var_char_level * 1
+    # so instead of adding 1X your full-caster level, (1/2)X your half-caster level, and (1/3)X your third-caster level
+    # we just multiply everything by 3 - including the level threshholds for new spells
+    count = 0
+    while count <= caster_level_multiplied:
+        if count == ( 1 * 3): max_spell += 1    # note: 1 * 3 represents level 1, multiplied by 3
+        if count == ( 3 * 3): max_spell += 1
+        if count == ( 5 * 3): max_spell += 1
+        if count == ( 7 * 3): max_spell += 1
+        if count == ( 9 * 3): max_spell += 1
+        if count == (11 * 3): max_spell += 1
+        if count == (13 * 3): max_spell += 1
+        if count == (15 * 3): max_spell += 1
+        if count == (17 * 3): max_spell += 1
+        count += 1
     return True
 # TODO:
 # support for 1/3 casting-only-with-subclass can come with the level-up table
