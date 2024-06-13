@@ -75,9 +75,9 @@ def highest_spell_slot(var_class_id, var_char_level):
 
 def druid_spells_by_spell_level(spell_level):
     var_true_val = 1
-    spell_list = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = var1 AND spell_level = var2 VALUES(?, ?)",
+    druid_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = var1 AND spell_level = var2 VALUES(?, ?)",
                             spell_level, var_true_val)
-    return spell_list
+    return druid_spells
 
 class rpg_char_global_counts:
     def __init__(self, sql_db = None,
@@ -240,6 +240,7 @@ def main():
     a = 1
     b = 2
     highest_spell_slot(a, b)
+    druid_spell_list = druid_spells_by_spell_level(1)
 
 main()
 
