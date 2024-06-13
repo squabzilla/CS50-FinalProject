@@ -241,15 +241,17 @@ class rpg_char_create:
     #def add_spells_prepared_caster(self):
     ######### Prepared casters:
     #   druid, cleric, paladin
-    def add_spells(self, *spell_id_list):
-        for spell_id in spell_id_list:
-            try: spell_id = int(spell_id)
-            except:
-                print("Error: ", spell_id, "is an invalid spell-id")
-                return False
-            #if spell_id not in self.spells_known: self.spells_known.append(spell_id)
-            if spell_id in self.spells_known:
-                print("Error: spell-id: ", spell_id, "spell already known")
+    def add_spells(self, *spell_id):
+        try: spell_id = int(spell_id)
+        except:
+            print("Error: ", spell_id, "is an invalid spell-id")
+            return False
+        #if spell_id not in self.spells_known: self.spells_known.append(spell_id)
+        if spell_id in self.spells_known:
+            print("Error: spell-id: ", spell_id, "spell already known")
+        else:
+            self.spells_known.append(spell_id)
+    
     def add_to_database(self):
         db.execute("INSERT INTO list_characters (\
             character_user_id, character_name, character_race_id, character_class_id, character_level\
