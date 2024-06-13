@@ -70,10 +70,20 @@ class rpg_character:
         except: return "Error: one or more spells_known is not an integer"
         return True
     def validate_entries(self, var_global_maxes):
-        if self.race_id >= var_global_maxes.class_count: return "Error: class_id out of bounds."
-        if self.class_id >= var_global_maxes.class_count: return "Error: class_id out of bounds."
-        if self.background_id >= var_global_maxes.class_count: return "Error: background_id out of bounds."
-        #if
+        if self.race_id >= var_global_maxes.class_count:
+            print("Error: class_id out of bounds.")
+            return False
+        if self.class_id >= var_global_maxes.class_count:
+            print("Error: class_id out of bounds.")
+            return False
+        if self.background_id >= var_global_maxes.class_count:
+            print("Error: background_id out of bounds.")
+            return False
+        for i in range(len(self.spells_known)):
+            if self.spells_known[i] >= var_global_maxes.spells_count:
+                print("Error: one or more spell_ids is out of bounds.")
+                return False
+        return True
 
 def validate_rpgCharacter_entry(entry_value, maximum_value):
     try: entry_value = int(entry_value)
