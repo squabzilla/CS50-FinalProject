@@ -42,7 +42,7 @@ class known_spell:
         self.prepared = prepared            # spell_prepared INTEGER,
         self.attrib_id = attrib_id          # spellcasting_attrib_id INT,   FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes(attrib_id)
         
-class rpg_character:
+class rpg_char_create:
     def __init__(self, sql_db = None, user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1, spells_known = [], features = []):
         self.sql_db = sql_db
         self.user_id = user_id
@@ -57,6 +57,7 @@ class rpg_character:
         # NOTE: I also need the class one is learning the spell from to insert it to spellbook table, which will just be class_id
         # this will become more complicated when multiclassing is added, but that's a later problem
         # I mean, honestly, aside from knowing what list_value to start from when adding features, this class can handle everything needed for a multi-class level-up
+        # actually, handling level-up is better served by a new structure, since we're just adding class features and spells
         #self.features = {}      # dictionary where we will store { pc_feature_id:list_order } pairs
         self.features = features # realistically, if they're just stored in the correct order here, I can grab the list_order value from the count while looping through it
         # features reference:
