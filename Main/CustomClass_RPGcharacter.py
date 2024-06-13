@@ -193,12 +193,12 @@ def main():
     #print("cheer:", race_list)
     #print("Hello, world")
     #maxes = rpg_char_global_counts(0,0,0,0,0)
-    maxes = rpg_char_create()
+    maxes = rpg_char_global_counts()
     maxes.get_db(db)
     maxes.get_maxes()
     maxes.numberify()
     maxes.print_maxes()
-    Barzard = rpg_character()
+    Barzard = rpg_char_create()
     Barzard.get_db(db)
     Barzard.name = "Barzard"
 
