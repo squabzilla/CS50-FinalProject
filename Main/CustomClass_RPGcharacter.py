@@ -43,7 +43,8 @@ class known_spell:
         self.attrib_id = attrib_id          # spellcasting_attrib_id INT,   FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes(attrib_id)
         
 class rpg_character:
-    def __init__(self, name = None, race_id = None, class_id = None, background_id = None):
+    def __init__(self, sql_db = None, name = None, race_id = None, class_id = None, background_id = None,):
+        self.sql_db = sql_db
         # self.character_id - no, this is auto-incremented when entry is added
         # self.user_id - no, each logged-in user has their own unique user_id which we can retrieve 
         self.name = name                    # character_name,           TEXT NOT NULL
@@ -57,6 +58,8 @@ class rpg_character:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
         # self.feature.pc_feature_id:   stored in above dictionary  ref: INTEGER
         # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(pc_feature_id) REFERENCES list_pc_features(pc_feature_id)
+    def get_db(self, var_db):
+        self.sql_db = var_db
     def numberify(self):
         try: int(self.race_id)
         except: return "Error: race_id not an integer"
@@ -86,6 +89,10 @@ class rpg_character:
             return False
         for i in range(len(self.spells_known)):
             if self.spells_known[i] >= var_global_maxes.spells_count:
+                print("Error: one or more spell_ids is out of bounds.")
+                return False
+        for i in range(len(self.features)):
+            if self.spells_known[i] >= var_global_maxes.features_count:
                 print("Error: one or more spell_ids is out of bounds.")
                 return False
         return True
