@@ -72,10 +72,31 @@ def highest_spell_slot(var_class_id, var_char_level):
 
 ######### Prepared casters:
 #   druid, cleric, paladin
+def class_spells_by_spell_level(class_column, spell_level):
+    list_spells = db.execute("SELECT spell_id FROM list_spells WHERE (?) = 1 AND spell_level = (?)", class_column, spell_level)
+    list_spell_ids = []
+    for item in spells:
+        spell_id = list_spells[item].get("spell_id")
+        list_spell_ids.append(spell_id)
+    return list_spell_ids
+
+def spells_class_column(class_id):
+    class_column = False
+    if class_id == 2: class_column = "bard_spell"
+    if class_id == 3: class_column = "cleric_spell"
+    if class_id == 4: class_column = "druid_spell"
+    if class_id == 7: class_column = "paladin_spell"
+    if class_id == 8: class_column = "ranger_spell"
+    if class_id == 10: class_column = "sorcerer_spell"
+    if class_id == 11: class_column = "warlock_spell"
+    if class_id == 12: class_column = "wizard_spell"
+    return class_column
+
+#bard_spell, cleric_spell, druid_spell, paladin_spell,\
+#            ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
 
 def druid_spells_by_spell_level(spell_level):
-    #self.features_count = db.execute("SELECT COUNT(*) FROM list_pc_features;")[0].get("COUNT(*)")
-    #var_true_val = 1
+    
     druid_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = (?)", spell_level)
     return druid_spells
 
