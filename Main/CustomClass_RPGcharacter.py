@@ -105,7 +105,7 @@ def class_spells_by_spell_level(class_id, spell_level):
     return list_spell_ids
 # CS50 sql documentation:
 # source: https://cs50.readthedocs.io/libraries/cs50/python/
-# How come I can’t use parameter markers as placeholders for tables’ or columns’ names?
+# How come I can’t use parameter markers as placeholders for tables’ or columns’ names?
 # Parameter markers (e.g., ?) can only be used as placeholders for “literals” like integers and strings,
 # not for “identifiers” like tables’ and columns’ names.
 # If a user’s input will determine the table or column on which you execute a statement,
