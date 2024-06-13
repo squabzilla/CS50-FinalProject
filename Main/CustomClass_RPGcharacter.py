@@ -63,22 +63,21 @@ class rpg_character:
     def verify_data_types(self):
         try: str(self.name)
         except:
-            print("Error: cannot turn 'name' value into string")
+            print("Error: cannot turn self.name value into string")
             return False
         try: int(self.race_id)
         except:
-            print("Error: race_id not an integer")
+            print("Error: self.race_id not an integer")
             return False
         try: int(self.class_id)
         except:
-            print("Error: class_id not an integer")
+            print("Error: self.class_id not an integer")
             return False
         try: int(self.background_id)
         except:
-            print("Error: background_id not an integer")
+            print("Error: self.background_id not an integer")
             return False
         try:
-            #for spell in self.spells_known:
             for i in range(len(self.spells_known)):
                 int(self.spells_known[i])
         except:
@@ -103,11 +102,11 @@ class rpg_character:
             return False
         for i in range(len(self.spells_known)):
             if self.spells_known[i] >= var_global_maxes.spells_count:
-                print("Error: one or more spell_ids is out of bounds.")
+                print("Error: one or more spell_id is out of bounds.")
                 return False
         for i in range(len(self.features)):
             if self.features[i] >= var_global_maxes.features_count:
-                print("Error: one or more feature_ids is out of bounds.")
+                print("Error: one or more feature_id is out of bounds.")
                 return False
         return True
 
