@@ -131,6 +131,12 @@ class rpg_char_create:
                 # )")
 
 def highest_spell_slot(var_class_id, var_char_level):
+    try:
+        var_class_id = int(var_class_id)
+        var_char_level = int(var_char_level)
+    except:
+        print("Error: invalid input")
+        return False
     barbarian_id = 1
     bard_id = 2
     cleric_id = 3
@@ -150,6 +156,8 @@ def highest_spell_slot(var_class_id, var_char_level):
     full_caster_IDs = [bard_id, cleric_id, druid_id, sorcerer_id, warlock_id, wizard_id]
     half_caster_IDs = [paladin_id, ranger_id]
     third_caster_IDs = []
+    caster_multiplier = 0
+    if var_class_id in full_caster_IDs: caster_multiplier
     return True
 # TODO:
 # support for 1/3 casting-only-with-subclass can come with the level-up table
