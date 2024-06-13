@@ -245,9 +245,11 @@ class rpg_char_create:
         for spell_id in spell_id_list:
             try: spell_id = int(spell_id)
             except:
-                print("Error: invalid spell-id")
+                print("Error: ", spell_id, "is an invalid spell-id")
                 return False
-            if spell_id not in self.spells_known: self.spells_known.append(spell_id)
+            #if spell_id not in self.spells_known: self.spells_known.append(spell_id)
+            if spell_id in self.spells_known:
+                print("Error: spell-id: ", spell_id, "spell already known")
     def add_to_database(self):
         db.execute("INSERT INTO list_characters (\
             character_user_id, character_name, character_race_id, character_class_id, character_level\
