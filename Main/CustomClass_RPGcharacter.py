@@ -124,12 +124,6 @@ def class_spells_by_spell_level(class_id, spell_level):
 #bard_spell, cleric_spell, druid_spell, paladin_spell,\
 #            ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
 
-def druid_spells_by_spell_level(spell_level):
-    druid_class_id = 4
-    #class_column = spells_class_column(druid_class_id)
-    druid_spells = class_spells_by_spell_level(druid_class_id, spell_level)
-    return druid_spells
-
 class rpg_char_global_counts:
     def __init__(self, sql_db = None,
                  race_count = None, class_count = None, background_count = None,
@@ -291,7 +285,8 @@ def main():
     a = 1
     b = 2
     highest_spell_slot(a, b)
-    druid_spell_list = druid_spells_by_spell_level(1)
+    #druid_spell_list = druid_spells_by_spell_level(1)
+    druid_spell_list = class_spells_by_spell_level(4, 1)
     print(druid_spell_list)
     print("length of spell_list_list is:", len(druid_spell_list))
     #print(druid_spell_list[4])
