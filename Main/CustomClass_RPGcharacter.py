@@ -70,6 +70,12 @@ def highest_spell_slot(var_class_id, var_char_level):
 # since we effectively won't "round-down" any of their levels
 # and they still gotta pass the threshholds to get to the next rank
 
+######### Prepared casters:
+#   druid, cleric, paladin
+
+def druid_spells_by_spell_level(level):
+    level = level * 2
+
 class rpg_char_global_counts:
     def __init__(self, race_count = None, class_count = None, background_count = None, spells_count = None, features_count = None, sql_db = None):
         self.race_count = race_count
@@ -182,6 +188,7 @@ class rpg_char_create:
                 print("Error: one or more feature_id is out of bounds.")
                 return False
         return True
+    #def add_spells_prepared_caster(self):
     def add_to_database(self):
         db.execute("INSERT INTO list_characters (\
             character_user_id, character_name, character_race_id, character_class_id, character_level\
