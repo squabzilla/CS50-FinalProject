@@ -196,16 +196,15 @@ print("DONE")
 # create list of PC classes and add values
 print("Creating list_pc_classes table, linking all foreign keys, populating table...", end="")
 db.execute("CREATE TABLE list_pc_classes (\
-    pc_class_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
+    pc_class_key INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
+    pc_class_id INTEGER NOT NULL,\
     pc_class_name TEXT NOT NULL, \
     pc_class_hitdie INTEGER,\
     casting_attrib_id INTEGER,\
     FOREIGN KEY(casting_attrib_id) REFERENCES list_attributes(attrib_id) \
     );")
+db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_id);")
 db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_name);")
-#db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name) VALUES \
-#    (0, 'Barbarian'), (1, 'Bard'), (2, 'Cleric'), (3, 'Druid'), (4, 'Fighter'), (5, 'Monk'), \
-#    (6, 'Paladin'), (7, 'Ranger'), (8, 'Rogue'), (9, 'Sorcerer'), (10, 'Warlock'), (11, 'Wizard');")
 with open(class_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
