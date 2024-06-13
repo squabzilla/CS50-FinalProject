@@ -73,7 +73,14 @@ def highest_spell_slot(var_class_id, var_char_level):
 ######### Prepared casters:
 #   druid, cleric, paladin
 def class_spells_by_spell_level(class_column, spell_level):
-    list_spells = db.execute("SELECT spell_id FROM list_spells WHERE (?) = 1 AND spell_level = (?)", class_column, spell_level)
+    try: spell_level = int(spell_level)
+    except:
+        print("Invalid spell-level")
+        return False
+    list_spells = db.execute("SELECT spell_id FROM list_spells WHERE ? = 1 AND spell_level = ?", class_column, spell_level)
+    list_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = 1")
+    print("class_column: ", class_column)
+    print("spell_level: ", spell_level)
     print("list_spells: ", list_spells)
     list_spell_ids = []
     for item in list_spells:
