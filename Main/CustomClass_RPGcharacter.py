@@ -77,13 +77,15 @@ def class_spells_by_spell_level(class_column, spell_level):
     except:
         print("Invalid spell-level")
         return False
+    class_column = str(class_column)
+    print("class_column: ", class_column)
+    print("spell_level: ", spell_level)
     list_spells = db.execute("SELECT spell_id FROM list_spells WHERE ? = 1 AND spell_level = ?", class_column, spell_level)
     print("list_spells_v1: ", list_spells)
     list_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = 1")
     print("list_spells_v2: ", list_spells)
-    print("class_column: ", class_column)
-    print("spell_level: ", spell_level)
-    print("list_spells: ", list_spells)
+    
+    #print("list_spells: ", list_spells)
     list_spell_ids = []
     for item in list_spells:
         #spell_id = list_spells[item].get("spell_id")
