@@ -96,8 +96,9 @@ def spells_class_column(class_id):
 #            ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
 
 def druid_spells_by_spell_level(spell_level):
-    
-    druid_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = (?)", spell_level)
+    druid_class_id = 4
+    class_column = spells_class_column(druid_class_id)
+    druid_spells = class_spells_by_spell_level(class_column, spell_level)
     return druid_spells
 
 class rpg_char_global_counts:
