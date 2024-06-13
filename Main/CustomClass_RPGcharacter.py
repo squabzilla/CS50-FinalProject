@@ -52,8 +52,11 @@ class rpg_character:
                 except: return False
             return True
 
-def validate_rpgCharacter_entry(entry_value, maximum_value)
-        
+def validate_rpgCharacter_entry(entry_value, maximum_value):
+    try: entry_value = int(entry_value)
+    except: return False
+    if entry_value > maximum_value: return False
+    return True
 # class Person:
   # def __init__(self, name, age):
     # self.name = name
@@ -103,7 +106,8 @@ def validate_rpgCharacter_entry(entry_value, maximum_value)
     # return race_query
     
 def main():
-    race_list = valid_race_id(db)
-    print("cheer:", race_list)
+    #race_list = valid_race_id(db)
+    #print("cheer:", race_list)
+    print("Hello, world")
 
 main()
