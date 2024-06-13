@@ -6,10 +6,32 @@ name_of_database = "RPG_characters.db"
 sql_path = "sqlite:///" + name_of_database
 db = SQL(sql_path)
 
-class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
-background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
-spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
-features_count = db.execute("SELECT COUNT(*) FROM list_pc_features;")[0].get("COUNT(*)")
+
+
+class rpg_char_global_counts:
+    def __init__(self, class_count, background_count, spells_count, features_count, sql_db):
+        self.class_count = class_count
+        self.background_count = background_count
+        self.spells_count = spells_count
+        self.features_count = features_count
+        self.sql_db = sql_db
+        def get_db(var_db):
+            self.sql_db = var_db
+        def get_maxes():
+            self.class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
+            self.background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
+            self.spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
+            self.features_count = db.execute("SELECT COUNT(*) FROM list_pc_features;")[0].get("COUNT(*)")
+        def print_maxes():
+            print("Class count is:", self.class_count)
+            print("Background count is:", self.background_count)
+            print("Spells count is:", self.spells_count)
+            print("Features count is:", self.features_count)
+        def numberify():
+            self.class_count = int(self.class_count)
+            self.background_count = int(self.background_count)
+            self.spells_count = int(self.spells_count)
+            self.features_count = int(self.features_count)
 class known_spell:
     def __init__(self, spell_id, prepared, attrib_id):
         # self.caster_id - no, each logged-in user has their own unique user_id which we can retrieve 
