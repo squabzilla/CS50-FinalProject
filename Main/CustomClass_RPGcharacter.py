@@ -74,8 +74,9 @@ def highest_spell_slot(var_class_id, var_char_level):
 #   druid, cleric, paladin
 def class_spells_by_spell_level(class_column, spell_level):
     list_spells = db.execute("SELECT spell_id FROM list_spells WHERE (?) = 1 AND spell_level = (?)", class_column, spell_level)
+    print("list_spells: ", list_spells)
     list_spell_ids = []
-    for item in spells:
+    for item in list_spells:
         spell_id = list_spells[item].get("spell_id")
         list_spell_ids.append(spell_id)
     return list_spell_ids
@@ -263,9 +264,9 @@ def main():
     b = 2
     highest_spell_slot(a, b)
     druid_spell_list = druid_spells_by_spell_level(1)
-    #print(druid_spell_list)
+    print(druid_spell_list)
     print("length of spell_list_list is:", len(druid_spell_list))
-    print(druid_spell_list[4])
+    #print(druid_spell_list[4])
 
 main()
 
