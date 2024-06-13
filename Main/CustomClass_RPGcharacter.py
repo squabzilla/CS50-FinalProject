@@ -9,7 +9,8 @@ db = SQL(sql_path)
 
 
 class rpg_char_global_counts:
-    def __init__(self, class_count = None, background_count = None, spells_count = None, features_count = None, sql_db = None):
+    def __init__(self, race_count = None, class_count = None, background_count = None, spells_count = None, features_count = None, sql_db = None):
+        self.race_count = race_count
         self.class_count = class_count
         self.background_count = background_count
         self.spells_count = spells_count
@@ -53,26 +54,21 @@ class rpg_character:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
         # self.feature.pc_feature_id:   stored in above dictionary  ref: INTEGER
         # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(pc_feature_id) REFERENCES list_pc_features(pc_feature_id)
-    def numberify_race_id():
+    def numberify(self):
+        try: int(self.race_id)
+        except: return "Error: race_id not an integer"
+        try: int(self.class_id)
+        except: return "Error: class_id not an integer"
+        try: int(self.background_id)
+        except: return "Error: background_id not an integer"
         try:
-            int(self.race_id)
-            return True
-        except: return False
-    def numberify_class_id():
-        try:
-            int(self.class_id)
-            return True
-        except: return False
-    def numberify_background_id():
-        try:
-            int(self.background_id)
-            return True
-        except: return False
-    def numberify_spells():
-        for spell in self.spells_known:
-            try: int(self.spells_known)
-            except: return False
+            for spell in self.spells_known:
+                int(self.spells_known)
+        except: return "Error: one or more spells_known is not an integer"
         return True
+    def validate_entries(self, var_global_maxes):
+        if self.race_id >= var_global_maxes.class_count: return "Error: class_id out of bounds."
+        if self.class_id >= var_global_maxes.class_count: return "Error: class_id out of bounds."
 
 def validate_rpgCharacter_entry(entry_value, maximum_value):
     try: entry_value = int(entry_value)
