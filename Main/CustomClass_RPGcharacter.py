@@ -64,13 +64,15 @@ class rpg_character:
         try: int(self.background_id)
         except: return "Error: background_id not an integer"
         try:
-            for spell in self.spells_known:
-                int(self.spells_known)
+            #for spell in self.spells_known:
+            for i in range(len(self.spells_known)):
+                int(self.spells_known[i])
         except: return "Error: one or more spells_known is not an integer"
         return True
     def validate_entries(self, var_global_maxes):
         if self.race_id >= var_global_maxes.class_count: return "Error: class_id out of bounds."
         if self.class_id >= var_global_maxes.class_count: return "Error: class_id out of bounds."
+        if self.background_id >= var_global_maxes.class_count: return "Error: background_id out of bounds."
         #if
 
 def validate_rpgCharacter_entry(entry_value, maximum_value):
