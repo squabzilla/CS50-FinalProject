@@ -1,5 +1,15 @@
 from cs50 import SQL
 
+# name of database
+name_of_database = "RPG_characters.db"
+
+sql_path = "sqlite:///" + name_of_database
+db = SQL(sql_path)
+
+class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
+background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
+spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
+features_count = db.execute("SELECT COUNT(*) FROM list_pc_features;")[0].get("COUNT(*)")
 class known_spell:
     def __init__(self, spell_id, prepared, attrib_id):
         # self.caster_id - no, each logged-in user has their own unique user_id which we can retrieve 
@@ -21,14 +31,16 @@ class rpg_character:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
         # self.feature.pc_feature_id:   stored in above dictionary  ref: INTEGER
         # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(pc_feature_id) REFERENCES list_pc_features(pc_feature_id)
+        def validate_races(race_max):
+            if self.race_id.isnumeric() == False:
+                return False
+            elif self.race_id > race_max:
+                return False
+            return True
 
 ##### NOTE: at some point, I want to make a function that takes an rpg_character as input and validates that all the entries are correct
 
-# name of database
-name_of_database = "RPG_characters.db"
 
-sql_path = "sqlite:///" + name_of_database
-db = SQL(sql_path)
 
 def valid_race_id(db):
     var_column = "race_id"
@@ -42,6 +54,7 @@ def valid_race_id(db):
     class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
     background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
     spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
+    features_count = db.execute("SELECT COUNT(*) FROM list_pc_features;")[0].get("COUNT(*)")
     # okay so db.execute returns a list of dicts, so I grab the first element of that dict, and grab the value-pair of that dict
     # gods that is cursed, but it works lmao
     print("Race count is: ", race_count)
