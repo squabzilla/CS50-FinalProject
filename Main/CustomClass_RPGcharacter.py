@@ -9,7 +9,7 @@ db = SQL(sql_path)
 
 
 class rpg_char_global_counts:
-    def __init__(self, class_count, background_count, spells_count, features_count, sql_db):
+    def __init__(self, class_count = None, background_count = None, spells_count = None, features_count = None, sql_db = None):
         self.class_count = class_count
         self.background_count = background_count
         self.spells_count = spells_count
@@ -44,7 +44,7 @@ class known_spell:
         self.attrib_id = attrib_id          # spellcasting_attrib_id INT,   FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes(attrib_id)
         
 class rpg_character:
-    def __init__(self, name, race_id, class_id, background_id):
+    def __init__(self, name = None, race_id = None, class_id = None, background_id = None):
         # self.character_id - no, this is auto-incremented when entry is added
         # self.user_id - no, each logged-in user has their own unique user_id which we can retrieve 
         self.name = name                    # character_name,           TEXT NOT NULL
@@ -135,7 +135,8 @@ def main():
     #race_list = valid_race_id(db)
     #print("cheer:", race_list)
     #print("Hello, world")
-    maxes = rpg_char_global_counts(0,0,0,0,0)
+    #maxes = rpg_char_global_counts(0,0,0,0,0)
+    maxes = rpg_char_global_counts()
     maxes.get_db(db)
     maxes.get_maxes()
     maxes.numberify()
