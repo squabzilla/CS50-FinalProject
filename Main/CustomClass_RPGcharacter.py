@@ -69,9 +69,11 @@ class rpg_character:
             for i in range(len(self.spells_known)):
                 int(self.spells_known[i])
         except: return "Error: one or more spells_known is not an integer"
+        try:
+            for i in range(len(self.features)):
+                int(self.features[i])
+        except: return "Error: one or more spells_known is not an integer"
         return True
-        # we aren't verifying the features because the features shouldn't be directly added by the user
-        # but also because verifying the features is hard lol
     def validate_entries(self, var_global_maxes):
         if self.race_id >= var_global_maxes.class_count:
             print("Error: class_id out of bounds.")
