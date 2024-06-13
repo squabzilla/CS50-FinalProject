@@ -33,6 +33,10 @@ def highest_spell_slot(var_class_id, var_char_level):
     # instead of being the auto-incrementing key
     #print((wizard_class_id + warlock_class_id))
     full_caster_IDs = [bard_id, cleric_id, druid_id, sorcerer_id, warlock_id, wizard_id]
+    # note: I'm gonna do my "casters get spell-points = prof.mod + level, spells cost 1 spell-point per level, max-spell-limit exists
+    # and when I get around to warlocks, instead of pact magic, they'll have that
+    # so I don't need to worry about future-proofing for warlock pact-casting because I'll be removing that from warlocks
+    # when I actually get to adding them
     half_caster_IDs = [paladin_id, ranger_id]
     third_caster_IDs = []
     caster_level_multiplied = 0
