@@ -205,6 +205,11 @@ db.execute("CREATE TABLE list_pc_classes (\
     );")
 db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_id);")
 db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_name);")
+# class key is just an auto-incrementing primary key
+# class_id will be a number I assign, including subclass ids
+# with barbarian having class_id = 1, the barbarian-subclasses will start at 1001, all the way up to 1099
+# future-proofing, but still
+
 with open(class_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
