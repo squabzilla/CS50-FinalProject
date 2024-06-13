@@ -217,9 +217,10 @@ with open(class_list_csv, "r") as var_file:
     # skip header line, import everything
     for var_row in var_reader:
         var_pc_class_id = var_row[0]
-        var_pc_class_name = var_row[1]
-        var_pc_class_hitdie = var_row[2]
-        db.execute("INSERT INTO list_pc_classes (pc_class_id, pc_class_name, pc_class_hitdie) VALUES(?, ?, ?)", 
+        var_pc_class_key = var_row[1]
+        var_pc_class_name = var_row[2]
+        var_pc_class_hitdie = var_row[3]
+        db.execute("INSERT INTO list_pc_classes (pc_class_key, pc_class_id, pc_class_name, pc_class_hitdie) VALUES(?, ?, ?, ?)", 
                    var_pc_class_id, var_pc_class_name, var_pc_class_hitdie)
 print("DONE")
 
