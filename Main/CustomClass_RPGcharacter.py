@@ -131,9 +131,32 @@ class rpg_char_create:
                 # )")
 
 def highest_spell_slot(var_class_id, var_char_level):
+    barb_class_id = 1
+    bard_class_id = 2
+    cleric_class_id = 3
+    druid_class_id = 4
+    fighter_class_id = 5
+    monk_class_id = 6
+    paladin_class_id = 7
+    ranger_class_id = 8
+    rogue_class_id = 9
+    sorcerer_class_id = 10
+    warlock_class_id = 11
+    wizard_class_id = 12
+    # yeah these are magic numbers, but using an SQL query to search by names to grab class_id
+    # will take longer, and these numbers SHOULD NOT CHANGE, especially since they're specifically assigned
+    # instead of being the auto-incrementing key
     return True
-    # support for 1/3 casting-only-with-subclass can come with the level-up table
-    # when I actually add that
+# TODO:
+# support for 1/3 casting-only-with-subclass can come with the level-up table
+# when I actually add that
+# if your level-up-table just has like a multiplier on casting
+# so like full-casters get 3-full-caster-levels in backend
+# half-casters get 2, one-third-casters get 1
+# then just multiply all the thresh-holds by 3
+# this will slightly benefit multi-classing partial casters,
+# since we effectively won't "round-down" any of their levels
+# and they still gotta pass the threshholds to get to the next rank
 
 def validate_rpgCharacter_entry(entry_value, maximum_value):
     try: entry_value = int(entry_value)
@@ -153,41 +176,6 @@ def validate_rpgCharacter_entry(entry_value, maximum_value):
 
 ##### NOTE: at some point, I want to make a function that takes an rpg_character as input and validates that all the entries are correct
 
-
-
-# def valid_race_id(db):
-    # var_column = "race_id"
-    # var_table = "list_races"
-    # #race_query = db.execute("SELECT ? FROM ?;")
-    # #race_query = (db.execute("SELECT COUNT(*) FROM list_races;")).get("COUNT(*)")
-    # race_query = db.execute("SELECT COUNT(*) FROM list_races;")
-    # values_dict = {}
-    # values_dict.update(race_query[0])
-    # race_count = db.execute("SELECT COUNT(*) FROM list_races;")[0].get("COUNT(*)")
-    # class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
-    # background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
-    # spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
-    # features_count = db.execute("SELECT COUNT(*) FROM list_pc_features;")[0].get("COUNT(*)")
-    # # okay so db.execute returns a list of dicts, so I grab the first element of that dict, and grab the value-pair of that dict
-    # # gods that is cursed, but it works lmao
-    # print("Race count is: ", race_count)
-    # #race_query = race_query.get("COUNT(*)")
-    # #var_count = 'COUNT(*)'
-    # #race_query = db.execute("SELECT ? FROM list_races", var_count)
-    # # this returns a dictionary, figure out how to properly interact with dictionaries and you should be good
-    # # a dictionary item on each line for each column I looked at
-    # # do yourself a favour and just zero-index all your CSVs, in the like AUTO-INCREMENT format and all that
-    # # that way, instead of going through all the items to check the primary key id,
-    # # I can just get a count of the number of items in the database
-    # race_list = []
-    # print("here:", race_query[0])
-    # #for var_line in race_query:
-        # #print(var_line)
-        # #for var_item in var_line:
-            # #print(var_item)
-        # #race_list.append(var_line[1])
-    # return race_query
-    
 def main():
     #race_list = valid_race_id(db)
     #print("cheer:", race_list)
@@ -197,7 +185,7 @@ def main():
     maxes.get_db(db)
     maxes.get_maxes()
     maxes.numberify()
-    maxes.print_maxes()
+    #maxes.print_maxes()
     Barzard = rpg_char_create()
     Barzard.get_db(db)
     Barzard.name = "Barzard"
