@@ -239,6 +239,15 @@ class rpg_char_create:
                 return False
         return True
     #def add_spells_prepared_caster(self):
+    ######### Prepared casters:
+    #   druid, cleric, paladin
+    def add_spells(self, *spell_id_list):
+        for spell_id in spell_id_list:
+            try: spell_id = int(spell_id)
+            except:
+                print("Error: invalid spell-id")
+                return False
+            if spell_id not in self.spells_known: self.spells_known.append(spell_id)
     def add_to_database(self):
         db.execute("INSERT INTO list_characters (\
             character_user_id, character_name, character_race_id, character_class_id, character_level\
@@ -287,8 +296,8 @@ def main():
     highest_spell_slot(a, b)
     #druid_spell_list = druid_spells_by_spell_level(1)
     druid_spell_list = class_spells_by_spell_level(4, 1)
-    print(druid_spell_list)
-    print("length of spell_list_list is:", len(druid_spell_list))
+    #print(druid_spell_list)
+    #print("length of spell_list_list is:", len(druid_spell_list))
     #print(druid_spell_list[4])
 
 main()
