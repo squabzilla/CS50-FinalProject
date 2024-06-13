@@ -132,7 +132,6 @@ def main():
     #print("cheer:", race_list)
     #print("Hello, world")
     maxes = rpg_char_global_counts()
-    maxes.sql_db = db
-    maxes.
+    maxes.get_db(db)
 
 main()
