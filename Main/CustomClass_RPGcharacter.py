@@ -131,22 +131,25 @@ class rpg_char_create:
                 # )")
 
 def highest_spell_slot(var_class_id, var_char_level):
-    barb_class_id = 1
-    bard_class_id = 2
-    cleric_class_id = 3
-    druid_class_id = 4
-    fighter_class_id = 5
-    monk_class_id = 6
-    paladin_class_id = 7
-    ranger_class_id = 8
-    rogue_class_id = 9
-    sorcerer_class_id = 10
-    warlock_class_id = 11
-    wizard_class_id = 12
+    barbarian_id = 1
+    bard_id = 2
+    cleric_id = 3
+    druid_id = 4
+    fighter_id = 5
+    monk_id = 6
+    paladin_id = 7
+    ranger_id = 8
+    rogue_id = 9
+    sorcerer_id = 10
+    warlock_id = 11
+    wizard_id = 12
     # yeah these are magic numbers, but using an SQL query to search by names to grab class_id
     # will take longer, and these numbers SHOULD NOT CHANGE, especially since they're specifically assigned
     # instead of being the auto-incrementing key
-    print((wizard_class_id + warlock_class_id))
+    #print((wizard_class_id + warlock_class_id))
+    full_caster_IDs = [bard_id, cleric_id, druid_id, sorcerer_id, warlock_id, wizard_id]
+    half_caster_IDs = [paladin_id, ranger_id]
+    third_caster_IDs = []
     return True
 # TODO:
 # support for 1/3 casting-only-with-subclass can come with the level-up table
