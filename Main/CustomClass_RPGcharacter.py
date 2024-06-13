@@ -105,9 +105,9 @@ class rpg_char_create:
         if self.race_id >= var_global_maxes.class_count:
             print("Error: class_id out of bounds.")
             return False
-        if self.class_id >= var_global_maxes.class_count:
-            print("Error: class_id out of bounds.")
-            return False
+        #if self.class_id >= var_global_maxes.class_count:
+            #print("Error: class_id out of bounds.")
+            #return False
         if self.background_id >= var_global_maxes.class_count:
             print("Error: background_id out of bounds.")
             return False
@@ -125,6 +125,15 @@ class rpg_char_create:
             character_user_id, character_name, character_race_id, character_class_id, character_level\
             ) VALUES(?, ?, ?, ?, ?)",
             self.user_id, self.name, self.race_id, self.class_id, self.char_level)
+        # spells_prepared_casters = [int(1),]
+        # for spell in self.spells_known:
+            # db.execute("INSERT INTO spellbook (\
+                # )")
+
+def highest_spell_slot(var_class_id, var_char_level):
+    return True
+    # support for 1/3 casting-only-with-subclass can come with the level-up table
+    # when I actually add that
 
 def validate_rpgCharacter_entry(entry_value, maximum_value):
     try: entry_value = int(entry_value)
@@ -184,7 +193,7 @@ def main():
     #print("cheer:", race_list)
     #print("Hello, world")
     #maxes = rpg_char_global_counts(0,0,0,0,0)
-    maxes = rpg_char_global_counts()
+    maxes = rpg_char_create()
     maxes.get_db(db)
     maxes.get_maxes()
     maxes.numberify()

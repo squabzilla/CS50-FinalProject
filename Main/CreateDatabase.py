@@ -203,12 +203,13 @@ db.execute("CREATE TABLE list_pc_classes (\
     casting_attrib_id INTEGER,\
     FOREIGN KEY(casting_attrib_id) REFERENCES list_attributes(attrib_id) \
     );")
-db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_id);")
-db.execute("CREATE UNIQUE INDEX pc_class ON list_pc_classes (pc_class_name);")
+db.execute("CREATE UNIQUE INDEX id_of_class ON list_pc_classes (pc_class_id);")
+db.execute("CREATE UNIQUE INDEX name_of_class ON list_pc_classes (pc_class_name);")
 # class key is just an auto-incrementing primary key
 # class_id will be a number I assign, including subclass ids
 # with barbarian having class_id = 1, the barbarian-subclasses will start at 1001, all the way up to 1099
 # future-proofing, but still
+# the value of pc_class_key will vary as I add new items to my class list, but pc_class_id will stay constant
 
 with open(class_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
@@ -221,7 +222,7 @@ with open(class_list_csv, "r") as var_file:
         var_pc_class_name = var_row[2]
         var_pc_class_hitdie = var_row[3]
         db.execute("INSERT INTO list_pc_classes (pc_class_key, pc_class_id, pc_class_name, pc_class_hitdie) VALUES(?, ?, ?, ?)", 
-                   var_pc_class_id, var_pc_class_name, var_pc_class_hitdie)
+                   var_pc_class_id, var_pc_class_key, var_pc_class_name, var_pc_class_hitdie)
 print("DONE")
 
 # create list of backgrounds and add values
