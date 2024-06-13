@@ -51,7 +51,8 @@ class rpg_character:
         self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_pc_classes(pc_class_id)
         self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
         self.spells_known = []  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
-        self.features = {}      # dictionary where we will store { pc_feature_id:list_order } pairs
+        #self.features = {}      # dictionary where we will store { pc_feature_id:list_order } pairs
+        self.features = [] # realistically, if they're just stored in the correct order here, I can grab the list_order value from the count while looping through it
         # features reference:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
         # self.feature.pc_feature_id:   stored in above dictionary  ref: INTEGER
@@ -151,18 +152,19 @@ def main():
     maxes.numberify()
     maxes.print_maxes()
     #test_dict={}
-    cars = {'Toyota':['Camry','Turcel','Tundra','Tacoma'],'Ford':['Mustang','Capri','OrRepairDaily'],'Chev':['Malibu','Corvette']}
-    vals = list( cars.values() )
-    keyz = list( cars.keys() )
-    var_count = 0
-    for val in vals:
-        print(keyz[var_count])
-        if len(val)>1:
-            for part in val:
-                print(part)
-        else:
-            print( val[0] )
-        var_count += 1
+    #level_5_fighter_dict = {0:0, 2:1, 7:2, 9:3}
+# cars = {'Toyota':['Camry','Turcel','Tundra','Tacoma'],'Ford':['Mustang','Capri','OrRepairDaily'],'Chev':['Malibu','Corvette']}
+    # vals = list( cars.values() )
+    # keyz = list( cars.keys() )
+    # cnt = 0
+    # for val in vals:
+        # print('[_' + keyz[cnt] + '_]')
+        # if len(val)>1:
+            # for part in val:
+                # print(part)
+        # else:
+            # print( val[0] )
+        # cnt += 1
 
 main()
 
