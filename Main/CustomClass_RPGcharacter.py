@@ -162,20 +162,6 @@ def main():
     maxes.print_maxes()
     Barzard = rpg_character()
     Barzard.get_db(db)
-    #test_dict={}
-    #level_5_fighter_dict = {0:0, 2:1, 7:2, 9:3}
-# cars = {'Toyota':['Camry','Turcel','Tundra','Tacoma'],'Ford':['Mustang','Capri','OrRepairDaily'],'Chev':['Malibu','Corvette']}
-    # vals = list( cars.values() )
-    # keyz = list( cars.keys() )
-    # cnt = 0
-    # for val in vals:
-        # print('[_' + keyz[cnt] + '_]')
-        # if len(val)>1:
-            # for part in val:
-                # print(part)
-        # else:
-            # print( val[0] )
-        # cnt += 1
 
 main()
 
