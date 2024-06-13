@@ -39,6 +39,7 @@ def valid_race_id(db):
     values_dict = {}
     values_dict.update(race_query[0])
     race_count = db.execute("SELECT COUNT(*) FROM list_races;")[0].get("COUNT(*)")
+    class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
     # okay so db.execute returns a list of dicts, so I grab the first element of that dict, and grab the value-pair of that dict
     # gods that is cursed, but it works lmao
     print("Race count is: ", race_count)
