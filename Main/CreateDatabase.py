@@ -210,6 +210,10 @@ db.execute("CREATE UNIQUE INDEX name_of_class ON list_pc_classes (pc_class_name)
 # with barbarian having class_id = 1, the barbarian-subclasses will start at 1001, all the way up to 1099
 # future-proofing, but still
 # the value of pc_class_key will vary as I add new items to my class list, but pc_class_id will stay constant
+####################################################################################################
+# NOTE: pc_class_id NEEDS to stay constant - I change these values, parts of my code breaks
+# as I am assuming that these values DO NOT CHANGE
+####################################################################################################
 
 with open(class_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
