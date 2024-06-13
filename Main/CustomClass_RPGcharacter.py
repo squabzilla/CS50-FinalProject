@@ -15,13 +15,16 @@ class rpg_char_global_counts:
         self.spells_count = spells_count
         self.features_count = features_count
         self.sql_db = sql_db
+        
         def get_db(self, var_db):
             self.sql_db = var_db
+        
         def get_maxes(self):
             self.class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
             self.background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
             self.spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
             self.features_count = db.execute("SELECT COUNT(*) FROM list_pc_features;")[0].get("COUNT(*)")
+        
         def print_maxes(self):
             print("Class count is:", self.class_count)
             print("Background count is:", self.background_count)
