@@ -130,6 +130,9 @@ def validate_rpgCharacter_entry(entry_value, maximum_value):
 def main():
     #race_list = valid_race_id(db)
     #print("cheer:", race_list)
-    print("Hello, world")
+    #print("Hello, world")
+    maxes = rpg_char_global_counts()
+    maxes.sql_db = db
+    maxes.
 
 main()
