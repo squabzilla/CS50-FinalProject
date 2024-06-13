@@ -135,6 +135,9 @@ def main():
     maxes.get_db(db)
     maxes.get_maxes()
     maxes.numberify()
-    maxes.print_maxes()
+    #maxes.print_maxes()
+    race_query = db.execute("SELECT COUNT(*) FROM list_races;")
+    print("race_query:", race_query)
+    print("race_query:", race_query[0])
 
 main()
