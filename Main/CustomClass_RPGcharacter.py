@@ -241,6 +241,7 @@ def main():
     b = 2
     highest_spell_slot(a, b)
     druid_spell_list = druid_spells_by_spell_level(1)
+    print(druid_spell_list)
 
 main()
 
