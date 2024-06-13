@@ -7,6 +7,64 @@ sql_path = "sqlite:///" + name_of_database
 db = SQL(sql_path)
 
 
+# if the order of these functions/classes declarations DOES matter, I want this first
+# because it'll be called later
+def highest_spell_slot(var_class_id, var_char_level):
+    try:
+        var_class_id = int(var_class_id)
+        var_char_level = int(var_char_level)
+    except:
+        print("Error: invalid input")
+        return False
+    barbarian_id = 1
+    bard_id = 2
+    cleric_id = 3
+    druid_id = 4
+    fighter_id = 5
+    monk_id = 6
+    paladin_id = 7
+    ranger_id = 8
+    rogue_id = 9
+    sorcerer_id = 10
+    warlock_id = 11
+    wizard_id = 12
+    # yeah these are magic numbers, but using an SQL query to search by names to grab class_id
+    # will take longer, and these numbers SHOULD NOT CHANGE, especially since they're specifically assigned
+    # instead of being the auto-incrementing key
+    #print((wizard_class_id + warlock_class_id))
+    full_caster_IDs = [bard_id, cleric_id, druid_id, sorcerer_id, warlock_id, wizard_id]
+    half_caster_IDs = [paladin_id, ranger_id]
+    third_caster_IDs = []
+    caster_level_multiplied = 0
+    max_spell = 0
+    if var_class_id in full_caster_IDs: caster_level_multiplied = var_char_level * 3
+    if var_class_id in half_caster_IDs: caster_level_multiplied = var_char_level * 2
+    if var_class_id in third_caster_IDs: caster_level_multiplied = var_char_level * 1
+    # so instead of adding 1X your full-caster level, (1/2)X your half-caster level, and (1/3)X your third-caster level
+    # we just multiply everything by 3 - including the level threshholds for new spells
+    count = 0
+    while count <= caster_level_multiplied:
+        if count == ( 1 * 3): max_spell += 1    # note: 1 * 3 represents level 1, multiplied by 3
+        if count == ( 3 * 3): max_spell += 1
+        if count == ( 5 * 3): max_spell += 1
+        if count == ( 7 * 3): max_spell += 1
+        if count == ( 9 * 3): max_spell += 1
+        if count == (11 * 3): max_spell += 1
+        if count == (13 * 3): max_spell += 1
+        if count == (15 * 3): max_spell += 1
+        if count == (17 * 3): max_spell += 1
+        count += 1
+    return True
+# TODO:
+# support for 1/3 casting-only-with-subclass can come with the level-up table
+# when I actually add that
+# if your level-up-table just has like a multiplier on casting
+# so like full-casters get 3-full-caster-levels in backend
+# half-casters get 2, one-third-casters get 1
+# then just multiply all the thresh-holds by 3
+# this will slightly benefit multi-classing partial casters,
+# since we effectively won't "round-down" any of their levels
+# and they still gotta pass the threshholds to get to the next rank
 
 class rpg_char_global_counts:
     def __init__(self, race_count = None, class_count = None, background_count = None, spells_count = None, features_count = None, sql_db = None):
@@ -130,62 +188,7 @@ class rpg_char_create:
             # db.execute("INSERT INTO spellbook (\
                 # )")
 
-def highest_spell_slot(var_class_id, var_char_level):
-    try:
-        var_class_id = int(var_class_id)
-        var_char_level = int(var_char_level)
-    except:
-        print("Error: invalid input")
-        return False
-    barbarian_id = 1
-    bard_id = 2
-    cleric_id = 3
-    druid_id = 4
-    fighter_id = 5
-    monk_id = 6
-    paladin_id = 7
-    ranger_id = 8
-    rogue_id = 9
-    sorcerer_id = 10
-    warlock_id = 11
-    wizard_id = 12
-    # yeah these are magic numbers, but using an SQL query to search by names to grab class_id
-    # will take longer, and these numbers SHOULD NOT CHANGE, especially since they're specifically assigned
-    # instead of being the auto-incrementing key
-    #print((wizard_class_id + warlock_class_id))
-    full_caster_IDs = [bard_id, cleric_id, druid_id, sorcerer_id, warlock_id, wizard_id]
-    half_caster_IDs = [paladin_id, ranger_id]
-    third_caster_IDs = []
-    caster_level_multiplied = 0
-    max_spell = 0
-    if var_class_id in full_caster_IDs: caster_level_multiplied = var_char_level * 3
-    if var_class_id in half_caster_IDs: caster_level_multiplied = var_char_level * 2
-    if var_class_id in third_caster_IDs: caster_level_multiplied = var_char_level * 1
-    # so instead of adding 1X your full-caster level, (1/2)X your half-caster level, and (1/3)X your third-caster level
-    # we just multiply everything by 3 - including the level threshholds for new spells
-    count = 0
-    while count <= caster_level_multiplied:
-        if count == ( 1 * 3): max_spell += 1    # note: 1 * 3 represents level 1, multiplied by 3
-        if count == ( 3 * 3): max_spell += 1
-        if count == ( 5 * 3): max_spell += 1
-        if count == ( 7 * 3): max_spell += 1
-        if count == ( 9 * 3): max_spell += 1
-        if count == (11 * 3): max_spell += 1
-        if count == (13 * 3): max_spell += 1
-        if count == (15 * 3): max_spell += 1
-        if count == (17 * 3): max_spell += 1
-        count += 1
-    return True
-# TODO:
-# support for 1/3 casting-only-with-subclass can come with the level-up table
-# when I actually add that
-# if your level-up-table just has like a multiplier on casting
-# so like full-casters get 3-full-caster-levels in backend
-# half-casters get 2, one-third-casters get 1
-# then just multiply all the thresh-holds by 3
-# this will slightly benefit multi-classing partial casters,
-# since we effectively won't "round-down" any of their levels
-# and they still gotta pass the threshholds to get to the next rank
+
 
 def validate_rpgCharacter_entry(entry_value, maximum_value):
     try: entry_value = int(entry_value)
