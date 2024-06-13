@@ -154,15 +154,15 @@ def main():
     cars = {'Toyota':['Camry','Turcel','Tundra','Tacoma'],'Ford':['Mustang','Capri','OrRepairDaily'],'Chev':['Malibu','Corvette']}
     vals = list( cars.values() )
     keyz = list( cars.keys() )
-    cnt = 0
+    var_count = 0
     for val in vals:
-        print('[_' + keyz[cnt] + '_]')
+        print(keyz[var_count])
         if len(val)>1:
             for part in val:
                 print(part)
         else:
             print( val[0] )
-        cnt += 1
+        var_count += 1
 
 main()
 
