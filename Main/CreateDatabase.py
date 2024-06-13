@@ -2,6 +2,31 @@
 # I can just run this whole script when I need to make changes to database
 # especially since it deletes db and starts from scratch when run
 
+# viewing table commands:
+# type ".mode" and one of the following:
+# box         Tables using unicode box-drawing characters
+# csv         Comma-separated values
+# column      Output in columns.  (See .width)
+# html        HTML <table> code
+# insert      SQL insert statements for TABLE
+# json        Results in a JSON array
+# line        One value per line
+# list        Values delimited by "|"
+# markdown    Markdown table format
+# qbox        Shorthand for "box --width 60 --quote"
+# quote       Escape answers as for SQL
+# table       ASCII-art table
+# tabs        Tab-separated values
+# tcl         TCL list elements
+
+# NOTE: for arbitrary reasons:
+#                       attribute_list, background_list, class_list, race_list are 1-indexed
+#                       pc_features_list, spell_list are 0-index
+#                       basic logic: if list is like 10ish or less items I can just memorize, it's 1-indexed
+#                       if it's a big long list, it's 0-indexed
+#                       ########### NOTE: UPDATE:
+#                       just zero-index all lists, it'll make everything simpler in the long-run
+
 import os
 import csv
 from cs50 import SQL
@@ -236,10 +261,10 @@ db.execute("CREATE TABLE spellbook (\
     spellbook_caster_id INTEGER, \
     spellbook_spell_id INTEGER, \
     spell_prepared INTEGER, \
-    spellcasting_attribute INT, \
+    spellcasting_attrib_id INT, \
     FOREIGN KEY(spellbook_caster_id) REFERENCES list_characters(character_id), \
     FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
-    FOREIGN KEY(spellcasting_attribute) REFERENCES list_attributes(attrib_id) \
+    FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes(attrib_id) \
     );")
 print("DONE")
 
@@ -288,13 +313,17 @@ print("DONE")
 # this will let me know how to display them
 # 0 is the highest level like "this is a title ability in the character ability",
 # and ascending numbers represent descending priorities
+
+
+# creates a many-to-many table that links a character with all their respective features/abilities/etc
 print("Creating individual_character_features table...", end="")
 db.execute("CREATE TABLE individual_character_features (\
     character_id INTEGER, \
     pc_feature_id INTEGER, \
     individual_character_feature_order INTEGER, \
-    list_hierarchy INTEGER, \
+    list_order INTEGER, \
     FOREIGN KEY(character_id) REFERENCES list_characters(character_id), \
     FOREIGN KEY(pc_feature_id) REFERENCES list_pc_features(pc_feature_id) \
     )")
 print("DONE")
+# NOTE: list order represents the order in which these items will appear in a character's list of features

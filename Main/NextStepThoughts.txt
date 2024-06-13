@@ -4,8 +4,6 @@ just for ranger/fighter/wizard up to level 5
 
 including custom subclasses I'm happy with
 
-(tho fighter subclass will be Champion, and Warlord with leadership-ability-vibes)
-
 THEN WE GOTTA WRITE PYTHON CODE FOR CREATING AND LEVELING UP THESE CHARACTERS
 
 python code will handle what options are available, some of them will just be hard-coded in python

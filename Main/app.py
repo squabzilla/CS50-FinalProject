@@ -87,17 +87,16 @@ def login():
         if not request.form.get("username"):
             # return apology("must provide username", 403)
             #return render_template("login.html", error="No username entered."), 403
-            error="No username entered."
-            flash(error)
-            return render_template("login.html", error), 403
+            flash("No username entered.")
+            #return render_template("login.html", error), 403
+            return render_template("login.html"), 403
 
         # Ensure password was submitted
         elif not request.form.get("password"):
             # return apology("must provide password", 403)
             #return render_template("login.html", error="No password entered."), 403
-            error="No password entered."
-            flash(error)
-            return render_template("login.html", error), 403
+            flash("No password entered.")
+            return render_template("login.html"), 403
 
         # Query database for username
         rows = db.execute(
@@ -198,3 +197,8 @@ def register():
         return render_template("register.html")
 ### above:  copied (and slightly modified) the register function in app.py I created for the CS50 Week 9 C$50 Finance problem
 #########################################################################################
+
+
+@app.route("/create_character")
+def create_character():
+    return render_template("create_character.html")

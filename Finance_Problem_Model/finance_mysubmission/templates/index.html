@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <h1>Index</h1>
+    {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <div>
+        <h2>Client Overivew</h2>
+        <!--
+        <span> <b>Client:</b> {{ client }} </span>
+        <span> <b>| Funds:</b> {{ client_cash | usd  }} </span>
+        <span> <b>| Net Worth:</b> {{ client_net_worth | usd }} </span>
+        -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><b>Client</b></th>>
+                    <th><b>Funds</b></th>
+                    <th><b>Net Worth</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ client }}</td>
+                    <td>{{ client_cash | usd  }}</td>
+                    <td>{{ client_net_worth | usd }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+    <div>
+        <h2>Stocks Overview</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Stock Symbol</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Value of Holding</th>
+                    <th>Buy More</th>
+                    <th>Sell</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for symbol in symbols %}
+                <tr>
+
+                    <td>{{ symbol['symbol'] }}</td>
+                    <td>{{ symbol['amount'] }}</td>
+                    <td>{{ symbol['price'] | usd }}</td>
+                    <td>{{ symbol['totalPrice'] | usd }}</td>
+                    <td>
+                        <form action="/buy" method="POST" class="row">
+                            <input name="symbol" type="hidden" value="{{ symbol['symbol'] }}">
+                            <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number" required="required">
+                            <button class="btn btn-primary mx-auto w-auto" type="submit">Submit Transaction</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/sell" method="POST" class="row">
+                            <input name="symbol" type="hidden" value="{{ symbol['symbol'] }}">
+                            <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number" required="required">
+                            <button class="btn btn-primary mx-auto w-auto" type="submit">Submit Transaction</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h1>Quote</h1>
+    {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <tr>
+        <td>Price: {{ symbol["price"] | usd  }}</td>
+        <td>Symbol: {{ symbol["symbol"] }}</td>
+    </tr>
+{% endblock %}

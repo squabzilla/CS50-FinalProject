@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+
+    <h1>Sell</h1>
+    {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <form action="/sell" method="POST">
+        <select id="symbol" name="symbol" onchange="getQuantityAndPrice()"></select>
+        <label><b> Quantity Owned: </b></label>
+        <label id="symbol_quantity"></label>
+        <label><b> Price: </b></label>
+        <label id="symbol_price"></label>
+        <br><br>
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number" required="required" style="white-space:nowrap;">
+        <br>
+        <button class="btn btn-primary" type="submit">Submit Transaction</button>
+    </form>
+    <span onload="getStocksOwned()"></span>
+    <script>
+        async function getQuantityAndPrice()
+        // Function to get the quantity and price of an owned stock.
+        {
+            symbol_value = document.getElementById('symbol').value;
+            let response_1 = await fetch('/getPrice?q=' + symbol_value);
+            let price_return = await response_1.json();
+            if (price_return.length > 0){
+                document.getElementById('symbol_price').innerHTML = price_return[0];
+            }
+            let response_2 = await fetch('/getStockQuantity?q=' + symbol_value);
+            quantity_return = await response_2.json();
+            if (quantity_return.length > 0){
+                //console.log("DID WE GET INSIDE HERE")
+                document.getElementById('symbol_quantity').innerHTML = quantity_return[0];
+            }
+        }
+        async function getStocksOwned()
+        // Function to dynamically generate the drop-down list of all stocks owned by the client upon opening the page
+        {
+            selectItems = `<option selected disabled>Select a stock symbol</option>`;
+            let getStocksOwned_response = await fetch('/getStocksOwned');
+            let symbol_list = await getStocksOwned_response.json();
+            for (let i = 0; i < symbol_list.length; i++)
+            {
+                selectItems += `<option value="` + symbol_list[i] + `">` + symbol_list[i] + `</option>`
+                // string literals are so useful at times
+                if (i != (symbol_list.length - 1))
+                {
+                    selectItems += "\n" // add a line-break to every line except last
+                }
+            }
+            console.log(selectItems);
+            document.getElementById('symbol').innerHTML = selectItems;
+        }
+        document.getElementById("symbol").onload = getStocksOwned();
+    </script>
+{% endblock %}

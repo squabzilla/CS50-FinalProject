@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Blank
+{% endblock %}
+
+{% block main %}
+    <h1>History</h1>
+    {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <div>
+        <h2>Client</h2>
+        <span> <b>Name:</b> {{ client_name }} </span>
+        <br>
+    </div>
+    <div>
+        <h2>Transaction history</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Stock Symbol</th>
+                    <th>Purchase Type</th>
+                    <th>Shares</th>
+                    <th>Quantity of Shares</th>
+                    <th>Transaction Total</th>
+                    <th>Transacted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for history in client_history %}
+                <tr>
+                    <td>{{ history["symbol"] }}</td>
+                    <td>{{ history["transaction_type"] }}</td>
+                    <td>{{ history["price"] | usd }}</td>
+                    <td>{{ history["quantity"] }}</td>
+                    <td>{{ history["total_price"] | usd }}</td>
+                    <td>
+                        {{ history["year"] }}-{{ history["month"] }}-{{ history["day"] }} {{ history["hour"] }}:{{ history["minute"] }}:{{ history["second"] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+<!--
+    For each row, make clear:
+    whether a stock was bought or sold and include the stock’s symbol,
+    the (purchase or sale) price,
+    the number of shares bought or sold,
+    and the date and time at which the transaction occurred.
+-->
+{% endblock %}
