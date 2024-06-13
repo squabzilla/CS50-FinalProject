@@ -146,6 +146,7 @@ def highest_spell_slot(var_class_id, var_char_level):
     # yeah these are magic numbers, but using an SQL query to search by names to grab class_id
     # will take longer, and these numbers SHOULD NOT CHANGE, especially since they're specifically assigned
     # instead of being the auto-incrementing key
+    print((wizard_class_id + warlock_class_id))
     return True
 # TODO:
 # support for 1/3 casting-only-with-subclass can come with the level-up table
@@ -189,6 +190,9 @@ def main():
     Barzard = rpg_char_create()
     Barzard.get_db(db)
     Barzard.name = "Barzard"
+    a = 1
+    b = 2
+    highest_spell_slot(a, b)
 
 main()
 
