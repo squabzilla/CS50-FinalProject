@@ -60,22 +60,36 @@ class rpg_character:
         # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(pc_feature_id) REFERENCES list_pc_features(pc_feature_id)
     def get_db(self, var_db):
         self.sql_db = var_db
-    def numberify(self):
+    def verify_data_types(self):
+        try: str(self.name)
+        except:
+            print("Error: cannot turn 'name' value into string")
+            return False
         try: int(self.race_id)
-        except: return "Error: race_id not an integer"
+        except:
+            print("Error: race_id not an integer")
+            return False
         try: int(self.class_id)
-        except: return "Error: class_id not an integer"
+        except:
+            print("Error: class_id not an integer")
+            return False
         try: int(self.background_id)
-        except: return "Error: background_id not an integer"
+        except:
+            print("Error: background_id not an integer")
+            return False
         try:
             #for spell in self.spells_known:
             for i in range(len(self.spells_known)):
                 int(self.spells_known[i])
-        except: return "Error: one or more spells_known is not an integer"
+        except:
+            print("Error: one or more spell_id is not an integer")
+            return False
         try:
             for i in range(len(self.features)):
                 int(self.features[i])
-        except: return "Error: one or more spells_known is not an integer"
+        except:
+            print("Error: one or more feature_id is not an integer")
+            return False
         return True
     def validate_entries(self, var_global_maxes):
         if self.race_id >= var_global_maxes.class_count:
@@ -162,6 +176,7 @@ def main():
     maxes.print_maxes()
     Barzard = rpg_character()
     Barzard.get_db(db)
+    Barzard.name = "Barzard"
 
 main()
 
