@@ -34,23 +34,33 @@ def valid_race_id(db):
     var_column = "race_id"
     var_table = "list_races"
     #race_query = db.execute("SELECT ? FROM ?;")
-    race_query = db.execute("SELECT race_id FROM list_races;")
+    #race_query = (db.execute("SELECT COUNT(*) FROM list_races;")).get("COUNT(*)")
+    race_query = db.execute("SELECT COUNT(*) FROM list_races;")
+    values_dict = {}
+    values_dict.update(race_query[0])
+    race_count = db.execute("SELECT COUNT(*) FROM list_races;")[0].get("COUNT(*)")
+    # okay so db.execute returns a list of dicts, so I grab the first element of that dict, and grab the value-pair of that dict
+    # gods that is cursed, but it works lmao
+    print("Race count is: ", race_count)
+    #race_query = race_query.get("COUNT(*)")
+    #var_count = 'COUNT(*)'
+    #race_query = db.execute("SELECT ? FROM list_races", var_count)
     # this returns a dictionary, figure out how to properly interact with dictionaries and you should be good
     # a dictionary item on each line for each column I looked at
     # do yourself a favour and just zero-index all your CSVs, in the like AUTO-INCREMENT format and all that
     # that way, instead of going through all the items to check the primary key id,
     # I can just get a count of the number of items in the database
     race_list = []
-    print(race_query[0])
+    print("here:", race_query[0])
     #for var_line in race_query:
         #print(var_line)
         #for var_item in var_line:
             #print(var_item)
         #race_list.append(var_line[1])
-    return race_list
+    return race_query
     
 def main():
     race_list = valid_race_id(db)
-    print(race_list)
+    print("cheer:", race_list)
 
 main()

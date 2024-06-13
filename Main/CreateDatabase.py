@@ -79,7 +79,7 @@ print("DONE")
 # create list of spells
 print("Creating list_spells table...", end="")
 db.execute("CREATE TABLE list_spells (\
-spell_id INTEGER PRIMARY KEY, \
+spell_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
 spell_name TEXT NOT NULL, \
 spell_level INTEGER, \
 spell_school TEXT, \
@@ -149,7 +149,7 @@ print("DONE")
 # create list of races and add values
 print("Creating and populating list_races table...", end="")
 db.execute("CREATE TABLE list_races (\
-    race_id INTEGER PRIMARY KEY, \
+    race_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
     race_name TEXT NOT NULL\
     );")
 db.execute("CREATE UNIQUE INDEX race ON list_races (race_name);")
@@ -171,7 +171,7 @@ print("DONE")
 # create list of attributes and add values
 print("Creating and populating list_attributes table...", end="")
 db.execute("CREATE TABLE list_attributes(\
-    attrib_id INTEGER PRIMARY KEY, \
+    attrib_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
     attrib_name TEXT, attrib_abbrev TEXT\
     );")
 db.execute("CREATE UNIQUE INDEX name_of_attrib ON list_attributes (attrib_name);")
@@ -195,7 +195,7 @@ print("DONE")
 # create list of PC classes and add values
 print("Creating and populating list_pc_classes table...", end="")
 db.execute("CREATE TABLE list_pc_classes (\
-    pc_class_id INTEGER PRIMARY KEY, \
+    pc_class_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
     pc_class_name TEXT NOT NULL, \
     pc_class_hitdie INTEGER)\
     ;")
@@ -219,7 +219,7 @@ print("DONE")
 # create list of backgrounds and add values
 print("Creating and populating list_backgrounds table...", end="")
 db.execute("CREATE TABLE list_backgrounds (\
-    background_id INTEGER PRIMARY KEY, \
+    background_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
     background_name TEXT NOT NULL\
     );")
 db.execute("CREATE UNIQUE INDEX background ON list_backgrounds (background_name);")
@@ -306,7 +306,7 @@ print("DONE")
 # the database below is a many-to-many database, linking a character with their features
 # I don't like how I've called PC's "characters" instead of PCs or something, but it's too late to change it now lol
 # character_id: foreign-key references list_characters (character_id)
-# pc_feature_id: foreign-key refereces list_pc_features (pc_feature_id)
+# pc_feature_id: foreign-key references list_pc_features (pc_feature_id)
 # order: the order that the features are display for the feature
 # list_hierarchy: how it's display - is it Title? Subtitle? Heading 1? Heading 2? etc
 # basically, because certain abilities are like subsets of an overarching ability,
