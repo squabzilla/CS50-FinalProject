@@ -977,12 +977,15 @@ def generate_valid_name_characters():
     quotation_characters_string = "'" + "`" + '"' 
     valid_name_characters = lowercase_string + uppercase_string + numbers_string + \
         other_non_quotation_characters_string + quotation_characters_string
-    print()
-    print(valid_name_characters[0], end="")
-    for i in range(len(valid_name_characters)):
-        if i == 0:
-            continue
-        print(", ", valid_name_characters[i])
+    print_test = True
+    if print_test == True:
+        print()
+        print(valid_name_characters[0], end="")
+        for i in range(len(valid_name_characters)):
+            if i == 0:
+                continue
+            print(", ", valid_name_characters[i], end="")
+    return valid_name_characters
 
 
 
@@ -1034,6 +1037,18 @@ def main():
         print("ranger_spells.set_ranger_spells: ", ranger_spells.set_ranger_spells())
         print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
     Barzard.set_race_id(1)
+    valid_chars = generate_valid_name_characters()
+    print()
+    
+    name = "Barzard"
+    valid_name = True
+    for letter in name:
+        if letter in valid_chars:
+            continue
+        else:
+            print("error in name")
+            valid_name = False
+    print("Testing Barzard name:", valid_name)
 
 main()
 
