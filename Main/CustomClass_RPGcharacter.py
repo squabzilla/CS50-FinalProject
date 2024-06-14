@@ -907,7 +907,7 @@ class rpg_char_create:
     def set_class_id(self, var_class_id):
         class_list = db.execute("SELECT class_id FROM list_classes")
         for i in range(len(class_list)):
-            class_list[i] = int(class_list[i].get("race_id"))
+            class_list[i] = int(class_list[i].get("class_id"))
         if var_class_id in class_list:
             self.class_id = var_class_id
             return True
@@ -916,7 +916,7 @@ class rpg_char_create:
     def set_background_id(self, var_background_id):
         background_list = db.execute("SELECT background_id FROM list_backgrounds")
         for i in range(len(background_list)):
-            background_list[i] = background_list[i].get("race_id")
+            background_list[i] = background_list[i].get("background_id")
         if var_background_id in background_list:
             self.class_id = var_background_id
             return True
