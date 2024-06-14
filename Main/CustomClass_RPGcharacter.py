@@ -873,12 +873,12 @@ class rpg_char_create:
         # this will become more complicated when multiclassing is added, but that's a later problem
         # I mean, honestly, aside from knowing what list_value to start from when adding features, this class can handle everything needed for a multi-class level-up
         # actually, handling level-up is better served by a new structure, since we're just adding class features and spells
-        #self.features = {}      # dictionary where we will store { pc_feature_id:list_order } pairs
+        #self.features = {}      # dictionary where we will store { feature_id:list_order } pairs
         self.features = features # realistically, if they're just stored in the correct order here, I can grab the list_order value from the count while looping through it
         # features reference:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
-        # self.feature.pc_feature_id:   stored in above dictionary  ref: INTEGER
-        # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(pc_feature_id) REFERENCES list_pc_features(pc_feature_id)
+        # self.feature.feature_id:   stored in above dictionary  ref: INTEGER
+        # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(feature_id) REFERENCES list_features(feature_id)
     #def get_db(self, var_db):
         #self.sql_db = var_db
     def get_user_id(self, var_user_id):
