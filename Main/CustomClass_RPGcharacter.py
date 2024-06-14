@@ -1061,35 +1061,48 @@ def main():
     
     testing_create_Barzard_character = True
     if testing_create_Barzard_character == True:
+        # creating character and setting name
+        print("creating character and setting name")
         Barzard = rpg_char_create()
         var_Barzard_name = "Barzard 123 '\"` quotations :;-_ other symbols"
         print("Bardzard.set_name:", Barzard.set_name(var_Barzard_name))
         # check race, class, background:
+        print("check race, class, background:")
         print("Barzard", end="")
-        print(" race_id:", Barzard.race_id, end="")
-        print(" class_id:", Barzard.class_id, end="")
-        print(" background_id:", Barzard.background_id)
+        print(" race_id:", Barzard.race_id, end="; ")
+        print(" class_id:", Barzard.class_id, end="; ")
+        print(" background_id:", Barzard.background_id, end="; ")
+        print("\n")
         # Try invalid input
-        print("Barzard.set_race_id(99):", Barzard.set_name(99))
-        print("Barzard.set_race_id('cow'):", Barzard.set_race_id('cow'))
+        print("Trying invalid input")
+        print("Barzard.set_race_id(99):", Barzard.set_name(99), end="; ")
+        print("Barzard.set_race_id('cow'):", Barzard.set_race_id('cow'), end="; ")
         print("Barzard.set_class_id(99):", Barzard.set_class_id(99))
-        print("Barzard.set_class_id('SuperHero'):", Barzard.set_class_id('SuperHero'))
-        print("Barzard.set_background_id(99):", Barzard.set_background_id(99))
-        print("Barzard.set_background_id('Martian'):", Barzard.set_background_id('Martian'))
+        print("Barzard.set_class_id('SuperHero'):", Barzard.set_class_id('SuperHero'), end="; ")
+        print("Barzard.set_background_id(99):", Barzard.set_background_id(99), end="; ")
+        print("Barzard.set_background_id('Martian'):", Barzard.set_background_id('Martian'), end="; ")
+        print("\n")
         # check race, class, background again
-        print("Barzard ", end="")
-        print("Race_id:", Barzard.race_id, end="")
-        print("Class_id:", Barzard.class_id, end="")
-        print("background_id:", Barzard.background_id)
-        # valid input this time
-        print("Barzard.set_race_id(1):", Barzard.set_race_id(1))
-        print("Barzard.set_class_id(1):", Barzard.set_class_id(1))
-        print("Barzard.set_background_id(1):", Barzard.set_background_id(1))
-        # check once more: 
+        print("check race, class, background:")
         print("Barzard", end="")
-        print(" race_id:", Barzard.race_id, end="")
-        print(" class_id:", Barzard.class_id, end="")
-        print(" background_id:", Barzard.background_id)
+        print(" race_id:", Barzard.race_id, end="; ")
+        print(" class_id:", Barzard.class_id, end="; ")
+        print(" background_id:", Barzard.background_id, end="; ")
+        print("\n")
+        # valid input this time
+        print("valid input this time")
+        print("Barzard.set_race_id(1):", Barzard.set_race_id(1), end="; ")
+        print("Barzard.set_class_id(1):", Barzard.set_class_id(1), end="; ")
+        print("Barzard.set_background_id(1):", Barzard.set_background_id(1), end="; ")
+        print("\n")
+        # check once more: 
+        print("check once more: ")
+        print("check race, class, background:")
+        print("Barzard", end="")
+        print(" race_id:", Barzard.race_id, end="; ")
+        print(" class_id:", Barzard.class_id, end="; ")
+        print(" background_id:", Barzard.background_id, end="; ")
+        print("\n")
 
 main()
 
