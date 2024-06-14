@@ -7,28 +7,31 @@
 {% block main %}
 <p>This is the character creator.</p>
 <div class="row g-3">
-    {% if not new_pc.name %}
-    <div class="col">
     <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
-        <input autocomplete="off" autofocus class="form-control w-auto" name="character_name" placeholder="Character Name" type="text" placeholder="Bob">
-        <!--<br>
-        <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number">-->
-        <button class="btn btn-primary" type="submit">Submit</button>
+        {% if not new_pc.name %}
+            <div class="col">
+                <input autocomplete="off" autofocus class="form-control w-auto" name="character_name" placeholder="Character Name" type="text" placeholder="Bob">
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+                <!--<br>
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number">-->
+                
+                
+            <!-- <br>
+            <form  action="/character_creator_name" class="form-control mx-auto w-auto">
+                <input autocomplete="off" autofocus id="character_name" name="character_name" placeholder="Character Name" type="text" required="required">
+                <br>
+                <button type="button" class="btn btn-primary" type="submit">
+                    Create new character
+                </button>
+            </form>
+            -->
+        {% elif not new_pc.race_id %}
+            <p>We are at step two</p>
+        {% endif %}
     </form>
-    <br>
-    <!--
-    <form  action="/character_creator_name" class="form-control mx-auto w-auto">
-        <input autocomplete="off" autofocus id="character_name" name="character_name" placeholder="Character Name" type="text" required="required">
-        <br>
-        <button type="button" class="btn btn-primary" type="submit">
-            Create new character
-        </button>
-    </form>
-    -->
-    </div
-    {% elif not new_pc.race_id %}
-        <p>We are at step two</p>
-    {% endif %}
 </div>
     <!--
     <form>
