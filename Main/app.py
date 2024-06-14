@@ -2,7 +2,8 @@
 # below: copied imported libraries from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 import os
 from cs50 import SQL
-from flask import Flask, flash, redirect, render_template, request, session
+#from flask import Flask, flash, redirect, render_template, request, session
+from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
