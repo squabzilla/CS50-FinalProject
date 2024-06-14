@@ -895,14 +895,12 @@ class rpg_char_create:
         else:
             return False
     def set_race_id(self, var_race_id):
-        return False
         race_list = db.execute("SELECT race_id FROM list_races")
         # remember that db.execute will return a LIST of DICTIONARIES
         for i in range(len(race_list)):
             race_list[i] = int(race_list[i].get("race_id"))
         print("race_list: ", race_list)
         if var_race_id in race_list:
-            print("race_list: ", race_list)
             self.race_id = var_race_id
             return True
         else:
@@ -1077,24 +1075,12 @@ def main():
     #var_string = "abc"
     #var_int = int(var_string)
     #print("var_int is:", var_int)
-    alaric = rpg_char_create()
-    # check race, class, background:
-    print("check race, class, background:")
-    print("alaric", end="")
-    print(" race_id:", alaric.race_id, end="; ")
-    print(" class_id:", alaric.class_id, end="; ")
-    print(" background_id:", alaric.background_id, end="; ")
-    print("\n")
-    # Try invalid numerical input
-    print("Trying invalid numerical input:")
-    #print("alaric.set_race_id(1212):", alaric.set_name(1212), end="; ")
-    new_bool = alaric.set_name(1212)
-    print(new_bool)
-    #print("alaric.set_class_id(1212):", alaric.set_class_id(1212), end="; ")
-    #print("alaric.set_background_id(1212):", alaric.set_background_id(1212), end="; ")
-    #print("\n")
-    print("what")
-    testing_create_Barzard_character = False
+    
+    #########################################################################################################################################################
+    
+    
+    
+    testing_create_Barzard_character = True
     if testing_create_Barzard_character == True:
         # creating character and setting name
         print("creating character and setting name")
@@ -1110,7 +1096,7 @@ def main():
         print("\n")
         # Try invalid numerical input
         print("Trying invalid numerical input:")
-        print("Barzard.set_race_id(1212):", Barzard.set_name(1212), end="; ")
+        print("Barzard.set_race_id(1212):", Barzard.set_race_id(1212), end="; ")
         print("Barzard.set_class_id(1212):", Barzard.set_class_id(1212), end="; ")
         print("Barzard.set_background_id(1212):", Barzard.set_background_id(1212), end="; ")
         print("\n")
@@ -1147,7 +1133,7 @@ def main():
         print(" race_id:", Barzard.race_id, end="; ")
         print(" class_id:", Barzard.class_id, end="; ")
         print(" background_id:", Barzard.background_id, end="; ")
-        print("\n")
+        #print("\n")
 
 main()
 
