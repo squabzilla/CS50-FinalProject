@@ -3,7 +3,7 @@
 import os
 from cs50 import SQL
 #from flask import Flask, flash, redirect, render_template, request, session
-from flask import Flask, flash, jsonify, redirect, render_template, request, session
+from flask import Flask, flash, json, jsonify, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
@@ -207,23 +207,31 @@ def register():
 def create_character():
     if request.method == 'POST':
         new_pc = session["new_char"]
+        has_name = False
+        has_race = False
+        has_class = False
+        has_background = False
+        json_dump = ""
         var_name = request.form.get("character_name")
         if var_name != None:
-            new_pc.set_name(var_name)
+            has_name = new_pc.set_name(var_name) # remember my set_[attribute] functions return True or False depending on success
+            if has_name == True:
+                json_dump = json.dumps(db.execute("SELECT race_id, race_name FROM list_races"))
+                print(new_pc.name)
+                #json_dump_2 = json.dumps(
         var_race_id = request.form.get("race_id")
         if var_race_id != None:
-            new_pc.set_race_id(var_race_id)
+            has_race = new_pc.set_race_id(var_race_id) # remember my set_[attribute] functions return True or False depending on success
         var_class_id = request.form.get("class_id")
         if var_class_id != None:
-            new_pc.set_class_id(var_class_id)
+            has_class = new_pc.set_class_id(var_class_id) # remember my set_[attribute] functions return True or False depending on success
         var_background_id = request.form.get("background_id")
         if var_background_id != None:
-            new_pc.set_background_id(var_background_id)
+            has_background = new_pc.set_background_id(var_background_id) # remember my set_[attribute] functions return True or False depending on success
         #character_name = request.form.get("character_name")
         #character_name = "Bob"
         #new_char.name = character_name
-        print(new_pc.name)
-        return render_template("character_creator.html", new_pc=new_pc)
+        return render_template("character_creator.html", new_pc=new_pc, json_dump=json_dump)
     else:
         #print("at character creator")
         new_pc = rpg_char_create()

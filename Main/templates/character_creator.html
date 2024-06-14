@@ -28,6 +28,25 @@
                 -->
             {% elif not new_pc.race_id %}
                 <p>Get race_id</p>
+                <div class="container" name="race_id_list" id="race_id_list"></div>
+                <script>
+                    console.log("1")
+                    const json_dump_races = JSON.parse({{json_dump|tojson}});
+                    /*
+                    stuff
+                    */
+                    console.log("2")
+                    console.log(json_dump_races);
+                    // okay so it had an array here
+                    //document.querySelector(".container").innerHTML = JSON.stringify(json_dump, null, 2);
+                    
+                    //var x = document.getElementById("race_id_list");
+                    //x.querySelector(".example").innerHTML = JSON.stringify(json_dump, null, 2);
+                    console.log("3")
+                    //document.getElementById("race_id_list").innerHTML = JSON.stringify(json_dump, null, 2);
+                    document.getElementById("race_id_list").innerHTML = "soup"
+                    document.getElementById("race_id_list").innerHTML = JSON.stringify(json_dump_races, null, 2);
+                </script>
             {% elif not new_pc.class_id %}
                 <p>Get class_id</p>
             {% elif not new_pc.background_id %}

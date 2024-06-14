@@ -905,7 +905,6 @@ class rpg_char_create:
             return True
         else:
             return False
-        return False
     def set_class_id(self, var_class_id):
         class_list = db.execute("SELECT class_id FROM list_classes")
         for i in range(len(class_list)):
