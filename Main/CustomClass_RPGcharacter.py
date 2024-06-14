@@ -916,9 +916,9 @@ class rpg_char_create:
         var_class = db.execute("SELECT class_name FROM list_classes WHERE race_id = ?", self.name)[0].get("class_name")
         var_background = db.execute("SELECT background_name FROM list_backgrounds WHERE race_id = ?", self.name)[0].get("background_name")
         print("Character name:", self.name)
-        print("Character race-id:", var_race)
-        print("Character class-id:", var_class)
-        print("Character background-id", var_background)
+        print("Character race:", var_race)
+        print("Character class:", var_class)
+        print("Character background", var_background)
         #self.name = name                    # character_name,           TEXT NOT NULL
         #self.race_id = race_id              # character_race_id,        INTEGER and FOREIGN KEY(character_race_id) REFERENCES list_races(race_id)
         #self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_classes(class_id)
