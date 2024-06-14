@@ -854,43 +854,6 @@ class new_wizard_spells:
         self.spell_4 = None
         return True
 
-# class rpg_char_global_counts:
-    # def __init__(self, #sql_db = None,
-                 # race_count = None, class_count = None, background_count = None,
-                 # spells_count = None, features_count = None):
-        # #self.sql_db = sql_db
-        # self.race_count = race_count
-        # self.class_count = class_count
-        # self.background_count = background_count
-        # self.spells_count = spells_count
-        # self.features_count = features_count
-    # #def get_db(self, var_db):
-        # #self.sql_db = var_db
-    # def get_maxes(self):
-        # self.race_count = db.execute("SELECT COUNT(*) FROM list_races;")[0].get("COUNT(*)")
-        # self.class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
-        # self.background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
-        # self.spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
-        # self.features_count = db.execute("SELECT COUNT(*) FROM list_pc_features;")[0].get("COUNT(*)")
-    # def numberify(self):
-        # self.class_count = int(self.class_count)
-        # self.background_count = int(self.background_count)
-        # self.spells_count = int(self.spells_count)
-        # self.features_count = int(self.features_count)
-    # def print_maxes(self):
-        # print("Race count is:", self.race_count)
-        # print("Class count is:", self.class_count)
-        # print("Background count is:", self.background_count)
-        # print("Spells count is:", self.spells_count)
-        # print("Features count is:", self.features_count)
-        
-        
-# class known_spell:
-    # def __init__(self, spell_id, prepared, attrib_id):
-        # # self.caster_id - no, each logged-in user has their own unique user_id which we can retrieve 
-        # self.spell_id = spell_id            # spellbook_spell_id INTEGER,   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id)
-        # self.prepared = prepared            # spell_prepared INTEGER,
-        # self.attrib_id = attrib_id          # spellcasting_attrib_id INT,   FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes(attrib_id)
         
 class rpg_char_create:
     def __init__(self, #sql_db = None,
