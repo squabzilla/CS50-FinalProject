@@ -986,13 +986,16 @@ def main():
     #print("length of spell_list_list is:", len(druid_spell_list))
     #print(druid_spell_list[4])
     ranger_spells = new_ranger_spells()
-    print("ranger_spells.retrieve_class_spell_list(): ", ranger_spells.retrieve_class_spell_list())
-    print("ranger_spells.set_ranger_spells(): ", ranger_spells.set_ranger_spells())
-    print("Ranger cantrip IDs are:", ranger_spells.cantrip_1, ranger_spells.cantrip_2)
-    print("ranger_spells.reset_spells: ", ranger_spells.reset_spells())
-    print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
-    print("ranger_spells.set_ranger_spells: ", ranger_spells.set_ranger_spells())
-    print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
+    print_ranger_stuff = False
+    if print_ranger_stuff == True:
+        print("ranger_spells.retrieve_class_spell_list(): ", ranger_spells.retrieve_class_spell_list())
+        print("ranger_spells.set_ranger_spells(): ", ranger_spells.set_ranger_spells())
+        print("Ranger cantrip IDs are:", ranger_spells.cantrip_1, ranger_spells.cantrip_2)
+        print("ranger_spells.reset_spells: ", ranger_spells.reset_spells())
+        print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
+        print("ranger_spells.set_ranger_spells: ", ranger_spells.set_ranger_spells())
+        print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
+    Barzard.set_race_id
 
 main()
 
