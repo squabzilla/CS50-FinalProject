@@ -44,8 +44,8 @@ class_list_csv = "class_list.csv"
 class_list_csv = os.path.join(csv_folder, class_list_csv)
 background_list_csv = "background_list.csv"
 background_list_csv = os.path.join(csv_folder, background_list_csv)
-pc_features_list_csv = "pc_features_list.csv"
-pc_features_list_csv = os.path.join(csv_folder, pc_features_list_csv)
+features_list_csv = "features_list.csv"
+features_list_csv = os.path.join(csv_folder, features_list_csv)
 
 # if database exists, remove it so we can start from scratch
 print("Checking for existing database...", end="")
@@ -290,46 +290,47 @@ db.execute("CREATE TABLE spellbook (\
     );")
 print("DONE")
 
-print("Creating list_pc_features table...", end="")
-db.execute("CREATE TABLE list_pc_features (\
-    pc_feature_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
-    pc_feature_name TEXT NOT NULL, \
+print("Creating list_features table...", end="")
+db.execute("CREATE TABLE list_features (\
+    feature_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
+    feature_name TEXT NOT NULL, \
     list_level INTEGER, \
-    pc_feature_description_line_1 TEXT NOT NULL, \
-    pc_feature_description_line_2 TEXT, \
-    pc_feature_description_line_3 TEXT, \
-    pc_feature_description_line_4 TEXT \
+    feature_description_line_1 TEXT NOT NULL, \
+    feature_description_line_2 TEXT, \
+    feature_description_line_3 TEXT, \
+    feature_description_line_4 TEXT \
     );")
-db.execute("CREATE UNIQUE INDEX pc_feature ON list_pc_features (pc_feature_name);")
+db.execute("CREATE UNIQUE INDEX name_of_feature ON list_features (feature_name);")
 print("DONE")
 
-print("importing pc features...", end="")
-with open(pc_features_list_csv, "r") as var_file:
+print("importing features...", end="")
+with open(features_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
     next(var_reader)
     # skip header line, import everything
     for var_row in var_reader:
-        var_pc_feature_id = var_row[0]
-        var_pc_feature_name = var_row[1]
+        var_feature_id = var_row[0]
+        var_feature_name = var_row[1]
         var_list_level = var_row[2]
-        var_pc_feature_description_line_1 = var_row[3]
-        var_pc_feature_description_line_2 = var_row[4]
-        var_pc_feature_description_line_3 = var_row[5]
-        var_pc_feature_description_line_4 = var_row[6]
-        db.execute("INSERT INTO list_pc_features (\
-            pc_feature_id, pc_feature_name, list_level, \
-            pc_feature_description_line_1, pc_feature_description_line_2, pc_feature_description_line_3, pc_feature_description_line_4\
+        var_feature_description_line_1 = var_row[3]
+        var_feature_description_line_2 = var_row[4]
+        var_feature_description_line_3 = var_row[5]
+        var_feature_description_line_4 = var_row[6]
+        db.execute("INSERT INTO list_features (\
+            feature_id, feature_name, list_level, \
+            feature_description_line_1, feature_description_line_2, feature_description_line_3, feature_description_line_4\
             ) VALUES(?, ?, ?, ?, ?, ?, ?)", 
-            var_pc_feature_id, var_pc_feature_name, var_list_level, 
-            var_pc_feature_description_line_1, var_pc_feature_description_line_2, var_pc_feature_description_line_3, var_pc_feature_description_line_4)
+            var_feature_id, var_feature_name, var_list_level, 
+            var_feature_description_line_1, var_feature_description_line_2, var_feature_description_line_3, var_feature_description_line_4)
 print("DONE")
 
 # the database below is a many-to-many database, linking a character with their features
-# character_id: foreign-key references list_characters (character_id)
-# pc_feature_id: foreign-key references list_pc_features (pc_feature_id)
-# order: the order that the features are display for the feature
-# list_hierarchy: how it's display - is it Title? Subtitle? Heading 1? Heading 2? etc
+# specific_pc_character_id: foreign-key references list_characters (character_id)
+# specific_pc_feature_id: foreign-key references list_features (feature_id)
+# specific_pc_feature_order: the order that the features are display for the feature
+# NOTE: the below attribute "specific_pc_list_level" has been removed, as the list_level attribute has been put in features_list.csv
+# specific_pc_list_level: how it's display - is it Title? Subtitle? Heading 1? Heading 2? etc
 # basically, because certain abilities are like subsets of an overarching ability,
 # this will let me know how to display them
 # 0 is the highest level like "this is a title ability in the character ability",
@@ -338,13 +339,12 @@ print("DONE")
 
 # creates a many-to-many table that links a character with all their respective features/abilities/etc
 print("Creating individual_character_features table...", end="")
-db.execute("CREATE TABLE individual_character_features (\
-    character_id INTEGER, \
-    pc_feature_id INTEGER, \
-    individual_character_feature_order INTEGER, \
-    list_order INTEGER, \
-    FOREIGN KEY(character_id) REFERENCES list_characters(character_id), \
-    FOREIGN KEY(pc_feature_id) REFERENCES list_pc_features(pc_feature_id) \
+db.execute("CREATE TABLE specific_pc_features (\
+    specific_pc_character_id INTEGER, \
+    specific_pc_feature_id INTEGER, \
+    specific_pc_feature_order INTEGER, \
+    FOREIGN KEY(specific_pc_character_id) REFERENCES list_characters(character_id), \
+    FOREIGN KEY(specific_pc_feature_id) REFERENCES list_features(feature_id) \
     )")
 print("DONE")
 # NOTE: list order represents the order in which these items will appear in a character's list of features
