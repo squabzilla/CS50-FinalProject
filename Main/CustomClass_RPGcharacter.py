@@ -1084,10 +1084,13 @@ def main():
     print("\n")
     # Try invalid numerical input
     print("Trying invalid numerical input:")
-    print("alaric.set_race_id(1212):", alaric.set_name(1212), end="; ")
+    #print("alaric.set_race_id(1212):", alaric.set_name(1212), end="; ")
+    new_bool = alaric.set_name(1212)
+    print(new_bool)
     #print("alaric.set_class_id(1212):", alaric.set_class_id(1212), end="; ")
     #print("alaric.set_background_id(1212):", alaric.set_background_id(1212), end="; ")
-    print("\n")
+    #print("\n")
+    print("what")
     testing_create_Barzard_character = False
     if testing_create_Barzard_character == True:
         # creating character and setting name
