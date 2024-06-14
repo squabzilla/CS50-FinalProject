@@ -1080,7 +1080,7 @@ def main():
     
     
     
-    testing_create_Barzard_character = True
+    testing_create_Barzard_character = False
     if testing_create_Barzard_character == True:
         # creating character and setting name
         print("creating character and setting name")
@@ -1096,10 +1096,11 @@ def main():
         print("\n")
         # Try invalid numerical input
         invalid_int = int(1212)
+        invalid_class_id_int = int(0)
         print("Trying invalid numerical input:")
-        print("Barzard.set_race_id(",invalid_int,"):", Barzard.set_race_id(1212), end="; ")
-        print("Barzard.set_class_id(",invalid_int,"):", Barzard.set_class_id(0), end="; ")
-        print("Barzard.set_background_id(",invalid_int,"):", Barzard.set_background_id(1212), end="; ")
+        print("Barzard.set_race_id(",invalid_int,"):", Barzard.set_race_id(invalid_int), end="; ")
+        print("Barzard.set_class_id(",invalid_int,"):", Barzard.set_class_id(invalid_int), end="; ")
+        print("Barzard.set_background_id(",invalid_int,"):", Barzard.set_background_id(invalid_int), end="; ")
         print("\n")
         # check race, class, background again
         print("check race, class, background:")
@@ -1109,7 +1110,7 @@ def main():
         print(" background_id:", Barzard.background_id, end="; ")
         print("\n")
         # Try invalid string input
-        invalid_string = "cow"
+        invalid_string = "1"
         print("Trying invalid string input:")
         print("Barzard.set_race_id('",invalid_string,"'):", Barzard.set_race_id(invalid_string), end="; ")
         print("Barzard.set_class_id('",invalid_string,"'):", Barzard.set_class_id(invalid_string), end="; ")
@@ -1137,7 +1138,7 @@ def main():
         print(" background_id:", Barzard.background_id, end="; ")
         #print("\n")
 
-main()
+#main()
 
 
 # cars = {'Toyota':['Camry','Turcel','Tundra','Tacoma'],'Ford':['Mustang','Capri','OrRepairDaily'],'Chev':['Malibu','Corvette']}
