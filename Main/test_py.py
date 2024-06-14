@@ -40,7 +40,7 @@ def main():
     # re.sub( first_variable:
     #print(new_result)
     name = input("Please enter your name: ")
-    name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ ]', '', name)
+    name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ"\'` ]', '', name)
     print("Name:", name)
     
     #[^.@a-zA-Z0-9À-ÖØ-öø-ÿ ]
