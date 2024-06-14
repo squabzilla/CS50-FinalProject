@@ -895,16 +895,19 @@ class rpg_char_create:
         else:
             return False
     def set_race_id(self, var_race_id):
+        return False
         race_list = db.execute("SELECT race_id FROM list_races")
         # remember that db.execute will return a LIST of DICTIONARIES
         for i in range(len(race_list)):
             race_list[i] = int(race_list[i].get("race_id"))
         print("race_list: ", race_list)
         if var_race_id in race_list:
+            print("race_list: ", race_list)
             self.race_id = var_race_id
             return True
         else:
             return False
+        return False
     def set_class_id(self, var_class_id):
         class_list = db.execute("SELECT class_id FROM list_classes")
         for i in range(len(class_list)):
