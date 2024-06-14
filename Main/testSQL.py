@@ -20,22 +20,23 @@ sql_path = "sqlite:///" + name_of_database
 db = SQL(sql_path)
 
 var_list_races = db.execute("SELECT race_id, race_name FROM list_races;")
-print("var_list_races:")
+#print("var_list_races:")
 #print(var_list_races)
 #json_list_races = jsonify(var_list_races)
 json_dump_races = json.dumps(var_list_races)
 #json_dump_2 = json.dump(
 #print(json_dump_races)
 for item in json_dump_races:
-    print(item)
+    #print(item)
+    continue
 
 var_list_classes = db.execute("SELECT class_id, class_name FROM list_classes;")
-print("var_list_classes:")
+#print("var_list_classes:")
 #print(var_list_classes)
 #json_list_classes = jsonify(var_list_classes)
 
 var_list_backgrounds = db.execute("SELECT background_id, background_name FROM list_backgrounds;")
-print("var_list_backgrounds:")
+#print("var_list_backgrounds:")
 #print(var_list_backgrounds)
 #json_list_backgrounds = jsonify(var_list_backgrounds)
 
