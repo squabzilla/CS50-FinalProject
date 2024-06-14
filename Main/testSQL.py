@@ -21,6 +21,7 @@ db = SQL(sql_path)
 
 var_list_races = db.execute("SELECT race_id, race_name FROM list_races;")
 mydictionary = var_list_races[0]
+print(mydictionary)
 for key in mydictionary:
    #print "key: %s , value: %s" % (key, mydictionary[key])
    print(next(iter(mydictionary)))
