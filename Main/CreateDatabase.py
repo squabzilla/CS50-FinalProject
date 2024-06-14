@@ -189,9 +189,9 @@ with open(attribute_list_csv, "r") as var_file:
                    var_attrib_id, var_attrib_name, var_attrib_abbrev)
 print("DONE")
 
-# create list of PC classes and add values
+# create list of classes and add values
 print("Creating list_classes table, linking all foreign keys, populating table...", end="")
-db.execute("CREATE TABLE list_pc_classes (\
+db.execute("CREATE TABLE list_classes (\
     class_key INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
     class_id INTEGER NOT NULL,\
     class_name TEXT NOT NULL, \
