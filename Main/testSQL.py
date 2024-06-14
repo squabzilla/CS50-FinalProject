@@ -25,6 +25,7 @@ print(mydictionary)
 for key in mydictionary:
    #print "key: %s , value: %s" % (key, mydictionary[key])
    print(next(iter(mydictionary)))
+   print(next(iter(mydictionary)))
 #print("var_list_races:")
 #print(var_list_races)
 #json_list_races = jsonify(var_list_races)
