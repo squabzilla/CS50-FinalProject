@@ -35,32 +35,13 @@ def main():
         #print(uppercase_string)
         
     result = re.sub('[^a-zA-Z0-9]', '', '_abcd!?123')
-    print(result)
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    new_result = re.sub('[^a-z]', '', 'a string with a bunch of letters')
-    print(new_result)
+    #print(result)
+    #new_result = re.sub('[^a-z]', '', 'a string with a bunch of letters')
+    # re.sub( first_variable:
+    #print(new_result)
+    name = input("Please enter your name: ")
+    name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ ]', '', name)
+    print("Name:", name)
     
     #[^.@a-zA-Z0-9À-ÖØ-öø-ÿ ]
 main()
