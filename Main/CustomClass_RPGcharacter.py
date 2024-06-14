@@ -881,9 +881,18 @@ class rpg_char_create:
         # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(feature_id) REFERENCES list_features(feature_id)
     #def get_db(self, var_db):
         #self.sql_db = var_db
-    def get_user_id(self, var_user_id):
+    def set_user_id(self, var_user_id):
         self.user_id = var_user_id
         return True
+    def set_name(self, var_name):
+        self.name = var_name
+        return True
+    def set_race_id(self, var_race_id):
+        valid_races_ids = db.execute("SELECT race_id FROM list_races")
+        print("Return value of SQL query:", valid_races_ids)
+        print("Going through that item-by-item:")
+        for item in valid_races_ids:
+            print(item)
     
     def set_spell_class(self):
         # bard: 2
