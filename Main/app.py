@@ -210,13 +210,16 @@ def create_character():
         if var_name != None:
             new_pc.set_name(var_name)
         var_race_id = request.form.get("race_id")
+        if var_race_id != None:
+            new_pc.set_race_id(var_name)
         var_class_id = request.form.get("class_id")
+        if var_class_id != None:
+            new_pc.set_class_id(var_class_id)
         var_background_id = request.form.get("background_id")
         #character_name = request.form.get("character_name")
         #character_name = "Bob"
         #new_char.name = character_name
         print(new_pc.name)
-        #print(race_id)
         return render_template("character_creator.html", new_pc=new_pc)
     else:
         #print("at character creator")
