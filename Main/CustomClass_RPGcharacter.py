@@ -1109,10 +1109,11 @@ def main():
         print(" background_id:", Barzard.background_id, end="; ")
         print("\n")
         # Try invalid string input
+        invalid_string = "cow"
         print("Trying invalid string input:")
-        print("Barzard.set_race_id('cow'):", Barzard.set_race_id('cow'), end="; ")
-        print("Barzard.set_class_id('SuperHero'):", Barzard.set_class_id('SuperHero'), end="; ")
-        print("Barzard.set_background_id('Martian'):", Barzard.set_background_id('Martian'), end="; ")
+        print("Barzard.set_race_id('",invalid_string,"'):", Barzard.set_race_id(invalid_string), end="; ")
+        print("Barzard.set_class_id('",invalid_string,"'):", Barzard.set_class_id(invalid_string), end="; ")
+        print("Barzard.set_background_id('",invalid_string,"'):", Barzard.set_background_id(invalid_string), end="; ")
         print("\n")
         # check race, class, background again
         print("check race, class, background:")
