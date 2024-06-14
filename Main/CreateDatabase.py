@@ -20,10 +20,6 @@
 # tcl         TCL list elements
 
 # NOTE: for arbitrary reasons:
-#                       attribute_list, background_list, class_list, race_list are 1-indexed
-#                       pc_features_list, spell_list are 0-index
-#                       basic logic: if list is like 10ish or less items I can just memorize, it's 1-indexed
-#                       if it's a big long list, it's 0-indexed
 #                       ########### NOTE: UPDATE:
 #                       just zero-index all lists, it'll make everything simpler in the long-run
 
@@ -194,24 +190,24 @@ with open(attribute_list_csv, "r") as var_file:
 print("DONE")
 
 # create list of PC classes and add values
-print("Creating list_pc_classes table, linking all foreign keys, populating table...", end="")
+print("Creating list_classes table, linking all foreign keys, populating table...", end="")
 db.execute("CREATE TABLE list_pc_classes (\
-    pc_class_key INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
-    pc_class_id INTEGER NOT NULL,\
-    pc_class_name TEXT NOT NULL, \
-    pc_class_hitdie INTEGER,\
+    class_key INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
+    class_id INTEGER NOT NULL,\
+    class_name TEXT NOT NULL, \
+    class_hitdie INTEGER,\
     casting_attrib_id INTEGER,\
     FOREIGN KEY(casting_attrib_id) REFERENCES list_attributes(attrib_id) \
     );")
-db.execute("CREATE UNIQUE INDEX id_of_class ON list_pc_classes (pc_class_id);")
-db.execute("CREATE UNIQUE INDEX name_of_class ON list_pc_classes (pc_class_name);")
+db.execute("CREATE UNIQUE INDEX id_of_class ON list_classes (class_id);")
+db.execute("CREATE UNIQUE INDEX name_of_class ON list_classes (class_name);")
 # class key is just an auto-incrementing primary key
 # class_id will be a number I assign, including subclass ids
 # with barbarian having class_id = 1, the barbarian-subclasses will start at 1001, all the way up to 1099
 # future-proofing, but still
-# the value of pc_class_key will vary as I add new items to my class list, but pc_class_id will stay constant
+# the value of class_key will vary as I add new items to my class list, but class_id will stay constant
 ####################################################################################################
-# NOTE: pc_class_id NEEDS to stay constant - I change these values, parts of my code breaks
+# NOTE: class_id NEEDS to stay constant - I change these values, parts of my code breaks
 # as I am assuming that these values DO NOT CHANGE
 # values:
 #   1:  Barbarian
@@ -234,12 +230,12 @@ with open(class_list_csv, "r") as var_file:
     next(var_reader)
     # skip header line, import everything
     for var_row in var_reader:
-        var_pc_class_id = var_row[0]
-        var_pc_class_key = var_row[1]
-        var_pc_class_name = var_row[2]
-        var_pc_class_hitdie = var_row[3]
-        db.execute("INSERT INTO list_pc_classes (pc_class_key, pc_class_id, pc_class_name, pc_class_hitdie) VALUES(?, ?, ?, ?)", 
-                   var_pc_class_id, var_pc_class_key, var_pc_class_name, var_pc_class_hitdie)
+        var_class_id = var_row[0]
+        var_class_key = var_row[1]
+        var_class_name = var_row[2]
+        var_class_hitdie = var_row[3]
+        db.execute("INSERT INTO list_classes (class_key, class_id, class_name, class_hitdie) VALUES(?, ?, ?, ?)", 
+                   var_class_id, var_class_key, var_class_name, var_class_hitdie)
 print("DONE")
 
 # create list of backgrounds and add values
@@ -276,7 +272,7 @@ db.execute("CREATE TABLE list_characters (\
     character_level INTEGER DEFAULT 1, \
     FOREIGN KEY(character_user_id) REFERENCES users(user_id), \
     FOREIGN KEY(character_race_id) REFERENCES list_races(race_id), \
-    FOREIGN KEY(character_class_id) REFERENCES list_pc_classes(pc_class_id), \
+    FOREIGN KEY(character_class_id) REFERENCES list_classes(class_id), \
     FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id) \
     );")
 print("DONE")
@@ -290,7 +286,7 @@ db.execute("CREATE TABLE spellbook (\
     spellcasting_class_id INT, \
     FOREIGN KEY(spellbook_caster_id) REFERENCES list_characters(character_id), \
     FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
-    FOREIGN KEY(spellcasting_class_id) REFERENCES list_pc_classes(casting_attrib_id) \
+    FOREIGN KEY(spellcasting_class_id) REFERENCES list_classes(casting_attrib_id) \
     );")
 print("DONE")
 
@@ -330,7 +326,6 @@ with open(pc_features_list_csv, "r") as var_file:
 print("DONE")
 
 # the database below is a many-to-many database, linking a character with their features
-# I don't like how I've called PC's "characters" instead of PCs or something, but it's too late to change it now lol
 # character_id: foreign-key references list_characters (character_id)
 # pc_feature_id: foreign-key references list_pc_features (pc_feature_id)
 # order: the order that the features are display for the feature
