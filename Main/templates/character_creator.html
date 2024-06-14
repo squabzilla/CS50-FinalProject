@@ -10,7 +10,7 @@
         <div class="row g-3">
             {% if not new_pc.name %}
                 <div class="col">
-                    <input autocomplete="off" autofocus class="form-control w-auto" name="character_name" placeholder="Character Name" type="text" placeholder="Bob">
+                    <input autocomplete="off" autofocus class="form-control w-auto" name="character_name" placeholder="Character Name" type="text" value="Bob">
                 </div>
                 <div class="col">
                     <button class="btn btn-primary" type="submit">Submit</button>
@@ -29,7 +29,9 @@
             {% elif not new_pc.race_id %}
                 <p>Get race_id</p>
             {% elif not new_pc.class_id %}
-
+                <p>Get class_id</p>
+            {% elif not new_pc.background_id %}
+                <p>Get background_id</p>
             {% endif %}
         </div>
     </form>

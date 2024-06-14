@@ -1051,7 +1051,7 @@ def main():
             valid_name = False
     print("Valid name:", valid_name)
 
-main()
+#main()
 
 
 # cars = {'Toyota':['Camry','Turcel','Tundra','Tacoma'],'Ford':['Mustang','Capri','OrRepairDaily'],'Chev':['Malibu','Corvette']}
