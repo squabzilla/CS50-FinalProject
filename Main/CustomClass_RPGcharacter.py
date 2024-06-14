@@ -59,16 +59,16 @@ def highest_spell_slot(var_class_id, var_char_level):
         if count == (17 * 3): max_spell_level += 1
         count += 1
     return max_spell_level
-# TODO:
-# support for 1/3 casting-only-with-subclass can come with the level-up table
-# when I actually add that
-# if your level-up-table just has like a multiplier on casting
-# so like full-casters get 3-full-caster-levels in backend
-# half-casters get 2, one-third-casters get 1
-# then just multiply all the thresh-holds by 3
-# this will slightly benefit multi-classing partial casters,
-# since we effectively won't "round-down" any of their levels
-# and they still gotta pass the threshholds to get to the next rank
+    # TODO:
+    # support for 1/3 casting-only-with-subclass can come with the level-up table
+    # when I actually add that
+    # if your level-up-table just has like a multiplier on casting
+    # so like full-casters get 3-full-caster-levels in backend
+    # half-casters get 2, one-third-casters get 1
+    # then just multiply all the thresh-holds by 3
+    # this will slightly benefit multi-classing partial casters,
+    # since we effectively won't "round-down" any of their levels
+    # and they still gotta pass the threshholds to get to the next rank
 
 ######### Prepared casters:
 #   druid, cleric, paladin
@@ -112,76 +112,790 @@ def class_spells_by_spell_level(class_id, spell_level):
         #print(spell)
         list_spell_ids.append(spell_id)
     return list_spell_ids
-# CS50 sql documentation:
-# source: https://cs50.readthedocs.io/libraries/cs50/python/
-# How come I can’t use parameter markers as placeholders for tables’ or columns’ names?
-# Parameter markers (e.g., ?) can only be used as placeholders for “literals” like integers and strings,
-# not for “identifiers” like tables’ and columns’ names.
-# If a user’s input will determine the table or column on which you execute a statement,
-# you can use a format string (f-string) instead,
-# but you must validate the user’s input first, to ensure the table or column exists, lest you risk a SQL-injection attack
+    # CS50 sql documentation:
+    # source: https://cs50.readthedocs.io/libraries/cs50/python/
+    # How come I can’t use parameter markers as placeholders for tables’ or columns’ names?
+    # Parameter markers (e.g., ?) can only be used as placeholders for “literals” like integers and strings,
+    # not for “identifiers” like tables’ and columns’ names.
+    # If a user’s input will determine the table or column on which you execute a statement,
+    # you can use a format string (f-string) instead,
+    # but you must validate the user’s input first, to ensure the table or column exists, lest you risk a SQL-injection attack
 
 # bard_spell, cleric_spell, druid_spell, paladin_spell,\
 # ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
 
-class new_bard_spells(self):
-    # bard cantrips known: 2
-    # bard spells known: 4
-    def __init__(self, cantrips_known = [], spells_known = [], list_bard_cantrips = [], list_bard_spells = [],
+class new_bard_spells:
+    # class_id: 2
+    # cantrips known: 2
+    # spells known: 4
+    def __init__(self, cantrips_known = [], spells_known = [], list_class_cantrips = [], list_class_spells = [],
+                 class_id = 2, prepared_caster = False,
                  cantrip_1 = None, cantrip_2 = None, spell_1 = None, spell_2 = None, spell_3 = None, spell_4 = None):
         self.cantrips_known = cantrips_known
         self.spells_known = spells_known
-        self.list_bard_cantrips = list_bard_cantrips
-        self.list_bard_spells = list_bard_spells
+        self.list_class_cantrips = list_class_cantrips
+        self.list_class_spells = list_class_spells
+        
+        self.class_id = class_id
+        self.prepared_caster = prepared_caster
+        
         self.cantrip_1 = cantrip_1
         self.cantrip_2 = cantrip_2
         self.spell_1 = spell_1
         self.spell_2 = spell_2
         self.spell_3 = spell_3
         self.spell_4 = spell_4
-    def retrieve_bard_spell_list(self):
-        self.list_bard_cantrips = class_spells_by_spell_level(2,0)
-        list_bard_spells = class_spells_by_spell_level(2,1)
+    
+    def retrieve_class_spell_list(self):
+        self.list_class_cantrips = class_spells_by_spell_level(self.class_id,0)
+        self.list_class_spells = class_spells_by_spell_level(self.class_id,1)
+        return True
+    
+    def set_cantrip_1(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_1 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_1(self):
+        self.cantrip_1 = None
+        return True
+    
+    def set_cantrip_2(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_2 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_2(self):
+        self.cantrip_2 = None
+        return True
+    
+    def set_spell_1(self, value):
+        if value in self.list_class_spells:
+            self.spell_1 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_1(self):
+        self.spell_1 = None
+        return True
+    
+    def set_spell_2(self, value):
+        if value in self.list_class_spells:
+            self.spell_2 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_2(self):
+        self.spell_2 = None
+        return True
+    
+    def set_spell_3(self, value):
+        if value in self.list_class_spells:
+            self.spell_3 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_3(self):
+        self.spell_3 = None
+        return True
+    
+    def set_spell_4(self, value):
+        if value in self.list_class_spells:
+            self.spell_4 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_4(self):
+        self.spell_4 = None
+        return True
+    
+    def confirm_list(self):
+        if (self.cantrip_1 == None) or (self.cantrip_2 == None) or \
+        (self.spell_1 == None) or (self.spell_2 == None) or (self.spell_3 == None) or (self.spell_4 == None):
+            print("Error: unassigned cantrips or spells")
+            return False
+        self.spells_known = []
+        self.spells_known.append(int(self.cantrip_1))
+        self.spells_known.append(int(self.cantrip_2))
+        self.spells_known.append(int(self.spell_1))
+        self.spells_known.append(int(self.spell_2))
+        self.spells_known.append(int(self.spell_3))
+        self.spells_known.append(int(self.spell_4))
+        var_count = 0
+        last_index = len(self.spells_known)
+        while var_count < (last_index - 1):
+            var_next = var_count + 1
+            while var_next <= last_index:
+                if self.spells_known[var_count] == self.spells_known[var_next]:
+                    print("Error: spell chosen multiple times.")
+                    return False
+                var_next += 1
+        return self.spells_known
+    
+    def reset_spells(self):
+        self.spells_known = []
+        self.cantrip_1 = None
+        self.cantrip_2 = None
+        self.spell_1 = None
+        self.spell_2 = None
+        self.spell_3 = None
+        self.spell_4 = None
+        return True
 
-class rpg_char_global_counts:
-    def __init__(self, sql_db = None,
-                 race_count = None, class_count = None, background_count = None,
-                 spells_count = None, features_count = None):
-        self.sql_db = sql_db
-        self.race_count = race_count
-        self.class_count = class_count
-        self.background_count = background_count
-        self.spells_count = spells_count
-        self.features_count = features_count
-    def get_db(self, var_db):
-        self.sql_db = var_db
-    def get_maxes(self):
-        self.race_count = db.execute("SELECT COUNT(*) FROM list_races;")[0].get("COUNT(*)")
-        self.class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
-        self.background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
-        self.spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
-        self.features_count = db.execute("SELECT COUNT(*) FROM list_pc_features;")[0].get("COUNT(*)")
-    def numberify(self):
-        self.class_count = int(self.class_count)
-        self.background_count = int(self.background_count)
-        self.spells_count = int(self.spells_count)
-        self.features_count = int(self.features_count)
-    def print_maxes(self):
-        print("Race count is:", self.race_count)
-        print("Class count is:", self.class_count)
-        print("Background count is:", self.background_count)
-        print("Spells count is:", self.spells_count)
-        print("Features count is:", self.features_count)
-class known_spell:
-    def __init__(self, spell_id, prepared, attrib_id):
-        # self.caster_id - no, each logged-in user has their own unique user_id which we can retrieve 
-        self.spell_id = spell_id            # spellbook_spell_id INTEGER,   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id)
-        self.prepared = prepared            # spell_prepared INTEGER,
-        self.attrib_id = attrib_id          # spellcasting_attrib_id INT,   FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes(attrib_id)
+
+class new_cleric_spells:
+    # class_id: 3
+    # cantrips known: 3
+    # spells known: all
+    def __init__(self, cantrips_known = [], spells_known = [], list_class_cantrips = [], list_class_spells = [],
+                 class_id = 3, prepared_caster = True,
+                 cantrip_1 = None, cantrip_2 = None, cantrip_3 = None):
+        self.cantrips_known = cantrips_known
+        self.spells_known = spells_known
+        self.list_class_cantrips = list_class_cantrips
+        self.list_class_spells = list_class_spells
+        
+        self.class_id = class_id
+        self.prepared_caster = prepared_caster
+        
+        self.cantrip_1 = cantrip_1
+        self.cantrip_2 = cantrip_2
+        self.cantrip_3 = cantrip_3
+    
+    def retrieve_class_spell_list(self):
+        self.list_class_cantrips = class_spells_by_spell_level(self.class_id,0)
+        self.list_class_spells = class_spells_by_spell_level(self.class_id,1)
+        return True
+    
+    def set_cantrip_1(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_1 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_1(self):
+        self.cantrip_1 = None
+        return True
+    
+    def set_cantrip_2(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_2 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_2(self):
+        self.cantrip_2 = None
+        return True
+    
+    def set_cantrip_3(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_3 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_3(self):
+        self.cantrip_3 = None
+        return True
+    
+    def confirm_list(self):
+        if (self.cantrip_1 == None) or (self.cantrip_2 == None) or (self.cantrip_3 == None):
+            print("Error: unassigned cantrips or spells")
+            return False
+        self.spells_known = []
+        self.spells_known.append(int(self.cantrip_1))
+        self.spells_known.append(int(self.cantrip_2))
+        self.spells_known.append(int(self.cantrip_3))
+        for spell_id in self.list_class_spells:
+            self.spells_known.append(spell_id)
+        var_count = 0
+        last_index = len(self.spells_known)
+        while var_count < (last_index - 1):
+            var_next = var_count + 1
+            while var_next <= last_index:
+                if self.spells_known[var_count] == self.spells_known[var_next]:
+                    print("Error: spell chosen multiple times.")
+                    return False
+                var_next += 1
+        return self.spells_known
+    
+    def reset_spells(self):
+        self.spells_known = []
+        self.cantrip_1 = None
+        self.cantrip_2 = None
+        self.cantrip_3 = None
+        return True
+
+
+class new_druid_spells:
+    # class_id: 4
+    # cantrips known: 2
+    # spells known: all
+    def __init__(self, cantrips_known = [], spells_known = [], list_class_cantrips = [], list_class_spells = [],
+                 class_id = 4, prepared_caster = True,
+                 cantrip_1 = None, cantrip_2 = None):
+        self.cantrips_known = cantrips_known
+        self.spells_known = spells_known
+        self.list_class_cantrips = list_class_cantrips
+        self.list_class_spells = list_class_spells
+        
+        self.class_id = class_id
+        self.prepared_caster = prepared_caster
+        
+        self.cantrip_1 = cantrip_1
+        self.cantrip_2 = cantrip_2
+    
+    def retrieve_class_spell_list(self):
+        self.list_class_cantrips = class_spells_by_spell_level(self.class_id,0)
+        self.list_class_spells = class_spells_by_spell_level(self.class_id,1)
+        return True
+    
+    def set_cantrip_1(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_1 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_1(self):
+        self.cantrip_1 = None
+        return True
+    
+    def set_cantrip_2(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_2 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_2(self):
+        self.cantrip_2 = None
+        return True
+    
+    def confirm_list(self):
+        if (self.cantrip_1 == None) or (self.cantrip_2 == None):
+            print("Error: unassigned cantrips or spells")
+            return False
+        self.spells_known = []
+        self.spells_known.append(int(self.cantrip_1))
+        self.spells_known.append(int(self.cantrip_2))
+        for spell_id in self.list_class_spells:
+            self.spells_known.append(spell_id)
+        var_count = 0
+        last_index = len(self.spells_known)
+        while var_count < (last_index - 1):
+            var_next = var_count + 1
+            while var_next <= last_index:
+                if self.spells_known[var_count] == self.spells_known[var_next]:
+                    print("Error: spell chosen multiple times.")
+                    return False
+                var_next += 1
+        return self.spells_known
+    
+    def reset_spells(self):
+        self.spells_known = []
+        self.cantrip_1 = None
+        self.cantrip_2 = None
+        return True
+
+
+class new_ranger_spells:
+    # class_id: 7
+    # cantrips known: 2
+    # spells known: none
+    def __init__(self, cantrips_known = [], spells_known = [], list_class_cantrips = [], list_class_spells = [],
+                 class_id = 7, prepared_caster = False,
+                 cantrip_1 = None, cantrip_2 = None):
+        self.cantrips_known = cantrips_known
+        self.spells_known = spells_known
+        self.list_class_cantrips = list_class_cantrips
+        self.list_class_spells = list_class_spells
+        
+        self.class_id = class_id
+        self.prepared_caster = prepared_caster
+        
+        self.cantrip_1 = cantrip_1
+        self.cantrip_2 = cantrip_2
+    
+    def retrieve_class_spell_list(self):
+        self.list_class_cantrips = class_spells_by_spell_level(self.class_id,0)
+        self.list_class_spells = class_spells_by_spell_level(self.class_id,1)
+        return True
+    #def set_cantrip_1(self, value): self.cantrip_1 = value
+    #def rm_cantrip_1(self): self.cantrip_1 = None
+    #def set_cantrip_2(self, value): self.cantrip_2 = value
+    #def rm_cantrip_2(self): self.cantrip_2 = None
+    def set_ranger_spells(self):
+        # db.execute("SELECT * FROM list_spells WHERE spell_name = 'Hunter''s Mark';
+        # SELECT * FROM list_spells WHERE spell_name = "Druidcraft";
+        self.cantrip_1 = db.execute("SELECT spell_id FROM list_spells WHERE spell_name = 'Hunter''s Mark';")[0].get("spell_id")
+        self.cantrip_2 = db.execute("SELECT spell_id FROM list_spells WHERE spell_name = 'Druidcraft';")[0].get("spell_id")
+        self.spells_known = []
+        self.spells_known.append(int(self.cantrip_1))
+        self.spells_known.append(int(self.cantrip_2))
+        return self.spells_known
+    
+    def confirm_list(self):
+        if (self.cantrip_1 == None) or (self.cantrip_2 == None):
+            print("Error: unassigned cantrips or spells")
+            return False
+        self.spells_known = []
+        self.spells_known.append(int(self.cantrip_1))
+        self.spells_known.append(int(self.cantrip_2))
+        return self.spells_known
+        
+    def reset_spells(self):
+        self.spells_known = []
+        self.cantrip_1 = None
+        self.cantrip_2 = None
+        return True
+
+
+class new_sorcerer_spells:
+    # class_id: 10
+    # cantrips known: 4
+    # spells known: 2
+    def __init__(self, cantrips_known = [], spells_known = [], list_class_cantrips = [], list_class_spells = [],
+                 class_id = 10, prepared_caster = False,
+                 cantrip_1 = None, cantrip_2 = None, cantrip_3 = None, cantrip_4 = None, spell_1 = None, spell_2 = None):
+        self.cantrips_known = cantrips_known
+        self.spells_known = spells_known
+        self.list_class_cantrips = list_class_cantrips
+        self.list_class_spells = list_class_spells
+        
+        self.class_id = class_id
+        self.prepared_caster = prepared_caster
+        
+        self.cantrip_1 = cantrip_1
+        self.cantrip_2 = cantrip_2
+        self.cantrip_3 = cantrip_3
+        self.cantrip_4 = cantrip_4
+        self.spell_1 = spell_1
+        self.spell_2 = spell_2
+    
+    def retrieve_class_spell_list(self):
+        self.list_class_cantrips = class_spells_by_spell_level(self.class_id,0)
+        self.list_class_spells = class_spells_by_spell_level(self.class_id,1)
+        return True
+    
+    def set_cantrip_1(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_1 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_1(self):
+        self.cantrip_1 = None
+        return True
+    
+    def set_cantrip_2(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_2 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_2(self):
+        self.cantrip_2 = None
+        return True
+    
+    def set_cantrip_3(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_3 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_3(self):
+        self.cantrip_3 = None
+        return True
+    
+    def set_cantrip_4(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_4 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_4(self):
+        self.cantrip_4 = None
+        return True
+    
+    def set_spell_1(self, value):
+        if value in self.list_class_spells:
+            self.spell_1 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_1(self):
+        self.spell_1 = None
+        return True
+    
+    def set_spell_2(self, value):
+        if value in self.list_class_spells:
+            self.spell_2 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_2(self):
+        self.spell_2 = None
+        return True
+    
+    def confirm_list(self):
+        if (self.cantrip_1 == None) or (self.cantrip_2 == None) or (self.cantrip_3 == None) or (self.cantrip_4 == None) or\
+        (self.spell_1 == None) or (self.spell_2 == None):
+            print("Error: unassigned cantrips or spells")
+            return False
+        self.spells_known = []
+        self.spells_known.append(int(self.cantrip_1))
+        self.spells_known.append(int(self.cantrip_2))
+        self.spells_known.append(int(self.cantrip_3))
+        self.spells_known.append(int(self.cantrip_4))
+        self.spells_known.append(int(self.spell_1))
+        self.spells_known.append(int(self.spell_2))
+        var_count = 0
+        last_index = len(self.spells_known)
+        while var_count < (last_index - 1):
+            var_next = var_count + 1
+            while var_next <= last_index:
+                if self.spells_known[var_count] == self.spells_known[var_next]:
+                    print("Error: spell chosen multiple times.")
+                    return False
+                var_next += 1
+        return True
+    def reset_spells(self):
+        self.spells_known = []
+        self.cantrip_1 = None
+        self.cantrip_2 = None
+        self.cantrip_3 = None
+        self.cantrip_4 = None
+        self.spell_1 = None
+        self.spell_2 = None
+        return True
+
+
+class new_warlock_spells:
+    # class_id: 11
+    # cantrips known: 2
+    # spells known: 2
+    def __init__(self, cantrips_known = [], spells_known = [], list_class_cantrips = [], list_class_spells = [],
+                 class_id = 11, prepared_caster = False,
+                 cantrip_1 = None, cantrip_2 = None, spell_1 = None, spell_2 = None):
+        self.cantrips_known = cantrips_known
+        self.spells_known = spells_known
+        self.list_class_cantrips = list_class_cantrips
+        self.list_class_spells = list_class_spells
+        
+        self.class_id = class_id
+        self.prepared_caster = prepared_caster
+        
+        self.cantrip_1 = cantrip_1
+        self.cantrip_2 = cantrip_2
+        self.spell_1 = spell_1
+        self.spell_2 = spell_2
+    
+    def retrieve_class_spell_list(self):
+        self.list_class_cantrips = class_spells_by_spell_level(self.class_id,0)
+        self.list_class_spells = class_spells_by_spell_level(self.class_id,1)
+        return True
+    
+    def set_cantrip_1(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_1 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_1(self):
+        self.cantrip_1 = None
+        return True
+    
+    def set_cantrip_2(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_2 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_2(self):
+        self.cantrip_2 = None
+        return True
+    
+    def set_spell_1(self, value):
+        if value in self.list_class_spells:
+            self.spell_1 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_1(self):
+        self.spell_1 = None
+        return True
+    
+    def set_spell_2(self, value):
+        if value in self.list_class_spells:
+            self.spell_2 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_2(self):
+        self.spell_2 = None
+        return True
+    
+    def confirm_list(self):
+        if (self.cantrip_1 == None) or (self.cantrip_2 == None) or\
+        (self.spell_1 == None) or (self.spell_2 == None):
+            print("Error: unassigned cantrips or spells")
+            return False
+        self.spells_known = []
+        self.spells_known.append(int(self.cantrip_1))
+        self.spells_known.append(int(self.cantrip_2))
+        self.spells_known.append(int(self.cantrip_3))
+        self.spells_known.append(int(self.cantrip_4))
+        self.spells_known.append(int(self.spell_1))
+        self.spells_known.append(int(self.spell_2))
+        var_count = 0
+        last_index = len(self.spells_known)
+        while var_count < (last_index - 1):
+            var_next = var_count + 1
+            while var_next <= last_index:
+                if self.spells_known[var_count] == self.spells_known[var_next]:
+                    print("Error: spell chosen multiple times.")
+                    return False
+                var_next += 1
+        return True
+    def reset_spells(self):
+        self.spells_known = []
+        self.cantrip_1 = None
+        self.cantrip_2 = None
+        self.spell_1 = None
+        self.spell_2 = None
+        return True
+
+
+class new_wizard_spells:
+    # class_id: 12
+    # cantrips known: 3
+    # spells known: 6
+    def __init__(self, cantrips_known = [], spells_known = [], list_class_cantrips = [], list_class_spells = [],
+                 class_id = 12, prepared_caster = True,
+                 cantrip_1 = None, cantrip_2 = None, cantrip_3 = None,
+                 spell_1 = None, spell_2 = None, spell_3 = None, spell_4 = None, spell_5 = None, spell_6 = None):
+        self.cantrips_known = cantrips_known
+        self.spells_known = spells_known
+        self.list_class_cantrips = list_class_cantrips
+        self.list_class_spells = list_class_spells
+        
+        self.class_id = class_id
+        self.prepared_caster = prepared_caster
+        
+        self.cantrip_1 = cantrip_1
+        self.cantrip_2 = cantrip_2
+        self.cantrip_3 = cantrip_3
+        self.spell_1 = spell_1
+        self.spell_2 = spell_2
+        self.spell_3 = spell_3
+        self.spell_4 = spell_4
+        self.spell_5 = spell_5
+        self.spell_6 = spell_6
+    
+    def retrieve_class_spell_list(self):
+        self.list_class_cantrips = class_spells_by_spell_level(self.class_id,0)
+        self.list_class_spells = class_spells_by_spell_level(self.class_id,1)
+        return True
+    
+    def set_cantrip_1(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_1 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_1(self):
+        self.cantrip_1 = None
+        return True
+    
+    def set_cantrip_2(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_2 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_2(self):
+        self.cantrip_2 = None
+        return True
+    
+    def set_cantrip_3(self, value):
+        if value in self.list_class_cantrips:
+            self.cantrip_3 = value
+            return True
+        else:
+            print("Error: cantrip not in list")
+            return False
+    def rm_cantrip_3(self):
+        self.cantrip_3 = None
+        return True
+    
+    def set_spell_1(self, value):
+        if value in self.list_class_spells:
+            self.spell_1 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_1(self):
+        self.spell_1 = None
+        return True
+    
+    def set_spell_2(self, value):
+        if value in self.list_class_spells:
+            self.spell_2 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_2(self):
+        self.spell_2 = None
+        return True
+    
+    def set_spell_3(self, value):
+        if value in self.list_class_spells:
+            self.spell_3 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_3(self):
+        self.spell_3 = None
+        return True
+    
+    def set_spell_4(self, value):
+        if value in self.list_class_spells:
+            self.spell_4 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_4(self):
+        self.spell_4 = None
+        return True
+    
+    def set_spell_5(self, value):
+        if value in self.list_class_spells:
+            self.spell_5 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_5(self):
+        self.spell_5 = None
+        return True
+    
+    def set_spell_6(self, value):
+        if value in self.list_class_spells:
+            self.spell_6 = value
+            return True
+        else:
+            print("Error: spell not in list")
+            return False
+    def rm_spell_6(self):
+        self.spell_6 = None
+        return True
+    
+    def confirm_list(self):
+        if (self.cantrip_1 == None) or (self.cantrip_2 == None) or (self.cantrip_3 == None) or \
+        (self.spell_1 == None) or (self.spell_2 == None) or (self.spell_3 == None) or \
+        (self.spell_4 == None) or (self.spell_5 == None)or (self.spell_6 == None):
+            print("Error: unassigned cantrips or spells")
+            return False
+        self.spells_known = []
+        self.spells_known.append(int(self.cantrip_1))
+        self.spells_known.append(int(self.cantrip_2))
+        self.spells_known.append(int(self.cantrip_3))
+        self.spells_known.append(int(self.spell_1))
+        self.spells_known.append(int(self.spell_2))
+        self.spells_known.append(int(self.spell_3))
+        self.spells_known.append(int(self.spell_4))
+        self.spells_known.append(int(self.spell_5))
+        self.spells_known.append(int(self.spell_6))
+        var_count = 0
+        last_index = len(self.spells_known)
+        while var_count < (last_index - 1):
+            var_next = var_count + 1
+            while var_next <= last_index:
+                if self.spells_known[var_count] == self.spells_known[var_next]:
+                    print("Error: spell chosen multiple times.")
+                    return False
+                var_next += 1
+        return True
+    
+    def reset_spells(self):
+        self.spells_known = []
+        self.cantrip_1 = None
+        self.cantrip_2 = None
+        self.spell_1 = None
+        self.spell_2 = None
+        self.spell_3 = None
+        self.spell_4 = None
+        return True
+
+# class rpg_char_global_counts:
+    # def __init__(self, #sql_db = None,
+                 # race_count = None, class_count = None, background_count = None,
+                 # spells_count = None, features_count = None):
+        # #self.sql_db = sql_db
+        # self.race_count = race_count
+        # self.class_count = class_count
+        # self.background_count = background_count
+        # self.spells_count = spells_count
+        # self.features_count = features_count
+    # #def get_db(self, var_db):
+        # #self.sql_db = var_db
+    # def get_maxes(self):
+        # self.race_count = db.execute("SELECT COUNT(*) FROM list_races;")[0].get("COUNT(*)")
+        # self.class_count = db.execute("SELECT COUNT(*) FROM list_pc_classes;")[0].get("COUNT(*)")
+        # self.background_count = db.execute("SELECT COUNT(*) FROM list_backgrounds;")[0].get("COUNT(*)")
+        # self.spells_count = db.execute("SELECT COUNT(*) FROM list_spells;")[0].get("COUNT(*)")
+        # self.features_count = db.execute("SELECT COUNT(*) FROM list_pc_features;")[0].get("COUNT(*)")
+    # def numberify(self):
+        # self.class_count = int(self.class_count)
+        # self.background_count = int(self.background_count)
+        # self.spells_count = int(self.spells_count)
+        # self.features_count = int(self.features_count)
+    # def print_maxes(self):
+        # print("Race count is:", self.race_count)
+        # print("Class count is:", self.class_count)
+        # print("Background count is:", self.background_count)
+        # print("Spells count is:", self.spells_count)
+        # print("Features count is:", self.features_count)
+        
+        
+# class known_spell:
+    # def __init__(self, spell_id, prepared, attrib_id):
+        # # self.caster_id - no, each logged-in user has their own unique user_id which we can retrieve 
+        # self.spell_id = spell_id            # spellbook_spell_id INTEGER,   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id)
+        # self.prepared = prepared            # spell_prepared INTEGER,
+        # self.attrib_id = attrib_id          # spellcasting_attrib_id INT,   FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes(attrib_id)
         
 class rpg_char_create:
-    def __init__(self, sql_db = None, user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1, var_spells = None, list_spells = [], features = []):
-        self.sql_db = sql_db
+    def __init__(self, #sql_db = None,
+                 user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1, var_spells = None, list_spells = [], features = []):
+        #self.sql_db = sql_db
         self.user_id = user_id
         # self.character_id - no, this is auto-incremented when entry is added
         # self.user_id - no, each logged-in user has their own unique user_id which we can retrieve 
@@ -202,87 +916,34 @@ class rpg_char_create:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
         # self.feature.pc_feature_id:   stored in above dictionary  ref: INTEGER
         # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(pc_feature_id) REFERENCES list_pc_features(pc_feature_id)
-    def get_db(self, var_db):
-        self.sql_db = var_db
+    #def get_db(self, var_db):
+        #self.sql_db = var_db
     def get_user_id(self, var_user_id):
         self.user_id = var_user_id
-    def verify_data_types(self):
-        try: str(self.name)
-        except:
-            print("Error: cannot turn self.name value into string")
-            return False
-        if len(self.name) <= 0:
-            print("Error: self.name value cannot be empty")
-            return False
-        try: int(self.race_id)
-        except:
-            print("Error: self.race_id not an integer")
-            return False
-        try: int(self.class_id)
-        except:
-            print("Error: self.class_id not an integer")
-            return False
-        try: int(self.background_id)
-        except:
-            print("Error: self.background_id not an integer")
-            return False
-        try:
-            for i in range(len(self.list_spells)):
-                int(self.list_spells[i])
-        except:
-            print("Error: one or more spell_id is not an integer")
-            return False
-        try:
-            for i in range(len(self.features)):
-                int(self.features[i])
-        except:
-            print("Error: one or more feature_id is not an integer")
-            return False
         return True
-    def validate_entries(self, var_global_maxes):
-        if self.race_id >= var_global_maxes.class_count:
-            print("Error: class_id out of bounds.")
-            return False
-        #if self.class_id >= var_global_maxes.class_count:
-            #print("Error: class_id out of bounds.")
-            #return False
-        if self.background_id >= var_global_maxes.class_count:
-            print("Error: background_id out of bounds.")
-            return False
-        for i in range(len(self.list_spells)):
-            if self.list_spells[i] >= var_global_maxes.spells_count:
-                print("Error: one or more spell_id is out of bounds.")
-                return False
-        for i in range(len(self.features)):
-            if self.features[i] >= var_global_maxes.features_count:
-                print("Error: one or more feature_id is out of bounds.")
-                return False
+    
+    def set_spell_class(self):
+        # bard: 2
+        # cleric: 3
+        # druid: 4
+        # ranger: 7
+        # sorcerer: 10
+        # warlock: 11
+        # wizard: 12
+        if self.class_id ==  2: self.var_spells = new_bard_spells()
+        if self.class_id ==  3: self.var_spells = new_cleric_spells()
+        if self.class_id ==  7: self.var_spells = new_druid_spells()
+        if self.class_id == 10: self.var_spells = new_ranger_spells()
+        if self.class_id == 11: self.var_spells = new_warlock_spells()
+        if self.class_id == 12: self.var_spells = new_wizard_spells()
         return True
+        ####    NOTE: once those are assigned, I can use those classes to correctly assign spells
+        ####    Now I just need to do the same for class features... *cries*
+    
     #def add_spells_prepared_caster(self):
     ######### Prepared casters:
     #   druid, cleric, paladin
-    def add_spells_byIDs(self, *oneOrMore_spell_ids):
-        for spell_id in oneOrMore_spell_ids:
-            try: spell_id = int(spell_id)
-            except:
-                print("Error: ", spell_id, "is an invalid spell-id")
-                return False
-            #if spell_id not in self.list_spells: self.list_spells.append(spell_id)
-            if spell_id not in self.list_spells:
-                continue
-            else:
-                self.list_spells.append(spell_id)
-    def add_spells_byList(self, spell_id_list):
-        for spell_id in spell_id_list:
-            try: spell_id = int(spell_id)
-            except:
-                print("Error: ", spell_id, "is an invalid spell-id")
-                return False
-            #if spell_id not in self.list_spells: self.list_spells.append(spell_id)
-            if spell_id in self.list_spells:
-                continue
-            else:
-                self.list_spells.append(spell_id)
+    
     def reset_spells(self):
         self.list_spells = []
     def add_to_database(self):
@@ -320,13 +981,11 @@ def main():
     #print("cheer:", race_list)
     #print("Hello, world")
     #maxes = rpg_char_global_counts(0,0,0,0,0)
-    maxes = rpg_char_global_counts()
-    maxes.get_db(db)
-    maxes.get_maxes()
-    maxes.numberify()
+    #maxes = rpg_char_global_counts()
+    #maxes.get_maxes()
+    #maxes.numberify()
     #maxes.print_maxes()
     Barzard = rpg_char_create()
-    Barzard.get_db(db)
     Barzard.name = "Barzard"
     a = 1
     b = 2
@@ -336,6 +995,14 @@ def main():
     #print(druid_spell_list)
     #print("length of spell_list_list is:", len(druid_spell_list))
     #print(druid_spell_list[4])
+    ranger_spells = new_ranger_spells()
+    print("ranger_spells.retrieve_class_spell_list(): ", ranger_spells.retrieve_class_spell_list())
+    print("ranger_spells.set_ranger_spells(): ", ranger_spells.set_ranger_spells())
+    print("Ranger cantrip IDs are:", ranger_spells.cantrip_1, ranger_spells.cantrip_2)
+    print("ranger_spells.reset_spells: ", ranger_spells.reset_spells())
+    print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
+    print("ranger_spells.set_ranger_spells: ", ranger_spells.set_ranger_spells())
+    print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
 
 main()
 

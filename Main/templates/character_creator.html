@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}Character Creator{% endblock %}
+
+{% block header %}Character Creator{% endblock %}
+
+{% block main %}
+    <p>This is the character creator.</p>
+    {% if not new_pc.name %}
+    <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="character_name" placeholder="Stock Symbol" type="text">
+        <!--<br>
+        <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number">-->
+        <br>
+        <button class="btn btn-primary" type="submit">Submit Transaction</button>
+    </form>
+    <br>
+    <!--
+    <form  action="/character_creator_name" class="form-control mx-auto w-auto">
+            <input autocomplete="off" autofocus id="character_name" name="character_name" placeholder="Character Name" type="text" required="required">
+            <br>
+            <button type="button" class="btn btn-primary" type="submit">
+                Create new character
+            </button>
+        </form>
+    -->
+    {% elif not new_pc.race_id %}
+        <p>We are at step two</p>
+    {% endif %}
+    <!--
+    <form>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Create new character
+        </button>
+        <button>Save existing character</button>
+    </form>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Modal source: https://getbootstrap.com/docs/5.3/components/modal/
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+{% endblock %}
+
+{% block footer %}{% endblock %}

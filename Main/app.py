@@ -6,6 +6,8 @@ from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
+from CustomClass_RPGcharacter import highest_spell_slot, class_spells_by_spell_level, new_bard_spells, new_cleric_spells, \
+    new_druid_spells, new_ranger_spells, new_sorcerer_spells, new_warlock_spells, new_wizard_spells, rpg_char_create
 ### above: copied imported libraries from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 #########################################################################################
 
@@ -155,7 +157,7 @@ def register():
             # return apology("Error: password cannot be empty")
             #return render_template("register.html", error="Password cannot be empty."), 400
             flash("Password cannot be empty.")
-            return render_template("register.html", error), 400
+            return render_template("register.html"), 400
         register_password_2 = request.form.get("confirmation")
         if not register_password_2:
             # return apology("Error: need to confirm password")
@@ -199,6 +201,48 @@ def register():
 #########################################################################################
 
 
-@app.route("/create_character")
+@app.route("/character_creator", methods=['GET', 'POST'])
 def create_character():
-    return render_template("create_character.html")
+    if request.method == 'POST':
+        new_pc = session["new_char"]
+        var_name = request.form.get("character_name")
+        if var_name != None:
+            new_pc.name = var_name
+        var_race_id = request.form.get("race_id")
+        #character_name = request.form.get("character_name")
+        #character_name = "Bob"
+        #new_char.name = character_name
+        print(new_pc.name)
+        #print(race_id)
+        return render_template("character_creator.html", new_pc=new_pc)
+    else:
+        #print("at character creator")
+        new_pc = rpg_char_create()
+        session["new_char"] = new_pc
+        return render_template("character_creator.html", new_pc=new_pc)
+# bootstrap -> components -> accordion looks really good
+# carousel is also kinda cool?
+# collapse
+# modal seems REALLY good like what I want
+
+@app.route("/character_creator_name", methods=['GET', 'POST'])
+def create_character_step2():
+    if request.method == 'POST':
+        character_name = request.form.get("character_name")
+        #character_name = "Bob"
+        new_char = rpg_char_create()
+        new_char.name = character_name
+        session["new_char"] = new_char
+        print(character_name)
+        #return render_template("character_creator.html", character=new_char, step=2)
+        return redirect("/character_creator")
+    #session["user_id"] = rows[0]["user_id"]
+    else:
+        print("get-method")
+        #return render_template("character_creator.html", noCharacter="noCharacter")
+        return redirect("/")
+
+@app.route("/save_character")
+@login_required
+def save_character():
+    flash("TO-DO")

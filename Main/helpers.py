@@ -1,5 +1,14 @@
 #########################################################################################
 ### below: copied login_required function from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
+import csv
+import datetime
+import pytz
+import requests
+import urllib
+import uuid
+
+from flask import redirect, render_template, request, session
+from functools import wraps
 
 def login_required(f):
     """
