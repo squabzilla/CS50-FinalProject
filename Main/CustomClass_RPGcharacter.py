@@ -1059,7 +1059,7 @@ def main():
                 valid_name = False
         print("Valid name:", valid_name)
     
-    testing_create_Barzard_character = False
+    
     race_list = db.execute("SELECT race_id FROM list_races")
         # remember that db.execute will return a LIST of DICTIONARIES
     for i in range(len(race_list)):
@@ -1068,9 +1068,10 @@ def main():
     #print("Now for Race list items:")
     #for item in race_list:
         #print(item)
-    var_string = "abc"
-    var_int = int(var_string)
-    print("var_int is:", var_int)
+    #var_string = "abc"
+    #var_int = int(var_string)
+    #print("var_int is:", var_int)
+    testing_create_Barzard_character = True
     if testing_create_Barzard_character == True:
         # creating character and setting name
         print("creating character and setting name")
@@ -1084,13 +1085,23 @@ def main():
         print(" class_id:", Barzard.class_id, end="; ")
         print(" background_id:", Barzard.background_id, end="; ")
         print("\n")
-        # Try invalid input
-        print("Trying invalid input")
+        # Try invalid numerical input
+        print("Trying invalid numerical input:")
         print("Barzard.set_race_id(99):", Barzard.set_name(99), end="; ")
-        print("Barzard.set_race_id('cow'):", Barzard.set_race_id('cow'), end="; ")
         print("Barzard.set_class_id(99):", Barzard.set_class_id(99))
-        print("Barzard.set_class_id('SuperHero'):", Barzard.set_class_id('SuperHero'), end="; ")
         print("Barzard.set_background_id(99):", Barzard.set_background_id(99), end="; ")
+        print("\n")
+        # check race, class, background again
+        print("check race, class, background:")
+        print("Barzard", end="")
+        print(" race_id:", Barzard.race_id, end="; ")
+        print(" class_id:", Barzard.class_id, end="; ")
+        print(" background_id:", Barzard.background_id, end="; ")
+        print("\n")
+        # Try invalid string input
+        print("Trying invalid string input:")
+        print("Barzard.set_race_id('cow'):", Barzard.set_race_id('cow'), end="; ")
+        print("Barzard.set_class_id('SuperHero'):", Barzard.set_class_id('SuperHero'), end="; ")
         print("Barzard.set_background_id('Martian'):", Barzard.set_background_id('Martian'), end="; ")
         print("\n")
         # check race, class, background again
