@@ -969,6 +969,21 @@ class rpg_char_create:
             # db.execute("INSERT INTO spellbook (\
                 # )")
 
+def generate_valid_name_characters():
+    lowercase_string = "abcdefghijklmnopqrstuvwxyzáàäéèêëíîïóôöúûüç"
+    uppercase_string = lowercase_string.upper()
+    numbers_string = str(1234567890)
+    other_non_quotation_characters_string = ",.!--_:+*"
+    quotation_characters_string = "'" + "`" + '"' 
+    valid_name_characters = lowercase_string + uppercase_string + numbers_string + \
+        other_non_quotation_characters_string + quotation_characters_string
+    print()
+    print(valid_name_characters[0], end="")
+    for i in range(len(valid_name_characters)):
+        if i == 0:
+            continue
+        print(",", valid_name_characters[i])
+
 
 
 def validate_rpgCharacter_entry(entry_value, maximum_value):
