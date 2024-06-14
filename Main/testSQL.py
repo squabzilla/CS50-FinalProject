@@ -22,8 +22,8 @@ db = SQL(sql_path)
 var_list_races = db.execute("SELECT race_id, race_name FROM list_races;")
 mydictionary = var_list_races[0]
 keysList = list(mydictionary.keys())
-print(mydictionary)
-print(keysList)
+#print(mydictionary)
+#print(keysList)
 #for key in mydictionary:
    #print "key: %s , value: %s" % (key, mydictionary[key])
    #print(next(iter(mydictionary)))
@@ -37,6 +37,7 @@ print(keysList)
 #print(var_list_races)
 #json_list_races = jsonify(var_list_races)
 json_dump_races = json.dumps(var_list_races)
+print(json_dump_races)
 #json_dump_2 = json.dump(
 #print(json_dump_races)
 for item in json_dump_races:
