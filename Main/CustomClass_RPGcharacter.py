@@ -918,7 +918,7 @@ class rpg_char_create:
         for i in range(len(background_list)):
             background_list[i] = background_list[i].get("background_id")
         if var_background_id in background_list:
-            self.class_id = var_background_id
+            self.background_id = var_background_id
             return True
         else:
             return False
