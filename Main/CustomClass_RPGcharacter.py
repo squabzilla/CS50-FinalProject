@@ -886,6 +886,7 @@ class rpg_char_create:
         self.user_id = var_user_id
         return True
     def set_name(self, var_name):
+        var_name = str(var_name)
         # fancy function with large white-list of acceptable characters, strips-non-whitelist-characters
         var_name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ"\'` ]', '', var_name)
         if len(var_name) > 0:
