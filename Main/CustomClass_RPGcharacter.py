@@ -885,16 +885,37 @@ class rpg_char_create:
         self.user_id = var_user_id
         return True
     def set_name(self, var_name):
+        #valid_name_characters = ['a','b','c','d',
         self.name = var_name
         return True
     def set_race_id(self, var_race_id):
-        races_list = db.execute("SELECT race_id FROM list_races")
-        for i in range(len(races_list)):
-            races_list[i] = races_list[i].get("race_id")
-        print("Races list:", races_list)
-        print("Items in races list:")
-        for i in range(len(races_list)):
-            print(i)
+        race_list = db.execute("SELECT race_id FROM list_races")
+        for i in range(len(race_list)):
+            race_list[i] = race_list[i].get("race_id")
+        if var_race_id in race_list:
+            self.race_id = var_race_id
+            return True
+        else:
+            return False
+    def set_class_id(self, var_class_id):
+        class_list = db.execute("SELECT class_id FROM list_classes")
+        for i in range(len(class_list)):
+            class_list[i] = class_list[i].get("race_id")
+        if var_class_id in class_list:
+            self.class_id = var_class_id
+            return True
+        else:
+            return False
+    #background_id
+    def set_background_id(self, var_background_id):
+        background_list = db.execute("SELECT background_id FROM list_backgrounds")
+        for i in range(len(background_list)):
+            background_list[i] = background_list[i].get("race_id")
+        if var_background_id in background_list:
+            self.class_id = var_background_id
+            return True
+        else:
+            return False
     
     def set_spell_class(self):
         # bard: 2
