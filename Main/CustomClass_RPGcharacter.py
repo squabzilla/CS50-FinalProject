@@ -1095,6 +1095,7 @@ def main():
         print(" background_id:", Barzard.background_id, end="; ")
         print("\n")
         # Try invalid numerical input
+        invalid_int = int(1212)
         print("Trying invalid numerical input:")
         print("Barzard.set_race_id(1212):", Barzard.set_race_id(1212), end="; ")
         print("Barzard.set_class_id(1212):", Barzard.set_class_id(0), end="; ")
