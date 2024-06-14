@@ -886,20 +886,8 @@ class rpg_char_create:
         self.user_id = var_user_id
         return True
     def set_name(self, var_name):
-        # Get all of my valid characters, and combine them
-        lowercase_string = "abcdefghijklmnopqrstuvwxyzáàäéèêëíîïóôöúûüç"
-        uppercase_string = lowercase_string.upper()
-        numbers_string = str(1234567890)
-        other_non_quotation_characters_string = ",.!--_:+*"
-        quotation_characters_string = "'" + "`" + '"' 
-        # Combine
-        valid_chars = lowercase_string + uppercase_string + numbers_string + other_non_quotation_characters_string + quotation_characters_string
-        # Check
-        for letter in var_name:
-            if letter in valid_chars:
-                continue
-            else:
-                return False
+        # fancy function with large white-list of acceptable characters, strips-non-whitelist-characters
+        var_name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ"\'` ]', '', var_name)
         self.name = var_name
         return True
     def set_race_id(self, var_race_id):
@@ -920,7 +908,6 @@ class rpg_char_create:
             return True
         else:
             return False
-    #background_id
     def set_background_id(self, var_background_id):
         background_list = db.execute("SELECT background_id FROM list_backgrounds")
         for i in range(len(background_list)):
