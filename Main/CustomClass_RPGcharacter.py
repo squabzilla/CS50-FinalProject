@@ -982,7 +982,7 @@ def generate_valid_name_characters():
     for i in range(len(valid_name_characters)):
         if i == 0:
             continue
-        print(",", valid_name_characters[i])
+        print(", ", valid_name_characters[i])
 
 
 
