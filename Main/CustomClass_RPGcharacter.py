@@ -899,6 +899,7 @@ class rpg_char_create:
         # remember that db.execute will return a LIST of DICTIONARIES
         for i in range(len(race_list)):
             race_list[i] = int(race_list[i].get("race_id"))
+        print("race_list: ", race_list)
         if var_race_id in race_list:
             self.race_id = var_race_id
             return True
@@ -908,6 +909,7 @@ class rpg_char_create:
         class_list = db.execute("SELECT class_id FROM list_classes")
         for i in range(len(class_list)):
             class_list[i] = int(class_list[i].get("class_id"))
+        print("class_list: ", class_list)
         if var_class_id in class_list:
             self.class_id = var_class_id
             return True
@@ -917,6 +919,7 @@ class rpg_char_create:
         background_list = db.execute("SELECT background_id FROM list_backgrounds")
         for i in range(len(background_list)):
             background_list[i] = background_list[i].get("background_id")
+        print("background_list: ", background_list)
         if var_background_id in background_list:
             self.background_id = var_background_id
             return True
