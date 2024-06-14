@@ -5,28 +5,29 @@
 {% block header %}Character Creator{% endblock %}
 
 {% block main %}
-    <p>This is the character creator.</p>
+<p>This is the character creator.</p>
+<div>
     {% if not new_pc.name %}
     <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="character_name" placeholder="Stock Symbol" type="text">
+        <input autocomplete="off" autofocus class="form-control w-auto" name="character_name" placeholder="Character Name" type="text" placeholder="Bob">
         <!--<br>
         <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number">-->
-        <br>
-        <button class="btn btn-primary" type="submit">Submit Transaction</button>
+        <button class="btn btn-primary" type="submit">Submit</button>
     </form>
     <br>
     <!--
     <form  action="/character_creator_name" class="form-control mx-auto w-auto">
-            <input autocomplete="off" autofocus id="character_name" name="character_name" placeholder="Character Name" type="text" required="required">
-            <br>
-            <button type="button" class="btn btn-primary" type="submit">
-                Create new character
-            </button>
-        </form>
+        <input autocomplete="off" autofocus id="character_name" name="character_name" placeholder="Character Name" type="text" required="required">
+        <br>
+        <button type="button" class="btn btn-primary" type="submit">
+            Create new character
+        </button>
+    </form>
     -->
     {% elif not new_pc.race_id %}
         <p>We are at step two</p>
     {% endif %}
+</div>
     <!--
     <form>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
