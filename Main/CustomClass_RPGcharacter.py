@@ -974,23 +974,23 @@ class rpg_char_create:
             # db.execute("INSERT INTO spellbook (\
                 # )")
 
-def generate_valid_name_characters():
-    lowercase_string = "abcdefghijklmnopqrstuvwxyzáàäéèêëíîïóôöúûüç"
-    uppercase_string = lowercase_string.upper()
-    numbers_string = str(1234567890)
-    other_non_quotation_characters_string = ",.!--_:+*"
-    quotation_characters_string = "'" + "`" + '"' 
-    valid_name_characters = lowercase_string + uppercase_string + numbers_string + \
-        other_non_quotation_characters_string + quotation_characters_string
-    print_test = True
-    if print_test == False:
-        print()
-        print(valid_name_characters[0], end="")
-        for i in range(len(valid_name_characters)):
-            if i == 0:
-                continue
-            print(", ", valid_name_characters[i], end="")
-    return valid_name_characters
+# def generate_valid_name_characters():
+    # lowercase_string = "abcdefghijklmnopqrstuvwxyzáàäéèêëíîïóôöúûüç"
+    # uppercase_string = lowercase_string.upper()
+    # numbers_string = str(1234567890)
+    # other_non_quotation_characters_string = ",.!--_:+*"
+    # quotation_characters_string = "'" + "`" + '"' 
+    # valid_name_characters = lowercase_string + uppercase_string + numbers_string + \
+        # other_non_quotation_characters_string + quotation_characters_string
+    # print_test = True
+    # if print_test == False:
+        # print()
+        # print(valid_name_characters[0], end="")
+        # for i in range(len(valid_name_characters)):
+            # if i == 0:
+                # continue
+            # print(", ", valid_name_characters[i], end="")
+    # return valid_name_characters
 
 
 
@@ -1021,17 +1021,19 @@ def main():
     #maxes.get_maxes()
     #maxes.numberify()
     #maxes.print_maxes()
-    Barzard = rpg_char_create()
-    Barzard.name = "Barzard"
-    a = 1
-    b = 2
-    highest_spell_slot(a, b)
-    #druid_spell_list = druid_spells_by_spell_level(1)
-    druid_spell_list = class_spells_by_spell_level(4, 1)
-    #print(druid_spell_list)
-    #print("length of spell_list_list is:", len(druid_spell_list))
-    #print(druid_spell_list[4])
-    ranger_spells = new_ranger_spells()
+    var_test_highest_spell_slot_function = False
+    if var_test_highest_spell_slot_function == True:
+        a = 1
+        b = 2
+        highest_spell_slot(a, b)
+    var_test_getting_spells_by_class = False
+    if var_test_getting_spells_by_class == True:
+        #druid_spell_list = druid_spells_by_spell_level(1)
+        druid_spell_list = class_spells_by_spell_level(4, 1)
+        #print(druid_spell_list)
+        #print("length of spell_list_list is:", len(druid_spell_list))
+        #print(druid_spell_list[4])
+        ranger_spells = new_ranger_spells()
     print_ranger_stuff = False
     if print_ranger_stuff == True:
         print("ranger_spells.retrieve_class_spell_list(): ", ranger_spells.retrieve_class_spell_list())
@@ -1041,19 +1043,42 @@ def main():
         print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
         print("ranger_spells.set_ranger_spells: ", ranger_spells.set_ranger_spells())
         print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
-    Barzard.set_race_id(1)
-    valid_chars = generate_valid_name_characters()
+    #Barzard.set_race_id(1)
     #print()
     #name = "Barzard"
-    name = input("Please enter your name:")
-    valid_name = True
-    for letter in name:
-        if letter in valid_chars:
-            continue
-        else:
-            print("error in name")
-            valid_name = False
-    print("Valid name:", valid_name)
+    testing_character_name_input_validation = False
+    if testing_character_name_input_validation == True:
+        name = input("Please enter your name:")
+        valid_name = True
+        for letter in name:
+            if letter in valid_chars:
+                continue
+            else:
+                print("error in name")
+                valid_name = False
+        print("Valid name:", valid_name)
+    
+    testing_create_Barzard_character = True
+    if testing_create_Barzard_character == True:
+        Barzard = rpg_char_create()
+        var_Barzard_name = "Barzard 123 '\"` quotations :;-_ other symbols"
+        print("Bardzard.set_name:", Barzard.set_name(var_Barzard_name))
+        # check race, class, background:
+        print("Barzard race_id:", Barzard.race_id)
+        print("Barzard class_id:", Barzard.class_id)
+        print("Barzard background_id:", Barzard.background_id)
+        # Try invalid input
+        print("Barzard.set_race(99):", Barzard.set_name(99))
+        print("Barzard.set_race('cow'):", Barzard.set_race('cow'))
+        print("Barzard.set_race(1):", Barzard.set_race(1))
+        print("Barzard.set_class(99):", Barzard.set_class(99))
+        print("Barzard.set_class('SuperHero'):", Barzard.set_class('SuperHero'))
+        print("Barzard.set_class(1):", Barzard.set_class(1))
+        print("Barzard.set_background(99):", Barzard.set_background(99))
+        print("Barzard.set_background('Martian'):", Barzard.set_background('Martian'))
+        print("Barzard.set_background(1):", Barzard.set_background(1))
+        # check race, class, background again
+        
 
 #main()
 
