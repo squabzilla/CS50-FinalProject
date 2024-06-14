@@ -1065,10 +1065,10 @@ def main():
         var_Barzard_name = "Barzard 123 '\"` quotations :;-_ other symbols"
         print("Bardzard.set_name:", Barzard.set_name(var_Barzard_name))
         # check race, class, background:
-        print("Barzard ", end="")
-        print("Race_id:", Barzard.race_id, end="")
-        print("Class_id:", Barzard.class_id, end="")
-        print("background_id:", Barzard.background_id)
+        print("Barzard", end="")
+        print(" race_id:", Barzard.race_id, end="")
+        print(" class_id:", Barzard.class_id, end="")
+        print(" background_id:", Barzard.background_id)
         # Try invalid input
         print("Barzard.set_race_id(99):", Barzard.set_name(99))
         print("Barzard.set_race_id('cow'):", Barzard.set_race_id('cow'))
@@ -1086,10 +1086,10 @@ def main():
         print("Barzard.set_class_id(1):", Barzard.set_class_id(1))
         print("Barzard.set_background_id(1):", Barzard.set_background_id(1))
         # check once more: 
-        print("Barzard ", end="")
-        print("Race_id:", Barzard.race_id, end="")
-        print("Class_id:", Barzard.class_id, end="")
-        print("background_id:", Barzard.background_id)
+        print("Barzard", end="")
+        print(" race_id:", Barzard.race_id, end="")
+        print(" class_id:", Barzard.class_id, end="")
+        print(" background_id:", Barzard.background_id)
 
 main()
 
