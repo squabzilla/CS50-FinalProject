@@ -39,9 +39,11 @@ def main():
     #new_result = re.sub('[^a-z]', '', 'a string with a bunch of letters')
     # re.sub( first_variable:
     #print(new_result)
-    name = input("Please enter your name: ")
-    name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ"\'` ]', '', name)
-    #print("Name:", name)
+    var_test_name_validation = False
+    if var_test_name_validation == True:
+        name = input("Please enter your name: ")
+        name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ"\'` ]', '', name)
+        print("Name:", name)
     name = ""
     print("Length of name:", len(name))
     

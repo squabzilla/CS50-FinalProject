@@ -888,8 +888,11 @@ class rpg_char_create:
     def set_name(self, var_name):
         # fancy function with large white-list of acceptable characters, strips-non-whitelist-characters
         var_name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ"\'` ]', '', var_name)
-        self.name = var_name
-        return True
+        if len(var_name) > 0:
+            self.name = var_name
+            return True
+        else:
+            return False
     def set_race_id(self, var_race_id):
         race_list = db.execute("SELECT race_id FROM list_races")
         for i in range(len(race_list)):
