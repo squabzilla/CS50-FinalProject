@@ -1,4 +1,5 @@
 from cs50 import SQL
+import re
 
 # name of database
 name_of_database = "RPG_characters.db"
@@ -885,7 +886,20 @@ class rpg_char_create:
         self.user_id = var_user_id
         return True
     def set_name(self, var_name):
-        #valid_name_characters = ['a','b','c','d',
+        # Get all of my valid characters, and combine them
+        lowercase_string = "abcdefghijklmnopqrstuvwxyzáàäéèêëíîïóôöúûüç"
+        uppercase_string = lowercase_string.upper()
+        numbers_string = str(1234567890)
+        other_non_quotation_characters_string = ",.!--_:+*"
+        quotation_characters_string = "'" + "`" + '"' 
+        # Combine
+        valid_chars = lowercase_string + uppercase_string + numbers_string + other_non_quotation_characters_string + quotation_characters_string
+        # Check
+        for letter in var_name:
+            if letter in valid_chars:
+                continue
+            else:
+                return False
         self.name = var_name
         return True
     def set_race_id(self, var_race_id):
