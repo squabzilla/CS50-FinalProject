@@ -211,11 +211,13 @@ def create_character():
             new_pc.set_name(var_name)
         var_race_id = request.form.get("race_id")
         if var_race_id != None:
-            new_pc.set_race_id(var_name)
+            new_pc.set_race_id(var_race_id)
         var_class_id = request.form.get("class_id")
         if var_class_id != None:
             new_pc.set_class_id(var_class_id)
         var_background_id = request.form.get("background_id")
+        if var_background_id != None:
+            new_pc.set_background_id(var_background_id)
         #character_name = request.form.get("character_name")
         #character_name = "Bob"
         #new_char.name = character_name
