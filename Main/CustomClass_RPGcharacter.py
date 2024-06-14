@@ -1074,7 +1074,21 @@ def main():
     #var_string = "abc"
     #var_int = int(var_string)
     #print("var_int is:", var_int)
-    testing_create_Barzard_character = True
+    alaric = rpg_char_create()
+    # check race, class, background:
+    print("check race, class, background:")
+    print("alaric", end="")
+    print(" race_id:", alaric.race_id, end="; ")
+    print(" class_id:", alaric.class_id, end="; ")
+    print(" background_id:", alaric.background_id, end="; ")
+    print("\n")
+    # Try invalid numerical input
+    print("Trying invalid numerical input:")
+    print("alaric.set_race_id(1212):", alaric.set_name(1212), end="; ")
+    #print("alaric.set_class_id(1212):", alaric.set_class_id(1212), end="; ")
+    #print("alaric.set_background_id(1212):", alaric.set_background_id(1212), end="; ")
+    print("\n")
+    testing_create_Barzard_character = False
     if testing_create_Barzard_character == True:
         # creating character and setting name
         print("creating character and setting name")
