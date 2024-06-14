@@ -890,7 +890,7 @@ class rpg_char_create:
     def set_race_id(self, var_race_id):
         races_list = db.execute("SELECT race_id FROM list_races")
         for i in range(len(races_list)):
-            races_list[i] = i.get("race_id")
+            races_list[i] = races_list[i].get("race_id")
         print("Races list:", races_list)
         print("Items in races list:")
         for i in range(len(races_list)):
