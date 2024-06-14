@@ -258,6 +258,8 @@ def create_character_step2():
         print("get-method")
         #return render_template("character_creator.html", noCharacter="noCharacter")
         return redirect("/")
+    #wait didn't I try returning a redirect with a value BEFORE I imported redirect?
+    # Could I do that now? Is there value in it?
 
 @app.route("/save_character")
 @login_required
