@@ -888,11 +888,13 @@ class rpg_char_create:
         self.name = var_name
         return True
     def set_race_id(self, var_race_id):
-        valid_races_ids = db.execute("SELECT race_id FROM list_races")
-        print("Return value of SQL query:", valid_races_ids)
-        print("Going through that item-by-item:")
-        for item in valid_races_ids:
-            print(item)
+        races_list = db.execute("SELECT race_id FROM list_races")
+        for i in range(len(races_list)):
+            races_list[i] = item.get("race_id")
+        print("Races list:", races_list)
+        print("Items in races list:")
+        for i in range(len(races_list)):
+            print(i)
     
     def set_spell_class(self):
         # bard: 2
