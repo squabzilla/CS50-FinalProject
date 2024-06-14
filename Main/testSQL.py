@@ -20,6 +20,10 @@ sql_path = "sqlite:///" + name_of_database
 db = SQL(sql_path)
 
 var_list_races = db.execute("SELECT race_id, race_name FROM list_races;")
+mydictionary = var_list_races[0]
+for key in mydictionary:
+   #print "key: %s , value: %s" % (key, mydictionary[key])
+   print(next(iter(mydictionary)))
 #print("var_list_races:")
 #print(var_list_races)
 #json_list_races = jsonify(var_list_races)
