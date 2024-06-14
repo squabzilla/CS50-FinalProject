@@ -1064,10 +1064,13 @@ def main():
         # remember that db.execute will return a LIST of DICTIONARIES
     for i in range(len(race_list)):
         race_list[i] = int(race_list[i].get("race_id"))
-    print("Race list:", race_list)
-    print("Now for Race list items:")
-    for item in race_list:
-        print(item)
+    #print("Race list:", race_list)
+    #print("Now for Race list items:")
+    #for item in race_list:
+        #print(item)
+    var_string = "abc"
+    var_int = int(var_string)
+    print("var_int is:", var_int)
     if testing_create_Barzard_character == True:
         # creating character and setting name
         print("creating character and setting name")
