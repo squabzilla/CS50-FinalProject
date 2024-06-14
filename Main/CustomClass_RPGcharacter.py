@@ -995,7 +995,7 @@ def main():
         print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
         print("ranger_spells.set_ranger_spells: ", ranger_spells.set_ranger_spells())
         print("ranger_spells.confirm_list: ", ranger_spells.confirm_list())
-    Barzard.set_race_id
+    Barzard.set_race_id(1)
 
 main()
 
