@@ -864,7 +864,7 @@ class rpg_char_create:
         # self.user_id - no, each logged-in user has their own unique user_id which we can retrieve 
         self.name = name                    # character_name,           TEXT NOT NULL
         self.race_id = race_id              # character_race_id,        INTEGER and FOREIGN KEY(character_race_id) REFERENCES list_races(race_id)
-        self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_pc_classes(pc_class_id)
+        self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_classes(class_id)
         self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
         self.char_level = char_level        # character_level           INTEGER DEFAULT 1 - class sets default values to 1
         self.var_spells = var_spells
@@ -909,6 +909,23 @@ class rpg_char_create:
     
     def reset_spells(self):
         self.list_spells = []
+        return True
+    
+    def print_values(self):
+        var_race = db.execute("SELECT race_name FROM list_races WHERE race_id = ?", self.name)[0].get("race_name")
+        var_class = db.execute("SELECT class_name FROM list_classes WHERE race_id = ?", self.name)[0].get("class_name")
+        print("Character name:", self.name)
+        print("Character race-id:", self.race_id)
+        print("Character class-id:", self.class_id)
+        print("Character background-id", self.background_id)
+        #self.name = name                    # character_name,           TEXT NOT NULL
+        #self.race_id = race_id              # character_race_id,        INTEGER and FOREIGN KEY(character_race_id) REFERENCES list_races(race_id)
+        #self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_classes(class_id)
+        #self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
+        #self.char_level = char_level        # character_level           INTEGER DEFAULT 1 - class sets default values to 1
+        #self.var_spells = var_spells
+        #self.list_spells = list_spells
+        
     def add_to_database(self):
         db.execute("INSERT INTO list_characters (\
             character_user_id, character_name, character_race_id, character_class_id, character_level\
