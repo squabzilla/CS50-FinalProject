@@ -41,7 +41,9 @@ def main():
     #print(new_result)
     name = input("Please enter your name: ")
     name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ"\'` ]', '', name)
-    print("Name:", name)
+    #print("Name:", name)
+    name = ""
+    print("Length of name:", len(name))
     
     #[^.@a-zA-Z0-9À-ÖØ-öø-ÿ ]
 main()
