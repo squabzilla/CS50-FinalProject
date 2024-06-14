@@ -1059,7 +1059,15 @@ def main():
                 valid_name = False
         print("Valid name:", valid_name)
     
-    testing_create_Barzard_character = True
+    testing_create_Barzard_character = False
+    race_list = db.execute("SELECT race_id FROM list_races")
+        # remember that db.execute will return a LIST of DICTIONARIES
+    for i in range(len(race_list)):
+        race_list[i] = int(race_list[i].get("race_id"))
+    print("Race list:", race_list)
+    print("Now for Race list items:")
+    for item in race_list:
+        print(item)
     if testing_create_Barzard_character == True:
         # creating character and setting name
         print("creating character and setting name")
