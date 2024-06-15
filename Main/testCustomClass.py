@@ -72,7 +72,7 @@ def main():
     
     
     
-    testing_create_Barzard_character = True
+    testing_create_Barzard_character = False
     if testing_create_Barzard_character == True:
         # creating character and setting name
         print("creating character and setting name")
