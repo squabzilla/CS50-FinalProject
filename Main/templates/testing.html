@@ -6,6 +6,12 @@
 
 {% block main %}
     <p>We are testing here</p>
+    {% if num_var==0 %}
+        <p>num_var</p>
+    {% endif %}
+    {% if string_var=="soup" %}
+        <p>soup</p>
+    {% endif %}
 {% endblock %}
 
 {% block footer %}{% endblock %}

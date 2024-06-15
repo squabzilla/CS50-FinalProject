@@ -274,7 +274,7 @@ def create_character():
 
 @app.route("/testing", methods=['GET', 'POST'])
 def testing():
-    num_var = 1
+    num_var = 0
     string_var = "soup"
     return render_template("testing.html", num_var=num_var, string_var=string_var)
 
