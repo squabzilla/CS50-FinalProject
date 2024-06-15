@@ -129,6 +129,10 @@ def main():
         print(" class_id:", Barzard.class_id, end="; ")
         print(" background_id:", Barzard.background_id, end="; ")
         #print("\n")
+    
+    var = "1"
+    is_var_numeric = var.isnumeric()
+    print(is_var_numeric)
 
 main()
 
