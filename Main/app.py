@@ -257,7 +257,7 @@ def create_character():
         print("step:", var_step)
         print_pc_values = True
         if print_pc_values == True:
-            print("Name: ",new_pc.name,"; race: ",new_pc.race_id,"; class",new_pc.class_id,"; background:",new_pc.background_id )
+            print("Name: ",new_pc.name,"; race: ",new_pc.race_id,"; class: ",new_pc.class_id,"; background: ",new_pc.background_id, sep='')
         #character_name = request.form.get("character_name")
         #character_name = "Bob"
         #new_char.name = character_name
