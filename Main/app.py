@@ -250,6 +250,7 @@ def create_character():
                 var_background_id = int(var_background_id)
                 if new_pc.set_background_id(var_background_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
                     json_dumps = "empty"
+                    print("new_pc should be done because new_pc.has_background =", new_pc.has_background)
         else:
             var_step += 1
         
