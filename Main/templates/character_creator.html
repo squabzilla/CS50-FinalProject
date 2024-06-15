@@ -14,21 +14,24 @@
                 <div class="col">
                     <input autocomplete="off" autofocus class="form-control w-auto" id="character_name" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">
                 </div>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary" type="submit">Submit</button>
+                <div class="col">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
             </div>
         </form>
 
     {% elif not new_pc.race_id %}
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
+            <span>Choose race</span>
             <div class="row g-3">
-                <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id" id="race_id" value="1">
-                    <!--<option selected>Choose Race</option>-->
-                </select>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary" type="submit">Submit</button>
+                <div class="col">
+                    <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id" id="race_id" value="1">
+                        <!--<option selected>Choose Race</option>-->
+                    </select>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
             </div>
         </form>
         <script>
@@ -43,22 +46,29 @@
         </script>
 
     {% elif not new_pc.class_id %}
-    <div class="row g-3">
     <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
-        <p>Get class_id</p>
-    <div class="col">
-        <button class="btn btn-primary" type="submit">Submit</button>
-    </div>
+        <span>Choose class</span>
+        <div class="row g-3">
+            <div class="col">
+                <p>Get class_id</p>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
     </form>
 
     {% elif not new_pc.background_id %}
-    <div class="row g-3">
     <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
-        <p>Get background_id</p>
-    </div>
-    <div class="col">
-        <button class="btn btn-primary" type="submit">Submit</button>
-    </div>
+        <span>Choose background</span>
+        <div class="row g-3">
+            <div class="col">
+                <p>Get background_id</p>
+            </div>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
     </form>
 
     {% else %}
