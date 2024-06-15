@@ -214,6 +214,10 @@ def create_character():
         var_class_id = request.form.get("class_id")
         var_background_id = request.form.get("background_id")
         
+        print_pc_values = True
+        if print_pc_values == True:
+            print("Name: ",new_pc.name,"; race: ",new_pc.race_id,"; class",new_pc.class_id,"; background:",new_pc.background_id )
+        
         # Step 1
         if var_name != None and new_pc.name == None:
             print("first if")
@@ -224,7 +228,6 @@ def create_character():
                 #print(new_pc.name)
                 #json_dump_2 = json.dumps(
         else: var_step += 1
-        print("pass step 1")
         
         # Step 2
         if var_race_id != None and new_pc.race_id == None:
@@ -236,7 +239,6 @@ def create_character():
                     json_dump = json.dumps(db.execute("SELECT class_id, class_name FROM list_classes"))
                     print("new_pc.race_id =", new_pc.race_id)
         else: var_step += 1
-        print("passed step 2")
         
         # Step 3
         if var_class_id != None and new_pc.class_id == None:
@@ -245,7 +247,6 @@ def create_character():
                 if new_pc.set_class_id(var_class_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
                     json_dump = json.dumps(db.execute("SELECT background_id, background_name FROM list_backgrounds"))
         else: var_step += 1
-        print("passed step 3")
         
         # Step 4
         if var_background_id != None and new_pc.class_id == None:
@@ -255,7 +256,7 @@ def create_character():
                     json_dumps = "empty"
         else:
             var_step += 1
-        print("passed step 4")
+        print("step:", var_step)
         #character_name = request.form.get("character_name")
         #character_name = "Bob"
         #new_char.name = character_name
