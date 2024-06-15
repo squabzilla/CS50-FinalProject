@@ -49,8 +49,18 @@
     {% elif not new_pc.has_background %}
         <p> We need a background </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
+            <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="background_id" id="background_id">
+            </select>
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
+        <script>
+            const json_dump_backgrounds = JSON.parse({{json_dump|tojson}});
+            console.log(json_dump_backgrounds);
+            for (let i = 0; i < json_dump_backgrounds.length; i++) {
+                let class_background = "<option value=\"" + json_dump_backgrounds[i]["background_id"] + "\">" + json_dump_backgrounds[i]["background_name"] + "</option>"
+                document.getElementById("background_id").insertAdjacentHTML("beforeend",class_dropdown)
+            }
+        </script>
 
     {% else %}
         <p>DONE!</p>
