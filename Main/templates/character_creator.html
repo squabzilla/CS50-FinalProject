@@ -10,10 +10,7 @@
         <div class="row g-3">
             {% if not new_pc.name %}
                 <div class="col">
-                    <input autocomplete="off" autofocus class="form-control w-auto" name="character_name" placeholder="Character Name" type="text" value="Bob">
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary" type="submit">Submit</button>
+                    <input autocomplete="off" autofocus class="form-control w-auto" id="character_name" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">
                 </div>
                     <!--<br>
                     <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number">-->
@@ -50,6 +47,9 @@
             {% elif not new_pc.background_id %}
                 <p>Get background_id</p>
             {% endif %}
+            <div class="col">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
         </div>
     </form>
 </div>
