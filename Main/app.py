@@ -220,11 +220,11 @@ def create_character():
         
         # Step 1
         if var_name != None and new_pc.name == None:
-            print("first if")
+            #print("first if")
             #if has_name == True:
             if new_pc.set_name(var_name) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
                 json_dump = json.dumps(db.execute("SELECT race_id, race_name FROM list_races"))
-                print("new_pc.name =", new_pc.name)
+                #print("new_pc.name =", new_pc.name)
                 #print(new_pc.name)
                 #json_dump_2 = json.dumps(
         else: var_step += 1
@@ -237,7 +237,7 @@ def create_character():
                 var_race_id = int(var_race_id)
                 if new_pc.set_race_id(var_race_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
                     json_dump = json.dumps(db.execute("SELECT class_id, class_name FROM list_classes"))
-                    print("new_pc.race_id =", new_pc.race_id)
+                    #print("new_pc.race_id =", new_pc.race_id)
         else: var_step += 1
         
         # Step 3
