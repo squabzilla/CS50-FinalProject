@@ -273,8 +273,10 @@ def create_character():
 # modal seems REALLY good like what I want
 
 @app.route("/testing", methods=['GET', 'POST'])
-def create_character():
-    return render_template(testing.html)
+def testing():
+    num_var = 1
+    string_var = "soup"
+    return render_template("testing.html", num_var=num_var, string_var=string_var)
 
 @app.route("/character_creator_name", methods=['GET', 'POST'])
 def create_character_step2():
