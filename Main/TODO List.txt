@@ -1,4 +1,4 @@
-class features for Ranger, Fighter, Rogue up to level 5
+class features for Ranger, Fighter, Wizard up to level 5
 
 Actually add character-creation functionality and visibility
 

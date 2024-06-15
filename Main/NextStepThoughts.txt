@@ -23,6 +23,8 @@ level starts at 1
 do I have fucking anywhere to store attributes!?!? they ought to be in the list_characters table like DAMN
 also need to add attributes to my CustomClass arg
 honestly maybe just limit leveling up to level 2 lmao
+    -> honestly, why not just make a level-1 character creator and call it a fucking day
+    -> there will be more then enough there to qualify as a final project
 I need a handler function I can just pass the new_pc variable to that will add relevant class features,
     and return a list of class-features we gotta choose from
         and another one for spells
