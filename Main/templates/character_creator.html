@@ -40,7 +40,7 @@
                     console.log("2.5")
                     console.log(json_dump_races[0]);
                     console.log("length")
-                    console.log(len(json_dump_races))
+                    console.log(json_dump_races.length)
                     // okay so it had an array here
                     //document.querySelector(".container").innerHTML = JSON.stringify(json_dump, null, 2);
                     
@@ -49,8 +49,8 @@
                     console.log("3")
                     //document.getElementById("race_id_list").innerHTML = JSON.stringify(json_dump, null, 2);
                     //document.getElementById("race_id_list").innerHTML = "soup"
-                    document.getElementById("race_id_list").innerHTML = JSON.stringify(json_dump_races, null, 2);
-                    //document.getElementById("race_id_list").innerHTML = JSON.parse(
+                    //document.getElementById("race_id_list").innerHTML = JSON.stringify(json_dump_races, null, 2);
+                    document.getElementById("race_id_list").innerHTML = json_dump_races
                 </script>
             {% elif not new_pc.class_id %}
                 <p>Get class_id</p>
