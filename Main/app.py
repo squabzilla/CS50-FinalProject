@@ -262,7 +262,7 @@ def create_character():
         #character_name = request.form.get("character_name")
         #character_name = "Bob"
         #new_char.name = character_name
-        return render_template("character_creator.html", var_step=var_step, new_pc=new_pc, json_dump=json_dump)
+        return render_template("character_creator.html", new_pc=new_pc, json_dump=json_dump)
     else:
         #print("at character creator")
         new_pc = rpg_char_create()
