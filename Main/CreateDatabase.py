@@ -76,6 +76,7 @@ print("DONE")
 print("Creating list_spells table...", end="")
 db.execute("CREATE TABLE list_spells (\
 spell_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
+spell_key INTEGER NOT NULL,\
 spell_name TEXT NOT NULL, \
 spell_level INTEGER, \
 spell_school TEXT, \
