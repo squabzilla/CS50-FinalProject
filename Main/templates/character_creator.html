@@ -9,7 +9,7 @@
     
     
     <!--{% if not new_pc.name %}-->
-    {% if var_step == 1 %}
+    {% if var_step==1 %}
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <div class="row g-3">
                 <div class="col">
@@ -21,8 +21,8 @@
             </div>
         </form>
 
-    <!--{% elif not new_pc.race_id or new_pc.race_id == 0 %}-->
-    {% elif var_step == 2 %}
+    <!--{% elif not new_pc.race_id or new_pc.race_id == 0 %}
+    {% elif var_step == 2 %}-->
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <span>Choose race</span>
             <div class="row g-3">
@@ -46,8 +46,8 @@
             }
         </script>
 
-    <!--{% elif not new_pc.class_id %}-->
-    {% elif var_step == 3 %}
+    <!--{% elif not new_pc.class_id %}
+    {% elif var_step == 3 %}-->
     <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
         <span>Choose class</span>
         <div class="row g-3">
@@ -68,8 +68,8 @@
         }
     </script>
 
-    <!--{% elif not new_pc.background_id %}-->
-    {% elif var_step == 4 %}
+    <!--{% elif not new_pc.background_id %}
+    {% elif var_step == 4 %}--> 
     <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
         <span>Choose background</span>
         <div class="row g-3">
