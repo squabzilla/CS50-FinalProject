@@ -858,7 +858,8 @@ class new_wizard_spells:
         
 class rpg_char_create:
     def __init__(self, #sql_db = None,
-                 user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1, var_spells = None, list_spells = [], features = []):
+                 user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1, var_spells = None, list_spells = [], features = [],
+                 has_name = None, has_race = None, has_class = None, has_background = None):
         #self.sql_db = sql_db
         self.user_id = user_id
         # self.character_id - no, this is auto-incremented when entry is added
@@ -880,8 +881,11 @@ class rpg_char_create:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
         # self.feature.feature_id:   stored in above dictionary  ref: INTEGER
         # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(feature_id) REFERENCES list_features(feature_id)
-    #def get_db(self, var_db):
-        #self.sql_db = var_db
+        # NOTE: making psedo-booleans out of these so I can pass it to jinja without jinja thinking a race_id of 0 is a race_id of NULL
+        self.has_name = has_name
+        self.has_race = has_race
+        self.has_class = has_class
+        self.has_background = has_background
     def set_user_id(self, var_user_id):
         self.user_id = var_user_id
         return True
