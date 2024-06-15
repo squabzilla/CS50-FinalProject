@@ -5,8 +5,7 @@
 {% block header %}Character Creator{% endblock %}
 
 {% block main %}
-<p>This is the character creator.</p>
-    
+    <p>This is the character creator.</p>
     
     {% if not new_pc.name %}
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
@@ -19,8 +18,7 @@
                 </div>
             </div>
         </form>
-
-    <!--{% elif not new_pc.race_id or not new_pc.race_id == 0 %}-->
+        <!--{% elif not new_pc.race_id or not new_pc.race_id == 0 %}-->
 
     {% elif not new_pc.race_id %}
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
@@ -45,48 +43,51 @@
                 document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
             }
         </script>
+        racist soup
 
     {% elif not new_pc.class_id %}
-    <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
-        <span>Choose class</span>
-        <div class="row g-3">
-            <div class="col">
-                <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="class_id" id="class_id">
-                </select>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
+            <span>Choose class</span>
+            <div class="row g-3">
+                <div class="col">
+                    <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="class_id" id="class_id">
+                    </select>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+        <script>
+            const json_dump_classes = JSON.parse({{json_dump|tojson}});
+            for (let i = 0; i < json_dump_races.length; i++) {
+                let race_dropdown = "<option value=\"" + json_dump_races[i]["class_id"] + "\">" + json_dump_races[i]["class_name"] + "</option>"
+                document.getElementById("class_id").insertAdjacentHTML("beforeend",race_dropdown)
+            }
+        </script>
+        classist soup
+
+    {% elif not new_pc.background_id %}
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
+            <span>Choose background</span>
+            <div class="row g-3">
+                <div class="col">
+                    <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="background_id" id="background_id">
+                    </select>
+                </div>
             </div>
             <div class="col">
                 <button class="btn btn-primary" type="submit">Submit</button>
             </div>
-        </div>
-    </form>
-    <script>
-        const json_dump_classes = JSON.parse({{json_dump|tojson}});
-        for (let i = 0; i < json_dump_races.length; i++) {
-            let race_dropdown = "<option value=\"" + json_dump_races[i]["class_id"] + "\">" + json_dump_races[i]["class_name"] + "</option>"
-            document.getElementById("class_id").insertAdjacentHTML("beforeend",race_dropdown)
-        }
-    </script>
-
-    {% elif not new_pc.background_id %}
-    <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
-        <span>Choose background</span>
-        <div class="row g-3">
-            <div class="col">
-                <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="background_id" id="background_id">
-                </select>
-            </div>
-        </div>
-        <div class="col">
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </div>
-    </form>
-    <script>
-        const json_dump_backgrounds = JSON.parse({{json_dump|tojson}});
-        for (let i = 0; i < json_dump_races.length; i++) {
-            let race_dropdown = "<option value=\"" + json_dump_races[i]["background_id"] + "\">" + json_dump_races[i]["background_name"] + "</option>"
-            document.getElementById("class_background_idid").insertAdjacentHTML("beforeend",race_dropdown)
-        }
-    </script>
+        </form>
+        <script>
+            const json_dump_backgrounds = JSON.parse({{json_dump|tojson}});
+            for (let i = 0; i < json_dump_races.length; i++) {
+                let race_dropdown = "<option value=\"" + json_dump_races[i]["background_id"] + "\">" + json_dump_races[i]["background_name"] + "</option>"
+                document.getElementById("class_background_idid").insertAdjacentHTML("beforeend",race_dropdown)
+            }
+        </script>
+        hommade soup
 
     {% else %}
         <p>DONE!</p>
@@ -121,7 +122,6 @@
         </div>
     </div>
     -->
-    stuff at end of block
 {% endblock %}
 
 {% block footer %}{% endblock %}
