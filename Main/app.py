@@ -214,9 +214,11 @@ def create_character():
         json_dump = ""
         var_name = request.form.get("character_name")
         var_race_id = request.form.get("race_id")
-        print("var_race_id:", var_race_id)
+        if var_race_id.isnumeric == True: var_race_id = int(var_race_id)
         var_class_id = request.form.get("class_id")
+        if var_class_id.isnumeric == True: var_class_id = int(var_class_id)
         var_background_id = request.form.get("background_id")
+        if var_background_id.isnumeric == True: var_background_id = int(var_background_id)
         if var_name != None:
             has_name = new_pc.set_name(var_name) # remember my set_[attribute] functions return True or False depending on success
             if has_name == True:
