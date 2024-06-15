@@ -7,14 +7,14 @@
 {% block main %}
     <p>This is the character creator.</p>
     
-    {% if not new_pc.name %}
+    {% if not new_pc.has_name %}
         <p> We need a name </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <input autocomplete="off" autofocus class="form-control w-auto" id="character_name" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
 
-    {% elif not new_pc.race_id %}
+    {% elif not new_pc.has_race %}
         <p> We need a race </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id" id="race_id">
@@ -30,7 +30,7 @@
             }
         </script>
 
-    {% elif not new_pc.class_id %}
+    {% elif not new_pc.has_class %}
         <p> We need a class </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="class_id" id="class_id">
@@ -46,7 +46,7 @@
             }
         </script>
 
-    {% elif not new_pc.background_id %}
+    {% elif not new_pc.has_background %}
         <p> We need a background </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <button class="btn btn-primary" type="submit">Submit</button>
