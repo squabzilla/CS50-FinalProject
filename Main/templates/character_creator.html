@@ -6,6 +6,14 @@
 
 {% block main %}
     <p>This is the character creator.</p>
+    {% if not new_pc.name %}
+        <p> We need a name </p>
+    {% elif not new_pc.race_id %}
+        <p> We need a race </p>
+    {% elif not new_pc.class_id %}
+        <p> We need a class </p>
+    {% elif not new_pc.background_id %}
+        <p> We need a background </p>
 
 {% endblock %}
 
