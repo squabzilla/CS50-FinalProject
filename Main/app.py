@@ -233,7 +233,8 @@ def create_character():
                 var_race_id = int(var_race_id)
                 if new_pc.set_race_id(var_race_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
                     #json_dump = json.dumps(db.execute("SELECT class_id, class_name FROM list_classes"))
-                    json_dump = json.dumps(db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 8")) #screw it, we only supporting rangers right now
+                    json_dump = json.dumps(db.execute("SELECT class_id, class_name FROM list_classes \
+                        WHERE class_id = 5 OR class_id = 8 OR class_id = 12")) #screw it, we only supporting fighters/rangers/wizards right now
                     #print("new_pc.race_id =", new_pc.race_id)
         #else: var_step += 1
         
