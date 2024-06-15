@@ -38,11 +38,11 @@
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
         <script>
-            const json_dump_races = JSON.parse({{json_dump|tojson}});
-            console.log(json_dump_races);
-            for (let i = 0; i < json_dump_races.length; i++) {
-                let race_dropdown = "<option value=\"" + json_dump_races[i]["class_id"] + "\">" + json_dump_races[i]["class_name"] + "</option>"
-                document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
+            const json_dump_classes = JSON.parse({{json_dump|tojson}});
+            console.log(json_dump_classes);
+            for (let i = 0; i < json_dump_classes.length; i++) {
+                let class_dropdown = "<option value=\"" + json_dump_classes[i]["class_id"] + "\">" + json_dump_classes[i]["class_name"] + "</option>"
+                document.getElementById("race_id").insertAdjacentHTML("beforeend",class_dropdown)
             }
         </script>
 
