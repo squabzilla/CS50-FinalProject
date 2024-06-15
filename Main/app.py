@@ -245,7 +245,7 @@ def create_character():
         else: var_step += 1
         
         # Step 4
-        if var_background_id != None and new_pc.class_id == None:
+        if var_background_id != None and new_pc.background_id == None:
             if var_background_id.isnumeric() == True:
                 var_background_id = int(var_background_id)
                 if new_pc.set_background_id(var_background_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
