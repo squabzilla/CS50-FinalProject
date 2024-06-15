@@ -212,7 +212,13 @@ def create_character():
         var_race_id = request.form.get("race_id")
         var_class_id = request.form.get("class_id")
         var_background_id = request.form.get("background_id")
+        var_print_vars = True
+        if var_print_vars == True:
+            print("var_race_id: ", var_race_id)
+            print("var_class_id:", var_class_id)
+            print("var_background_id:", var_background_id)
         if var_name != None and new_pc.name == None:
+            print("first if")
             #if has_name == True:
             if new_pc.set_name(var_name) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
                 json_dump = json.dumps(db.execute("SELECT race_id, race_name FROM list_races"))
@@ -220,6 +226,7 @@ def create_character():
                 #print(new_pc.name)
                 #json_dump_2 = json.dumps(
         if var_race_id != None and new_pc.race_id == None:
+            print("second if")
             if var_race_id.isnumeric == True:
                 var_race_id = int(var_race_id)
                 if new_pc.set_race_id(var_race_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
