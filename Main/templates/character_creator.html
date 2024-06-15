@@ -6,49 +6,67 @@
 
 {% block main %}
 <p>This is the character creator.</p>
-    <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
-        <div class="row g-3">
-            {% if not new_pc.name %}
+    
+    
+    {% if not new_pc.name %}
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
+            <div class="row g-3">
                 <div class="col">
                     <input autocomplete="off" autofocus class="form-control w-auto" id="character_name" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">
                 </div>
-                    <!--<br>
-                    <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number">-->
-                <!-- <br>
-                <form  action="/character_creator_name" class="form-control mx-auto w-auto">
-                    <input autocomplete="off" autofocus id="character_name" name="character_name" placeholder="Character Name" type="text" required="required">
-                    <br>
-                    <button type="button" class="btn btn-primary" type="submit">
-                        Create new character
-                    </button>
-                </form>
-                -->
-            {% elif not new_pc.race_id %}
-                <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id" id="race_id" value="1">
-                    <!--<option selected>Choose Race</option>-->
-                </select>
-                <script>
-                    const json_dump_races = JSON.parse({{json_dump|tojson}});
-                    //console.log(json_dump_races[0]["race_id"]);
-                    //console.log(json_dump_races[0]["race_name"]);
-                    //console.log(json_dump_races.length)
-                    for (let i = 0; i < json_dump_races.length; i++) {
-                        let race_dropdown = "<option value=\"" + json_dump_races[i]["race_id"] + "\">" + json_dump_races[i]["race_name"] + "</option>"
-                        document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
-                    }
-                </script>
-            {% elif not new_pc.class_id %}
-                <p>Get class_id</p>
-            {% elif not new_pc.background_id %}
-                <p>Get background_id</p>
-            {% else %}
-                <p>DONE!</p>
-            {% endif %}
+            </div>
             <div class="col">
                 <button class="btn btn-primary" type="submit">Submit</button>
             </div>
-        </div>
+        </form>
+
+    {% elif not new_pc.race_id %}
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
+            <div class="row g-3">
+                <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id" id="race_id" value="1">
+                    <!--<option selected>Choose Race</option>-->
+                </select>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+        <script>
+            const json_dump_races = JSON.parse({{json_dump|tojson}});
+            //console.log(json_dump_races[0]["race_id"]);
+            //console.log(json_dump_races[0]["race_name"]);
+            //console.log(json_dump_races.length)
+            for (let i = 0; i < json_dump_races.length; i++) {
+                let race_dropdown = "<option value=\"" + json_dump_races[i]["race_id"] + "\">" + json_dump_races[i]["race_name"] + "</option>"
+                document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
+            }
+        </script>
+
+    {% elif not new_pc.class_id %}
+    <div class="row g-3">
+    <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
+        <p>Get class_id</p>
+    <div class="col">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
     </form>
+
+    {% elif not new_pc.background_id %}
+    <div class="row g-3">
+    <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
+        <p>Get background_id</p>
+    </div>
+    <div class="col">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+    </form>
+
+    {% else %}
+        <p>DONE!</p>
+    {% endif %}
+        
+    
+    
 </div>
     <!--
     <form>
