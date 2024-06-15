@@ -214,11 +214,8 @@ def create_character():
         json_dump = ""
         var_name = request.form.get("character_name")
         var_race_id = request.form.get("race_id")
-        if var_race_id.isnumeric == True: var_race_id = int(var_race_id)
         var_class_id = request.form.get("class_id")
-        if var_class_id.isnumeric == True: var_class_id = int(var_class_id)
         var_background_id = request.form.get("background_id")
-        if var_background_id.isnumeric == True: var_background_id = int(var_background_id)
         if var_name != None:
             has_name = new_pc.set_name(var_name) # remember my set_[attribute] functions return True or False depending on success
             if has_name == True:
@@ -226,11 +223,14 @@ def create_character():
                 print(new_pc.name)
                 #json_dump_2 = json.dumps(
         if var_race_id != None:
+            if var_race_id.isnumeric == True: var_race_id = int(var_race_id)
             has_race = new_pc.set_race_id(var_race_id) # remember my set_[attribute] functions return True or False depending on success
             print(has_race)
         if var_class_id != None:
+            if var_class_id.isnumeric == True: var_class_id = int(var_class_id)
             has_class = new_pc.set_class_id(var_class_id) # remember my set_[attribute] functions return True or False depending on success
         if var_background_id != None:
+            if var_background_id.isnumeric == True: var_background_id = int(var_background_id)
             has_background = new_pc.set_background_id(var_background_id) # remember my set_[attribute] functions return True or False depending on success
         #character_name = request.form.get("character_name")
         #character_name = "Bob"
