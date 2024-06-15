@@ -224,6 +224,7 @@ def create_character():
                 #json_dump_2 = json.dumps(
         if var_race_id != None:
             has_race = new_pc.set_race_id(var_race_id) # remember my set_[attribute] functions return True or False depending on success
+            print(has_race)
         if var_class_id != None:
             has_class = new_pc.set_class_id(var_class_id) # remember my set_[attribute] functions return True or False depending on success
         if var_background_id != None:
