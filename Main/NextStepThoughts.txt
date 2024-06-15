@@ -15,3 +15,11 @@ from:
 D:\GitProjects\CS50-FinalProject\Main\static\CSVs
 
 also that's more of an excel-folder then CSV, but whatever, renaming it means changing code and I don't want to do that lol
+
+##################################################################################################
+
+okay so I made basic functionality for name, race, class, background
+level starts at 1
+do I have fucking anywhere to store attributes!?!? they ought to be in the list_characters table like DAMN
+also need to add attributes to my CustomClass arg
+honestly maybe just limit leveling up to level 2 lmao
