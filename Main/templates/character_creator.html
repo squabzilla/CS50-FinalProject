@@ -20,7 +20,8 @@
             </div>
         </form>
 
-    {% elif not new_pc.race_id or not new_pc.race_id == 0 %}
+    <!--{% elif not new_pc.race_id or not new_pc.race_id == 0 %}-->
+    {% elif not new_pc.race_id %}
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <span>Choose race</span>
             <div class="row g-3">
