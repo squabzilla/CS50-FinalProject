@@ -255,7 +255,7 @@ def create_character():
             var_step += 1
         
         # print values for my sanity:
-        print("step:", var_step)
+        #print("step:", var_step)
         print_pc_values = True
         if print_pc_values == True:
             print("Name: ",new_pc.name,"; race: ",new_pc.race_id,"; class: ",new_pc.class_id,"; background: ",new_pc.background_id, sep='')
