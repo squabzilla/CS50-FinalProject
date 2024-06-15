@@ -895,6 +895,7 @@ class rpg_char_create:
         var_name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ"\'` ]', '', var_name)
         if len(var_name) > 0:
             self.name = var_name
+            self.has_name = True
             return True
         else:
             return False
@@ -907,6 +908,7 @@ class rpg_char_create:
         #print("race_list:", race_list, end="")
         if var_race_id in race_list:
             self.race_id = var_race_id
+            self.has_race = True
             return True
         else:
             return False
@@ -917,6 +919,7 @@ class rpg_char_create:
         #print("class_list:", class_list, end="")
         if var_class_id in class_list:
             self.class_id = var_class_id
+            self.has_class = True
             return True
         else:
             return False
@@ -927,6 +930,7 @@ class rpg_char_create:
         #print("background_list:", background_list, end="")
         if var_background_id in background_list:
             self.background_id = var_background_id
+            self.has_background = True
             return True
         else:
             return False
