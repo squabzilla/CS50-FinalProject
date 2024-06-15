@@ -9,26 +9,26 @@
     
     {% if not new_pc.name %}
         <p> We need a name </p>
-        <form>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <input autocomplete="off" autofocus class="form-control w-auto" id="character_name" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
 
     {% elif not new_pc.race_id %}
         <p> We need a race </p>
-        <form>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
 
     {% elif not new_pc.class_id %}
         <p> We need a class </p>
-        <form>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
 
     {% elif not new_pc.background_id %}
         <p> We need a background </p>
-        <form>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
 
