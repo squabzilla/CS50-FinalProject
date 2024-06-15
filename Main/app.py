@@ -214,10 +214,6 @@ def create_character():
         var_class_id = request.form.get("class_id")
         var_background_id = request.form.get("background_id")
         
-        print_pc_values = True
-        if print_pc_values == True:
-            print("Name: ",new_pc.name,"; race: ",new_pc.race_id,"; class",new_pc.class_id,"; background:",new_pc.background_id )
-        
         # Step 1
         if var_name != None and new_pc.name == None:
             #print("first if")
@@ -256,7 +252,12 @@ def create_character():
                     json_dumps = "empty"
         else:
             var_step += 1
+        
+        # print values for my sanity:
         print("step:", var_step)
+        print_pc_values = True
+        if print_pc_values == True:
+            print("Name: ",new_pc.name,"; race: ",new_pc.race_id,"; class",new_pc.class_id,"; background:",new_pc.background_id )
         #character_name = request.form.get("character_name")
         #character_name = "Bob"
         #new_char.name = character_name
