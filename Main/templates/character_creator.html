@@ -28,7 +28,13 @@
                 -->
             {% elif not new_pc.race_id %}
                 <p>Get race_id</p>
-                <div class="container" name="race_id_list" id="race_id_list"></div>
+                <div class="container">
+                    <form>
+                        <select class="form-select" aria-label="Default select example" name="race_id_list" id="race_id_list">
+                            <option selected>Choose Race</option>
+                        </select>
+                    </form>
+                </div>
                 <script>
                     console.log("1")
                     const json_dump_races = JSON.parse({{json_dump|tojson}});
@@ -51,7 +57,14 @@
                     //document.getElementById("race_id_list").innerHTML = JSON.stringify(json_dump, null, 2);
                     //document.getElementById("race_id_list").innerHTML = "soup"
                     //document.getElementById("race_id_list").innerHTML = JSON.stringify(json_dump_races, null, 2);
-                    document.getElementById("race_id_list").innerHTML = json_dump_races
+                    //document.getElementById("race_id_list").innerHTML = json_dump_races
+                    for (let i = 0; i < json_dump_races.length; i++) {
+                        let race_dropdown = "<option value=\"" + json_dump_races[i]["race_id"] + "\">" + json_dump_races[i]["race_name"] + "</option>"
+                        document.getElementById("race_id_list").insertAdjacentHTML("beforeend",race_dropdown)
+                            /*<option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>*/
+                    }
                 </script>
             {% elif not new_pc.class_id %}
                 <p>Get class_id</p>
