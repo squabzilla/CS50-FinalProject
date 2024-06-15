@@ -27,19 +27,19 @@
                 <p>Get race_id</p>
                 <div class="container">
                     <form>
-                        <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id_list" id="race_id_list">
+                        <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_dropdown_select" id="race_dropdown_select">
                             <option selected>Choose Race</option>
                         </select>
                     </form>
                 </div>
                 <script>
                     const json_dump_races = JSON.parse({{json_dump|tojson}});
-                    console.log(json_dump_races[0]["race_id"]);
-                    console.log(json_dump_races[0]["race_name"]);
-                    console.log(json_dump_races.length)
+                    //console.log(json_dump_races[0]["race_id"]);
+                    //console.log(json_dump_races[0]["race_name"]);
+                    //console.log(json_dump_races.length)
                     for (let i = 0; i < json_dump_races.length; i++) {
                         let race_dropdown = "<option value=\"" + json_dump_races[i]["race_id"] + "\">" + json_dump_races[i]["race_name"] + "</option>"
-                        document.getElementById("race_id_list").insertAdjacentHTML("beforeend",race_dropdown)
+                        document.getElementById("race_dropdown_select").insertAdjacentHTML("beforeend",race_dropdown)
                     }
                 </script>
             {% elif not new_pc.class_id %}
