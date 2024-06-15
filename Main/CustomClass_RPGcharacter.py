@@ -896,6 +896,7 @@ class rpg_char_create:
             return False
     def set_race_id(self, var_race_id):
         race_list = db.execute("SELECT race_id FROM list_races")
+        print("Length of race_list:", len(race_list))
         # remember that db.execute will return a LIST of DICTIONARIES
         for i in range(len(race_list)):
             race_list[i] = int(race_list[i].get("race_id"))
