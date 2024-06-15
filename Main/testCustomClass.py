@@ -133,6 +133,8 @@ def main():
     var = "1"
     is_var_numeric = var.isnumeric()
     print(is_var_numeric)
+    Durge = rpg_char_create()
+    print("Durge.set_race_id(",var,"):", Durge.set_race_id(var))
 
 main()
 
