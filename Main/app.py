@@ -276,7 +276,8 @@ def create_character():
 def testing():
     num_var = 0
     string_var = "soup"
-    return render_template("testing.html", num_var=num_var, string_var=string_var)
+    noup = "vloop"
+    return render_template("testing.html", num_var=num_var, string_var=string_var, noup=noup)
 
 @app.route("/character_creator_name", methods=['GET', 'POST'])
 def create_character_step2():
