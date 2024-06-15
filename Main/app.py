@@ -230,8 +230,11 @@ def create_character():
             if var_race_id.isnumeric == True:
                 var_race_id = int(var_race_id)
                 if new_pc.set_race_id(var_race_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
+                    print("second-point-second if")
                     json_dump = json.dumps(db.execute("SELECT class_id, class_name FROM list_classes"))
                     print("new_pc.race_id =", new_pc.race_id)
+                else:
+                    print("we shouldn't be here")
         if var_class_id != None and new_pc.class_id == None:
             if var_class_id.isnumeric == True:
                 var_class_id = int(var_class_id)
