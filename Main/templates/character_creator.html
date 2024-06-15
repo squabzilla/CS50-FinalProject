@@ -25,8 +25,7 @@
             <span>Choose race</span>
             <div class="row g-3">
                 <div class="col">
-                    <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id" id="race_id" value="1">
-                        <!--<option selected>Choose Race</option>-->
+                    <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id" id="race_id">
                     </select>
                 </div>
                 <div class="col">
@@ -50,26 +49,42 @@
         <span>Choose class</span>
         <div class="row g-3">
             <div class="col">
-                <p>Get class_id</p>
+                <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="class_id" id="class_id">
+                </select>
             </div>
             <div class="col">
                 <button class="btn btn-primary" type="submit">Submit</button>
             </div>
         </div>
     </form>
+    <script>
+        const json_dump_classes = JSON.parse({{json_dump|tojson}});
+        for (let i = 0; i < json_dump_races.length; i++) {
+            let race_dropdown = "<option value=\"" + json_dump_races[i]["class_id"] + "\">" + json_dump_races[i]["class_name"] + "</option>"
+            document.getElementById("class_id").insertAdjacentHTML("beforeend",race_dropdown)
+        }
+    </script>
 
     {% elif not new_pc.background_id %}
     <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
         <span>Choose background</span>
         <div class="row g-3">
             <div class="col">
-                <p>Get background_id</p>
+                <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="background_id" id="background_id">
+                </select>
             </div>
         </div>
         <div class="col">
             <button class="btn btn-primary" type="submit">Submit</button>
         </div>
     </form>
+    <script>
+        const json_dump_backgrounds = JSON.parse({{json_dump|tojson}});
+        for (let i = 0; i < json_dump_races.length; i++) {
+            let race_dropdown = "<option value=\"" + json_dump_races[i]["background_id"] + "\">" + json_dump_races[i]["background_name"] + "</option>"
+            document.getElementById("class_background_idid").insertAdjacentHTML("beforeend",race_dropdown)
+        }
+    </script>
 
     {% else %}
         <p>DONE!</p>
