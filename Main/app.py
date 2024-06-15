@@ -214,6 +214,7 @@ def create_character():
         json_dump = ""
         var_name = request.form.get("character_name")
         var_race_id = request.form.get("race_id")
+        print("var_race_id:", var_race_id)
         var_class_id = request.form.get("class_id")
         var_background_id = request.form.get("background_id")
         if var_name != None:
