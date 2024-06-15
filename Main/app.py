@@ -213,19 +213,19 @@ def create_character():
         has_background = False
         json_dump = ""
         var_name = request.form.get("character_name")
+        var_race_id = request.form.get("race_id")
+        var_class_id = request.form.get("class_id")
+        var_background_id = request.form.get("background_id")
         if var_name != None:
             has_name = new_pc.set_name(var_name) # remember my set_[attribute] functions return True or False depending on success
             if has_name == True:
                 json_dump = json.dumps(db.execute("SELECT race_id, race_name FROM list_races"))
                 print(new_pc.name)
                 #json_dump_2 = json.dumps(
-        var_race_id = request.form.get("race_id")
         if var_race_id != None:
             has_race = new_pc.set_race_id(var_race_id) # remember my set_[attribute] functions return True or False depending on success
-        var_class_id = request.form.get("class_id")
         if var_class_id != None:
             has_class = new_pc.set_class_id(var_class_id) # remember my set_[attribute] functions return True or False depending on success
-        var_background_id = request.form.get("background_id")
         if var_background_id != None:
             has_background = new_pc.set_background_id(var_background_id) # remember my set_[attribute] functions return True or False depending on success
         #character_name = request.form.get("character_name")
