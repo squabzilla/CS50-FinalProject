@@ -31,8 +31,8 @@ var_number_of_files = len(var_file_names)
 
 # let's set them up correct
 for i in range(var_number_of_files):
-    var_input_paths.append(pathlib.Path.joinpath(var_input_folder_path, pathlib.Path(var_file_names + var_input_end)))
-    var_output_paths.append(pathlib.Path.joinpath(var_output_folder_path, pathlib.Path(var_file_names + var_output_end)))
+    var_input_paths.append(pathlib.Path.joinpath(var_input_folder_path, pathlib.Path(var_file_names[i] + var_input_end)))
+    var_output_paths.append(pathlib.Path.joinpath(var_output_folder_path, pathlib.Path(var_file_names[i] + var_output_end)))
 
 def last_n_chars(line, n):
     n -= 1 # "zero"-indexing the last line; the n-th_last-line = last-line - n + 1 = last-line - (n - 1)
@@ -66,8 +66,7 @@ def func_alter_text(input_path, output_path):
                 file.write(line)
                 
 def main():
-    var_soup = "soup"
-    #for i in range(len(var_file_names)):
-        #func_alter_text(var_input_paths[i], var_output_paths[i])
+    for i in range(len(var_file_names)):
+        func_alter_text(var_input_paths[i], var_output_paths[i])
         
 main()
