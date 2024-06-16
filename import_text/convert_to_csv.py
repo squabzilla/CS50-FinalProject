@@ -77,16 +77,14 @@ def write_csv(input_path_name, output_path_name):
             # note: I'll need to grab the titles-only and export them to a separate CSV,
                 # in order to have CSV of just feature_name, feature_id
             if (last_n_chars(lines[i] , 3) == "###") or (last_n_chars(lines[i] , 3) == "#$#"): # continuing feature
-                if i == 4:
-                    if (last_n_chars(lines[i] , 3) == "###"):
-                        print(f"last three chars of {line[i]} are {last_n_chars(lines[i] , 3)}")
-                        print(f"last three chars of {line[i]} are {last_n_chars(lines[i] , 3)}")
+                if i == 4: print("line 80 standing by")
                 feature_id += 1 #increase the feature we're on
                 text_order = 0 #reset the text order for a new feature
                 if last_n_chars(lines[i] , 3) == "###": text_type = 1 # title: 1
                 elif last_n_chars(lines[i] , 3) == "#$#": text_type = 2 # subtitle: 2
             else:
                 text_order += 1 #increase our text order
+                if i == 4: print("line 87 standing by")
                 if last_n_chars(lines[i] , 3) == "#$#": text_type = 3 # bullet-points: 3
                 elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 4 # table-title: 4
                 elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 5 # table-column-names: 5
