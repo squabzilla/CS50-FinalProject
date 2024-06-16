@@ -63,7 +63,7 @@ def write_csv(input_path_name, output_path_name):
         #print(f"last-three of line-zero: {last_n_chars(lines[0], 3)}")
         
         while var_index_countdown >= 0:
-            if last_n_chars(line, 3) == "%%%":
+            if last_n_chars(lines[var_index_countdown], 3) == "%%%":
                 lines.pop(var_index_countdown)
                 print(f"popped line {var_index_countdown}")
                 #print(var_index_countdown)
