@@ -67,6 +67,7 @@ def func_alter_text(input_path, output_path):
                 
 def main():
     for i in range(len(var_file_names)):
+        print(f"{var_file_names[i]} is i = {i}")
         func_alter_text(var_input_paths[i], var_output_paths[i])
         
 main()
