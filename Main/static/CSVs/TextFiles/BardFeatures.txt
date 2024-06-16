@@ -76,7 +76,7 @@ level.
 Jack of All Trades###
 Starting at 2nd level, you can add half your
 proficiency bonus, rounded down, to any ability
-check you make that doesnʼt already include your
+check you make that doesn't already include your
 proficiency bonus.
 Song of Rest###
 Beginning at 2nd level, you can use soothing music
@@ -176,14 +176,14 @@ roll. You can choose to use this feature after the
 creature makes its roll, but before the GM
 determines whether the attack roll or ability check
 succeeds or fails, or before the creature deals its
-damage. The creature is immune if it canʼt hear you
+damage. The creature is immune if it can't hear you
 or if it's immune to being charmed.
 Additional Magical Secrets#$#
 At 6th level, you learn two spells of your choice from
 any class. A spell you choose must be of a level you
 can cast, as shown on the Bard table, or a cantrip.
 The chosen spells count as bard spells for you but
-donʼt count against the number of bard spells you
+don't count against the number of bard spells you
 know.
 Peerless Skill#$#
 Starting at 14th level, when you make an ability

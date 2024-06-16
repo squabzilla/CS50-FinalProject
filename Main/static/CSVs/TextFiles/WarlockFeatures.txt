@@ -286,7 +286,7 @@ You can cast bestow curse once using a warlock spell
 slot. You can't do so again until you finish a long rest.
 Thief of Five Fates#$#
 You can cast bane once using a warlock spell slot.
-You canʼt do so again until you finish a long rest.
+You can't do so again until you finish a long rest.
 Thirsting Blade#$#
 <b>Prerequisite: 5th level, Pact of the Blade feature</b>
 You can attack with your pact weapon twice, instead
