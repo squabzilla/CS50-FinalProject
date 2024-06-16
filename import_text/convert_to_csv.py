@@ -68,7 +68,7 @@ def write_csv(input_path_name, output_path_name):
         for i in range(len(lines)):
             text_id = i
             lines[i] = '"' + lines[i] + '"'
-            #text_id - primary key
+            # text_id - primary key
             # feature_id - id for all the text-boxes that belong to one feature
             # text_type - the display type of this element - title, subtitle, etc
             # text_order - the order that these text-boxes appear in for the feature
@@ -94,6 +94,8 @@ def write_csv(input_path_name, output_path_name):
         ##text=List of strings to be written to file
         #with open('csvfile.csv','wb') as file:
         with open(output_path_name,'w') as file:
+            file.write("text_id, feature_id, text_type, text_order, text_text")
+            file.write('\n')
             for line in lines:
                 #print(line)
                 #break
