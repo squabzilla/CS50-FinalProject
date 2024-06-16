@@ -132,7 +132,7 @@ def write_csv(input_path_name, output_path_name):
             #print(lines[i])
         ##text=List of strings to be written to file
         #with open('csvfile.csv','wb') as file:
-        var_write_csv = False
+        var_write_csv = True
         if var_write_csv == True:
             with open(output_path_name,'w') as file:
                 file.write("text_id, feature_id, text_type, text_order, text_text")
