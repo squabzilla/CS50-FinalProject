@@ -50,8 +50,10 @@ def write_csv(input_path_name, output_path_name):
     
     with open(test_file, 'r', encoding='utf-8') as file:
         lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
-        #print(lines[3])
-        #print(lines[7])
+        # If you want the \n included:
+        # with open(fname) as var_file:
+            # content = var_file.readlines()
+        
         count = 0
         # for var_line in lines:
             # if last_n_chars(var_line, 3) == "###":
@@ -135,7 +137,7 @@ def write_csv(input_path_name, output_path_name):
         var_write_csv = True
         if var_write_csv == True:
             with open(output_path_name,'w') as file:
-                file.write("text_id, feature_id, text_type, text_order, text_text")
+                file.write("text_id, feature_id, text_type, text_order, text_text") # write column titles
                 file.write('\n')
                 for line in lines:
                     #print(line)
