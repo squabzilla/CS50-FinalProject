@@ -34,7 +34,15 @@ def last_n_chars(line, n):
     #var_third_last = line[var_length - 3]
     #var_last_three = var_third_last + var_second_last + var_last
     return last_n
+
 ### turn this into a boolean and figure out why my truth values are fucked
+def is_last_n_chars_x(line, n, var_test_last_chars):
+    var_actual_last_chars = last_n_chars(line, n)
+    if var_actual_last_chars == var_test_last_chars:
+        return True
+    else:
+        return False
+    
     
 def write_csv(input_path_name, output_path_name):
     #test_file = input_path_names[0]
@@ -62,21 +70,25 @@ def write_csv(input_path_name, output_path_name):
             
         csv_output = []
         feature_id = -1 # starts at -1, first features bumps it to 0
-        # text type: no sense delcaring here
+        # text type: no sense declaring here
         text_order = 0
         #print(range(len(lines)))
         for i in range(len(lines)):
             text_id = i
             lines[i] = '"' + lines[i] + '"'
+            if i > 10: break
             # text_id - primary key
             # feature_id - id for all the text-boxes that belong to one feature
             # text_type - the display type of this element - title, subtitle, etc
             # text_order - the order that these text-boxes appear in for the feature
             
+            print(lines[i])
+            
             
             # note: I'll need to grab the titles-only and export them to a separate CSV,
                 # in order to have CSV of just feature_name, feature_id
-            if (last_n_chars(lines[i] , 3) == "###") or (last_n_chars(lines[i] , 3) == "#$#"): # continuing feature
+            #if (last_n_chars(lines[i] , 3) == "###") or (last_n_chars(lines[i] , 3) == "#$#"): # continuing feature
+            if is_last_n_chars_x(lines[i], 3, "###") or is_last_n_chars_x(lines[i], 3, "#$#"):
                 feature_id += 1 #increase the feature we're on
                 text_order = 0 #reset the text order for a new feature
                 if last_n_chars(lines[i] , 3) == "###": text_type = 1 # title: 1
