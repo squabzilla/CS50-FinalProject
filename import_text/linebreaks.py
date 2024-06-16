@@ -13,22 +13,23 @@ var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures"
                 "PaladinFeatures","RangerFeatures","RogueFeatures",
                 "SorcererFeatures","WarlockFeatures","WizardFeatures"]
 
-# Name variables
-var_input_text_names = []
-var_RegexModdedText_names = []
-
-# path variables
-# NOTE: I want these later
-var_input_text_paths = []
-var_RegexModdedText_paths = []
+# actual folder-paths
+var_input_folder_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
+var_output_folder_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\RegexModded_TextFiles")
 
 # extension variables
-var_text_end = ".txt"
-var_csv_end = ".csv"
+var_input_end = ".txt"
+var_output_end = ".csv"
 
-# actual folder-paths
-var_input_text_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
-var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\RegexModded_TextFiles")
+# path lists
+# NOTE: I want these later
+var_input_paths = []
+var_output_paths = []
 
 # amount of files
 var_number_of_files = len(var_file_names)
+
+# let's set them up correct
+for i in range(var_number_of_files):
+    var_input_paths.append(pathlib.Path.joinpath(var_input_folder_path, pathlib.Path(var_file_names + var_input_end)))
+    var_output_end.append(pathlib.Path.joinpath(var_output_folder_path, pathlib.Path(var_file_names + var_output_end)))
