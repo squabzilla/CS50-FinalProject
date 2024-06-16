@@ -65,6 +65,7 @@ def write_csv(input_path_name, output_path_name):
         while var_index_countdown >= 0:
             if last_n_chars(line, 3) == "%%%":
                 lines.pop(var_index_countdown)
+                print(f"popped line {var_index_countdown}")
                 #print(var_index_countdown)
             var_index_countdown -= 1
             
