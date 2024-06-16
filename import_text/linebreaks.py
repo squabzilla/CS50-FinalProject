@@ -8,7 +8,7 @@ import shutil
 # The goal of this text is to find all of the "artificial" new-lines, and remove them.
 # If the statement didn't end in a 
 
-var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
+var_file_names = ["BarbarianFeatures","BardFeatures","ClericFeatures",
                 "DruidFeatures","FighterFeatures","MonkFeatures",
                 "PaladinFeatures","RangerFeatures","RogueFeatures",
                 "SorcererFeatures","WarlockFeatures","WizardFeatures"]
@@ -52,13 +52,7 @@ def do_last_n_chars_equal_x(line, var_n, var_x):
 
 def func_alter_text(input_path, output_path):
     with open(input_path, "r", encoding='utf-8') as file:
-        # lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
         lines = file.readlines() # If you want the \n included
-        
-        #var_bool_isRanger = False
-        #if input_path == var_input_paths[8]:
-            #var_bool_isRanger = True
-        
         for i in range(len(lines)):
             if i == 0:
                 continue
