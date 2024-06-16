@@ -3,6 +3,11 @@ import re
 import pathlib
 import shutil
 
+### NOTE: Purpose:
+# When I grabbed the text from the PDF, the width of text columns split up sentences and paragraphs onto new lines
+# The goal of this text is to find all of the "artificial" new-lines, and remove them.
+# If the statement didn't end in a 
+
 var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
                 "DruidFeatures","FighterFeatures","MonkFeatures",
                 "PaladinFeatures","RangerFeatures","RogueFeatures",
