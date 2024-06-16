@@ -69,8 +69,9 @@ def write_csv(input_path_name, output_path_name):
             var_index_countdown -= 1
             
             #aren't wearing heavy armor:
-            #If you are able to cast spells, you canʼt cast them or
-            
+            #If you are able to cast spells, you canʼt cast them or # yay inconsistent OCR reading...
+        var_lines_copy = lines
+        
         #csv_output = []
         feature_id = -1 # starts at -1, first features bumps it to 0
         # text type: no sense declaring here
@@ -106,6 +107,9 @@ def write_csv(input_path_name, output_path_name):
             lines[i] = str(text_id) + "," + str(feature_id) + "," + str(text_type) + "," + str(text_order) + "," + lines[i]
             ## need to enter into CSV format:
             # text_id, feature_id, text_order, text_type, text-text
+        
+        for i in range(7):
+            print(lines[i])
         ##text=List of strings to be written to file
         #with open('csvfile.csv','wb') as file:
         var_write_csv = False
