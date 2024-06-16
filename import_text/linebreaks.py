@@ -70,12 +70,13 @@ def func_alter_text(input_path, output_path):
             if i == 0:
                 continue
             if do_last_n_chars_equal_x(lines[i], 4, "###\n") == True:
-                print("start stop 1")
+                if i == 218 or i == 219: print(f"line {[i]} start stop 1")
                 lines[i-1] = lines[i-1] + "\n"
-                print("end stop 1")
+                if i == 218 or i == 219: print(f"line {[i]} end stop 1")
             if do_last_n_chars_equal_x(lines[i], 4, "#$#\n") == True:
-                print("start stop 2")
+                if i == 218 or i == 219: print(f"line {[i]} start stop 2")
                 lines[i-1] = lines[i-1] + "\n"
+                if i == 218 or i == 219: print(f"line {[i]} end stop 2")
                 print("end stop 2")
         with open(output_path,'w') as file:
             if var_class_ranger == True:
