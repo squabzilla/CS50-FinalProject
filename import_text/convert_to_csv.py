@@ -50,6 +50,7 @@ def write_csv(input_path_name, output_path_name):
     
     with open(test_file) as file:
         lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
+        print(lines[7])
         count = 0
         for line in lines:
             if last_n_chars(line, 3) == "###":
@@ -76,13 +77,13 @@ def write_csv(input_path_name, output_path_name):
         for i in range(len(lines)):
             text_id = i
             lines[i] = '"' + lines[i] + '"'
-            if i > 10: break
+            if i > 7: break
             # text_id - primary key
             # feature_id - id for all the text-boxes that belong to one feature
             # text_type - the display type of this element - title, subtitle, etc
             # text_order - the order that these text-boxes appear in for the feature
             
-            print(lines[i])
+            #print(lines[i])
             
             
             # note: I'll need to grab the titles-only and export them to a separate CSV,
