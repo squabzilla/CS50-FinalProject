@@ -34,6 +34,7 @@ def last_n_chars(line, n):
     #var_third_last = line[var_length - 3]
     #var_last_three = var_third_last + var_second_last + var_last
     return last_n
+### turn this into a boolean and figure out why my truth values are fucked
     
 def write_csv(input_path_name, output_path_name):
     #test_file = input_path_names[0]
@@ -45,7 +46,7 @@ def write_csv(input_path_name, output_path_name):
         for line in lines:
             if last_n_chars(line, 3) == "###":
                 count +=1
-        #print(f"### count is: {count}")
+        print(f"### count is: {count}")
         var_index_countdown = len(lines) - 1
         #print(f"index_countdown: {var_index_countdown}")
         #print(f"line-zero: {lines[0]}")
@@ -56,8 +57,6 @@ def write_csv(input_path_name, output_path_name):
                 lines.pop(var_index_countdown)
                 #print(var_index_countdown)
             var_index_countdown -= 1
-            
-        print(lines[0])
             
             
             
@@ -94,14 +93,16 @@ def write_csv(input_path_name, output_path_name):
             # text_id, feature_id, text_order, text_type, text-text
         ##text=List of strings to be written to file
         #with open('csvfile.csv','wb') as file:
-        with open(output_path_name,'w') as file:
-            file.write("text_id, feature_id, text_type, text_order, text_text")
-            file.write('\n')
-            for line in lines:
-                #print(line)
-                #break
-                file.write(line)
+        var_write_csv = False
+        if var_write_csv == True:
+            with open(output_path_name,'w') as file:
+                file.write("text_id, feature_id, text_type, text_order, text_text")
                 file.write('\n')
+                for line in lines:
+                    #print(line)
+                    #break
+                    file.write(line)
+                    file.write('\n')
             
 def main():
     #print("hi")
