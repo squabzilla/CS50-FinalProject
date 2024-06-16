@@ -35,8 +35,8 @@ for i in range(globalvar_number_of_files):
     globalvar_output_paths.append(pathlib.Path.joinpath(globalvar_output_folder_path, pathlib.Path(globalvar_file_names[i] + globalvar_output_end)))
 
 for path in globalvar_input_paths:
-    with open(path, "r", encoding='utf-8') as file:
-        file = re.sub("ʼ", "'", file)
+    with open(path, "r", encoding='utf-8') as file_input:
+        file_input = re.sub("ʼ", "'", file_input)
     with open(path, "w+") as file_output:
         file_output.write(file)
 
