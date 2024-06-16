@@ -65,7 +65,7 @@ def write_csv(input_path_name, output_path_name):
         while var_index_countdown >= 0:
             if last_n_chars(lines[var_index_countdown], 3) == "%%%":
                 lines.pop(var_index_countdown)
-                print(f"popped line {var_index_countdown}")
+                #print(f"popped line {var_index_countdown}")
                 #print(var_index_countdown)
             var_index_countdown -= 1
             
@@ -93,8 +93,14 @@ def write_csv(input_path_name, output_path_name):
             # note: I'll need to grab the titles-only and export them to a separate CSV,
                 # in order to have CSV of just feature_name, feature_id
             #if (last_n_chars(lines[i] , 3) == "###") or (last_n_chars(lines[i] , 3) == "#$#"): # continuing feature
-            #if i == 0:
-                #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {is_last_n_chars_x(lines[i], 3, "#$#")}")
+            if i == 0:
+                #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {is_last_n_chars_x(lines[i], 3, "#$#")} ")
+                print(line[i])
+                var_bool_1 = is_last_n_chars_x(lines[i], 3, "###")
+                var_bool_2 = is_last_n_chars_x(lines[i], 3, "#$#")
+                #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} ")
+                print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {var_bool_1} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {var_bool_2} ")
+                #print("hi")
             if is_last_n_chars_x(lines[i], 3, "###") or is_last_n_chars_x(lines[i], 3, "#$#"):
                 feature_id += 1 #increase the feature we're on
                 text_order = 0 #reset the text order for a new feature
