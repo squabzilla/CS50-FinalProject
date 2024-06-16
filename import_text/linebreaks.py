@@ -8,6 +8,8 @@ import shutil
 # The goal of this text is to find all of the "artificial" new-lines, and remove them.
 # If the statement didn't end in a 
 
+var_global_rpg_classes = ["all", "Barb", "Bard", "Cler", "Drui", "Figh", "Monk", "Pala", "Rang", "Sorc", "Warl", "Wiza"]
+
 var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
                 "DruidFeatures","FighterFeatures","MonkFeatures",
                 "PaladinFeatures","RangerFeatures","RogueFeatures",
@@ -93,11 +95,13 @@ def main():
     #for i in range(len(var_file_names)):
     var_main_max_length = len(var_file_names)
     i = 0
+    print("Done: ", end="")
     while i < var_main_max_length:
-        print(f"Starting output: {var_output_paths[i]}")
+        #print(f"Starting output: {var_output_paths[i]}")
         #print(f"class[{i}]: {var_file_names[i]}")
         func_alter_text(var_input_paths[i], var_output_paths[i])
-        print(f"Done output: {var_output_paths[i]}")
+        #print(f"Done output: {var_output_paths[i]}")
+        print(var_global_rpg_classes[i], end=" ")
         i += 1
         
 main()
