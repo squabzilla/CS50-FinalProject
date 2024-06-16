@@ -91,6 +91,7 @@ def func_alter_text(input_path, output_path):
                 
 def main():
     for i in range(len(var_file_names)):
+        print(f"Starting output: {var_output_paths[i]}")
         #print(f"class[{i}]: {var_file_names[i]}")
         func_alter_text(var_input_paths[i], var_output_paths[i])
         print(f"Done output: {var_output_paths[i]}")
