@@ -50,16 +50,17 @@ def write_csv(input_path_name, output_path_name):
         #print(f"index_countdown: {var_index_countdown}")
         #print(f"line-zero: {lines[0]}")
         #print(f"last-three of line-zero: {last_n_chars(lines[0], 3)}")
-        print(f"{last_n_chars(lines[1], 3)}")
-        if last_n_chars(lines[1], 3) == "###":
-            print("HUZZAH")
-        #else:
-            #print("but why")
+        
         while var_index_countdown >= 0:
             if last_n_chars(line, 3) == "%%%":
                 lines.pop(var_index_countdown)
                 #print(var_index_countdown)
             var_index_countdown -= 1
+            
+        print(lines[0])
+            
+            
+            
         csv_output = []
         feature_id = -1 # starts at -1, first features bumps it to 0
         # text type: no sense delcaring here
@@ -77,14 +78,12 @@ def write_csv(input_path_name, output_path_name):
             # note: I'll need to grab the titles-only and export them to a separate CSV,
                 # in order to have CSV of just feature_name, feature_id
             if (last_n_chars(lines[i] , 3) == "###") or (last_n_chars(lines[i] , 3) == "#$#"): # continuing feature
-                if i == 4: print("line 80 standing by")
                 feature_id += 1 #increase the feature we're on
                 text_order = 0 #reset the text order for a new feature
                 if last_n_chars(lines[i] , 3) == "###": text_type = 1 # title: 1
                 elif last_n_chars(lines[i] , 3) == "#$#": text_type = 2 # subtitle: 2
             else:
                 text_order += 1 #increase our text order
-                if i == 4: print("line 87 standing by")
                 if last_n_chars(lines[i] , 3) == "#$#": text_type = 3 # bullet-points: 3
                 elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 4 # table-title: 4
                 elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 5 # table-column-names: 5
