@@ -52,9 +52,20 @@ def do_last_n_chars_equal_x(line, var_n, var_x):
 
 def func_alter_text(input_path, output_path):
     with open(input_path, "r", encoding='utf-8') as file:
+        
+        var_class_ranger = False
+        if input_path == var_input_paths[8]:
+            print("Ranger")
+            var_class_ranger = True
+        
         # lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
         lines = file.readlines() # If you want the \n included
         for i in range(len(lines)):
+            #if var_class_ranger == True:
+                #print(f"line[{i}]")
+            if i == 218 or i == 219:
+                print(f"line[{i}]: {lines[i]}")
+            
             if i == 0:
                 continue
             if do_last_n_chars_equal_x(lines[i], 4, "###\n") == True:
@@ -67,7 +78,8 @@ def func_alter_text(input_path, output_path):
                 
 def main():
     for i in range(len(var_file_names)):
+        #print(f"class[{i}]: {var_file_names[i]}")
         func_alter_text(var_input_paths[i], var_output_paths[i])
-        print(f"Done output: {var_output_paths[i]}")
+        #print(f"Done output: {var_output_paths[i]}")
         
 main()
