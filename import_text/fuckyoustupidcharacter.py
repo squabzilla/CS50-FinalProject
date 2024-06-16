@@ -36,7 +36,7 @@ for i in range(globalvar_number_of_files):
 
 for path in globalvar_input_paths:
     with open(path, "r", encoding='utf-8') as file_input:
-        file_input = re.sub("ʼ", "'", file_input)
+        file_input = re.sub(str("ʼ"), str("'"), file_input)
     with open(path, "w+", encoding='utf-8') as file_output:
         file_output.write(file_output)
 
