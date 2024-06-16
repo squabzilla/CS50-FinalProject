@@ -1,3 +1,15 @@
+feature_text_order: the order that these associated elements belong in
+display type: numeric value associated with type of display
+ - 0: Regular text (default)
+ - 1: Title
+ - 2: Subtitle
+ - 3: Bullet-points
+ - 4: table-title
+ - 5: table table-column-names
+ - 6: table-items
+
+
+
 Note: line-ends-with means "the characters preceeding the new-line character"
 
 Ctrl + H:
@@ -19,12 +31,13 @@ If line ends with a regular letter: replace newline with space
 
 Lines ends with:
 symbols			name
-	#T#			title
-	#S#			subtitle
-	#B#			bullet-points
-	$tt$		table-title
-	$tc$		table-column-names
-	$ti$		table-items
+0	(none)		Regular text
+1	###			title
+2	#$#			subtitle
+3	#B#			bullet-points
+4	$tt$		table-title
+5	$tc$		table-column-names
+6	$ti$		table-items
 	
 columns format:
 item 1_::_item 2_::_item 3
