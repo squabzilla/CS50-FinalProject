@@ -60,7 +60,7 @@ def func_alter_text(input_path, output_path):
         
         # lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
         lines = file.readlines() # If you want the \n included
-        print(f"lines in ranger: {range(len(lines))}")
+        print(f"lines in ranger: {len(lines)}")
         number_of_lines = len(lines)
         i = 0
         #for i in range(len(lines)):
@@ -68,6 +68,7 @@ def func_alter_text(input_path, output_path):
             if var_class_ranger == True:
                 print(f"line[{i}]")
             if i == 0:
+                #print("starting loop")
                 continue
             if i == 218 or i == 219:
                 print(f"line[{i}]: {lines[i]}")
