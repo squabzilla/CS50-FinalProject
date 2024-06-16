@@ -53,8 +53,8 @@ def write_csv(input_path_name, output_path_name):
         #print(lines[3])
         #print(lines[7])
         count = 0
-        for line in lines:
-            if last_n_chars(line, 3) == "###":
+        for var_line in lines:
+            if last_n_chars(var_line, 3) == "###":
                 count +=1
         print(f"### count is: {count}")
         var_index_countdown = len(lines) - 1
@@ -95,7 +95,7 @@ def write_csv(input_path_name, output_path_name):
             #if (last_n_chars(lines[i] , 3) == "###") or (last_n_chars(lines[i] , 3) == "#$#"): # continuing feature
             if i == 0:
                 #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {is_last_n_chars_x(lines[i], 3, "#$#")} ")
-                print(line[i])
+                print(lines[i])
                 var_bool_1 = is_last_n_chars_x(lines[i], 3, "###")
                 var_bool_2 = is_last_n_chars_x(lines[i], 3, "#$#")
                 #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} ")
