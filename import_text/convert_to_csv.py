@@ -68,7 +68,8 @@ def write_csv(input_path_name, output_path_name):
                 #print(var_index_countdown)
             var_index_countdown -= 1
             
-            
+            #aren't wearing heavy armor:
+            #If you are able to cast spells, you canʼt cast them or
             
         csv_output = []
         feature_id = -1 # starts at -1, first features bumps it to 0

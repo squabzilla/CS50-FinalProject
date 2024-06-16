@@ -69,11 +69,14 @@ for var_char in var_all_chars:
     var_list_replace_items.append(var_char + " " + var_replace_end)
 
 def import_txt_file(input_path, output_path, list_find_items, list_replace_items):
-    with open(input_path, "r") as file_input:
+    with open(input_path, "r", encoding='utf-8') as file_input:
         # read the file contents
         file_contents = file_input.read()
         var_count = 0
-        var_max = len(list_find_items)        
+        var_max = len(list_find_items)
+        file_contents = re.sub("ʼ", "'", file_contents)
+        # because apparently the OCR did inconsistent interpretation of single-apostrophes
+        # and ʼ confuses python unless I import uft-8, while ' is fine
         for i in range(var_max):
             file_contents = re.sub(list_find_items[i], list_replace_items[i], file_contents)
             var_count += 1

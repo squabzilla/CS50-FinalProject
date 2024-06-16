@@ -5,16 +5,16 @@ While raging, you gain the following benefits if you aren't wearing heavy armor:
 You have advantage on Strength checks and Strength saving throws.#B#
 When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.#B#
 You have resistance to bludgeoning, piercing, and slashing damage.#B#
-If you are able to cast spells, you canʼt cast them or concentrate on them while raging.
-Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you havenʼt attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.
+If you are able to cast spells, you can't cast them or concentrate on them while raging.
+Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.
 Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again.
 Unarmored Defense###
 While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.
 Reckless Attack###
 Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn.
 Danger Sense###
-At 2nd level, you gain an uncanny sense of when things nearby arenʼt as they should be, giving you an edge when you dodge away from danger.
-You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you canʼt be blinded, deafened, or incapacitated.
+At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger.
+You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened, or incapacitated.
 Primal Path###
 At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels.
 Ability Score Improvement###
@@ -30,7 +30,7 @@ Brutal Critical###
 Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.
 This increases to two additional dice at 13th level and three additional dice at 17th level.
 Relentless Rage###
-Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and donʼt die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead.
+Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead.
 Each time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10.
 Persistent Rage###
 Beginning at 15th level, your rage is so fierce that it ends early only if you fall unconscious or if you choose to end it.
@@ -80,7 +80,7 @@ Once within the next 10 minutes, the creature can roll the die and add the numbe
 You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.
 Your Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.
 Jack of All Trades###
-Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesnʼt already include your proficiency bonus.
+Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus.
 Song of Rest###
 Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points.
 The extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level.
@@ -111,10 +111,10 @@ The college's members gather in libraries and sometimes in actual colleges, comp
 Bonus Proficiencies#$#
 When you join the College of Lore at 3rd level, you gain proficiency with three skills of your choice.
 Cutting Words#$#
-Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature's roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it canʼt hear you or if it's immune to being charmed.
+Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature's roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can't hear you or if it's immune to being charmed.
 Additional Magical Secrets#$#
 At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.
-The chosen spells count as bard spells for you but donʼt count against the number of bard spells you know.
+The chosen spells count as bard spells for you but don't count against the number of bard spells you know.
 Peerless Skill#$#
 Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration.
 Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail.
@@ -151,7 +151,7 @@ Some Channel Divinity effects require saving throws. When you use such an effect
 Beginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.
 Channel Divinity: Turn Undead#$#
 As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.
-A turned creature must spend its turns trying to move as far away from you as it can, and it canʼt willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.
+A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.
 Ability Score Improvement#
 When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.
 Destroy Undead###
@@ -227,9 +227,9 @@ You then revert to your normal form unless you expend another use of this featur
 While you are transformed, the following rules apply:
 Your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.#B#
 When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.#B#
-You can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell youʼve already cast, however, or prevent you from taking actions that are part of a spell, such as call lightning, that you've already cast.#B#
+You can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as call lightning, that you've already cast.#B#
 You retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense.#B#
-You choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the GM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesnʼt change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form.#B#
+You choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the GM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form.#B#
 Druid Circle###
 At 2nd level, you choose to identify with a circle of druids, such as the Circle of the Land. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level.
 Ability Score Improvement###
@@ -237,10 +237,10 @@ When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can 
 Timeless Body###
 Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year.
 Beast Spells###
-Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you arenʼt able to provide material components.
+Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components.
 Archdruid###
 At 20th level, you can use your Wild Shape an unlimited number of times.
-Additionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and arenʼt consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape.
+Additionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and aren't consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape.
 Circle of the Land###
 The Circle of the Land is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. The circle's wisest members preside as the chief priests of communities that hold to the Old Faith and serve as advisors to the rulers of those folk. As a member of this circle, your magic is influenced by the land where you were initiated into the circle's mysterious rites.
 Bonus Cantrip#$#
@@ -251,7 +251,7 @@ For example, when you are a 4th-level druid, you can recover up to two levels wo
 Circle Spells#$#
 Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid.
 Choose that land-arctic, coast, desert, forest, grassland, mountain, or swamp-and consult the associated list of spells.
-Once you gain access to a circle spell, you always have it prepared, and it doesnʼt count against the number of spells you can prepare each day. If you gain access to a spell that doesnʼt appear on the druid spell list, the spell is nonetheless a druid spell for you.
+Once you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.
 Arctic$tt$
 Druid Level_::_Circle Spells$tc$
 3rd_::_hold person, spike growth$ti$
@@ -305,7 +305,7 @@ On a successful save, the creature is immune to this effect for 24 hours.
 The creature is aware of this effect before it makes its attack against you.
 Fighter%%%
 Fighting Style###
-You adopt a particular style of fighting as your specialty. Choose one of the following options. You canʼt take a Fighting Style option more than once, even if you later get to choose again.
+You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.
 Archery#$#
 You gain a +2 bonus to attack rolls you make with ranged weapons.
 Defense#$#
@@ -469,7 +469,7 @@ When you reach 3rd level, you swear the oath that binds you as a paladin forever
 Your choice grants you features at 3rd level and again at 7th, 15th, and 20th level. Those features include oath spells and the Channel Divinity feature.
 Oath Spells#$#
 Each oath has a list of associated spells. You gain access to these spells at the levels specified in the oath description. Once you gain access to an oath spell, you always have it prepared. Oath spells don't count against the number of spells you can prepare each day.
-If you gain an oath spell that doesnʼt appear on the paladin spell list, the spell is nonetheless a paladin spell for you.
+If you gain an oath spell that doesn't appear on the paladin spell list, the spell is nonetheless a paladin spell for you.
 Channel Divinity#$#
 Your oath allows you to channel divine energy to fuel magical effects. Each Channel Divinity option provided by your oath explains how to use it.
 When you use your Channel Divinity, you choose which option to use. You must then finish a short or long rest to use your Channel Divinity again.
@@ -573,7 +573,7 @@ Once you are camouflaged in this way, you can try to hide by pressing yourself u
 Vanish###
 Starting at 14th level, you can use the Hide action as a bonus action on your turn. Also, you can't be tracked by nonmagical means, unless you choose to leave a trail.
 Feral Senses###
-At 18th level, you gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesnʼt impose disadvantage on your attack rolls against it.
+At 18th level, you gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesn't impose disadvantage on your attack rolls against it.
 You are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn't hidden from you and you aren't blinded or deafened.
 Foe Slayer###
 At 20th level, you become an unparalleled hunter of your enemies. Once on each of your turns, you can add your Wisdom modifier to the attack roll or the damage roll of an attack you make against one of your favored enemies. You can choose to use this feature before or after the roll, but before any effects of the roll are applied.
@@ -857,7 +857,7 @@ Sign of Ill Omen#$#
 You can cast bestow curse once using a warlock spell slot. You can't do so again until you finish a long rest.
 Thief of Five Fates#$#
 You can cast bane once using a warlock spell slot.
-You canʼt do so again until you finish a long rest.
+You can't do so again until you finish a long rest.
 Thirsting Blade#$#
 <b>Prerequisite: 5th level, Pact of the Blade feature</b>
 You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.
