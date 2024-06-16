@@ -48,8 +48,9 @@ def write_csv(input_path_name, output_path_name):
     #test_file = input_path_names[0]
     test_file = input_path_name
     
-    with open(test_file) as file:
+    with open(test_file, 'r', encoding='utf-8') as file:
         lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
+        print(lines[3])
         print(lines[7])
         count = 0
         for line in lines:
