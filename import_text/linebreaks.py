@@ -65,13 +65,14 @@ def func_alter_text(input_path, output_path):
         i = 0
         #for i in range(len(lines)):
         while i < number_of_lines:
-            #if var_class_ranger == True:
-                #print(f"line[{i}]")
+            if var_class_ranger == True:
+                print(f"line[{i}]")
+            if i == 0:
+                continue
             if i == 218 or i == 219:
                 print(f"line[{i}]: {lines[i]}")
             
-            if i == 0:
-                continue
+            
             if do_last_n_chars_equal_x(lines[i], 4, "###\n") == True:
                 if i == 218 or i == 219: print(f"line {[i]} start stop 1")
                 lines[i-1] = lines[i-1] + "\n"
@@ -92,6 +93,6 @@ def main():
     for i in range(len(var_file_names)):
         #print(f"class[{i}]: {var_file_names[i]}")
         func_alter_text(var_input_paths[i], var_output_paths[i])
-        #print(f"Done output: {var_output_paths[i]}")
+        print(f"Done output: {var_output_paths[i]}")
         
 main()
