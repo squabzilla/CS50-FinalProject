@@ -80,7 +80,7 @@ def write_csv(input_path_name, output_path_name):
         #print(range(len(lines)))
         for i in range(len(lines)):
             text_id = i
-            lines[i] = '"' + lines[i] + '"'
+            
             if i > 7: break
             # text_id - primary key
             # feature_id - id for all the text-boxes that belong to one feature
@@ -113,6 +113,9 @@ def write_csv(input_path_name, output_path_name):
                 elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 5 # table-column-names: 5
                 elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 6 # table-items: 6
                 else:  text_type = 0
+            # add quotations so it works fine in CSV
+            lines[i] = '"' + lines[i] + '"'
+            # add column values
             lines[i] = str(text_id) + "," + str(feature_id) + "," + str(text_type) + "," + str(text_order) + "," + lines[i]
             ## need to enter into CSV format:
             # text_id, feature_id, text_order, text_type, text-text
