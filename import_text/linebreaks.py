@@ -90,10 +90,14 @@ def func_alter_text(input_path, output_path):
                 file.write(line)
                 
 def main():
-    for i in range(len(var_file_names)):
+    #for i in range(len(var_file_names)):
+    var_main_max_length = len(var_file_names)
+    i = 0
+    while i < var_main_max_length:
         print(f"Starting output: {var_output_paths[i]}")
         #print(f"class[{i}]: {var_file_names[i]}")
         func_alter_text(var_input_paths[i], var_output_paths[i])
         print(f"Done output: {var_output_paths[i]}")
+        i += 1
         
 main()
