@@ -53,10 +53,10 @@ def write_csv(input_path_name, output_path_name):
         #print(lines[3])
         #print(lines[7])
         count = 0
-        for var_line in lines:
-            if last_n_chars(var_line, 3) == "###":
-                count +=1
-        print(f"### count is: {count}")
+        # for var_line in lines:
+            # if last_n_chars(var_line, 3) == "###":
+                # count +=1
+        # print(f"### count is: {count}")
         var_index_countdown = len(lines) - 1
         #print(f"index_countdown: {var_index_countdown}")
         #print(f"line-zero: {lines[0]}")
