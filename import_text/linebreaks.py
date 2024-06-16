@@ -70,7 +70,9 @@ def func_alter_text(input_path, output_path):
             var_saving_linecount = 0
             for line in lines:
                 if var_bool_isRanger == True:
-                    print(f"Saving ranger line-count: {var_saving_linecount}")
+                    #print(f"Saving ranger line-count: {var_saving_linecount}")
+                    if var_saving_linecount in [133,134]:
+                        print(f"R{var_saving_linecount}: {line}")
                     var_saving_linecount += 1
                 file.write(line)
                 
