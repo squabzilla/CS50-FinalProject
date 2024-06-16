@@ -116,8 +116,9 @@ def write_csv(input_path_name, output_path_name):
             
             # strip end-signifier symbols from text
             if text_type in [1, 2, 3]: # ends in ###, #$#, or #B#: strip last 3 characters
-                lines[i] = lines[i][:-3] # strip last three character of lines, [:-3] goes from (index 0) to (index last-3)
-            elif text_type in [4, 5, 6] # ends in $tt$, $tc$, or $tt$
+                lines[i] = lines[i][:-3] # strip last three character of lines, [:-3] goes from [ index 0 ] to [ index (last - 3) ]
+            elif text_type in [4, 5, 6]: # ends in $tt$, $tc$, or $ti$
+                lines[i] = lines[i][:-4] # strip last four character of lines, [:-4] goes from [ index 0 ] to [ index (last - 4) ]
                 
             
             # add quotations so it works fine in CSV
