@@ -66,7 +66,8 @@ def func_alter_text(input_path, output_path):
                 file.write(line)
                 
 def main():
-    for i in range(len(var_file_names)):
-        func_alter_text(var_input_paths[i], var_output_paths[i])
+    var_soup = "soup"
+    #for i in range(len(var_file_names)):
+        #func_alter_text(var_input_paths[i], var_output_paths[i])
         
 main()
