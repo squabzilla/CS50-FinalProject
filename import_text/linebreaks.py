@@ -59,4 +59,5 @@ def func_alter_text(input_path, output_path):
                 continue
             if do_last_n_chars_equal_x(lines[i], 4, "###\n") == True:
                 lines[i-1] = lines[i-1] + "\n"
-            
+            if do_last_n_chars_equal_x(lines[i], 4, "#$#\n") == True:
+                lines[i-1] = lines[i-1] + "\n"
