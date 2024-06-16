@@ -8,8 +8,6 @@ import shutil
 # The goal of this text is to find all of the "artificial" new-lines, and remove them.
 # If the statement didn't end in a 
 
-var_global_rpg_classes = ["all", "Barb", "Bard", "Cler", "Drui", "Figh", "Monk", "Pala", "Rang", "Sorc", "Warl", "Wiza"]
-
 var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
                 "DruidFeatures","FighterFeatures","MonkFeatures",
                 "PaladinFeatures","RangerFeatures","RogueFeatures",
@@ -54,54 +52,21 @@ def do_last_n_chars_equal_x(line, var_n, var_x):
 
 def func_alter_text(input_path, output_path):
     with open(input_path, "r", encoding='utf-8') as file:
-        
-        var_class_ranger = False
-        if input_path == var_input_paths[8]:
-            #print("Ranger")
-            var_class_ranger = True
-        
         # lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
         lines = file.readlines() # If you want the \n included
-        #print(f"number of lines: {len(lines)}")
-        number_of_lines = len(lines)
-        i = 0
-        #for i in range(len(lines)):
-        while i < number_of_lines:
-            #print("start - i:", i)
+        for i in range(len(lines)):
             if i == 0:
-                i += 1
                 continue
-            #if i == 218 or i == 219:
-                #print(f"line[{i}]: {lines[i]}")
-            
-            
             if do_last_n_chars_equal_x(lines[i], 4, "###\n") == True:
-                #if i == 218 or i == 219: print(f"line {[i]} start stop 1")
                 lines[i-1] = lines[i-1] + "\n"
-                #if i == 218 or i == 219: print(f"line {[i]} end stop 1")
             if do_last_n_chars_equal_x(lines[i], 4, "#$#\n") == True:
-                #if i == 218 or i == 219: print(f"line {[i]} start stop 2")
                 lines[i-1] = lines[i-1] + "\n"
-                #if i == 218 or i == 219: print(f"line {[i]} end stop 2")
-            i += 1
-            #print("end - i:", i)
         with open(output_path,'w') as file:
-            if var_class_ranger == True:
-                print("about to save ranger output")
             for line in lines:
                 file.write(line)
                 
 def main():
-    #for i in range(len(var_file_names)):
-    var_main_max_length = len(var_file_names)
-    i = 0
-    print("Done: ", end="")
-    while i < var_main_max_length:
-        #print(f"Starting output: {var_output_paths[i]}")
-        #print(f"class[{i}]: {var_file_names[i]}")
+    for i in range(len(var_file_names)):
         func_alter_text(var_input_paths[i], var_output_paths[i])
-        #print(f"Done output: {var_output_paths[i]}")
-        print(var_global_rpg_classes[i], end=" ")
-        i += 1
         
 main()
