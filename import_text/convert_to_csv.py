@@ -106,6 +106,7 @@ def write_csv(input_path_name, output_path_name):
                 text_order = 0 #reset the text order for a new feature
                 if last_n_chars(lines[i] , 3) == "###": text_type = 1 # title: 1
                 elif last_n_chars(lines[i] , 3) == "#$#": text_type = 2 # subtitle: 2
+                lines[i] = lines[i][:-3] # strip last three character of lines, [:-3] goes from (index 0) to (index last-3)
             else:
                 text_order += 1 #increase our text order
                 if last_n_chars(lines[i] , 3) == "#$#": text_type = 3 # bullet-points: 3
