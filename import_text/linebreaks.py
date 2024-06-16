@@ -55,9 +55,9 @@ def func_alter_text(input_path, output_path):
         # lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
         lines = file.readlines() # If you want the \n included
         
-        var_bool_isRanger = False
-        if input_path == var_input_paths[8]:
-            var_bool_isRanger = True
+        #var_bool_isRanger = False
+        #if input_path == var_input_paths[8]:
+            #var_bool_isRanger = True
         
         for i in range(len(lines)):
             if i == 0:
@@ -66,14 +66,14 @@ def func_alter_text(input_path, output_path):
                 lines[i-1] = lines[i-1] + "\n"
             if do_last_n_chars_equal_x(lines[i], 4, "#$#\n") == True:
                 lines[i-1] = lines[i-1] + "\n"
-        with open(output_path,'w') as file:
-            var_saving_linecount = 0
+        with open(output_path,'w', encoding='utf-8') as file:
+            #var_saving_linecount = 0
             for line in lines:
-                if var_bool_isRanger == True:
+                #if var_bool_isRanger == True:
                     #print(f"Saving ranger line-count: {var_saving_linecount}")
-                    if var_saving_linecount in [133,134]:
-                        print(f"R{var_saving_linecount}: {line}")
-                    var_saving_linecount += 1
+                    #if var_saving_linecount in [133,134]:
+                        #print(f"R{var_saving_linecount}: {line}")
+                    #var_saving_linecount += 1
                 file.write(line)
                 
 def main():
@@ -81,5 +81,6 @@ def main():
         #print(f"{var_file_names[i]} is i = {i}")
         # ranger: i = 8
         func_alter_text(var_input_paths[i], var_output_paths[i])
+    print("done")
         
 main()
