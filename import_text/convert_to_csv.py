@@ -149,6 +149,5 @@ def main():
         var_input = input_path_names[i]
         var_output = output_path_names[i]
         write_csv(var_input, var_output)
-        break
 
 main()
