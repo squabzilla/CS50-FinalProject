@@ -93,8 +93,8 @@ def write_csv(input_path_name, output_path_name):
             # note: I'll need to grab the titles-only and export them to a separate CSV,
                 # in order to have CSV of just feature_name, feature_id
             #if (last_n_chars(lines[i] , 3) == "###") or (last_n_chars(lines[i] , 3) == "#$#"): # continuing feature
-            if i == 0:
-                print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {is_last_n_chars_x(lines[i], 3, "#$#")}")
+            #if i == 0:
+                #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {is_last_n_chars_x(lines[i], 3, "#$#")}")
             if is_last_n_chars_x(lines[i], 3, "###") or is_last_n_chars_x(lines[i], 3, "#$#"):
                 feature_id += 1 #increase the feature we're on
                 text_order = 0 #reset the text order for a new feature
