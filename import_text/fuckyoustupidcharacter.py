@@ -39,6 +39,7 @@ for path in globalvar_input_paths:
         file_input = re.sub(str("ʼ"), str("'"), file_input)
     with open(path, "w+", encoding='utf-8') as file_output:
         file_output.write(file_output)
+    print(f"Done path{path}")
 
 # def func_fuckyoustupidcharacter(input_path, output_path):
     
