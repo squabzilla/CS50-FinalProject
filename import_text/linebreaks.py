@@ -33,3 +33,20 @@ var_number_of_files = len(var_file_names)
 for i in range(var_number_of_files):
     var_input_paths.append(pathlib.Path.joinpath(var_input_folder_path, pathlib.Path(var_file_names + var_input_end)))
     var_output_end.append(pathlib.Path.joinpath(var_output_folder_path, pathlib.Path(var_file_names + var_output_end)))
+
+def last_n_chars(line, n):
+    n -= 1 # "zero"-indexing the last line; the n-th_last-line = last-line - n + 1 = last-line - (n - 1)
+    last_n = ""
+    max = len(line) - 1
+    while (n >= 0):
+        last_n += (line[max - n])
+        n -= 1
+    return last_n
+
+def func_alter_text(input_path, output_path):
+    with open(input_path, "r", encoding='utf-8') as file:
+        lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
+        for i in rage(len(lines)):
+            if i == 0:
+                continue
+            
