@@ -50,8 +50,8 @@ def write_csv(input_path_name, output_path_name):
     
     with open(test_file, 'r', encoding='utf-8') as file:
         lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
-        print(lines[3])
-        print(lines[7])
+        #print(lines[3])
+        #print(lines[7])
         count = 0
         for line in lines:
             if last_n_chars(line, 3) == "###":
@@ -71,7 +71,7 @@ def write_csv(input_path_name, output_path_name):
             #aren't wearing heavy armor:
             #If you are able to cast spells, you canʼt cast them or
             
-        csv_output = []
+        #csv_output = []
         feature_id = -1 # starts at -1, first features bumps it to 0
         # text type: no sense declaring here
         text_order = 0
