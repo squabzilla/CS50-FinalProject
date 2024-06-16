@@ -36,9 +36,9 @@ for i in range(var_number_of_files):
 
 def last_n_chars(line, n):
     n -= 1 # "zero"-indexing the last line; the n-th_last-line = last-line - n + 1 = last-line - (n - 1)
-    last_n = ""
-    max = len(line) - 1
-    while (n >= 0):
+    last_n = "" #empty string that we will add the last-n characters to
+    max = len(line) - 1 # gets the last-index of line
+    while (n >= 0): # count down from zero-indexed n to zero
         last_n += (line[max - n])
         n -= 1
     return last_n
