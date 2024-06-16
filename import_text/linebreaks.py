@@ -65,7 +65,7 @@ def func_alter_text(input_path, output_path):
         i = 0
         #for i in range(len(lines)):
         while i < number_of_lines:
-            print(f"line[{i}]")
+            #print(f"line[{i}]")
             if i == 0:
                 #print("starting loop")
                 continue
@@ -83,6 +83,7 @@ def func_alter_text(input_path, output_path):
                 if i == 218 or i == 219: print(f"line {[i]} end stop 2")
                 print("end stop 2")
             i += 1
+            print("i:", i)
         with open(output_path,'w') as file:
             if var_class_ranger == True:
                 print("about to save ranger output")
