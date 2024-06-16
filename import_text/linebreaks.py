@@ -57,12 +57,12 @@ def func_alter_text(input_path, output_path):
         
         var_class_ranger = False
         if input_path == var_input_paths[8]:
-            print("Ranger")
+            #print("Ranger")
             var_class_ranger = True
         
         # lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
         lines = file.readlines() # If you want the \n included
-        print(f"number of lines: {len(lines)}")
+        #print(f"number of lines: {len(lines)}")
         number_of_lines = len(lines)
         i = 0
         #for i in range(len(lines)):
