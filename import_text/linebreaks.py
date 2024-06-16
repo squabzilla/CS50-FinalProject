@@ -43,10 +43,20 @@ def last_n_chars(line, n):
         n -= 1
     return last_n
 
+def do_last_n_chars_equal_x(line, var_n, var_x):
+    var_last_n_chars = last_n_chars(line, var_n)
+    if var_last_n_chars == var_x:
+        return True
+    else:
+        return False
+
 def func_alter_text(input_path, output_path):
     with open(input_path, "r", encoding='utf-8') as file:
-        lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
-        for i in rage(len(lines)):
+        # lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
+        lines = file.readlines() # If you want the \n included
+        for i in range(len(lines)):
             if i == 0:
                 continue
+            if do_last_n_chars_equal_x(lines[i], 4, "###\n") == True:
+                lines[i-1] = lines[i-1] + "\n"
             
