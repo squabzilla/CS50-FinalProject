@@ -71,7 +71,7 @@ def write_csv(input_path_name, output_path_name):
             
             #aren't wearing heavy armor:
             #If you are able to cast spells, you canʼt cast them or # yay inconsistent OCR reading...
-        var_lines_copy = lines
+        #var_lines_copy = lines
         
         #csv_output = []
         feature_id = -1 # starts at -1, first features bumps it to 0
@@ -81,7 +81,7 @@ def write_csv(input_path_name, output_path_name):
         for i in range(len(lines)):
             text_id = i
             
-            if i > 7: break
+            #if i > 7: break
             # text_id - primary key
             # feature_id - id for all the text-boxes that belong to one feature
             # text_type - the display type of this element - title, subtitle, etc
@@ -93,14 +93,14 @@ def write_csv(input_path_name, output_path_name):
             # note: I'll need to grab the titles-only and export them to a separate CSV,
                 # in order to have CSV of just feature_name, feature_id
             #if (last_n_chars(lines[i] , 3) == "###") or (last_n_chars(lines[i] , 3) == "#$#"): # continuing feature
-            if i == 0:
-                #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {is_last_n_chars_x(lines[i], 3, "#$#")} ")
-                print(lines[i])
-                var_bool_1 = is_last_n_chars_x(lines[i], 3, "###")
-                var_bool_2 = is_last_n_chars_x(lines[i], 3, "#$#")
-                #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} ")
-                print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {var_bool_1} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {var_bool_2} ")
-                #print("hi")
+            # if i == 0:
+                # #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {is_last_n_chars_x(lines[i], 3, "#$#")} ")
+                # print(lines[i])
+                # var_bool_1 = is_last_n_chars_x(lines[i], 3, "###")
+                # var_bool_2 = is_last_n_chars_x(lines[i], 3, "#$#")
+                # #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} ")
+                # print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {var_bool_1} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {var_bool_2} ")
+                
             if is_last_n_chars_x(lines[i], 3, "###") or is_last_n_chars_x(lines[i], 3, "#$#"):
                 feature_id += 1 #increase the feature we're on
                 text_order = 0 #reset the text order for a new feature
