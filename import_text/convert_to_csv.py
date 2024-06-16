@@ -106,14 +106,20 @@ def write_csv(input_path_name, output_path_name):
                 text_order = 0 #reset the text order for a new feature
                 if last_n_chars(lines[i] , 3) == "###": text_type = 1 # title: 1
                 elif last_n_chars(lines[i] , 3) == "#$#": text_type = 2 # subtitle: 2
-                lines[i] = lines[i][:-3] # strip last three character of lines, [:-3] goes from (index 0) to (index last-3)
             else:
                 text_order += 1 #increase our text order
-                if last_n_chars(lines[i] , 3) == "#$#": text_type = 3 # bullet-points: 3
-                elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 4 # table-title: 4
-                elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 5 # table-column-names: 5
-                elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 6 # table-items: 6
+                if last_n_chars(lines[i] , 3) == "#B#": text_type = 3 # bullet-points: 3
+                elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 4 # table-title: 4	        $tt$		table-title
+                elif last_n_chars(lines[i] , 4) == "$tc$": text_type = 5 # table-column-names: 5	$tc$		table-column-names
+                elif last_n_chars(lines[i] , 4) == "$ti$": text_type = 6 # table-items: 6           $ti$		table-items
                 else:  text_type = 0
+            
+            # strip end-signifier symbols from text
+            if text_type in [1, 2, 3]: # ends in ###, #$#, or #B#: strip last 3 characters
+                lines[i] = lines[i][:-3] # strip last three character of lines, [:-3] goes from (index 0) to (index last-3)
+            elif text_type in [4, 5, 6] # ends in $tt$, $tc$, or $tt$
+                
+            
             # add quotations so it works fine in CSV
             lines[i] = '"' + lines[i] + '"'
             # add column values
