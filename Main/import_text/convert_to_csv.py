@@ -104,32 +104,32 @@ def write_csv(input_path_name, output_path_name):
             #print(lines[i])
             
             
-            # note: I'll need to grab the titles-only and export them to a separate CSV,
-                # in order to have CSV of just feature_name, feature_id
-            #if (last_n_chars(lines[i] , 3) == "###") or (last_n_chars(lines[i] , 3) == "#$#"): # continuing feature
-            # if i == 0:
-                # #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {is_last_n_chars_x(lines[i], 3, "#$#")} ")
-                # print(lines[i])
-                # var_bool_1 = is_last_n_chars_x(lines[i], 3, "###")
-                # var_bool_2 = is_last_n_chars_x(lines[i], 3, "#$#")
-                # #print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {is_last_n_chars_x(lines[i], 3, "###")} ")
-                # print(f"is_last_n_chars_x(lines[i], 3, \"###\") = {var_bool_1} or is_last_n_chars_x(lines[i], 3, \"#$#\") = {var_bool_2} ")
+            # Lines ends with:
+            # #     symbols     name
+            # 0     #P#			Regular paragraphs - note: #P# denotes paragraph end
+            # 1     ###			title
+            # 2     #$#			subtitle
+            # 3     #B#			bullet-points
+            # 4     $tt$		table-title
+            # 5     $tc$		table-column-names
+            # 6     $ti$		table-items
                 
             if is_last_n_chars_x(lines[i], 3, "###") or is_last_n_chars_x(lines[i], 3, "#$#"):
                 feature_id += 1 #increase the feature we're on
                 text_order = 0 #reset the text order for a new feature
-                if last_n_chars(lines[i] , 3) == "###": text_type = 1 # title: 1
-                elif last_n_chars(lines[i] , 3) == "#$#": text_type = 2 # subtitle: 2
+                if last_n_chars(lines[i] , 3) == "###": text_type = 1 ### title: 1      ###
+                elif last_n_chars(lines[i] , 3) == "#$#": text_type = 2 # subtitle: 2   #$#
             else:
                 text_order += 1 #increase our text order
-                if last_n_chars(lines[i] , 3) == "#B#": text_type = 3 # bullet-points: 3
+                if last_n_chars(lines[i] , 3) == "#B#": text_type = 0 ### paragraphs : 0            #P#         regular paragraphs
+                elif last_n_chars(lines[i] , 3) == "#B#": text_type = 3 # bullet-points: 3	        #B#			bullet-points
                 elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 4 # table-title: 4	        $tt$		table-title
                 elif last_n_chars(lines[i] , 4) == "$tc$": text_type = 5 # table-column-names: 5	$tc$		table-column-names
                 elif last_n_chars(lines[i] , 4) == "$ti$": text_type = 6 # table-items: 6           $ti$		table-items
                 else:  text_type = 0
             
             # strip end-signifier symbols from text
-            if text_type in [1, 2, 3]: # ends in ###, #$#, or #B#: strip last 3 characters
+            if text_type in [0, 1, 2, 3]: # ends in #P#, ###, #$#, or #B#: strip last 3 characters
                 lines[i] = lines[i][:-3] # strip last three character of lines, [:-3] goes from [ index 0 ] to [ index (last - 3) ]
             elif text_type in [4, 5, 6]: # ends in $tt$, $tc$, or $ti$
                 lines[i] = lines[i][:-4] # strip last four character of lines, [:-4] goes from [ index 0 ] to [ index (last - 4) ]
