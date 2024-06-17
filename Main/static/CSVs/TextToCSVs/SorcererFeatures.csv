@@ -1,5 +1,4 @@
 text_id, feature_id, feature_from_class, text_type, text_order, text_text
-Sorcerer_10_%%%
 0,0,101,0,"Spellcasting"
 1,0,100,1,"An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells."
 2,1,102,0,"Cantrips"

@@ -1,5 +1,4 @@
 text_id, feature_id, feature_from_class, text_type, text_order, text_text
-Barbarian_01_%%%
 0,0,11,0,"Rage"
 1,0,10,1,"In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action."
 2,0,10,2,"While raging, you gain the following benefits if you aren't wearing heavy armor:"
@@ -50,7 +49,6 @@ Barbarian_01_%%%
 47,17,10,2,"If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours."
 48,18,12,0,"Retaliation"
 49,18,10,1,"Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature."
-Bard_02_%%%
 50,19,21,0,"Spellcasting"
 51,19,20,1,"You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music\. Your spells are part of your vast repertoire, magic that you can tune to different situations."
 52,20,22,0,"Cantrips"
@@ -107,7 +105,6 @@ Bard_02_%%%
 103,38,20,1,"At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip\. The chosen spells count as bard spells for you but don't count against the number of bard spells you know."
 104,39,22,0,"Peerless Skill"
 105,39,20,1,"Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration\. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail."
-Cleric_03_%%%
 106,40,31,0,"Spellcasting"
 107,40,30,1,"As a conduit for divine power, you can cast cleric spelis."
 108,41,32,0,"Cantrips"
@@ -175,7 +172,6 @@ Cleric_03_%%%
 170,58,30,1,"At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8."
 171,59,32,0,"Supreme Healing"
 172,59,30,1,"Starting at 17th level, when you would normally roll one or more dice to restore hit points with a spell, you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12."
-Druid_04_%%%
 173,60,41,0,"Druidic"
 174,60,40,1,"You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
 175,61,41,0,"Spellcasting"
@@ -280,7 +276,6 @@ Druid_04_%%%
 274,79,42,0,"Nature's Sanctuary"
 275,79,40,1,"When you reach 14th level, creatures of the natural world sense your connection to nature and become hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your druid spell save DC. On a failed save, the creature must choose a different target, or the attack automatically misses\. On a successful save, the creature is immune to this effect for 24 hours."
 276,79,40,2,"The creature is aware of this effect before it makes its attack against you."
-Fighter_05_%%%
 277,80,51,0,"Fighting Style"
 278,80,50,1,"You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again."
 279,81,52,0,"Archery"
@@ -322,7 +317,6 @@ Fighter_05_%%%
 315,97,50,1,"Starting at 15th level, your weapon attacks score a critical hit on a roll of 18-20."
 316,98,52,0,"Survivor"
 317,98,50,1,"At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left\. You don't gain this benefit if you have 0 hit points."
-Monk_06_%%%
 318,99,61,0,"Unarmored Defense"
 319,99,60,1,"Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 \+ your Dexterity modifier + your Wisdom modifier."
 320,100,61,0,"Martial Arts"
@@ -394,7 +388,6 @@ Monk_06_%%%
 386,125,62,0,"Quivering Palm"
 387,125,60,1,"At 17th level, you gain the ability to set up lethal vibrations in someone's body. When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for a number of days equal to your monk level\. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d10 necrotic damage."
 388,125,60,2,"You can have only one creature under the effect of this feature at a time. You can choose to end the vibrations harmlessly without using an action."
-Paladin_07_%%%
 389,126,71,0,"Divine Sense"
 390,126,70,1,"The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell."
 391,126,70,2,"You can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses."
@@ -490,7 +483,6 @@ Paladin_07_%%%
 481,155,70,1,"At 20th level, as an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that."
 482,155,70,2,"Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage\. In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead."
 483,155,70,3,"Once you use this feature, you can't use it again until you finish a long rest."
-Ranger_08_%%%
 484,156,81,0,"Nature's Hunter"
 485,156,80,1,"Beginning at 1st level, Rangers are in tune with the magic of nature, and are supernaturally skilled at both tracking and hunting down their targets. You know the Hunter's Mark and Druidcraft cantrips."
 486,157,81,0,"Well Travelled"
@@ -569,7 +561,6 @@ Ranger_08_%%%
 559,185,80,2,"<b>Evasion.</b> When you are subjected to an effect, such as a red dragon's fiery breath or a lightning bolt spell, that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
 560,185,80,3,"<b>Stand Against the Tide.</b> When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice."
 561,185,80,4,"<b>Uncanny Dodge.</b> When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
-Rogue_09_%%%
 562,186,91,0,"Expertise"
 563,186,90,1,"At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies."
 564,186,90,2,"At 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit."
@@ -614,7 +605,6 @@ Rogue_09_%%%
 603,203,90,1,"By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items."
 604,204,92,0,"Thief's Reflexes"
 605,204,90,1,"When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised."
-Sorcerer_10_%%%
 606,205,101,0,"Spellcasting"
 607,205,100,1,"An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells."
 608,206,102,0,"Cantrips"
@@ -703,7 +693,6 @@ Sorcerer_10_%%%
 691,230,100,2,"You can't manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them."
 692,231,102,0,"Draconic Presence"
 693,231,100,1,"Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours."
-Warlock_11_%%%
 694,232,111,0,"Otherworldly Patron"
 695,232,110,1,"At 1st level, you have struck a bargain with an otherworldly being of your choice: the Archfey, the Fiend, or the Great Old One, each of which is detailed at the end of the class description. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level."
 696,233,111,0,"Pact Magic"
@@ -859,7 +848,6 @@ Warlock_11_%%%
 846,285,110,1,"Starting at 14th level, when you hit a creature with an attack, you can use this feature to instantly transport the target through the lower planes. The creature disappears and hurtles through a nightmare landscape."
 847,285,110,2,"At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes 10d10 psychic damage as it reels from its horrific experience."
 848,285,110,3,"Once you use this feature, you can't use it again until you finish a long rest."
-Wizard_12_%%%
 849,286,121,0,"Spellcasting"
 850,286,120,1,"As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power."
 851,287,122,0,"Cantrips"

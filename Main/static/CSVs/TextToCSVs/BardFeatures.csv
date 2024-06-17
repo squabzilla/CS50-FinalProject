@@ -1,5 +1,4 @@
 text_id, feature_id, feature_from_class, text_type, text_order, text_text
-Bard_02_%%%
 0,0,21,0,"Spellcasting"
 1,0,20,1,"You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music\. Your spells are part of your vast repertoire, magic that you can tune to different situations."
 2,1,22,0,"Cantrips"

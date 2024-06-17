@@ -1,5 +1,4 @@
 text_id, feature_id, feature_from_class, text_type, text_order, text_text
-Fighter_05_%%%
 0,0,51,0,"Fighting Style"
 1,0,50,1,"You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again."
 2,1,52,0,"Archery"

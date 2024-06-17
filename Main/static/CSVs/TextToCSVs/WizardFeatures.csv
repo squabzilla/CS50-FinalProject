@@ -1,5 +1,4 @@
 text_id, feature_id, feature_from_class, text_type, text_order, text_text
-Wizard_12_%%%
 0,0,121,0,"Spellcasting"
 1,0,120,1,"As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power."
 2,1,122,0,"Cantrips"

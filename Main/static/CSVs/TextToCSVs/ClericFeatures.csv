@@ -1,5 +1,4 @@
 text_id, feature_id, feature_from_class, text_type, text_order, text_text
-Cleric_03_%%%
 0,0,31,0,"Spellcasting"
 1,0,30,1,"As a conduit for divine power, you can cast cleric spelis."
 2,1,32,0,"Cantrips"

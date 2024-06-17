@@ -1,5 +1,4 @@
 text_id, feature_id, feature_from_class, text_type, text_order, text_text
-Monk_06_%%%
 0,0,61,0,"Unarmored Defense"
 1,0,60,1,"Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 \+ your Dexterity modifier + your Wisdom modifier."
 2,1,61,0,"Martial Arts"

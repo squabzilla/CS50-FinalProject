@@ -1,5 +1,4 @@
 text_id, feature_id, feature_from_class, text_type, text_order, text_text
-Barbarian_01_%%%
 0,0,11,0,"Rage"
 1,0,10,1,"In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action."
 2,0,10,2,"While raging, you gain the following benefits if you aren't wearing heavy armor:"

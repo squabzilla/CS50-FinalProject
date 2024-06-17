@@ -1,5 +1,4 @@
 text_id, feature_id, feature_from_class, text_type, text_order, text_text
-Rogue_09_%%%
 0,0,91,0,"Expertise"
 1,0,90,1,"At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies."
 2,0,90,2,"At 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit."
