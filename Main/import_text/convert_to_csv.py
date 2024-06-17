@@ -86,6 +86,11 @@ def write_csv(input_path_name, output_path_name):
                 var_check_end = last_n_chars(lines[i], 6)
                 if is_last_n_chars_x(var_check_end, 3, "%%%") == True:
                     class_id = str(var_check_end[0]) + str(var_check_end[1])
+                    
+                    if class_id == "_1":
+                        print(f"Line {i}:")
+                        print(lines[i])
+                    
                     class_id = int(class_id)
                     class_count += 1
                     continue
