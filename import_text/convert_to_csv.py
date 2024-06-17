@@ -150,7 +150,7 @@ def write_csv(input_path_name, output_path_name):
                 file.write("text_id, feature_id, text_type, text_order, text_text") # write column titles
                 file.write('\n')
                 for line in lines:
-                    #print(line)
+                    print(line)
                     #break
                     file.write(line)
                     file.write('\n')
