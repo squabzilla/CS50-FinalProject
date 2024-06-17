@@ -82,12 +82,13 @@ def write_csv(input_path_name, output_path_name):
         class_count = 0
         class_id = ""
         for i in range(len(lines)):
-            var_check_end = last_n_chars(lines[i], 6)
-            if is_last_n_chars_x(var_check_end, 3, "%%%") == True:
-                class_id = str(var_check_end[0]) + str(var_check_end[1])
-                class_id = int(class_id)
-                class_count += 1
-                continue
+            if len(lines[6]) >= 6:
+                var_check_end = last_n_chars(lines[i], 6)
+                if is_last_n_chars_x(var_check_end, 3, "%%%") == True:
+                    class_id = str(var_check_end[0]) + str(var_check_end[1])
+                    class_id = int(class_id)
+                    class_count += 1
+                    continue
             text_id = i - class_count            
             
             # Lines ends with:
