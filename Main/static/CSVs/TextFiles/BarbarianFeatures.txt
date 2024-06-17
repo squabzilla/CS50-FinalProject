@@ -1,3 +1,4 @@
+Barbarian_1_%%%
 Rage###
 In battle, you fight with primal ferocity. On your turn,
 you can enter a rage as a bonus action.#P#
