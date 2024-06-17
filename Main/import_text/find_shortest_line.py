@@ -31,7 +31,7 @@ def find_shortest(input_path_name):
     shortest = 2 * 1000 * 1000 * 1000
     with open(var_file, 'r', encoding='utf-8') as file:
         lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
-        for line in range(len(lines)):
+        for line in lines:
             if len(line) < shortest:
                 shortest = len(line)
     return shortest
