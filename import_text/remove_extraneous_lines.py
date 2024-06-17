@@ -6,7 +6,8 @@ import shutil
 ### NOTE: Purpose:
 # When I grabbed the text from the PDF, the width of text columns split up sentences and paragraphs onto new lines
 # The goal of this text is to find all of the "artificial" new-lines, and remove them.
-# If the statement didn't end in a 
+# However, change in style - such as from title to text - paragraph breaks, bullet-points, etcl. are to be preserved
+# honestly I ended up going through it manually to mark all the paragraph breaks but whatever, this should still work
 
 var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
                 "DruidFeatures","FighterFeatures","MonkFeatures",
@@ -93,7 +94,7 @@ def import_txt_file(input_path, output_path, list_find_items, list_replace_items
 def main():
     for i in range(var_number_of_files):
         import_txt_file(var_input_text_paths[i], var_RegexModdedText_paths[i], var_list_find_items, var_list_replace_items)
-
+    print("Done")
 main()
 
 # 83

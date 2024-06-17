@@ -1,6 +1,15 @@
 import os
 import pathlib
 
+# takes my text files of features
+# examines the text to figure out what values to add in the non-text columns
+# turns it into a CSV with:
+    # text_id - primary key
+    # feature_id - id for all the text-boxes that belong to one feature
+    # text_type - the display type of this element - title, subtitle, etc
+    # text_order - the order that these text-boxes appear in for the feature
+    # text_text - the actual text, which this script puts into quotations
+
 input_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\RegexModded_TextFiles")
 output_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextToCSVs")
 
@@ -88,6 +97,7 @@ def write_csv(input_path_name, output_path_name):
             # feature_id - id for all the text-boxes that belong to one feature
             # text_type - the display type of this element - title, subtitle, etc
             # text_order - the order that these text-boxes appear in for the feature
+            # text_text
             
             #print(lines[i])
             
