@@ -8,6 +8,12 @@ import shutil
 # The goal of this text is to find all of the "artificial" new-lines, and remove them.
 # However, change in style - such as from title to text - paragraph breaks, bullet-points, etcl. are to be preserved
 # honestly I ended up going through it manually to mark all the paragraph breaks but whatever, this should still work
+# NOTE: the SRD I'm working from does have tab-indentation visible to mark new paragraphs
+# Therefore, even if a sentence ends in a period, if the start of the next line isn't tab, I want to remove the newline
+# (to mark it as part of one paragraph)
+# I manually added my own signifiers in the text, since the tab-indentation is only visually visible on the PDF -
+# I'm sure they exist somewhere, but I don't know of a way to programatically read the PDF
+# In fact, I ended up taking screen-shots and OCR'ing it. There's got to be a better way tbh, but that's what I did.
 
 var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
                 "DruidFeatures","FighterFeatures","MonkFeatures",
