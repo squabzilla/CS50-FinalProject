@@ -1,4 +1,4 @@
-Barbarian_1_%%%
+Barbarian_01_%%%
 Rage###
 In battle, you fight with primal ferocity. On your turn,
 you can enter a rage as a bonus action.#P#
@@ -1920,7 +1920,7 @@ saving throw or be charmed (if you chose awe) or
 frightened (if you chose fear) until the aura ends. A
 creature that succeeds on this saving throw is
 immune to your aura for 24 hours.#P#
-Warlock%%%
+Warlock_11_%%%
 Otherworldly Patron###
 At 1st level, you have struck a bargain with an
 otherworldly being of your choice: the Archfey, the
@@ -2294,7 +2294,7 @@ unoccupied space. If the target is not a fiend, it takes
 experience.#P#
 Once you use this feature, you can't use it again
 until you finish a long rest.#P#
-Wizard%%%
+Wizard_12_%%%
 Spellcasting###
 As a student of arcane magic, you have a spellbook
 containing spells that show the first glimmerings of
