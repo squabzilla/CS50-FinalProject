@@ -91,8 +91,15 @@ def write_csv(input_path_name, output_path_name):
         # text type: no sense declaring here
         text_order = 0
         #print(range(len(lines)))
+        class_id = 0
         for i in range(len(lines)):
-            text_id = i
+            if last_n_chars(lines[var_index_countdown], 3) == "%%%":
+                class_id += 1
+                continue
+            
+            
+            
+            text_id = i - class_id
             
             #if i > 7: break
             # text_id - primary key
