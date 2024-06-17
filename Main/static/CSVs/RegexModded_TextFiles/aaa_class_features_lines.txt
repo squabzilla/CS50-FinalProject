@@ -1,4 +1,4 @@
-Barbarian%%%
+Barbarian_01_%%%
 Rage###
 In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.#P#
 While raging, you gain the following benefits if you aren't wearing heavy armor:#P#
@@ -39,8 +39,7 @@ Beginning at 18th level, if your total for a Strength check is less than your St
 Primal Champion###
 At 20th level, you embody the power of the wilds\. Your Strength and Constitution scores increase by 4\. Your maximum for those scores is now 24.#P#
 Path of the Berserker###
-For some barbarians, rage is a means to an end-
-that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in the chaos of battle, heedless of your own health or well-being.#P#
+For some barbarians, rage is a means to an end - that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in the chaos of battle, heedless of your own health or well-being.#P#
 Frenzy#$#
 Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion.#P#
 Mindless Rage#$#
@@ -50,7 +49,7 @@ Beginning at 10th level, you can use your action to frighten someone with your m
 If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours.#P#
 Retaliation#$#
 Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.#P#
-Bard%%%
+Bard_02_%%%
 Spellcasting###
 You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music\. Your spells are part of your vast repertoire, magic that you can tune to different situations.#P#
 Cantrips#$#
@@ -107,41 +106,38 @@ Additional Magical Secrets#$#
 At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip\. The chosen spells count as bard spells for you but don't count against the number of bard spells you know.#P#
 Peerless Skill#$#
 Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration\. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail.#P#
-Cleric%%%
+Cleric_03_%%%
 Spellcasting###
 As a conduit for divine power, you can cast cleric spelis.#P#
 Cantrips#$#
 At 1st level, you know three cantrips of your choice from the cleric spell list. You learn additional cleric cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table.#P#
-Preparing and Casting Spells#$
+Preparing and Casting Spells#$#
 The Cleric table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.#P#
 You prepare the list of cleric spells that are available for you to cast, choosing from the cleric spell list. When you do so, choose a number of cleric spells equal to your Wisdom modifier + your cleric level (minimum of one spell). The spells must be of a level for which you have spell slots.#P#
 For example, if you are a 3rd-level cleric, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.#P#
-You can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation:
-at least 1 minute per spell level for each spell on your list.#P#
+You can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.#P#
 Spellcasting Ability#$#
 Wisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity. You use your Wisdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.#P#
 <b>Spell save DC</b> = 8 + your proficiency bonus \+ your Wisdom modifier.#P#
 <b>Spell attack modifier</b> = your proficiency bonus \+ your Wisdom modifier.#P#
 Ritual Casting#$#
 You can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.#P#
-Spellcasting Focus#$
+Spellcasting Focus#$#
 You can use a holy symbol (see Equipment) as a spellcasting focus for your cleric spells.#P#
 Divine Domain###
 Choose one domain related to your deity, such as Life. Each domain is detailed at the end of the class description, and each one provides examples of gods associated with it. Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels.#P#
 Domain Spells#$#
-Each domain has a list of spells-its domain spells-
-that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day.#P#
+Each domain has a list of spells - its domain spells - that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day.#P#
 If you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you.#P#
 Channel Divinity###
-At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects:
-Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.#P#
+At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.#P#
 When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.#P#
 Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric Spell save DC.#P#
 Beginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.#P#
 Channel Divinity: Turn Undead#$#
 As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.#P#
 A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action.#P#
-Ability Score Improvement#
+Ability Score Improvement###
 When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.#P#
 Destroy Undead###
 Starting at 5th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table.#P#
@@ -178,7 +174,7 @@ Divine Strike#$#
 At 8th level, you gain the ability to infuse your weapon strikes with divine energy. Once on each of your turns when you hit a creature with a weapon attack, you can cause the attack to deal an extra 1d8 radiant damage to the target. When you reach 14th level, the extra damage increases to 2d8.#P#
 Supreme Healing#$#
 Starting at 17th level, when you would normally roll one or more dice to restore hit points with a spell, you instead use the highest number possible for each die. For example, instead of restoring 2d6 hit points to a creature, you restore 12.#P#
-Druid%%%
+Druid_04_%%%
 Druidic###
 You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic.#P#
 Spellcasting###
@@ -283,7 +279,7 @@ When you reach 10th level, you can't be charmed or frightened by elementals or f
 Nature's Sanctuary#$#
 When you reach 14th level, creatures of the natural world sense your connection to nature and become hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your druid spell save DC. On a failed save, the creature must choose a different target, or the attack automatically misses\. On a successful save, the creature is immune to this effect for 24 hours.#P#
 The creature is aware of this effect before it makes its attack against you.#P#
-Fighter%%%
+Fighter_05_%%%
 Fighting Style###
 You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.#P#
 Archery#$#
@@ -325,12 +321,11 @@ Superior Critical#$#
 Starting at 15th level, your weapon attacks score a critical hit on a roll of 18-20.#P#
 Survivor#$#
 At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left\. You don't gain this benefit if you have 0 hit points.#P#
-Monk%%%
+Monk_06_%%%
 Unarmored Defense###
 Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 \+ your Dexterity modifier + your Wisdom modifier.#P#
 Martial Arts###
-At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two-
-handed or heavy property.#P#
+At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two-handed or heavy property.#P#
 You gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:#P#
 You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and monk weapons.#B#
 You can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.#B#
@@ -338,8 +333,7 @@ When you use the Attack action with an unarmed strike or a monk weapon on your t
 Certain monasteries use specialized forms of the monk weapons. For example, you might use a club that is two lengths of wood connected by a short chain (called a nunchaku) or a sickle with a shorter, straighter blade (called a kama). Whatever name you use for a monk weapon, you can use the game statistics provided for the weapon.#P#
 Ki###
 Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.#P#
-You can spend these points to fuel various ki features. You start knowing three such features:
-Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.#P#
+You can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.#P#
 When you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself\. You must spend at least 30 minutes of the rest meditating to regain your ki points.#P#
 Some of your ki features require your target to make a saving throw to resist the feature's effects\. The saving throw DC is calculated as follows:#P#
 <b>Ki save DC</b> = 8 + your proficiency bonus \+ your Wisdom modifier#P#
@@ -399,7 +393,7 @@ Beginning at 11th level, you can enter a special meditation that surrounds you w
 Quivering Palm#$#
 At 17th level, you gain the ability to set up lethal vibrations in someone's body. When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for a number of days equal to your monk level\. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d10 necrotic damage.#P#
 You can have only one creature under the effect of this feature at a time. You can choose to end the vibrations harmlessly without using an action.#P#
-Paladin%%%
+Paladin_07_%%%
 Divine Sense###
 The presence of strong evil registers on your senses like a noxious odor, and powerful good rings like heavenly music in your ears. As an action, you can open your awareness to detect such forces. Until the end of your next turn, you know the location of any celestial, fiend, or undead within 60 feet of you that is not behind total cover. You know the type (celestial, fiend, or undead) of any being whose presence you sense, but not its identity (the vampire Count Strahd von Zarovich, for instance). Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the hallow spell.#P#
 You can use this feature a number of times equal to 1 + your Charisma modifier. When you finish a long rest, you regain all expended uses.#P#
@@ -423,10 +417,8 @@ By 2nd level, you have learned to draw on divine magic through meditation and pr
 Preparing and Casting Spells#$#
 The Paladin table shows how many spell slots you have to cast your spells. To cast one of your paladin spells of 1st level or higher, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.#P#
 You prepare the list of paladin spells that are available for you to cast, choosing from the paladin spell list. When you do so, choose a number of paladin spells equal to your Charisma modifier + half your paladin level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.#P#
-For example, if you are a 5th-level paladin, you have four 1st-level and two 2nd-level spell slots\. With a Charisma of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd-
-level slot. Casting the spell doesn't remove it from your list of prepared spells.#P#
-You can change your list of prepared spells when you finish a long rest. Preparing a new list of paladin spells requires time spent in prayer and meditation:
-at least 1 minute per spell level for each spell on your list.#P#
+For example, if you are a 5th-level paladin, you have four 1st-level and two 2nd-level spell slots\. With a Charisma of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.#P#
+You can change your list of prepared spells when you finish a long rest. Preparing a new list of paladin spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.#P#
 Spellcasting Ability#$#
 Charisma is your spellcasting ability for your paladin spells, since their power derives from the strength of your convictions. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a paladin spell you cast and when making an attack roll with one.#P#
 <b>Spell save DC</b> = 8 + your proficiency bonus \+ your Charisma modifier.#P#
@@ -497,7 +489,7 @@ Holy Nimbus#$#
 At 20th level, as an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that.#P#
 Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage\. In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.#P#
 Once you use this feature, you can't use it again until you finish a long rest.#P#
-Ranger%%%
+Ranger_08_%%%
 Nature's Hunter###
 Beginning at 1st level, Rangers are in tune with the magic of nature, and are supernaturally skilled at both tracking and hunting down their targets. You know the Hunter's Mark and Druidcraft cantrips.#P#
 Well Travelled###
@@ -576,7 +568,7 @@ At 15th level, you gain one of the following features of your choice.#P#
 <b>Evasion.</b> When you are subjected to an effect, such as a red dragon's fiery breath or a lightning bolt spell, that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.#P#
 <b>Stand Against the Tide.</b> When a hostile creature misses you with a melee attack, you can use your reaction to force that creature to repeat the same attack against another creature (other than itself) of your choice.#P#
 <b>Uncanny Dodge.</b> When an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you.#P#
-Rogue%%%
+Rogue_09_%%%
 Expertise###
 At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.#P#
 At 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit.#P#
@@ -621,7 +613,7 @@ Use Magic Device#$#
 By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items.#P#
 Thief's Reflexes#$#
 When you reach 17th level, you have become adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal initiative and your second turn at your initiative minus 10. You can't use this feature when you are surprised.#P#
-Sorcerer%%%
+Sorcerer_10_%%%
 Spellcasting###
 An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.#P#
 Cantrips#$#
@@ -710,7 +702,7 @@ At 14th level, you gain the ability to sprout a pair of dragon wings from your b
 You can't manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them.#P#
 Draconic Presence#$#
 Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you lose your concentration (as if you were casting a concentration spell), each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours.#P#
-Warlock%%%
+Warlock_11_%%%
 Otherworldly Patron###
 At 1st level, you have struck a bargain with an otherworldly being of your choice: the Archfey, the Fiend, or the Great Old One, each of which is detailed at the end of the class description. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level.#P#
 Pact Magic###
@@ -752,11 +744,9 @@ If you lose your Book of Shadows, you can perform a 1-hour ceremony to receive a
 Ability Score Improvement###
 When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.#P#
 Mystic Arcanum###
-At 11th level, your patron bestows upon you a magical secret called an arcanum. Choose one 6th-
-level spell from the warlock spell list as this arcanum.#P#
+At 11th level, your patron bestows upon you a magical secret called an arcanum. Choose one 6th-level spell from the warlock spell list as this arcanum.#P#
 You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.#P#
-At higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th-
-level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest.#P#
+At higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest.#P#
 Eldritch Master###
 At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature\. Once you regain spell slots with this feature, you must finish a long rest before you can do so again.#P#
 Eldritch Invocations###
@@ -777,7 +767,7 @@ Bewitching Whispers#$#
 <b>Prerequisite: 7th level</b>#P#
 You can cast compulsion once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Book of Ancient Secrets#$#
-<b>Prerequisite: Pact of the Tome feature</b>
+<b>Prerequisite: Pact of the Tome feature</b>#P#
 You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list (the two needn't be from the same list). The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag\. On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.#P#
 Chains of Carceri#$#
 <b>Prerequisite: 15th level, Pact of the Chain feature</b>#P#
@@ -806,11 +796,11 @@ You can cast disguise self at will, without expending a spell slot.#P#
 Master of Myriad Forms#$#
 <b>Prerequisite: 15th level</b>#P#
 You can cast alter self at will, without expending a spell slot.#P#
-Minions of Chaos#$#
+Minions of Chaos#$##P#
 <b>Prerequisite: 9th level</b>
 You can cast conjure elemental once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Mire the Mind#$#
-<b>Prerequisite: 5th level</b>
+<b>Prerequisite: 5th level</b>#P#
 You can cast slow once using a warlock spell slot\. You can't do so again until you finish a long rest.#P#
 Misty Visions#$#
 You can cast silent image at will, without expending a spell slot or material components.#P#
@@ -847,8 +837,7 @@ Witch Sight#$#
 <b>Prerequisite: 15th level</b>#P#
 You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.#P#
 The Fiend###
-You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet;
-archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.#P#
+You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.#P#
 Expanded Spell List#$#
 The Fiend lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.#P#
 Fiend Expanded Spells$tt$
@@ -869,14 +858,13 @@ Hurl Through Hell#$#
 Starting at 14th level, when you hit a creature with an attack, you can use this feature to instantly transport the target through the lower planes. The creature disappears and hurtles through a nightmare landscape.#P#
 At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes 10d10 psychic damage as it reels from its horrific experience.#P#
 Once you use this feature, you can't use it again until you finish a long rest.#P#
-Wizard%%%
+Wizard_12_%%%
 Spellcasting###
 As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power.#P#
 Cantrips#$#
 At 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table.#P#
 Spellbook#$#
-At 1st level, you have a spellbook containing six 1st-
-level wizard spells of your choice. Your spellbook is the repository of the wizard spells you know, except your cantrips, which are fixed in your mind.#P#
+At 1st level, you have a spellbook containing six 1st-level wizard spells of your choice. Your spellbook is the repository of the wizard spells you know, except your cantrips, which are fixed in your mind.#P#
 <b>Your Spellbook</b>#P#
 The spells that you add to your spellbook as you gain levels reflect the arcane research you conduct on your own, as well as intellectual breakthroughs you have had about the nature of the multiverse. You might find other spells during your adventures. You could discover a spell recorded on a scroll in an evil wizard's chest, for example, or in a dusty tome in an ancient library.#P#
 <b>Copying a Spell into the Book.<b> When you find a wizard spell of 1st level or higher, you can add it to your spellbook if it is of a spell level you can prepare and if you can spare the time to decipher and copy it.#P#

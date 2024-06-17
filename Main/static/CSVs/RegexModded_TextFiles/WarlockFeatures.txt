@@ -1,3 +1,4 @@
+Warlock_11_%%%
 Otherworldly Patron###
 At 1st level, you have struck a bargain with an otherworldly being of your choice: the Archfey, the Fiend, or the Great Old One, each of which is detailed at the end of the class description. Your choice grants you features at 1st level and again at 6th, 10th, and 14th level.#P#
 Pact Magic###
@@ -39,11 +40,9 @@ If you lose your Book of Shadows, you can perform a 1-hour ceremony to receive a
 Ability Score Improvement###
 When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.#P#
 Mystic Arcanum###
-At 11th level, your patron bestows upon you a magical secret called an arcanum. Choose one 6th-
-level spell from the warlock spell list as this arcanum.#P#
+At 11th level, your patron bestows upon you a magical secret called an arcanum. Choose one 6th-level spell from the warlock spell list as this arcanum.#P#
 You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.#P#
-At higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th-
-level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest.#P#
+At higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest.#P#
 Eldritch Master###
 At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature\. Once you regain spell slots with this feature, you must finish a long rest before you can do so again.#P#
 Eldritch Invocations###
@@ -64,7 +63,7 @@ Bewitching Whispers#$#
 <b>Prerequisite: 7th level</b>#P#
 You can cast compulsion once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Book of Ancient Secrets#$#
-<b>Prerequisite: Pact of the Tome feature</b>
+<b>Prerequisite: Pact of the Tome feature</b>#P#
 You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list (the two needn't be from the same list). The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag\. On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.#P#
 Chains of Carceri#$#
 <b>Prerequisite: 15th level, Pact of the Chain feature</b>#P#
@@ -94,10 +93,10 @@ Master of Myriad Forms#$#
 <b>Prerequisite: 15th level</b>#P#
 You can cast alter self at will, without expending a spell slot.#P#
 Minions of Chaos#$#
-<b>Prerequisite: 9th level</b>
+<b>Prerequisite: 9th level</b>#P#
 You can cast conjure elemental once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Mire the Mind#$#
-<b>Prerequisite: 5th level</b>
+<b>Prerequisite: 5th level</b>#P#
 You can cast slow once using a warlock spell slot\. You can't do so again until you finish a long rest.#P#
 Misty Visions#$#
 You can cast silent image at will, without expending a spell slot or material components.#P#
@@ -134,8 +133,7 @@ Witch Sight#$#
 <b>Prerequisite: 15th level</b>#P#
 You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight.#P#
 The Fiend###
-You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet;
-archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.#P#
+You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.#P#
 Expanded Spell List#$#
 The Fiend lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.#P#
 Fiend Expanded Spells$tt$

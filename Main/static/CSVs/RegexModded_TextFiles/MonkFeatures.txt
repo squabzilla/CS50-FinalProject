@@ -1,8 +1,8 @@
+Monk_06_%%%
 Unarmored Defense###
 Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 \+ your Dexterity modifier + your Wisdom modifier.#P#
 Martial Arts###
-At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two-
-handed or heavy property.#P#
+At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two-handed or heavy property.#P#
 You gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:#P#
 You can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and monk weapons.#B#
 You can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.#B#
@@ -10,8 +10,7 @@ When you use the Attack action with an unarmed strike or a monk weapon on your t
 Certain monasteries use specialized forms of the monk weapons. For example, you might use a club that is two lengths of wood connected by a short chain (called a nunchaku) or a sickle with a shorter, straighter blade (called a kama). Whatever name you use for a monk weapon, you can use the game statistics provided for the weapon.#P#
 Ki###
 Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.#P#
-You can spend these points to fuel various ki features. You start knowing three such features:
-Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.#P#
+You can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.#P#
 When you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself\. You must spend at least 30 minutes of the rest meditating to regain your ki points.#P#
 Some of your ki features require your target to make a saving throw to resist the feature's effects\. The saving throw DC is calculated as follows:#P#
 <b>Ki save DC</b> = 8 + your proficiency bonus \+ your Wisdom modifier#P#

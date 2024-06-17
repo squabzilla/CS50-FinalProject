@@ -1,3 +1,4 @@
+Barbarian_1_%%%
 Rage###
 In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.#P#
 While raging, you gain the following benefits if you aren't wearing heavy armor:#P#
@@ -38,8 +39,7 @@ Beginning at 18th level, if your total for a Strength check is less than your St
 Primal Champion###
 At 20th level, you embody the power of the wilds\. Your Strength and Constitution scores increase by 4\. Your maximum for those scores is now 24.#P#
 Path of the Berserker###
-For some barbarians, rage is a means to an end-
-that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in the chaos of battle, heedless of your own health or well-being.#P#
+For some barbarians, rage is a means to an end - that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in the chaos of battle, heedless of your own health or well-being.#P#
 Frenzy#$#
 Starting when you choose this path at 3rd level, you can go into a frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. When your rage ends, you suffer one level of exhaustion.#P#
 Mindless Rage#$#
