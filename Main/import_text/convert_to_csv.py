@@ -126,7 +126,7 @@ def write_csv(input_path_name, output_path_name):
                 elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 4 # table-title: 4	        $tt$		table-title
                 elif last_n_chars(lines[i] , 4) == "$tc$": text_type = 5 # table-column-names: 5	$tc$		table-column-names
                 elif last_n_chars(lines[i] , 4) == "$ti$": text_type = 6 # table-items: 6           $ti$		table-items
-                else:  text_type = 0
+                else:  text_type = 999
             
             # strip end-signifier symbols from text
             if text_type in [0, 1, 2, 3]: # ends in #P#, ###, #$#, or #B#: strip last 3 characters
