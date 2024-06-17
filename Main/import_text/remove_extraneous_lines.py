@@ -46,7 +46,7 @@ var_integers = str(1234567890)
 var_lowercase = "abcdefghijklmnopqrstuvwxyz"
 var_uppercase = var_lowercase.upper()
 var_other_chars = [",","\+"] #some of these characters might be ones regex treats fucky
-var_pound_sign = "\$" #regex also treats this fuck
+#var_pound_sign = "\$" #regex also treats this fuck
 var_all_chars = []
 
 #filling up my list of chars I want:
