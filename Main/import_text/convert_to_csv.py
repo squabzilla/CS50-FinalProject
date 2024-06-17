@@ -82,9 +82,6 @@ def write_csv(input_path_name, output_path_name):
         class_count = 0
         class_id = ""
         for i in range(len(lines)):
-            print(i)
-            if i > 11:
-                break
             if len(lines[6]) >= 6:
                 var_check_end = last_n_chars(lines[i], 6)
                 if is_last_n_chars_x(var_check_end, 3, "%%%") == True:
@@ -94,8 +91,9 @@ def write_csv(input_path_name, output_path_name):
                     continue
             text_id = i - class_count            
             
-            #print(f"class_id: {class_id}")
-            
+            print(f"class_id: {class_id}")
+            if i > 11:
+                break
             
             # Lines ends with:
             # #     symbols     name
@@ -166,6 +164,7 @@ def write_csv(input_path_name, output_path_name):
 def main():
     #print("hi")
     for i in range(len(input_path_names)):
+        if i > 0: break
         var_input = input_path_names[i]
         var_output = output_path_names[i]
         write_csv(var_input, var_output)
