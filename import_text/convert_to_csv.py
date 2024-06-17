@@ -34,7 +34,7 @@ def last_n_chars(line, n):
     last_n = ""
     max = len(line) - 1
     while (n >= 0):
-        last_n += (line[(max - n)])
+        last_n += str( (line[(max - n)]) )
         n -= 1
         #print("n: {n}")
     
