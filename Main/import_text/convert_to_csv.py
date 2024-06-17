@@ -69,15 +69,13 @@ def write_csv(input_path_name, output_path_name):
                 # count +=1
         # print(f"### count is: {count}")
         var_index_countdown = len(lines) - 1
-        #print(f"index_countdown: {var_index_countdown}")
-        #print(f"line-zero: {lines[0]}")
-        #print(f"last-three of line-zero: {last_n_chars(lines[0], 3)}")
-        
         while var_index_countdown >= 0:
-            # NOTE: this will break with empty lines, or really just lines with >3 characters
+            # NOTE: this will break with empty lines, or really just lines with <3 characters
             #print("line:", lines[var_index_countdown])
-            if last_n_chars(lines[var_index_countdown], 3) == "%%%":
-                lines.pop(var_index_countdown)
+            if len(lines[var_index_countdown]) < 3:
+                # There, now it shouldn't break with <3 lines
+                if last_n_chars(lines[var_index_countdown], 3) == "%%%":
+                    lines.pop(var_index_countdown)
                 #print(f"popped line {var_index_countdown}")
                 #print(var_index_countdown)
             var_index_countdown -= 1
@@ -91,7 +89,8 @@ def write_csv(input_path_name, output_path_name):
         # text type: no sense declaring here
         text_order = 0
         #print(range(len(lines)))
-        class_id = 0
+        class_count = 0
+        class_id = ""
         for i in range(len(lines)):
             if last_n_chars(lines[var_index_countdown], 3) == "%%%":
                 class_id += 1
