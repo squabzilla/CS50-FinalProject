@@ -10,8 +10,8 @@ For example, if you are a 3rd-level cleric, you have four 1st-level and two 2nd-
 You can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.#P#
 Spellcasting Ability#$#
 Wisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity. You use your Wisdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.#P#
-<b>Spell save DC</b> = 8 + your proficiency bonus \+ your Wisdom modifier.#P#
-<b>Spell attack modifier</b> = your proficiency bonus \+ your Wisdom modifier.#P#
+<b>Spell save DC</b> = 8 + your proficiency bonus + your Wisdom modifier.#P#
+<b>Spell attack modifier</b> = your proficiency bonus + your Wisdom modifier.#P#
 Ritual Casting#$#
 You can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.#P#
 Spellcasting Focus#$#
@@ -41,7 +41,7 @@ Cleric Level_::_Destroys Undead of CR...$tc$
 14th_::_3 or lower$ti$
 17th_::_4 or lower$ti$
 Divine Intervention###
-Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great\. Imploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes\. The GM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.#P#
+Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great. Imploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The GM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.#P#
 If your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.#P#
 At 20th level, your call for intervention succeeds automatically, no roll required.#P#
 Life Domain###
@@ -56,10 +56,10 @@ Cleric Level_::_Spells$tc$
 Bonus Proficiency#$#
 When you choose this domain at 1st level, you gain proficiency with heavy armor.#P#
 Disciple of Life#$#
-Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 \+ the spell's level.#P#
+Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level.#P#
 Channel Divinity: Preserve Life#$#
 Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.#P#
-As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level\. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct.#P#
+As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct.#P#
 Blessed Healer#$#
 Beginning at 6th level, the healing spells you cast on others heal you as well. When you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell's level.#P#
 Divine Strike#$#

@@ -52,7 +52,10 @@ for i in range(var_number_of_files):
 var_integers = str(1234567890)
 var_lowercase = "abcdefghijklmnopqrstuvwxyz"
 var_uppercase = var_lowercase.upper()
-var_other_chars = [",","\+","\."] #some of these characters might be ones regex treats fucky
+var_other_chars = [","]
+var_regex_escape_chars = ["+", "."] #some of these characters might be ones regex treats fucky
+#var_other_chars = [",","\+","\."] 
+#var_other_chars = [",", "+", "."]
 #var_pound_sign = "\$" #regex also treats this fuck
 var_all_chars = []
 
@@ -81,6 +84,14 @@ for var_char in var_all_chars:
     var_list_find_items.append(var_char + " " + var_find_end)
     var_list_replace_items.append(var_char + var_replace_end)
     var_list_replace_items.append(var_char + " " + var_replace_end)
+for item in var_regex_escape_chars:
+    var_list_find_items.append("\\" + item + var_find_end)
+    var_list_find_items.append("\\" + item + " " + var_find_end)
+    var_list_replace_items.append(item + var_replace_end)
+    var_list_replace_items.append(item + " " + var_replace_end)
+    # these ones look screwy - regex doesn't like missing 
+
+
 
 def import_txt_file(input_path, output_path, list_find_items, list_replace_items):
     with open(input_path, "r", encoding='utf-8') as file_input:

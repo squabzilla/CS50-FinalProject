@@ -37,7 +37,7 @@ Beginning at 15th level, your rage is so fierce that it ends early only if you f
 Indomitable Might###
 Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total.#P#
 Primal Champion###
-At 20th level, you embody the power of the wilds\. Your Strength and Constitution scores increase by 4\. Your maximum for those scores is now 24.#P#
+At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24.#P#
 Path of the Berserker###
 For some barbarians, rage is a means to an end - that end being violence. The Path of the Berserker is a path of untrammeled fury, slick with blood. As you enter the berserker's rage, you thrill in the chaos of battle, heedless of your own health or well-being.#P#
 Frenzy#$#
@@ -45,13 +45,13 @@ Starting when you choose this path at 3rd level, you can go into a frenzy when y
 Mindless Rage#$#
 Beginning at 6th level, you can't be charmed or frightened while raging. If you are charmed or frightened when you enter your rage, the effect is suspended for the duration of the rage.#P#
 Intimidating Presence#$#
-Beginning at 10th level, you can use your action to frighten someone with your menacing presence\. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you.#P#
+Beginning at 10th level, you can use your action to frighten someone with your menacing presence. When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Charisma modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action to extend the duration of this effect on the frightened creature until the end of your next turn. This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you.#P#
 If the creature succeeds on its saving throw, you can't use this feature on that creature again for 24 hours.#P#
 Retaliation#$#
 Starting at 14th level, when you take damage from a creature that is within 5 feet of you, you can use your reaction to make a melee weapon attack against that creature.#P#
 Bard_02_%%%
 Spellcasting###
-You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music\. Your spells are part of your vast repertoire, magic that you can tune to different situations.#P#
+You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. Your spells are part of your vast repertoire, magic that you can tune to different situations.#P#
 Cantrips#$#
 You know two cantrips of your choice from the bard spell list. You learn additional bard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Bard table.#P#
 Spell Slots#$#
@@ -59,19 +59,19 @@ The Bard table shows how many spell slots you have to cast your spells of 1st le
 For example, if you know the 1st-level spell cure wounds and have a 1st-level and a 2nd-level spell slot available, you can cast cure wounds using either slot.#P#
 Spells Known of Ist Level and Higher#$#
 You know four 1st-level spells of your choice from the bard spell list.#P#
-The Spells Known column of the Bard table shows when you learn more bard spells of your choice\. Each of these spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.#P#
+The Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.#P#
 Additionally, when you gain a level in this class, you can choose one of the bard spells you know and replace it with another spell from the bard spell list, which also must be of a level for which you have spell slots.#P#
 Spellcasting Ability#$#
 Charisma is your spellcasting ability for your bard spells. Your magic comes from the heart and soul you pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a bard spell you cast and when making an attack roll with one.#P#
-<b>Spell save DC</b> = 8 + your proficiency bonus \+ your Charisma modifier.#P#
-<b>Spell attack modifier</b> = your proficiency bonus \+ your Charisma modifier.#P#
+<b>Spell save DC</b> = 8 + your proficiency bonus + your Charisma modifier.#P#
+<b>Spell attack modifier</b> = your proficiency bonus + your Charisma modifier.#P#
 Ritual Casting#$#
 You can cast any bard spell you know as a ritual if that spell has the ritual tag.#P#
 Spellcasting Focus You can use a musical instrument (see Equipment) as a spellcasting focus for your bard spells.#P#
 Bardic Inspiration###
 You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.#P#
 Once within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.#P#
-You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest\. Your Bard#P#ic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.#P#
+You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest. Your Bard#P#ic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.#P#
 Jack of All Trades###
 Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus.#P#
 Song of Rest###
@@ -80,7 +80,7 @@ The extra hit points increase when you reach certain levels in this class: to 1d
 Bard College###
 At 3rd level, you delve into the advanced techniques of a bard college of your choice, such as the College of Lore. Your choice grants you features at 3rd level and again at 6th and 14th level.#P#
 Expertise###
-At 3rd level, choose two of your skill proficiencies\. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.#P#
+At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.#P#
 At 10th level, you can choose another two skill proficiencies to gain this benefit.#P#
 Ability Score Improvement###
 When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.#P#
@@ -89,7 +89,7 @@ Beginning when you reach 5th level, you regain all of your expended uses of Bard
 Countercharm###
 At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being frightened or charmed. A creature must be able to hear you to gain this benefit. The performance ends early if you are incapacitated or silenced or if you voluntarily end it (no action required).#P#
 Magical Secrets###
-By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines\. Choose two spells from any class, including this one\. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.#P#
+By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.#P#
 The chosen spells count as bard spells for you and are included in the number in the Spells Known column of the Bard table.#P#
 You learn two additional spells from any class at 14th level and again at 18th level.#P#
 Superior Inspiration###
@@ -103,9 +103,9 @@ When you join the College of Lore at 3rd level, you gain proficiency with three 
 Cutting Words#$#
 Also at 3rd level, you learn how to use your wit to distract, confuse, and otherwise sap the confidence and competence of others. When a creature that you can see within 60 feet of you makes an attack roll, an ability check, or a damage roll, you can use your reaction to expend one of your uses of Bardic Inspiration, rolling a Bardic Inspiration die and subtracting the number rolled from the creature's roll. You can choose to use this feature after the creature makes its roll, but before the GM determines whether the attack roll or ability check succeeds or fails, or before the creature deals its damage. The creature is immune if it can't hear you or if it's immune to being charmed.#P#
 Additional Magical Secrets#$#
-At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip\. The chosen spells count as bard spells for you but don't count against the number of bard spells you know.#P#
+At 6th level, you learn two spells of your choice from any class. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. The chosen spells count as bard spells for you but don't count against the number of bard spells you know.#P#
 Peerless Skill#$#
-Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration\. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail.#P#
+Starting at 14th level, when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the GM tells you whether you succeed or fail.#P#
 Cleric_03_%%%
 Spellcasting###
 As a conduit for divine power, you can cast cleric spelis.#P#
@@ -118,8 +118,8 @@ For example, if you are a 3rd-level cleric, you have four 1st-level and two 2nd-
 You can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.#P#
 Spellcasting Ability#$#
 Wisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity. You use your Wisdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.#P#
-<b>Spell save DC</b> = 8 + your proficiency bonus \+ your Wisdom modifier.#P#
-<b>Spell attack modifier</b> = your proficiency bonus \+ your Wisdom modifier.#P#
+<b>Spell save DC</b> = 8 + your proficiency bonus + your Wisdom modifier.#P#
+<b>Spell attack modifier</b> = your proficiency bonus + your Wisdom modifier.#P#
 Ritual Casting#$#
 You can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.#P#
 Spellcasting Focus#$#
@@ -149,7 +149,7 @@ Cleric Level_::_Destroys Undead of CR...$tc$
 14th_::_3 or lower$ti$
 17th_::_4 or lower$ti$
 Divine Intervention###
-Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great\. Imploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes\. The GM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.#P#
+Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great. Imploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The GM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.#P#
 If your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.#P#
 At 20th level, your call for intervention succeeds automatically, no roll required.#P#
 Life Domain###
@@ -164,10 +164,10 @@ Cleric Level_::_Spells$tc$
 Bonus Proficiency#$#
 When you choose this domain at 1st level, you gain proficiency with heavy armor.#P#
 Disciple of Life#$#
-Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 \+ the spell's level.#P#
+Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to 2 + the spell's level.#P#
 Channel Divinity: Preserve Life#$#
 Starting at 2nd level, you can use your Channel Divinity to heal the badly injured.#P#
-As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level\. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct.#P#
+As an action, you present your holy symbol and evoke healing energy that can restore a number of hit points equal to five times your cleric level. Choose any creatures within 30 feet of you, and divide those hit points among them. This feature can restore a creature to no more than half of its hit point maximum. You can't use this feature on an undead or a construct.#P#
 Blessed Healer#$#
 Beginning at 6th level, the healing spells you cast on others heal you as well. When you cast a spell of 1st level or higher that restores hit points to a creature other than you, you regain hit points equal to 2 + the spell's level.#P#
 Divine Strike#$#
@@ -187,22 +187,22 @@ You prepare the list of druid spells that are available for you to cast, choosin
 For example, if you are a 3rd-level druid, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.#P#
 You can also change your list of prepared spells when you finish a long rest. Preparing a new list of druid spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.#P#
 Spellcasting Ability#$#
-Wisdom is your spellcasting ability for your druid spells, since your magic draws upon your devotion and attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability\. In addition, you use your Wisdom modifier when setting the saving throw DC for a druid spell you cast and when making an attack roll with one.#P#
-<b>Spell save DC</b> = 8 + your proficiency bonus \+ your Wisdom modifier.#P#
-<b>Spell attack modifier</b> = your proficiency bonus \+ your Wisdom modifier.#P#
+Wisdom is your spellcasting ability for your druid spells, since your magic draws upon your devotion and attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a druid spell you cast and when making an attack roll with one.#P#
+<b>Spell save DC</b> = 8 + your proficiency bonus + your Wisdom modifier.#P#
+<b>Spell attack modifier</b> = your proficiency bonus + your Wisdom modifier.#P#
 Ritual Casting#$#
 You can cast a druid spell as a ritual if that spell has the ritual tag and you have the spell prepared.#P#
 Spellcasting Focus#$#
 You can use a druidic focus (see Equipment) as a spellcasting focus for your druid spells.#P#
 Wild Shape###
 Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.#P#
-Your druid level determines the beasts you can transform into, as shown in the Beast Shapes table\. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.#P#
+Your druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.#P#
 Beast Shapes$tt$
 Level_::_Max. CR_::_Limitations_::_Example$tc$
 2nd_::_1/4_::_No flying or swimming speed_::_Wolf$ti$
 4th_::_1/2_::_No flying speed_::_Crocodile$ti$
 8th_::_1_::_-_::_Giant Eagle$ti$
-You can stay in a beast shape for a number of hours equal to half your druid level (rounded down)\. You then revert to your normal form unless you expend another use of this feature. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.#P#
+You can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.#P#
 While you are transformed, the following rules apply:#P#
 Your game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.#B#
 When you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.#B#
@@ -214,7 +214,7 @@ At 2nd level, you choose to identify with a circle of druids, such as the Circle
 Ability Score Improvement###
 When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.#P#
 Timeless Body###
-Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year\. Beast Spells###
+Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year. Beast Spells###
 Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components.#P#
 Archdruid###
 At 20th level, you can use your Wild Shape an unlimited number of times.#P#
@@ -227,7 +227,7 @@ Natural Recovery#$#
 Starting at 2nd level, you can regain some of your magical energy by sitting in meditation and communing with nature. During a short rest, you choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your druid level (rounded up), and none of the slots can be 6th level or higher. You can't use this feature again until you finish a long rest.#P#
 For example, when you are a 4th-level druid, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level slot or two 1st-level slots.#P#
 Circle Spells#$#
-Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid\. Choose that land-arctic, coast, desert, forest, grassland, mountain, or swamp-and consult the associated list of spells.#P#
+Your mystical connection to the land infuses you with the ability to cast certain spells. At 3rd, 5th, 7th, and 9th level you gain access to circle spells connected to the land where you became a druid. Choose that land-arctic, coast, desert, forest, grassland, mountain, or swamp-and consult the associated list of spells.#P#
 Once you gain access to a circle spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.#P#
 Arctic$tt$
 Druid Level_::_Circle Spells$tc$
@@ -277,7 +277,7 @@ In addition, you have advantage on saving throws against plants that are magical
 Nature's Ward#$#
 When you reach 10th level, you can't be charmed or frightened by elementals or fey, and you are immune to poison and disease.#P#
 Nature's Sanctuary#$#
-When you reach 14th level, creatures of the natural world sense your connection to nature and become hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your druid spell save DC. On a failed save, the creature must choose a different target, or the attack automatically misses\. On a successful save, the creature is immune to this effect for 24 hours.#P#
+When you reach 14th level, creatures of the natural world sense your connection to nature and become hesitant to attack you. When a beast or plant creature attacks you, that creature must make a Wisdom saving throw against your druid spell save DC. On a failed save, the creature must choose a different target, or the attack automatically misses. On a successful save, the creature is immune to this effect for 24 hours.#P#
 The creature is aware of this effect before it makes its attack against you.#P#
 Fighter_05_%%%
 Fighting Style###
@@ -285,7 +285,7 @@ You adopt a particular style of fighting as your specialty. Choose one of the fo
 Archery#$#
 You gain a +2 bonus to attack rolls you make with ranged weapons.#P#
 Defense#$#
-While you are wearing armor, you gain a +1 bonus to AC\. Dueling#$#
+While you are wearing armor, you gain a +1 bonus to AC. Dueling#$#
 When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.#P#
 Great Weapon Fighting#$#
 When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit.#P#
@@ -320,10 +320,10 @@ At 10th level, you can choose a second option from the Fighting Style class feat
 Superior Critical#$#
 Starting at 15th level, your weapon attacks score a critical hit on a roll of 18-20.#P#
 Survivor#$#
-At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left\. You don't gain this benefit if you have 0 hit points.#P#
+At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don't gain this benefit if you have 0 hit points.#P#
 Monk_06_%%%
 Unarmored Defense###
-Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 \+ your Dexterity modifier + your Wisdom modifier.#P#
+Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier.#P#
 Martial Arts###
 At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two-handed or heavy property.#P#
 You gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:#P#
@@ -334,9 +334,9 @@ Certain monasteries use specialized forms of the monk weapons. For example, you 
 Ki###
 Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.#P#
 You can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.#P#
-When you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself\. You must spend at least 30 minutes of the rest meditating to regain your ki points.#P#
-Some of your ki features require your target to make a saving throw to resist the feature's effects\. The saving throw DC is calculated as follows:#P#
-<b>Ki save DC</b> = 8 + your proficiency bonus \+ your Wisdom modifier#P#
+When you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points.#P#
+Some of your ki features require your target to make a saving throw to resist the feature's effects. The saving throw DC is calculated as follows:#P#
+<b>Ki save DC</b> = 8 + your proficiency bonus + your Wisdom modifier#P#
 Flurry of Blows#$#
 Immediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action.#P#
 Patient Defense#$#
@@ -375,7 +375,7 @@ Additionally, whenever you make a saving throw and fail, you can spend 1 ki poin
 Timeless Body###
 At 15th level, your ki sustains you so that you suffer none of the frailty of old age, and you can't be aged magically. You can still die of old age, however. In addition, you no longer need food or water.#P#
 Empty Body###
-Beginning at 18th level, you can use your action to spend 4 ki points to become invisible for 1 minute\. During that time, you also have resistance to all damage but force damage.#P#
+Beginning at 18th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.#P#
 Additionally, you can spend 8 ki points to cast the astral projection spell, without needing material components. When you do so, you can't take any other creatures with you.#P#
 Perfect Self###
 At 20th level, when you roll for initiative and have no ki points remaining, you regain 4 ki points.#P#
@@ -389,9 +389,9 @@ It can't take reactions until the end of your next turn.#B#
 Wholeness of Body#$#
 At 6th level, you gain the ability to heal yourself. As an action, you can regain hit points equal to three times your monk level. You must finish a long rest before you can use this feature again.#P#
 Tranquility#$#
-Beginning at 11th level, you can enter a special meditation that surrounds you with an aura of peace\. At the end of a long rest, you gain the effect of a sanctuary spell that lasts until the start of your next long rest (the spell can end early as normal). The saving throw DC for the spell equals 8 + your Wisdom modifier + your proficiency bonus.#P#
+Beginning at 11th level, you can enter a special meditation that surrounds you with an aura of peace. At the end of a long rest, you gain the effect of a sanctuary spell that lasts until the start of your next long rest (the spell can end early as normal). The saving throw DC for the spell equals 8 + your Wisdom modifier + your proficiency bonus.#P#
 Quivering Palm#$#
-At 17th level, you gain the ability to set up lethal vibrations in someone's body. When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for a number of days equal to your monk level\. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d10 necrotic damage.#P#
+At 17th level, you gain the ability to set up lethal vibrations in someone's body. When you hit a creature with an unarmed strike, you can spend 3 ki points to start these imperceptible vibrations, which last for a number of days equal to your monk level. The vibrations are harmless unless you use your action to end them. To do so, you and the target must be on the same plane of existence. When you use this action, the creature must make a Constitution saving throw. If it fails, it is reduced to 0 hit points. If it succeeds, it takes 10d10 necrotic damage.#P#
 You can have only one creature under the effect of this feature at a time. You can choose to end the vibrations harmlessly without using an action.#P#
 Paladin_07_%%%
 Divine Sense###
@@ -417,12 +417,12 @@ By 2nd level, you have learned to draw on divine magic through meditation and pr
 Preparing and Casting Spells#$#
 The Paladin table shows how many spell slots you have to cast your spells. To cast one of your paladin spells of 1st level or higher, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.#P#
 You prepare the list of paladin spells that are available for you to cast, choosing from the paladin spell list. When you do so, choose a number of paladin spells equal to your Charisma modifier + half your paladin level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.#P#
-For example, if you are a 5th-level paladin, you have four 1st-level and two 2nd-level spell slots\. With a Charisma of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.#P#
+For example, if you are a 5th-level paladin, you have four 1st-level and two 2nd-level spell slots. With a Charisma of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.#P#
 You can change your list of prepared spells when you finish a long rest. Preparing a new list of paladin spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.#P#
 Spellcasting Ability#$#
 Charisma is your spellcasting ability for your paladin spells, since their power derives from the strength of your convictions. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a paladin spell you cast and when making an attack roll with one.#P#
-<b>Spell save DC</b> = 8 + your proficiency bonus \+ your Charisma modifier.#P#
-<b>Spell attack modifier</b> = your proficiency bonus \+ your Charisma modifier.#P#
+<b>Spell save DC</b> = 8 + your proficiency bonus + your Charisma modifier.#P#
+<b>Spell attack modifier</b> = your proficiency bonus + your Charisma modifier.#P#
 Ritual Casting#$#
 You can any paladin spell you know as a ritual if that spell has the ritual tag.#P#
 Spellcasting Focus#$#
@@ -457,7 +457,7 @@ Cleansing Touch###
 Beginning at 14th level, you can use your action to end one spell on yourself or on one willing creature that you touch.#P#
 You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest.#P#
 Oath of Devotion###
-The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, and order. Sometimes called cavaliers, white knights, or holy warriors, these paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some, for better or worse, hold the rest of the world to the same standards\. Many who swear this oath are devoted to gods of law and good and use their gods' tenets as the measure of their devotion. They hold angels-the perfect servants of good-as their ideals, and incorporate images of angelic wings into their helmets or coats of arms.#P#
+The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, and order. Sometimes called cavaliers, white knights, or holy warriors, these paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some, for better or worse, hold the rest of the world to the same standards. Many who swear this oath are devoted to gods of law and good and use their gods' tenets as the measure of their devotion. They hold angels-the perfect servants of good-as their ideals, and incorporate images of angelic wings into their helmets or coats of arms.#P#
 Tenets of Devotion#$#
 Though the exact words and strictures of the Oath of Devotion vary, paladins of this oath share these tenets.#P#
 <b>Honesty.</b> Don't lie or cheat. Let your word be your promise.#B#
@@ -466,7 +466,7 @@ Though the exact words and strictures of the Oath of Devotion vary, paladins of 
 <b>Honor.</b> Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.#B#
 <b>Duty.</b> Be responsible for your actions and their consequences, protect those entrusted to your care, and obey those who have just authority over you.#B#
 Oath Spells#$#
-You gain oath spells at the paladin levels listed\. Oath of Devotion Spells#P#
+You gain oath spells at the paladin levels listed. Oath of Devotion Spells#P#
 Paladin$tt$
 Level_::_Spells$tc$
 3rd_::_protection from evil and good, sanctuary$ti$
@@ -487,7 +487,7 @@ Purity of Spirit#$#
 Beginning at 15th level, you are always under the effects of a protection from evil and good spell.#P#
 Holy Nimbus#$#
 At 20th level, as an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that.#P#
-Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage\. In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.#P#
+Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage. In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.#P#
 Once you use this feature, you can't use it again until you finish a long rest.#P#
 Ranger_08_%%%
 Nature's Hunter###
@@ -516,8 +516,8 @@ The Spells Known column of the Ranger table shows when you learn more ranger spe
 Additionally, when you gain a level in this class, you can choose one of the ranger spells you know and replace it with another spell from the ranger spell list, which also must be of a level for which you have spell slots.#P#
 Spellcasting Ability#$#
 Wisdom is your spellcasting ability for your ranger spells, since your magic draws on your attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a ranger spell you cast and when making an attack roll with one.#P#
-<b>Spell save DC</b> = 8 + your proficiency bonus \+ your Wisdom modifier.#P#
-<b>Spell attack modifier</b> = your proficiency bonus \+ your Wisdom modifier.#P#
+<b>Spell save DC</b> = 8 + your proficiency bonus + your Wisdom modifier.#P#
+<b>Spell attack modifier</b> = your proficiency bonus + your Wisdom modifier.#P#
 Ritual Casting#$#
 You can any ranger spell you know as a ritual if that spell has the ritual tag.#P#
 Spellcasting Focus#$#
@@ -546,8 +546,8 @@ You are also aware of the location of any invisible creature within 30 feet of y
 Foe Slayer###
 At 20th level, you become an unparalleled hunter of your enemies. Once on each of your turns, you can add your Wisdom modifier to the attack roll or the damage roll of an attack you make against one of your favored enemies. You can choose to use this feature before or after the roll, but before any effects of the roll are applied.#P#
 Additional Fighting Style###
-At 10th level, you can choose a second option from the Fighting Style class feature\. Greater Hunter's Mark###
-Beginning at 10th level, when you cast Hunter's Mark, it now lasts for up to 24 hours\. Hunter###
+At 10th level, you can choose a second option from the Fighting Style class feature. Greater Hunter's Mark###
+Beginning at 10th level, when you cast Hunter's Mark, it now lasts for up to 24 hours. Hunter###
 Emulating the Hunter archetype means accepting your place as a bulwark between civilization and the terrors of the wilderness. As you walk the Hunter's path, you learn specialized techniques for fighting the threats you face, from rampaging ogres and hordes of orcs to towering giants and terrifying dragons.#P#
 Hunter's Prey#$#
 At 3rd level, you gain one of the following features of your choice.#P#
@@ -598,7 +598,7 @@ By 15th level, you have acquired greater mental strength. You gain proficiency i
 Elusive###
 Beginning at 18th level, you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated.#P#
 Stroke of Luck###
-At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit\. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.#P#
+At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.#P#
 Once you use this feature, you can't use it again until you finish a short or long rest.#P#
 Thief###
 You hone your skills in the larcenous arts. Burglars, bandits, cutpurses, and other criminals typically follow this archetype, but so do rogues who prefer to think of themselves as professional treasure seekers, explorers, delvers, and investigators. In addition to improving your agility and stealth, you learn skills useful for delving into ancient ruins, reading unfamiliar languages, and using magic items you normally couldn't employ.#P#
@@ -626,9 +626,9 @@ You know two 1st-level spells of your choice from the sorcerer spell list.#P#
 The Spells Known column of the Sorcerer table shows when you learn more sorcerer spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.#P#
 Additionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list, which also must be of a level for which you have spell slots.#P#
 Spellcasting Ability#$#
-Charisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your will into the world\. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a sorcerer spell you cast and when making an attack roll with one.#P#
-<b>Spell save DC</b> = 8 + your proficiency bonus \+ your Charisma modifier.#P#
-<b>Spell attack modifier</b> = your proficiency bonus \+ your Charisma modifier.#P#
+Charisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your will into the world. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a sorcerer spell you cast and when making an attack roll with one.#P#
+<b>Spell save DC</b> = 8 + your proficiency bonus + your Charisma modifier.#P#
+<b>Spell attack modifier</b> = your proficiency bonus + your Charisma modifier.#P#
 Ritual Casting#$#
 You can any sorcerer spell you know as a ritual if that spell has the ritual tag.#P#
 Spellcasting Focus#$#
@@ -653,14 +653,14 @@ Spell Slot Level_::_Sorcery Point Cost$tc$
 5th_::_7$ti$
 <b>Converting a Spell Slot to Sorcery Points.</b> As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level.#P#
 Metamagic###
-At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level\. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.#P#
+At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level. You can use only one Metamagic option on a spell when you cast it, unless otherwise noted.#P#
 Careful Spell#$#
 When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.#P#
 Distant Spell#$#
 When you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell.#P#
 When you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feet.#P#
 Empowered Spell#$#
-When you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one)\. You must use the new rolls.#P#
+When you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.#P#
 You can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell.#P#
 Extended Spell#$#
 When you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours.#P#
@@ -691,7 +691,7 @@ Green_::_Poison$ti$
 Red_::_Fire$ti$
 Silver_::_Cold$ti$
 White_::_Cold$ti$
-You can speak, read, and write Draconic\. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check.#P#
+You can speak, read, and write Draconic. Additionally, whenever you make a Charisma check when interacting with dragons, your proficiency bonus is doubled if it applies to the check.#P#
 Draconic Resilience#$#
 As magic flows through your body, it causes physical traits of your dragon ancestors to emerge. At 1st level, your hit point maximum increases by 1 and increases by 1 again whenever you gain a level in this class.#P#
 Additionally, parts of your skin are covered by a thin sheen of dragon-like scales. When you aren't wearing armor, your AC equals 13 + your Dexterity modifier.#P#
@@ -718,8 +718,8 @@ The Spells Known column of the Warlock table shows when you learn more warlock s
 Additionally, when you gain a level in this class, you can choose one of the warlock spells you know and replace it with another spell from the warlock spell list, which also must be of a level for which you have spell slots.#P#
 Spellcasting Ability#$#
 Charisma is your spellcasting ability for your warlock spells, so you use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a warlock spell you cast and when making an attack roll with one.#P#
-<b>Spell save DC</b> = 8 + your proficiency bonus \+ your Charisma modifier#P#
-<b>Spell attack modifier</b> = your proficiency bonus \+ your Charisma modifier#P#
+<b>Spell save DC</b> = 8 + your proficiency bonus + your Charisma modifier#P#
+<b>Spell attack modifier</b> = your proficiency bonus + your Charisma modifier#P#
 Ritual Casting#$#
 You can any warlock spell you know as a ritual if that spell has the ritual tag.#P#
 Spellcasting Focus#$#
@@ -739,7 +739,7 @@ You can use your action to create a pact weapon in your empty hand. You can choo
 Your pact weapon disappears if it is more than 5 feet away from you for 1 minute or more. It also disappears if you use this feature again, if you dismiss the weapon (no action required), or if you die.#P#
 You can transform one magic weapon into your pact weapon by performing a special ritual while you hold the weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. You can then dismiss the weapon, shunting it into an extradimensional space, and it appears whenever you create your pact weapon thereafter. You can't affect an artifact or a sentient weapon in this way. The weapon ceases being your pact weapon if you die, if you perform the 1-hour ritual on a different weapon, or if you use a 1-hour ritual to break your bond to it. The weapon appears at your feet if it is in the extradimensional space when the bond breaks.#P#
 Pact of the Tome#$#
-Your patron gives you a grimoire called a Book of Shadows. When you gain this feature, choose three cantrips from any class's spell list (the three needn't be from the same list). While the book is on your person, you can cast those cantrips at will. They don't count against your number of cantrips known\. If they don't appear on the warlock spell list, they are nonetheless warlock spells for you.#P#
+Your patron gives you a grimoire called a Book of Shadows. When you gain this feature, choose three cantrips from any class's spell list (the three needn't be from the same list). While the book is on your person, you can cast those cantrips at will. They don't count against your number of cantrips known. If they don't appear on the warlock spell list, they are nonetheless warlock spells for you.#P#
 If you lose your Book of Shadows, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and it destroys the previous book. The book turns to ash when you die.#P#
 Ability Score Improvement###
 When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.#P#
@@ -748,7 +748,7 @@ At 11th level, your patron bestows upon you a magical secret called an arcanum. 
 You can cast your arcanum spell once without expending a spell slot. You must finish a long rest before you can do so again.#P#
 At higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest.#P#
 Eldritch Master###
-At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature\. Once you regain spell slots with this feature, you must finish a long rest before you can do so again.#P#
+At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature. Once you regain spell slots with this feature, you must finish a long rest before you can do so again.#P#
 Eldritch Invocations###
 If an eldritch invocation has prerequisites, you must meet them to learn it. You can learn the invocation at the same time that you meet its prerequisites. A level prerequisite refers to your level in this class.#P#
 Agonizing Blast#$#
@@ -768,7 +768,7 @@ Bewitching Whispers#$#
 You can cast compulsion once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Book of Ancient Secrets#$#
 <b>Prerequisite: Pact of the Tome feature</b>#P#
-You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list (the two needn't be from the same list). The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag\. On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.#P#
+You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list (the two needn't be from the same list). The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag. On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.#P#
 Chains of Carceri#$#
 <b>Prerequisite: 15th level, Pact of the Chain feature</b>#P#
 You can cast hold monster at will-targeting a celestial, fiend, or elemental-without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.#P#
@@ -801,7 +801,7 @@ Minions of Chaos#$##P#
 You can cast conjure elemental once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Mire the Mind#$#
 <b>Prerequisite: 5th level</b>#P#
-You can cast slow once using a warlock spell slot\. You can't do so again until you finish a long rest.#P#
+You can cast slow once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Misty Visions#$#
 You can cast silent image at will, without expending a spell slot or material components.#P#
 One with Shadows#$#
@@ -820,7 +820,7 @@ Sign of Ill Omen#$#
 <b>Prerequisite: 5th level</b>#P#
 You can cast bestow curse once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Thief of Five Fates#$#
-You can cast bane once using a warlock spell slot\. You can't do so again until you finish a long rest.#P#
+You can cast bane once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Thirsting Blade#$#
 <b>Prerequisite: 5th level, Pact of the Blade feature</b>#P#
 You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.#P#
@@ -829,7 +829,7 @@ Visions of Distant Realms#$#
 You can cast arcane eye at will, without expending a spell slot.#P#
 Voice of the Chain Master#$#
 <b>Prerequisite: Pact of the Chain feature</b>#P#
-You can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence\. Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.#P#
+You can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.#P#
 Whispers of the Grave#$#
 <b>Prerequisite: 9th level</b>#P#
 You can cast speak with dead at will, without expending a spell slot.#P#
@@ -871,7 +871,7 @@ The spells that you add to your spellbook as you gain levels reflect the arcane 
 Copying that spell into your spellbook involves reproducing the basic form of the spell, then deciphering the unique system of notation used by the wizard who wrote it. You must practice the spell until you understand the sounds or gestures required, then transcribe it into your spellbook using your own notation.#P#
 For each level of the spell, the process takes 2 hours and costs 50 gp. The cost represents material components you expend as you experiment with the spell to master it, as well as the fine inks you need to record it. Once you have spent this time and money, you can prepare the spell just like your other spells.#P#
 <b>Replacing the Book.</b> You can copy a spell from your own spellbook into another book-for example, if you want to make a backup copy of your spellbook. This is just like copying a new spell into your spellbook, but faster and easier, since you understand your own notation and already know how to cast the spell. You need spend only 1 hour and 10 gp for each level of the copied spell.#P#
-If you lose your spellbook, you can use the same procedure to transcribe the spells that you have prepared into a new spellbook. Filling out the remainder of your spellbook requires you to find new spells to do so, as normal\. For this reason, many wizards keep backup spellbooks in a safe place.#P#
+If you lose your spellbook, you can use the same procedure to transcribe the spells that you have prepared into a new spellbook. Filling out the remainder of your spellbook requires you to find new spells to do so, as normal. For this reason, many wizards keep backup spellbooks in a safe place.#P#
 <b>The Book's Appearance.</b> Your spellbook is a unique compilation of spells, with its own decorative flourishes and margin notes. It might be a plain, functional leather volume that you received as a gift from your master, a finely bound gilt-edged tome you found in an ancient library, or even a loose collection of notes scrounged together after you lost your previous spellbook in a mishap.#P#
 Preparing and Casting Spells#$#
 The Wizard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.#P#
@@ -880,14 +880,14 @@ For example, if you're a 3rd-level wizard, you have four 1st-level and two 2nd-l
 You can change your list of prepared spells when you finish a long rest. Preparing a new list of wizard spells requires time spent studying your spellbook and memorizing the incantations and gestures you must make to cast the spell: at least 1 minute per spell level for each spell on your list.#P#
 Spellcasting Ability#$#
 Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.#P#
-<b>Spell save DC</b> = 8 + your proficiency bonus \+ your Intelligence modifier#P#
-<b>Spell attack modifier</b> = your proficiency bonus \+ your Intelligence modifier#P#
+<b>Spell save DC</b> = 8 + your proficiency bonus + your Intelligence modifier#P#
+<b>Spell attack modifier</b> = your proficiency bonus + your Intelligence modifier#P#
 Ritual Casting#$#
 You can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook. You don't need to have the spell prepared.#P#
 Spellcasting Focus#$#
 You can use an arcane focus as a spellcasting focus for your wizard spells.#P#
 Learning Spells of Ist Level and Higher#$#
-Each time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table\. On your adventures, you might find other spells that you can add to your spellbook (see Spellbook).#P#
+Each time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table. On your adventures, you might find other spells that you can add to your spellbook (see Spellbook).#P#
 Arcane Recovery###
 You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher.#P#
 For example, if you're a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots.#P#
@@ -902,13 +902,13 @@ By spending 8 hours in study, you can exchange one or both of the spells you cho
 Signature Spells When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd-level wizard spells in your spellbook as your signature spells. You always have these spells prepared, they don't count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest.#P#
 If you want to cast either spell at a higher level, you must expend a spell slot as normal.#P#
 Tradition of Destruction###
-You focus your study on magic that creates powerful elemental effects such as bitter cold, searing flame, rolling thunder, crackling lightning, and burning acid\. Some evokers find employment in military forces, serving as artillery to blast enemy armies from afar\. Others use their spectacular power to protect the weak, while some seek their own gain as bandits, adventurers, or aspiring tyrants.#P#
+You focus your study on magic that creates powerful elemental effects such as bitter cold, searing flame, rolling thunder, crackling lightning, and burning acid. Some evokers find employment in military forces, serving as artillery to blast enemy armies from afar. Others use their spectacular power to protect the weak, while some seek their own gain as bandits, adventurers, or aspiring tyrants.#P#
 Destructive Savant#$#
 Beginning when you select this school at 2nd level, the gold and time you must spend to copy an evocation spell into your spellbook is halved.#P#
 Sculpt Spells#$#
 Beginning at 2nd level, you can create pockets of relative safety within the effects of your evocation spells. When you cast an evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 + the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save.#P#
 Potent Cantrip#$#
-Starting at 6th level, your damaging cantrips affect even creatures that avoid the brunt of the effect\. When a creature succeeds on a saving throw against your cantrip, the creature takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip.#P#
+Starting at 6th level, your damaging cantrips affect even creatures that avoid the brunt of the effect. When a creature succeeds on a saving throw against your cantrip, the creature takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip.#P#
 Empowered Evocation#$#
 Beginning at 10th level, you can add your Intelligence modifier to one damage roll of any wizard evocation spell you cast.#P#
 Overchannel#$#

@@ -25,8 +25,8 @@ The Spells Known column of the Ranger table shows when you learn more ranger spe
 Additionally, when you gain a level in this class, you can choose one of the ranger spells you know and replace it with another spell from the ranger spell list, which also must be of a level for which you have spell slots.#P#
 Spellcasting Ability#$#
 Wisdom is your spellcasting ability for your ranger spells, since your magic draws on your attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a ranger spell you cast and when making an attack roll with one.#P#
-<b>Spell save DC</b> = 8 + your proficiency bonus \+ your Wisdom modifier.#P#
-<b>Spell attack modifier</b> = your proficiency bonus \+ your Wisdom modifier.#P#
+<b>Spell save DC</b> = 8 + your proficiency bonus + your Wisdom modifier.#P#
+<b>Spell attack modifier</b> = your proficiency bonus + your Wisdom modifier.#P#
 Ritual Casting#$#
 You can any ranger spell you know as a ritual if that spell has the ritual tag.#P#
 Spellcasting Focus#$#
@@ -55,8 +55,8 @@ You are also aware of the location of any invisible creature within 30 feet of y
 Foe Slayer###
 At 20th level, you become an unparalleled hunter of your enemies. Once on each of your turns, you can add your Wisdom modifier to the attack roll or the damage roll of an attack you make against one of your favored enemies. You can choose to use this feature before or after the roll, but before any effects of the roll are applied.#P#
 Additional Fighting Style###
-At 10th level, you can choose a second option from the Fighting Style class feature\. Greater Hunter's Mark###
-Beginning at 10th level, when you cast Hunter's Mark, it now lasts for up to 24 hours\. Hunter###
+At 10th level, you can choose a second option from the Fighting Style class feature. Greater Hunter's Mark###
+Beginning at 10th level, when you cast Hunter's Mark, it now lasts for up to 24 hours. Hunter###
 Emulating the Hunter archetype means accepting your place as a bulwark between civilization and the terrors of the wilderness. As you walk the Hunter's path, you learn specialized techniques for fighting the threats you face, from rampaging ogres and hordes of orcs to towering giants and terrifying dragons.#P#
 Hunter's Prey#$#
 At 3rd level, you gain one of the following features of your choice.#P#
