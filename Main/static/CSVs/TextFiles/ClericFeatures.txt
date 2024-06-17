@@ -6,7 +6,7 @@ At 1st level, you know three cantrips of your choice
 from the cleric spell list. You learn additional cleric
 cantrips of your choice at higher levels, as shown in
 the Cantrips Known column of the Cleric table.#P#
-Preparing and Casting Spells#$
+Preparing and Casting Spells#$#
 The Cleric table shows how many spell slots you
 have to cast your spells of 1st level and higher. To
 cast one of these spells, you must expend a slot of
@@ -28,8 +28,7 @@ slot. Casting the spell doesn't remove it from your
 list of prepared spells.#P#
 You can change your list of prepared spells when
 you finish a long rest. Preparing a new list of cleric
-spells requires time spent in prayer and meditation:
-at least 1 minute per spell level for each spell on
+spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on
 your list.#P#
 Spellcasting Ability#$#
 Wisdom is your spellcasting ability for your cleric
@@ -46,7 +45,7 @@ your Wisdom modifier.#P#
 Ritual Casting#$#
 You can cast a cleric spell as a ritual if that spell has
 the ritual tag and you have the spell prepared.#P#
-Spellcasting Focus#$
+Spellcasting Focus#$#
 You can use a holy symbol (see Equipment) as a
 spellcasting focus for your cleric spells.#P#
 Divine Domain###
@@ -60,8 +59,8 @@ Channel Divinity when you gain that feature at 2nd
 level, and additional benefits at 6th, 8th, and 17th
 levels.#P#
 Domain Spells#$#
-Each domain has a list of spells-its domain spells-
-that you gain at the cleric levels noted in the domain
+Each domain has a list of spells - its domain spells - that
+you gain at the cleric levels noted in the domain
 description. Once you gain a domain spell, you
 always have it prepared, and it doesn't count against
 the number of spells you can prepare each day.#P#
@@ -71,8 +70,7 @@ spell for you.#P#
 Channel Divinity###
 At 2nd level, you gain the ability to channel divine
 energy directly from your deity, using that energy to
-fuel magical effects. You start with two such effects:
-Turn Undead and an effect determined by your
+fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your
 domain. Some domains grant you additional effects
 as you advance in levels, as noted in the domain
 description.#P#
@@ -101,7 +99,7 @@ also can't take reactions. For its action, it can use
 only the Dash action or try to escape from an effect
 that prevents it from moving. If there's nowhere to
 move, the creature can use the Dodge action.#P#
-Ability Score Improvement#
+Ability Score Improvement###
 When you reach 4th level, and again at 8th, 12th,
 16th, and 19th level, you can increase one ability
 score of your choice by 2, or you can increase two

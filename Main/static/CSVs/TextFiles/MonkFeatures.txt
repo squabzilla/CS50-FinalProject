@@ -6,8 +6,7 @@ Martial Arts###
 At 1st level, your practice of martial arts gives you
 mastery of combat styles that use unarmed strikes
 and monk weapons, which are shortswords and any
-simple melee weapons that don't have the two-
-handed or heavy property.#P#
+simple melee weapons that don't have the two-handed or heavy property.#P#
 You gain the following benefits while you are
 unarmed or wielding only monk weapons and you
 aren't wearing armor or wielding a shield:#P#
@@ -29,8 +28,7 @@ monk level determines the number of points you
 have, as shown in the Ki Points column of the Monk
 table.#P#
 You can spend these points to fuel various ki
-features. You start knowing three such features:
-Flurry of Blows, Patient Defense, and Step of the
+features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the
 Wind. You learn more ki features as you gain levels
 in this class.#P#
 When you spend a ki point, it is unavailable until

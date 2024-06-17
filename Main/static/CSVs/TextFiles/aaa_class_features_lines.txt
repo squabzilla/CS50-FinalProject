@@ -97,8 +97,7 @@ At 20th level, you embody the power of the wilds.
 Your Strength and Constitution scores increase by 4.
 Your maximum for those scores is now 24.#P#
 Path of the Berserker###
-For some barbarians, rage is a means to an end-
-that end being violence. The Path of the Berserker is
+For some barbarians, rage is a means to an end - that end being violence. The Path of the Berserker is
 a path of untrammeled fury, slick with blood. As you
 enter the berserker's rage, you thrill in the chaos of
 battle, heedless of your own health or well-being.#P#
@@ -339,7 +338,7 @@ At 1st level, you know three cantrips of your choice
 from the cleric spell list. You learn additional cleric
 cantrips of your choice at higher levels, as shown in
 the Cantrips Known column of the Cleric table.#P#
-Preparing and Casting Spells#$
+Preparing and Casting Spells#$#
 The Cleric table shows how many spell slots you
 have to cast your spells of 1st level and higher. To
 cast one of these spells, you must expend a slot of
@@ -361,8 +360,7 @@ slot. Casting the spell doesn't remove it from your
 list of prepared spells.#P#
 You can change your list of prepared spells when
 you finish a long rest. Preparing a new list of cleric
-spells requires time spent in prayer and meditation:
-at least 1 minute per spell level for each spell on
+spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on
 your list.#P#
 Spellcasting Ability#$#
 Wisdom is your spellcasting ability for your cleric
@@ -379,7 +377,7 @@ your Wisdom modifier.#P#
 Ritual Casting#$#
 You can cast a cleric spell as a ritual if that spell has
 the ritual tag and you have the spell prepared.#P#
-Spellcasting Focus#$
+Spellcasting Focus#$#
 You can use a holy symbol (see Equipment) as a
 spellcasting focus for your cleric spells.#P#
 Divine Domain###
@@ -393,8 +391,8 @@ Channel Divinity when you gain that feature at 2nd
 level, and additional benefits at 6th, 8th, and 17th
 levels.#P#
 Domain Spells#$#
-Each domain has a list of spells-its domain spells-
-that you gain at the cleric levels noted in the domain
+Each domain has a list of spells - its domain spells - that
+you gain at the cleric levels noted in the domain
 description. Once you gain a domain spell, you
 always have it prepared, and it doesn't count against
 the number of spells you can prepare each day.#P#
@@ -404,8 +402,7 @@ spell for you.#P#
 Channel Divinity###
 At 2nd level, you gain the ability to channel divine
 energy directly from your deity, using that energy to
-fuel magical effects. You start with two such effects:
-Turn Undead and an effect determined by your
+fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your
 domain. Some domains grant you additional effects
 as you advance in levels, as noted in the domain
 description.#P#
@@ -434,7 +431,7 @@ also can't take reactions. For its action, it can use
 only the Dash action or try to escape from an effect
 that prevents it from moving. If there's nowhere to
 move, the creature can use the Dodge action.#P#
-Ability Score Improvement#
+Ability Score Improvement###
 When you reach 4th level, and again at 8th, 12th,
 16th, and 19th level, you can increase one ability
 score of your choice by 2, or you can increase two
@@ -875,8 +872,7 @@ Martial Arts###
 At 1st level, your practice of martial arts gives you
 mastery of combat styles that use unarmed strikes
 and monk weapons, which are shortswords and any
-simple melee weapons that don't have the two-
-handed or heavy property.#P#
+simple melee weapons that don't have the two-handed or heavy property.#P#
 You gain the following benefits while you are
 unarmed or wielding only monk weapons and you
 aren't wearing armor or wielding a shield:#P#
@@ -898,8 +894,7 @@ monk level determines the number of points you
 have, as shown in the Ki Points column of the Monk
 table.#P#
 You can spend these points to fuel various ki
-features. You start knowing three such features:
-Flurry of Blows, Patient Defense, and Step of the
+features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the
 Wind. You learn more ki features as you gain levels
 in this class.#P#
 When you spend a ki point, it is unavailable until
@@ -1149,13 +1144,11 @@ have four 1st-level and two 2nd-level spell slots.
 With a Charisma of 14, your list of prepared spells
 can include four spells of 1st or 2nd level, in any
 combination. If you prepare the 1st-level spell cure
-wounds, you can cast it using a 1st-level or a 2nd-
-level slot. Casting the spell doesn't remove it from
+wounds, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn't remove it from
 your list of prepared spells.#P#
 You can change your list of prepared spells when
 you finish a long rest. Preparing a new list of paladin
-spells requires time spent in prayer and meditation:
-at least 1 minute per spell level for each spell on
+spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on
 your list.#P#
 Spellcasting Ability#$#
 Charisma is your spellcasting ability for your paladin
@@ -2069,14 +2062,12 @@ can't increase an ability score above 20 using this
 feature.#P#
 Mystic Arcanum###
 At 11th level, your patron bestows upon you a
-magical secret called an arcanum. Choose one 6th-
-level spell from the warlock spell list as this arcanum.#P#
+magical secret called an arcanum. Choose one 6th-level spell from the warlock spell list as this arcanum.#P#
 You can cast your arcanum spell once without
 expending a spell slot. You must finish a long rest
 before you can do so again.#P#
 At higher levels, you gain more warlock spells of
-your choice that can be cast in this way: one 7th-
-level spell at 13th level, one 8th-level spell at 15th
+your choice that can be cast in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th
 level, and one 9th-level spell at 17th level. You
 regain all uses of your Mystic Arcanum when you
 finish a long rest.#P#
@@ -2115,7 +2106,7 @@ Bewitching Whispers#$#
 You can cast compulsion once using a warlock spell
 slot. You can't do so again until you finish a long rest.#P#
 Book of Ancient Secrets#$#
-<b>Prerequisite: Pact of the Tome feature</b>
+<b>Prerequisite: Pact of the Tome feature</b>#P#
 You can now inscribe magical rituals in your Book of
 Shadows. Choose two 1st-level spells that have the
 ritual tag from any class's spell list (the two needn't
@@ -2183,13 +2174,13 @@ Master of Myriad Forms#$#
 <b>Prerequisite: 15th level</b>#P#
 You can cast alter self at will, without expending a
 spell slot.#P#
-Minions of Chaos#$#
+Minions of Chaos#$##P#
 <b>Prerequisite: 9th level</b>
 You can cast conjure elemental once using a warlock
 spell slot. You can't do so again until you finish a
 long rest.#P#
 Mire the Mind#$#
-<b>Prerequisite: 5th level</b>
+<b>Prerequisite: 5th level</b>#P#
 You can cast slow once using a warlock spell slot.
 You can't do so again until you finish a long rest.#P#
 Misty Visions#$#
@@ -2255,8 +2246,8 @@ even if you strive against those aims. Such beings
 desire the corruption or destruction of all things,
 ultimately including you. Fiends powerful enough to
 forge a pact include demon lords such as
-Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet;
-archdevils such as Asmodeus, Dispater,
+Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils
+such as Asmodeus, Dispater,
 Mephistopheles, and Belial; pit fiends and balors that
 are especially mighty; and ultroloths and other lords
 of the yugoloths.#P#
@@ -2315,8 +2306,7 @@ wizard cantrips of your choice at higher levels, as
 shown in the Cantrips Known column of the Wizard
 table.#P#
 Spellbook#$#
-At 1st level, you have a spellbook containing six 1st-
-level wizard spells of your choice. Your spellbook is
+At 1st level, you have a spellbook containing six 1st-level wizard spells of your choice. Your spellbook is
 the repository of the wizard spells you know, except
 your cantrips, which are fixed in your mind.#P#
 <b>Your Spellbook</b>#P#

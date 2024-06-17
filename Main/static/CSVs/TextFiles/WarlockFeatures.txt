@@ -139,14 +139,12 @@ can't increase an ability score above 20 using this
 feature.#P#
 Mystic Arcanum###
 At 11th level, your patron bestows upon you a
-magical secret called an arcanum. Choose one 6th-
-level spell from the warlock spell list as this arcanum.#P#
+magical secret called an arcanum. Choose one 6th-level spell from the warlock spell list as this arcanum.#P#
 You can cast your arcanum spell once without
 expending a spell slot. You must finish a long rest
 before you can do so again.#P#
 At higher levels, you gain more warlock spells of
-your choice that can be cast in this way: one 7th-
-level spell at 13th level, one 8th-level spell at 15th
+your choice that can be cast in this way: one 7th-level spell at 13th level, one 8th-level spell at 15th
 level, and one 9th-level spell at 17th level. You
 regain all uses of your Mystic Arcanum when you
 finish a long rest.#P#
@@ -185,7 +183,7 @@ Bewitching Whispers#$#
 You can cast compulsion once using a warlock spell
 slot. You can't do so again until you finish a long rest.#P#
 Book of Ancient Secrets#$#
-<b>Prerequisite: Pact of the Tome feature</b>
+<b>Prerequisite: Pact of the Tome feature</b>#P#
 You can now inscribe magical rituals in your Book of
 Shadows. Choose two 1st-level spells that have the
 ritual tag from any class's spell list (the two needn't
@@ -254,12 +252,12 @@ Master of Myriad Forms#$#
 You can cast alter self at will, without expending a
 spell slot.#P#
 Minions of Chaos#$#
-<b>Prerequisite: 9th level</b>
+<b>Prerequisite: 9th level</b>#P#
 You can cast conjure elemental once using a warlock
 spell slot. You can't do so again until you finish a
 long rest.#P#
 Mire the Mind#$#
-<b>Prerequisite: 5th level</b>
+<b>Prerequisite: 5th level</b>#P#
 You can cast slow once using a warlock spell slot.
 You can't do so again until you finish a long rest.#P#
 Misty Visions#$#
@@ -325,8 +323,8 @@ even if you strive against those aims. Such beings
 desire the corruption or destruction of all things,
 ultimately including you. Fiends powerful enough to
 forge a pact include demon lords such as
-Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet;
-archdevils such as Asmodeus, Dispater,
+Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils
+such as Asmodeus, Dispater,
 Mephistopheles, and Belial; pit fiends and balors that
 are especially mighty; and ultroloths and other lords
 of the yugoloths.#P#
