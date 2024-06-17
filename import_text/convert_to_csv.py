@@ -74,6 +74,7 @@ def write_csv(input_path_name, output_path_name):
         #print(f"last-three of line-zero: {last_n_chars(lines[0], 3)}")
         
         while var_index_countdown >= 0:
+            print("line:", lines[var_index_countdown])
             if last_n_chars(lines[var_index_countdown], 3) == "%%%":
                 lines.pop(var_index_countdown)
                 #print(f"popped line {var_index_countdown}")
@@ -150,7 +151,7 @@ def write_csv(input_path_name, output_path_name):
                 file.write("text_id, feature_id, text_type, text_order, text_text") # write column titles
                 file.write('\n')
                 for line in lines:
-                    print(line)
+                    #print(line)
                     #break
                     file.write(line)
                     file.write('\n')
