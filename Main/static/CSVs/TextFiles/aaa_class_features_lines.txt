@@ -1559,7 +1559,7 @@ your choice.#P#
 <b>Uncanny Dodge.</b> When an attacker that you can
 see hits you with an attack, you can use your
 reaction to halve the attack's damage against you.#P#
-Rogue%%%
+Rogue_9_%%%
 Expertise###
 At 1st level, choose two of your skill proficiencies, or
 one of your skill proficiencies and your proficiency
@@ -1695,7 +1695,7 @@ combat. You take your first turn at your normal
 initiative and your second turn at your initiative
 minus 10. You can't use this feature when you are
 surprised.#P#
-Sorcerer%%%
+Sorcerer_10_%%%
 Spellcasting###
 An event in your past, or in the life of a parent or
 ancestor, left an indelible mark on you, infusing you
