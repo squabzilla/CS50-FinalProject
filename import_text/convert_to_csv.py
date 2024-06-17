@@ -75,7 +75,7 @@ def write_csv(input_path_name, output_path_name):
         
         while var_index_countdown >= 0:
             # NOTE: this will break with empty lines, or really just lines with >3 characters
-            print("line:", lines[var_index_countdown])
+            #print("line:", lines[var_index_countdown])
             if last_n_chars(lines[var_index_countdown], 3) == "%%%":
                 lines.pop(var_index_countdown)
                 #print(f"popped line {var_index_countdown}")
