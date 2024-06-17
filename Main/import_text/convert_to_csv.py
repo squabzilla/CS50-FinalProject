@@ -91,6 +91,10 @@ def write_csv(input_path_name, output_path_name):
                     continue
             text_id = i - class_count            
             
+            print(f"class_id: {class_id}")
+            if i > 11:
+                break
+            
             # Lines ends with:
             # #     symbols     name
             # 0     #P#			Regular paragraphs - note: #P# denotes paragraph end
@@ -146,7 +150,7 @@ def write_csv(input_path_name, output_path_name):
             #print(lines[i])
         ##text=List of strings to be written to file
         #with open('csvfile.csv','wb') as file:
-        var_write_csv = True
+        var_write_csv = False
         if var_write_csv == True:
             with open(output_path_name,'w') as file:
                 file.write("text_id, feature_id, feature_from_class, text_type, text_order, text_text") # write column titles
