@@ -123,9 +123,9 @@ def write_csv(input_path_name, output_path_name):
             # add quotations so it works fine in CSV
             lines[i] = '"' + lines[i] + '"'
             # add column values
-            lines[i] = str(text_id) + "," + str(feature_id) + "," + str(text_type) + "," + str(text_order) + "," + lines[i]
+            lines[i] = str(text_id) + "," + str(feature_id) + "," + str(class_id) + str(text_type) + "," + str(text_order) + "," + lines[i]
             ## need to enter into CSV format:
-            # text_id, feature_id, feature_from_class, text_order, text_type, text-text
+            # text_id, feature_id, feature_from_class, text_type, text_order, text_text
         
         ### NOTE: NOW we can safely delete the class-title line
         var_index_countdown = len(lines) - 1
@@ -147,7 +147,7 @@ def write_csv(input_path_name, output_path_name):
         var_write_csv = True
         if var_write_csv == True:
             with open(output_path_name,'w') as file:
-                file.write("text_id, feature_id, text_type, text_order, text_text") # write column titles
+                file.write("text_id, feature_id, feature_from_class, text_type, text_order, text_text") # write column titles
                 file.write('\n')
                 for line in lines:
                     #print(line)
