@@ -27,8 +27,7 @@ By 15th level, you have acquired greater mental strength. You gain proficiency i
 Elusive###
 Beginning at 18th level, you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated.#P#
 Stroke of Luck###
-At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit.
-Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.#P#
+At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit\. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.#P#
 Once you use this feature, you can't use it again until you finish a short or long rest.#P#
 Thief###
 You hone your skills in the larcenous arts. Burglars, bandits, cutpurses, and other criminals typically follow this archetype, but so do rogues who prefer to think of themselves as professional treasure seekers, explorers, delvers, and investigators. In addition to improving your agility and stealth, you learn skills useful for delving into ancient ruins, reading unfamiliar languages, and using magic items you normally couldn't employ.#P#

@@ -13,7 +13,8 @@ import shutil
 # (to mark it as part of one paragraph)
 # I manually added my own signifiers in the text, since the tab-indentation is only visually visible on the PDF -
 # I'm sure they exist somewhere, but I don't know of a way to programatically read the PDF
-# In fact, I ended up taking screen-shots and OCR'ing it. There's got to be a better way tbh, but that's what I did.
+# In fact, I ended up taking screen-shots and OCR'ing it. Really would've been looking for software that just reads 
+# raw PDF data and let's me manipulate it, but that's not what I did.
 
 var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
                 "DruidFeatures","FighterFeatures","MonkFeatures",
@@ -51,7 +52,7 @@ for i in range(var_number_of_files):
 var_integers = str(1234567890)
 var_lowercase = "abcdefghijklmnopqrstuvwxyz"
 var_uppercase = var_lowercase.upper()
-var_other_chars = [",","\+"] #some of these characters might be ones regex treats fucky
+var_other_chars = [",","\+","\."] #some of these characters might be ones regex treats fucky
 #var_pound_sign = "\$" #regex also treats this fuck
 var_all_chars = []
 

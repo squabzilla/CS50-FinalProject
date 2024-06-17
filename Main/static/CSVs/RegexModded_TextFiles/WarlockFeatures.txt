@@ -34,8 +34,7 @@ You can use your action to create a pact weapon in your empty hand. You can choo
 Your pact weapon disappears if it is more than 5 feet away from you for 1 minute or more. It also disappears if you use this feature again, if you dismiss the weapon (no action required), or if you die.#P#
 You can transform one magic weapon into your pact weapon by performing a special ritual while you hold the weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. You can then dismiss the weapon, shunting it into an extradimensional space, and it appears whenever you create your pact weapon thereafter. You can't affect an artifact or a sentient weapon in this way. The weapon ceases being your pact weapon if you die, if you perform the 1-hour ritual on a different weapon, or if you use a 1-hour ritual to break your bond to it. The weapon appears at your feet if it is in the extradimensional space when the bond breaks.#P#
 Pact of the Tome#$#
-Your patron gives you a grimoire called a Book of Shadows. When you gain this feature, choose three cantrips from any class's spell list (the three needn't be from the same list). While the book is on your person, you can cast those cantrips at will. They don't count against your number of cantrips known.
-If they don't appear on the warlock spell list, they are nonetheless warlock spells for you.#P#
+Your patron gives you a grimoire called a Book of Shadows. When you gain this feature, choose three cantrips from any class's spell list (the three needn't be from the same list). While the book is on your person, you can cast those cantrips at will. They don't count against your number of cantrips known\. If they don't appear on the warlock spell list, they are nonetheless warlock spells for you.#P#
 If you lose your Book of Shadows, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a short or long rest, and it destroys the previous book. The book turns to ash when you die.#P#
 Ability Score Improvement###
 When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.#P#
@@ -46,8 +45,7 @@ You can cast your arcanum spell once without expending a spell slot. You must fi
 At higher levels, you gain more warlock spells of your choice that can be cast in this way: one 7th-
 level spell at 13th level, one 8th-level spell at 15th level, and one 9th-level spell at 17th level. You regain all uses of your Mystic Arcanum when you finish a long rest.#P#
 Eldritch Master###
-At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature.
-Once you regain spell slots with this feature, you must finish a long rest before you can do so again.#P#
+At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature\. Once you regain spell slots with this feature, you must finish a long rest before you can do so again.#P#
 Eldritch Invocations###
 If an eldritch invocation has prerequisites, you must meet them to learn it. You can learn the invocation at the same time that you meet its prerequisites. A level prerequisite refers to your level in this class.#P#
 Agonizing Blast#$#
@@ -67,8 +65,7 @@ Bewitching Whispers#$#
 You can cast compulsion once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Book of Ancient Secrets#$#
 <b>Prerequisite: Pact of the Tome feature</b>
-You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list (the two needn't be from the same list). The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag.
-On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.#P#
+You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class's spell list (the two needn't be from the same list). The spells appear in the book and don't count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can't cast the spells except as rituals, unless you've learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag\. On your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell's level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spell, the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it.#P#
 Chains of Carceri#$#
 <b>Prerequisite: 15th level, Pact of the Chain feature</b>#P#
 You can cast hold monster at will-targeting a celestial, fiend, or elemental-without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again.#P#
@@ -101,8 +98,7 @@ Minions of Chaos#$#
 You can cast conjure elemental once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Mire the Mind#$#
 <b>Prerequisite: 5th level</b>
-You can cast slow once using a warlock spell slot.
-You can't do so again until you finish a long rest.#P#
+You can cast slow once using a warlock spell slot\. You can't do so again until you finish a long rest.#P#
 Misty Visions#$#
 You can cast silent image at will, without expending a spell slot or material components.#P#
 One with Shadows#$#
@@ -121,8 +117,7 @@ Sign of Ill Omen#$#
 <b>Prerequisite: 5th level</b>#P#
 You can cast bestow curse once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Thief of Five Fates#$#
-You can cast bane once using a warlock spell slot.
-You can't do so again until you finish a long rest.#P#
+You can cast bane once using a warlock spell slot\. You can't do so again until you finish a long rest.#P#
 Thirsting Blade#$#
 <b>Prerequisite: 5th level, Pact of the Blade feature</b>#P#
 You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn.#P#
@@ -131,8 +126,7 @@ Visions of Distant Realms#$#
 You can cast arcane eye at will, without expending a spell slot.#P#
 Voice of the Chain Master#$#
 <b>Prerequisite: Pact of the Chain feature</b>#P#
-You can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence.
-Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.#P#
+You can communicate telepathically with your familiar and perceive through your familiar's senses as long as you are on the same plane of existence\. Additionally, while perceiving through your familiar's senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech.#P#
 Whispers of the Grave#$#
 <b>Prerequisite: 9th level</b>#P#
 You can cast speak with dead at will, without expending a spell slot.#P#

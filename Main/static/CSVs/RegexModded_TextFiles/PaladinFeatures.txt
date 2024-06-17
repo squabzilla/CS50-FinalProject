@@ -21,8 +21,7 @@ By 2nd level, you have learned to draw on divine magic through meditation and pr
 Preparing and Casting Spells#$#
 The Paladin table shows how many spell slots you have to cast your spells. To cast one of your paladin spells of 1st level or higher, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.#P#
 You prepare the list of paladin spells that are available for you to cast, choosing from the paladin spell list. When you do so, choose a number of paladin spells equal to your Charisma modifier + half your paladin level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.#P#
-For example, if you are a 5th-level paladin, you have four 1st-level and two 2nd-level spell slots.
-With a Charisma of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd-
+For example, if you are a 5th-level paladin, you have four 1st-level and two 2nd-level spell slots\. With a Charisma of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd-
 level slot. Casting the spell doesn't remove it from your list of prepared spells.#P#
 You can change your list of prepared spells when you finish a long rest. Preparing a new list of paladin spells requires time spent in prayer and meditation:
 at least 1 minute per spell level for each spell on your list.#P#
@@ -64,8 +63,7 @@ Cleansing Touch###
 Beginning at 14th level, you can use your action to end one spell on yourself or on one willing creature that you touch.#P#
 You can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest.#P#
 Oath of Devotion###
-The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, and order. Sometimes called cavaliers, white knights, or holy warriors, these paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some, for better or worse, hold the rest of the world to the same standards.
-Many who swear this oath are devoted to gods of law and good and use their gods' tenets as the measure of their devotion. They hold angels-the perfect servants of good-as their ideals, and incorporate images of angelic wings into their helmets or coats of arms.#P#
+The Oath of Devotion binds a paladin to the loftiest ideals of justice, virtue, and order. Sometimes called cavaliers, white knights, or holy warriors, these paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some, for better or worse, hold the rest of the world to the same standards\. Many who swear this oath are devoted to gods of law and good and use their gods' tenets as the measure of their devotion. They hold angels-the perfect servants of good-as their ideals, and incorporate images of angelic wings into their helmets or coats of arms.#P#
 Tenets of Devotion#$#
 Though the exact words and strictures of the Oath of Devotion vary, paladins of this oath share these tenets.#P#
 <b>Honesty.</b> Don't lie or cheat. Let your word be your promise.#B#
@@ -74,8 +72,7 @@ Though the exact words and strictures of the Oath of Devotion vary, paladins of 
 <b>Honor.</b> Treat others with fairness, and let your honorable deeds be an example to them. Do as much good as possible while causing the least amount of harm.#B#
 <b>Duty.</b> Be responsible for your actions and their consequences, protect those entrusted to your care, and obey those who have just authority over you.#B#
 Oath Spells#$#
-You gain oath spells at the paladin levels listed.
-Oath of Devotion Spells#P#
+You gain oath spells at the paladin levels listed\. Oath of Devotion Spells#P#
 Paladin$tt$
 Level_::_Spells$tc$
 3rd_::_protection from evil and good, sanctuary$ti$
@@ -96,6 +93,5 @@ Purity of Spirit#$#
 Beginning at 15th level, you are always under the effects of a protection from evil and good spell.#P#
 Holy Nimbus#$#
 At 20th level, as an action, you can emanate an aura of sunlight. For 1 minute, bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that.#P#
-Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage.
-In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.#P#
+Whenever an enemy creature starts its turn in the bright light, the creature takes 10 radiant damage\. In addition, for the duration, you have advantage on saving throws against spells cast by fiends or undead.#P#
 Once you use this feature, you can't use it again until you finish a long rest.#P#
