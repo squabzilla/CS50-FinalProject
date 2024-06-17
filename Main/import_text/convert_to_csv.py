@@ -68,17 +68,7 @@ def write_csv(input_path_name, output_path_name):
             # if last_n_chars(var_line, 3) == "###":
                 # count +=1
         # print(f"### count is: {count}")
-        var_index_countdown = len(lines) - 1
-        while var_index_countdown >= 0:
-            # NOTE: this will break with empty lines, or really just lines with <3 characters
-            #print("line:", lines[var_index_countdown])
-            if len(lines[var_index_countdown]) < 3:
-                # There, now it shouldn't break with <3 lines
-                if last_n_chars(lines[var_index_countdown], 3) == "%%%":
-                    lines.pop(var_index_countdown)
-                #print(f"popped line {var_index_countdown}")
-                #print(var_index_countdown)
-            var_index_countdown -= 1
+        
             
             #aren't wearing heavy armor:
             #If you are able to cast spells, you canʼt cast them or # yay inconsistent OCR reading...
@@ -92,23 +82,12 @@ def write_csv(input_path_name, output_path_name):
         class_count = 0
         class_id = ""
         for i in range(len(lines)):
-            if last_n_chars(lines[var_index_countdown], 3) == "%%%":
-                class_id += 1
+            var_check_end = last_n_chars(lines[i], 5)
+            if is_last_n_chars_x(var_check_end, 3, "%%%") == True:
+                class_id = var_check_end[0]
+                class_count += 1
                 continue
-            
-            
-            
-            text_id = i - class_id
-            
-            #if i > 7: break
-            # text_id - primary key
-            # feature_id - id for all the text-boxes that belong to one feature
-            # text_type - the display type of this element - title, subtitle, etc
-            # text_order - the order that these text-boxes appear in for the feature
-            # text_text
-            
-            #print(lines[i])
-            
+            text_id = i - class_count            
             
             # Lines ends with:
             # #     symbols     name
@@ -146,7 +125,20 @@ def write_csv(input_path_name, output_path_name):
             # add column values
             lines[i] = str(text_id) + "," + str(feature_id) + "," + str(text_type) + "," + str(text_order) + "," + lines[i]
             ## need to enter into CSV format:
-            # text_id, feature_id, text_order, text_type, text-text
+            # text_id, feature_id, feature_from_class, text_order, text_type, text-text
+        
+        ### NOTE: NOW we can safely delete the class-title line
+        var_index_countdown = len(lines) - 1
+        while var_index_countdown >= 0:
+            # NOTE: this will break with empty lines, or really just lines with <3 characters
+            #print("line:", lines[var_index_countdown])
+            if len(lines[var_index_countdown]) < 3:
+                # There, now it shouldn't break with <3 lines
+                if last_n_chars(lines[var_index_countdown], 3) == "%%%":
+                    lines.pop(var_index_countdown)
+                #print(f"popped line {var_index_countdown}")
+                #print(var_index_countdown)
+            var_index_countdown -= 1
         
         #for i in range(7):
             #print(lines[i])
