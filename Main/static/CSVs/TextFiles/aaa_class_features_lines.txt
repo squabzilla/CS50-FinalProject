@@ -1063,7 +1063,7 @@ damage.#P#
 You can have only one creature under the effect of
 this feature at a time. You can choose to end the
 vibrations harmlessly without using an action.#P#
-Paladin%%%
+Paladin_7_%%%
 Divine Sense###
 The presence of strong evil registers on your senses
 like a noxious odor, and powerful good rings like
@@ -1333,7 +1333,7 @@ on saving throws against spells cast by fiends or
 undead.#P#
 Once you use this feature, you can't use it again
 until you finish a long rest.#P#
-Ranger%%%
+Ranger_8_%%%
 Nature's Hunter###
 Beginning at 1st level, Rangers are in tune with
 the magic of nature, and are supernaturally skilled
