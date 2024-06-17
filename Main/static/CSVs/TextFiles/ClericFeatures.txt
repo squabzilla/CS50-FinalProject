@@ -1,4 +1,4 @@
-Cleric_3_%%%
+Cleric_03_%%%
 Spellcasting###
 As a conduit for divine power, you can cast cleric
 spelis.#P#

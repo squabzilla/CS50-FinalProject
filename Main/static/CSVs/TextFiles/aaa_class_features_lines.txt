@@ -134,7 +134,7 @@ Starting at 14th level, when you take damage from a
 creature that is within 5 feet of you, you can use your
 reaction to make a melee weapon attack against that
 creature.#P#
-Bard_2_%%%
+Bard_02_%%%
 Spellcasting###
 You have learned to untangle and reshape the fabric
 of reality in harmony with your wishes and music.
@@ -329,7 +329,7 @@ Roll a Bardic Inspiration die and add the number
 rolled to your ability check. You can choose to do so
 after you roll the die for the ability check, but before
 the GM tells you whether you succeed or fail.#P#
-Cleric_3_%%%
+Cleric_03_%%%
 Spellcasting###
 As a conduit for divine power, you can cast cleric
 spelis.#P#
@@ -526,7 +526,7 @@ one or more dice to restore hit points with a spell,
 you instead use the highest number possible for
 each die. For example, instead of restoring 2d6 hit
 points to a creature, you restore 12.#P#
-Druid_4_%%%
+Druid_04_%%%
 Druidic###
 You know Druidic, the secret language of druids. You
 can speak the language and use it to leave hidden
@@ -757,7 +757,7 @@ On a successful save, the creature is immune to this
 effect for 24 hours.#P#
 The creature is aware of this effect before it makes
 its attack against you.#P#
-Fighter_5_%%%
+Fighter_05_%%%
 Fighting Style###
 You adopt a particular style of fighting as your
 specialty. Choose one of the following options. You
@@ -863,7 +863,7 @@ battle. At the start of each of your turns, you regain
 hit points equal to 5 + your Constitution modifier if
 you have no more than half of your hit points left.
 You don't gain this benefit if you have 0 hit points.#P#
-Monk_6_%%%
+Monk_06_%%%
 Unarmored Defense###
 Beginning at 1st level, while you are wearing no
 armor and not wielding a shield, your AC equals 10 +
@@ -1063,7 +1063,7 @@ damage.#P#
 You can have only one creature under the effect of
 this feature at a time. You can choose to end the
 vibrations harmlessly without using an action.#P#
-Paladin_7_%%%
+Paladin_07_%%%
 Divine Sense###
 The presence of strong evil registers on your senses
 like a noxious odor, and powerful good rings like
@@ -1333,7 +1333,7 @@ on saving throws against spells cast by fiends or
 undead.#P#
 Once you use this feature, you can't use it again
 until you finish a long rest.#P#
-Ranger_8_%%%
+Ranger_08_%%%
 Nature's Hunter###
 Beginning at 1st level, Rangers are in tune with
 the magic of nature, and are supernaturally skilled
@@ -1559,7 +1559,7 @@ your choice.#P#
 <b>Uncanny Dodge.</b> When an attacker that you can
 see hits you with an attack, you can use your
 reaction to halve the attack's damage against you.#P#
-Rogue_9_%%%
+Rogue_09_%%%
 Expertise###
 At 1st level, choose two of your skill proficiencies, or
 one of your skill proficiencies and your proficiency
