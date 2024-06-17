@@ -32,6 +32,7 @@ def find_shortest(input_path_name):
     with open(var_file, 'r', encoding='utf-8') as file:
         lines = [line.rstrip() for line in file] # <- store line-by-line in lines, but without line-break at end
         for line in lines:
+            if len(line) < 6: print(line)
             if len(line) < shortest:
                 shortest = len(line)
     return shortest
@@ -39,6 +40,6 @@ def find_shortest(input_path_name):
 def main():
     for i in range(len(var_file_names)):
         shortest = find_shortest(input_path_names[i])
-        print(f"The shortest line-count in {var_file_names[i]} is: {shortest}")
+        #print(f"The shortest line-count in {var_file_names[i]} is: {shortest}")
         
 main()
