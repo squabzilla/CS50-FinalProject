@@ -89,7 +89,11 @@ def write_csv(input_path_name, output_path_name):
                     class_id = int(class_id)
                     class_count += 1
                     continue
-            text_id = i - class_count 
+            text_id = i - class_count            
+            
+            print(f"class_id: {class_id}")
+            #if i > 11:
+                #break
             
             # Lines ends with:
             # #     symbols     name
@@ -146,7 +150,7 @@ def write_csv(input_path_name, output_path_name):
             #print(lines[i])
         ##text=List of strings to be written to file
         #with open('csvfile.csv','wb') as file:
-        var_write_csv = False
+        var_write_csv = True
         if var_write_csv == True:
             with open(output_path_name,'w') as file:
                 file.write("text_id, feature_id, feature_from_class, text_type, text_order, text_text") # write column titles
@@ -160,6 +164,7 @@ def write_csv(input_path_name, output_path_name):
 def main():
     #print("hi")
     for i in range(len(input_path_names)):
+        if i > 0: break
         var_input = input_path_names[i]
         var_output = output_path_names[i]
         write_csv(var_input, var_output)
