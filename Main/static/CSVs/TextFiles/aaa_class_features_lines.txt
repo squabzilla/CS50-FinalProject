@@ -1463,8 +1463,6 @@ In addition, you have advantage on saving throws
 against plants that are magically created or
 manipulated to impede movement, such those
 created by the entangle spell.#P#
-
-
 Once you are camouflaged in this way, you can try
 to hide by pressing yourself up against a solid
 surface, such as a tree or wall, that is at least as tall
@@ -1473,9 +1471,6 @@ Dexterity (Stealth) checks as long as you remain
 there without moving or taking actions. Once you
 move or take an action or a reaction, you must
 camouflage yourself again to gain this benefit.#P#
-
-
-
 Vanish###
 Starting at 14th level, you can use the Hide action as
 a bonus action on your turn. Also, you can't be
@@ -1504,7 +1499,6 @@ the Fighting Style class feature.
 Greater Hunter's Mark###
 Beginning at 10th level, when you cast Hunter's Mark, it now
 lasts for up to 24 hours.
-
 Hunter###
 Emulating the Hunter archetype means accepting
 your place as a bulwark between civilization and the
