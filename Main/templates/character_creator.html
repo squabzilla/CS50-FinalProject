@@ -25,7 +25,8 @@
             //const json_dump_races = JSON.parse({{json_dump|tojson}});
             
             const race_query_response = await fetch("/get_races");
-            const json_dump_races = await race_query_response.json();
+            //const json_dump_races = await race_query_response.json();
+            const json_dump_races = await race_query_response;
             console.log(json_dump_races)
 
             //console.log(json_dump_races);
