@@ -46,6 +46,7 @@ def regex_test():
     name = ""
     print("Length of name:", len(name))
     #[^.@a-zA-Z0-9À-ÖØ-öø-ÿ ]
+    # source: https://www.sitepoint.com/community/t/what-safe-characters-do-you-have-in-your-whitelist/58703
 
 
 def noneValue_and_falseValue_testing():
@@ -55,6 +56,7 @@ def noneValue_and_falseValue_testing():
         print('"None" and "False" are equal')
     else:
         print('"None" and "False" are NOT equal')
+    #if !var_none_test:
 
 def main():
     noneValue_and_falseValue_testing()
