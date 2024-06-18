@@ -225,7 +225,7 @@ def get_class_dropdown():
     class_dropdown = ""
     last_index = len(class_list) - 1
     for i in range(len(class_list)):
-        class_dropdown += "<option value=\"" + class_list[i]["class_id"] + "\">" + class_list[i]["class_name"] + "</option>"
+        class_dropdown += "<option value=\"" + str(class_list[i]["class_id"]) + "\">" + class_list[i]["class_name"] + "</option>"
         if i != last_index:
             class_dropdown += "\n"
     return jsonify(class_dropdown)
@@ -241,7 +241,7 @@ def get_background_dropdown():
     background_dropdown = ""
     last_index = len(background_list) - 1
     for i in range(len(background_list)):
-        background_dropdown += "<option value=\"" + background_list[i]["class_id"] + "\">" + background_list[i]["class_name"] + "</option>"
+        background_dropdown += "<option value=\"" + str(background_list[i]["background_id"]) + "\">" + background_list[i]["background_name"] + "</option>"
         if i != last_index:
             background_dropdown += "\n"
     return jsonify(background_dropdown)
