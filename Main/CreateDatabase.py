@@ -310,6 +310,9 @@ db.execute("CREATE TABLE list_feature_titles (\
 );")
 db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_titles (feature_title_text);")
 print("Done")
+print("Importing feature titles...")
+print("The file for this is:")
+print(features_titles_list_csv)
 with open(features_titles_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
