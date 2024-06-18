@@ -68,21 +68,21 @@ def noneValue_and_falseValue_testing():
     #if !var_none_test:
 
 
-#@app.route("/get_races")
-def get_races():
-    race_list = db.execute("SELECT race_id, race_name FROM list_races")
-    return jsonify(race_list)
+# @app.route("/get_races")
+# def get_races():
+    # race_list = db.execute("SELECT race_id, race_name FROM list_races")
+    # return jsonify(race_list)
 
-#@app.route("/get_classes")
-def get_classes():
-    class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 5 OR class_id = 12")
-    # screw it, we only supporting fighters/wizards
-    return jsonify(class_list)
+# @app.route("/get_classes")
+# def get_classes():
+    # class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 5 OR class_id = 12")
+    # # screw it, we only supporting fighters/wizards
+    # return jsonify(class_list)
 
-#@app.route("/get_backgrounds")
-def get_backgrounds():
-    background_list = db.execute("SELECT background_id, background_name FROM list_backgrounds")
-    return jsonify(background_list)
+# @app.route("/get_backgrounds")
+# def get_backgrounds():
+    # background_list = db.execute("SELECT background_id, background_name FROM list_backgrounds")
+    # return jsonify(background_list)
 
 def main():
     race_list = db.execute("SELECT race_id, race_name FROM list_races")
