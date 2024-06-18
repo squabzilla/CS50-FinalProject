@@ -85,6 +85,10 @@ def get_backgrounds():
     return jsonify(background_list)
 
 def main():
-    noneValue_and_falseValue_testing()
+    races = get_races()
+    print("Races are below:")
+    print(races)
+    
+    
     return True
 main()
