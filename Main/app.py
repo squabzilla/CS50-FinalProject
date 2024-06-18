@@ -66,13 +66,6 @@ def after_request(response):
 
 @app.route("/")
 def home():
-    #pass_test = "abc123"
-    #pass_hash = generate_password_hash(pass_test)
-    #output_string = "pass_test is: " + pass_test + " and pass_hash is: " + pass_hash
-    #return output_string
-    #return "hello, world"
-    #return render_template("template.html")
-    # return render_template("index.html", error = "test-error")
     return render_template("home.html")
 
 #########################################################################################
@@ -201,7 +194,9 @@ def register():
 ### above:  copied (and slightly modified) the register function in app.py I created for the CS50 Week 9 C$50 Finance problem
 
 
-# some sql operations I'll want my code to run
+# some sql operations I'll want my webpage to run (or at least get the results of)
+# first one returns just the list of races/classes/backgrounds in json format, second one has html code for the dropdown-items of said list
+# doing that in backend to simplify html page
 @app.route("/get_races")
 def get_races():
     race_list = db.execute("SELECT race_id, race_name FROM list_races")
@@ -217,7 +212,7 @@ def get_race_dropdown():
             race_dropdown += "\n"
     return jsonify(race_dropdown)
 
-
+# see above comment, but for classes
 @app.route("/get_classes")
 def get_classes():
     class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 5 OR class_id = 12")
@@ -235,7 +230,7 @@ def get_class_dropdown():
             class_dropdown += "\n"
     return jsonify(class_dropdown)
 
-
+# see above comment, but for backgrounds
 @app.route("/get_backgrounds")
 def get_backgrounds():
     background_list = db.execute("SELECT background_id, background_name FROM list_backgrounds")
@@ -327,8 +322,9 @@ def create_character():
     #   HTML/Javascript code for importing it to webpage:
     #1  <script type="module"> // need to make my scripts of type "module" so my asyc functions work
     #2  const json_dump_import = JSON.parse({{json_dump|tojson}});
-    #3  document.getElementById("id_of_tag_to_update").insertAdjacentHTML("beforeend",json_dump_import)
-    #4  </script>
+    #3  console.log(json_dump_import) // prints output to internet console-view for me to see/test
+    #4  document.getElementById("id_of_tag_to_update").insertAdjacentHTML("beforeend",json_dump_import)
+    #5  </script>
     # NOTE: variable "json_dump_import" is created in HTML/Javascript line 3, passed to line 4 (at very end)
     
     
