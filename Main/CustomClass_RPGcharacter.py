@@ -7,15 +7,6 @@ name_of_database = "RPG_characters.db"
 sql_path = "sqlite:///" + name_of_database
 db = SQL(sql_path)
 
-# checks if a value is an integer, returns an integer-type of the value if true
-# otherwise returns false
-def check_if_int(var):
-    if (type(var) is str) == True:
-        if var.isnumeric() == True: return True
-        else: return False
-    elif (type(var) is int) == False:
-        return False
-    return True
 
 
 # if the order of these functions/classes declarations DOES matter, I want this first
