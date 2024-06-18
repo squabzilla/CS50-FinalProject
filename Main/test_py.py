@@ -100,7 +100,8 @@ def test_check_type():
     #print(f"string variable {var_str_2} is of type: {type(var_str_2)}")
     var_int_1 = 123
     #print(f"integer variable {var_int_1} is of type: {type(var_int_1)}")
-    print(type(var_str_1) is str)
+    print(f"{var_str_1} is of type str: {(type(var_str_1) is str)}")
+    print(f"{var_int_1} is of type int: {(type(var_int_1) is int)}")
 
 def main():
     test_check_type()
