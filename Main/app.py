@@ -261,71 +261,40 @@ def create_character():
         # Step 1
         if var_name != None and new_pc.name == None:
             new_pc.set_name(var_name)
-            #print("first if")
-            #if has_name == True:
-            #if new_pc.set_name(var_name) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
-                #json_dump = json.dumps(db.execute("SELECT race_id, race_name FROM list_races"))
-                #print("new_pc.name =", new_pc.name)
-                #print(new_pc.name)
-                #json_dump_2 = json.dumps(
-        #else: var_step += 1
-        
         # Step 2
         if var_race_id != None and new_pc.race_id == None:
-            #print("second if")
-            #print("is var_race_id, of value:", var_race_id, ", considered numeric?", var_race_id.isnumeric)
             if var_race_id.isnumeric() == True:
                 var_race_id = int(var_race_id)
-                if new_pc.set_race_id(var_race_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
-                    #json_dump = json.dumps(db.execute("SELECT class_id, class_name FROM list_classes"))
-                    json_dump = json.dumps(db.execute("SELECT class_id, class_name FROM list_classes \
-                        WHERE class_id = 5 OR class_id = 12"))
-                    # screw it, we only supporting fighters/wizards
-                    # remember, only doing level 1 characters
-                    #print("new_pc.race_id =", new_pc.race_id)
-        #else: var_step += 1
-        
+                new_pc.set_race_id(var_race_id)
         # Step 3
         if var_class_id != None and new_pc.class_id == None:
             if var_class_id.isnumeric() == True:
                 var_class_id = int(var_class_id)
-                if new_pc.set_class_id(var_class_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
-                    json_dump = json.dumps(db.execute("SELECT background_id, background_name FROM list_backgrounds"))
-        #else: var_step += 1
-        
+                new_pc.set_class_id(var_class_id)
         # Step 4
         if var_background_id != None and new_pc.background_id == None:
             if var_background_id.isnumeric() == True:
                 var_background_id = int(var_background_id)
-                if new_pc.set_background_id(var_background_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
-                    json_dumps = "empty"
-                    #print("new_pc should be done because new_pc.has_background =", new_pc.has_background)
-        #else: var_step += 1
-        
-        # print values for my sanity:
-        #print("step:", var_step)
-        #print_pc_values = True
-        #if print_pc_values == True:
-            #print("Name: ",new_pc.name,"; race: ",new_pc.race_id,"; class: ",new_pc.class_id,"; background: ",new_pc.background_id, sep='')
-        #character_name = request.form.get("character_name")
-        #character_name = "Bob"
-        #new_char.name = character_name
-        return render_template("character_creator.html", new_pc=new_pc, json_dump=json_dump)
+                new_pc.set_background_id(var_background_id)
+        #return render_template("character_creator.html", new_pc=new_pc, json_dump=json_dump)
+        return render_template("character_creator.html", new_pc=new_pc)
     else:
-        #print("at character creator")
         new_pc = rpg_char_create()
         session["new_char"] = new_pc
         return render_template("character_creator.html", new_pc=new_pc)
-    #   PYTHON code for passing values I want display on webpage:
-    #1  json_dump = json.dumps(value_I_want_passed_to_webpage)
-    #2  return render_template("web_page.html", json_dump=json_dump)
-    #   HTML/Javascript code for importing it to webpage:
-    #1  <script type="module"> // need to make my scripts of type "module" so my asyc functions work
-    #2  const json_dump_import = JSON.parse({{json_dump|tojson}});
-    #3  console.log(json_dump_import) // prints output to internet console-view for me to see/test
-    #4  document.getElementById("id_of_tag_to_update").insertAdjacentHTML("beforeend",json_dump_import)
-    #5  </script>
-    # NOTE: variable "json_dump_import" is created in HTML/Javascript line 3, passed to line 4 (at very end)
+
+
+# NOTE: code to pass stuff to webpage:
+#   PYTHON code for passing values I want display on webpage:
+#1  json_dump = json.dumps(value_I_want_passed_to_webpage)
+#2  return render_template("web_page.html", json_dump=json_dump)
+#   HTML/Javascript code for importing it to webpage:
+#1  <script type="module"> // need to make my scripts of type "module" so my asyc functions work
+#2  const json_dump_import = JSON.parse({{json_dump|tojson}});
+#3  console.log(json_dump_import) // prints output to internet console-view for me to see/test
+#4  document.getElementById("id_of_tag_to_update").insertAdjacentHTML("beforeend",json_dump_import)
+#5  </script>
+# NOTE: variable "json_dump_import" is created in HTML/Javascript line 3, passed to line 4 (at very end)
     
     
 # bootstrap -> components -> accordion looks really good
