@@ -299,7 +299,31 @@ db.execute("CREATE TABLE spellbook (\
     );")
 print("DONE")
 
-print("Creating list_features table...", end="")
+
+#features_titles_list_csv
+# feature_title_id: item [1] of csv (currently)
+# feature_title_text: item [9] of csv (currently)
+print("Creating list_feature_titles table...", end="")
+db.execute("CREATE TABLE list_feature_titles (\
+    feature_title_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
+    feature_title_text TEXT NOT NULL \
+);")
+db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_titles (feature_title_text);")
+print("Done")
+with open(features_titles_list_csv, "r") as var_file:
+    # open file, doing "with open" means I don't have to close it
+    var_reader = csv.reader(var_file)
+    next(var_reader)
+    # skip header line, import everything
+    for var_row in var_reader:
+        var_feature_title_id = var_row[1]
+        var_feature_title_text = var_row[9]
+
+
+print("Importing feature titles...")
+
+
+print("Creating list_feature_descriptions table...", end="")
 # text_id	 feature_id	 feature_from_class	 text_type	 text_order	 text_text
 # feature_text_type:
 # - 0: Regular text
@@ -315,12 +339,15 @@ db.execute("CREATE TABLE list_feature_descriptions (\
     feature_class_id INTEGER, \
     feature_text_type INTEGER, \
     feature_text_order INTEGER, \
-    feature_text_description TEXT \
+    feature_text_description TEXT, \
+    FOREIGN KEY (feature_id) REFERENCES list_feature_titles (feature_title_text), \
+    FOREIGN KEY (feature_class_id) REFERENCES list_classes (class_id) \
     );")
 #db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_descriptions (feature_name);")
 print("DONE")
 
-print("importing features...", end="")
+
+print("importing feature descriptions...", end="")
 with open(features_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
@@ -334,11 +361,15 @@ with open(features_list_csv, "r") as var_file:
         var_feature_text_order = var_row[4]
         feature_text_description = var_row[5]
         db.execute("INSERT INTO list_feature_descriptions (\
-            feature_key, feature_id, feature_class_id, \
+            feature_key, feature_id, \
+                feature_class_id, \
             feature_text_type, feature_text_order, feature_text_description\
             ) VALUES(?, ?, ?, ?, ?, ?)", 
             var_feature_key, var_feature_id, var_feature_class_id, var_feature_text_type, var_feature_text_order, feature_text_description)
 print("DONE")
+
+
+
 
 # the database below is a many-to-many database, linking a character with their features
 # specific_pc_character_id: foreign-key references list_characters (character_id)
