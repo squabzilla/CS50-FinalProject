@@ -24,21 +24,23 @@
         <script type="module">
             //const json_dump_races = JSON.parse({{json_dump|tojson}});
             
+            /*
             const race_query_response = await fetch("/get_races");
             //const json_dump_races = await race_query_response.json();
-            
-            let race_response = await fetch('/get_races');
-            let race_list = await response.json();
-            console.log(race_list)
-            
             const json_dump_races = await race_query_response;
             console.log(json_dump_races)
-
+            */
+            
+            let race_response = await fetch('/get_races');
+            let race_list = await race_response.json();
+            console.log(race_list)
+            
+            /*
             //console.log(json_dump_races);
             for (let i = 0; i < json_dump_races.length; i++) {
                 let race_dropdown = "<option value=\"" + json_dump_races[i]["race_id"] + "\">" + json_dump_races[i]["race_name"] + "</option>"
                 document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
-            }
+            }*/
         </script>
 
     {% elif not new_pc.has_class %}
