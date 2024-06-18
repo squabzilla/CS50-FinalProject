@@ -138,9 +138,8 @@ def logout():
     return redirect("/")
 ### above: copied the "login" and "logout" functionality from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50),
 ### although I modified the error messages, and a few sql-interacting-bits to match my database
-#########################################################################################
 
-#########################################################################################
+
 ### below: copied (and slightly modified) the register function in app.py I created for the CS50 Week 9 C$50 Finance problem
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -200,33 +199,57 @@ def register():
     else:
         return render_template("register.html")
 ### above:  copied (and slightly modified) the register function in app.py I created for the CS50 Week 9 C$50 Finance problem
-#########################################################################################
 
+
+# some sql operations I'll want my code to run
 @app.route("/get_races")
 def get_races():
     race_list = db.execute("SELECT race_id, race_name FROM list_races")
     return jsonify(race_list)
-
 @app.route("/get_race_dropdown")
-def get_races():
+def get_race_dropdown():
     race_list = db.execute("SELECT race_id, race_name FROM list_races")
     race_dropdown = ""
+    last_index = len(race_list) - 1
     for i in range(len(race_list)):
         race_dropdown += "<option value=\"" + str(race_list[i]["race_id"]) + "\">" + race_list[i]["race_name"] + "</option>"
-        if i != len(race_list) - 1:
+        if i != last_index:
             race_dropdown += "\n"
     return jsonify(race_dropdown)
+
 
 @app.route("/get_classes")
 def get_classes():
     class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 5 OR class_id = 12")
     # screw it, we only supporting fighters/wizards
     return jsonify(class_list)
+@app.route("get_class_dropdown")
+def get_class_dropdown():
+    class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 5 OR class_id = 12")
+    # screw it, we only supporting fighters/wizards
+    class_dropdown = ""
+    last_index = len(class_list) - 1
+    for i in range(len(class_list)):
+        class_dropdown += "<option value=\"" + class_list[i]["class_id"] + "\">" + class_list[i]["class_name"] + "</option>"
+        if i != last_index:
+            class_dropdown += "\n"
+    return jsonify(class_dropdown)
+
 
 @app.route("/get_backgrounds")
 def get_backgrounds():
     background_list = db.execute("SELECT background_id, background_name FROM list_backgrounds")
     return jsonify(background_list)
+@app.route("/get_background_dropdown")
+def get_background_dropdown():
+    background_list = db.execute("SELECT background_id, background_name FROM list_backgrounds")
+    background_dropdown = ""
+    last_index = len(background_list) - 1
+    for i in range(len(background_list)):
+        background_dropdown += "<option value=\"" + background_list[i]["class_id"] + "\">" + background_list[i]["class_name"] + "</option>"
+        if i != last_index:
+            background_dropdown += "\n"
+    return jsonify(background_dropdown)
 
 
 @app.route("/character_creator", methods=['GET', 'POST'])
