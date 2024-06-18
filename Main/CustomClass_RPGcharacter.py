@@ -7,6 +7,16 @@ name_of_database = "RPG_characters.db"
 sql_path = "sqlite:///" + name_of_database
 db = SQL(sql_path)
 
+# checks if a value is an integer, returns an integer-type of the value if true
+# otherwise returns false
+def check_if_int(var):
+    if (type(var) is str) == True:
+        if var.isnumeric() == True: var = int(var)
+        else: return False
+    elif (type(var) is int) == False:
+        return False
+    return var
+
 
 # if the order of these functions/classes declarations DOES matter, I want this first
 # because it'll be called later
@@ -903,12 +913,11 @@ class rpg_char_create:
             return True
         else:
             return False
+        
     def set_race_id(self, var_race_id):
         race_list = db.execute("SELECT race_id FROM list_races")
-        #print("Length of race_list:", len(race_list))
-        # remember that db.execute will return a LIST of DICTIONARIES
-        if var_race_id.isnumeric == True:
-            var_race_id = int(var_race_id)
+        var_race_id = check_if_int(var_race_id)
+        if var_race_id == False: return False
         for i in range(len(race_list)):
             race_list[i] = int(race_list[i].get("race_id"))
         if var_race_id in race_list:
@@ -917,6 +926,7 @@ class rpg_char_create:
             return True
         else:
             return False
+        
     def set_class_id(self, var_class_id):
         class_list = db.execute("SELECT class_id FROM list_classes")
         for i in range(len(class_list)):
@@ -928,6 +938,7 @@ class rpg_char_create:
             return True
         else:
             return False
+        
     def set_background_id(self, var_background_id):
         background_list = db.execute("SELECT background_id FROM list_backgrounds")
         for i in range(len(background_list)):
