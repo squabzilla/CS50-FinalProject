@@ -323,8 +323,8 @@ with open(features_titles_list_csv, "r") as var_file:
     next(var_reader)
     # skip header line, import everything
     for var_row in var_reader:
-        var_feature_title_id = var_row[1]
-        var_feature_title_text = var_row[9]
+        var_feature_title_id = var_row[0]
+        var_feature_title_text = var_row[8]
         db.execute("INSERT INTO list_feature_titles (\
             feature_title_id, feature_title_text \
             ) VALUES(?, ?)", 
