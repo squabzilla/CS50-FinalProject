@@ -85,9 +85,7 @@ def get_backgrounds():
     return jsonify(background_list)
 
 def main():
-    races = get_races()
-    print("Races are below:")
-    print(races)
+    race_list = db.execute("SELECT race_id, race_name FROM list_races")
     
     
     return True
