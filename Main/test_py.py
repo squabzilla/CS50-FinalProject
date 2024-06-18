@@ -117,12 +117,17 @@ def test_check_if_int():
     test_empty_string = ""
     #print(f"test_empty_string, passed to check_if_int, returns: {check_if_int(test_empty_string)}")
     #print(f"is the test_empty_string variable considered numeric? {test_empty_string.isnumeric()}")
-    var_int_zero = 0
-    print(f"var_int_zero, passed to check_if_int, returns: {check_if_int(var_int_zero)}")
-    if var_int_zero == False:
-        print("var_int_zero == False")
-    else:
-        print("var_int_zero != False")
+    var_test_if_zero_equal_false = False
+    if var_test_if_zero_equal_false == True:
+        var_int_zero = 0
+        print(f"var_int_zero, passed to check_if_int, returns: {check_if_int(var_int_zero)}")
+        if var_int_zero == False:
+            print("var_int_zero == False")
+        else:
+            print("var_int_zero != False")
+    var_str_test = "123"
+    var_str_test_result = var_str_test.isnumeric()
+    print(f"var_str_test is considered numeric: {var_str_test_result}")
     
 def main():
     #test_check_type()
