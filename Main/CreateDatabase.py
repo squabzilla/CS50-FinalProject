@@ -48,10 +48,10 @@ background_list_csv = "background_list.csv"
 background_list_csv = os.path.join(csv_folder, background_list_csv)
 # NOTE: Doing shortened list of features, to remove a bunch of items I won't be using initially
 #features_list_csv = "features_list.csv"
-features_list_csv = "FighterWizard_Features_text.csv"
+features_list_csv = "features_list_FighWiza.csv"
 features_list_csv = os.path.join(csv_folder, features_list_csv)
-#features_titles_list_csv = "features_titles_list.csv"
-features_titles_list_csv = "FighterWizard_Features_title.csv"
+#features_titles_list_csv = "features_titles.csv"
+features_titles_list_csv = "features_titles_FighWiza.csv"
 features_titles_list_csv = os.path.join(csv_folder, features_titles_list_csv)
 
 # if database exists, remove it so we can start from scratch
