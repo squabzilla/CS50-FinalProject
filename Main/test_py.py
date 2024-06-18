@@ -7,19 +7,18 @@ def numberify(variable):
 import re
 
 
-def main():
+def printing_spacing_test():
     var = "soup"
-    #print(numberify(var))
-    var_printing_spacing_test = False
-    if var_printing_spacing_test == True:
-        print("Test - desired soup column...                                colon: soup")
-        print("Test - comma-break, no space after breaksign, no space after colon:",var)
-        print("Test -    comma-break, space after breaksign, no space after colon:", var)
-        print("Test -       comma-break, space after breaksign, space after colon: ", var)
-        print("Test -  plus-break, no space after breaksign, no space after colon:"+var)
-        print("Test -     plus-break, space after breaksign, no space after colon:"+ var)
-        print("Test -        plus-break, space after breaksign, space after colon: " + var)
-        
+    print("Test - desired soup column...                                colon: soup")
+    print("Test - comma-break, no space after breaksign, no space after colon:",var)
+    print("Test -    comma-break, space after breaksign, no space after colon:", var)
+    print("Test -       comma-break, space after breaksign, space after colon: ", var)
+    print("Test -  plus-break, no space after breaksign, no space after colon:"+var)
+    print("Test -     plus-break, space after breaksign, no space after colon:"+ var)
+    print("Test -        plus-break, space after breaksign, space after colon: " + var)
+
+
+def regex_test():
     lowercase_string = "abcdefghijklmnopqrstuvwxyzáàäéèêëíîïóôöúûüç"
     uppercase_string = lowercase_string.upper()
     numbers_string = str(1234567890)
@@ -46,6 +45,18 @@ def main():
         print("Name:", name)
     name = ""
     print("Length of name:", len(name))
-    
     #[^.@a-zA-Z0-9À-ÖØ-öø-ÿ ]
+
+
+def noneValue_and_falseValue_testing():
+    var_none_test = None
+    var_false_test = False
+    if var_none_test == var_false_test:
+        print('"None" and "False" are equal')
+    else:
+        print('"None" and "False" are NOT equal')
+
+def main():
+    noneValue_and_falseValue_testing()
+    return True
 main()
