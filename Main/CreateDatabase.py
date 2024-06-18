@@ -313,9 +313,9 @@ db.execute("CREATE TABLE list_feature_descriptions (\
     feature_class_id INTEGER, \
     feature_text_type INTEGER, \
     feature_text_order INTEGER, \
-    feature_text_description TEXT, \
+    feature_text_description TEXT \
     );")
-db.execute("CREATE UNIQUE INDEX name_of_feature ON list_features (feature_name);")
+#db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_descriptions (feature_name);")
 print("DONE")
 
 print("importing features...", end="")
@@ -331,7 +331,7 @@ with open(features_list_csv, "r") as var_file:
         var_feature_text_type = var_row[3]
         var_feature_text_order = var_row[4]
         feature_text_description = var_row[5]
-        db.execute("INSERT INTO list_features (\
+        db.execute("INSERT INTO list_feature_descriptions (\
             feature_key, feature_id, feature_class_id, \
             feature_text_type, feature_text_order, feature_text_description\
             ) VALUES(?, ?, ?, ?, ?, ?)", 
