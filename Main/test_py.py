@@ -102,7 +102,8 @@ def test_check_type():
     #print(f"integer variable {var_int_1} is of type: {type(var_int_1)}")
     print(f"{var_str_1} is of type str: {(type(var_str_1) is str)}")
     print(f"{var_int_1} is of type int: {(type(var_int_1) is int)}")
-    print(f"Length of {var_int_1} is {len(var_int_1)}")
+    print(f"Length of {var_int_1} is {len(str(var_int_1))}")
+    print(f"Length of {var_str_2} is {len(var_str_2)}")
 
 def main():
     test_check_type()
