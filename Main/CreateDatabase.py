@@ -34,7 +34,9 @@ name_of_database = "RPG_characters.db"
 csv_folder = "static/CSVs"
 
 # csv file names
-spell_list_csv = "spell_list.csv"
+# NOTE: Doing shortened list of spells, to remove a bunch of items I won't be using initially
+#spell_list_csv = "spell_list.csv"
+spell_list_csv = "cantrip_level1_spell_list.csv"
 spell_list_csv = os.path.join(csv_folder, spell_list_csv)
 race_list_csv = "race_list.csv"
 race_list_csv = os.path.join(csv_folder, race_list_csv)
@@ -44,9 +46,12 @@ class_list_csv = "class_list.csv"
 class_list_csv = os.path.join(csv_folder, class_list_csv)
 background_list_csv = "background_list.csv"
 background_list_csv = os.path.join(csv_folder, background_list_csv)
-features_list_csv = "features_list.csv"
+# NOTE: Doing shortened list of features, to remove a bunch of items I won't be using initially
+#features_list_csv = "features_list.csv"
+features_list_csv = "FighterWizard_Features_text.csv"
 features_list_csv = os.path.join(csv_folder, features_list_csv)
-features_titles_list_csv = "features_titles_list.csv"
+#features_titles_list_csv = "features_titles_list.csv"
+features_titles_list_csv = "FighterWizard_Features_title.csv"
 features_titles_list_csv = os.path.join(csv_folder, features_titles_list_csv)
 
 # if database exists, remove it so we can start from scratch
