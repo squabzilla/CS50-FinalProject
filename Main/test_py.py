@@ -93,8 +93,10 @@ def get_race_dropdown():
             race_dropdown += "\n"
     return(race_dropdown)
 
+def test_check_type():
+    var_str_1 = "abc"
+    print(f"{var_str_1} is of type: {type(var_str_1)}")
+
 def main():
-    race_dropdown_list = get_race_dropdown()
-    print(race_dropdown_list)
     return True
 main()
