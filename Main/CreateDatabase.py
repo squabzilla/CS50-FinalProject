@@ -36,7 +36,7 @@ csv_folder = "static/CSVs"
 # csv file names
 # NOTE: Doing shortened list of spells, to remove a bunch of items I won't be using initially
 #spell_list_csv = "spell_list.csv"
-spell_list_csv = "cantrip_level1_spell_list.csv"
+spell_list_csv = "spell_list_lvl0lvl1.csv"
 spell_list_csv = os.path.join(csv_folder, spell_list_csv)
 race_list_csv = "race_list.csv"
 race_list_csv = os.path.join(csv_folder, race_list_csv)
