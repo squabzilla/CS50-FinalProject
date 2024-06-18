@@ -129,8 +129,24 @@ def test_check_if_int():
     var_str_test_result = var_str_test.isnumeric()
     print(f"var_str_test is considered numeric: {var_str_test_result}")
     
+def test_if_in_racelist(var_race_id):
+    race_list = db.execute("SELECT race_id FROM list_races")
+    if var_race_id == False: return False
+    for i in range(len(race_list)):
+        race_list[i] = int(race_list[i].get("race_id"))
+    if var_race_id in race_list:
+        return True
+    else:
+        return False
+    
+def trying_test_if_in_racelist():
+    test_items = [0, 1, 27, -3, "0", "1", "27"]
+    for i in range(len(test_items)):
+        print(f"Item {i} of value: {test_items[i]} in racelist: {test_if_in_racelist(test_items[i])}")
+    
 def main():
     #test_check_type()
-    test_check_if_int()
+    #test_check_if_int()
+    trying_test_if_in_racelist()
     return True
 main()
