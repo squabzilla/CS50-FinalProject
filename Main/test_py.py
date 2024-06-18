@@ -119,6 +119,6 @@ def test_check_if_int():
     print(f"is the test_empty_string variable considered numeric? {test_empty_string.isnumeric()}")
 def main():
     #test_check_type()
-    test_check_if_int()
+    #test_check_if_int()
     return True
 main()
