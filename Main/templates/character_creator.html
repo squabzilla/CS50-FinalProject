@@ -35,6 +35,11 @@
             let race_list = await race_response.json();
             console.log(race_list)
             
+            for (let i = 0; i < race_list.length; i++) {
+                let race_dropdown = "<option value=\"" + race_list[i]["race_id"] + "\">" + race_list[i]["race_name"] + "</option>"
+                document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
+            }
+            
             /*
             //console.log(json_dump_races);
             for (let i = 0; i < json_dump_races.length; i++) {
