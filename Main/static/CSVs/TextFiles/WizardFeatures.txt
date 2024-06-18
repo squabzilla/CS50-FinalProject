@@ -147,7 +147,7 @@ slot as normal.#P#
 By spending 8 hours in study, you can exchange
 one or both of the spells you chose for different
 spells of the same levels.#P#
-Signature Spells
+Signature Spells###
 When you reach 20th level, you gain mastery over
 two powerful spells and can cast them with little
 effort. Choose two 3rd-level wizard spells in your

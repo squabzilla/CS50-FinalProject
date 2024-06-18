@@ -261,6 +261,7 @@ with open(background_list_csv, "r") as var_file:
 print("DONE")
 
 # create list of characters, linking all foreign keys
+# note: class_id is their lvl 1 class
 print("Creating list_characters table and linking all foreign keys...", end="")
 db.execute("CREATE TABLE list_characters (\
     character_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
@@ -297,14 +298,22 @@ db.execute("CREATE TABLE spellbook (\
 print("DONE")
 
 print("Creating list_features table...", end="")
-db.execute("CREATE TABLE list_features (\
-    feature_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
-    feature_name TEXT NOT NULL, \
-    list_level INTEGER, \
-    feature_description_line_1 TEXT NOT NULL, \
-    feature_description_line_2 TEXT, \
-    feature_description_line_3 TEXT, \
-    feature_description_line_4 TEXT \
+# text_id	 feature_id	 feature_from_class	 text_type	 text_order	 text_text
+# feature_text_type:
+# - 0: Regular text
+# - 1: title
+# - 2: subtitle
+# - 3: bullet-points
+# - 4:table-title
+# - 5: table-column-names
+# - 6: table-items
+db.execute("CREATE TABLE list_feature_descriptions (\
+    feature_key INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
+    feature_id INTEGER, \
+    feature_class_id INTEGER, \
+    feature_text_type INTEGER, \
+    feature_text_order INTEGER, \
+    feature_text_description TEXT, \
     );")
 db.execute("CREATE UNIQUE INDEX name_of_feature ON list_features (feature_name);")
 print("DONE")
@@ -316,19 +325,17 @@ with open(features_list_csv, "r") as var_file:
     next(var_reader)
     # skip header line, import everything
     for var_row in var_reader:
-        var_feature_id = var_row[0]
-        var_feature_name = var_row[1]
-        var_list_level = var_row[2]
-        var_feature_description_line_1 = var_row[3]
-        var_feature_description_line_2 = var_row[4]
-        var_feature_description_line_3 = var_row[5]
-        var_feature_description_line_4 = var_row[6]
+        var_feature_key = var_row[0]
+        var_feature_id = var_row[1]
+        var_feature_class_id = var_row[2]
+        var_feature_text_type = var_row[3]
+        var_feature_text_order = var_row[4]
+        feature_text_description = var_row[5]
         db.execute("INSERT INTO list_features (\
-            feature_id, feature_name, list_level, \
-            feature_description_line_1, feature_description_line_2, feature_description_line_3, feature_description_line_4\
-            ) VALUES(?, ?, ?, ?, ?, ?, ?)", 
-            var_feature_id, var_feature_name, var_list_level, 
-            var_feature_description_line_1, var_feature_description_line_2, var_feature_description_line_3, var_feature_description_line_4)
+            feature_key, feature_id, feature_class_id, \
+            feature_text_type, feature_text_order, feature_text_description\
+            ) VALUES(?, ?, ?, ?, ?, ?)", 
+            var_feature_key, var_feature_id, var_feature_class_id, var_feature_text_type, var_feature_text_order, feature_text_description)
 print("DONE")
 
 # the database below is a many-to-many database, linking a character with their features

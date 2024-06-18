@@ -1464,6 +1464,12 @@ Dexterity (Stealth) checks as long as you remain
 there without moving or taking actions. Once you
 move or take an action or a reaction, you must
 camouflage yourself again to gain this benefit.#P#
+Additional Fighting Style###
+At 10th level, you can choose a second option from
+the Fighting Style class feature.#P#
+Greater Hunter's Mark###
+Beginning at 10th level, when you cast Hunter's Mark, it now
+lasts for up to 24 hours.#P#
 Vanish###
 Starting at 14th level, you can use the Hide action as
 a bonus action on your turn. Also, you can't be
@@ -1486,12 +1492,6 @@ damage roll of an attack you make against one of
 your favored enemies. You can choose to use this
 feature before or after the roll, but before any effects
 of the roll are applied.#P#
-Additional Fighting Style###
-At 10th level, you can choose a second option from
-the Fighting Style class feature.#P#
-Greater Hunter's Mark###
-Beginning at 10th level, when you cast Hunter's Mark, it now
-lasts for up to 24 hours.#P#
 Hunter###
 Emulating the Hunter archetype means accepting
 your place as a bulwark between civilization and the
@@ -2174,7 +2174,7 @@ Master of Myriad Forms#$#
 <b>Prerequisite: 15th level</b>#P#
 You can cast alter self at will, without expending a
 spell slot.#P#
-Minions of Chaos#$##P#
+Minions of Chaos#$#
 <b>Prerequisite: 9th level</b>#P#
 You can cast conjure elemental once using a warlock
 spell slot. You can't do so again until you finish a
@@ -2443,7 +2443,7 @@ slot as normal.#P#
 By spending 8 hours in study, you can exchange
 one or both of the spells you chose for different
 spells of the same levels.#P#
-Signature Spells
+Signature Spells###
 When you reach 20th level, you gain mastery over
 two powerful spells and can cast them with little
 effort. Choose two 3rd-level wizard spells in your
