@@ -215,8 +215,8 @@ def get_races():
         race_dropdown += "<option value=\"" + str(race_list[i]["race_id"]) + "\">" + race_list[i]["race_name"] + "</option>"
         if i != len(race_list) - 1:
             race_dropdown += "\n"
-    return jsonify(race_dropdown)
-    #return race_dropdown
+    #return jsonify(race_dropdown)
+    return race_dropdown
 
 @app.route("/get_classes")
 def get_classes():
