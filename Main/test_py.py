@@ -1,7 +1,7 @@
 import os
 from cs50 import SQL
 import re
-from flask import jsonify
+#from flask import jsonify
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///RPG_characters.db")
@@ -89,11 +89,12 @@ def get_race_dropdown():
     race_dropdown = ""
     for i in range(len(race_list)):
         race_dropdown += "<option value=\"" + str(race_list[i]["race_id"]) + "\">" + race_list[i]["race_name"] + "</option>"
-        if i != range(len(race_list)):
+        if i != len(race_list) - 1:
             race_dropdown += "\n"
-    print(race_dropdown)
+    return(race_dropdown)
 
 def main():
-    
+    race_dropdown_list = get_race_dropdown()
+    print(race_dropdown_list)
     return True
 main()

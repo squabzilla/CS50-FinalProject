@@ -202,10 +202,21 @@ def register():
 ### above:  copied (and slightly modified) the register function in app.py I created for the CS50 Week 9 C$50 Finance problem
 #########################################################################################
 
-@app.route("/get_races")
+# @app.route("/get_races")
+# def get_races():
+    # race_list = db.execute("SELECT race_id, race_name FROM list_races")
+    # return jsonify(race_list)
+
+@app.route("/get_race_dropdown")
 def get_races():
     race_list = db.execute("SELECT race_id, race_name FROM list_races")
-    return jsonify(race_list)
+    race_dropdown = ""
+    for i in range(len(race_list)):
+        race_dropdown += "<option value=\"" + str(race_list[i]["race_id"]) + "\">" + race_list[i]["race_name"] + "</option>"
+        if i != len(race_list) - 1:
+            race_dropdown += "\n"
+    return jsonify(race_dropdown)
+    #return race_dropdown
 
 @app.route("/get_classes")
 def get_classes():
