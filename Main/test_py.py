@@ -93,6 +93,14 @@ def get_race_dropdown():
             race_dropdown += "\n"
     return(race_dropdown)
 
+def check_if_int(var):
+    if (type(var) is str) == True:
+        if var.isnumeric() == True: var = int(var)
+        else: return False
+    elif (type(var) is int) == False:
+        return False
+    return var
+
 def test_check_type():
     var_str_1 = "abc"
     #print(f"string variable {var_str_1} is of type: {type(var_str_1)}")
@@ -105,7 +113,12 @@ def test_check_type():
     print(f"Length of {var_int_1} is {len(str(var_int_1))}")
     print(f"Length of {var_str_2} is {len(var_str_2)}")
 
+def test_check_if_int():
+    test_empty_string = ""
+    print(f"test_empty_string, passed to check_if_int, returns: {check_if_int(test_empty_string)}")
+    print(f"is the test_empty_string variable considered numeric? {test_empty_string.isnumeric()}")
 def main():
-    test_check_type()
+    #test_check_type()
+    test_check_if_int()
     return True
 main()
