@@ -1,4 +1,4 @@
-﻿text_id, feature_id, feature_from_class, text_type, text_order, text_text
+text_id, feature_id, feature_from_class, text_type, text_order, text_text
 278,80,5,1,0,Fighting Style
 279,80,5,0,1,"You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again."
 280,81,5,2,0,Archery

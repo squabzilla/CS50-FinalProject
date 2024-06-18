@@ -1,39 +1,39 @@
-﻿text_id, feature_id, feature_from_class, text_type,Source,Type,Level, text_text,Improves
-278,80,5,1,Fighter,Class,1,Fighting Style,
-280,81,5,2,Fighting Style,Other Table,0,Archery,
-282,82,5,2,Fighting Style,Other Table,0,Defense,
-284,83,5,2,Fighting Style,Other Table,0,Dueling,
-286,84,5,2,Fighting Style,Other Table,0,Great Weapon Fighting,
-288,85,5,2,Fighting Style,Other Table,0,Protection,
-290,86,5,2,Fighting Style,Other Table,0,Two-Weapon Fighting,
-292,87,5,2,Fighter,Class,1,Second Wind,
-294,88,5,1,Fighter,Class,2,Action Surge,Yes
-297,89,5,1,Fighter,Class,3,Martial Archetype,Yes
-299,90,5,1,Fighter,ASI,4,Ability Score Improvement,Yes
-301,91,5,1,Fighter,Extra Attack,5,Extra Attack,Yes
-304,92,5,1,Fighter,Class,9,Indomitable,Yes
-307,93,5,1,Champion Fighter,Subclass,3,Champion,
-309,94,5,2,Champion Fighter,Subclass,3,Improved Critical,
-311,95,5,2,Champion Fighter,Subclass,7,Remarkable Athlete,
-314,96,5,2,Champion Fighter,Subclass,10,Additional Fighting Style,
-316,97,5,2,Champion Fighter,Subclass,15,Superior Critical,
-318,98,5,2,Champion Fighter,Subclass,18,Survivor,
-853,287,12,1,Wizard,,,Spellcasting,
-855,288,12,2,Wizard,Class,1,Cantrips,
-857,289,12,2,Wizard,Class,1,Spellbook,
-867,290,12,2,Wizard,Class,1,Preparing and Casting Spells,
-872,291,12,2,Wizard,Class,1,Spellcasting Ability,
-876,292,12,2,Wizard,Class,1,Ritual Casting,
-878,293,12,2,Wizard,Class,1,Spellcasting Focus,
-880,294,12,2,Wizard,Class,1,Learning Spells of Ist Level and Higher,
-882,295,12,1,Wizard,Class,1,Arcane Recovery,
-885,296,12,1,Wizard,Class,2,Arcane Tradition,Yes
-888,297,12,1,Wizard,ASI,4,Ability Score Improvement,Yes
-890,298,12,1,Wizard,Class,18,Spell Mastery,
-893,299,12,1,Wizard,Class,20,Signature Spells,
-895,300,12,1,Tradition of Destruction,Subclass,2,Tradition of Destruction,
-897,301,12,2,Tradition of Destruction,Subclass,2,Destructive Savant,
-899,302,12,2,Tradition of Destruction,Subclass,2,Sculpt Spells,
-901,303,12,2,Tradition of Destruction,Subclass,6,Potent Cantrip,
-903,304,12,2,Tradition of Destruction,Subclass,10,Empowered Evocation,
-905,305,12,2,Tradition of Destruction,Subclass,14,Overchannel,
+ feature_id, feature_from_class, text_type, text_order,Source,Type,Level,Overrides, text_text,Improves
+80,5,1,0,Fighter,Class,1,,Fighting Style,
+81,5,2,0,Fighting Style,Other Table,0,,Archery,
+82,5,2,0,Fighting Style,Other Table,0,,Defense,
+83,5,2,0,Fighting Style,Other Table,0,,Dueling,
+84,5,2,0,Fighting Style,Other Table,0,,Great Weapon Fighting,
+85,5,2,0,Fighting Style,Other Table,0,,Protection,
+86,5,2,0,Fighting Style,Other Table,0,,Two-Weapon Fighting,
+87,5,2,0,Fighter,Class,1,,Second Wind,
+88,5,1,0,Fighter,Class,2,,Action Surge,Yes
+89,5,1,0,Fighter,Class,3,,Martial Archetype,Yes
+90,5,1,0,Fighter,ASI,4,,Ability Score Improvement,Yes
+91,5,1,0,Fighter,Extra Attack,5,,Extra Attack,Yes
+92,5,1,0,Fighter,Class,9,,Indomitable,Yes
+93,5,1,0,Champion Fighter,Subclass,3,,Champion,
+94,5,2,0,Champion Fighter,Subclass,3,,Improved Critical,
+95,5,2,0,Champion Fighter,Subclass,7,,Remarkable Athlete,
+96,5,2,0,Champion Fighter,Subclass,10,,Additional Fighting Style,
+97,5,2,0,Champion Fighter,Subclass,15,,Superior Critical,
+98,5,2,0,Champion Fighter,Subclass,18,,Survivor,
+287,12,1,0,Wizard,,,,Spellcasting,
+288,12,2,0,Wizard,Class,1,,Cantrips,
+289,12,2,0,Wizard,Class,1,,Spellbook,
+290,12,2,0,Wizard,Class,1,,Preparing and Casting Spells,
+291,12,2,0,Wizard,Class,1,,Spellcasting Ability,
+292,12,2,0,Wizard,Class,1,,Ritual Casting,
+293,12,2,0,Wizard,Class,1,,Spellcasting Focus,
+294,12,2,0,Wizard,Class,1,,Learning Spells of Ist Level and Higher,
+295,12,1,0,Wizard,Class,1,,Arcane Recovery,
+296,12,1,0,Wizard,Class,2,,Arcane Tradition,Yes
+297,12,1,0,Wizard,ASI,4,,Ability Score Improvement,Yes
+298,12,1,0,Wizard,Class,18,,Spell Mastery,
+299,12,1,0,Wizard,Class,20,,Signature Spells,
+300,12,1,0,Tradition of Destruction,Subclass,2,,Tradition of Destruction,
+301,12,2,0,Tradition of Destruction,Subclass,2,,Destructive Savant,
+302,12,2,0,Tradition of Destruction,Subclass,2,,Sculpt Spells,
+303,12,2,0,Tradition of Destruction,Subclass,6,,Potent Cantrip,
+304,12,2,0,Tradition of Destruction,Subclass,10,,Empowered Evocation,
+305,12,2,0,Tradition of Destruction,Subclass,14,,Overchannel,
