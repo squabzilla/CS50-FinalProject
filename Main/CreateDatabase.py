@@ -307,7 +307,7 @@ print("Creating list_feature_titles table...", end="")
 db.execute("CREATE TABLE list_feature_titles (\
     feature_title_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
     feature_title_text TEXT NOT NULL \
-);")
+    );")
 #db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_titles (feature_title_text);")
 # NOTE: We currently have duplicates here, and aren't about to fix it now
 
@@ -344,7 +344,7 @@ db.execute("CREATE TABLE list_feature_descriptions (\
     feature_text_type INTEGER, \
     feature_text_order INTEGER, \
     feature_text_description TEXT, \
-    FOREIGN KEY (feature_id) REFERENCES list_feature_titles (feature_title_text), \
+    FOREIGN KEY (feature_id) REFERENCES list_feature_titles (feature_title_id), \
     FOREIGN KEY (feature_class_id) REFERENCES list_classes (class_id) \
     );")
 #db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_descriptions (feature_name);")
