@@ -869,7 +869,7 @@ class new_wizard_spells:
 class rpg_char_create:
     def __init__(self, #sql_db = None,
                  user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1,
-                 var_spells = None, list_spells = [], features = [],
+                 list_spells = [], features = [],
                  has_name = None, has_race = None, has_class = None, has_background = None):
         #self.sql_db = sql_db
         self.user_id = user_id
@@ -880,7 +880,7 @@ class rpg_char_create:
         self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_classes(class_id)
         self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
         self.char_level = char_level        # character_level           INTEGER DEFAULT 1 - class sets default values to 1
-        self.var_spells = var_spells
+        
         self.list_spells = list_spells  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
         # NOTE: I also need the class one is learning the spell from to insert it to spellbook table, which will just be class_id
         # this will become more complicated when multiclassing is added, but that's a later problem
@@ -948,22 +948,7 @@ class rpg_char_create:
             return False
     
     def set_spell_class(self):
-        # bard: 2
-        # cleric: 3
-        # druid: 4
-        # ranger: 7
-        # sorcerer: 10
-        # warlock: 11
-        # wizard: 12
-        if self.class_id ==  2: self.var_spells = new_bard_spells()
-        if self.class_id ==  3: self.var_spells = new_cleric_spells()
-        if self.class_id ==  7: self.var_spells = new_druid_spells()
-        if self.class_id == 10: self.var_spells = new_ranger_spells()
-        if self.class_id == 11: self.var_spells = new_warlock_spells()
-        if self.class_id == 12: self.var_spells = new_wizard_spells()
         return True
-        ####    NOTE: once those are assigned, I can use those classes to correctly assign spells
-        ####    Now I just need to do the same for class features... *cries*
     
     #def add_spells_prepared_caster(self):
     ######### Prepared casters:
@@ -986,7 +971,6 @@ class rpg_char_create:
         #self.class_id = class_id            # character_class_id,       INTEGER and FOREIGN KEY(character_class_id) REFERENCES list_classes(class_id)
         #self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
         #self.char_level = char_level        # character_level           INTEGER DEFAULT 1 - class sets default values to 1
-        #self.var_spells = var_spells
         #self.list_spells = list_spells
         
     def add_to_database(self):
