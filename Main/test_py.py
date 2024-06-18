@@ -95,11 +95,12 @@ def get_race_dropdown():
 
 def test_check_type():
     var_str_1 = "abc"
-    print(f"string variable {var_str_1} is of type: {type(var_str_1)}")
+    #print(f"string variable {var_str_1} is of type: {type(var_str_1)}")
     var_str_2 = "123"
-    print(f"string variable {var_str_2} is of type: {type(var_str_2)}")
+    #print(f"string variable {var_str_2} is of type: {type(var_str_2)}")
     var_int_1 = 123
-    print(f"integer variable {var_int_1} is of type: {type(var_int_1)}")
+    #print(f"integer variable {var_int_1} is of type: {type(var_int_1)}")
+    print(type(var_str_1) is str)
 
 def main():
     test_check_type()
