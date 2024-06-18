@@ -21,11 +21,11 @@
             </select>
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
-        <script>
+        <script type="module">
             //const json_dump_races = JSON.parse({{json_dump|tojson}});
             
             const race_query_response = await fetch("/get_races");
-            const json_dump_races = await response.json();
+            const json_dump_races = await race_query_response.json();
             console.log(json_dump_races)
 
             //console.log(json_dump_races);
