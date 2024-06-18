@@ -46,6 +46,8 @@ background_list_csv = "background_list.csv"
 background_list_csv = os.path.join(csv_folder, background_list_csv)
 features_list_csv = "features_list.csv"
 features_list_csv = os.path.join(csv_folder, features_list_csv)
+features_titles_list_csv = "features_list.csv"
+features_titles_list_csv = os.path.join(csv_folder, features_list_csv)
 
 # if database exists, remove it so we can start from scratch
 print("Checking for existing database...", end="")
