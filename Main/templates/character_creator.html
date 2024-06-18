@@ -21,37 +21,11 @@
             </select>
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
-        <script type="module"> // need to make my scripts of type "module" so my asyc functions work
-            //const json_dump_races = JSON.parse({{json_dump|tojson}});
-            
-            /*
-            const race_query_response = await fetch("/get_races");
-            //const json_dump_races = await race_query_response.json();
-            const json_dump_races = await race_query_response;
-            console.log(json_dump_races)
-            */
-            
+        <script type="module">
             let race_response = await fetch('/get_race_dropdown');
             let race_dropdown = await race_response.json();
-            //let race_dropdown = await race_response;
-            console.log(race_dropdown)
+            //console.log(race_dropdown)
             document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
-            /*
-            let race_response = await fetch('/get_races');
-            let race_list = await race_response.json();
-            console.log(race_list)
-            for (let i = 0; i < race_list.length; i++) {
-                let race_dropdown = "<option value=\"" + race_list[i]["race_id"] + "\">" + race_list[i]["race_name"] + "</option>"
-                document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
-            }
-            */
-            
-            /*
-            //console.log(json_dump_races);
-            for (let i = 0; i < json_dump_races.length; i++) {
-                let race_dropdown = "<option value=\"" + json_dump_races[i]["race_id"] + "\">" + json_dump_races[i]["race_name"] + "</option>"
-                document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
-            }*/
         </script>
 
     {% elif not new_pc.has_class %}
@@ -61,22 +35,10 @@
             </select>
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
-        <script type="module"> // need to make my scripts of type "module" so my asyc functions work
-            /*
-            const json_dump_classes = JSON.parse({{json_dump|tojson}});
-            console.log(json_dump_classes);
-            for (let i = 0; i < json_dump_classes.length; i++) {
-                let class_dropdown = "<option value=\"" + json_dump_classes[i]["class_id"] + "\">" + json_dump_classes[i]["class_name"] + "</option>"
-                document.getElementById("class_id").insertAdjacentHTML("beforeend",class_dropdown)
-            }
-            */
-            let class_response = await fetch('/get_classes');
-            let class_list = await class_response.json();
-            console.log(class_list)
-            for (let i = 0; i < class_list.length; i++) {
-                let class_dropdown = "<option value=\"" + class_list[i]["class_id"] + "\">" + class_list[i]["class_name"] + "</option>"
-                document.getElementById("class_id").insertAdjacentHTML("beforeend",class_dropdown)
-            }
+        <script type="module">
+            let class_response = await fetch('/get_class_dropdown');
+            let class_dropdown = await class_response.json();
+            document.getElementById("class_id").insertAdjacentHTML("beforeend",class_dropdown)
         </script>
 
     {% elif not new_pc.has_background %}
@@ -86,13 +48,10 @@
             </select>
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
-        <script type="module"> // need to make my scripts of type "module" so my asyc functions work
-            const json_dump_backgrounds = JSON.parse({{json_dump|tojson}});
-            console.log(json_dump_backgrounds);
-            for (let i = 0; i < json_dump_backgrounds.length; i++) {
-                let background_dropdown = "<option value=\"" + json_dump_backgrounds[i]["background_id"] + "\">" + json_dump_backgrounds[i]["background_name"] + "</option>"
-                document.getElementById("background_id").insertAdjacentHTML("beforeend",background_dropdown)
-            }
+        <script type="module">
+            let background_response = await fetch('/get_background_dropdown');
+            let background_dropdown = await background_response.json();
+            document.getElementById("background_id").insertAdjacentHTML("beforeend",background_dropdown)
         </script>
 
     {% else %}
