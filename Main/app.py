@@ -202,6 +202,12 @@ def register():
 ### above:  copied (and slightly modified) the register function in app.py I created for the CS50 Week 9 C$50 Finance problem
 #########################################################################################
 
+@app.route("/get_races")
+def get_races():
+    #json_dump = json.dumps(db.execute("SELECT race_id, race_name FROM list_races"))
+    race_list = db.execute("SELECT race_id, race_name FROM list_races")
+    return jsonify(race_list)
+
 
 @app.route("/character_creator", methods=['GET', 'POST'])
 def create_character():
