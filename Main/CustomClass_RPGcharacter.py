@@ -11,11 +11,11 @@ db = SQL(sql_path)
 # otherwise returns false
 def check_if_int(var):
     if (type(var) is str) == True:
-        if var.isnumeric() == True: var = int(var)
+        if var.isnumeric() == True: return True
         else: return False
     elif (type(var) is int) == False:
         return False
-    return var
+    return True
 
 
 # if the order of these functions/classes declarations DOES matter, I want this first
@@ -915,12 +915,10 @@ class rpg_char_create:
             return False
         
     def set_race_id(self, var_race_id):
-        race_list = db.execute("SELECT race_id FROM list_races")
-        var_race_id = check_if_int(var_race_id)
-        if var_race_id == False: return False
+        race_list = db.execute("SELECT race_id FROM list_races") # get-list
         for i in range(len(race_list)):
-            race_list[i] = int(race_list[i].get("race_id"))
-        if var_race_id in race_list:
+            race_list[i] = int(race_list[i].get("race_id")) # turn inter-list-values into integer type
+        if var_race_id in race_list: # check for match
             self.race_id = var_race_id
             self.has_race = True
             return True
@@ -928,11 +926,10 @@ class rpg_char_create:
             return False
         
     def set_class_id(self, var_class_id):
-        class_list = db.execute("SELECT class_id FROM list_classes")
+        class_list = db.execute("SELECT class_id FROM list_classes") # get-list
         for i in range(len(class_list)):
-            class_list[i] = int(class_list[i].get("class_id"))
-        #print("class_list:", class_list, end="")
-        if var_class_id in class_list:
+            class_list[i] = int(class_list[i].get("class_id")) # turn inter-list-values into integer type
+        if var_class_id in class_list: # check for match
             self.class_id = var_class_id
             self.has_class = True
             return True
@@ -940,11 +937,10 @@ class rpg_char_create:
             return False
         
     def set_background_id(self, var_background_id):
-        background_list = db.execute("SELECT background_id FROM list_backgrounds")
+        background_list = db.execute("SELECT background_id FROM list_backgrounds") # get-list
         for i in range(len(background_list)):
-            background_list[i] = background_list[i].get("background_id")
-        #print("background_list:", background_list, end="")
-        if var_background_id in background_list:
+            background_list[i] = background_list[i].get("background_id") # turn inter-list-values into integer type
+        if var_background_id in background_list: # check for match
             self.background_id = var_background_id
             self.has_background = True
             return True

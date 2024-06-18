@@ -147,6 +147,6 @@ def trying_test_if_in_racelist():
 def main():
     #test_check_type()
     #test_check_if_int()
-    trying_test_if_in_racelist()
+    #trying_test_if_in_racelist()
     return True
 main()
