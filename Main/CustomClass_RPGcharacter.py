@@ -905,11 +905,12 @@ class rpg_char_create:
             return False
     def set_race_id(self, var_race_id):
         race_list = db.execute("SELECT race_id FROM list_races")
-        print("Length of race_list:", len(race_list))
+        #print("Length of race_list:", len(race_list))
         # remember that db.execute will return a LIST of DICTIONARIES
+        if var_race_id.isnumeric == True:
+            var_race_id = int(var_race_id)
         for i in range(len(race_list)):
             race_list[i] = int(race_list[i].get("race_id"))
-        #print("race_list:", race_list, end="")
         if var_race_id in race_list:
             self.race_id = var_race_id
             self.has_race = True
