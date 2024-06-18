@@ -894,7 +894,8 @@ class rpg_char_create:
         var_name = str(var_name)
         # fancy function with large white-list of acceptable characters, strips-non-whitelist-characters
         var_name = re.sub('[^.@a-zA-Z0-9À-ÖØ-öø-ÿ"\'` ]', '', var_name)
-        # this cursed regex* filters name-input to Alpha-numeric-characters, a bunch of accented characters, the ' symbol, and space
+        # this cursed regex* filters name-input, white-listing allowed characters to only allow:
+        # Alpha-numeric-characters, a bunch of accented characters (both upper-case and lower-case), the ' symbol, and space
         # * note: the term "cursed regex" is redundant because all regex is cursed
         if len(var_name) > 0:
             self.name = var_name
