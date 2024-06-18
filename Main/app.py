@@ -223,7 +223,7 @@ def get_classes():
     class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 5 OR class_id = 12")
     # screw it, we only supporting fighters/wizards
     return jsonify(class_list)
-@app.route("get_class_dropdown")
+@app.route("/get_class_dropdown")
 def get_class_dropdown():
     class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 5 OR class_id = 12")
     # screw it, we only supporting fighters/wizards
@@ -321,6 +321,17 @@ def create_character():
         new_pc = rpg_char_create()
         session["new_char"] = new_pc
         return render_template("character_creator.html", new_pc=new_pc)
+    #   PYTHON code for passing values I want display on webpage:
+    #1  json_dump = json.dumps(value_I_want_passed_to_webpage)
+    #2  return render_template("web_page.html", json_dump=json_dump)
+    #   HTML/Javascript code for importing it to webpage:
+    #1  <script type="module"> // need to make my scripts of type "module" so my asyc functions work
+    #2  const json_dump_import = JSON.parse({{json_dump|tojson}});
+    #3  document.getElementById("id_of_tag_to_update").insertAdjacentHTML("beforeend",json_dump_import)
+    #4  </script>
+    # NOTE: variable "json_dump_import" is created in HTML/Javascript line 3, passed to line 4 (at very end)
+    
+    
 # bootstrap -> components -> accordion looks really good
 # carousel is also kinda cool?
 # collapse
