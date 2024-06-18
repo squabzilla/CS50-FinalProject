@@ -322,7 +322,7 @@ with open(features_titles_list_csv, "r") as var_file:
         var_feature_title_id = var_row[1]
         var_feature_title_text = var_row[9]
         db.execute("INSERT INTO list_feature_titles (\
-            feature_title_id, feature_title_text, \
+            feature_title_id, feature_title_text \
             ) VALUES(?, ?)", 
             var_feature_title_id, var_feature_title_text)
 print("DONE")
