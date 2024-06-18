@@ -86,6 +86,8 @@ def noneValue_and_falseValue_testing():
 
 def main():
     race_list = db.execute("SELECT race_id, race_name FROM list_races")
+    for i in range(len(race_list)):
+        race_dropdown = "<option value=\"" + race_list[i]["race_id"] + "\">" + race_list[i]["race_name"] + "</option>" + "\n"
     
     
     return True
