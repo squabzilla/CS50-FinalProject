@@ -308,7 +308,8 @@ db.execute("CREATE TABLE list_feature_titles (\
     feature_title_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
     feature_title_text TEXT NOT NULL \
 );")
-db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_titles (feature_title_text);")
+#db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_titles (feature_title_text);")
+# NOTE: We currently have duplicates here, and aren't about to fix it now
 
 print("Importing feature titles...", end="")
 with open(features_titles_list_csv, "r") as var_file:
