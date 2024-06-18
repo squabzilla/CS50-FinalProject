@@ -278,15 +278,21 @@ db.execute("CREATE TABLE list_characters (\
 print("DONE")
 
 # create spellbook, which links characters with their spells known
+# spell always prepared: means it's a spell-known from a spell-casting class, or from a feat, wizard feature saying its always prepared, etc.
+# druids, clerics, and other "spells-prepared" classes will just KNOW all the spells of their list, and need to prepare them
+# - just like wizards from their limited amount of spells-known
+# spell_prepared is where this comes in
+# also, you can't prepare a "spell_always_prepared" spell, and they don't count towards your spells-prepared limit (if you have one)
 print("Creating spellbook table and linking all foreign keys...", end="")
 db.execute("CREATE TABLE spellbook (\
     spellbook_caster_id INTEGER, \
     spellbook_spell_id INTEGER, \
+    spell_always_prepared INTEGER \
     spell_prepared INTEGER, \
-    spellcasting_class_id INT, \
+    spellcasting_attrib_id INT, \
     FOREIGN KEY(spellbook_caster_id) REFERENCES list_characters(character_id), \
     FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
-    FOREIGN KEY(spellcasting_class_id) REFERENCES list_classes(casting_attrib_id) \
+    FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes (attrib_id) \
     );")
 print("DONE")
 

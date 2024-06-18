@@ -858,7 +858,8 @@ class new_wizard_spells:
         
 class rpg_char_create:
     def __init__(self, #sql_db = None,
-                 user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1, var_spells = None, list_spells = [], features = [],
+                 user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1,
+                 var_spells = None, list_spells = [], features = [],
                  has_name = None, has_race = None, has_class = None, has_background = None):
         #self.sql_db = sql_db
         self.user_id = user_id

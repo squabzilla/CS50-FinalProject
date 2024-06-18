@@ -234,7 +234,9 @@ def create_character():
                 if new_pc.set_race_id(var_race_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
                     #json_dump = json.dumps(db.execute("SELECT class_id, class_name FROM list_classes"))
                     json_dump = json.dumps(db.execute("SELECT class_id, class_name FROM list_classes \
-                        WHERE class_id = 5 OR class_id = 8 OR class_id = 12")) #screw it, we only supporting fighters/rangers/wizards right now
+                        WHERE class_id = 5 OR class_id = 12"))
+                    # screw it, we only supporting fighters/wizards
+                    # remember, only doing level 1 characters
                     #print("new_pc.race_id =", new_pc.race_id)
         #else: var_step += 1
         
@@ -252,7 +254,7 @@ def create_character():
                 var_background_id = int(var_background_id)
                 if new_pc.set_background_id(var_background_id) == True: # remember my set_[attribute] functions will set the value AND return True or False depending on success
                     json_dumps = "empty"
-                    print("new_pc should be done because new_pc.has_background =", new_pc.has_background)
+                    #print("new_pc should be done because new_pc.has_background =", new_pc.has_background)
         #else: var_step += 1
         
         # print values for my sanity:

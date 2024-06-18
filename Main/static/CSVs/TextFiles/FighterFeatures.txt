@@ -9,7 +9,7 @@ You gain a +2 bonus to attack rolls you make with
 ranged weapons.#P#
 Defense#$#
 While you are wearing armor, you gain a +1 bonus to
-AC.
+AC.#P#
 Dueling#$#
 When you are wielding a melee weapon in one hand
 and no other weapons, you gain a +2 bonus to

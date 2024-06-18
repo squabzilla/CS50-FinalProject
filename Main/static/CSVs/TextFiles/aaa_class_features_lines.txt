@@ -631,7 +631,7 @@ feature.#P#
 Timeless Body###
 Starting at 18th level, the primal magic that you
 wield causes you to age more slowly. For every 10
-years that pass, your body ages only 1 year.
+years that pass, your body ages only 1 year.#P#
 Beast Spells###
 Beginning at 18th level, you can cast many of your
 druid spells in any shape you assume using Wild
@@ -768,7 +768,7 @@ You gain a +2 bonus to attack rolls you make with
 ranged weapons.#P#
 Defense#$#
 While you are wearing armor, you gain a +1 bonus to
-AC.
+AC.#P#
 Dueling#$#
 When you are wielding a melee weapon in one hand
 and no other weapons, you gain a +2 bonus to
@@ -1488,10 +1488,10 @@ feature before or after the roll, but before any effects
 of the roll are applied.#P#
 Additional Fighting Style###
 At 10th level, you can choose a second option from
-the Fighting Style class feature.
+the Fighting Style class feature.#P#
 Greater Hunter's Mark###
 Beginning at 10th level, when you cast Hunter's Mark, it now
-lasts for up to 24 hours.
+lasts for up to 24 hours.#P#
 Hunter###
 Emulating the Hunter archetype means accepting
 your place as a bulwark between civilization and the
@@ -2175,7 +2175,7 @@ Master of Myriad Forms#$#
 You can cast alter self at will, without expending a
 spell slot.#P#
 Minions of Chaos#$##P#
-<b>Prerequisite: 9th level</b>
+<b>Prerequisite: 9th level</b>#P#
 You can cast conjure elemental once using a warlock
 spell slot. You can't do so again until you finish a
 long rest.#P#

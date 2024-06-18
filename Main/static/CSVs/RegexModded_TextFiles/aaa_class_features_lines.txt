@@ -214,7 +214,8 @@ At 2nd level, you choose to identify with a circle of druids, such as the Circle
 Ability Score Improvement###
 When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature.#P#
 Timeless Body###
-Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year. Beast Spells###
+Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year.#P#
+Beast Spells###
 Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components.#P#
 Archdruid###
 At 20th level, you can use your Wild Shape an unlimited number of times.#P#
@@ -285,7 +286,8 @@ You adopt a particular style of fighting as your specialty. Choose one of the fo
 Archery#$#
 You gain a +2 bonus to attack rolls you make with ranged weapons.#P#
 Defense#$#
-While you are wearing armor, you gain a +1 bonus to AC. Dueling#$#
+While you are wearing armor, you gain a +1 bonus to AC.#P#
+Dueling#$#
 When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.#P#
 Great Weapon Fighting#$#
 When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit.#P#
@@ -546,8 +548,10 @@ You are also aware of the location of any invisible creature within 30 feet of y
 Foe Slayer###
 At 20th level, you become an unparalleled hunter of your enemies. Once on each of your turns, you can add your Wisdom modifier to the attack roll or the damage roll of an attack you make against one of your favored enemies. You can choose to use this feature before or after the roll, but before any effects of the roll are applied.#P#
 Additional Fighting Style###
-At 10th level, you can choose a second option from the Fighting Style class feature. Greater Hunter's Mark###
-Beginning at 10th level, when you cast Hunter's Mark, it now lasts for up to 24 hours. Hunter###
+At 10th level, you can choose a second option from the Fighting Style class feature.#P#
+Greater Hunter's Mark###
+Beginning at 10th level, when you cast Hunter's Mark, it now lasts for up to 24 hours.#P#
+Hunter###
 Emulating the Hunter archetype means accepting your place as a bulwark between civilization and the terrors of the wilderness. As you walk the Hunter's path, you learn specialized techniques for fighting the threats you face, from rampaging ogres and hordes of orcs to towering giants and terrifying dragons.#P#
 Hunter's Prey#$#
 At 3rd level, you gain one of the following features of your choice.#P#
@@ -797,7 +801,7 @@ Master of Myriad Forms#$#
 <b>Prerequisite: 15th level</b>#P#
 You can cast alter self at will, without expending a spell slot.#P#
 Minions of Chaos#$##P#
-<b>Prerequisite: 9th level</b>
+<b>Prerequisite: 9th level</b>#P#
 You can cast conjure elemental once using a warlock spell slot. You can't do so again until you finish a long rest.#P#
 Mire the Mind#$#
 <b>Prerequisite: 5th level</b>#P#

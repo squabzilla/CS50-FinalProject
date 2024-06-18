@@ -1,5 +1,9 @@
-class features for Ranger, Fighter, Wizard up to level 5
+Create level 1 character of each class
+attributes (str, dex, con, int, wis, cha) won't be included
+class features, spells will be included
+This means I'll be making a database of JUST level-1 features for initial version
+(while I'm at it, I should make a level_one_spells.csv and import that one instead of all spells lol)
 
-Actually add character-creation functionality and visibility
-
-Make website pretty with style.css located in static-folder
+Only classes supportable at first: fighter, wizard
+Fighter means we have to pick fighting style at lvl 1
+Wizard means we have to pick spells at lvl 1

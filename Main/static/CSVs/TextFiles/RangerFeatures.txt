@@ -153,10 +153,10 @@ feature before or after the roll, but before any effects
 of the roll are applied.#P#
 Additional Fighting Style###
 At 10th level, you can choose a second option from
-the Fighting Style class feature.
+the Fighting Style class feature.#P#
 Greater Hunter's Mark###
 Beginning at 10th level, when you cast Hunter's Mark, it now
-lasts for up to 24 hours.
+lasts for up to 24 hours.#P#
 Hunter###
 Emulating the Hunter archetype means accepting
 your place as a bulwark between civilization and the
