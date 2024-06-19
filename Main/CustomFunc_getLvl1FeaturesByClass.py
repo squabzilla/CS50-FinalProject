@@ -65,7 +65,6 @@ db = SQL(sql_path)
     # start_bullet_points = False
 
 def format_class_feature_title(class_feature):
-    print(class_feature)
     text_list = []
     line_text = ""
     end_line = "\n"
@@ -73,9 +72,9 @@ def format_class_feature_title(class_feature):
     for i in range(len(class_feature)):
         if i == index_length: end_line = ""
         if class_feature[i]["feature_title_format"] == 1:
-            line_text = "<h1>" + class_feature[i]["feature_text_description"] + "</h1>" + end_line
-        if class_feature[i]["feature_title_format"] == 1:
-            line_text = "<h2>" + class_feature[i]["feature_text_description"] + "</h2>" + end_line
+            line_text = "<h1>" + class_feature[i]["feature_title_text"] + "</h1>" + end_line
+        if class_feature[i]["feature_title_format"] == 2:
+            line_text = "<h2>" + class_feature[i]["feature_title_text"] + "</h2>" + end_line
         text_list.append(line_text)
     text_full = "".join(text_list) # apparently faster, and one line of code, to plop all that list into a text
     return text_full
