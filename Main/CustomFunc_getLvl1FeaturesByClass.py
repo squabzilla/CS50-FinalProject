@@ -47,15 +47,44 @@ db = SQL(sql_path)
 # - 4:table-title
 # - 5: tbl-clmn-nm
 # - 6: table-items
-
+#
+# NOTE: Bullet-point thoughts for later
+# start_bullet_points = False
+# for i in range(len(lines)):
+# if line-type = 3 # meaning bullet-points:
+    # if start_bullet_points == False:
+        # start_bullet_points = True
+        # line = <ul><li>line_text</li></ul>
+    # else:
+        # line = <li>line_text</li></ul>
+        # lines[i-1] = lines[i-1][:-4]
+        # # strip last four character of lines,
+        # # [:-4] goes from [ index 0 ] to [ index (last - 4) ]
+        # # this removes the closing </ul> tag from previous lines
+# if line-type != 3 and start_bullet_points == True:
+    # start_bullet_points = False
 
 def get_lvl1_features(class_id):
     if class_id == 5:
         fighter_stuff = "fighter stuff"
+        # GET FIGHTING STYLE - feature_id: 80
+        # list fighting styles:
+            # archery - feature_id: 81
+            # Defense - feature_id: 82
+            # Dueling - feature_id: 83
+            # Great Weapon Fighting - feature_id: 84
+            # Protection - feature_id: 85
+            # Two-Weapon Fighting - feature_id: 86
+        # GET SECOND WIND - feature_id: 87
     elif class_id == 12:
         wizard_stuff = "wizard stuff"
     else: # class_id NOT equal to (5 or 12)
         return False
+
+def format_class_feature(class_feature):
+    text_list = []
+    text_full = ""
+    for i in range((class_feature))
 
 
 def get_class_feature(feature_id):
@@ -66,10 +95,12 @@ def get_class_feature(feature_id):
     return feature
         
 def main():
+    for i in range(7):
+        print(f"{i-1}, {i}, {i+1}")
     #print(get_class_feature(289))
-    test_feature = get_class_feature(289)
-    for item in test_feature:
-        print(item)
+    #test_feature = get_class_feature(289)
+    #for item in test_feature:
+        #print(item)
         # 'feature_text_type'
         # 'feature_text_order'
         # 'feature_text_description'
