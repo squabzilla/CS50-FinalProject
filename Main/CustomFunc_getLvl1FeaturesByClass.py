@@ -50,9 +50,12 @@ db = SQL(sql_path)
 
 
 def get_lvl1_features(class_id):
-    if class_id not in [0,5]:
+    if class_id == 5:
+        fighter_stuff = "fighter stuff"
+    elif class_id == 12:
+        wizard_stuff = "wizard stuff"
+    else: # class_id NOT equal to (5 or 12)
         return False
-    is_bullet = False
 
 
 def get_class_feature(feature_id):
