@@ -16,6 +16,18 @@ import shutil
 # In fact, I ended up taking screen-shots and OCR'ing it. Really would've been looking for software that just reads 
 # raw PDF data and let's me manipulate it, but that's not what I did.
 
+# csv folder
+#csv_folder = "static/CSVs"
+
+# folder-paths
+main_dir = os.path.dirname(os.getcwd())
+var_input_text_path = "static/CSVs/TextFiles"
+var_input_text_path = os.path.join(main_dir, var_input_text_path)
+var_output_RegexModdedText_path = "static/CSVs/TextFiles/TextFiles_RegexAltered"
+var_output_RegexModdedText_path = os.path.join(main_dir, var_output_RegexModdedText_path)
+#var_input_text_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
+#var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_RegexAltered")
+
 var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
                 "DruidFeatures","FighterFeatures","MonkFeatures",
                 "PaladinFeatures","RangerFeatures","RogueFeatures",
@@ -34,9 +46,7 @@ var_RegexModdedText_paths = []
 var_text_end = ".txt"
 var_csv_end = ".csv"
 
-# actual folder-paths
-var_input_text_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
-var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_RegexAltered")
+
 
 # amount of files
 var_number_of_files = len(var_file_names)
