@@ -16,8 +16,9 @@ import shutil
 # In fact, I ended up taking screen-shots and OCR'ing it. Really would've been looking for software that just reads 
 # raw PDF data and let's me manipulate it, but that's not what I did.
 
-# csv folder
-#csv_folder = "static/CSVs"
+# Full paths: (depreciated)
+#var_inputText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
+#var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_RegexAltered")
 
 # relative folder paths for input and output folders:
 var_inputText_path = "static/CSVs/TextFiles"
@@ -29,13 +30,7 @@ var_inputText_path = os.path.join(main_dir, var_inputText_path)
 var_inputText_path = pathlib.Path(var_inputText_path)
 var_output_RegexModdedText_path = os.path.join(main_dir, var_output_RegexModdedText_path)
 var_output_RegexModdedText_path = pathlib.Path(var_output_RegexModdedText_path)
-#old_input = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
-#if old_input == var_inputText_path:
-#    print("Old input = new input")
-#else:
-#    print("mismatch")
-#var_inputText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
-#var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_RegexAltered")
+
 
 var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
                 "DruidFeatures","FighterFeatures","MonkFeatures",
