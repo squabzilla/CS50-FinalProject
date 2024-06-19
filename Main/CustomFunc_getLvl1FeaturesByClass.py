@@ -104,7 +104,7 @@ def get_feature_text(feature_id):
     return feature_text
 
 def get_feature_title(feature_id):
-    sql_feature_title = db.execute("SELECT feature_title_text FROM list_feature_titles WHERE feature_id = ?", feature_id)
+    sql_feature_title = db.execute("SELECT feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
     feature_title = format_class_feature_text(sql_feature_title)
     return feature_title
 
