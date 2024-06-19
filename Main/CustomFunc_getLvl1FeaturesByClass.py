@@ -85,7 +85,7 @@ def format_class_feature(feature_id):
     class_feature = get_class_feature(feature_id)
     text_list = []
     text_full = ""
-    for i in range((class_feature)):
+    for i in range(len(class_feature)):
         if class_feature[i]["feature_text_type"] == "0":
             text_list.append("<p>" + class_feature[i]["feature_text_description"] + "</p>")
         if class_feature[i]["feature_text_type"] == "1":
@@ -111,15 +111,8 @@ def get_class_feature(feature_id):
     return class_feature
         
 def main():
-    for i in range(7):
-        print(f"{i-1}, {i}, {i+1}")
-    #print(get_class_feature(289))
-    #test_feature = get_class_feature(289)
-    #for item in test_feature:
-        #print(item)
-        # 'feature_text_type'
-        # 'feature_text_order'
-        # 'feature_text_description'
-        #break
+    format_class_feature(85)
+    
+    return True
     
 main()
