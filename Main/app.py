@@ -247,7 +247,7 @@ def get_background_dropdown():
             background_dropdown += "\n"
     return jsonify(background_dropdown)
 
-@app.route("get_lvl1features")
+@app.route("/get_lvl1features")
 def get_new_char_features():
     #if 'user' in session:
         #user = session['user']

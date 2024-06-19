@@ -61,6 +61,9 @@
             //let select_features_response = await fetch('/search?q=' + input.value);
             //let shows = await response.json();
             let features_response = await fetch('/get_lvl1features');
+            let features_items = await features_response.json();
+            document.getElementById("select_features").insertAdjacentHTML("beforeend",background_dropdown)
+        </script>
 
     {% endif %}
 
