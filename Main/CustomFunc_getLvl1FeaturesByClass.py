@@ -64,6 +64,21 @@ db = SQL(sql_path)
 # if line-type != 3 and start_bullet_points == True:
     # start_bullet_points = False
 
+def format_class_feature_title(class_feature):
+    text_list = []
+    line_text = ""
+    end_line = "\n"
+    index_length = len(class_feature) - 1
+    for i in range(len(class_feature)):
+        if i == index_length: end_line = ""
+        if class_feature[i]["feature_title_format"] == 1:
+            line_text = "<h1>" + class_feature[i]["feature_text_description"] + "</h1>" + end_line
+        if class_feature[i]["feature_title_format"] == 1:
+            line_text = "<h2>" + class_feature[i]["feature_text_description"] + "</h2>" + end_line
+        text_list.append(line_text)
+    text_full = "".join(text_list) # apparently faster, and one line of code, to plop all that list into a text
+    return text_full
+
 def format_class_feature_text(class_feature):
     text_list = []
     line_text = ""
@@ -105,7 +120,7 @@ def get_feature_text(feature_id):
 
 def get_feature_title(feature_id):
     sql_feature_title = db.execute("SELECT feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
-    feature_title = format_class_feature_text(sql_feature_title)
+    feature_title = format_class_feature_title(sql_feature_title)
     return feature_title
 
 def get_lvl1_features_fighter():
