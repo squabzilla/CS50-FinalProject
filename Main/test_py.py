@@ -1,10 +1,37 @@
 import os
+import csv
 from cs50 import SQL
 import re
 #from flask import jsonify
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///RPG_characters.db")
+
+name_of_database = "RPG_characters.db"
+
+# csv folder
+csv_folder = "static/CSVs"
+
+# csv file names
+# NOTE: Doing shortened list of spells, to remove a bunch of items I won't be using initially
+#spell_list_csv = "spell_list.csv"
+spell_list_csv = "spell_list_lvl0lvl1.csv"
+spell_list_csv = os.path.join(csv_folder, spell_list_csv)
+race_list_csv = "race_list.csv"
+race_list_csv = os.path.join(csv_folder, race_list_csv)
+attribute_list_csv = "attribute_list.csv"
+attribute_list_csv = os.path.join(csv_folder, attribute_list_csv)
+class_list_csv = "class_list.csv"
+class_list_csv = os.path.join(csv_folder, class_list_csv)
+background_list_csv = "background_list.csv"
+background_list_csv = os.path.join(csv_folder, background_list_csv)
+# NOTE: Doing shortened list of features, to remove a bunch of items I won't be using initially
+#features_list_csv = "features_list.csv"
+features_list_csv = "features_list_FighWiza.csv"
+features_list_csv = os.path.join(csv_folder, features_list_csv)
+#features_titles_list_csv = "features_titles.csv"
+features_titles_list_csv = "features_titles_FighWiza.csv"
+features_titles_list_csv = os.path.join(csv_folder, features_titles_list_csv)
 
 
 def numberify(variable):
@@ -143,10 +170,34 @@ def trying_test_if_in_racelist():
     test_items = [0, 1, 27, -3, "0", "1", "27"]
     for i in range(len(test_items)):
         print(f"Item {i} of value: {test_items[i]} in racelist: {test_if_in_racelist(test_items[i])}")
+
+def read_csv_data_types():
+    with open(features_list_csv, "r") as var_file:
+    # open file, doing "with open" means I don't have to close it
+        var_reader = csv.reader(var_file)
+        next(var_reader)
+        # skip header line, import everything
+        for var_row in var_reader:
+            var_feature_key = var_row[0]
+            print(f"var_feature_key example value {var_feature_key} is of type {type(var_feature_key)}")
+            var_feature_id = var_row[1]
+            print(f"var_feature_id example value {var_feature_id} is of type {type(var_feature_id)}")
+            var_feature_class_id = var_row[2]
+            print(f"var_feature_class_id example value {var_feature_class_id} is of type {type(var_feature_class_id)}")
+            var_feature_text_type = var_row[3]
+            print(f"var_feature_text_type example value {var_feature_text_type} is of type {type(var_feature_text_type)}")
+            var_feature_text_order = var_row[4]
+            print(f"var_feature_text_order example value {var_feature_text_order} is of type {type(var_feature_text_order)}")
+            feature_text_description = var_row[5]
+            print(f"feature_text_description example value {feature_text_description} is of type {type(feature_text_description)}")
+            break
     
 def main():
     #test_check_type()
     #test_check_if_int()
     #trying_test_if_in_racelist()
+    read_csv_data_types()
     return True
 main()
+
+
