@@ -65,6 +65,7 @@ db = SQL(sql_path)
     # start_bullet_points = False
 
 def format_class_feature_title(class_feature):
+    print(class_feature)
     text_list = []
     line_text = ""
     end_line = "\n"
@@ -200,7 +201,9 @@ def get_lvl1_features(class_id):
 def main():
     #print(get_feature_text(85))
     text = get_lvl1_features_fighter
-    print(text)
+    #print(text)
+    title = get_feature_title(85)
+    print(title)
     
     return True
     
