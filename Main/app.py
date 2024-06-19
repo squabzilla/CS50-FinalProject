@@ -249,11 +249,15 @@ def get_background_dropdown():
 
 @app.route("get_lvl1features")
 def get_new_char_features():
-    if 'user' in session:
-    user = session['user']
-    print(user)
+    #if 'user' in session:
+        #user = session['user']
+        #print(user)
     #class_id = 
-    class_id = request.args.get("class_id")
+    #class_id = request.args.get("class_id")
+    class_id = -1
+    if "new_char" in session:
+        new_pc = session["new_char"]
+        class_id = new_pc.class_id
     if class_id in [5,12]: # since only supporting fighters, wizards right now
         features = get_lvl1_features(class_id)
     else:
