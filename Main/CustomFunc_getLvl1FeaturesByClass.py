@@ -100,7 +100,11 @@ def format_class_feature(feature_id):
     #s = ''.join(l)
     #print(class_feature)
     text_full = "".join(text_list)
+    print("Full text below:")
     print(text_full)
+    print("Full text list below:")
+    print(text_list)
+    
         
 
 
