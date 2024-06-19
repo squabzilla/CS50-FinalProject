@@ -316,20 +316,20 @@ db.execute("CREATE TABLE list_feature_titles (\
 #db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_titles (feature_title_text);")
 # NOTE: We currently have duplicates here, and aren't about to fix it now
 
-print("Importing feature titles...", end="")
-with open(features_titles_list_csv, "r") as var_file:
-    # open file, doing "with open" means I don't have to close it
-    var_reader = csv.reader(var_file)
-    next(var_reader)
-    # skip header line, import everything
-    for var_row in var_reader:
-        var_feature_title_id = var_row[0]
-        var_feature_title_text = var_row[8]
-        db.execute("INSERT INTO list_feature_titles (\
-            feature_title_id, feature_title_text \
-            ) VALUES(?, ?)", 
-            var_feature_title_id, var_feature_title_text)
-print("DONE")
+# print("Importing feature titles...", end="")
+# with open(features_titles_list_csv, "r") as var_file:
+    # # open file, doing "with open" means I don't have to close it
+    # var_reader = csv.reader(var_file)
+    # next(var_reader)
+    # # skip header line, import everything
+    # for var_row in var_reader:
+        # var_feature_title_id = var_row[0]
+        # var_feature_title_text = var_row[8]
+        # db.execute("INSERT INTO list_feature_titles (\
+            # feature_title_id, feature_title_text \
+            # ) VALUES(?, ?)", 
+            # var_feature_title_id, var_feature_title_text)
+# print("DONE")
 
 
 print("Creating list_feature_descriptions table...", end="")
