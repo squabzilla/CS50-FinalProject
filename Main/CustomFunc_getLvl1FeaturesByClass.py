@@ -65,9 +65,11 @@ db = SQL(sql_path)
     # start_bullet_points = False
 
 def get_lvl1_features(class_id):
+    features_list = []
     if class_id == 5:
-        fighter_stuff = "fighter stuff"
         # GET FIGHTING STYLE - feature_id: 80
+        features_list.append(get_feature_text(80))
+        features_list.append('<select class="form-select" aria-label="Default select example">\n')
         # list fighting styles:
             # archery - feature_id: 81
             # Defense - feature_id: 82
@@ -83,14 +85,18 @@ def get_lvl1_features(class_id):
 
 def format_class_feature_text(class_feature):
     text_list = []
-    #print(class_feature)
-    for i in range(len(class_feature)):
+    line_text = ""
+    end_line = "\n"
+    index_length = len(class_feature) - 1
+    for i in range(index_length):
+        if i == index_length: end_line = ""
         if class_feature[i]["feature_text_type"] == 0:
-            text_list.append("<p>" + class_feature[i]["feature_text_description"] + "</p>\n")
+            line_text = f"<p>{class_feature[i]["feature_text_description"]}</p>{end_line}"
         if class_feature[i]["feature_text_type"] == 1:
-            text_list.append("<h1>" + class_feature[i]["feature_text_description"] + "</h1>\n")
+            line_text = f"<h1>{class_feature[i]["feature_text_description"]}</h1>{end_line}"
         if class_feature[i]["feature_text_type"] == 2:
-            text_list.append("<h2>" + class_feature[i]["feature_text_description"] + "</h2>\n")
+            line_text = f"<h2>{class_feature[i]["feature_text_description"]}</h2>{end_line}"
+        text_list.append(line_text)
         # NOTE:
         # Currently this is a little over-complicated, but later when I deal with importing
         # bullet-points or tables from text description, I'll want more flexibility with handling stuff
@@ -115,7 +121,7 @@ def get_feature_title(feature_id):
     return feature_title
         
 def main():
-    #format_class_feature(85)
+    get_feature_text(85)
     
     return True
     
