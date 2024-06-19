@@ -81,18 +81,34 @@ def get_lvl1_features(class_id):
     else: # class_id NOT equal to (5 or 12)
         return False
 
-def format_class_feature(class_feature):
+def format_class_feature(feature_id):
+    class_feature = get_class_feature(feature_id)
     text_list = []
     text_full = ""
-    for i in range((class_feature))
+    for i in range((class_feature)):
+        if class_feature[i]["feature_text_type"] == "0":
+            text_list.append("<p>" + class_feature[i]["feature_text_description"] + "</p>")
+        if class_feature[i]["feature_text_type"] == "1":
+            text_list.append("<h1>" + class_feature[i]["feature_text_description"] + "</h1>")
+        if class_feature[i]["feature_text_type"] == "2":
+            text_list.append("<h2>" + class_feature[i]["feature_text_description"] + "</h2>")
+        # NOTE:
+        # Currently this is a little over-complicated, but later when I deal with importing
+        # bullet-points or tables from text description, I'll want more flexibility with handling stuff
+    #for text in text_list:
+        #text_full.app
+    #s = ''.join(l)
+    text_full = "".join(class_feature)
+    print(text_full)
+        
 
 
 def get_class_feature(feature_id):
-    feature = db.execute("SELECT feature_text_type, feature_text_order, feature_text_description \
+    class_feature = db.execute("SELECT feature_text_type, feature_text_order, feature_text_description \
         FROM list_feature_descriptions \
         WHERE feature_id = ? \
         ORDER BY feature_text_order ASC", feature_id)
-    return feature
+    return class_feature
         
 def main():
     for i in range(7):
