@@ -10,6 +10,7 @@ import pathlib
     # text_order - the order that these text-boxes appear in for the feature
     # text_text - the actual text, which this script puts into quotations
 
+# Full paths: (depreciated)
 #input_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_RegexAltered")
 #output_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_ToCSVs")
 
