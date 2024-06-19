@@ -19,15 +19,17 @@ import shutil
 # csv folder
 #csv_folder = "static/CSVs"
 
-# folder-paths
-main_dir = os.path.dirname(os.getcwd())
+# relative folder paths for input and output folders:
 var_inputText_path = "static/CSVs/TextFiles"
+var_output_RegexModdedText_path = "static/CSVs/TextFiles_RegexAltered"
+
+# setting them up properly as path variables (with full path)
+main_dir = os.path.dirname(os.getcwd())
 var_inputText_path = os.path.join(main_dir, var_inputText_path)
 var_inputText_path = pathlib.Path(var_inputText_path)
-var_output_RegexModdedText_path = "static/CSVs/TextFiles_RegexAltered"
 var_output_RegexModdedText_path = os.path.join(main_dir, var_output_RegexModdedText_path)
 var_output_RegexModdedText_path = pathlib.Path(var_output_RegexModdedText_path)
-old_input = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
+#old_input = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
 #if old_input == var_inputText_path:
 #    print("Old input = new input")
 #else:
