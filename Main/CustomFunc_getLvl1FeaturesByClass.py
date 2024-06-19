@@ -84,10 +84,13 @@ def get_lvl1_features(class_id):
         return False
 
 def format_class_feature_text(class_feature):
+    print("format_class_feature_text class_feature below:")
+    print(class_feature)
     text_list = []
     line_text = ""
     end_line = "\n"
     index_length = len(class_feature) - 1
+    print(f"index_length: {index_length}")
     for i in range(index_length):
         if i == index_length: end_line = ""
         if class_feature[i]["feature_text_type"] == 0:
@@ -104,6 +107,8 @@ def format_class_feature_text(class_feature):
             #line_text = f"<h2>{class_feature[i]["feature_text_description"]}</h2>{end_line}"
             #line_text = f"<h2></h2>{end_line}"
         text_list.append(line_text)
+        print(f"text_list on iteration {i+1}:")
+        print(text_list)
         # NOTE:
         # Currently this is a little over-complicated, but later when I deal with importing
         # bullet-points or tables from text description, I'll want more flexibility with handling stuff
