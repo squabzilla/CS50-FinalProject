@@ -12,6 +12,7 @@ from helpers import login_required
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
 from CustomClass_RPGcharacter import highest_spell_slot, class_spells_by_spell_level, new_bard_spells, new_cleric_spells, \
     new_druid_spells, new_ranger_spells, new_sorcerer_spells, new_warlock_spells, new_wizard_spells, rpg_char_create
+from CustomFunc_getLvl1FeaturesByClass import get_lvl1_features
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
 
 # configure flask application
