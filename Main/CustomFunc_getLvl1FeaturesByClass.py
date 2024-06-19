@@ -98,7 +98,8 @@ def format_class_feature(feature_id):
     #for text in text_list:
         #text_full.app
     #s = ''.join(l)
-    text_full = "".join(class_feature)
+    print(class_feature)
+    #text_full = "".join(class_feature)
     print(text_full)
         
 
