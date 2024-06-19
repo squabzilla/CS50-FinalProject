@@ -198,7 +198,9 @@ def get_lvl1_features(class_id):
     return lvl1_features_text
         
 def main():
-    print(get_feature_text(85))
+    #print(get_feature_text(85))
+    text = get_lvl1_features_fighter
+    print(text)
     
     return True
     
