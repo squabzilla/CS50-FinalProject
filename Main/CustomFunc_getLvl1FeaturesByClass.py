@@ -119,6 +119,7 @@ def get_feature_text(feature_id):
         FROM list_feature_descriptions \
         WHERE feature_id = ? \
         ORDER BY feature_text_order ASC", feature_id)
+    print(sql_feature_text)
     feature_text = format_class_feature_text(sql_feature_text)
     return feature_text
 
