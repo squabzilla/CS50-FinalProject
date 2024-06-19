@@ -81,10 +81,8 @@ def get_lvl1_features(class_id):
     else: # class_id NOT equal to (5 or 12)
         return False
 
-def format_class_feature(feature_id):
-    class_feature = get_class_feature(feature_id)
+def format_class_feature_text(class_feature):
     text_list = []
-    text_full = ""
     #print(class_feature)
     for i in range(len(class_feature)):
         if class_feature[i]["feature_text_type"] == 0:
@@ -100,22 +98,24 @@ def format_class_feature(feature_id):
         #text_full.app
     #s = ''.join(l)
     #print(class_feature)
-    text_full = "".join(text_list)
-    print("Full text below:")
-    print(text_full, end="")
-    
-        
+    text_full = "".join(text_list) # apparently faster, and one line of code, to plop all that list into a text
+    return text_full
 
-
-def get_class_feature(feature_id):
-    class_feature = db.execute("SELECT feature_text_type, feature_text_order, feature_text_description \
+def get_feature_text(feature_id):
+    sql_feature_text = db.execute("SELECT feature_text_type, feature_text_order, feature_text_description \
         FROM list_feature_descriptions \
         WHERE feature_id = ? \
         ORDER BY feature_text_order ASC", feature_id)
-    return class_feature
+    feature_text = format_class_feature_text(sql_feature_text)
+    return feature_text
+
+def get_feature_title(feature_id):
+    sql_feature_title = db.execute("SELECT feature_title_text FROM list_feature_titles WHERE feature_id = ?", feature_id)
+    feature_title = format_class_feature_text(sql_feature_title)
+    return feature_title
         
 def main():
-    format_class_feature(85)
+    #format_class_feature(85)
     
     return True
     
