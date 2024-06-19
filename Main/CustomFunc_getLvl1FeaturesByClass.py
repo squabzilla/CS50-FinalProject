@@ -91,11 +91,14 @@ def format_class_feature_text(class_feature):
     for i in range(index_length):
         if i == index_length: end_line = ""
         if class_feature[i]["feature_text_type"] == 0:
-            line_text = f"<p>{class_feature[i]["feature_text_description"]}</p>{end_line}"
+            #line_text = f"<p>{class_feature[i]["feature_text_description"]}</p>{end_line}"
+            line_text = f"<p></p>{end_line}"
         if class_feature[i]["feature_text_type"] == 1:
-            line_text = f"<h1>{class_feature[i]["feature_text_description"]}</h1>{end_line}"
+            #line_text = f"<h1>{class_feature[i]["feature_text_description"]}</h1>{end_line}"
+            line_text = f"<h1></h1>{end_line}"
         if class_feature[i]["feature_text_type"] == 2:
-            line_text = f"<h2>{class_feature[i]["feature_text_description"]}</h2>{end_line}"
+            #line_text = f"<h2>{class_feature[i]["feature_text_description"]}</h2>{end_line}"
+            line_text = f"<h2></h2>{end_line}"
         text_list.append(line_text)
         # NOTE:
         # Currently this is a little over-complicated, but later when I deal with importing
@@ -121,7 +124,7 @@ def get_feature_title(feature_id):
     return feature_title
         
 def main():
-    get_feature_text(85)
+    print(get_feature_text(85))
     
     return True
     
