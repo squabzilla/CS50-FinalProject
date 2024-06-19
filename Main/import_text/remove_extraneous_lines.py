@@ -28,11 +28,11 @@ var_input_text_path = os.path.join(main_dir, var_input_text_path)
 var_output_RegexModdedText_path = "static/CSVs/TextFiles_RegexAltered"
 var_output_RegexModdedText_path = pathlib.Path(var_output_RegexModdedText_path)
 var_output_RegexModdedText_path = os.path.join(main_dir, var_output_RegexModdedText_path)
-print(var_output_RegexModdedText_path)
-#print("var_input_text_path")
-#print(var_input_text_path)
-#print("var_output_RegexModdedText_path")
-#print(var_output_RegexModdedText_path)
+old_input = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
+if old_input == var_input_text_path:
+    print("Old input = new input")
+else:
+    print("mismatch")
 #var_input_text_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
 #var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_RegexAltered")
 
