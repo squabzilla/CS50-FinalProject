@@ -21,18 +21,18 @@ import shutil
 
 # folder-paths
 main_dir = os.path.dirname(os.getcwd())
-var_input_text_path = "static/CSVs/TextFiles"
-var_input_text_path = os.path.join(main_dir, var_input_text_path)
-var_input_text_path = pathlib.Path(var_input_text_path)
+var_inputText_path = "static/CSVs/TextFiles"
+var_inputText_path = os.path.join(main_dir, var_inputText_path)
+var_inputText_path = pathlib.Path(var_inputText_path)
 var_output_RegexModdedText_path = "static/CSVs/TextFiles_RegexAltered"
 var_output_RegexModdedText_path = os.path.join(main_dir, var_output_RegexModdedText_path)
 var_output_RegexModdedText_path = pathlib.Path(var_output_RegexModdedText_path)
 old_input = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
-#if old_input == var_input_text_path:
+#if old_input == var_inputText_path:
 #    print("Old input = new input")
 #else:
 #    print("mismatch")
-#var_input_text_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
+#var_inputText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
 #var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_RegexAltered")
 
 var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
@@ -41,12 +41,12 @@ var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures"
                 "SorcererFeatures","WarlockFeatures","WizardFeatures"]
 
 # Name variables
-var_input_text_names = []
+var_inputText_names = []
 var_RegexModdedText_names = []
 
 # path variables
 # NOTE: I want these later
-var_input_text_paths = []
+var_inputText_paths = []
 var_RegexModdedText_paths = []
 
 # extension variables
@@ -54,7 +54,7 @@ var_text_end = ".txt"
 var_csv_end = ".csv"
 
 # actual folder-paths
-#var_input_text_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
+#var_inputText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
 #var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\RegexModded_TextFiles")
 #print(var_output_RegexModdedText_path)
 
@@ -63,9 +63,9 @@ var_number_of_files = len(var_file_names)
 
 # let's set them up correct
 for i in range(var_number_of_files):
-    var_input_text_names.append(pathlib.Path(var_file_names[i] + var_text_end))
+    var_inputText_names.append(pathlib.Path(var_file_names[i] + var_text_end))
     var_RegexModdedText_names.append(pathlib.Path(var_file_names[i] + var_text_end))
-    var_input_text_paths.append(pathlib.Path.joinpath(var_input_text_path, var_input_text_names[i]))
+    var_inputText_paths.append(pathlib.Path.joinpath(var_inputText_path, var_inputText_names[i]))
     var_RegexModdedText_paths.append(pathlib.Path.joinpath(var_output_RegexModdedText_path, var_RegexModdedText_names[i]))
 
 # just some stuff I want in a list
@@ -131,7 +131,7 @@ def import_txt_file(input_path, output_path, list_find_items, list_replace_items
 
 def main():
     for i in range(var_number_of_files):
-        import_txt_file(var_input_text_paths[i], var_RegexModdedText_paths[i], var_list_find_items, var_list_replace_items)
+        import_txt_file(var_inputText_paths[i], var_RegexModdedText_paths[i], var_list_find_items, var_list_replace_items)
     print("Done")
 main()
 
