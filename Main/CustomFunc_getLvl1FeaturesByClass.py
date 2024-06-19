@@ -87,13 +87,12 @@ def format_class_feature(feature_id):
     text_full = ""
     #print(class_feature)
     for i in range(len(class_feature)):
-        print(class_feature[i])
         if class_feature[i]["feature_text_type"] == 0:
-            text_list.append("<p>" + class_feature[i]["feature_text_description"] + "</p>")
+            text_list.append("<p>" + class_feature[i]["feature_text_description"] + "</p>\n")
         if class_feature[i]["feature_text_type"] == 1:
-            text_list.append("<h1>" + class_feature[i]["feature_text_description"] + "</h1>")
+            text_list.append("<h1>" + class_feature[i]["feature_text_description"] + "</h1>\n")
         if class_feature[i]["feature_text_type"] == 2:
-            text_list.append("<h2>" + class_feature[i]["feature_text_description"] + "</h2>")
+            text_list.append("<h2>" + class_feature[i]["feature_text_description"] + "</h2>\n")
         # NOTE:
         # Currently this is a little over-complicated, but later when I deal with importing
         # bullet-points or tables from text description, I'll want more flexibility with handling stuff
@@ -103,9 +102,7 @@ def format_class_feature(feature_id):
     #print(class_feature)
     text_full = "".join(text_list)
     print("Full text below:")
-    print(text_full)
-    print("Full text list below:")
-    print(text_list)
+    print(text_full, end="")
     
         
 
