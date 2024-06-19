@@ -66,5 +66,6 @@ def main():
     test_feature = get_class_feature(289)
     for item in test_feature:
         print(item)
+        break
     
 main()
