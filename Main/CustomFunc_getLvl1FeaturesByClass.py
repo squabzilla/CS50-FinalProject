@@ -58,7 +58,8 @@ def get_lvl1_features(class_id):
 def get_class_feature(feature_id):
     feature = db.execute("SELECT feature_text_type, feature_text_order, feature_text_description \
         FROM list_feature_descriptions \
-        WHERE feature_id = ?", feature_id)
+        WHERE feature_id = ? \
+        ORDER BY feature_text_order ASC", feature_id)
     return feature
         
 def main():
@@ -66,6 +67,9 @@ def main():
     test_feature = get_class_feature(289)
     for item in test_feature:
         print(item)
-        break
+        # 'feature_text_type'
+        # 'feature_text_order'
+        # 'feature_text_description'
+        #break
     
 main()
