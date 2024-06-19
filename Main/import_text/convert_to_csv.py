@@ -10,8 +10,19 @@ import pathlib
     # text_order - the order that these text-boxes appear in for the feature
     # text_text - the actual text, which this script puts into quotations
 
-input_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_RegexAltered")
-output_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_ToCSVs")
+#input_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_RegexAltered")
+#output_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_ToCSVs")
+
+# relative folder paths for input and output folders:
+input_path = "static/CSVs/TextFiles_RegexAltered"
+output_path = "static/CSVs/TextFiles_ToCSVs"
+
+# setting them up properly as path variables (with full path)
+main_dir = os.path.dirname(os.getcwd())
+input_path = os.path.join(main_dir, input_path)
+input_path = pathlib.Path(input_path)
+output_path = os.path.join(main_dir, output_path)
+output_path = pathlib.Path(output_path)
 
 var_file_names = ["aaa_class_features_lines", "BarbarianFeatures","BardFeatures","ClericFeatures",
                 "DruidFeatures","FighterFeatures","MonkFeatures",
