@@ -311,6 +311,7 @@ print("DONE")
 print("Creating list_feature_titles table...", end="")
 db.execute("CREATE TABLE list_feature_titles (\
     feature_title_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
+    feature_title_format INTEGER, \
     feature_title_text TEXT NOT NULL \
     );")
 #db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_titles (feature_title_text);")
