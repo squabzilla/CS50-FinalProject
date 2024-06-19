@@ -73,7 +73,7 @@ var_other_chars = [","]
 var_regex_escape_chars = ["+", "."] #some of these characters might be ones regex treats fucky
 #var_other_chars = [",","\+","\."] 
 #var_other_chars = [",", "+", "."]
-#var_pound_sign = "\$" #regex also treats this fuck
+#var_pound_sign = "\$" #regex also treats this fucky
 var_all_chars = []
 
 #filling up my list of chars I want:
