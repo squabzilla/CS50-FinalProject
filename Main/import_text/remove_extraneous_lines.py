@@ -22,17 +22,16 @@ import shutil
 # folder-paths
 main_dir = os.path.dirname(os.getcwd())
 var_input_text_path = "static/CSVs/TextFiles"
-#var_input_text_path = pathlib.Path(var_input_text_path)
 var_input_text_path = os.path.join(main_dir, var_input_text_path)
 var_input_text_path = pathlib.Path(var_input_text_path)
 var_output_RegexModdedText_path = "static/CSVs/TextFiles_RegexAltered"
-var_output_RegexModdedText_path = pathlib.Path(var_output_RegexModdedText_path)
 var_output_RegexModdedText_path = os.path.join(main_dir, var_output_RegexModdedText_path)
+var_output_RegexModdedText_path = pathlib.Path(var_output_RegexModdedText_path)
 old_input = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
-if old_input == var_input_text_path:
-    print("Old input = new input")
-else:
-    print("mismatch")
+#if old_input == var_input_text_path:
+#    print("Old input = new input")
+#else:
+#    print("mismatch")
 #var_input_text_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
 #var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles_RegexAltered")
 
@@ -57,7 +56,7 @@ var_csv_end = ".csv"
 # actual folder-paths
 #var_input_text_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
 #var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\RegexModded_TextFiles")
-print(var_output_RegexModdedText_path)
+#print(var_output_RegexModdedText_path)
 
 # amount of files
 var_number_of_files = len(var_file_names)
