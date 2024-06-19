@@ -141,15 +141,36 @@ def get_lvl1_features_fighter():
     return features_text
 
 def get_lvl1_features_wizard():
+    features_list = []
     # Spellcasting - feature_id: 287
+    feature_Spellcasting = 287
+    features_list.append(f'{get_feature_text(feature_Spellcasting)}\n')
     # Cantrips - feature_id: 288
+    feature_Cantrips = 288
+    features_list.append(f'{get_feature_text(feature_Cantrips)}\n')
     # Spellbook - feature_id: 289
+    feature_Spellbook = 289
+    features_list.append(f'{get_feature_text(feature_Spellbook)}\n')
     # Preparing_and_Casting_Spells - feature_id: 290
+    feature_Preparing_and_Casting_Spells = 290
+    features_list.append(f'{get_feature_text(feature_Preparing_and_Casting_Spells)}\n')
     # Spellcasting_Ability - feature_id: 291
+    feature_Spellcasting_Ability = 291
+    features_list.append(f'{get_feature_text(feature_Spellcasting_Ability)}\n')
     # Ritual_Casting - feature_id: 292
+    feature_Ritual_Casting = 292
+    features_list.append(f'{get_feature_text(feature_Ritual_Casting)}\n')
     # Spellcasting_Focus - feature_id: 293
+    feature_Spellcasting_Focus = 293
+    features_list.append(f'{get_feature_text(feature_Spellcasting_Focus)}\n')
     # Learning_Spells_of_1st_Level_and_Higher - feature_id: 294
+    feature_Learning_Spells_of_1st_Level_and_Higher = 294
+    features_list.append(f'{get_feature_text(feature_Learning_Spells_of_1st_Level_and_Higher)}\n')
     # Arcane_Recovery - feature_id: 295
+    feature_Arcane_Recovery = 295
+    features_list.append(f'{get_feature_text(feature_Arcane_Recovery)}\n')
+    features_text = "".join(features_list)
+    return features_text
 
 def get_lvl1_features(class_id):
     lvl1_features_text = ""
