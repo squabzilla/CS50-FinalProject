@@ -369,19 +369,19 @@ with open(features_list_csv, "r") as var_file:
         var_feature_text_type = var_row[3]
         var_feature_text_order = var_row[4]
         var_feature_text_actualText = var_row[5]
+        # NOTE:Let's import just the titles to the list_feature_titles now
+        if var_feature_text_type == "1" or var_feature_text_type == "2":
+            db.execute("INSERT INTO list_feature_titles (\
+                feature_title_id, feature_title_text \
+                ) VALUES(?, ?)", 
+                var_feature_id, var_feature_text_actualText)
+        # NOTE: now we import feature descriptions
         db.execute("INSERT INTO list_feature_descriptions (\
             feature_key, feature_id, \
                 feature_class_id, \
             feature_text_type, feature_text_order, feature_text_description\
             ) VALUES(?, ?, ?, ?, ?, ?)", 
             var_feature_key, var_feature_id, var_feature_class_id, var_feature_text_type, var_feature_text_order, var_feature_text_actualText)
-        # NOTE:
-        # Let's import just the titles to the list_feature_titles now
-        if var_feature_text_type == "1" or var_feature_text_type == "2":
-            db.execute("INSERT INTO list_feature_titles (\
-                feature_title_id, feature_title_text \
-                ) VALUES(?, ?)", 
-                var_feature_id, var_feature_text_actualText)
 print("DONE")
 
 
