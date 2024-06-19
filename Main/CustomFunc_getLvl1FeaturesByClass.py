@@ -40,6 +40,9 @@ db = SQL(sql_path)
 # - 0: Regular text     <p></p>
 # - 1: title            <h1></h2>
 # - 2: subtitle         <h2></h2>
+# NOTE: Only items 0,1,2 are seen in the Fighter/Wizard class
+# So no sense worrying how to do bullet-points/tables
+# also, I can look at reconfiguring how things are marked in database to make figuring out how to display easier
 # - 3: bullet-points    <ul> <li>Item_1</li> <li>Item_2</li> </ul>
 # - 4:table-title
 # - 5: tbl-clmn-nm
