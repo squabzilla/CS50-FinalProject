@@ -23,7 +23,9 @@ import shutil
 main_dir = os.path.dirname(os.getcwd())
 var_input_text_path = "static/CSVs/TextFiles"
 var_input_text_path = pathlib.Path(var_input_text_path)
+print("var_input_text_path")
 var_input_text_path = os.path.join(main_dir, var_input_text_path)
+print("var_input_text_path")
 var_output_RegexModdedText_path = "static/CSVs/TextFiles_RegexAltered"
 var_output_RegexModdedText_path = pathlib.Path(var_output_RegexModdedText_path)
 var_output_RegexModdedText_path = os.path.join(main_dir, var_output_RegexModdedText_path)
@@ -52,7 +54,10 @@ var_RegexModdedText_paths = []
 var_text_end = ".txt"
 var_csv_end = ".csv"
 
-
+# actual folder-paths
+var_input_text_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\TextFiles")
+print("var_input_text_path")
+var_output_RegexModdedText_path = pathlib.Path("D:\GitProjects\CS50-FinalProject\Main\static\CSVs\RegexModded_TextFiles")
 
 # amount of files
 var_number_of_files = len(var_file_names)
