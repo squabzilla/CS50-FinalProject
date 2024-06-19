@@ -64,25 +64,6 @@ db = SQL(sql_path)
 # if line-type != 3 and start_bullet_points == True:
     # start_bullet_points = False
 
-def get_lvl1_features(class_id):
-    features_list = []
-    if class_id == 5:
-        # GET FIGHTING STYLE - feature_id: 80
-        features_list.append(get_feature_text(80))
-        features_list.append('<select class="form-select" aria-label="Default select example">\n')
-        # list fighting styles:
-            # archery - feature_id: 81
-            # Defense - feature_id: 82
-            # Dueling - feature_id: 83
-            # Great Weapon Fighting - feature_id: 84
-            # Protection - feature_id: 85
-            # Two-Weapon Fighting - feature_id: 86
-        # GET SECOND WIND - feature_id: 87
-    elif class_id == 12:
-        wizard_stuff = "wizard stuff"
-    else: # class_id NOT equal to (5 or 12)
-        return False
-
 def format_class_feature_text(class_feature):
     text_list = []
     line_text = ""
@@ -126,6 +107,59 @@ def get_feature_title(feature_id):
     sql_feature_title = db.execute("SELECT feature_title_text FROM list_feature_titles WHERE feature_id = ?", feature_id)
     feature_title = format_class_feature_text(sql_feature_title)
     return feature_title
+
+def get_lvl1_features_fighter():
+    features_list = []
+    # GET Fighting_Style - feature_id: 80
+    feature_Fighting_Style = 80
+    features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
+    # list fighting styles:
+    features_list.append(f'<select class="form-select" aria-label="Default select example">\n')
+    # Archery - feature_id: 81
+    feature_Archery = 81
+    features_list.append(f'<option value="{feature_Archery}">{get_feature_title(feature_Archery)}</option>\n')
+    # Defense - feature_id: 82
+    feature_Defense = 82
+    features_list.append(f'<option value="{feature_Defense}">{get_feature_title(feature_Defense)}</option>\n')
+    # Dueling - feature_id: 83
+    feature_Dueling = 83
+    features_list.append(f'<option value="{feature_Dueling}">{get_feature_title(feature_Dueling)}</option>\n')
+    # Great_Weapon_Fighting - feature_id: 84
+    feature_Great_Weapon_Fighting = 84
+    features_list.append(f'<option value="{feature_Great_Weapon_Fighting}">{get_feature_title(feature_Great_Weapon_Fighting)}</option>\n')
+    # Protection - feature_id: 85
+    feature_Protection = 85
+    features_list.append(f'<option value="{feature_Protection}">{get_feature_title(feature_Protection)}</option>\n')
+    # Two_Weapon_Fighting - feature_id: 86
+    feature_Two_Weapon_Fighting = 86
+    features_list.append(f'<option value="{feature_Two_Weapon_Fighting}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
+    features_list.append(f'</select>\n')
+    # GET Second_Wind - feature_id: 87
+    feature_Second_Wind = 87
+    features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
+    features_text = "".join(features_list)
+    return features_text
+
+def get_lvl1_features_wizard():
+    # Spellcasting - feature_id: 287
+    # Cantrips - feature_id: 288
+    # Spellbook - feature_id: 289
+    # Preparing_and_Casting_Spells - feature_id: 290
+    # Spellcasting_Ability - feature_id: 291
+    # Ritual_Casting - feature_id: 292
+    # Spellcasting_Focus - feature_id: 293
+    # Learning_Spells_of_1st_Level_and_Higher - feature_id: 294
+    # Arcane_Recovery - feature_id: 295
+
+def get_lvl1_features(class_id):
+    lvl1_features_text = ""
+    if class_id == 5:
+        lvl1_features_text = get_lvl1_features_fighter()
+    elif class_id == 12:
+        wizard_stuff = "wizard stuff"
+    else: # class_id NOT equal to (5 or 12)
+        return False
+    return lvl1_features_text
         
 def main():
     print(get_feature_text(85))
