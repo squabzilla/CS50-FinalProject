@@ -16,6 +16,7 @@ class rpg_char_create:
     def __init__(self, #sql_db = None,
                  user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1,
                  cantrips_known_amount = 0, spells_known_amount = 0, list_spells = [], features = [],
+                 creation_step = 1,
                  has_name = None, has_race = None, has_class = None, has_background = None, has_features = None, has_spells = None):
         #self.sql_db = sql_db
         self.user_id = user_id
@@ -41,6 +42,9 @@ class rpg_char_create:
         # self.feature.feature_id:   stored in above dictionary  ref: INTEGER
         # self.feature.list_order:      stored in above dictionary  ref: INTEGER,   FOREIGN KEY(feature_id) REFERENCES list_features(feature_id)
         # NOTE: making psedo-booleans out of these so I can pass it to jinja without jinja thinking a race_id of 0 is a race_id of NULL
+        
+        self.creation_step = creation_step
+        
         self.has_name = has_name
         self.has_race = has_race
         self.has_class = has_class
