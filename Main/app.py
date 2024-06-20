@@ -321,6 +321,8 @@ def create_character():
             new_pc.features = check_and_complete_features(new_pc.class_id, var_features_list)
             new_pc.has_features = True
             new_pc.creation_step += 1
+            # Prep-for-spells:
+            new_pc.set_amount_of_spells_known()
         print(f"End - new_pc.creation_step: {new_pc.creation_step}")
         return render_template("character_creator.html", new_pc=new_pc)
     else:
