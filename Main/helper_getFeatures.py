@@ -197,7 +197,7 @@ def get_lvl1_features(class_id):
     elif class_id == 12:
         lvl1_features_text = get_lvl1_features_wizard()
     else: # class_id NOT equal to (5 or 12)
-        lvl1_features_text = "error - class_id of {class_id} not supported"
+        lvl1_features_text = f"error - class_id of {class_id} not supported"
     return lvl1_features_text
 
 def check_and_complete_features(class_id, feature_list):
