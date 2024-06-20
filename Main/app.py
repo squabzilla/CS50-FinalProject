@@ -295,7 +295,9 @@ def create_character():
             if var_background_id.isnumeric() == True:
                 var_background_id = int(var_background_id)
                 new_pc.set_background_id(var_background_id)
-        #return render_template("character_creator.html", new_pc=new_pc, json_dump=json_dump)
+        # Step 5 - features
+        if var_chosen_features != None and new_pc.has_features == None:
+            print(var_chosen_features)
         return render_template("character_creator.html", new_pc=new_pc)
     else:
         new_pc = rpg_char_create()
