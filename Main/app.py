@@ -274,9 +274,8 @@ def get_lvl1_Cantrips():
         class_id = new_pc.class_id
     # if class_id in [1,2,3,4,5,6,7,8,9,10,11,12]:
     if class_id not in [5,12]: # since only supporting fighters, wizards right now
-        return jsonify("error with getting cantrips")
-    else:
-        features = ""
+        return jsonify("error - class value out of bounds")
+    
     return jsonify(features)
 
 
