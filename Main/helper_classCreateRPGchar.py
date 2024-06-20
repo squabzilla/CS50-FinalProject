@@ -15,7 +15,7 @@ db = SQL(sql_path)
 class rpg_char_create:
     def __init__(self, #sql_db = None,
                  user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1,
-                 cantrips_known = 0, spells_known = 0, list_spells = [], features = [],
+                 cantrips_known_amount = 0, spells_known_amount = 0, list_spells = [], features = [],
                  has_name = None, has_race = None, has_class = None, has_background = None, has_features = None, has_spells = None):
         #self.sql_db = sql_db
         self.user_id = user_id
@@ -27,8 +27,8 @@ class rpg_char_create:
         self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
         self.char_level = char_level        # character_level           INTEGER DEFAULT 1 - class sets default values to 1
         
-        self.cantrips_known = cantrips_known
-        self.spells_known = spells_known
+        self.cantrips_known_amount = cantrips_known_amount
+        self.spells_known_amount = spells_known_amount
         self.list_spells = list_spells  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
         # NOTE: I also need the class one is learning the spell from to insert it to spellbook table, which will just be class_id
         # this will become more complicated when multiclassing is added, but that's a later problem
@@ -112,29 +112,30 @@ class rpg_char_create:
         # 11-Warlock: 2, 2
         # 12-Wizard: 3, 6
         if self.class_id in [1,5,6,7,9]: # non-casters
-            self.cantrips_known = 0
-            self.spells_known = 0
+            self.cantrips_known_amount = 0
+            self.spells_known_amount = 0
+            self.has_spells = True
         elif self.class_id == 2: # Bard
-            self.cantrips_known = 2
-            self.spells_known = 4
+            self.cantrips_known_amount = 2
+            self.spells_known_amount = 4
         elif self.class_id == 3: # Cleric
-            self.cantrips_known = 3
-            self.spells_known = -1 # NOTE: -1 will be used to represent "all" for purely-prepared casters
+            self.cantrips_known_amount = 3
+            self.spells_known_amount = -1 # NOTE: -1 will be used to represent "all" for purely-prepared casters
         elif self.class_id == 4: # Druid
-            self.cantrips_known = 2
-            self.spells_known = -1
+            self.cantrips_known_amount = 2
+            self.spells_known_amount = -1
         elif self.class_id == 8: # Ranger - remember changes you made
-            self.cantrips_known = 2 # remember that you just GET those two cantrips as ranger
-            self.spells_known = 0
+            self.cantrips_known_amount = 2 # remember that you just GET those two cantrips as ranger
+            self.spells_known_amount = 0
         elif self.class_id == 10: # Sorcerer
-            self.cantrips_known = 4
-            self.spells_known = 2
+            self.cantrips_known_amount = 4
+            self.spells_known_amount = 2
         elif self.class_id == 11: # Warlock
-            self.cantrips_known = 2
-            self.spells_known = 2
+            self.cantrips_known_amount = 2
+            self.spells_known_amount = 2
         elif self.class_id == 12: # Wizard
-            self.cantrips_known = 3
-            self.spells_known = 6
+            self.cantrips_known_amount = 3
+            self.spells_known_amount = 6
         else:
             return False # this shouldn't ever happen, have it here just in case
         return True
