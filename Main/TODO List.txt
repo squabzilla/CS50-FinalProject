@@ -8,3 +8,9 @@ This means I'll be making a database of JUST level-1 features for initial versio
 Only classes supportable at first: fighter, wizard
 Fighter means we have to pick fighting style at lvl 1
 Wizard means we have to pick spells at lvl 1
+
+Left to do:
+Pick spells
+Fuck it, add attributes
+Actually fucking display the character sheet
+Log in and save, load characters
