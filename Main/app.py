@@ -279,8 +279,8 @@ def create_character():
         var_manual_features = request.form.get("FeaturesDropdown_Manual") # manual features
         var_manual_features_list = request.form.getlist("FeaturesDropdown_Manual") # manual list features
         #var_features_3 = request.form.get("SelectFeatures_Auto")
-        var_auto_features = request.form.get("FeaturesDropdown_Auto") # auto features
-        var_auto_features_list = request.form.getlist("FeaturesDropdown_Auto") # auto features
+        var_auto_features = request.form.get("FeaturesDropdown") # gets single-feature
+        var_auto_features_list = request.form.getlist("FeaturesDropdown") # gets-list-of-features, used in multi-select
         
         print(f"var_name: {var_name}")
         print(f"var_race_id: {var_race_id}")
