@@ -117,7 +117,6 @@ def get_lvl1_features_fighter_new():
     feature_Fighting_Style = 80
     features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
     
-    
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_Auto" id="SelectFeatures_Auto">\n')
     features_list.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown_Auto" id="FeaturesDropdown_Auto" multiple aria-label="Multiple select example">\n')
     feature_Archery = 81
@@ -135,16 +134,16 @@ def get_lvl1_features_fighter_new():
     features_list.append(f'</select>\n')
     features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     features_list.append(f'</form>\n')
-    features_text = "".join(features_list)
     
     # GET Second_Wind - feature_id: 87
     feature_Second_Wind = 87
     features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
+    features_text = "".join(features_list)
     return features_text
 
 def get_lvl1_features_fighter():
     features_list = []
-    # Get Fighting_Style - feature_id: 80
+    # GET Fighting_Style - feature_id: 80
     feature_Fighting_Style = 80
     features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
     
@@ -181,7 +180,9 @@ def get_lvl1_features_fighter():
     #<button type="submit" form="my-form">Submit</button>
     
     # Get Second_Wind - feature_id: 87
+    feature_Second_Wind = 87
     features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
+    # Combine it all together
     features_text = "".join(features_list)
     return features_text
 
