@@ -14,3 +14,5 @@ Pick spells
 Fuck it, add attributes
 Actually fucking display the character sheet
 Log in and save, load characters
+-> loading a character can just set the values in the "new_pc = rpg_char_create()" value lol
+-> considering I need code to display that as well, I can re-use the code to display both loaded and created characters this way
