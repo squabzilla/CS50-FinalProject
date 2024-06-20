@@ -184,7 +184,7 @@ def get_lvl1_features_wizard():
     features_list.append(f'These are your class features as a Wizard. You do not need to make any selections at this time.')
     features_list.append(f'<br>') # looks better with a break above the button
     features_list.append(f'<form action="/character_creator" method="POST" class="border-0">\n')
-    features_list.append(f'<input type="text" name="SelectFeatures_form" id="SelectFeatures_form" value="wizard" class="price-field" />')
+    features_list.append(f'<input type="hidden" name="SelectFeatures_form" id="SelectFeatures_form" value="wizard"></input>')
     features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     features_list.append(f'</form>\n')
     features_text = "".join(features_list)
