@@ -6,12 +6,12 @@ from cs50 import SQL
 from flask import Flask, flash, json, jsonify, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
-from Main.helper_loginRequired import login_required
+from helper_loginRequired import login_required
 
 # above: copied imported libraries from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
-from Main.helper_classCreateRPGchar import rpg_char_create
-from Main.helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features
+from helper_classCreateRPGchar import rpg_char_create
+from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
 
 # configure flask application

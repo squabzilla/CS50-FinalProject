@@ -57,22 +57,16 @@
 
     {% else %}
         <p>Features</p>
-        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
-            <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="fighter_fighting_styles" id="fighter_fighting_styles">
-            </select>
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </form>
+        <div name="features_go_here" id="features_go_here"></div>
         <script type="module">
             //let response = await fetch('/search?q=' + input.value);
             
             
             //let select_features_response = await fetch('/search?q=' + input.value);
             //let shows = await response.json();
-            /*
             let features_response = await fetch('/get_lvl1features');
             let features_items = await features_response.json();
-            document.getElementById("fighter_select_features").insertAdjacentHTML("beforeend",features_items)
-            */
+            document.getElementById("features_go_here").insertAdjacentHTML("beforeend",features_items)
             /*
             Okay, so this works so far, for now
             However, I still need to add a submit button
