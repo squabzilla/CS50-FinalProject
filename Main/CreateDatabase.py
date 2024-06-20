@@ -149,6 +149,7 @@ with open(spell_list_csv, "r") as var_file:
             var_ranger_spell, var_sorcerer_spell, var_warlock_spell, var_wizard_spell)
 print("DONE")
 
+
 # create list of races and add values
 print("Creating and populating list_races table...", end="")
 db.execute("CREATE TABLE list_races (\
