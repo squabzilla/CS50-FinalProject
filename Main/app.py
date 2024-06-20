@@ -282,12 +282,13 @@ def create_character():
         var_features_from_select = request.form.get("FeaturesDropdown") # gets single-feature
         var_features_from_select_list = request.form.getlist("FeaturesDropdown") # gets-list-of-features, used in multi-select
         
+        # Honestly I'll get rid of all these excessive inputs and print statements once this fully 100% works
         print(f"var_name: {var_name}")
         print(f"var_race_id: {var_race_id}")
         print(f"var_class_id: {var_class_id}")
         print(f"var_background_id {var_background_id}")
-        print(f"var_manual_features {var_manual_features}")
-        print(f"var_manual_features_list: {var_manual_features_list}")
+        print(f"var_features_from_form {var_features_from_form}")
+        print(f"var_features_from_form_list: {var_features_from_form_list}")
         print(f"var_features_from_select: {var_features_from_select}")
         print(f"var_features_from_select_list: {var_features_from_select_list}")
         
