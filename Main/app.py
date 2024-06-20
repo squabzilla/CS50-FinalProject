@@ -250,26 +250,22 @@ def get_background_dropdown():
 
 @app.route("/get_lvl1features")
 def get_new_char_features():
-    #if 'user' in session:
-        #user = session['user']
-        #print(user)
-    #class_id = 
-    #class_id = request.args.get("class_id")
+    features = ""
     class_id = -1
     if "new_char" in session:
         new_pc = session["new_char"]
         class_id = new_pc.class_id
-    features = get_lvl1_features(class_id)
+        features = get_lvl1_features(class_id)
     return jsonify(features)
 
 @app.route("get_char_lvl1_spells")
 def get_new_char_spells():
-    spell_text = ""
+    spells_text = ""
     class_id = -1
     if "new_char" in session:
         new_pc = session["new_char"]
         class_id = new_pc.class_id
-    spells_text = get_char_lvl1_spells(class_id)    
+        spells_text = get_char_lvl1_spells(class_id)    
     return jsonify(spells_text)
 
 
