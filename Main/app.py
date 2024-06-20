@@ -319,6 +319,7 @@ def create_character():
         if var_features_list != [] and new_pc.has_features == None:
             new_pc.features = check_and_complete_features(new_pc.class_id, var_features_list)
             new_pc.has_features = True
+            new_pc.creation_step += 1
         return render_template("character_creator.html", new_pc=new_pc)
     else:
         new_pc = rpg_char_create()
