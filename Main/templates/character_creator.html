@@ -58,8 +58,8 @@
     <h1>Features</h1>
     <h2>Manual Features</h2>
     <div name="manual_features" id="manual_features">
-        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures" id="SelectFeatures">
-            <select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_Manual" id="SelectFeatures_Manual">
+            <select class="form-select" class="form-control w-auto" name="FeaturesDropdown_Manual" id="FeaturesDropdown_Manual" multiple aria-label="Multiple select example">
                 <!--feature_Archery = 81-->
                 <option value="81">Archery</option>
                 <!--feature_Defense = 82-->
@@ -72,6 +72,9 @@
                 <option value="85">Protection</option>
                 <!--feature_Two_Weapon_Fighting = 86-->
                 <option value="86">Two_Weapon_Fighting</option>
+            </select>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
     </div>
     <h2>Auto Features</h2>
     <div name="auto_features" id="auto_features">

@@ -286,6 +286,8 @@ def create_character():
         print(f"var_background_id {var_background_id}")
         print(f"var_features_1 {var_features_1}")
         print(f"var_features_2: {var_features_2}")
+        print(f"var_features_3: {var_features_3}")
+        print(f"var_features_4: {var_features_4}")
         
         # Step 1
         if var_name != None and new_pc.name == None:
