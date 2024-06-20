@@ -116,12 +116,11 @@ def get_lvl1_features_fighter():
     # GET Fighting_Style - feature_id: 80
     feature_Fighting_Style = 80
     
-    #features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
+    features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
     
     # Form time now
     # list fighting styles:
-    # NOTE: Remove form
-    #features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures" id="SelectFeatures">\n')
+    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures" id="SelectFeatures">\n')
     #multiple aria-label="Multiple select example"
     #features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Select Fighting Style">\n')
     features_list.append(f'<select class="form-select" class="form-control w-auto" multiple aria-label="Multiple select example">\n')
@@ -143,10 +142,13 @@ def get_lvl1_features_fighter():
     # Two_Weapon_Fighting - feature_id: 86
     feature_Two_Weapon_Fighting = 86
     features_list.append(f'<option value="{feature_Two_Weapon_Fighting}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
+    # end select
+    features_list.append(f'</select>\n')
     # submit button
-    features_list.append(f'</select>\n<button class="btn btn-primary" type="submit" form="SelectFeatures">Submit</button>\n')
-    # NOTE: Remove form
-    #features_list.append(f'</form>\n')
+    #features_list.append(f'<button class="btn btn-primary" type="submit" form="SelectFeatures">Submit</button>\n')
+    features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
+    # end form
+    features_list.append(f'</form>\n')
     
     #<button type="submit" form="my-form">Submit</button>
     
