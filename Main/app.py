@@ -276,9 +276,9 @@ def create_character():
         var_class_id = request.form.get("class_id")
         var_background_id = request.form.get("background_id")
         var_features_1 = request.form.get("SelectFeatures_Manual")
-        var_features_2 = request.form.get("FeaturesDropdown_Manual")
+        var_features_2 = request.form.get("FeaturesDropdown_Manual[]") # manual features
         var_features_3 = request.form.get("SelectFeatures_Auto")
-        var_features_4 = request.form.get("FeaturesDropdown_Auto")
+        var_features_4 = request.form.get("FeaturesDropdown_Auto[]") # auto features
         
         print(f"var_name: {var_name}")
         print(f"var_race_id: {var_race_id}")
