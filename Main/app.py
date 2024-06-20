@@ -66,6 +66,7 @@ def after_request(response):
 
 @app.route("/")
 def home():
+    #session.clear()
     return render_template("home.html")
 
 #########################################################################################
