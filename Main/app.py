@@ -258,7 +258,7 @@ def get_new_char_features():
         features = get_lvl1_features(class_id)
     return jsonify(features)
 
-@app.route("get_char_lvl1_spells")
+@app.route("/get_char_lvl1_spells")
 def get_new_char_spells():
     spells_text = ""
     class_id = -1

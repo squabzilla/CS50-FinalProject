@@ -7,14 +7,16 @@
 {% block main %}
     <p>This is the character creator.</p>
     
-    {% if not new_pc.has_name %}
+    <!--{% if not new_pc.has_name %}-->
+    {% if new_pc.creation_step==1 %}
         <p> We need a name </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <input autocomplete="off" autofocus class="form-control w-auto" id="character_name" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
 
-    {% elif not new_pc.has_race %}
+    <!--{% elif not new_pc.has_race %}-->
+    {% elif new_pc.creation_step==2 %}
         <p> We need a race </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id" id="race_id">
@@ -28,7 +30,8 @@
             document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
         </script>
 
-    {% elif not new_pc.has_class %}
+    <!--{% elif not new_pc.has_class %}-->
+    {% elif new_pc.creation_step==3 %}
         <p> We need a class </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="class_id" id="class_id">
@@ -42,7 +45,8 @@
             document.getElementById("class_id").insertAdjacentHTML("beforeend",class_dropdown)
         </script>
 
-    {% elif not new_pc.has_background %}
+    <!--{% elif not new_pc.has_background %}-->
+    {% elif new_pc.creation_step==4 %}
         <p> We need a background </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
             <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="background_id" id="background_id">
@@ -54,7 +58,9 @@
             let background_dropdown = await background_response.json();
             document.getElementById("background_id").insertAdjacentHTML("beforeend",background_dropdown)
         </script>
-    {% elif not new_pc.has_features %}
+    
+    {% elif new_pc.creation_step==5 %}
+    <!--{% elif not new_pc.has_features %}-->
     <h1>Features</h1>
     <div name="auto_features" id="auto_features">
     </div>
@@ -65,7 +71,8 @@
     </script>
 
 
-    {% elif not new_pc.has_spells %}
+    <!--{% elif not new_pc.has_spells %}-->
+    {% elif new_pc.creation_step==6 %}
         <p>Spells</p>
         <div name="features_go_here" id="features_go_here"></div>
         <div name="OLD_features_go_here" id="OLD_features_go_here">
