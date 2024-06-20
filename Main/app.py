@@ -276,6 +276,8 @@ def create_character():
         var_class_id = request.form.get("class_id")
         var_background_id = request.form.get("background_id")
         var_chosen_features = request.form.get("features_go_here")
+        print("var_chosen_features below:")
+        print(var_chosen_features)
         
         # Step 1
         if var_name != None and new_pc.name == None:
