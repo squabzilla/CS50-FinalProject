@@ -54,10 +54,19 @@
             let background_dropdown = await background_response.json();
             document.getElementById("background_id").insertAdjacentHTML("beforeend",background_dropdown)
         </script>
-
     {% elif not new_pc.has_features %}
+    <h1>Features</h1>
+    <h2>Manual Features</h2>
+    <div name="manual_features" id="manual_features">
+    </div>
+    <h2>Auto Features</h2>
+    <div name="auto_features" id="auto_features">
+    </div>
+
+
+    {% elif not new_pc.has_spells %}
         <p>Features</p>
-        <div name="features_go_here" id="features_go_here">
+        <div name="features_go_here" id="features_go_here"></div>
         <div name="OLD_features_go_here" id="OLD_features_go_here">
         <!--
             <form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeaturesForm" id="SelectFeaturesForm">
@@ -80,9 +89,11 @@
             
             //let select_features_response = await fetch('/search?q=' + input.value);
             //let shows = await response.json();
+            /*
             let features_response = await fetch('/get_lvl1features');
             let features_items = await features_response.json();
             document.getElementById("features_go_here").insertAdjacentHTML("beforeend",features_items)
+            */
             //document.getElementById("SelectFeaturesForm").insertAdjacentHTML("beforeend",features_items)
             //document.getElementById("SelectFeaturesSelect").insertAdjacentHTML("beforeend",features_items)
             /*
