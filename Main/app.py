@@ -275,12 +275,9 @@ def create_character():
         var_race_id = request.form.get("race_id")
         var_class_id = request.form.get("class_id")
         var_background_id = request.form.get("background_id")
-        #var_features_1 = request.form.get("SelectFeatures_Manual")
-        var_features_from_form = request.form.get("SelectFeatures_form") # manual features
-        var_features_from_form_list = request.form.getlist("SelectFeatures_form") # manual list features
-        #var_features_3 = request.form.get("SelectFeatures_Auto")
-        var_features_from_select = request.form.get("FeaturesDropdown") # gets single-feature
-        var_features_from_select_list = request.form.getlist("FeaturesDropdown") # gets-list-of-features, used in multi-select
+        #var_features_from_select = request.form.get("FeaturesDropdown") # gets single-feature
+        var_features_list = request.form.getlist("FeaturesDropdown") # gets-list-of-features, used in multi-select
+        empty_list = []
         # NOTE: select_list defaults to empty list by default
         # it is NOT considered equal to none by default, but I can always compare it to an empty list
         
@@ -289,10 +286,8 @@ def create_character():
         print(f"var_race_id: {var_race_id}")
         print(f"var_class_id: {var_class_id}")
         print(f"var_background_id {var_background_id}")
-        print(f"var_features_from_form {var_features_from_form}")
-        print(f"var_features_from_form_list: {var_features_from_form_list}")
-        print(f"var_features_from_select: {var_features_from_select}")
-        print(f"var_features_from_select_list: {var_features_from_select_list}")
+        #print(f"var_features_from_select: {var_features_from_select}")
+        print(f"var_features_list: {var_features_list}")
         
         # Step 1
         if var_name != None and new_pc.name == None:
@@ -313,7 +308,7 @@ def create_character():
                 var_background_id = int(var_background_id)
                 new_pc.set_background_id(var_background_id)
         # Step 5 - features
-        #if var_chosen_features != None and new_pc.has_features == None:
+        if var_features_list != [] and new_pc.has_features == None:
             #print(var_chosen_features)
         return render_template("character_creator.html", new_pc=new_pc)
     else:

@@ -101,46 +101,6 @@ def get_feature_title(feature_id):
     return feature_title
 
 
-### Fighter features:
-# 80	Fighting Style
-        # Choose from:
-        # 81	Archery
-        # 82	Defense
-        # 83	Dueling
-        # 84	Great Weapon Fighting
-        # 85	Protection
-        # 86	Two-Weapon Fighting
-# 87	Second Wind
-def get_lvl1_features_fighter_new():
-    features_list = []
-    
-    feature_Fighting_Style = 80
-    features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
-    
-    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_Auto" id="SelectFeatures_Auto">\n')
-    features_list.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown_Auto" id="FeaturesDropdown_Auto" multiple aria-label="Multiple select example">\n')
-    feature_Archery = 81
-    features_list.append(f'<option value="{feature_Archery}">{get_feature_title(feature_Archery)}</option>\n')
-    feature_Defense = 82
-    features_list.append(f'<option value="{feature_Defense}">{get_feature_title(feature_Defense)}</option>\n')
-    feature_Dueling = 83
-    features_list.append(f'<option value="{feature_Dueling}">{get_feature_title(feature_Dueling)}</option>\n')
-    feature_Great_Weapon_Fighting = 84
-    features_list.append(f'<option value="{feature_Great_Weapon_Fighting}">{get_feature_title(feature_Great_Weapon_Fighting)}</option>\n')
-    feature_Protection = 85
-    features_list.append(f'<option value="{feature_Protection}">{get_feature_title(feature_Protection)}</option>\n')
-    feature_Two_Weapon_Fighting = 86
-    features_list.append(f'<option value="{feature_Two_Weapon_Fighting}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
-    features_list.append(f'</select>\n')
-    features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
-    features_list.append(f'</form>\n')
-    
-    # GET Second_Wind - feature_id: 87
-    feature_Second_Wind = 87
-    features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
-    features_text = "".join(features_list)
-    return features_text
-
 def get_lvl1_features_fighter():
     features_list = []
     # GET Fighting_Style - feature_id: 80
@@ -149,7 +109,7 @@ def get_lvl1_features_fighter():
     
     # Now for choosing-selection-time
     # form start:
-    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_Auto" id="SelectFeatures_Auto">\n')
+    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
     # select start:
     # single-select:
     features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Default select example" name="FeaturesDropdown" id="FeaturesDropdown">')
@@ -230,6 +190,26 @@ def get_lvl1_features(class_id):
     else: # class_id NOT equal to (5 or 12)
         return False
     return lvl1_features_text
+
+def check_and_complete_features(class_id, feature_list):
+    # NOTE: I can worry about how to check a class with multiple-selectable-features at lvl 1
+    # when I'm actually trying to implement such a class
+    if class_id not in [5,12]:
+        return False
+    if class_id == 5:
+        fighter_automatic = [80, 87]
+        fighter_options = [81,82,83,84,85,86]
+        if len(feature_list) != 1:
+            return False
+        elif feature_list[0] not in fighter_options:
+            return False
+        else:
+            fighter_automatic.append(feature_list[0])
+            fighter_automatic.sort()
+        return fighter_options
+    elif class_id == 12:
+        wizard_options = [287,288,289,290,291,292,293,294,295]
+        return wizard_options
         
 def main():
     #print(get_feature_text(85))
