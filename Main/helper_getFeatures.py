@@ -112,10 +112,12 @@ def get_feature_title(feature_id):
         # 86	Two-Weapon Fighting
 # 87	Second Wind
 def get_lvl1_features_fighter():
+    features_list = []
+    
     feature_Fighting_Style = 80
     features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
     
-    features_list = []
+    
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_Auto" id="SelectFeatures_Auto">\n')
     features_list.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown_Auto" id="FeaturesDropdown_Auto" multiple aria-label="Multiple select example">\n')
     feature_Archery = 81
