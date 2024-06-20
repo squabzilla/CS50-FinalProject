@@ -54,6 +54,8 @@ class rpg_char_create:
     def set_user_id(self, var_user_id):
         self.user_id = var_user_id
         return True
+    
+    # Step 1: Set name
     def set_name(self, var_name):
         var_name = str(var_name)
         # fancy function with large white-list of acceptable characters, strips-non-whitelist-characters
@@ -64,10 +66,12 @@ class rpg_char_create:
         if len(var_name) > 0:
             self.name = var_name
             self.has_name = True
+            self.creation_step += 1
             return True
         else:
             return False
-        
+    
+    # Step 2: Set Race
     def set_race_id(self, var_race_id):
         race_list = db.execute("SELECT race_id FROM list_races") # get-list
         for i in range(len(race_list)):
@@ -75,10 +79,12 @@ class rpg_char_create:
         if var_race_id in race_list: # check for match
             self.race_id = var_race_id
             self.has_race = True
+            self.creation_step += 1
             return True
         else:
             return False
-        
+    
+    # Step 3: Set Class
     def set_class_id(self, var_class_id):
         class_list = db.execute("SELECT class_id FROM list_classes") # get-list
         for i in range(len(class_list)):
@@ -86,6 +92,7 @@ class rpg_char_create:
         if var_class_id in class_list: # check for match
             self.class_id = var_class_id
             self.has_class = True
+            self.creation_step += 1
             return True
         else:
             return False
