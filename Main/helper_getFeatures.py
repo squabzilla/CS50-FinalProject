@@ -183,9 +183,10 @@ def get_lvl1_features_wizard():
     features_list.append(f'<br>')
     features_list.append(f'These are your class features as a Wizard. You do not need to make any selections at this time.')
     features_list.append(f'<br>') # looks better with a break above the button
-    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
-    features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
-    features_list.append(f'</form>\n')
+    #features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
+    features_list.append(f'<button action="/character_creator" method="POST" name="SelectFeatures_form" id="SelectFeatures_form" value=[287,288,289,290,291,292,293,294,295]\
+                            class="btn btn-primary" type="submit">Submit</button>\n')
+    #features_list.append(f'</form>\n')
     features_text = "".join(features_list)
     return features_text
 
