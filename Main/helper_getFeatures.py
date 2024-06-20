@@ -113,6 +113,7 @@ def get_lvl1_features_fighter():
     # select start:
     # single-select:
     features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Default select example" name="FeaturesSelect" id="FeaturesSelect">')
+    # NOTE: the name here needs to match the request.form.getlist([item-name]) in app.py
     # multi-select: (commented out)
     # features_list.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">\n')
     # Archery - feature_id: 81
