@@ -63,6 +63,12 @@
             let features_response = await fetch('/get_lvl1features');
             let features_items = await features_response.json();
             document.getElementById("select_features").insertAdjacentHTML("beforeend",features_items)
+            /*
+            Okay, so this works so far, for now
+            However, I still need to add a submit button
+            As well as something that brings up the description of the fighting style selected
+            Still, another step of noticeable progress done
+            */
         </script>
 
     {% endif %}
