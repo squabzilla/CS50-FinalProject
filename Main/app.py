@@ -289,7 +289,7 @@ def create_character():
         # it is NOT considered equal to none by default, but I can always compare it to an empty list
         
         # Honestly I'll get rid of all these excessive inputs and print statements once this fully 100% works
-        print(f"new_pc.creation_step: {new_pc.creation_step}")
+        print(f"Start - new_pc.creation_step: {new_pc.creation_step}")
         print(f"var_name: {var_name}")
         print(f"var_race_id: {var_race_id}")
         print(f"var_class_id: {var_class_id}")
@@ -321,6 +321,7 @@ def create_character():
             new_pc.features = check_and_complete_features(new_pc.class_id, var_features_list)
             new_pc.has_features = True
             new_pc.creation_step += 1
+        print(f"End - new_pc.creation_step: {new_pc.creation_step}")
         return render_template("character_creator.html", new_pc=new_pc)
     else:
         new_pc = rpg_char_create()
