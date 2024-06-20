@@ -110,3 +110,17 @@ def class_spells_by_spell_level(class_id, spell_level):
 
 # bard_spell, cleric_spell, druid_spell, paladin_spell,\
 # ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
+
+def get_lvl1_spells_wizard():
+    cantrips_list = class_spells_by_spell_level(12, 0)
+    spells_list = class_spells_by_spell_level(12, 0)
+
+def get_char_lvl1_spells(class_id):
+    lvl1_spells_text = ""
+    if class_id not in [5,12]:
+        lvl1_spells_text =  f"error - class_id of {class_id} not supported"
+    elif class_id in [5]:
+        lvl1_spells_text = f"error - class_id of {class_id} (Fighter) does not get spells at level one."
+    elif class_id == 12:
+        lvl1_spells_text = get_lvl1_spells_wizard()
+    return lvl1_spells_text
