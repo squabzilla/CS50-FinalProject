@@ -1,3 +1,6 @@
+##################################################################################################
+NOTE: At least half of this is no longer valid, at least for the version I'm submitting as my final project
+##################################################################################################
 okay so make database with list of features
 
 just for ranger/fighter/wizard up to level 5
