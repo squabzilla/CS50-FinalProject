@@ -275,19 +275,21 @@ def create_character():
         var_race_id = request.form.get("race_id")
         var_class_id = request.form.get("class_id")
         var_background_id = request.form.get("background_id")
-        var_features_1 = request.form.get("SelectFeatures_Manual")
-        var_features_2 = request.form.get("FeaturesDropdown_Manual[]") # manual features
-        var_features_3 = request.form.get("SelectFeatures_Auto")
-        var_features_4 = request.form.get("FeaturesDropdown_Auto[]") # auto features
+        #var_features_1 = request.form.get("SelectFeatures_Manual")
+        var_manual_features = request.form.get("FeaturesDropdown_Manual") # manual features
+        var_manual_features_list = request.form.getlist("FeaturesDropdown_Manual") # manual list features
+        #var_features_3 = request.form.get("SelectFeatures_Auto")
+        var_auto_features = request.form.get("FeaturesDropdown_Auto") # auto features
+        var_auto_features_list = request.form.getlist("FeaturesDropdown_Auto") # auto features
         
         print(f"var_name: {var_name}")
         print(f"var_race_id: {var_race_id}")
         print(f"var_class_id: {var_class_id}")
         print(f"var_background_id {var_background_id}")
-        print(f"var_features_1 {var_features_1}")
-        print(f"var_features_2: {var_features_2}")
-        print(f"var_features_3: {var_features_3}")
-        print(f"var_features_4: {var_features_4}")
+        print(f"var_manual_features {var_manual_features}")
+        print(f"var_manual_features_list: {var_manual_features_list}")
+        print(f"var_auto_features: {var_auto_features}")
+        print(f"var_auto_features_list: {var_auto_features_list}")
         
         # Step 1
         if var_name != None and new_pc.name == None:
