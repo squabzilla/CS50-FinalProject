@@ -55,7 +55,7 @@
             document.getElementById("background_id").insertAdjacentHTML("beforeend",background_dropdown)
         </script>
 
-    {% else %}
+    {% elif not new_pc.has_features %}
         <p>Features</p>
         <div name="features_go_here" id="features_go_here">
             <form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeaturesForm" id="SelectFeaturesForm">
@@ -84,6 +84,7 @@
         </script>
         <script type="module">
         </script>
+    {% else %}
 
     {% endif %}
 
