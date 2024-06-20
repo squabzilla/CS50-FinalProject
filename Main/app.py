@@ -276,7 +276,7 @@ def create_character():
         var_class_id = request.form.get("class_id")
         var_background_id = request.form.get("background_id")
         #var_features_from_select = request.form.get("FeaturesDropdown") # gets single-feature
-        var_features_list = request.form.getlist("FeaturesDropdown") # gets-list-of-features, used in multi-select
+        var_features_list = request.form.getlist("FeaturesSelect") # gets-list-of-features, used in multi-select
         empty_list = []
         # NOTE: select_list defaults to empty list by default
         # it is NOT considered equal to none by default, but I can always compare it to an empty list
@@ -309,7 +309,8 @@ def create_character():
                 new_pc.set_background_id(var_background_id)
         # Step 5 - features
         if var_features_list != [] and new_pc.has_features == None:
-            var_features_list = check_and_complete_features(new_pc.class_id, var_features_list)
+            new_pc.features = check_and_complete_features(new_pc.class_id, var_features_list)
+            new_pc.has_features = True
         return render_template("character_creator.html", new_pc=new_pc)
     else:
         new_pc = rpg_char_create()

@@ -112,7 +112,7 @@ def get_lvl1_features_fighter():
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
     # select start:
     # single-select:
-    features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Default select example" name="FeaturesDropdown" id="FeaturesDropdown">')
+    features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Default select example" name="FeaturesSelect" id="FeaturesSelect">')
     # multi-select: (commented out)
     # features_list.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">\n')
     # Archery - feature_id: 81
@@ -195,7 +195,7 @@ def check_and_complete_features(class_id, feature_list):
     # NOTE: I can worry about how to check a class with multiple-selectable-features at lvl 1
     # when I'm actually trying to implement such a class
     if class_id not in [5,12]:
-        return False
+        return None
     if class_id == 5:
         fighter_automatic = [80, 87]
         fighter_options = [81,82,83,84,85,86]
