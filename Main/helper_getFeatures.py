@@ -14,17 +14,6 @@ db = SQL(sql_path)
 # This is not ideal, but the features_list data doesn't have a good way to filter it for "subset of list of features that you choose some of"
 # so we just hard-code "magic-numbers" until we're able to re-work the features-list
 
-### Fighter features:
-# 80	Fighting Style
-        # Choose from:
-        # 81	Archery
-        # 82	Defense
-        # 83	Dueling
-        # 84	Great Weapon Fighting
-        # 85	Protection
-        # 86	Two-Weapon Fighting
-# 87	Second Wind
-
 ### Wizard features:
 # 287	Spellcasting
 # 288	Cantrips
@@ -88,25 +77,13 @@ def format_class_feature_text(class_feature):
         if i == index_length: end_line = ""
         if class_feature[i]["feature_text_type"] == 0:
             line_text = "<p>" + class_feature[i]["feature_text_description"] + "</p>" + end_line
-            #line_text = f"<p>{class_feature[i]["feature_text_description"]}</p>{end_line}"
-            #line_text = f"<p></p>{end_line}"
-            #line_text = f'{class_feature[i]["feature_text_description"]}'
         if class_feature[i]["feature_text_type"] == 1:
             line_text = "<h1>" + class_feature[i]["feature_text_description"] + "</h1>" + end_line
-            #line_text = f"<h1>{class_feature[i]["feature_text_description"]}</h1>{end_line}"
-            #line_text = f"<h1></h1>{end_line}"
         if class_feature[i]["feature_text_type"] == 2:
             line_text = "<h2>" + class_feature[i]["feature_text_description"] + "</h2>" + end_line
-            #line_text = f"<h2>{class_feature[i]["feature_text_description"]}</h2>{end_line}"
-            #line_text = f"<h2></h2>{end_line}"
         text_list.append(line_text)
-        # NOTE:
-        # Currently this is a little over-complicated, but later when I deal with importing
+        # NOTE: is currently a little over-complicated, but later when I deal with importing:
         # bullet-points or tables from text description, I'll want more flexibility with handling stuff
-    #for text in text_list:
-        #text_full.app
-    #s = ''.join(l)
-    #print(class_feature)
     text_full = "".join(text_list) # apparently faster, and one line of code, to plop all that list into a text
     return text_full
 
@@ -123,13 +100,26 @@ def get_feature_title(feature_id):
     feature_title = format_class_feature_title(sql_feature_title)
     return feature_title
 
+
+### Fighter features:
+# 80	Fighting Style
+        # Choose from:
+        # 81	Archery
+        # 82	Defense
+        # 83	Dueling
+        # 84	Great Weapon Fighting
+        # 85	Protection
+        # 86	Two-Weapon Fighting
+# 87	Second Wind
 def get_lvl1_features_fighter():
     features_list = []
     # GET Fighting_Style - feature_id: 80
     feature_Fighting_Style = 80
     features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
+    # Form time now
     # list fighting styles:
-    features_list.append(f'<select class="form-select" aria-label="Default select example">\n')
+    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto">\n')
+    features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Select Fighting Style" name="fighter_fighting_styles" id="fighter_fighting_styles">\n')
     # Archery - feature_id: 81
     feature_Archery = 81
     features_list.append(f'<option value="{feature_Archery}">{get_feature_title(feature_Archery)}</option>\n')
@@ -148,7 +138,8 @@ def get_lvl1_features_fighter():
     # Two_Weapon_Fighting - feature_id: 86
     feature_Two_Weapon_Fighting = 86
     features_list.append(f'<option value="{feature_Two_Weapon_Fighting}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
-    features_list.append(f'</select>\n')
+    # End form
+    features_list.append(f'</select>\n<button class="btn btn-primary" type="submit">Submit</button>\n</form>\n')
     # GET Second_Wind - feature_id: 87
     feature_Second_Wind = 87
     features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')

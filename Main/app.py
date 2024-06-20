@@ -6,13 +6,12 @@ from cs50 import SQL
 from flask import Flask, flash, json, jsonify, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
-from helpers import login_required
+from Main.helper_loginRequired import login_required
 
 # above: copied imported libraries from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
-from CustomClass_RPGcharacter import highest_spell_slot, class_spells_by_spell_level, new_bard_spells, new_cleric_spells, \
-    new_druid_spells, new_ranger_spells, new_sorcerer_spells, new_warlock_spells, new_wizard_spells, rpg_char_create
-from CustomFunc_getLvl1FeaturesByClass import get_lvl1_features
+from Main.helper_classCreateRPGchar import rpg_char_create
+from Main.helper_getFeatures import get_feature_text, get_feature_title
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
 
 # configure flask application
@@ -247,22 +246,27 @@ def get_background_dropdown():
             background_dropdown += "\n"
     return jsonify(background_dropdown)
 
-@app.route("/get_lvl1features")
-def get_new_char_features():
-    #if 'user' in session:
-        #user = session['user']
-        #print(user)
-    #class_id = 
-    #class_id = request.args.get("class_id")
-    class_id = -1
-    if "new_char" in session:
-        new_pc = session["new_char"]
-        class_id = new_pc.class_id
-    if class_id in [5,12]: # since only supporting fighters, wizards right now
-        features = get_lvl1_features(class_id)
-    else:
-        features = ""
-    return jsonify(features)
+# get_feature_text, get_feature_title
+@app.route("/get_fighter_features")
+def get_feature_text_json():
+    
+
+# @app.route("/get_lvl1features")
+# def get_new_char_features():
+    # #if 'user' in session:
+        # #user = session['user']
+        # #print(user)
+    # #class_id = 
+    # #class_id = request.args.get("class_id")
+    # class_id = -1
+    # if "new_char" in session:
+        # new_pc = session["new_char"]
+        # class_id = new_pc.class_id
+    # if class_id in [5,12]: # since only supporting fighters, wizards right now
+        # features = get_lvl1_features(class_id)
+    # else:
+        # features = ""
+    # return jsonify(features)
 
 
 @app.route("/character_creator", methods=['GET', 'POST'])

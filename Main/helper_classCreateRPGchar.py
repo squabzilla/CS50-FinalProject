@@ -861,7 +861,7 @@ class rpg_char_create:
     def __init__(self, #sql_db = None,
                  user_id = None, name = None,  race_id = None, class_id = None, background_id = None, char_level = 1,
                  list_spells = [], features = [],
-                 has_name = None, has_race = None, has_class = None, has_background = None):
+                 has_name = None, has_race = None, has_class = None, has_background = None, has_features = None, has_spells = None):
         #self.sql_db = sql_db
         self.user_id = user_id
         # self.character_id - no, this is auto-incremented when entry is added
@@ -888,6 +888,8 @@ class rpg_char_create:
         self.has_race = has_race
         self.has_class = has_class
         self.has_background = has_background
+        self.has_features = has_features
+        self.has_spells = has_spells
     def set_user_id(self, var_user_id):
         self.user_id = var_user_id
         return True
