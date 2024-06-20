@@ -7,7 +7,7 @@
 {% block main %}
     <p>This is the character creator.</p>
     
-    <!--{% if not new_pc.has_name %}-->
+    
     {% if new_pc.creation_step==1 %}
         <p> We need a name </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
