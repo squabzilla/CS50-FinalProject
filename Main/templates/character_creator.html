@@ -58,7 +58,10 @@
     {% else %}
         <p>Features</p>
         <div name="features_go_here" id="features_go_here">
-            <form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeaturesForm" id="SelectFeaturesForm"></form>
+            <form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeaturesForm" id="SelectFeaturesForm">
+                <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="SelectFeaturesSelect" id="SelectFeaturesSelect">
+                </select>
+            </form>
         </div>
         <script type="module">
             //let response = await fetch('/search?q=' + input.value);
@@ -69,7 +72,8 @@
             let features_response = await fetch('/get_lvl1features');
             let features_items = await features_response.json();
             //document.getElementById("features_go_here").insertAdjacentHTML("beforeend",features_items)
-            document.getElementById("SelectFeaturesForm").insertAdjacentHTML("beforeend",features_items)
+            //document.getElementById("SelectFeaturesForm").insertAdjacentHTML("beforeend",features_items)
+            document.getElementById("SelectFeaturesSelect").insertAdjacentHTML("beforeend",features_items)
             /*
             Okay, so this works so far, for now
             However, I still need to add a submit button
