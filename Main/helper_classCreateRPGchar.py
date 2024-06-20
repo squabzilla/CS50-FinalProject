@@ -96,7 +96,8 @@ class rpg_char_create:
             return True
         else:
             return False
-        
+    
+    # Step 4: Set Background
     def set_background_id(self, var_background_id):
         background_list = db.execute("SELECT background_id FROM list_backgrounds") # get-list
         for i in range(len(background_list)):
