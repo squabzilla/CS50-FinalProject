@@ -105,6 +105,7 @@ class rpg_char_create:
         if var_background_id in background_list: # check for match
             self.background_id = var_background_id
             self.has_background = True
+            self.creation_step += 1
             return True
         else:
             return False
@@ -127,6 +128,7 @@ class rpg_char_create:
             self.cantrips_known_amount = 0
             self.spells_known_amount = 0
             self.has_spells = True
+            self.creation_step += 1 # Move to next step since we aren't a caster
         elif self.class_id == 2: # Bard
             self.cantrips_known_amount = 2
             self.spells_known_amount = 4

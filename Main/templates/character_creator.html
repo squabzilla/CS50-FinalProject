@@ -15,7 +15,7 @@
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
 
-    <!--{% elif not new_pc.has_race %}-->
+
     {% elif new_pc.creation_step==2 %}
         <p> We need a race </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
@@ -30,7 +30,7 @@
             document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
         </script>
 
-    <!--{% elif not new_pc.has_class %}-->
+
     {% elif new_pc.creation_step==3 %}
         <p> We need a class </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
@@ -45,7 +45,7 @@
             document.getElementById("class_id").insertAdjacentHTML("beforeend",class_dropdown)
         </script>
 
-    <!--{% elif not new_pc.has_background %}-->
+
     {% elif new_pc.creation_step==4 %}
         <p> We need a background </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
@@ -60,7 +60,7 @@
         </script>
     
     {% elif new_pc.creation_step==5 %}
-    <!--{% elif not new_pc.has_features %}-->
+
     <h1>Features</h1>
     <div name="auto_features" id="auto_features">
     </div>
@@ -71,7 +71,7 @@
     </script>
 
 
-    <!--{% elif not new_pc.has_spells %}-->
+
     {% elif new_pc.creation_step==6 %}
         <p>Spells</p>
         <div name="features_go_here" id="features_go_here"></div>
@@ -115,7 +115,7 @@
         </script>
     {% else %}
         <h1>Done</h1>
-    {% endif %}
+
     {% endif %}
 
 {% endblock %}
