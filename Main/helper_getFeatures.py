@@ -137,6 +137,7 @@ def get_lvl1_features_fighter():
     # end select
     features_list.append(f'</select>\n')
     # submit button
+    features_list.append(f'<br>') # looks better with a break above the button
     features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     # end form
     features_list.append(f'</form>\n')
@@ -179,6 +180,12 @@ def get_lvl1_features_wizard():
     # Arcane_Recovery - feature_id: 295
     feature_Arcane_Recovery = 295
     features_list.append(f'{get_feature_text(feature_Arcane_Recovery)}\n')
+    features_list.append(f'<br>')
+    features_list.append(f'These are your class features as a Wizard. You do not need to make any selections at this time.')
+    features_list.append(f'<br>') # looks better with a break above the button
+    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
+    features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
+    features_list.append(f'</form>\n')
     features_text = "".join(features_list)
     return features_text
 
@@ -187,7 +194,7 @@ def get_lvl1_features(class_id):
     if class_id == 5:
         lvl1_features_text = get_lvl1_features_fighter()
     elif class_id == 12:
-        wizard_stuff = "wizard stuff"
+        lvl1_features_text = get_lvl1_features_wizard()
     else: # class_id NOT equal to (5 or 12)
         return False
     return lvl1_features_text

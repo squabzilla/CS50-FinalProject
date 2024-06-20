@@ -277,6 +277,9 @@ def create_character():
         var_background_id = request.form.get("background_id")
         #var_features_from_select = request.form.get("FeaturesDropdown") # gets single-feature
         var_features_list = request.form.getlist("FeaturesSelect") # gets-list-of-features, used in multi-select
+        # NOTE: the name here ("FeaturesSelect") needs to match the same of the element that has the values we're looking for
+        # If we're grabbing from a select-box, the name needs to match the select box
+        # NOT the name of the master-form, but specifically the select-box
         empty_list = []
         # NOTE: select_list defaults to empty list by default
         # it is NOT considered equal to none by default, but I can always compare it to an empty list
