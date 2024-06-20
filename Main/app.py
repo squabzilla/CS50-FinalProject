@@ -259,22 +259,19 @@ def get_new_char_features():
     if "new_char" in session:
         new_pc = session["new_char"]
         class_id = new_pc.class_id
-    # if class_id in [1,2,3,4,5,6,7,8,9,10,11,12]: # NOTE: this should be some sql-query to all class_ids
-    if class_id in [5,12]: # since only supporting fighters, wizards right now
-        features = get_lvl1_features(class_id)
-    else:
-        features = ""
+    features = get_lvl1_features(class_id)
     return jsonify(features)
 
 @app.route("get_lvl1_Cantrips")
 def get_lvl1_Cantrips():
+    spell_text = ""
     class_id = -1
     if "new_char" in session:
         new_pc = session["new_char"]
         class_id = new_pc.class_id
     # if class_id in [1,2,3,4,5,6,7,8,9,10,11,12]: # NOTE: this should be some sql-query to all class_ids
     if class_id not in [5,12]: # since only supporting fighters, wizards right now
-        return jsonify(f"error - class_id of {class_id} not supported")
+        spell_text = f"error - class_id of {class_id} not supported"
     
     return jsonify(features)
 
