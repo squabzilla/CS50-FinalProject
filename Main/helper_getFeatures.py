@@ -115,7 +115,9 @@ def get_lvl1_features_fighter():
     features_list = []
     # GET Fighting_Style - feature_id: 80
     feature_Fighting_Style = 80
-    features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
+    
+    #features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
+    
     # Form time now
     # list fighting styles:
     # NOTE: Remove form
@@ -147,9 +149,10 @@ def get_lvl1_features_fighter():
     #features_list.append(f'</form>\n')
     
     #<button type="submit" form="my-form">Submit</button>
+    
     # GET Second_Wind - feature_id: 87
-    feature_Second_Wind = 87
-    features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
+    #feature_Second_Wind = 87
+    #features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
     features_text = "".join(features_list)
     return features_text
 
