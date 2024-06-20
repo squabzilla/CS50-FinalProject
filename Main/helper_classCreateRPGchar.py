@@ -79,33 +79,27 @@ def class_spells_by_spell_level(class_id, spell_level):
     except:
         print("Invalid spell-level")
         return False
-    # class_column = str(class_column)
-    # print("class_column: ", class_column)
-    # print("spell_level: ", spell_level)
-    # class_column = "druid_spell"
-    # list_spells = db.execute("SELECT spell_id FROM list_spells WHERE ? = 1 AND spell_level = ?", class_column, spell_level)
-    # print("list_spells_v1: ", list_spells)
-    # list_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = 1")
-    # print("list_spells_v2: ", list_spells)
     list_spells = []
-    # if class_id not in [2,3,4,7,8,10,11,12]: return False
+    # if class_id not in [1,2,3,4,7,8,10,11,12]: return False
     # just return empty list if it's not in one of these
     if class_id == 2: # Bard spells
-        list_spells = db.execute("SELECT spell_id FROM list_spells WHERE bard_spell = 1 AND spell_level = ?", spell_level)
-    if class_id == 3: # Cleric spells
-        list_spells = db.execute("SELECT spell_id FROM list_spells WHERE cleric_spell = 1 AND spell_level = ?", spell_level)
-    if class_id == 4: # Druid spells
-        list_spells = db.execute("SELECT spell_id FROM list_spells WHERE druid_spell = 1 AND spell_level = ?", spell_level)
-    if class_id == 7: # Ranger spells
-        list_spells = db.execute("SELECT spell_id FROM list_spells WHERE ranger_spell = 1 AND spell_level = ?", spell_level)
-    if class_id == 8: # Paladin spells
-        list_spells = db.execute("SELECT spell_id FROM list_spells WHERE paladin_spell = 1 AND spell_level = ?", spell_level)
-    if class_id == 10: # Sorcerer spells
-        list_spells = db.execute("SELECT spell_id FROM list_spells WHERE sorcerer_spell = 1 AND spell_level = ?", spell_level)
-    if class_id == 11: # Warlock spells
-        list_spells = db.execute("SELECT spell_id FROM list_spells WHERE warlock_spell = 1 AND spell_level = ?", spell_level)
-    if class_id == 12: # Wizard spells
-        list_spells = db.execute("SELECT spell_id FROM list_spells WHERE wizard_spell = 1 AND spell_level = ?", spell_level)
+        list_spells = db.execute("SELECT spell_id, var_spell_name FROM list_spells WHERE bard_spell = 1 AND spell_level = ?", spell_level)
+    elif class_id == 3: # Cleric spells
+        list_spells = db.execute("SELECT spell_id, var_spell_name FROM list_spells WHERE cleric_spell = 1 AND spell_level = ?", spell_level)
+    elif class_id == 4: # Druid spells
+        list_spells = db.execute("SELECT spell_id, var_spell_name FROM list_spells WHERE druid_spell = 1 AND spell_level = ?", spell_level)
+    elif class_id == 7: # Ranger spells
+        list_spells = db.execute("SELECT spell_id, var_spell_name FROM list_spells WHERE ranger_spell = 1 AND spell_level = ?", spell_level)
+    elif class_id == 8: # Paladin spells
+        list_spells = db.execute("SELECT spell_id, var_spell_name FROM list_spells WHERE paladin_spell = 1 AND spell_level = ?", spell_level)
+    elif class_id == 10: # Sorcerer spells
+        list_spells = db.execute("SELECT spell_id, var_spell_name FROM list_spells WHERE sorcerer_spell = 1 AND spell_level = ?", spell_level)
+    elif class_id == 11: # Warlock spells
+        list_spells = db.execute("SELECT spell_id, var_spell_name FROM list_spells WHERE warlock_spell = 1 AND spell_level = ?", spell_level)
+    elif class_id == 12: # Wizard spells
+        list_spells = db.execute("SELECT spell_id, var_spell_name FROM list_spells WHERE wizard_spell = 1 AND spell_level = ?", spell_level)
+    else:
+        return None
     list_spell_ids = []
     for item in list_spells:
         #spell_id = list_spells[item].get("spell_id")
