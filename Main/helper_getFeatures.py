@@ -121,7 +121,7 @@ def get_lvl1_features_fighter():
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto">\n')
     #multiple aria-label="Multiple select example"
     #features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Select Fighting Style">\n')
-    features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Multiple select example">\n')
+    features_list.append(f'<select class="form-select" class="form-control w-auto" multiple aria-label="Multiple select example">\n')
     # Archery - feature_id: 81
     feature_Archery = 81
     features_list.append(f'<option value="{feature_Archery}">{get_feature_title(feature_Archery)}</option>\n')
