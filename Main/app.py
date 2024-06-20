@@ -281,6 +281,8 @@ def create_character():
         #var_features_3 = request.form.get("SelectFeatures_Auto")
         var_features_from_select = request.form.get("FeaturesDropdown") # gets single-feature
         var_features_from_select_list = request.form.getlist("FeaturesDropdown") # gets-list-of-features, used in multi-select
+        # NOTE: select_list defaults to empty list by default
+        # it is NOT considered equal to none by default, but I can always compare it to an empty list
         
         # Honestly I'll get rid of all these excessive inputs and print statements once this fully 100% works
         print(f"var_name: {var_name}")
