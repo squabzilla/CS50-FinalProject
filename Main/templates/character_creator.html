@@ -63,6 +63,10 @@
     <div name="auto_features" id="auto_features">
     </div>
     <script type="module">
+        let features_response = await fetch('/get_lvl1features');
+        let features_items = await features_response.json();
+        document.getElementById("auto_features").insertAdjacentHTML("beforeend",features_items)
+    </script>
 
 
     {% elif not new_pc.has_spells %}
