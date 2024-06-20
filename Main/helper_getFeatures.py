@@ -141,7 +141,8 @@ def get_lvl1_features_fighter():
     feature_Two_Weapon_Fighting = 86
     features_list.append(f'<option value="{feature_Two_Weapon_Fighting}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
     # End form
-    features_list.append(f'</select>\n<button class="btn btn-primary" type="submit">Submit</button>\n</form>\n')
+    features_list.append(f'</select>\n<button class="btn btn-primary" type="submit" form="SelectFeatures">Submit</button>\n</form>\n')
+    #<button type="submit" form="my-form">Submit</button>
     # GET Second_Wind - feature_id: 87
     feature_Second_Wind = 87
     features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
