@@ -202,7 +202,11 @@ def get_lvl1_features(class_id):
     return lvl1_features_text
 
 def check_choice(class_id, feature_list):
-    return True
+    if class_id not in [5,12]:
+        return False
+    if class_id == 5:
+        fighter_fighting_styles_options = [81,82,83,84,85,86]
+        
 
 def check_and_complete_features(class_id, feature_list):
     # NOTE: I can worry about how to check a class with multiple-selectable-features at lvl 1
@@ -211,15 +215,15 @@ def check_and_complete_features(class_id, feature_list):
         return None
     if class_id == 5:
         fighter_automatic = [80, 87]
-        fighter_options = [81,82,83,84,85,86]
+        fighter_fighting_styles_options = [81,82,83,84,85,86]
         if len(feature_list) != 1:
             return False
-        elif feature_list[0] not in fighter_options:
+        elif feature_list[0] not in fighter_fighting_styles_options:
             return False
         else:
             fighter_automatic.append(feature_list[0])
             fighter_automatic.sort()
-        return fighter_options
+        return fighter_fighting_styles_options
     elif class_id == 12:
         wizard_options = [287,288,289,290,291,292,293,294,295]
         return wizard_options
