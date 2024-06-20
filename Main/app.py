@@ -12,6 +12,7 @@ from helper_loginRequired import login_required
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
 from helper_classCreateRPGchar import rpg_char_create
 from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_and_complete_features
+from helper_getSpells import class_spells_by_spell_level
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
 
 # configure flask application
@@ -258,8 +259,22 @@ def get_new_char_features():
     if "new_char" in session:
         new_pc = session["new_char"]
         class_id = new_pc.class_id
+    # if class_id in [1,2,3,4,5,6,7,8,9,10,11,12]:
     if class_id in [5,12]: # since only supporting fighters, wizards right now
         features = get_lvl1_features(class_id)
+    else:
+        features = ""
+    return jsonify(features)
+
+@app.route("get_lvl1_Cantrips")
+def get_lvl1_Cantrips():
+    class_id = -1
+    if "new_char" in session:
+        new_pc = session["new_char"]
+        class_id = new_pc.class_id
+    # if class_id in [1,2,3,4,5,6,7,8,9,10,11,12]:
+    if class_id not in [5,12]: # since only supporting fighters, wizards right now
+        return jsonify("error with getting cantrips")
     else:
         features = ""
     return jsonify(features)
@@ -305,6 +320,7 @@ def create_character():
             if var_class_id.isnumeric() == True:
                 var_class_id = int(var_class_id)
                 new_pc.set_class_id(var_class_id)
+                new_pc.set_amount_of_spells_known()
         # Step 4
         if var_background_id != None and new_pc.background_id == None:
             if var_background_id.isnumeric() == True:

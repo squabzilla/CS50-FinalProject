@@ -111,7 +111,7 @@ class rpg_char_create:
         # 10-Sorcerer: 4, 2
         # 11-Warlock: 2, 2
         # 12-Wizard: 3, 6
-        if self.class_id in [0,5,6,7,9]: # non-casters
+        if self.class_id in [1,5,6,7,9]: # non-casters
             self.cantrips_known = 0
             self.spells_known = 0
         elif self.class_id == 2: # Bard
@@ -135,8 +135,8 @@ class rpg_char_create:
         elif self.class_id == 12: # Wizard
             self.cantrips_known = 3
             self.spells_known = 6
-        
-        
+        else:
+            return False # this shouldn't ever happen, have it here just in case
         return True
     
     #def add_spells_prepared_caster(self):
