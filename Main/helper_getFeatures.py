@@ -118,7 +118,7 @@ def get_lvl1_features_fighter():
     features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
     # Form time now
     # list fighting styles:
-    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto">\n')
+    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures" id="SelectFeatures">\n')
     #multiple aria-label="Multiple select example"
     #features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Select Fighting Style">\n')
     features_list.append(f'<select class="form-select" class="form-control w-auto" multiple aria-label="Multiple select example">\n')
