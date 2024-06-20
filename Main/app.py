@@ -310,7 +310,6 @@ def create_character():
             if var_class_id.isnumeric() == True:
                 var_class_id = int(var_class_id)
                 new_pc.set_class_id(var_class_id)
-                new_pc.set_amount_of_spells_known()
         # Step 4
         if var_background_id != None and new_pc.background_id == None:
             if var_background_id.isnumeric() == True:
@@ -319,7 +318,6 @@ def create_character():
         # Step 5 - features
         if var_features_list != [] and new_pc.has_features == None:
             new_pc.features = check_and_complete_features(new_pc.class_id, var_features_list)
-            new_pc.has_features = True
             new_pc.creation_step += 1
             # Prep-for-spells:
             new_pc.set_amount_of_spells_known()
