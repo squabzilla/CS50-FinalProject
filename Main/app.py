@@ -11,7 +11,7 @@ from helper_loginRequired import login_required
 # above: copied imported libraries from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
 from helper_classCreateRPGchar import rpg_char_create
-from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features
+from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_and_complete_features
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
 
 # configure flask application
@@ -309,7 +309,7 @@ def create_character():
                 new_pc.set_background_id(var_background_id)
         # Step 5 - features
         if var_features_list != [] and new_pc.has_features == None:
-            #print(var_chosen_features)
+            var_features_list = check_and_complete_features(new_pc.class_id, var_features_list)
         return render_template("character_creator.html", new_pc=new_pc)
     else:
         new_pc = rpg_char_create()
