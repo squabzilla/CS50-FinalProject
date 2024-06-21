@@ -341,9 +341,11 @@ def create_character():
             #print(f"var_leveled_spells_list; length {len(var_leveled_spells_list)}; value(s):")
             #print(var_leveled_spells_list)
             #set_cleric_leveledSpellsIDs_by_spellLevel, set_druid_leveledSpellsIDs_by_spellLevel
-            if new_pc.class_id == 3 or new_pc.class_id == 4:
+            if new_pc.class_id == 3 or new_pc.class_id == 4: # I'm not supporting these classes yet, but while I'm thinking of it, setting spells-known for spells-prepared casters
                 var_leveled_spells_list = class_spell_IDs_by_spell_level(new_pc.class_id, 1)
-            # I'm not supporting these classes yet, but while I'm thinking of it, setting spells-known for spells-prepared casters
+            if new_pc.class_id == 7:
+                var_cantrips_list = class_spell_IDs_by_spell_level(new_pc.class_id, 0)
+            
             if len(var_cantrips_list) != new_pc.cantrips_known_amount or len(var_leveled_spells_list) != new_pc.spells_known_amount:
                 flash("Incorrect number of spells selected")
             
