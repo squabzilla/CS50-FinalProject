@@ -139,9 +139,12 @@ def get_char_lvl1_spells(class_id):
     return char_lvl1_spells_text
 
 def main():
-    print("Wizard cantrips:")
-    print(class_spells_by_spell_level(12,0))
-    print("Wizard 1st-level-spells:")
-    print(class_spells_by_spell_level(12,1))
+    #print("Wizard cantrips:")
+    #print(class_spells_by_spell_level(12,0))
+    #print("Wizard 1st-level-spells:")
+    #print(class_spells_by_spell_level(12,1))
+    cantrips = class_spells_by_spell_level(12,0)
+    print(cantrips[0]["spell_name"])
+    print(cantrips[0]["spell_id"])
     
 main()
