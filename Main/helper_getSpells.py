@@ -114,7 +114,7 @@ def class_spells_by_spell_level(class_id, spell_level):
 def get_char_lvl1_spells_wizard():
     wizard_select_spells = []
     spells_cantrips_list = class_spells_by_spell_level(12, 0)
-    spells_lvl1_list = class_spells_by_spell_level(12, 0)
+    spells_lvl1_list = class_spells_by_spell_level(12, 1)
     
     
     # form start:
@@ -146,6 +146,7 @@ def get_char_lvl1_spells_wizard():
     
     # end columns
     wizard_select_spells.append(f'</div></div>')
+    
     # Submit button
     wizard_select_spells.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     # end form
