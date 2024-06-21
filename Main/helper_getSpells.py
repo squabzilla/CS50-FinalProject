@@ -132,7 +132,8 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'<p>(Hold down Ctrl to select multiple items.)</p>')
     # select-start:
     #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
-    wizard_select_spells.append(f'<select class="form-select" size="{cantrips_length}" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
+    #wizard_select_spells.append(f'<select class="form-select" size="{cantrips_length}" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
+    wizard_select_spells.append(f'<select class="selectpicker" size="{cantrips_length}" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
     # loop-thru select items
     for i in range(len(spells_cantrips_list)):
         wizard_select_spells.append(f'<option value="{spells_cantrips_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
@@ -148,7 +149,8 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'<p>(Hold down Ctrl to select multiple items.)</p>')
     # select-start:
     #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
-    wizard_select_spells.append(f'<select class="form-select" size="{lvl1_length}" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
+    #wizard_select_spells.append(f'<select class="form-select" size="{lvl1_length}" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
+    wizard_select_spells.append(f'<select class="selectpicker" size="{lvl1_length}" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
     # loop-thru select items
     for i in range(len(spells_lvl1_list)):
         wizard_select_spells.append(f'<option value="{spells_lvl1_list[i]["spell_id"]}">{spells_lvl1_list[i]["spell_name"]}</option>\n')
