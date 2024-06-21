@@ -325,8 +325,8 @@ def create_character():
         elif new_pc.creation_step == 5:
         #if var_features_list != [] and new_pc.has_features == None:
             if type(var_features_list) is list:
-                print(f"var_features_list[0]: {var_features_list[0]}")
-                print(f"Step 5: validating features choices: {check_lvl1_features_choice(new_pc.class_id, var_features_list)}")
+                #print(f"var_features_list[0]: {var_features_list[0]}")
+                #print(f"Step 5: validating features choices: {check_lvl1_features_choice(new_pc.class_id, var_features_list)}")
                 if check_lvl1_features_choice(new_pc.class_id, var_features_list) == True:
                     new_pc.features = complete_lvl1_features_choice(new_pc.class_id, var_features_list)
                     new_pc.creation_step += 1
