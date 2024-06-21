@@ -195,6 +195,7 @@ def read_csv_data_types():
 def grab_a_spell():
     sql_val = db.execute("SELECT * FROM list_spells WHERE spell_id = 1")
     print(sql_val)
+    #race_dropdown += "<option value=\"" + str(race_list[i]["race_id"]) + "\">" + race_list[i]["race_name"] + "</option>"
 
 def main():
     #test_check_type()
