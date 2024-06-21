@@ -112,14 +112,19 @@ def class_spells_by_spell_level(class_id, spell_level):
 # ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
 
 def get_char_lvl1_spells_wizard():
-    features_list = []
+    wizard_select_spells = []
     spells_cantrips_list = class_spells_by_spell_level(12, 0)
     spells_lvl1_list = class_spells_by_spell_level(12, 0)
     # form start:
-    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
+    wizard_select_spells.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
+    # single-select:
+    wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">\n')
     
+    
+    # end select
+    wizard_select_spells.append(f'</select>\n')
     # end form
-    features_list.append(f'</form>\n')
+    wizard_select_spells.append(f'</form>\n')
 
 def get_char_lvl1_spells(class_id):
     char_lvl1_spells_text = ""
