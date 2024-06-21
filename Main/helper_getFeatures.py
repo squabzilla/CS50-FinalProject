@@ -201,7 +201,7 @@ def get_lvl1_features(class_id):
         lvl1_features_text = f"error - class_id of {class_id} not supported"
     return lvl1_features_text
 
-def check_choice(class_id, feature_list):
+def check_lvl1_features_choice(class_id, feature_list):
     # Verify that the feature(s) chosen are valid
     if class_id not in [5,12]:
         return False
