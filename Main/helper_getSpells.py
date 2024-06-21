@@ -9,6 +9,7 @@ db = SQL(sql_path)
 
 
 # because it'll be called later
+# uh, maybe...?
 def highest_spell_slot(var_class_id, var_char_level):
     try:
         var_class_id = int(var_class_id)
@@ -233,8 +234,8 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
     #print("full_cantrips_list:")
     #print(full_cantrips_list)
     
-    print(f"full_cantrips_list item {full_cantrips_list[0]} is of type {type(full_cantrips_list[0])}")
-    print(f"cantrip_list item {cantrip_list[0]} is of type {type(cantrip_list[0])}")
+    #print(f"full_cantrips_list item {full_cantrips_list[0]} is of type {type(full_cantrips_list[0])}")
+    #print(f"cantrip_list item {cantrip_list[0]} is of type {type(cantrip_list[0])}")
     
     
     for item in cantrip_list:
@@ -255,4 +256,4 @@ def main():
     
     return True
     
-main()
+#main()
