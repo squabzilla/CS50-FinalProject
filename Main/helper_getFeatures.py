@@ -219,7 +219,7 @@ def check_lvl1_features_choice(class_id, feature_list):
         # and just returns the list of "you get these features at lvl 1" list
         
         
-def complete_features(class_id, feature_list): # assumes valid input, since we run a function to check input first
+def complete_lvl1_features_choice(class_id, feature_list): # assumes valid input, since we run a function to check input first
     if class_id not in [5,12]:
         return None
     if class_id == 5:
