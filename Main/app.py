@@ -335,11 +335,13 @@ def create_character():
         # Step 6 - spells TODO
         elif new_pc.creation_step == 6:
             #var_cantrips_list
-            print(f"var_cantrips_list; length {len(var_cantrips_list)}; value(s):")
-            print(var_cantrips_list)
+            #print(f"var_cantrips_list; length {len(var_cantrips_list)}; value(s):")
+            #print(var_cantrips_list)
             #var_leveled_spells_list
-            print(f"var_leveled_spells_list; length {len(var_leveled_spells_list)}; value(s):")
-            print(var_leveled_spells_list)
+            #print(f"var_leveled_spells_list; length {len(var_leveled_spells_list)}; value(s):")
+            #print(var_leveled_spells_list)
+            if len(var_cantrips_list) != new_pc.cantrips_known_amount or len(var_leveled_spells_list) != new_pc.spells_known_amount:
+                flash("Incorrect number of spells selected")
         
         
         print(f"End - new_pc.creation_step: {new_pc.creation_step}")
