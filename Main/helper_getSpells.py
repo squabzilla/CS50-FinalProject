@@ -182,6 +182,34 @@ def get_char_lvl1_spells(class_id):
         char_lvl1_spells_text = get_char_lvl1_spells_wizard()
     return char_lvl1_spells_text
 
+def validate_spell_choices(cantrip_list, spells_list, class_id):
+    if class_id in [1,5,6,7,9]: # non-casters
+        cantrips_known_amount = 0
+        spells_known_amount = 0
+        has_spells = True
+        creation_step += 1 # Move to next step since we aren't a caster
+    elif class_id == 2: # Bard
+        cantrips_known_amount = 2
+        spells_known_amount = 4
+    elif class_id == 3: # Cleric
+        cantrips_known_amount = 3
+        spells_known_amount = -1 # NOTE: -1 will be used to represent "all" for purely-prepared casters
+    elif class_id == 4: # Druid
+        cantrips_known_amount = 2
+        spells_known_amount = -1
+    elif class_id == 8: # Ranger - remember changes you made
+        cantrips_known_amount = 2 # remember that you just GET those two cantrips as ranger
+        spells_known_amount = 0
+    elif class_id == 10: # Sorcerer
+        cantrips_known_amount = 4
+        spells_known_amount = 2
+    elif class_id == 11: # Warlock
+        cantrips_known_amount = 2
+        spells_known_amount = 2
+    elif class_id == 12: # Wizard
+        cantrips_known_amount = 3
+        spells_known_amount = 6
+
 def main():
     #print("Wizard cantrips:")
     #print(class_spells_by_spell_level(12,0))
