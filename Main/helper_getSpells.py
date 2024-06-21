@@ -108,6 +108,24 @@ def class_spells_by_spell_level(class_id, spell_level):
     # you can use a format string (f-string) instead,
     # but you must validate the user’s input first, to ensure the table or column exists, lest you risk a SQL-injection attack
 
+def class_spell_names_by_spell_level(class_id, spell_level):
+    spell_list = []
+    if spell_level < 1 or spell_level > 9:
+        return spell_list
+    spell_list = class_spells_by_spell_level(class_id, spell_level)
+    for i in range(len(spell_list)):
+        spell_list[i] = spell_list[i]["spell_name"]
+    return spell_list
+
+def class_spell_IDs_by_spell_level(class_id, spell_level):
+    spell_list = []
+    if spell_level < 1 or spell_level > 9:
+        return spell_list
+    spell_list = class_spells_by_spell_level(class_id, spell_level)
+    for i in range(len(spell_list)):
+        spell_list[i] = spell_list[i]["spell_id"]
+    return spell_list
+
 # bard_spell, cleric_spell, druid_spell, paladin_spell,\
 # ranger_spell, sorcerer_spell, warlock_spell, wizard_spell)
 
@@ -193,10 +211,10 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
         spells_known_amount = 4
     elif class_id == 3: # Cleric
         cantrips_known_amount = 3
-        spells_known_amount = -1 # NOTE: -1 will be used to represent "all" for purely-prepared casters
+        spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND cleric_spell = 1;")
     elif class_id == 4: # Druid
         cantrips_known_amount = 2
-        spells_known_amount = -1 # NOTE: -1 will be used to represent "all" for purely-prepared casters
+        spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND druid_spell = 1;")
     elif class_id == 8: # Ranger - remember changes you made
         cantrips_known_amount = 2 #NOTE: remember that you just GET those two cantrips as ranger
         spells_known_amount = 0
@@ -236,4 +254,4 @@ def main():
     
     return True
     
-main()
+#main()
