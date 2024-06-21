@@ -123,7 +123,8 @@ def class_spell_IDs_by_spell_level(class_id, spell_level):
         return spell_list
     spell_list = class_spells_by_spell_level(class_id, spell_level)
     for i in range(len(spell_list)):
-        spell_list[i] = spell_list[i]["spell_id"]
+        spell_list[i] = str(spell_list[i]["spell_id"])
+        # since things always seem to be converted to strings when I pass them around via flask/html ANYways...
     return spell_list
 
 # bard_spell, cleric_spell, druid_spell, paladin_spell,\
