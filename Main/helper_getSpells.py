@@ -127,6 +127,8 @@ def get_char_lvl1_spells_wizard():
     
     # start SpellsCantrips
     wizard_select_spells.append(f'<div class="col">\n')
+    # label-cantrips
+    wizard_select_spells.append(f'<p>Please select three (3) cantrips</p>')
     # select-start:
     #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
     wizard_select_spells.append(f'<select class="form-select" size="{cantrips_length}" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
