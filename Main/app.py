@@ -298,6 +298,9 @@ def create_character():
         #print(f"var_features_from_select: {var_features_from_select}")
         print(f"var_features_list: {var_features_list}")
         
+        print(f"var_cantrips_list: {var_cantrips_list}")
+        print(f"var_leveled_spells_list: {var_leveled_spells_list}")
+        
         # Step 1
         if new_pc.creation_step == 1:
         #if var_name != None and new_pc.name == None:
