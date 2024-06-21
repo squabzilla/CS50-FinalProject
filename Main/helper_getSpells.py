@@ -86,10 +86,10 @@ def class_spells_by_spell_level(class_id, spell_level):
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE cleric_spell = 1 AND spell_level = ?", spell_level)
     elif class_id == 4: # Druid spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE druid_spell = 1 AND spell_level = ?", spell_level)
-    elif class_id == 7: # Ranger spells
-        list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE ranger_spell = 1 AND spell_level = ?", spell_level)
-    elif class_id == 8: # Paladin spells
+    elif class_id == 7: # Paladin spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE paladin_spell = 1 AND spell_level = ?", spell_level)
+    elif class_id == 8: # Ranger spells
+        list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE ranger_spell = 1 AND spell_level = ?", spell_level)
     elif class_id == 10: # Sorcerer spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE sorcerer_spell = 1 AND spell_level = ?", spell_level)
     elif class_id == 11: # Warlock spells
