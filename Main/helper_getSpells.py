@@ -210,7 +210,7 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
         cantrips_known_amount = 3
         spells_known_amount = 6
 
-def set_cleric_leveledSpellsKnown_by_spellLevel(spellLevel):
+def set_cleric_leveledSpellsIDs_by_spellLevel(spellLevel):
     spell_list = []
     if spellLevel < 1 or spellLevel > 9:
         return spell_list
@@ -219,7 +219,7 @@ def set_cleric_leveledSpellsKnown_by_spellLevel(spellLevel):
         spell_list[i] = spell_list[i]["spell_id"]
     return spell_list
 
-def set_druid_leveledSpellsKnown_by_spellLevel(spellLevel):
+def set_druid_leveledSpellsIDs_by_spellLevel(spellLevel):
     spell_list = []
     if spellLevel < 1 or spellLevel > 9:
         return spell_list
@@ -230,12 +230,10 @@ def set_druid_leveledSpellsKnown_by_spellLevel(spellLevel):
     
 
 def main():
-    #print("Wizard cantrips:")
-    #print(class_spells_by_spell_level(12,0))
-    #print("Wizard 1st-level-spells:")
-    #print(class_spells_by_spell_level(12,1))
-    cantrips = class_spells_by_spell_level(12,0)
-    print(cantrips[0]["spell_name"])
-    print(cantrips[0]["spell_id"])
+    print(set_cleric_leveledSpellsIDs_by_spellLevel(1))
+    print(set_druid_leveledSpellsIDs_by_spellLevel(1))
     
-#main()
+    
+    return True
+    
+main()
