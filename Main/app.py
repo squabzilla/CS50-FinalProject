@@ -277,8 +277,11 @@ def create_character():
         json_dump = ""
         var_name = request.form.get("character_name")
         var_race_id = request.form.get("race_id")
+        var_race_id_list = request.form.getlist("race_id")
         var_class_id = request.form.get("class_id")
+        var_class_id_list = request.form.getlist("class_id")
         var_background_id = request.form.get("background_id")
+        var_background_id_list = request.form.getlist("background_id")
         #var_features_from_select = request.form.get("FeaturesDropdown") # gets single-feature
         var_features_list = request.form.getlist("FeaturesSelect") # gets-list-of-features, used in multi-select
         # NOTE: the name here ("FeaturesSelect") needs to match the same of the element that has the values we're looking for
@@ -292,8 +295,11 @@ def create_character():
         print(f"Start - new_pc.creation_step: {new_pc.creation_step}")
         print(f"var_name: {var_name}")
         print(f"var_race_id: {var_race_id}")
+        print(f"var_race_id_list: {var_race_id_list}")
         print(f"var_class_id: {var_class_id}")
+        print(f"var_class_id_list: {var_class_id_list}")
         print(f"var_background_id {var_background_id}")
+        print(f"var_background_id_list {var_background_id_list}")
         #print(f"var_features_from_select: {var_features_from_select}")
         print(f"var_features_list: {var_features_list}")
         
