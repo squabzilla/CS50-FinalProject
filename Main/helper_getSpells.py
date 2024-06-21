@@ -120,6 +120,8 @@ def get_char_lvl1_spells_wizard():
     # single-select:
     wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">\n')
     
+    #features_list.append(f'<option value="{feature_Archery}">{get_feature_title(feature_Archery)}</option>\n')
+    
     
     # end select
     wizard_select_spells.append(f'</select>\n')
