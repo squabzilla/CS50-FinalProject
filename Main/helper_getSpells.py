@@ -131,7 +131,7 @@ def get_char_lvl1_spells_wizard():
     # end select
     wizard_select_spells.append(f'</select>\n')
     # end cantrips
-    wizard_select_spells.append(f'<div class="col">\n')
+    wizard_select_spells.append(f'</div>\n')
     
     # start leveled-spells
     wizard_select_spells.append(f'<div class="col">\n')
@@ -142,7 +142,7 @@ def get_char_lvl1_spells_wizard():
     # end select
     wizard_select_spells.append(f'</select>\n')
     # end leveled-spells
-    wizard_select_spells.append(f'<div class="col">\n')
+    wizard_select_spells.append(f'</div>\n')
     
     # end columns
     wizard_select_spells.append(f'</div></div>')
