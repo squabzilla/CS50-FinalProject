@@ -202,6 +202,7 @@ def get_lvl1_features(class_id):
     return lvl1_features_text
 
 def check_choice(class_id, feature_list):
+    # Verify that the feature(s) chosen are valid
     if class_id not in [5,12]:
         return False
     if class_id == 5:
@@ -209,6 +210,13 @@ def check_choice(class_id, feature_list):
         if len(feature_list) != 1: return False
         fighting_styles_choice = feature_list[0]["fighting_style"]
         fighting_styles_options = [81,82,83,84,85,86]
+        if fighting_styles_choice not in fighting_styles_options: return False
+        return True # return true if nothing made us return false
+    elif class_id == 12:
+        return True
+        # NOTE: since wizard doesn't make any choices, there aren't any selections to verify
+        # the "complete_features" function - for classes without choices - ignores user-input
+        # and just returns the list of "you get these features at lvl 1" list
         
 
 def check_and_complete_features(class_id, feature_list):
