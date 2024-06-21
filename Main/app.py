@@ -11,7 +11,7 @@ from helper_loginRequired import login_required
 # above: copied imported libraries from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
 from helper_classCreateRPGchar import rpg_char_create
-from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_and_complete_features
+from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice
 from helper_getSpells import class_spells_by_spell_level, get_char_lvl1_spells
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
 
@@ -317,10 +317,12 @@ def create_character():
                 new_pc.set_background_id(var_background_id)
         # Step 5 - features
         if var_features_list != [] and new_pc.has_features == None:
+            #from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice
+            if check_lvl1_features_choice(new_pc.class_id, var_features_list) == True:
+                var_features_list = complete_lvl1_features_choice(new_pc.class_id, var_features_list)
             
             
-            
-            new_pc.features = check_and_complete_features(new_pc.class_id, var_features_list)
+            #new_pc.features = check_and_complete_features(new_pc.class_id, var_features_list)
             new_pc.creation_step += 1
             # Prep-for-spells:
             new_pc.set_amount_of_spells_known()
