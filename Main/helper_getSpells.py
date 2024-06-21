@@ -173,4 +173,4 @@ def main():
     print(cantrips[0]["spell_name"])
     print(cantrips[0]["spell_id"])
     
-main()
+#main()
