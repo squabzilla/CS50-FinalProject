@@ -193,7 +193,7 @@ def read_csv_data_types():
             break
     
 def grab_a_spell():
-    sql_val = db.execute("SELECT * FROM list_spells WHERE spell_id = 0")
+    sql_val = db.execute("SELECT * FROM list_spells WHERE spell_id = 1")
     print(sql_val)
 
 def main():
