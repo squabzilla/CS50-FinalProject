@@ -116,23 +116,21 @@ def get_char_lvl1_spells_wizard():
     spells_cantrips_list = class_spells_by_spell_level(12, 0)
     spells_lvl1_list = class_spells_by_spell_level(12, 0)
     
+    
+    # form start:
+    wizard_select_spells.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SpellsCantrips_form" id="SpellsCantrips_form">\n')
+    
     # Start columns
     wizard_select_spells.append(f'<div class="container text-center"><div class="row align-items-start">\n')
     
     # start cantrips
     wizard_select_spells.append(f'<div class="col">\n')
-    # form start:
-    wizard_select_spells.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SpellsCantrips_form" id="SpellsCantrips_form">\n')
     # select-start:
     wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
     for i in range(len(spells_cantrips_list)):
         wizard_select_spells.append(f'<option value="{spells_cantrips_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
     # end select
     wizard_select_spells.append(f'</select>\n')
-    # Submit button
-    wizard_select_spells.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
-    # end form
-    wizard_select_spells.append(f'</form>\n')
     # end cantrips
     wizard_select_spells.append(f'<div class="col">\n')
     
@@ -146,15 +144,15 @@ def get_char_lvl1_spells_wizard():
         wizard_select_spells.append(f'<option value="{spells_lvl1_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
     # end select
     wizard_select_spells.append(f'</select>\n')
-    # Submit button
-    wizard_select_spells.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
-    # end form
-    wizard_select_spells.append(f'</form>\n')
     # end cantrips
     wizard_select_spells.append(f'<div class="col">\n')
     
     # end columns
     wizard_select_spells.append(f'</div></div>')
+    # Submit button
+    wizard_select_spells.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
+    # end form
+    wizard_select_spells.append(f'</form>\n')
     
     # Combine it all together
     spells_text = "".join(wizard_select_spells)
