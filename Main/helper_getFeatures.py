@@ -118,6 +118,7 @@ def get_lvl1_features_fighter():
     # features_list.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">\n')
     # Archery - feature_id: 81
     feature_Archery = 81
+    
     features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Archery}}}">{get_feature_title(feature_Archery)}</option>\n')
     # Defense - feature_id: 82
     feature_Defense = 82
@@ -125,7 +126,9 @@ def get_lvl1_features_fighter():
     # NOTE: Below: tried to make the return value a dictionary, so that a multi-item-multi-select feature-choice could have a list of dictionaries
     # this is WAY over-complicating things, especially since there's no lvl-1 class that choose multiple class features (aside from spells)
     # (and rangers favored-foe and favored-terrain, but those suck anyways, so I removed them)
+    # I'm sure I could've gotten this to work with a little more work, but it's just REALLY not a good use of my time
     #features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Defense}}}">{get_feature_title(feature_Defense)}</option>\n')
+    
     # Dueling - feature_id: 83
     feature_Dueling = 83
     features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Dueling}}}">{get_feature_title(feature_Dueling)}</option>\n')
