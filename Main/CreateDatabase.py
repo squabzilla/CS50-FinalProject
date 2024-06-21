@@ -23,7 +23,7 @@
 
 # NOTE: for arbitrary reasons:
 #                       ########### NOTE: UPDATE:
-#                       just zero-index all lists, it'll make everything simpler in the long-run
+#                       list_spells starts at 1 apparently
 
 import os
 import csv
