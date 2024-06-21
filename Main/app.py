@@ -331,9 +331,14 @@ def create_character():
                     new_pc.features = complete_lvl1_features_choice(new_pc.class_id, var_features_list)
                     new_pc.creation_step += 1
                     new_pc.set_amount_of_spells_known()
-            
-        print(f"End - new_pc.creation_step: {new_pc.creation_step}")
+                    
         # Step 6 - spells TODO
+        elif new_pc.creation_step == 5:
+            print(f"var_cantrips_list; length {len(var_cantrips_list)}; value(s): {var_cantrips_list}")
+        #var_cantrips_list
+        #var_leveled_spells_list
+        
+        print(f"End - new_pc.creation_step: {new_pc.creation_step}")
         return render_template("character_creator.html", new_pc=new_pc)
     else:
         new_pc = rpg_char_create()
