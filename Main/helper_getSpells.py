@@ -132,8 +132,8 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'<p>(Hold down Ctrl to select multiple items.)</p>')
     # select-start:
     #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
-    #wizard_select_spells.append(f'<select class="form-select" size="{cantrips_length}" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
-    wizard_select_spells.append(f'<select class="selectpicker" size="{cantrips_length}" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
+    wizard_select_spells.append(f'<select class="form-select" size="{cantrips_length}" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
+    #wizard_select_spells.append(f'<select class="selectpicker" size="{cantrips_length}" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
     # loop-thru select items
     for i in range(len(spells_cantrips_list)):
         wizard_select_spells.append(f'<option value="{spells_cantrips_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
@@ -149,8 +149,8 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'<p>(Hold down Ctrl to select multiple items.)</p>')
     # select-start:
     #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
-    #wizard_select_spells.append(f'<select class="form-select" size="{lvl1_length}" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
-    wizard_select_spells.append(f'<select class="selectpicker" size="{lvl1_length}" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
+    wizard_select_spells.append(f'<select class="form-select" size="{lvl1_length}" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
+    #wizard_select_spells.append(f'<select class="selectpicker" size="{lvl1_length}" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
     # loop-thru select items
     for i in range(len(spells_lvl1_list)):
         wizard_select_spells.append(f'<option value="{spells_lvl1_list[i]["spell_id"]}">{spells_lvl1_list[i]["spell_name"]}</option>\n')
@@ -196,9 +196,9 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
         spells_known_amount = -1 # NOTE: -1 will be used to represent "all" for purely-prepared casters
     elif class_id == 4: # Druid
         cantrips_known_amount = 2
-        spells_known_amount = -1
+        spells_known_amount = -1 # NOTE: -1 will be used to represent "all" for purely-prepared casters
     elif class_id == 8: # Ranger - remember changes you made
-        cantrips_known_amount = 2 # remember that you just GET those two cantrips as ranger
+        cantrips_known_amount = 2 #NOTE: remember that you just GET those two cantrips as ranger
         spells_known_amount = 0
     elif class_id == 10: # Sorcerer
         cantrips_known_amount = 4
@@ -209,6 +209,25 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
     elif class_id == 12: # Wizard
         cantrips_known_amount = 3
         spells_known_amount = 6
+
+def set_cleric_leveledSpellsKnown_by_spellLevel(spellLevel):
+    spell_list = []
+    if spellLevel < 1 or spellLevel > 9:
+        return spell_list
+    spell_list = class_spells_by_spell_level(3, spellLevel)
+    for i in range(len(spell_list)):
+        spell_list[i] = spell_list[i]["spell_id"]
+    return spell_list
+
+def set_druid_leveledSpellsKnown_by_spellLevel(spellLevel):
+    spell_list = []
+    if spellLevel < 1 or spellLevel > 9:
+        return spell_list
+    spell_list = class_spells_by_spell_level(4, spellLevel)
+    for i in range(len(spell_list)):
+        spell_list[i] = spell_list[i]["spell_id"]
+    return spell_list
+    
 
 def main():
     #print("Wizard cantrips:")
