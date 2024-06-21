@@ -110,7 +110,7 @@ def class_spells_by_spell_level(class_id, spell_level):
 
 def class_spell_names_by_spell_level(class_id, spell_level):
     spell_list = []
-    if spell_level < 1 or spell_level > 9:
+    if spell_level < 0 or spell_level > 9:
         return spell_list
     spell_list = class_spells_by_spell_level(class_id, spell_level)
     for i in range(len(spell_list)):
@@ -119,7 +119,7 @@ def class_spell_names_by_spell_level(class_id, spell_level):
 
 def class_spell_IDs_by_spell_level(class_id, spell_level):
     spell_list = []
-    if spell_level < 1 or spell_level > 9:
+    if spell_level < 0 or spell_level > 9:
         return spell_list
     spell_list = class_spells_by_spell_level(class_id, spell_level)
     for i in range(len(spell_list)):
