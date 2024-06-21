@@ -129,6 +129,8 @@ def get_char_lvl1_spells_wizard():
         wizard_select_spells.append(f'<option value="{spells_cantrips_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
     # end select
     wizard_select_spells.append(f'</select>\n')
+    # Submit button
+    wizard_select_spells.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     # end form
     wizard_select_spells.append(f'</form>\n')
     # end cantrips
@@ -144,6 +146,8 @@ def get_char_lvl1_spells_wizard():
         wizard_select_spells.append(f'<option value="{spells_lvl1_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
     # end select
     wizard_select_spells.append(f'</select>\n')
+    # Submit button
+    wizard_select_spells.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     # end form
     wizard_select_spells.append(f'</form>\n')
     # end cantrips
