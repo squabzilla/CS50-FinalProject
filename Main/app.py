@@ -12,7 +12,7 @@ from helper_loginRequired import login_required
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
 from helper_classCreateRPGchar import rpg_char_create
 from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice
-from helper_getSpells import class_spells_by_spell_level, get_char_lvl1_spells
+from helper_getSpells import class_spells_by_spell_level, get_char_lvl1_spells, set_cleric_leveledSpellsIDs_by_spellLevel, set_druid_leveledSpellsIDs_by_spellLevel
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
 
 # configure flask application
@@ -340,8 +340,13 @@ def create_character():
             #var_leveled_spells_list
             #print(f"var_leveled_spells_list; length {len(var_leveled_spells_list)}; value(s):")
             #print(var_leveled_spells_list)
+            #set_cleric_leveledSpellsIDs_by_spellLevel, set_druid_leveledSpellsIDs_by_spellLevel
+            if new_pc.class_id == 3: var_leveled_spells_list = set_cleric_leveledSpellsIDs_by_spellLevel(1)
+            if new_pc.class_id == 4: var_leveled_spells_list = set_druid_leveledSpellsIDs_by_spellLevel
+            # I'm not supporting these classes yet, but while I'm thinking of it, setting spells-known for spells-prepared casters
             if len(var_cantrips_list) != new_pc.cantrips_known_amount or len(var_leveled_spells_list) != new_pc.spells_known_amount:
                 flash("Incorrect number of spells selected")
+            (1)
         
         
         print(f"End - new_pc.creation_step: {new_pc.creation_step}")
