@@ -118,8 +118,8 @@ def get_lvl1_features_fighter():
     # features_list.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">\n')
     # Archery - feature_id: 81
     feature_Archery = 81
+    features_list.append(f'<option value="{feature_Archery}">{get_feature_title(feature_Archery)}</option>\n')
     
-    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Archery}}}">{get_feature_title(feature_Archery)}</option>\n')
     # Defense - feature_id: 82
     feature_Defense = 82
     features_list.append(f'<option value="{feature_Defense}">{get_feature_title(feature_Defense)}</option>\n')
@@ -131,16 +131,16 @@ def get_lvl1_features_fighter():
     
     # Dueling - feature_id: 83
     feature_Dueling = 83
-    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Dueling}}}">{get_feature_title(feature_Dueling)}</option>\n')
+    features_list.append(f'<option value="{feature_Dueling}">{get_feature_title(feature_Dueling)}</option>\n')
     # Great_Weapon_Fighting - feature_id: 84
     feature_Great_Weapon_Fighting = 84
-    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Great_Weapon_Fighting}}}">{get_feature_title(feature_Great_Weapon_Fighting)}</option>\n')
+    features_list.append(f'<option value="{feature_Great_Weapon_Fighting}">{get_feature_title(feature_Great_Weapon_Fighting)}</option>\n')
     # Protection - feature_id: 85
     feature_Protection = 85
-    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Protection}}}">{get_feature_title(feature_Protection)}</option>\n')
+    features_list.append(f'<option value="{feature_Protection}">{get_feature_title(feature_Protection)}</option>\n')
     # Two_Weapon_Fighting - feature_id: 86
     feature_Two_Weapon_Fighting = 86
-    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Two_Weapon_Fighting}}}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
+    features_list.append(f'<option value="{feature_Two_Weapon_Fighting}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
     # end select
     features_list.append(f'</select>\n')
     # submit button
@@ -213,17 +213,16 @@ def check_lvl1_features_choice(class_id, feature_list):
         return False
     if class_id == 5:
         if type(feature_list) is not list:
-            print("not list")
             return False
         if len(feature_list) != 1:
-            print("length != 1")
             return False
         fighting_styles_choice = feature_list[0]
-        print(f"Fighting style choice: {fighting_styles_choice}")
-        print(f"data-type: {type(fighting_styles_choice)}")
+        if fighting_styles_choice.isnumeric() == True:
+            fighting_styles_choice = int(fighting_styles_choice)
+        else:
+            return False
         fighting_styles_options = [81,82,83,84,85,86]
         if fighting_styles_choice not in fighting_styles_options:
-            print("not in list")
             return False
         return True # return true if nothing made us return false
     elif class_id == 12:
@@ -238,7 +237,7 @@ def complete_lvl1_features_choice(class_id, feature_list): # assumes valid input
         return None
     if class_id == 5:
         fighter_features = [80, 87] # default features you get no matter what
-        fighter_fighting_style = feature_list[0]["fighting_style"]
+        fighter_fighting_style = int(feature_list[0])
         fighter_features.append(fighter_fighting_style)
         fighter_features.sort()
         return fighter_features
