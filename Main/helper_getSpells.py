@@ -227,11 +227,18 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
         cantrips_known_amount = 3
         spells_known_amount = 6
     
-    full_cantrips_list = class_spell_names_by_spell_level(class_id,0)
+    full_cantrips_list = class_spell_IDs_by_spell_level(class_id,0)
+    
+    print("full_cantrips_list:")
+    print(full_cantrips_list)
+    for item in full_cantrips_list:
+        print(f"item {item} is of type {type(item)}")
+        break
+    
     for item in cantrip_list:
         if item not in full_cantrips_list:
             return False
-    full_spells_list = class_spell_names_by_spell_level(class_id,1)
+    full_spells_list = class_spell_IDs_by_spell_level(class_id,1)
     for item in spells_list:
         if item not in full_spells_list:
             return False
