@@ -115,6 +115,11 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells = []
     spells_cantrips_list = class_spells_by_spell_level(12, 0)
     spells_lvl1_list = class_spells_by_spell_level(12, 0)
+    
+    # Start columns
+    wizard_select_spells.append(f'<div class="container text-center"><div class="row align-items-start">')
+    
+    # NOTE: Cantrips start
     # form start:
     wizard_select_spells.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
     # single-select:
@@ -128,6 +133,10 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'</select>\n')
     # end form
     wizard_select_spells.append(f'</form>\n')
+    
+    
+    # end columns
+    wizard_select_spells.append(f'</div></div>')
 
 def get_char_lvl1_spells(class_id):
     char_lvl1_spells_text = ""
