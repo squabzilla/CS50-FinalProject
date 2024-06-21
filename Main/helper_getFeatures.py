@@ -218,6 +218,22 @@ def check_choice(class_id, feature_list):
         # the "complete_features" function - for classes without choices - ignores user-input
         # and just returns the list of "you get these features at lvl 1" list
         
+        
+def complete_features(class_id, feature_list): # assumes valid input, since we run a function to check input first
+    if class_id not in [5,12]:
+        return None
+    if class_id == 5:
+        fighter_features = [80, 87] # default features you get no matter what
+        fighter_fighting_style = feature_list[0]["fighting_style"]
+        fighter_features.append(fighter_fighting_style)
+        fighter_features.sort()
+        return fighter_features
+    elif class_id == 12:
+        wizard_features = [287,288,289,290,291,292,293,294,295]
+        return wizard_features
+        
+        
+
 
 def check_and_complete_features(class_id, feature_list):
     # NOTE: I can worry about how to check a class with multiple-selectable-features at lvl 1
