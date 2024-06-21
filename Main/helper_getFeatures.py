@@ -208,7 +208,7 @@ def check_lvl1_features_choice(class_id, feature_list):
     if class_id == 5:
         if type(feature_list) is not list: return False
         if len(feature_list) != 1: return False
-        fighting_styles_choice = feature_list[0]["fighting_style"]
+        fighting_styles_choice = feature_list[0]
         fighting_styles_options = [81,82,83,84,85,86]
         if fighting_styles_choice not in fighting_styles_options: return False
         return True # return true if nothing made us return false
