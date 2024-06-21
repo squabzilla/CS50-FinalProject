@@ -130,3 +130,11 @@ def get_char_lvl1_spells(class_id):
     elif class_id == 12:
         char_lvl1_spells_text = get_char_lvl1_spells_wizard()
     return char_lvl1_spells_text
+
+def main():
+    print("Wizard cantrips:")
+    print(class_spells_by_spell_level(12,0))
+    print("Wizard 1st-level-spells:")
+    print(class_spells_by_spell_level(12,1))
+    
+main()
