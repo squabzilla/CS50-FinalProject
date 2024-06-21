@@ -298,35 +298,36 @@ def create_character():
         print(f"var_features_list: {var_features_list}")
         
         # Step 1
-        if new_pc.creation_step == 1 and var_name != None:
+        if new_pc.creation_step == 1:
         #if var_name != None and new_pc.name == None:
-            new_pc.set_name(var_name)
+            if type(var_name) is str:
+                new_pc.set_name(var_name)
         # Step 2
         elif new_pc.creation_step == 2:
         #if var_race_id != None and new_pc.race_id == None:
-            if var_race_id.isnumeric() == True:
-                var_race_id = int(var_race_id)
-                new_pc.set_race_id(var_race_id)
+            if type(var_race_id) is str:
+                if var_race_id.isnumeric() == True:
+                    new_pc.set_race_id(int(var_race_id))
         # Step 3
         elif new_pc.creation_step == 3:
         #if var_class_id != None and new_pc.class_id == None:
-            if var_class_id.isnumeric() == True:
-                var_class_id = int(var_class_id)
-                new_pc.set_class_id(var_class_id)
+            if type(var_class_id) is str:
+                if var_class_id.isnumeric() == True:
+                    new_pc.set_class_id(int(var_class_id))
         # Step 4
         elif new_pc.creation_step == 4:
         #if var_background_id != None and new_pc.background_id == None:
-            if var_background_id.isnumeric() == True:
-                var_background_id = int(var_background_id)
-                new_pc.set_background_id(var_background_id)
+            if type(var_background_id) is str:
+                if var_background_id.isnumeric() == True:
+                    new_pc.set_background_id(int(var_background_id))
         # Step 5 - features
         elif new_pc.creation_step == 5:
         #if var_features_list != [] and new_pc.has_features == None:
-            #from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice
-            if check_lvl1_features_choice(new_pc.class_id, var_features_list) == True:
-                new_pc.features = complete_lvl1_features_choice(new_pc.class_id, var_features_list)
-                new_pc.creation_step += 1
-                new_pc.set_amount_of_spells_known()
+            if type(var_features_list) is list:
+                if check_lvl1_features_choice(new_pc.class_id, var_features_list) == True:
+                    new_pc.features = complete_lvl1_features_choice(new_pc.class_id, var_features_list)
+                    new_pc.creation_step += 1
+                    new_pc.set_amount_of_spells_known()
             
         print(f"End - new_pc.creation_step: {new_pc.creation_step}")
         # Step 6 - spells TODO
