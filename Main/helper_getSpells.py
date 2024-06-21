@@ -204,7 +204,6 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
     if class_id in [1,5,6,7,9]: # non-casters
         cantrips_known_amount = 0
         spells_known_amount = 0
-        has_spells = True
         creation_step += 1 # Move to next step since we aren't a caster
     elif class_id == 2: # Bard
         cantrips_known_amount = 2
@@ -227,16 +226,24 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
     elif class_id == 12: # Wizard
         cantrips_known_amount = 3
         spells_known_amount = 6
-    return True
     
+    full_cantrips_list = class_spell_names_by_spell_level(class_id,0)
+    for item in cantrip_list:
+        if item not in full_cantrips_list:
+            return False
+    full_spells_list = class_spell_names_by_spell_level(class_id,1)
+    for item in spells_list:
+        if item not in full_spells_list:
+            return False
+    return True
 
 def main():
-    print("Level 1 Ranger cantrip IDs:")
-    print(class_spell_IDs_by_spell_level(8,0))
-    print("Level 1 Ranger cantrip names:")
-    print(class_spell_names_by_spell_level(8,0))
+    var_cantrip_list = [1,3]
+    var_spell_list = [4,6]
+    var_class_id = 12
+    validate_spell_choices(var_cantrip_list, var_spell_list, var_class_id)
     
     
     return True
     
-#main()
+main()
