@@ -113,8 +113,8 @@ def class_spells_by_spell_level(class_id, spell_level):
 
 def get_char_lvl1_spells_wizard():
     features_list = []
-    cantrips_list = class_spells_by_spell_level(12, 0)
-    spells_list = class_spells_by_spell_level(12, 0)
+    spells_cantrips_list = class_spells_by_spell_level(12, 0)
+    spells_lvl1_list = class_spells_by_spell_level(12, 0)
     # form start:
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
     
