@@ -290,16 +290,16 @@ def create_character():
         # it is NOT considered equal to none by default, but I can always compare it to an empty list
         
         # Honestly I'll get rid of all these excessive inputs and print statements once this fully 100% works
-        print(f"Start - new_pc.creation_step: {new_pc.creation_step}")
-        print(f"var_name: {var_name}")
-        print(f"var_race_id: {var_race_id}")
-        print(f"var_class_id: {var_class_id}")
-        print(f"var_background_id {var_background_id}")
-        #print(f"var_features_from_select: {var_features_from_select}")
-        print(f"var_features_list: {var_features_list}")
+        #print(f"Start - new_pc.creation_step: {new_pc.creation_step}")
+        #print(f"var_name: {var_name}")
+        #print(f"var_race_id: {var_race_id}")
+        #print(f"var_class_id: {var_class_id}")
+        #print(f"var_background_id {var_background_id}")
+        ##print(f"var_features_from_select: {var_features_from_select}")
+        #print(f"var_features_list: {var_features_list}")
         
-        print(f"var_cantrips_list: {var_cantrips_list}")
-        print(f"var_leveled_spells_list: {var_leveled_spells_list}")
+        #print(f"var_cantrips_list: {var_cantrips_list}")
+        #print(f"var_leveled_spells_list: {var_leveled_spells_list}")
         
         # Step 1
         if new_pc.creation_step == 1:
@@ -351,7 +351,7 @@ def create_character():
             
             if len(var_cantrips_list) != new_pc.cantrips_known_amount or len(var_leveled_spells_list) != new_pc.spells_known_amount:
                 flash("Incorrect number of spells selected")
-            print(f"validate_spell_choices: {validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_pc.class_id)}")
+            #print(f"validate_spell_choices: {validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_pc.class_id)}")
             
             if validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_pc.class_id) == True:
                 for cantrip in var_cantrips_list:
@@ -397,18 +397,19 @@ def testing():
 
 @app.route("/character_creator_name", methods=['GET', 'POST'])
 def create_character_step2():
+    # NOTE: Why do I even have this here? Probably just a failed attempt I can delete
     if request.method == 'POST':
         character_name = request.form.get("character_name")
         #character_name = "Bob"
         new_char = rpg_char_create()
         new_char.name = character_name
         session["new_char"] = new_char
-        print(character_name)
+        #print(character_name)
         #return render_template("character_creator.html", character=new_char, step=2)
         return redirect("/character_creator")
     #session["user_id"] = rows[0]["user_id"]
     else:
-        print("get-method")
+        #print("get-method")
         #return render_template("character_creator.html", noCharacter="noCharacter")
         return redirect("/")
     #wait didn't I try returning a redirect with a value BEFORE I imported redirect?
