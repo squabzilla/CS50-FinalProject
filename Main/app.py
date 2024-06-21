@@ -12,7 +12,7 @@ from helper_loginRequired import login_required
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
 from helper_classCreateRPGchar import rpg_char_create
 from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice
-from helper_getSpells import class_spells_by_spell_level, get_char_lvl1_spells, class_spell_names_by_spell_level, class_spell_IDs_by_spell_level
+from helper_getSpells import class_spells_by_spell_level, get_char_lvl1_spells, class_spell_names_by_spell_level, class_spell_IDs_by_spell_level, validate_spell_choices
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
 
 # configure flask application
@@ -348,6 +348,12 @@ def create_character():
             
             if len(var_cantrips_list) != new_pc.cantrips_known_amount or len(var_leveled_spells_list) != new_pc.spells_known_amount:
                 flash("Incorrect number of spells selected")
+            if validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_pc.class_id) == True:
+                for cantrip in var_cantrips_list:
+                    new_pc.list_spells.append(int(cantrip))
+                for spell in var_leveled_spells_list:
+                    new_pc.list_spells.append(int(spell))
+                new_pc.creation_step += 1
             
         
         
