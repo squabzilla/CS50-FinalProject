@@ -192,11 +192,15 @@ def read_csv_data_types():
             print(f"feature_text_description example value {feature_text_description} is of type {type(feature_text_description)}")
             break
     
+def grab_a_spell():
+    sql_val = db.execute("SELECT * FROM list_spells WHERE spell_id = 0")
+    print(sql_val)
+
 def main():
     #test_check_type()
     #test_check_if_int()
     #trying_test_if_in_racelist()
-    read_csv_data_types()
+    grab_a_spell()
     return True
 main()
 

@@ -19,6 +19,8 @@
 # tabs        Tab-separated values
 # tcl         TCL list elements
 
+# NOTE: PRAGMA table_info(table_name);
+
 # NOTE: for arbitrary reasons:
 #                       ########### NOTE: UPDATE:
 #                       just zero-index all lists, it'll make everything simpler in the long-run
