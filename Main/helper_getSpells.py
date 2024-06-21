@@ -126,7 +126,6 @@ def get_char_lvl1_spells_wizard():
     # start cantrips
     wizard_select_spells.append(f'<div class="col">\n')
     # select-start:
-    wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
     for i in range(len(spells_cantrips_list)):
         wizard_select_spells.append(f'<option value="{spells_cantrips_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
     # end select
@@ -134,17 +133,15 @@ def get_char_lvl1_spells_wizard():
     # end cantrips
     wizard_select_spells.append(f'<div class="col">\n')
     
-    # start lvl1-spells
+    # start leveled-spells
     wizard_select_spells.append(f'<div class="col">\n')
-    # form start:
-    wizard_select_spells.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SpellsLeveled_form" id="SpellsLeveled_form">\n')
     # select-start:
     wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
     for i in range(len(spells_cantrips_list)):
         wizard_select_spells.append(f'<option value="{spells_lvl1_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
     # end select
     wizard_select_spells.append(f'</select>\n')
-    # end cantrips
+    # end leveled-spells
     wizard_select_spells.append(f'<div class="col">\n')
     
     # end columns
