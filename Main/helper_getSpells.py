@@ -229,11 +229,12 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
     
     full_cantrips_list = class_spell_IDs_by_spell_level(class_id,0)
     
-    print("full_cantrips_list:")
-    print(full_cantrips_list)
-    for item in full_cantrips_list:
-        print(f"item {item} is of type {type(item)}")
-        break
+    #print("full_cantrips_list:")
+    #print(full_cantrips_list)
+    
+    print(f"full_cantrips_list item {full_cantrips_list[0]} is of type {type(full_cantrips_list[0])}")
+    print(f"cantrip_list item {cantrip_list[0]} is of type {type(cantrip_list[0])}")
+    
     
     for item in cantrip_list:
         if item not in full_cantrips_list:
