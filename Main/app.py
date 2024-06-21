@@ -355,9 +355,9 @@ def create_character():
             
             if validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_pc.class_id) == True:
                 for cantrip in var_cantrips_list:
-                    new_pc.list_spells.append(int(cantrip))
+                    new_pc.list_spells.append(int(cantrip)) # NOTE: I have no idea if I actually want these as integers or not
                 for spell in var_leveled_spells_list:
-                    new_pc.list_spells.append(int(spell))
+                    new_pc.list_spells.append(int(spell)) # NOTE: I have no idea if I actually want these as integers or not
                 new_pc.creation_step += 1
             
         
