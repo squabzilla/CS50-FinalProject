@@ -302,25 +302,25 @@ def create_character():
         #if var_name != None and new_pc.name == None:
             new_pc.set_name(var_name)
         # Step 2
-        if new_pc.creation_step == 2:
+        elif new_pc.creation_step == 2:
         #if var_race_id != None and new_pc.race_id == None:
             if var_race_id.isnumeric() == True:
                 var_race_id = int(var_race_id)
                 new_pc.set_race_id(var_race_id)
         # Step 3
-        if new_pc.creation_step == 3:
+        elif new_pc.creation_step == 3:
         #if var_class_id != None and new_pc.class_id == None:
             if var_class_id.isnumeric() == True:
                 var_class_id = int(var_class_id)
                 new_pc.set_class_id(var_class_id)
         # Step 4
-        if new_pc.creation_step == 4:
+        elif new_pc.creation_step == 4:
         #if var_background_id != None and new_pc.background_id == None:
             if var_background_id.isnumeric() == True:
                 var_background_id = int(var_background_id)
                 new_pc.set_background_id(var_background_id)
         # Step 5 - features
-        if new_pc.creation_step == 5:
+        elif new_pc.creation_step == 5:
         #if var_features_list != [] and new_pc.has_features == None:
             #from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice
             if check_lvl1_features_choice(new_pc.class_id, var_features_list) == True:
