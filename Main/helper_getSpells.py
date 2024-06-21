@@ -129,6 +129,7 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'<div class="col">\n')
     # label-cantrips
     wizard_select_spells.append(f'<p>Please select three (3) cantrips.</p>')
+    wizard_select_spells.append(f'<p>(Hold down Ctrl to select multiple items.)</p>')
     # select-start:
     #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
     wizard_select_spells.append(f'<select class="form-select" size="{cantrips_length}" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
@@ -144,6 +145,7 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'<div class="col">\n')
     # label-lvl1spells
     wizard_select_spells.append(f'<p>Please select six (6) 1st-level spells.</p>')
+    wizard_select_spells.append(f'<p>(Hold down Ctrl to select multiple items.)</p>')
     # select-start:
     #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
     wizard_select_spells.append(f'<select class="form-select" size="{lvl1_length}" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
