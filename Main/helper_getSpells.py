@@ -134,7 +134,6 @@ def get_char_lvl1_spells_wizard():
     # end cantrips
     wizard_select_spells.append(f'<div class="col">\n')
     
-    
     # start lvl1-spells
     wizard_select_spells.append(f'<div class="col">\n')
     # form start:
@@ -150,9 +149,12 @@ def get_char_lvl1_spells_wizard():
     # end cantrips
     wizard_select_spells.append(f'<div class="col">\n')
     
-    
     # end columns
     wizard_select_spells.append(f'</div></div>')
+    
+    # Combine it all together
+    spells_text = "".join(wizard_select_spells)
+    return spells_text
 
 def get_char_lvl1_spells(class_id):
     char_lvl1_spells_text = ""
