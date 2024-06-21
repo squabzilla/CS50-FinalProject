@@ -227,31 +227,16 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
     elif class_id == 12: # Wizard
         cantrips_known_amount = 3
         spells_known_amount = 6
-
-def set_cleric_leveledSpellsIDs_by_spellLevel(spellLevel):
-    spell_list = []
-    if spellLevel < 1 or spellLevel > 9:
-        return spell_list
-    spell_list = class_spells_by_spell_level(3, spellLevel)
-    for i in range(len(spell_list)):
-        spell_list[i] = spell_list[i]["spell_id"]
-    return spell_list
-
-def set_druid_leveledSpellsIDs_by_spellLevel(spellLevel):
-    spell_list = []
-    if spellLevel < 1 or spellLevel > 9:
-        return spell_list
-    spell_list = class_spells_by_spell_level(4, spellLevel)
-    for i in range(len(spell_list)):
-        spell_list[i] = spell_list[i]["spell_id"]
-    return spell_list
+    return True
     
 
 def main():
-    print(set_cleric_leveledSpellsIDs_by_spellLevel(1))
-    print(set_druid_leveledSpellsIDs_by_spellLevel(1))
+    print("Level 1 Ranger cantrip IDs:")
+    print(class_spell_IDs_by_spell_level(8,0))
+    print("Level 1 Ranger cantrip names:")
+    print(class_spell_names_by_spell_level(8,0))
     
     
     return True
     
-#main()
+main()
