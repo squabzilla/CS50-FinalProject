@@ -118,7 +118,7 @@ def get_lvl1_features_fighter():
     # features_list.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">\n')
     # Archery - feature_id: 81
     feature_Archery = 81
-    features_list.append(f'<option value="{{"fighting_style": {feature_Archery}}}">{get_feature_title(feature_Archery)}</option>\n')
+    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Archery}}}">{get_feature_title(feature_Archery)}</option>\n')
     # Defense - feature_id: 82
     feature_Defense = 82
     features_list.append(f'<option value="{{"fighting_style": {feature_Defense}}}">{get_feature_title(feature_Defense)}</option>\n')
