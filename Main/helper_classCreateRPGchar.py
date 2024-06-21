@@ -134,10 +134,12 @@ class rpg_char_create:
             self.spells_known_amount = 4
         elif self.class_id == 3: # Cleric
             self.cantrips_known_amount = 3
-            self.spells_known_amount = -1 # NOTE: -1 will be used to represent "all" for purely-prepared casters
+            #self.spells_known_amount = -1 # NOTE: -1 will be used to represent "all" for purely-prepared casters
+            self.spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND cleric_spell = 1;")
         elif self.class_id == 4: # Druid
             self.cantrips_known_amount = 2
-            self.spells_known_amount = -1
+            #self.spells_known_amount = -1
+            self.spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND druid_spell = 1;")
         elif self.class_id == 8: # Ranger - remember changes you made
             self.cantrips_known_amount = 2 # remember that you just GET those two cantrips as ranger
             self.spells_known_amount = 0
