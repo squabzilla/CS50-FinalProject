@@ -118,23 +118,23 @@ def get_lvl1_features_fighter():
     # features_list.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">\n')
     # Archery - feature_id: 81
     feature_Archery = 81
-    features_list.append(f'<option value="{{fighting_style": {feature_Archery}}}">{get_feature_title(feature_Archery)}</option>\n')
+    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Archery}}}">{get_feature_title(feature_Archery)}</option>\n')
     # Defense - feature_id: 82
     feature_Defense = 82
-    features_list.append(f'<option value="{{"fighting_style": {feature_Defense}}}">{get_feature_title(feature_Defense)}</option>\n')
+    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Defense}}}">{get_feature_title(feature_Defense)}</option>\n')
     #features_list.append(f'<option value="fighting{feature_Defense}">{get_feature_title(feature_Defense)}</option>\n')
     # Dueling - feature_id: 83
     feature_Dueling = 83
-    features_list.append(f'<option value="{{"fighting_style": {feature_Dueling}}}">{get_feature_title(feature_Dueling)}</option>\n')
+    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Dueling}}}">{get_feature_title(feature_Dueling)}</option>\n')
     # Great_Weapon_Fighting - feature_id: 84
     feature_Great_Weapon_Fighting = 84
-    features_list.append(f'<option value="{{"fighting_style": {feature_Great_Weapon_Fighting}}}">{get_feature_title(feature_Great_Weapon_Fighting)}</option>\n')
+    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Great_Weapon_Fighting}}}">{get_feature_title(feature_Great_Weapon_Fighting)}</option>\n')
     # Protection - feature_id: 85
     feature_Protection = 85
-    features_list.append(f'<option value="{{"fighting_style": {feature_Protection}}}">{get_feature_title(feature_Protection)}</option>\n')
+    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Protection}}}">{get_feature_title(feature_Protection)}</option>\n')
     # Two_Weapon_Fighting - feature_id: 86
     feature_Two_Weapon_Fighting = 86
-    features_list.append(f'<option value="{{"fighting_style": {feature_Two_Weapon_Fighting}}}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
+    features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Two_Weapon_Fighting}}}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
     # end select
     features_list.append(f'</select>\n')
     # submit button
