@@ -127,8 +127,8 @@ def get_char_lvl1_spells_wizard():
     # start SpellsCantrips
     wizard_select_spells.append(f'<div class="col">\n')
     # select-start:
-    #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
-    wizard_select_spells.append(f'<select class="form-select" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
+    wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
+    #wizard_select_spells.append(f'<select class="form-select" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
     # loop-thru select items
     for i in range(len(spells_cantrips_list)):
         wizard_select_spells.append(f'<option value="{spells_cantrips_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
@@ -140,8 +140,8 @@ def get_char_lvl1_spells_wizard():
     # start SpellsLeveled
     wizard_select_spells.append(f'<div class="col">\n')
     # select-start:
-    #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
-    wizard_select_spells.append(f'<select class="form-select" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
+    wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
+    #wizard_select_spells.append(f'<select class="form-select" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
     # loop-thru select items
     for i in range(len(spells_cantrips_list)):
         wizard_select_spells.append(f'<option value="{spells_lvl1_list[i]["spell_id"]}">{spells_lvl1_list[i]["spell_name"]}</option>\n')
@@ -154,6 +154,7 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'</div></div>')
     
     # Submit button
+    wizard_select_spells.append(f'<br>') # break before submit buttons usually looks good
     wizard_select_spells.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     # end form
     wizard_select_spells.append(f'</form>\n')
