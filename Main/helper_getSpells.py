@@ -114,6 +114,7 @@ def class_spells_by_spell_level(class_id, spell_level):
 def get_char_lvl1_spells_wizard():
     wizard_select_spells = []
     spells_cantrips_list = class_spells_by_spell_level(12, 0)
+    cantrips_length = len(spells_cantrips_list)
     spells_lvl1_list = class_spells_by_spell_level(12, 1)
     
     
@@ -126,7 +127,8 @@ def get_char_lvl1_spells_wizard():
     # start SpellsCantrips
     wizard_select_spells.append(f'<div class="col">\n')
     # select-start:
-    wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
+    #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
+    wizard_select_spells.append(f'<select class="form-select" name="SpellsCantrips" id="SpellsCantrips" multiple aria-label="Multiple select example">\n')
     # loop-thru select items
     for i in range(len(spells_cantrips_list)):
         wizard_select_spells.append(f'<option value="{spells_cantrips_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
@@ -138,7 +140,8 @@ def get_char_lvl1_spells_wizard():
     # start SpellsLeveled
     wizard_select_spells.append(f'<div class="col">\n')
     # select-start:
-    wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
+    #wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
+    wizard_select_spells.append(f'<select class="form-select" name="SpellsLeveled" id="SpellsLeveled" multiple aria-label="Multiple select example">\n')
     # loop-thru select items
     for i in range(len(spells_cantrips_list)):
         wizard_select_spells.append(f'<option value="{spells_lvl1_list[i]["spell_id"]}">{spells_lvl1_list[i]["spell_name"]}</option>\n')
