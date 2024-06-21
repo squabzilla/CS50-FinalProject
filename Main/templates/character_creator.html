@@ -76,6 +76,7 @@
         <p>Spells</p>
         <div name="auto_spells" id="auto_spells">
         </div>
+        <!--
         <div class="container text-center">
             <div class="row align-items-start">
                 <div class="col">
@@ -89,28 +90,11 @@
                 </div>
             </div>
         </div>
-        
+        -->
         <script type="module">
-            //let response = await fetch('/search?q=' + input.value);
-            
-            
-            //let select_features_response = await fetch('/search?q=' + input.value);
-            //let shows = await response.json();
-            /*
-            let features_response = await fetch('/get_lvl1features');
+            let features_response = await fetch('/get_char_lvl1_spells');
             let features_items = await features_response.json();
-            document.getElementById("features_go_here").insertAdjacentHTML("beforeend",features_items)
-            */
-            //document.getElementById("SelectFeaturesForm").insertAdjacentHTML("beforeend",features_items)
-            //document.getElementById("SelectFeaturesSelect").insertAdjacentHTML("beforeend",features_items)
-            /*
-            Okay, so this works so far, for now
-            However, I still need to add a submit button
-            As well as something that brings up the description of the fighting style selected
-            Still, another step of noticeable progress done
-            */
-        </script>
-        <script type="module">
+            document.getElementById("auto_spells").insertAdjacentHTML("beforeend",features_items)
         </script>
     {% else %}
         <h1>Done</h1>
