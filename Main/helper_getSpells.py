@@ -119,7 +119,8 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
     # single-select:
     wizard_select_spells.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">\n')
-    
+    for i in range(len(spells_cantrips_list)):
+        wizard_select_spells.append(f'<option value="{spells_cantrips_list[i]["spell_id"]}">{spells_cantrips_list[i]["spell_name"]}</option>\n')
     #features_list.append(f'<option value="{feature_Archery}">{get_feature_title(feature_Archery)}</option>\n')
     
     
