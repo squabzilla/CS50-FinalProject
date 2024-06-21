@@ -352,6 +352,7 @@ def create_character():
             if len(var_cantrips_list) != new_pc.cantrips_known_amount or len(var_leveled_spells_list) != new_pc.spells_known_amount:
                 flash("Incorrect number of spells selected")
             print(f"validate_spell_choices: {validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_pc.class_id)}")
+            
             if validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_pc.class_id) == True:
                 for cantrip in var_cantrips_list:
                     new_pc.list_spells.append(int(cantrip))
