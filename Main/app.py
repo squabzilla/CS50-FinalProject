@@ -333,10 +333,14 @@ def create_character():
                     new_pc.set_amount_of_spells_known()
                     
         # Step 6 - spells TODO
-        elif new_pc.creation_step == 5:
-            print(f"var_cantrips_list; length {len(var_cantrips_list)}; value(s): {var_cantrips_list}")
-        #var_cantrips_list
-        #var_leveled_spells_list
+        elif new_pc.creation_step == 6:
+            #var_cantrips_list
+            print(f"var_cantrips_list; length {len(var_cantrips_list)}; value(s):")
+            print(var_cantrips_list)
+            #var_leveled_spells_list
+            print(f"var_leveled_spells_list; length {len(var_leveled_spells_list)}; value(s):")
+            print(var_leveled_spells_list)
+        
         
         print(f"End - new_pc.creation_step: {new_pc.creation_step}")
         return render_template("character_creator.html", new_pc=new_pc)
