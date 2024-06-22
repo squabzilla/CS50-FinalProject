@@ -2,7 +2,9 @@ input {
     outline: none
   }
 
+  /*
 .form {
-    /*outline: none*/
-    * { outline: 1px solid red !important; }
+    outline: none
   }
+*/
+.form { outline: 10px solid red !important; }
