@@ -22,3 +22,7 @@ Class example, of class called input:
     border-style: none;
   }
 */
+
+p {
+  line-height: 1em;
+}
