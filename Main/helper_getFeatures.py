@@ -117,8 +117,8 @@ def get_lvl1_features_fighter():
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0" name="SelectFeatures_form" id="SelectFeatures_form">\n')
     # Get feature 80
     features_list.append(f'{get_feature_text(80)}\n')
-    # Now choose feature from 81-86: - start with beginning a Select:
-    features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Default select example" name="FeaturesSelect" id="FeaturesSelect">')
+    # Now choose feature from 81-86: - start with beginning a Select. Also, added <br> before select because I think it looks better?
+    features_list.append(f'<br><select class="form-select" class="form-control w-auto" aria-label="Default select example" name="FeaturesSelect" id="FeaturesSelect">')
     select_from_list = [81,82,83,84,85,86] # list of features to select from
     for feature in select_from_list: # now loop thru those features
         features_list.append(f'<option value="{feature}">{get_feature_text(feature)}</option>\n')
