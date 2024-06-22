@@ -203,7 +203,11 @@ def main():
     #trying_test_if_in_racelist()
     #grab_a_spell()
     features_list = [287,288,289,290,291,292,293,294,295]
-    for i in features_list: print(i)
+    count = 0
+    for i in features_list:
+        count += 1
+        i = count
+    print(features_list)
     return True
 main()
 
