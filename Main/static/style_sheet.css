@@ -4,6 +4,7 @@ input {
 
 form {
     outline: none;
+    border-style: none;
   }
 
 /*form { outline: 1px solid red !important; }*/
