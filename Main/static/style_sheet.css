@@ -1,9 +1,11 @@
-input {
+
+/*input {
     outline: none;
     border-style: none;
   }
+*/
 
-
+/*
 form {
   textarea:focus, 
   textarea.form-control:focus, 
@@ -20,7 +22,7 @@ form {
     box-shadow: inset 0 -1px 0 #ddd;
   }
   }
-
+*/
 
 
 /*form { outline: 1px solid red !important; }*/
