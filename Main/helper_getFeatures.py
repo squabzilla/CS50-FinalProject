@@ -121,7 +121,7 @@ def get_lvl1_features_fighter():
     features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Default select example" name="FeaturesSelect" id="FeaturesSelect">')
     select_from_list = [81,82,83,84,85,86] # list of features to select from
     for feature in select_from_list: # now loop thru those features
-        features_list.append(f'<option value="{feature}">{feature}</option>\n')
+        features_list.append(f'<option value="{feature}">{get_feature_text(feature)}</option>\n')
     features_list.append(f'</select>\n') # end select
     features_list.append(f'{get_feature_text(87)}\n') # Get Feature 87
     features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n') # submit button
