@@ -112,7 +112,7 @@ def get_feature_title(feature_id):
 def get_lvl1_features_fighter():
     features_list = []
     # form start:
-    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto shadow-none" name="SelectFeatures_form" id="SelectFeatures_form">\n')
+    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0" name="SelectFeatures_form" id="SelectFeatures_form">\n')
     # GET Fighting_Style - feature_id: 80
     feature_Fighting_Style = 80
     features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
@@ -194,7 +194,7 @@ def get_lvl1_features_wizard():
     features_list.append(f'<br>')
     features_list.append(f'These are your class features as a Wizard. You do not need to make any selections at this time.')
     features_list.append(f'<br>') # looks better with a break above the button
-    features_list.append(f'<form action="/character_creator" method="POST" class="border-0">\n')
+    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">\n')
     features_list.append(f'<input type="hidden" name="FeaturesSelect" id="FeaturesSelect" value=""></input>')
     features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     features_list.append(f'</form>\n')
