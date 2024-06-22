@@ -27,7 +27,9 @@ bootstrap remove outline:
 */
 
 p {
-  line-height: 0px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.25em;
 }
 
 /*
