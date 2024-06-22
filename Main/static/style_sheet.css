@@ -3,5 +3,6 @@ input {
   }
 
 .form {
-    outline: none
+    /*outline: none*/
+    * { outline: 1px solid red !important; }
   }
