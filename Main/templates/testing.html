@@ -24,6 +24,39 @@
         <option value="2">Two</option>
         <option value="3">Three</option>
     </select>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Ability Scores </h1>
+    <p>You have 80 points total to assign to all 6 ability scores.</p>
+    <p>Ability scores have a minimum of 5, and a maximum of 18. So you cannot have an ability score below 5, or above 18.</p>
+    <p>Points left to assign:</p><span id="points_to_assign" name="points_to_assign">20</span>
+    <form action="/character_creator" method="POST" class="form-control mx-auto w-auto">
+        <input type="number" name="attr_str" id="attr_str" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_str">Strength Score</label><br>
+        <input type="number" name="attr_dex" id="attr_dex" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_dex">Dexterity Score</label><br>
+        <input type="number" name="attr_con" id="attr_con" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_con">Constitution Score</label><br>
+        <input type="number" name="attr_int" id="attr_int" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_int">Intelligence Score</label><br>
+        <input type="number" name="attr_wis" id="attr_wis" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_wis">Wisdom Score</label><br>
+        <input type="number" name="attr_cha" id="attr_cha" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_cha">Charisma Score</label><br>
+        <input type="hidden" name="points_assigned" id="points_assigned" value="60" />
+    </form>
+    <script>
+        function pointsToAssign() {
+            var strs_core = Number(document.getElementById("attr_str").value);
+            console.log(strs_core);
+            var dex_score = Number(document.getElementById("attr_dex").value);
+            var con_score = Number(document.getElementById("attr_con").value);
+            var int_score = Number(document.getElementById("attr_int").value);
+            var wis_score = Number(document.getElementById("attr_wis").value);
+            var cha_score = Number(document.getElementById("attr_cha").value);
+            var ability_sum = str_score + dex_score + con_score + int_score + wis_score + cha_score;
+            document.getElementById("points_assigned").value = ability_sum.toString();
+            var points_left = 80 - ability_sum;
+            document.getElementById("points_to_assign").innerHTML = points_left.toString();
+        }
+    </script>
 {% endblock %}
 
 {% block footer %}{% endblock %}

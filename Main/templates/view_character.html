@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}Character View{% endblock %}
+
+{% block header %}<h1>View your Character</h1>{% endblock %}
+
+{% block main %}
+<div class="container text-center">
+    <div class="row align-items-start">
+        <div class="col" name="character_basics" id="character_basics">
+            <h2>Character name: {{pc_char.name}}</h2>
+            <p>Race: {{pc_char.race_name}}</p>
+            <p>Class: {{pc_char.level1_class_name}}</p>
+            <p>Background: {{pc_char.background_name}}</p>
+        </div>
+        <div class="col" name="ability_scores" id="ability_scores">
+            <h2>Ability Scores</h2>
+            <p>Strength: {{pc_char.str_score}}</p>
+            <p>Dexterity: {{pc_char.dex_score}}</p>
+            <p>Constitution: {{pc_char.con_score}}</p>
+            <p>Intelligence: {{pc_char.int_score}}</p>
+            <p>Wisdom: {{pc_char.wis_score}}</p>
+            <p>Charisma: {{pc_char.cha_score}}</p>
+        </div>
+        <div class="col" name="char_features" id="char_features">
+            <h2>Features</h2>
+        </div>
+    </div>
+</div>
+<script type="module">
+    let features_response = await fetch('/view_char_features');
+    let features_list = await features_response.json();
+    console.log(features_list)
+    document.getElementById("char_features").insertAdjacentHTML("beforeend",features_list)
+</script>
+
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

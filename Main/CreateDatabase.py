@@ -19,11 +19,12 @@
 # tabs        Tab-separated values
 # tcl         TCL list elements
 
-# NOTE: PRAGMA table_info(table_name);
+# NOTE: sql formatting and info:
+# PRAGMA table_info(table_name);
+# .mode columns
 
-# NOTE: for arbitrary reasons:
-#                       ########### NOTE: UPDATE:
-#                       list_spells starts at 1 apparently
+# NOTE: list_spells currently starts at 1, because we only imported 0th and 1st level spells
+# it just so happens that the first spell_id of 0th/1st level spells is spell_id = 1
 
 import os
 import csv
@@ -107,6 +108,8 @@ wizard_spell INTEGER);")
 db.execute("CREATE UNIQUE INDEX spell_names ON list_spells (spell_name);")
 
 # import spells
+# NOTE: list_spells currently starts at 1, because we only imported 0th and 1st level spells
+# it just so happens that the first spell_id of 0th/1st level spells is spell_id = 1
 print("importing spells...", end="")
 #with open("spell_list.csv", "r") as var_file:
 with open(spell_list_csv, "r") as var_file:
@@ -278,9 +281,15 @@ db.execute("CREATE TABLE list_characters (\
     character_user_id INTEGER, \
     character_name TEXT NOT NULL, \
     character_race_id INTEGER, \
-    character_class_id INTEGER, \
+    character_level1_class_id INTEGER, \
     character_background_id INTEGER, \
     character_level INTEGER DEFAULT 1, \
+    character_str INTEGER, \
+    character_dex INTEGER, \
+    character_con INTEGER, \
+    character_int INTEGER, \
+    character_wis INTEGER, \
+    character_cha INTEGER, \
     FOREIGN KEY(character_user_id) REFERENCES users(user_id), \
     FOREIGN KEY(character_race_id) REFERENCES list_races(race_id), \
     FOREIGN KEY(character_class_id) REFERENCES list_classes(class_id), \

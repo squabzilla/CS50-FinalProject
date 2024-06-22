@@ -53,22 +53,25 @@ db = SQL(sql_path)
 # if line-type != 3 and start_bullet_points == True:
     # start_bullet_points = False
 
-def format_class_feature_title(class_feature):
-    text_list = []
-    line_text = ""
-    end_line = "\n"
-    index_length = len(class_feature) - 1
-    for i in range(len(class_feature)):
-        if i == index_length: end_line = ""
-        if class_feature[i]["feature_title_format"] == 1:
-            line_text = "<h1>" + class_feature[i]["feature_title_text"] + "</h1>" + end_line
-        if class_feature[i]["feature_title_format"] == 2:
-            line_text = "<h2>" + class_feature[i]["feature_title_text"] + "</h2>" + end_line
-        text_list.append(line_text)
-    text_full = "".join(text_list) # apparently faster, and one line of code, to plop all that list into a text
-    return text_full
+# def format_class_feature_title(class_feature):
+    # text_list = []
+    # line_text = ""
+    # end_line = "\n"
+    # index_length = len(class_feature) - 1
+    # for i in range(len(class_feature)):
+        # if i == index_length: end_line = ""
+        # if class_feature[i]["feature_title_format"] == 1:
+            # line_text = "<h1>" + class_feature[i]["feature_title_text"] + "</h1>" + end_line
+        # if class_feature[i]["feature_title_format"] == 2:
+            # line_text = "<h2>" + class_feature[i]["feature_title_text"] + "</h2>" + end_line
+        # text_list.append(line_text)
+    # text_full = "".join(text_list) # apparently faster, and one line of code, to plop all that list into a text
+    # return text_full
 
 def format_class_feature_text(class_feature):
+    # NOTE:
+    # having this be separate from get_feature_text just makes it easier to focus on a single step
+    # also, having it append to a new list might make it easier to add bullet-points or tables
     text_list = []
     line_text = ""
     end_line = "\n"
@@ -78,9 +81,9 @@ def format_class_feature_text(class_feature):
         if class_feature[i]["feature_text_type"] == 0:
             line_text = "<p>" + class_feature[i]["feature_text_description"] + "</p>" + end_line
         if class_feature[i]["feature_text_type"] == 1:
-            line_text = "<h1>" + class_feature[i]["feature_text_description"] + "</h1>" + end_line
+            line_text = "<h3>" + class_feature[i]["feature_text_description"] + "</h3>" + end_line
         if class_feature[i]["feature_text_type"] == 2:
-            line_text = "<h2>" + class_feature[i]["feature_text_description"] + "</h2>" + end_line
+            line_text = "<h4>" + class_feature[i]["feature_text_description"] + "</h4>" + end_line
         text_list.append(line_text)
         # NOTE: is currently a little over-complicated, but later when I deal with importing:
         # bullet-points or tables from text description, I'll want more flexibility with handling stuff
@@ -97,19 +100,23 @@ def get_feature_text(feature_id):
 
 def get_feature_title(feature_id):
     sql_feature_title = db.execute("SELECT feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
-    feature_title = format_class_feature_title(sql_feature_title)
+    #feature_title = format_class_feature_title(sql_feature_title)
+    feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
+    if feature_title["feature_title_format"] == 1:
+        feature_title =  "<h3>" + feature_title["feature_title_text"] + "</h3>"
+    if feature_title["feature_title_format"] == 2:
+        feature_title =  "<h4>" + feature_title["feature_title_text"] + "</h4>"
     return feature_title
 
 
 def get_lvl1_features_fighter():
     features_list = []
+    # form start:
+    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
     # GET Fighting_Style - feature_id: 80
     feature_Fighting_Style = 80
     features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
-    
     # Now for choosing-selection-time
-    # form start:
-    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
     # select start:
     # single-select:
     features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Default select example" name="FeaturesSelect" id="FeaturesSelect">')
@@ -143,17 +150,14 @@ def get_lvl1_features_fighter():
     features_list.append(f'<option value="{feature_Two_Weapon_Fighting}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
     # end select
     features_list.append(f'</select>\n')
+    # Get Second_Wind - feature_id: 87
+    feature_Second_Wind = 87
+    features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
     # submit button
     features_list.append(f'<br>') # looks better with a break above the button
     features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     # end form
     features_list.append(f'</form>\n')
-    
-    #<button type="submit" form="my-form">Submit</button>
-    
-    # Get Second_Wind - feature_id: 87
-    feature_Second_Wind = 87
-    features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
     # Combine it all together
     features_text = "".join(features_list)
     return features_text

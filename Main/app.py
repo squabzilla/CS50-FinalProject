@@ -10,7 +10,7 @@ from helper_loginRequired import login_required
 
 # above: copied imported libraries from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
-from helper_classCreateRPGchar import rpg_char_create
+from helper_customClasses import rpg_char_create, rpg_char_load
 from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice
 from helper_getSpells import class_spells_by_spell_level, get_char_lvl1_spells, class_spell_names_by_spell_level, class_spell_IDs_by_spell_level, validate_spell_choices
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
@@ -36,7 +36,7 @@ app.config["SESSION_TYPE"] = "cachelib"
 
 # start flask app after configuration settings done
 Session(app)
-
+#session.clear()
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///RPG_characters.db")
@@ -67,6 +67,8 @@ def after_request(response):
 
 @app.route("/")
 def home():
+    #print("Session variable:")
+    #print(session)
     #session.clear()
     return render_template("home.html")
 
@@ -198,11 +200,19 @@ def register():
 
 # some sql operations I'll want my webpage to run (or at least get the results of)
 # first one returns just the list of races/classes/backgrounds in json format, second one has html code for the dropdown-items of said list
+# third one gets the race/class/background name by id
 # doing that in backend to simplify html page
-@app.route("/get_races")
+
+# NOTE: Races-stuff
+# some sql operations I'll want my webpage to run (or at least get the results of)
+# first one returns just the list of races/classes/backgrounds in json format, second one has html code for the dropdown-items of said list
+# third one gets the race/class/background name by id
+# doing that in backend to simplify html page
+@app.route("/get_races") # NOTE: Part of character creation
 def get_races():
     race_list = db.execute("SELECT race_id, race_name FROM list_races")
     return jsonify(race_list)
+
 @app.route("/get_race_dropdown")
 def get_race_dropdown():
     race_list = db.execute("SELECT race_id, race_name FROM list_races")
@@ -214,13 +224,30 @@ def get_race_dropdown():
             race_dropdown += "\n"
     return jsonify(race_dropdown)
 
-# see above comment, but for classes
-@app.route("/get_classes")
+# @app.route("/get_raceName_by_raceID")
+# def get_raceName_by_raceID():
+    # race_name = ""
+    # if "new_char" in session:
+        # new_char = session["new_char"]
+        # race_name = db.execute("SELECT race_name FROM list_races WHERE race_id = ?", new_char.race_id)
+        # race_name = race_name[0]["race_name"]
+    # return jsonify(race_name)
+# # NOTE: why don't I put this functionality in my class, then view_character.html can just grab the value from the class-variable it's passed?
+# # NOPE - I need a new class for this, since the rpg_char_create is SPECIFICALLY for making a new character
+# # basically I need a character-loading-class
+
+# NOTE: Classes-stuff
+# some sql operations I'll want my webpage to run (or at least get the results of)
+# first one returns just the list of races/classes/backgrounds in json format, second one has html code for the dropdown-items of said list
+# third one gets the race/class/background name by id
+# doing that in backend to simplify html page
+@app.route("/get_classes") # NOTE: Part of character creation
 def get_classes():
     class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 5 OR class_id = 12")
     # screw it, we only supporting fighters/wizards
     return jsonify(class_list)
-@app.route("/get_class_dropdown")
+@app.route("/get_class_dropdown") # NOTE: Part of character creation
+
 def get_class_dropdown():
     class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 5 OR class_id = 12")
     # screw it, we only supporting fighters/wizards
@@ -232,12 +259,17 @@ def get_class_dropdown():
             class_dropdown += "\n"
     return jsonify(class_dropdown)
 
-# see above comment, but for backgrounds
-@app.route("/get_backgrounds")
+
+# NOTE: Backgrounds-stuff
+# some sql operations I'll want my webpage to run (or at least get the results of)
+# first one returns just the list of races/classes/backgrounds in json format, second one has html code for the dropdown-items of said list
+# third one gets the race/class/background name by id
+# doing that in backend to simplify html page
+@app.route("/get_backgrounds") # NOTE: Part of character creation
 def get_backgrounds():
     background_list = db.execute("SELECT background_id, background_name FROM list_backgrounds")
     return jsonify(background_list)
-@app.route("/get_background_dropdown")
+@app.route("/get_background_dropdown") # NOTE: Part of character creation
 def get_background_dropdown():
     background_list = db.execute("SELECT background_id, background_name FROM list_backgrounds")
     background_dropdown = ""
@@ -248,23 +280,26 @@ def get_background_dropdown():
             background_dropdown += "\n"
     return jsonify(background_dropdown)
 
-@app.route("/get_lvl1features")
+
+@app.route("/get_lvl1features") # NOTE: Part of character creation
 def get_new_char_features():
     features = ""
     class_id = -1
     if "new_char" in session:
-        new_pc = session["new_char"]
-        class_id = new_pc.class_id
+        new_char = session["new_char"]
+        class_id = new_char.class_id
+        print(f"get_lvl1features - class-id: {new_char.class_id}")
         features = get_lvl1_features(class_id)
     return jsonify(features)
 
-@app.route("/get_char_lvl1_spells")
+
+@app.route("/get_char_lvl1_spells") # NOTE: Part of character creation
 def get_new_char_spells():
     spells_text = ""
     class_id = -1
     if "new_char" in session:
-        new_pc = session["new_char"]
-        class_id = new_pc.class_id
+        new_char = session["new_char"]
+        class_id = new_char.class_id
         spells_text = get_char_lvl1_spells(class_id)    
     return jsonify(spells_text)
 
@@ -273,10 +308,18 @@ def get_new_char_spells():
 def create_character():
     if request.method == 'POST':
         #var_step = 1
-        new_pc = session["new_char"]
+        new_char = session["new_char"]
         var_name = request.form.get("character_name")
         var_race_id = request.form.get("race_id")
         var_class_id = request.form.get("class_id")
+        
+        var_str = request.form.get("attr_str")
+        var_dex = request.form.get("attr_dex")
+        var_con = request.form.get("attr_con")
+        var_int = request.form.get("attr_int")
+        var_wis = request.form.get("attr_wis")
+        var_cha = request.form.get("attr_cha")
+        
         var_background_id = request.form.get("background_id")
         #var_features_from_select = request.form.get("FeaturesDropdown") # gets single-feature
         var_features_list = request.form.getlist("FeaturesSelect") # gets-list-of-features, used in multi-select
@@ -290,7 +333,7 @@ def create_character():
         # it is NOT considered equal to none by default, but I can always compare it to an empty list
         
         # Honestly I'll get rid of all these excessive inputs and print statements once this fully 100% works
-        #print(f"Start - new_pc.creation_step: {new_pc.creation_step}")
+        #print(f"Start - new_char.creation_step: {new_char.creation_step}")
         #print(f"var_name: {var_name}")
         #print(f"var_race_id: {var_race_id}")
         #print(f"var_class_id: {var_class_id}")
@@ -301,73 +344,103 @@ def create_character():
         #print(f"var_cantrips_list: {var_cantrips_list}")
         #print(f"var_leveled_spells_list: {var_leveled_spells_list}")
         
-        # Step 1
-        if new_pc.creation_step == 1:
-        #if var_name != None and new_pc.name == None:
-            if type(var_name) is str:
-                new_pc.set_name(var_name)
-        # Step 2
-        elif new_pc.creation_step == 2:
-        #if var_race_id != None and new_pc.race_id == None:
-            if type(var_race_id) is str:
-                if var_race_id.isnumeric() == True:
-                    new_pc.set_race_id(int(var_race_id))
-        # Step 3
-        elif new_pc.creation_step == 3:
-        #if var_class_id != None and new_pc.class_id == None:
+        # NOTE: kinda want to set attributes - after race & class
+        
+        # Step 1 - character name
+        if new_char.creation_step == 1:
+            if type(var_name) is str: # NOTE: this should always be a string, but I'd rather just like double-check?
+                new_char.set_name(var_name)
+        # Step 2 - character race
+        elif new_char.creation_step == 2:
+            if type(var_race_id) is str: # NOTE: checking strings mainly so isnumeric() doesn't crash the program when handed non-string
+                if var_race_id.isnumeric() == True: # shouldn't ever happen, but that's just my default behaviour with isnumeric() these days
+                    new_char.set_race_id(int(var_race_id))
+        # Step 3 - character class
+        elif new_char.creation_step == 3:
             if type(var_class_id) is str:
                 if var_class_id.isnumeric() == True:
-                    new_pc.set_class_id(int(var_class_id))
-        # Step 4
-        elif new_pc.creation_step == 4:
-        #if var_background_id != None and new_pc.background_id == None:
+                    new_char.set_class_id(int(var_class_id))
+                    print(f"character_creator - class-id: {new_char.class_id}")
+        # Step 4 - ability scores
+        elif new_char.creation_step == 4:
+            new_char.set_attributes(var_str, var_dex, var_con, var_int, var_wis, var_cha)
+            # in this step I realized it'd be cleaner to pass all this to the function
+            # and confirm datatypes and everything there
+        
+        # Step 5 - character background
+        elif new_char.creation_step == 5:
             if type(var_background_id) is str:
                 if var_background_id.isnumeric() == True:
-                    new_pc.set_background_id(int(var_background_id))
-        # Step 5 - features
-        elif new_pc.creation_step == 5:
-        #if var_features_list != [] and new_pc.has_features == None:
+                    new_char.set_background_id(int(var_background_id))
+        # Step 6 - features
+        elif new_char.creation_step == 6:
             if type(var_features_list) is list:
-                #print(f"var_features_list[0]: {var_features_list[0]}")
-                #print(f"Step 5: validating features choices: {check_lvl1_features_choice(new_pc.class_id, var_features_list)}")
-                if check_lvl1_features_choice(new_pc.class_id, var_features_list) == True:
-                    new_pc.features = complete_lvl1_features_choice(new_pc.class_id, var_features_list)
-                    new_pc.creation_step += 1
-                    new_pc.set_amount_of_spells_known()
-                    
-        # Step 6 - spells TODO
-        elif new_pc.creation_step == 6:
-            #var_cantrips_list
-            #print(f"var_cantrips_list; length {len(var_cantrips_list)}; value(s):")
-            #print(var_cantrips_list)
-            #var_leveled_spells_list
-            #print(f"var_leveled_spells_list; length {len(var_leveled_spells_list)}; value(s):")
-            #print(var_leveled_spells_list)
-            #set_cleric_leveledSpellsIDs_by_spellLevel, set_druid_leveledSpellsIDs_by_spellLevel
-            if new_pc.class_id == 3 or new_pc.class_id == 4: # I'm not supporting these classes yet, but while I'm thinking of it, setting spells-known for spells-prepared casters
-                var_leveled_spells_list = class_spell_IDs_by_spell_level(new_pc.class_id, 1)
-            if new_pc.class_id == 7:
-                var_cantrips_list = class_spell_IDs_by_spell_level(new_pc.class_id, 0)
-            
-            if len(var_cantrips_list) != new_pc.cantrips_known_amount or len(var_leveled_spells_list) != new_pc.spells_known_amount:
+                if check_lvl1_features_choice(new_char.class_id, var_features_list) == True:
+                    new_char.features = complete_lvl1_features_choice(new_char.class_id, var_features_list)
+                    new_char.creation_step += 1
+                    new_char.set_amount_of_spells_known()
+        # Step 7 - spells
+        elif new_char.creation_step == 7:
+            if new_char.class_id == 3 or new_char.class_id == 4: # I'm not supporting these classes yet, but while I'm thinking of it, setting spells-known for spells-prepared casters
+                var_leveled_spells_list = class_spell_IDs_by_spell_level(new_char.class_id, 1)
+            if new_char.class_id == 7:
+                var_cantrips_list = class_spell_IDs_by_spell_level(new_char.class_id, 0)
+            if len(var_cantrips_list) != new_char.cantrips_known_amount or len(var_leveled_spells_list) != new_char.spells_known_amount:
                 flash("Incorrect number of spells selected")
-            #print(f"validate_spell_choices: {validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_pc.class_id)}")
-            
-            if validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_pc.class_id) == True:
+            #print(f"validate_spell_choices: {validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_char.class_id)}")
+            if validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_char.class_id) == True:
                 for cantrip in var_cantrips_list:
-                    new_pc.list_spells.append(int(cantrip)) # NOTE: I have no idea if I actually want these as integers or not
+                    new_char.list_spells.append(int(cantrip)) # NOTE: I have no idea if I actually want these as integers or not
                 for spell in var_leveled_spells_list:
-                    new_pc.list_spells.append(int(spell)) # NOTE: I have no idea if I actually want these as integers or not
-                new_pc.creation_step += 1
+                    new_char.list_spells.append(int(spell)) # NOTE: I have no idea if I actually want these as integers or not
+                new_char.creation_step += 1
+        # remove the keyname from the session if it is there
+        # session.pop('key_name')
+        # Step 8 - completion
+        elif new_char.creation_step == 8: # complete, ready to view character now
+            # NOTE: Setup rpg_char_load class-variable named "pc_char" - removes now extraneous data,
+            # and has spell list for each attribute
+            pc_char = rpg_char_load()
+            pc_char.rpg_char_match_values(new_char) # made a function so all the values match, saves me a dozen lines of code here
+            pc_char.get_names_from_IDs()
+            # session.pop("new_char")
+            # NOTE: I will want above UN-commented (at least in final version)
+            # I think - otherwise we risk getting stuck on never resetting character, so character creator always goes to load character
+            # However, for testing right now, I don't want to constantly make a new character
             
-        
-        
-        print(f"End - new_pc.creation_step: {new_pc.creation_step}")
-        return render_template("character_creator.html", new_pc=new_pc)
+            session["pc_char"] = pc_char
+            return redirect("/view_character")
+        return render_template("character_creator.html", new_char=new_char)
     else:
-        new_pc = rpg_char_create()
-        session["new_char"] = new_pc
-        return render_template("character_creator.html", new_pc=new_pc)
+        new_char = rpg_char_create()
+        session["new_char"] = new_char
+        return render_template("character_creator.html", new_char=new_char)
+
+@app.route("/view_character", methods=['GET', 'POST'])
+def view_character():
+    if "pc_char" in session:
+        pc_char = session["pc_char"]
+        return render_template("view_character.html", pc_char=pc_char )
+    else:
+        flash("Oops - character not created!")
+        return redirect("/character_creator")
+
+
+@app.route("/view_char_features") # NOTE: Part of character viewing
+def view_char_features():
+    features_text = ""
+    features_list = []
+    class_id = -1
+    if "pc_char" in session:
+        #print("pc in session for view_char_features")
+        pc_char = session["new_char"]
+        #print("pc_char features:")
+        print(pc_char.features)
+        for feature in pc_char.features:
+            features_list.append(get_feature_text(feature))
+    if len(features_list) > 0:
+        features_text = "".join(features_list)
+    return jsonify(features_text)
 
 
 # NOTE: code to pass stuff to webpage:
@@ -395,6 +468,7 @@ def testing():
     noup = "vloop"
     return render_template("testing.html", num_var=num_var, string_var=string_var, noup=noup)
 
+# NOTE: I think this is just obsolete?
 @app.route("/character_creator_name", methods=['GET', 'POST'])
 def create_character_step2():
     # NOTE: Why do I even have this here? Probably just a failed attempt I can delete

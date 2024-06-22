@@ -10,9 +10,11 @@ Fighter means we have to pick fighting style at lvl 1
 Wizard means we have to pick spells at lvl 1
 
 Left to do:
-Pick spells
-Fuck it, add attributes
 Actually fucking display the character sheet
 Log in and save, load characters
 -> loading a character can just set the values in the "new_pc = rpg_char_create()" value lol
 -> considering I need code to display that as well, I can re-use the code to display both loaded and created characters this way
+-> getting somewhere, shows up to class-features now
+-> still need to make it prettier and add spells, but progress =D
+
+-> you know what? Don't even have change-password in version to submit
