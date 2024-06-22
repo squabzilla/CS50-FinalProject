@@ -154,8 +154,8 @@ def get_lvl1_features_fighter():
     feature_Second_Wind = 87
     features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
     # submit button
-    features_list.append(f'<br>') # looks better with a break above the button
-    features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
+    features_list.append(f'') 
+    features_list.append(f'<br><button class="btn btn-primary" type="submit">Submit</button>\n') # always preceding <button> with <br> for style
     # end form
     features_list.append(f'</form>\n')
     # Combine it all together
@@ -196,7 +196,7 @@ def get_lvl1_features_wizard():
     features_list.append(f'<br>') # looks better with a break above the button
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">\n')
     features_list.append(f'<input type="hidden" name="FeaturesSelect" id="FeaturesSelect" value=""></input>')
-    features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
+    features_list.append(f'<br><button class="btn btn-primary" type="submit">Submit</button>\n') # always preceding <button> with <br> for style
     features_list.append(f'</form>\n')
     features_text = "".join(features_list)
     return features_text
