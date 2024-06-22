@@ -55,8 +55,9 @@
         Commenting this out because the initial value is currently incorrect, because I changed the default values
         Need to unc-comment this piece and delete below pieces for final version
         -->
-        <p>Points left to assign:</p><span id="points_to_assign" name="points_to_assign">0</span>
+        <p>Points left to assign:</p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0" onsubmit="checkPointsAssignedCorrectly();">
+            <b><span id="points_to_assign" name="points_to_assign">0</span></b><label for="points_to_assign">&#32;points left to assign.</label><br>
             <!--
             <input type="number" name="attr_str" id="attr_str" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_str">Strength Score</label><br>
             <input type="number" name="attr_dex" id="attr_dex" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_dex">Dexterity Score</label><br>
