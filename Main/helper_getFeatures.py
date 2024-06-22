@@ -110,43 +110,21 @@ def get_feature_title(feature_id):
 
 
 def get_lvl1_features_fighter():
+    # Features: 80; choose-from: 81-86; 87
     features_list = []
     # form start:
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0" name="SelectFeatures_form" id="SelectFeatures_form">\n')
-    # GET Fighting_Style - feature_id: 80
-    feature_Fighting_Style = 80
-    features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
-    # Now for choosing-selection-time
-    # select start:
-    # single-select:
+    features_list.append(f'{get_feature_text(80)}\n')
+    # Now for choosing Fighting Style - start with beginning a Select:
     features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Default select example" name="FeaturesSelect" id="FeaturesSelect">')
-    # NOTE: the name here needs to match the request.form.getlist([item-name]) in app.py
-    # multi-select: (commented out)
-    # features_list.append(f'<select class="form-select" class="form-control w-auto" name="FeaturesDropdown" id="FeaturesDropdown" multiple aria-label="Multiple select example">\n')
-    # Archery - feature_id: 81
-    feature_Archery = 81
+    fighting_styles = [81,82,83,84,85,86]
+    for i in range(len(fighting_styles)):
+        features_list.append(f'<option value="{fighting_styles[i]}">{get_feature_title(feature_Archery)}</option>\n')
     features_list.append(f'<option value="{feature_Archery}">{get_feature_title(feature_Archery)}</option>\n')
-    
-    # Defense - feature_id: 82
-    feature_Defense = 82
     features_list.append(f'<option value="{feature_Defense}">{get_feature_title(feature_Defense)}</option>\n')
-    # NOTE: Below: tried to make the return value a dictionary, so that a multi-item-multi-select feature-choice could have a list of dictionaries
-    # this is WAY over-complicating things, especially since there's no lvl-1 class that choose multiple class features (aside from spells)
-    # (and rangers favored-foe and favored-terrain, but those suck anyways, so I removed them)
-    # I'm sure I could've gotten this to work with a little more work, but it's just REALLY not a good use of my time
-    #features_list.append(f'<option value="{{&quot;fighting_style&quot;: {feature_Defense}}}">{get_feature_title(feature_Defense)}</option>\n')
-    
-    # Dueling - feature_id: 83
-    feature_Dueling = 83
     features_list.append(f'<option value="{feature_Dueling}">{get_feature_title(feature_Dueling)}</option>\n')
-    # Great_Weapon_Fighting - feature_id: 84
-    feature_Great_Weapon_Fighting = 84
     features_list.append(f'<option value="{feature_Great_Weapon_Fighting}">{get_feature_title(feature_Great_Weapon_Fighting)}</option>\n')
-    # Protection - feature_id: 85
-    feature_Protection = 85
     features_list.append(f'<option value="{feature_Protection}">{get_feature_title(feature_Protection)}</option>\n')
-    # Two_Weapon_Fighting - feature_id: 86
-    feature_Two_Weapon_Fighting = 86
     features_list.append(f'<option value="{feature_Two_Weapon_Fighting}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
     # end select
     features_list.append(f'</select>\n')
@@ -164,10 +142,10 @@ def get_lvl1_features_fighter():
 
 def get_lvl1_features_wizard():
     # features: 287-295, no choices
-    features_list = [287,288,289,290,291,292,293,294,295]
-    for i in range(len(features_list)):
-        features_list[i] = f'{get_feature_text(i)}\n'
-    
+    lvl1_features_wizard = [287,288,289,290,291,292,293,294,295]
+    features_list = []
+    for feature in lvl1_features_wizard:
+        features_list.append(f'{get_feature_text(feature)}\n')
     features_list.append(f'<br>')
     features_list.append(f'<p>These are your class features as a Wizard. You do not need to make any selections at this time.<p>')
     features_list.append(f'<br>') # looks better with a break above the button
