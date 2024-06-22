@@ -112,7 +112,7 @@ def get_feature_title(feature_id):
 def get_lvl1_features_fighter():
     features_list = []
     # form start:
-    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SelectFeatures_form" id="SelectFeatures_form">\n')
+    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto shadow-none" name="SelectFeatures_form" id="SelectFeatures_form">\n')
     # GET Fighting_Style - feature_id: 80
     feature_Fighting_Style = 80
     features_list.append(f'{get_feature_text(feature_Fighting_Style)}\n')
