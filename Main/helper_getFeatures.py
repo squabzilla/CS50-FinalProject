@@ -72,6 +72,7 @@ def format_class_feature_text(class_feature):
     # NOTE:
     # having this be separate from get_feature_text just makes it easier to focus on a single step
     # also, having it append to a new list might make it easier to add bullet-points or tables
+    # NOTE: Seeing what italics everywhere looks like!
     text_list = []
     line_text = ""
     end_line = "\n"
@@ -79,11 +80,11 @@ def format_class_feature_text(class_feature):
     for i in range(len(class_feature)):
         if i == index_length: end_line = ""
         if class_feature[i]["feature_text_type"] == 0:
-            line_text = "<p>" + class_feature[i]["feature_text_description"] + "</p>" + end_line
+            line_text = "<p><i>" + class_feature[i]["feature_text_description"] + "</i></p>" + end_line
         if class_feature[i]["feature_text_type"] == 1:
-            line_text = "<h3>" + class_feature[i]["feature_text_description"] + "</h3>" + end_line
+            line_text = "<h3><i>" + class_feature[i]["feature_text_description"] + "</i></h3>" + end_line
         if class_feature[i]["feature_text_type"] == 2:
-            line_text = "<h4>" + class_feature[i]["feature_text_description"] + "</h4>" + end_line
+            line_text = "<h4><i>" + class_feature[i]["feature_text_description"] + "</i></h4>" + end_line
         text_list.append(line_text)
         # NOTE: is currently a little over-complicated, but later when I deal with importing:
         # bullet-points or tables from text description, I'll want more flexibility with handling stuff
