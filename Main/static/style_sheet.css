@@ -2,6 +2,18 @@
 Class names cannot contain spaces.
 
 An element can have multiple classes, which allows you the combine multiple styling rules for different classes to apply to a single element.
+
+Element example:
+input {
+    outline: none;
+    border-style: none;
+  }
+
+Class example, of class called input:
+.input {
+    outline: none;
+    border-style: none;
+  }
 */
 
 
