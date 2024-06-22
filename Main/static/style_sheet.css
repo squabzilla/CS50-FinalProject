@@ -29,3 +29,13 @@ bootstrap remove outline:
 p {
   line-height: 1em;
 }
+
+/*
+div {
+  display: flex;
+
+justify-content: center;
+
+align-items: center;
+}
+*/
