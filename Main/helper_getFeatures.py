@@ -155,7 +155,7 @@ def get_lvl1_features_fighter():
     features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
     # submit button
     features_list.append(f'') 
-    features_list.append(f'<br><button class="btn btn-primary" type="submit">Submit</button>\n') # always preceding <button> with <br> for style
+    features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     # end form
     features_list.append(f'</form>\n')
     # Combine it all together
@@ -163,50 +163,27 @@ def get_lvl1_features_fighter():
     return features_text
 
 def get_lvl1_features_wizard():
-    features_list = []
-    # Spellcasting - feature_id: 287
-    feature_Spellcasting = 287
-    features_list.append(f'{get_feature_text(feature_Spellcasting)}\n')
-    # Cantrips - feature_id: 288
-    feature_Cantrips = 288
-    features_list.append(f'{get_feature_text(feature_Cantrips)}\n')
-    # Spellbook - feature_id: 289
-    feature_Spellbook = 289
-    features_list.append(f'{get_feature_text(feature_Spellbook)}\n')
-    # Preparing_and_Casting_Spells - feature_id: 290
-    feature_Preparing_and_Casting_Spells = 290
-    features_list.append(f'{get_feature_text(feature_Preparing_and_Casting_Spells)}\n')
-    # Spellcasting_Ability - feature_id: 291
-    feature_Spellcasting_Ability = 291
-    features_list.append(f'{get_feature_text(feature_Spellcasting_Ability)}\n')
-    # Ritual_Casting - feature_id: 292
-    feature_Ritual_Casting = 292
-    features_list.append(f'{get_feature_text(feature_Ritual_Casting)}\n')
-    # Spellcasting_Focus - feature_id: 293
-    feature_Spellcasting_Focus = 293
-    features_list.append(f'{get_feature_text(feature_Spellcasting_Focus)}\n')
-    # Learning_Spells_of_1st_Level_and_Higher - feature_id: 294
-    feature_Learning_Spells_of_1st_Level_and_Higher = 294
-    features_list.append(f'{get_feature_text(feature_Learning_Spells_of_1st_Level_and_Higher)}\n')
-    # Arcane_Recovery - feature_id: 295
-    feature_Arcane_Recovery = 295
-    features_list.append(f'{get_feature_text(feature_Arcane_Recovery)}\n')
+    # features: 287-295, no choices
+    features_list = [287,288,289,290,291,292,293,294,295]
+    for i in range(len(features_list)):
+        features_list[i] = f'{get_feature_text(i)}\n'
+    
     features_list.append(f'<br>')
-    features_list.append(f'These are your class features as a Wizard. You do not need to make any selections at this time.')
+    features_list.append(f'<p>These are your class features as a Wizard. You do not need to make any selections at this time.<p>')
     features_list.append(f'<br>') # looks better with a break above the button
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">\n')
     features_list.append(f'<input type="hidden" name="FeaturesSelect" id="FeaturesSelect" value=""></input>')
-    features_list.append(f'<br><button class="btn btn-primary" type="submit">Submit</button>\n') # always preceding <button> with <br> for style
+    features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     features_list.append(f'</form>\n')
-    features_text = "".join(features_list)
+    features_text = "".join(features_list) # Combine it all together
     return features_text
 
 def get_lvl1_features(class_id):
     lvl1_features_text = ""
     if class_id == 5:
-        lvl1_features_text = get_lvl1_features_fighter()
+        lvl1_features_text = get_lvl1_features_fighter() # 80, choose-from: 81-86, 87
     elif class_id == 12:
-        lvl1_features_text = get_lvl1_features_wizard()
+        lvl1_features_text = get_lvl1_features_wizard() # 287-295
     else: # class_id NOT equal to (5 or 12)
         lvl1_features_text = f"error - class_id of {class_id} not supported"
     return lvl1_features_text
