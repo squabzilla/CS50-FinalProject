@@ -110,45 +110,33 @@ def get_feature_title(feature_id):
 
 
 def get_lvl1_features_fighter():
-    # Features: 80; choose-from: 81-86; 87
+    # Features: 80; choose-one-from: 81-86; 87
     features_list = []
     # form start:
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0" name="SelectFeatures_form" id="SelectFeatures_form">\n')
+    # Get feature 80
     features_list.append(f'{get_feature_text(80)}\n')
-    # Now for choosing Fighting Style - start with beginning a Select:
+    # Now choose feature from 81-86: - start with beginning a Select:
     features_list.append(f'<select class="form-select" class="form-control w-auto" aria-label="Default select example" name="FeaturesSelect" id="FeaturesSelect">')
-    fighting_styles = [81,82,83,84,85,86]
-    for i in range(len(fighting_styles)):
-        features_list.append(f'<option value="{fighting_styles[i]}">{get_feature_title(feature_Archery)}</option>\n')
-    features_list.append(f'<option value="{feature_Archery}">{get_feature_title(feature_Archery)}</option>\n')
-    features_list.append(f'<option value="{feature_Defense}">{get_feature_title(feature_Defense)}</option>\n')
-    features_list.append(f'<option value="{feature_Dueling}">{get_feature_title(feature_Dueling)}</option>\n')
-    features_list.append(f'<option value="{feature_Great_Weapon_Fighting}">{get_feature_title(feature_Great_Weapon_Fighting)}</option>\n')
-    features_list.append(f'<option value="{feature_Protection}">{get_feature_title(feature_Protection)}</option>\n')
-    features_list.append(f'<option value="{feature_Two_Weapon_Fighting}">{get_feature_title(feature_Two_Weapon_Fighting)}</option>\n')
-    # end select
-    features_list.append(f'</select>\n')
-    # Get Second_Wind - feature_id: 87
-    feature_Second_Wind = 87
-    features_list.append(f'{get_feature_text(feature_Second_Wind)}\n')
-    # submit button
-    features_list.append(f'') 
-    features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
-    # end form
-    features_list.append(f'</form>\n')
-    # Combine it all together
-    features_text = "".join(features_list)
+    select_from_list = [81,82,83,84,85,86] # list of features to select from
+    for feature in select_from_list: # now loop thru those features
+        features_list.append(f'<option value="{feature}">{feature}</option>\n')
+    features_list.append(f'</select>\n') # end select
+    features_list.append(f'{get_feature_text(87)}\n') # Get Feature 87
+    features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n') # submit button
+    features_list.append(f'</form>\n') # end form
+    features_text = "".join(features_list) # Combine it all together
     return features_text
 
 def get_lvl1_features_wizard():
     # features: 287-295, no choices
     lvl1_features_wizard = [287,288,289,290,291,292,293,294,295]
     features_list = []
-    for feature in lvl1_features_wizard:
+    # start a form - even tho we don't have values to submit, this button leads us to next page
+    features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0" name="SelectFeatures_form" id="SelectFeatures_form">\n')
+    for feature in lvl1_features_wizard: # loop thru and get all our class features
         features_list.append(f'{get_feature_text(feature)}\n')
-    features_list.append(f'<br>')
     features_list.append(f'<p>These are your class features as a Wizard. You do not need to make any selections at this time.<p>')
-    features_list.append(f'<br>') # looks better with a break above the button
     features_list.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">\n')
     features_list.append(f'<input type="hidden" name="FeaturesSelect" id="FeaturesSelect" value=""></input>')
     features_list.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
