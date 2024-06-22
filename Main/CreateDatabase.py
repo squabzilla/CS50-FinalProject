@@ -423,3 +423,6 @@ db.execute("CREATE TABLE specific_pc_features (\
     )")
 print("DONE")
 # NOTE: list order represents the order in which these items will appear in a character's list of features
+# NOTE: things will break if specific_pc_character_id has duplicates of specific_pc_feature_id
+# NOTE: Currently, my view_character.html page uses the function "get_accordion_features" from "helper_getFeatures.py"
+# NOTE: to generate unique html id attributes - based on the assumption that all the feature_ids of features that character has are unique

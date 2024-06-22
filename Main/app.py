@@ -11,7 +11,7 @@ from helper_loginRequired import login_required
 # above: copied imported libraries from: CS50 Week 9 C$50 Finance app.py (that was provided to us by CS50)
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
 from helper_customClasses import rpg_char_create, rpg_char_load
-from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice
+from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice, get_accordion_features
 from helper_getSpells import class_spells_by_spell_level, get_char_lvl1_spells, class_spell_names_by_spell_level, class_spell_IDs_by_spell_level, validate_spell_choices
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
 
@@ -389,6 +389,16 @@ def create_character():
                 flash("Incorrect number of spells selected")
             #print(f"validate_spell_choices: {validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_char.class_id)}")
             if validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_char.class_id) == True:
+                # NOTE: 
+                # Changing how spells are stored
+                # they will be stored in lists by level - so a cantrips_list[], lvl1spells_list[], etc
+                # each item in the list will be a dictionary containing values matching our spellbook table in the database
+                # The dictionary will be:
+                # spell_id (spellbook_spell_id INTEGER): int(specific_spell_id)
+                # spell_always_prepared (spell_always_prepared INTEGER): pseudo-boolean - integer value: 0 = False, 1 = True
+                # spellcasting_ability (spellcasting_attrib_id INT): okay need to lookup correct attribute here, and do I want to 0-index attributes
+                    # would be more consistent with how I managed classes? could leave 0 as a NULL value in all my lists
+                    # means I'd have to update quite a few things, but we're at a point where that's not super difficult - I should do it
                 for cantrip in var_cantrips_list:
                     new_char.list_spells.append(int(cantrip)) # NOTE: I have no idea if I actually want these as integers or not
                 for spell in var_leveled_spells_list:
@@ -435,11 +445,17 @@ def view_char_features():
         #print("pc in session for view_char_features")
         pc_char = session["new_char"]
         #print("pc_char features:")
-        print(pc_char.features)
+        #print(pc_char.features)
+        # NOTE: Doing as accordion-style! 
+        # NOTE: Don't forget master-accordion tag for all of this on view_character.html page
+        # NOTE: tag looks like this:  <div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion"></div>
+        features_list.append('<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n')
         for feature in pc_char.features:
-            features_list.append(get_feature_text(feature))
-    if len(features_list) > 0:
-        features_text = "".join(features_list)
+            #features_list.append(get_feature_text(feature))
+            features_list.append(get_accordion_features(feature))
+        features_list.append('</div>\n')
+        features_text = "".join(features_list) # apparently faster, and one line of code, to plop all that list into a text
+        return jsonify(features_text)
     return jsonify(features_text)
 
 

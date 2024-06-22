@@ -247,6 +247,9 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
             return False
     return True
 
+#def get_accordion_spells(list_spells)
+
+
 def main():
     var_cantrip_list = [1,3]
     var_spell_list = [4,6]

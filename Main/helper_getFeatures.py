@@ -53,21 +53,6 @@ db = SQL(sql_path)
 # if line-type != 3 and start_bullet_points == True:
     # start_bullet_points = False
 
-# def format_class_feature_title(class_feature):
-    # text_list = []
-    # line_text = ""
-    # end_line = "\n"
-    # index_length = len(class_feature) - 1
-    # for i in range(len(class_feature)):
-        # if i == index_length: end_line = ""
-        # if class_feature[i]["feature_title_format"] == 1:
-            # line_text = "<h1>" + class_feature[i]["feature_title_text"] + "</h1>" + end_line
-        # if class_feature[i]["feature_title_format"] == 2:
-            # line_text = "<h2>" + class_feature[i]["feature_title_text"] + "</h2>" + end_line
-        # text_list.append(line_text)
-    # text_full = "".join(text_list) # apparently faster, and one line of code, to plop all that list into a text
-    # return text_full
-
 def format_class_feature_text(class_feature):
     # NOTE:
     # having this be separate from get_feature_text just makes it easier to focus on a single step
@@ -81,9 +66,9 @@ def format_class_feature_text(class_feature):
         if i == index_length: end_line = ""
         if class_feature[i]["feature_text_type"] == 0:
             line_text = "<p><i>" + class_feature[i]["feature_text_description"] + "</i></p>" + end_line
-        if class_feature[i]["feature_text_type"] == 1:
+        elif class_feature[i]["feature_text_type"] == 1:
             line_text = "<h3><i>" + class_feature[i]["feature_text_description"] + "</i></h3>" + end_line
-        if class_feature[i]["feature_text_type"] == 2:
+        elif class_feature[i]["feature_text_type"] == 2:
             line_text = "<h4><i>" + class_feature[i]["feature_text_description"] + "</i></h4>" + end_line
         text_list.append(line_text)
         # NOTE: is currently a little over-complicated, but later when I deal with importing:
@@ -95,19 +80,71 @@ def get_feature_text(feature_id):
     sql_feature_text = db.execute("SELECT feature_text_type, feature_text_order, feature_text_description \
         FROM list_feature_descriptions \
         WHERE feature_id = ? \
-        ORDER BY feature_text_order ASC", feature_id)
+        ORDER BY feature_text_order ASC;", feature_id)
+    feature_text = format_class_feature_text(sql_feature_text)
+    return feature_text
+#80, 81, 297, 291, 295
+#SELECT feature_text_type, feature_text_order, feature_text_description FROM list_feature_descriptions WHERE feature_id = 80 AND feature_text_type NOT IN (1,2);
+
+def get_feature_text_no_title(feature_id):
+    sql_feature_text = db.execute("SELECT feature_text_type, feature_text_order, feature_text_description \
+        FROM list_feature_descriptions \
+        WHERE feature_id = ? \
+        AND feature_text_type NOT IN (1,2) \
+        ORDER BY feature_text_order ASC;", feature_id)
     feature_text = format_class_feature_text(sql_feature_text)
     return feature_text
 
 def get_feature_title(feature_id):
+    print(f"get_feature_title - feature_id: {feature_id}")
     sql_feature_title = db.execute("SELECT feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
-    #feature_title = format_class_feature_title(sql_feature_title)
+    print(f"get_feature_title - sql_feature_title: {sql_feature_title}")
+    print(f"get_feature_title - sql_feature_title[0]: {sql_feature_title[0]}")
     feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
+    print(f"get_feature_title - feature_title: {feature_title}")
+    print(f"get_feature_title - feature_title - type: {type(feature_title)}")
     if feature_title["feature_title_format"] == 1:
         feature_title =  "<h3>" + feature_title["feature_title_text"] + "</h3>"
-    if feature_title["feature_title_format"] == 2:
+    elif feature_title["feature_title_format"] == 2:
         feature_title =  "<h4>" + feature_title["feature_title_text"] + "</h4>"
     return feature_title
+
+def get_accordion_features(feature_id):
+    # Get some local variables to work with
+    features = []
+    print(f"get_accordion_features - feature_id: {feature_id}")
+    feature_title = get_feature_title(feature_id)
+    feature_text = get_feature_text_no_title(feature_id)
+    i = 1 # NOTE: This will be used to represent the header number 
+    sql_feature_title = db.execute("SELECT feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
+    sql_feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
+    if sql_feature_title["feature_title_format"] == 1: 
+        i = 3 #<h3>
+    if sql_feature_title["feature_title_format"] == 2:
+        i = 4 #<h4>
+    
+    # Now for the html part
+    #feature.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n')
+    # NOTE: above is the master-accordion tag for ALL features in accordion
+    # so we will be placing this, uh, in our html page
+    features.append(f'  <div class="accordion-item">\n')
+    features.append(f'    <h{i} class="accordion-header">\n') #<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    features.append(f'      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCollapseID{feature_id}" aria-expanded="false" aria-controls="accordionCollapseID{feature_id}">')
+    features.append(f'        {feature_title}\n')
+    features.append(f'      </button>\n')
+    features.append(f'    </h{i}>\n')
+    features.append(f'    <div id="accordionCollapseID{feature_id}" class="accordion-collapse collapse" data-bs-parent="#featuresMasterAccordion">\n')
+    features.append(f'      <div class="accordion-body">')
+    features.append(f'        {feature_text}')
+    features.append(f'      </div>')
+    features.append(f'    </div>')
+    features.append(f'  </div>')
+    #feature.append(f'</div>') NOTE: closing tag for master_accordion div-tag we commented out
+    # NOTE: Source: based on https://getbootstrap.com/docs/5.3/components/accordion/ html example
+    text_full = "".join(features) # apparently faster, and one line of code, to plop all that list into a text
+    return text_full
+
+
 
 
 def get_lvl1_features_fighter():
@@ -220,9 +257,9 @@ def main():
     #print(get_feature_text(85))
     text = get_lvl1_features_fighter
     #print(text)
-    title = get_feature_title(85)
+    title = get_feature_title(80)
     print(title)
     
     return True
     
-#main()
+main()

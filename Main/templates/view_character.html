@@ -25,14 +25,42 @@
     </div>
     <br>
     <div class="col" name="char_features" id="char_features">
-        <h2>Features</h2>
+        <h2 id="mainFeaturesHeader" name="mainFeaturesHeader">Features</h2>
     </div>
+    {% if pc_char.has_int_spells or pc_char.has_wis_spells or pc_char.has_cha_spells %}
+    <div class="col" name="char_spells" id="char_spells">
+        <h2 id="mainFeaturesHeader" name="mainFeaturesHeader">Features</h2>
+    </div>
+    {% endif %}
+    <!-- NOTES:
+        Having spells divied by level seems like the most sensible way to display them
+        might as well show the spell-casting attribute for the spell since it's cute
+        Spell descriptions will be added later, spell attack/spell save DC is kinda pointless without spell descriptions
+        a nice accordion with a table view of all spells? That seems good.
+    -->
+
+
+    {% if pc_char.has_int_spells %}
+    <h1>IS WIZARD</h1>
+    {% endif %}
+    {% if pc_char.has_int_spells or pc_char.has_wis_spells or pc_char.has_cha_spells %}
+    <h2>IS SPELL-CASTER</h2>
+    {% endif %}
+    {% if pc_char.has_int_spells %}
+    <h2>INTELLIGENT</h2>
+    {% endif %}
+    {% if pc_char.has_wis_spells %}
+    <h2>WISE</h2>
+    {% endif %}
+    {% if pc_char.has_cha_spells %}
+    <h2>CHARISMATIC</h2>
+    {% endif %}
 </div>
 <script type="module">
     let features_response = await fetch('/view_char_features');
     let features_list = await features_response.json();
     console.log(features_list)
-    document.getElementById("char_features").insertAdjacentHTML("beforeend",features_list)
+    document.getElementById("mainFeaturesHeader").insertAdjacentHTML("beforeend",features_list)
 </script>
 
 
