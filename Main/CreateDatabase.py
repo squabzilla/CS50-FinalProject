@@ -292,7 +292,7 @@ db.execute("CREATE TABLE list_characters (\
     character_cha INTEGER, \
     FOREIGN KEY(character_user_id) REFERENCES users(user_id), \
     FOREIGN KEY(character_race_id) REFERENCES list_races(race_id), \
-    FOREIGN KEY(character_class_id) REFERENCES list_classes(class_id), \
+    FOREIGN KEY(character_level1_class_id) REFERENCES list_classes(class_id), \
     FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id) \
     );")
 print("DONE")
