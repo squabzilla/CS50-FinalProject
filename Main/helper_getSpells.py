@@ -140,7 +140,7 @@ def get_char_lvl1_spells_wizard():
     
     
     # form start:
-    wizard_select_spells.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto" name="SpellsCantrips_form" id="SpellsCantrips_form">\n')
+    wizard_select_spells.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0" name="SpellsCantrips_form" id="SpellsCantrips_form">\n')
     
     # Start columns
     wizard_select_spells.append(f'<div class="container text-center"><div class="row align-items-start">\n')
@@ -184,7 +184,7 @@ def get_char_lvl1_spells_wizard():
     
     # Submit button
     wizard_select_spells.append(f'<br>') # break before submit buttons usually looks good
-    wizard_select_spells.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
+    wizard_select_spells.append(f'<br><button class="btn btn-primary" type="submit">Submit</button>\n')
     # end form
     wizard_select_spells.append(f'</form>\n')
     
