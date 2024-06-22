@@ -184,7 +184,7 @@ def get_char_lvl1_spells_wizard():
     
     # Submit button
     wizard_select_spells.append(f'<br>') # break before submit buttons usually looks good
-    wizard_select_spells.append(f'<br><button class="btn btn-primary" type="submit">Submit</button>\n')
+    wizard_select_spells.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     # end form
     wizard_select_spells.append(f'</form>\n')
     

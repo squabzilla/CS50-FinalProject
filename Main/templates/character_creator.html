@@ -12,7 +12,7 @@
         <p> We need a name </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0 border-0">
             <input autocomplete="off" autofocus class="form-control w-auto" id="character_name" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">
-            <br><button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="submit">Submit</button>
         </form>
 
 
@@ -21,7 +21,7 @@
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">
             <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id" id="race_id">
             </select>
-            <br><button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="submit">Submit</button>
         </form>
         <script type="module">
             let race_response = await fetch('/get_race_dropdown');
@@ -36,7 +36,7 @@
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">
             <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="class_id" id="class_id">
             </select>
-            <br><button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="submit">Submit</button>
         </form>
         <script type="module">
             let class_response = await fetch('/get_class_dropdown');
@@ -75,7 +75,7 @@
             <input type="number" name="attr_wis" id="attr_wis" min="5" max="18" value="13" onchange="pointsToAssign()"/><label for="attr_wis">Wisdom Score</label><br>
             <input type="number" name="attr_cha" id="attr_cha" min="5" max="18" value="13" onchange="pointsToAssign()"/><label for="attr_cha">Charisma Score</label><br>
             <input type="hidden" name="points_assigned" id="points_assigned" value="60" />
-            <br><button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="submit">Submit</button>
         </form>
         <script>
             const ability_alert = document.getElementById('ability_score_alert')
@@ -127,7 +127,7 @@
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">
             <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="background_id" id="background_id">
             </select>
-            <br><button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" type="submit">Submit</button>
         </form>
         <script type="module">
             let background_response = await fetch('/get_background_dropdown');
@@ -160,7 +160,7 @@
     {% elif new_char.creation_step==8 %}
         <h1>You've completed your character!</h1>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">
-            <br><button class="btn btn-primary" type="submit">Complete Character</button>
+            <button class="btn btn-primary" type="submit">Complete Character</button>
         </form>
     {% else %}
         <h1>Error - Forbidden Tome.</h1>
