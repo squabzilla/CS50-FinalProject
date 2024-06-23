@@ -27,7 +27,7 @@
     <div class="col" name="char_features" id="char_features">
         <h2 id="mainFeaturesHeader" name="mainFeaturesHeader">Features</h2>
     </div>
-    {% if pc_charlist_cantrips != [] %}
+    {% if pc_char.list_cantrips != [] %}
     <div class="accordion" id="accordionSpells">
         <div class="accordion-item"> <!-- cantrips -->
             <h2 class="accordion-header">
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        {% if list_1stlvlSpells != [] %}
+        {% if pc_char.list_1stlvlSpells != [] %}
         <div class="accordion-item"> <!-- 1stLevelSpells -->
             <h2 class="accordion-header">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsOne" aria-expanded="false" aria-controls="collapseSpellsOne">
@@ -55,7 +55,7 @@
             </div>
         </div><!-- end 1stLevelSpells -->
         {% endif %}
-        {% if list_2ndlvlSpells != [] %}
+        {% if pc_char.list_2ndlvlSpells != [] %}
         <div class="accordion-item"> <!-- 2ndLevelSpells -->
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsTwo" aria-expanded="false" aria-controls="collapseSpellsTwo">
@@ -69,7 +69,7 @@
             </div>
         </div> <!-- end 2ndLevelSpells -->
         {% endif %}
-        {% if list_3rdlvlSpells != [] %}
+        {% if pc_char.list_3rdlvlSpells != [] %}
         <div class="accordion-item"><!-- 3rdLevelSpells -->
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsThree" aria-expanded="false" aria-controls="collapseSpellsThree">
