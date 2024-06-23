@@ -429,7 +429,7 @@ def save_button():
 @login_required
 def load_character():
     # TODO
-    return True
+    return render_template("load_character.html")
 
 
 @app.route("/view_char_features", methods=['GET', 'POST']) # NOTE: Part of character viewing
