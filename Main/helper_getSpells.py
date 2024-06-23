@@ -124,9 +124,9 @@ def class_spell_IDs_by_spell_level(class_id, spell_level):
 
 def get_char_lvl1_spells_wizard():
     wizard_select_spells = []
-    spells_cantrips_list = class_spells_by_spell_level(12, 0)
+    spells_cantrips_list = class_spells_by_spell_level(magic_classIDs.Wizard, 0)
     cantrips_length = len(spells_cantrips_list)
-    spells_lvl1_list = class_spells_by_spell_level(12, 1)
+    spells_lvl1_list = class_spells_by_spell_level(magic_classIDs.Wizard, 1)
     lvl1_length = len(spells_lvl1_list)
     
     
@@ -185,38 +185,39 @@ def get_char_lvl1_spells_wizard():
 
 def get_char_lvl1_spells(class_id):
     char_lvl1_spells_text = ""
-    if class_id not in [5,12]:
+    if class_id not in [magic_classIDs.Fighter,magic_classIDs.Wizard]:
         char_lvl1_spells_text =  f"error - class_id of {class_id} not supported"
-    elif class_id in [5]:
-        char_lvl1_spells_text = f"error - class_id of {class_id} (Fighter) does not get spells at level one."
-    elif class_id == 12:
+    elif class_id in [magic_classIDs.Fighter]:
+        char_lvl1_spells_text = f"error - class_id of {magic_classIDs.Fighter} (Fighter) does not get spells at level one."
+    elif class_id == magic_classIDs.Wizard:
         char_lvl1_spells_text = get_char_lvl1_spells_wizard()
     return char_lvl1_spells_text
 
 def validate_spell_choices(cantrips_list, spells_leveled_list, class_id):
-    if class_id in [1,5,6,7,9]: # non-casters
+    # no-spells-at-level-one: Barbarian, Fighter, Monk, Paladin, Rogue
+    if class_id in [magic_classIDs.Barbarian,magic_classIDs.Fighter,magic_classIDs.Monk,magic_classIDs.Paladin,magic_classIDs.Rogue]: 
         cantrips_known_amount = 0
         spells_known_amount = 0
         creation_step += 1 # Move to next step since we aren't a caster
-    elif class_id == 2: # Bard
+    elif class_id == magic_classIDs.Bard: # Bard
         cantrips_known_amount = 2
         spells_known_amount = 4
-    elif class_id == 3: # Cleric
+    elif class_id == magic_classIDs.Cleric: # Cleric
         cantrips_known_amount = 3
         spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND cleric_spell = 1;")
-    elif class_id == 4: # Druid
+    elif class_id == magic_classIDs.Druid: # Druid
         cantrips_known_amount = 2
         spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND druid_spell = 1;")
-    elif class_id == 8: # Ranger - remember changes you made
+    elif class_id == magic_classIDs.Ranger: # Ranger - remember changes you made
         cantrips_known_amount = 2 #NOTE: remember that you just GET those two cantrips as ranger
         spells_known_amount = 0
-    elif class_id == 10: # Sorcerer
+    elif class_id == magic_classIDs.Sorcerer: # Sorcerer
         cantrips_known_amount = 4
         spells_known_amount = 2
-    elif class_id == 11: # Warlock
+    elif class_id == magic_classIDs.Warlock: # Warlock
         cantrips_known_amount = 2
         spells_known_amount = 2
-    elif class_id == 12: # Wizard
+    elif class_id == magic_classIDs.Wizard: # Wizard
         cantrips_known_amount = 3
         spells_known_amount = 6
     if len(cantrips_list) != cantrips_known_amount:
