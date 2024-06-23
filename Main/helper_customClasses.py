@@ -143,42 +143,42 @@ class rpg_char_create:
     
     def set_amount_of_spells_known(self):
         # NOTE: Remember this is for a lvl 1 character
-        # 01-Barbarian: 0,0
-        # 02-Bard: 2, 4
-        # 03-Cleric: 3, all
-        # 04-Druid: 2, all
-        # 05-Fighter: 0,0
-        # 06-Monk: 0,0
-        # 07-Paladin: 0,0
-        # 08-Ranger: 2,0 # NOTE: my ranger changes gives them 2 cantrips at lvl 1
-        # 09-Rogue: 0,0
-        # 10-Sorcerer: 4, 2
-        # 11-Warlock: 2, 2
-        # 12-Wizard: 3, 6
+        # 00-Barbarian: 0,0
+        # 01-Bard: 2, 4
+        # 02-Cleric: 3, all
+        # 03-Druid: 2, all
+        # 04-Fighter: 0,0
+        # 05-Monk: 0,0
+        # 06-Paladin: 0,0
+        # 07-Ranger: 2,0 # NOTE: my ranger changes gives them 2 cantrips at lvl 1
+        # 08-Rogue: 0,0
+        # 09-Sorcerer: 4, 2
+        # 10-Warlock: 2, 2
+        # 11-Wizard: 3, 6
         
-        if self.class_id in [1,5,6,7,9]: # non-casters
+        if self.class_id in [0,4,5,6,8]: # non-casters
             self.cantrips_known_amount = 0
             self.spells_known_amount = 0
             self.creation_step += 1 # Move to next step since we aren't a caster
-        elif self.class_id == 2: # Bard
+        elif self.class_id == 1: # Bard
             self.cantrips_known_amount = 2
             self.spells_known_amount = 4
-        elif self.class_id == 3: # Cleric
+        elif self.class_id == 2: # Cleric
             self.cantrips_known_amount = 3
             self.spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND cleric_spell = 1;")
-        elif self.class_id == 4: # Druid
+        elif self.class_id == 3: # Druid
             self.cantrips_known_amount = 2
             self.spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND druid_spell = 1;")
-        elif self.class_id == 8: # Ranger - remember changes you made
+        elif self.class_id == 7: # Ranger - remember changes you made
             self.cantrips_known_amount = 2 # remember that you just GET those two cantrips as ranger
             self.spells_known_amount = 0
-        elif self.class_id == 10: # Sorcerer
+        elif self.class_id == 9: # Sorcerer
             self.cantrips_known_amount = 4
             self.spells_known_amount = 2
-        elif self.class_id == 11: # Warlock
+        elif self.class_id == 10: # Warlock
             self.cantrips_known_amount = 2
             self.spells_known_amount = 2
-        elif self.class_id == 12: # Wizard
+        elif self.class_id == 11: # Wizard
             self.cantrips_known_amount = 3
             self.spells_known_amount = 6
         else:
@@ -186,6 +186,7 @@ class rpg_char_create:
         return True
     
     def set_spell_format(self):
+        # TODO
         # NOTE: Spells are stored in list of dictionaries, each item of list containing:
         # {"Spell_id": value} (spellbook_spell_id INTEGER), {"always_prepared": value} (spell_always_prepared INTEGER), {"ability": value} (spellcasting_ability_id INT)
         # referencing the database table spellbook
@@ -213,6 +214,7 @@ class rpg_char_create:
         #self.list_spells = list_spells
         
     def add_to_database(self):
+        # TODO
         db.execute("INSERT INTO list_characters (\
             character_user_id, character_name, character_race_id, character_class_id, character_level\
             ) VALUES(?, ?, ?, ?, ?)",
@@ -262,15 +264,15 @@ class rpg_char_load:
         self.background_name = self.background_name[0]["background_name"]
     
     # Charisma:
-        # 02-Bard
-        # 10-Sorcerer
-        # 11-Warlock
-        # Wisdom:
-        # 03-Cleric
-        # 04-Druid
-        # 08-Ranger
-        # Intelligence:
-        # 12-Wizard
+        # 01-Bard
+        # 09-Sorcerer
+        # 10-Warlock
+    # Wisdom:
+        # 02-Cleric
+        # 03-Druid
+        # 07-Ranger
+    # Intelligence:
+        # 11-Wizard
     
     def rpg_char_match_values(self, class_to_copy):
         self.str_score = class_to_copy.str_score
@@ -285,13 +287,13 @@ class rpg_char_load:
         self.level1_class_id = class_to_copy.class_id
         self.background_id = class_to_copy.background_id
         self.features = class_to_copy.features
-        if class_to_copy.class_id in [2, 10, 11]:
+        if class_to_copy.class_id in [1, 9, 10]:
             self.cha_spells = class_to_copy.list_spells
             self.has_cha_spells = True
-        if class_to_copy.class_id in [3, 4, 8]:
+        if class_to_copy.class_id in [2, 3, 7]:
             self.wis_spells = class_to_copy.list_spells
             self.has_wis_spells = True
-        if class_to_copy.class_id == 12:
+        if class_to_copy.class_id == 11:
             self.int_spells = class_to_copy.list_spells
             self.has_int_spells = True
     
