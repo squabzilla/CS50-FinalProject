@@ -254,6 +254,7 @@ def get_classes():
 def get_class_dropdown():
     class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 4 OR class_id = 11")
     # screw it, we only supporting fighters/wizards
+    # Final version will just check class-list and not use magic-numbers anyways
     class_dropdown = ""
     last_index = len(class_list) - 1
     for i in range(len(class_list)):
@@ -384,9 +385,9 @@ def create_character():
                     new_char.set_amount_of_spells_known()
         # Step 7 - spells
         elif new_char.creation_step == 7:
-            if new_char.class_id == 3 or new_char.class_id == 4: # I'm not supporting these classes yet, but while I'm thinking of it, setting spells-known for spells-prepared casters
+            if new_char.class_id == magic_classIDs.Cleric or new_char.class_id == magic_classIDs.Druid: # I'm not supporting these classes yet, but while I'm thinking of it, setting spells-known for spells-prepared casters
                 var_leveled_spells_list = class_spell_IDs_by_spell_level(new_char.class_id, 1)
-            if new_char.class_id == 7:
+            if new_char.class_id == magic_classIDs.Ranger:
                 var_cantrips_list = class_spell_IDs_by_spell_level(new_char.class_id, 0)
             if len(var_cantrips_list) != new_char.cantrips_known_amount or len(var_leveled_spells_list) != new_char.spells_known_amount:
                 flash("Incorrect number of spells selected")
