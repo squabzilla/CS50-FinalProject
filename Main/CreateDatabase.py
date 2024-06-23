@@ -43,8 +43,8 @@ spell_list_csv = "spell_list_lvl0lvl1.csv"
 spell_list_csv = os.path.join(csv_folder, spell_list_csv)
 race_list_csv = "race_list.csv"
 race_list_csv = os.path.join(csv_folder, race_list_csv)
-attribute_list_csv = "attribute_list.csv"
-attribute_list_csv = os.path.join(csv_folder, attribute_list_csv)
+ability_list_csv = "ability_list.csv"
+ability_list_csv = os.path.join(csv_folder, ability_list_csv)
 class_list_csv = "class_list.csv"
 class_list_csv = os.path.join(csv_folder, class_list_csv)
 background_list_csv = "background_list.csv"
@@ -177,29 +177,30 @@ with open(race_list_csv, "r") as var_file:
                    var_race_id, var_race_name)
 print("DONE")
 
-# create list of attributes and add values
-print("Creating and populating list_attributes table...", end="")
-db.execute("CREATE TABLE list_attributes(\
-    attrib_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
-    attrib_name TEXT,\
-    attrib_abbrev TEXT\
+# create list of abilities and add values
+#TODO: UPDATE table columns
+print("Creating and populating list_abilities table...", end="")
+db.execute("CREATE TABLE list_abilities(\
+    ability_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
+    ability_name TEXT,\
+    ability_abbrev TEXT\
     );")
-db.execute("CREATE UNIQUE INDEX name_of_attrib ON list_attributes (attrib_name);")
-db.execute("CREATE UNIQUE INDEX abbrev_of_attrib ON list_attributes (attrib_abbrev);")
-#db.execute("INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrev) VALUES \
+db.execute("CREATE UNIQUE INDEX name_of_ability ON list_abilities (ability_name);")
+db.execute("CREATE UNIQUE INDEX abbrev_of_ability ON list_abilities (ability_abbrev);")
+#db.execute("INSERT INTO list_abilities (ability_id, ability_name, ability_abbrev) VALUES \
 #    (0, 'Strength', 'STR'), (1, 'Dexterity', 'DEX'), (2, 'Constitution', 'CON'), \
 #    (3, 'Intelligence', 'INT'), (4, 'Wisdom', 'WIS'), (5, 'Charisma', 'CHA');")
-with open(attribute_list_csv, "r") as var_file:
+with open(ability_list_csv, "r") as var_file:
     # open file, doing "with open" means I don't have to close it
     var_reader = csv.reader(var_file)
     next(var_reader)
     # skip header line, import everything
     for var_row in var_reader:
-        var_attrib_id = var_row[0]
-        var_attrib_name = var_row[1]
-        var_attrib_abbrev = var_row[2]
-        db.execute("INSERT INTO list_attributes (attrib_id, attrib_name, attrib_abbrev) VALUES(?, ?, ?)", 
-                   var_attrib_id, var_attrib_name, var_attrib_abbrev)
+        var_ability_id = var_row[0]
+        var_ability_name = var_row[1]
+        var_ability_abbrev = var_row[2]
+        db.execute("INSERT INTO list_abilities (ability_id, ability_name, ability_abbrev) VALUES(?, ?, ?)", 
+                   var_ability_id, var_ability_name, var_ability_abbrev)
 print("DONE")
 
 # create list of classes and add values
@@ -209,8 +210,8 @@ db.execute("CREATE TABLE list_classes (\
     class_id INTEGER NOT NULL,\
     class_name TEXT NOT NULL, \
     class_hitdie INTEGER,\
-    casting_attrib_id INTEGER,\
-    FOREIGN KEY(casting_attrib_id) REFERENCES list_attributes(attrib_id) \
+    casting_ability_id INTEGER,\
+    FOREIGN KEY(casting_ability_id) REFERENCES list_abilities(ability_id) \
     );")
 db.execute("CREATE UNIQUE INDEX id_of_class ON list_classes (class_id);")
 db.execute("CREATE UNIQUE INDEX name_of_class ON list_classes (class_name);")
@@ -312,7 +313,7 @@ db.execute("CREATE TABLE spellbook (\
     spellcasting_ability_id INT, \
     FOREIGN KEY(spellbook_caster_id) REFERENCES list_characters(character_id), \
     FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
-    FOREIGN KEY(spellcasting_ability_id) REFERENCES list_attributes (attrib_id) \
+    FOREIGN KEY(spellcasting_ability_id) REFERENCES list_abilities (ability_id) \
     );")
 print("DONE")
 
@@ -404,7 +405,7 @@ print("DONE")
 # specific_pc_character_id: foreign-key references list_characters (character_id)
 # specific_pc_feature_id: foreign-key references list_features (feature_id)
 # specific_pc_feature_order: the order that the features are display for the feature
-# NOTE: the below attribute "specific_pc_list_level" has been removed, as the list_level attribute has been put in features_list.csv
+# NOTE: the below attribute:"specific_pc_list_level" has been removed, as the list_level attribute has been put in features_list.csv
 # specific_pc_list_level: how it's display - is it Title? Subtitle? Heading 1? Heading 2? etc
 # basically, because certain abilities are like subsets of an overarching ability,
 # this will let me know how to display them
