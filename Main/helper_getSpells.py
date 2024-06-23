@@ -236,12 +236,12 @@ def validate_spell_choices(cantrips_list, spells_leveled_list, class_id):
         return False
     
     full_cantrips_list = class_spell_IDs_by_spell_level(class_id,0)
-    for item in cantrip_list:
-        if item not in full_cantrips_list:
+    for cantrip in cantrips_list:
+        if cantrip not in full_cantrips_list:
             return False
     full_spells_list = class_spell_IDs_by_spell_level(class_id,1)
-    for item in spells_list:
-        if item not in full_spells_list:
+    for spell in spells_leveled_list:
+        if spell not in full_spells_list:
             return False
     return True
 
