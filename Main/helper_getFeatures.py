@@ -108,40 +108,40 @@ def get_feature_title(feature_id):
         feature_title =  "<h4>" + feature_title["feature_title_text"] + "</h4>"
     return feature_title
 
-def get_accordion_features_v1_old_depreciated(feature_id, masterFeature = "featuresMasterAccordion"):
-    # Get some local variables to work with
-    features = []
-    #print(f"get_accordion_features - feature_id: {feature_id}")
-    feature_title = get_feature_title(feature_id)
-    feature_text = get_feature_text_no_title(feature_id)
-    i = 1 # NOTE: This will be used to represent the header number 
-    sql_feature_title = db.execute("SELECT feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
-    sql_feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
-    if sql_feature_title["feature_title_format"] == 0: 
-        i = 3 #<h3>
-    if sql_feature_title["feature_title_format"] == 1:
-        i = 4 #<h4>
+# def get_accordion_features_v1_old_depreciated(feature_id, masterFeature = "featuresMasterAccordion"):
+    # # Get some local variables to work with
+    # features = []
+    # #print(f"get_accordion_features - feature_id: {feature_id}")
+    # feature_title = get_feature_title(feature_id)
+    # feature_text = get_feature_text_no_title(feature_id)
+    # i = 1 # NOTE: This will be used to represent the header number 
+    # sql_feature_title = db.execute("SELECT feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
+    # sql_feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
+    # if sql_feature_title["feature_title_format"] == 0: 
+        # i = 3 #<h3>
+    # if sql_feature_title["feature_title_format"] == 1:
+        # i = 4 #<h4>
     
-    # Now for the html part
-    #feature.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n')
-    # NOTE: above is the master-accordion tag for ALL features in accordion
-    # so we will be placing this, uh, in our html page
-    features.append(f'  <div class="accordion-item">\n')
-    features.append(f'    <h{i} class="accordion-header">\n') #<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-    features.append(f'      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCollapseID{feature_id}" aria-expanded="false" aria-controls="accordionCollapseID{feature_id}">')
-    features.append(f'        {feature_title}\n')
-    features.append(f'      </button>\n')
-    features.append(f'    </h{i}>\n')
-    features.append(f'    <div id="accordionCollapseID{feature_id}" class="accordion-collapse collapse" data-bs-parent="#{masterFeature}">\n')
-    features.append(f'      <div class="accordion-body">\n')
-    features.append(f'        <p>{feature_text}</p>\n')
-    features.append(f'      </div>\n')
-    features.append(f'    </div>\n')
-    features.append(f'  </div>\n')
-    #feature.append(f'</div>\n') NOTE: closing tag for master_accordion div-tag we commented out
-    # NOTE: Source: based on https://getbootstrap.com/docs/5.3/components/accordion/ html example
-    text_full = "".join(features) # apparently faster, and one line of code, to plop all that list into a text
-    return text_full
+    # # Now for the html part
+    # #feature.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n')
+    # # NOTE: above is the master-accordion tag for ALL features in accordion
+    # # so we will be placing this, uh, in our html page
+    # features.append(f'  <div class="accordion-item">\n')
+    # features.append(f'    <h{i} class="accordion-header">\n') #<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    # features.append(f'      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCollapseID{feature_id}" aria-expanded="false" aria-controls="accordionCollapseID{feature_id}">')
+    # features.append(f'        {feature_title}\n')
+    # features.append(f'      </button>\n')
+    # features.append(f'    </h{i}>\n')
+    # features.append(f'    <div id="accordionCollapseID{feature_id}" class="accordion-collapse collapse" data-bs-parent="#{masterFeature}">\n')
+    # features.append(f'      <div class="accordion-body">\n')
+    # features.append(f'        <p>{feature_text}</p>\n')
+    # features.append(f'      </div>\n')
+    # features.append(f'    </div>\n')
+    # features.append(f'  </div>\n')
+    # #feature.append(f'</div>\n') NOTE: closing tag for master_accordion div-tag we commented out
+    # # NOTE: Source: based on https://getbootstrap.com/docs/5.3/components/accordion/ html example
+    # text_full = "".join(features) # apparently faster, and one line of code, to plop all that list into a text
+    # return text_full
 
 def start_accordion_feature(sql_feature_title, parent_feature = "featuresMasterAccordion"):
     # Get some local variables to work with
