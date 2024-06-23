@@ -18,7 +18,7 @@ class rpg_char_create:
                  # NOTE: I'm using -1 as my "NULL" value in a lot of cases - cases where we store index-values that start at 0
                  # Because 0 = None = False and I don't want that
                  str_score = 0, dex_score = 0, con_score = 0, int_score = 0, wis_score = 0, cha_score = 0,
-                 cantrips_known_amount = 0, spells_known_amount = 0, list_spells = [], features = [],
+                 cantrips_known_amount = 0, spells_known_amount = 0, list_cantrips = [], list_1stlvlSpells = [], features = [],
                  creation_step = 1):
         #self.sql_db = sql_db
         self.user_id = user_id
@@ -39,13 +39,8 @@ class rpg_char_create:
         
         self.cantrips_known_amount = cantrips_known_amount
         self.spells_known_amount = spells_known_amount
-        self.list_spells = list_spells  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
-        # NOTE: I also need the class one is learning the spell from to insert it to spellbook table, which will just be class_id
-        # this will become more complicated when multiclassing is added, but that's a later problem
-        # I mean, honestly, aside from knowing what list_value to start from when adding features, this class can handle everything needed for a multi-class level-up
-        # actually, handling level-up is better served by a new structure, since we're just adding class features and spells
-        #self.features = {}      # dictionary where we will store { feature_id:list_order } pairs
-        self.features = features # realistically, if they're just stored in the correct order here, I can grab the list_order value from the count while looping through it
+        self.list_cantrips = list_cantrips  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
+        self.list_1stlvlSpells = list_1stlvlSpells
         # features reference:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
         # self.feature.feature_id:   stored in above dictionary  ref: INTEGER
@@ -193,10 +188,21 @@ class rpg_char_create:
         # NOTE: Spells are stored in list of dictionaries, each item of list containing:
         # {"Spell_id": value} (spellbook_spell_id INTEGER), {"always_prepared": value} (spell_always_prepared INTEGER), {"ability": value} (spellcasting_ability_id INT)
         # referencing the database table spellbook
-        if self.class_id in (magic_classIDs.Bard, magic_classIDs.Sorcerer, magic_classIDs.Warlock): spellcasting_ability_id = "CHA"
-        elif self.class_id in (magic_classIDs.Cleric,magic_classIDs.Druid,magic_classIDs.Ranger): spellcasting_ability_id = "WIS"
-        elif self.class_id == magic_classIDs.Wizard: spellcasting_ability_id = "INT"
-    
+        # Bard, Cleric, Druid, Ranger, Sorcerer, Warlock, Wizard
+        
+        if self.class_id in (magic_classIDs.Bard, magic_classIDs.Ranger, magic_classIDs.Sorcerer, magic_classIDs.Warlock):
+            always_prepared = 1 # True, but sqlite doesn't have Booleans, even tho I'm pretty sure 1 = True, but whatever
+        elif self.class_id in (magic_classIDs.Cleric, magic_classIDs.Druid, magic_classIDs.Wizard):
+            always_prepared = 0 # False, but sqlite doesn't have Booleans, even tho I'm pretty sure 0 = False, but whatever
+        if self.class_id in (magic_classIDs.Bard, magic_classIDs.Sorcerer, magic_classIDs.Warlock):
+            spellcasting_ability_id = magic_abilities.charisma
+        elif self.class_id in (magic_classIDs.Cleric,magic_classIDs.Druid,magic_classIDs.Ranger):
+            spellcasting_ability_id = magic_abilities.wisdom
+        elif self.class_id == magic_classIDs.Wizard:
+            spellcasting_ability_id = magic_abilities.intelligence
+        
+        
+        
     def reset_spells(self):
         self.list_spells = []
         return True
