@@ -231,7 +231,8 @@ def validate_spell_choices(cantrips_list, spells_leveled_list, class_id):
             return False
     return True
 
-def get_accordion_spells(list_spells):
+def get_spell_names(list_spells):
+    # we are grabbing list from our custom class, at a point where the list_spells has been specifically formatted
     # format of list_spells:
     # {"spell_id": spell_id, "always_prepared": always_prepared, "spellcasting_ability_id": spellcasting_ability_id}
     list_spell_IDs = []
@@ -240,8 +241,10 @@ def get_accordion_spells(list_spells):
     sql_spell_names_list = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE spell_id IN (?)", list_spell_IDs)
     for i in range(len(sql_spell_names_list)):
         if list_spells[i]["spell_id"] == sql_spell_names_list[i]["spell_id"]:
-            return True
-    return False
+            list_spells[i].update({"spell_name": sql_spell_names_list[i]["spell_name"]})
+        else:
+            print("Error - 'helper_getSpells.py' at 'def get_accordion_spells(list_spells):' - spell not found in database.")
+    return list_spells
 
 
 def main():
