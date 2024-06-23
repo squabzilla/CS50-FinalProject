@@ -1,4 +1,4 @@
-Fighter_05_%%%
+Fighter_04_%%%
 Fighting Style###
 You adopt a particular style of fighting as your
 specialty. Choose one of the following options. You
