@@ -187,7 +187,8 @@ def get_accordion_features(feature_id_list):
     #print("Calling forth cursed syntax to print something that should (theoretically) be legible:")
     #print(sql_feature_title_list[0]["feature_title_id"])
     html_feature_title = sql_feature_title_list[0]
-    html_feature_title = html_feature_title["feature_title_id"]
+    print(f"html_feature_title is: {html_feature_title}")
+    #html_feature_title = html_feature_title.get("feature_title_id")
     #parent_feature = f'accordionCollapseID{sql_feature_title_list[0]["feature_title_id"]}'
     parent_feature = f'accordionCollapseID{html_feature_title}'
     # initialize parent_feature variable, set it to first possible value I could need of it # good god this syntax is cursed
