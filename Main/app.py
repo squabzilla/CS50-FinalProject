@@ -422,6 +422,7 @@ def save_button():
         flash("Whoops, we aren't ready for that yet!")
         return redirect("/view_character")
     else:
+        dragon = "dragon"
         flash("You must be logged-on to do this.")
         return redirect("/login")
 
