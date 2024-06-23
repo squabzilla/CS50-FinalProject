@@ -479,6 +479,7 @@ def view_char_features():
     if "pc_char" in session:
         #print("pc in session for view_char_features")
         pc_char = session["new_char"]
+        features_text = get_accordion_features(pc_char.features)
         #features_list = pc_char.features
         #print("pc_char features:")
         #print(pc_char.features)
