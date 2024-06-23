@@ -28,6 +28,9 @@
         <h2 id="mainFeaturesHeader" name="mainFeaturesHeader">Features</h2>
     </div>
     {% if pc_char.list_cantrips != [] %}
+    <br>
+    <br>
+    <h1>Spells</h1>
     <div class="accordion" id="accordionSpells">
         <div class="accordion-item"> <!-- cantrips -->
             <h2 class="accordion-header">
@@ -138,6 +141,7 @@
                 </div>
             </div>
         </div> <!-- end 7thLevelSpells -->
+        {% endif %}
         {% if pc_char.list_8thlvlSpells != [] %}
         <div class="accordion-item"><!-- 8thLevelSpells -->
             <h2 class="accordion-header">
