@@ -137,7 +137,7 @@ def get_accordion_features(feature_id):
     features.append(f'    </h{i}>\n')
     features.append(f'    <div id="accordionCollapseID{feature_id}" class="accordion-collapse collapse" data-bs-parent="#featuresMasterAccordion">\n')
     features.append(f'      <div class="accordion-body">')
-    features.append(f'        {feature_text}')
+    features.append(f'        <p>{feature_text}</p>')
     features.append(f'      </div>')
     features.append(f'    </div>')
     features.append(f'  </div>')
