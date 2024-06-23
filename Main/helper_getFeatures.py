@@ -98,13 +98,13 @@ def get_feature_text_no_title(feature_id):
     return feature_text
 
 def get_feature_title(feature_id):
-    print(f"get_feature_title - feature_id: {feature_id}")
+    #print(f"get_feature_title - feature_id: {feature_id}")
     sql_feature_title = db.execute("SELECT feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
-    print(f"get_feature_title - sql_feature_title: {sql_feature_title}")
-    print(f"get_feature_title - sql_feature_title[0]: {sql_feature_title[0]}")
+    #print(f"get_feature_title - sql_feature_title: {sql_feature_title}")
+    #print(f"get_feature_title - sql_feature_title[0]: {sql_feature_title[0]}")
     feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
-    print(f"get_feature_title - feature_title: {feature_title}")
-    print(f"get_feature_title - feature_title - type: {type(feature_title)}")
+    #print(f"get_feature_title - feature_title: {feature_title}")
+    #print(f"get_feature_title - feature_title - type: {type(feature_title)}")
     if feature_title["feature_title_format"] == 1:
         feature_title =  "<h3>" + feature_title["feature_title_text"] + "</h3>"
     elif feature_title["feature_title_format"] == 2:
@@ -114,7 +114,7 @@ def get_feature_title(feature_id):
 def get_accordion_features(feature_id):
     # Get some local variables to work with
     features = []
-    print(f"get_accordion_features - feature_id: {feature_id}")
+    #print(f"get_accordion_features - feature_id: {feature_id}")
     feature_title = get_feature_title(feature_id)
     feature_text = get_feature_text_no_title(feature_id)
     i = 1 # NOTE: This will be used to represent the header number 

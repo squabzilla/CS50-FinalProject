@@ -292,7 +292,7 @@ def get_new_char_features():
     if "new_char" in session:
         new_char = session["new_char"]
         class_id = new_char.class_id
-        print(f"get_lvl1features - class-id: {new_char.class_id}")
+        #print(f"get_lvl1features - class-id: {new_char.class_id}")
         features = get_lvl1_features(class_id)
     return jsonify(features)
 
@@ -345,8 +345,8 @@ def create_character():
         ##print(f"var_features_from_select: {var_features_from_select}")
         #print(f"var_features_list: {var_features_list}")
         
-        print(f"var_cantrips_list: {var_cantrips_list}")
-        print(f"var_leveled_spells_list: {var_leveled_spells_list}")
+        #print(f"var_cantrips_list: {var_cantrips_list}")
+        #print(f"var_leveled_spells_list: {var_leveled_spells_list}")
         
         # NOTE: kinda want to set attributes - after race & class
         
@@ -364,7 +364,7 @@ def create_character():
             if type(var_class_id) is str:
                 if var_class_id.isnumeric() == True:
                     new_char.set_class_id(int(var_class_id))
-                    print(f"character_creator - class-id: {new_char.class_id}")
+                    #print(f"character_creator - class-id: {new_char.class_id}")
         # Step 4 - ability scores
         elif new_char.creation_step == 4:
             new_char.set_attributes(var_str, var_dex, var_con, var_int, var_wis, var_cha)
