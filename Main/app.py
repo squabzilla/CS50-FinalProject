@@ -418,7 +418,7 @@ def view_character():
 
 @app.route("/save_button",  methods=['GET', 'POST'])
 def save_button():
-    if session["user_id"]:
+    if "user_id" in session:
         flash("Whoops, we aren't ready for that yet!")
         return redirect("/view_character")
     else:
