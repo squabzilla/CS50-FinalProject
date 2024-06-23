@@ -133,12 +133,12 @@ def get_accordion_features(feature_id, masterFeature = "featuresMasterAccordion"
     features.append(f'      </button>\n')
     features.append(f'    </h{i}>\n')
     features.append(f'    <div id="accordionCollapseID{feature_id}" class="accordion-collapse collapse" data-bs-parent="#{masterFeature}">\n')
-    features.append(f'      <div class="accordion-body">')
-    features.append(f'        <p>{feature_text}</p>')
-    features.append(f'      </div>')
-    features.append(f'    </div>')
-    features.append(f'  </div>')
-    #feature.append(f'</div>') NOTE: closing tag for master_accordion div-tag we commented out
+    features.append(f'      <div class="accordion-body">\n')
+    features.append(f'        <p>{feature_text}</p>\n')
+    features.append(f'      </div>\n')
+    features.append(f'    </div>\n')
+    features.append(f'  </div>\n')
+    #feature.append(f'</div>\n') NOTE: closing tag for master_accordion div-tag we commented out
     # NOTE: Source: based on https://getbootstrap.com/docs/5.3/components/accordion/ html example
     text_full = "".join(features) # apparently faster, and one line of code, to plop all that list into a text
     return text_full
@@ -158,18 +158,20 @@ def start_accordion_feature(sql_feature_title, masterFeature = "featuresMasterAc
         i = 4 #<h4>
     feature_id = sql_feature_title["feature_title_id"]
     feature_title = sql_feature_title["feature_title_text"]
+    feature_text = get_feature_text_no_title(feature_id)
     # Now for the html part
     #feature.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n')
     # NOTE: above is the master-accordion tag for ALL features in accordion
     # so we will be placing this, uh, in our html page
-    features.append(f'  <div class="accordion-item">\n')
-    features.append(f'    <h{i} class="accordion-header">\n') #<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-    features.append(f'      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCollapseID{feature_id}" aria-expanded="false" aria-controls="accordionCollapseID{feature_id}">')
-    features.append(f'        {feature_title}\n')
-    features.append(f'      </button>\n')
-    features.append(f'    </h{i}>\n')
-    features.append(f'    <div id="accordionCollapseID{feature_id}" class="accordion-collapse collapse" data-bs-parent="#{masterFeature}">\n')
-    features.append(f'      <div class="accordion-body">')
+    features.append(f'<div class="accordion-item">\n')
+    features.append(f'<h{i} class="accordion-header">\n') #<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    features.append(f'<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCollapseID{feature_id}" aria-expanded="false" aria-controls="accordionCollapseID{feature_id}">')
+    features.append(f'{feature_title}\n')
+    features.append(f'</button>\n')
+    features.append(f'</h{i}>\n')
+    features.append(f'<div id="accordionCollapseID{feature_id}" class="accordion-collapse collapse" data-bs-parent="#{masterFeature}">\n')
+    features.append(f'<div class="accordion-body">\n')
+    features.append(f'<p>{feature_text}</p>\n')
     text_full = "".join(features) # apparently faster, and one line of code, to plop all that list into a text
     return text_full
     
@@ -177,7 +179,8 @@ def start_accordion_feature(sql_feature_title, masterFeature = "featuresMasterAc
 def get_accordion_features_2(feature_id_list):
     text_list = []
     sql_feature_title_list = []
-    features.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n')
+    end_accordion = (f'</div>\n</div>\n</div>\n')
+    text_list.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n')
     last_feature_index = len(feature_id_list) - 1
     for i in range(last_feature_index):
         sql_feature_title_list.append(db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id_list[i]))
@@ -185,12 +188,14 @@ def get_accordion_features_2(feature_id_list):
         sql_feature_title = sql_feature_title_list[i]
         list_level = sql_feature_title["feature_title_format"]
         if i == 0:
-            text_list.append(
+            text_list.append(start_accordion_feature(sql_feature_title))
+            continue
+        else:
         
     
     
     #NOTE: At very end, after loop:
-    features.append(f'</div>') #NOTE: closing tag for master_accordion div-tag
+    features.append(f'</div>\n') #NOTE: closing tag for master_accordion div-tag
 
 def get_lvl1_features_fighter():
     # Features: 80; choose-one-from: 81-86; 87
