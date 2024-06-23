@@ -418,11 +418,11 @@ def view_character():
 
 @app.route("/save_button",  methods=['GET', 'POST'])
 def save_button():
+    session.modified = True
     if "user_id" in session:
         flash("Whoops, we aren't ready for that yet!")
         return redirect("/view_character")
     else:
-        dragon = "dragon"
         flash("You must be logged-on to do this.")
         return redirect("/login")
 
