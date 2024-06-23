@@ -94,7 +94,7 @@ def get_feature_text_no_title(feature_id):
     sql_feature_text = db.execute("SELECT feature_text_type, feature_text_order, feature_text_description \
         FROM list_feature_descriptions \
         WHERE feature_id = ? \
-        AND feature_text_type NOT IN (1,2) \
+        AND feature_text_type NOT IN (0,1) \
         ORDER BY feature_text_order ASC;", feature_id)
     feature_text = format_class_feature_text(sql_feature_text)
     return feature_text
@@ -107,9 +107,9 @@ def get_feature_title(feature_id):
     feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
     #print(f"get_feature_title - feature_title: {feature_title}")
     #print(f"get_feature_title - feature_title - type: {type(feature_title)}")
-    if feature_title["feature_title_format"] == 1:
+    if feature_title["feature_title_format"] == 0:
         feature_title =  "<h3>" + feature_title["feature_title_text"] + "</h3>"
-    elif feature_title["feature_title_format"] == 2:
+    elif feature_title["feature_title_format"] == 1:
         feature_title =  "<h4>" + feature_title["feature_title_text"] + "</h4>"
     return feature_title
 
@@ -122,9 +122,9 @@ def get_accordion_features(feature_id, masterFeature = "featuresMasterAccordion"
     i = 1 # NOTE: This will be used to represent the header number 
     sql_feature_title = db.execute("SELECT feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
     sql_feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
-    if sql_feature_title["feature_title_format"] == 1: 
+    if sql_feature_title["feature_title_format"] == 0: 
         i = 3 #<h3>
-    if sql_feature_title["feature_title_format"] == 2:
+    if sql_feature_title["feature_title_format"] == 1:
         i = 4 #<h4>
     
     # Now for the html part
@@ -198,7 +198,7 @@ def get_lvl1_features(class_id):
 
 def check_lvl1_features_choice(class_id, feature_list):
     # Verify that the feature(s) chosen are valid
-    if class_id not in [4,11]:
+    if class_id not in [magic_classIDs.Fighter,magic_classIDs.Wizard]:
         return False
     if class_id == magic_classIDs.Fighter:
         if type(feature_list) is not list:
@@ -241,7 +241,7 @@ def check_and_complete_features(class_id, feature_list):
     # NOTE: I don't think I actually call this one, I think I split it into two functions - "check" and "complete"
     # NOTE: I can worry about how to check a class with multiple-selectable-features at lvl 1
     # when I'm actually trying to implement such a class
-    if class_id not in [4,11]:
+    if class_id not in [magic_classIDs.Fighter,magic_classIDs.Wizard]:
         return None
     if class_id == magic_classIDs.Fighter:
         fighter_automatic = [80, 87]
