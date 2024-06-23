@@ -249,7 +249,7 @@ def main():
     var_spell_list = [48,78,110,165,260,267]
     var_class_id = 11
     print("sup")
-    print(get_accordion_spells(var_cantrip_list))
+    #print(get_accordion_spells(var_cantrip_list))
     print("where is my thing")
     #validate_spell_choices(var_cantrip_list, var_spell_list, var_class_id)
     
