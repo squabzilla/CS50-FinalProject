@@ -13,7 +13,8 @@ import re # custom-built libraries I'm calling needs this, so I'm adding it just
 from helper_customClasses import rpg_char_create, rpg_char_load
 from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice, get_accordion_features
 from helper_getSpells import class_spells_by_spell_level, get_char_lvl1_spells, class_spell_names_by_spell_level, class_spell_IDs_by_spell_level, validate_spell_choices
-from helper_magicNumbers import magic_classIDs
+from helper_magicNumbers import generate_magic_classIDs
+magic_classIDs = generate_magic_classIDs()
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
 
 # configure flask application
@@ -244,13 +245,14 @@ def get_race_dropdown():
 # doing that in backend to simplify html page
 @app.route("/get_classes") # NOTE: Part of character creation
 def get_classes():
-    class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 4 OR class_id = 11")
+    class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = {magic_classIDs.Wizard} OR class_id = {magic_classIDs.Fighter}")
     # screw it, we only supporting fighters/wizards
+    soup = magic_classIDs.Fighter
     return jsonify(class_list)
 @app.route("/get_class_dropdown") # NOTE: Part of character creation
 
 def get_class_dropdown():
-    class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 4 OR class_id = 11")
+    class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = {magic_classIDs.Wizard} OR class_id = {magic_classIDs.Fighter}")
     # screw it, we only supporting fighters/wizards
     class_dropdown = ""
     last_index = len(class_list) - 1
