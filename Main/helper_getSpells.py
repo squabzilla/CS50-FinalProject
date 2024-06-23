@@ -19,23 +19,12 @@ def highest_spell_slot(var_class_id, var_char_level):
     except:
         print("Error: invalid input")
         return False
-    barbarian_id = 0
-    bard_id = 1
-    cleric_id = 2
-    druid_id = 3
-    fighter_id = 4
-    monk_id = 5
-    paladin_id = 6
-    ranger_id = 7
-    rogue_id = 8
-    sorcerer_id = 9
-    warlock_id = 10
-    wizard_id = 11
+    
     # yeah these are magic numbers, but using an SQL query to search by names to grab class_id
     # will take longer, and these numbers SHOULD NOT CHANGE, especially since they're specifically assigned
     # instead of being the auto-incrementing key
     #print((wizard_class_id + warlock_class_id))
-    full_caster_IDs = [bard_id, cleric_id, druid_id, sorcerer_id, warlock_id, wizard_id]
+    full_caster_IDs = [magic_classIDs.Bard, magic_classIDs.Cleric, magic_classIDs.Druid, magic_classIDs.Sorcerer, magic_classIDs.Warlock, magic_classIDs.Wizard]
     # note: I'm gonna do my "casters get spell-points = prof.mod + level, spells cost 1 spell-point per level, max-spell-limit exists
     # and when I get around to warlocks, instead of pact magic, they'll have that
     # so I don't need to worry about future-proofing for warlock pact-casting because I'll be removing that from warlocks
