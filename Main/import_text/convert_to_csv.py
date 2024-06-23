@@ -117,11 +117,11 @@ def write_csv(input_path_name, output_path_name):
             if is_last_n_chars_x(lines[i], 3, "###") or is_last_n_chars_x(lines[i], 3, "#$#"):
                 feature_id += 1 #increase the feature we're on
                 text_order = 0 #reset the text order for a new feature
-                if last_n_chars(lines[i] , 3) == "###": text_type = 1 ### title: 1      ###
-                elif last_n_chars(lines[i] , 3) == "#$#": text_type = 2 # subtitle: 2   #$#
+                if last_n_chars(lines[i] , 3) == "###": text_type = 0 ### title: 1      ###
+                elif last_n_chars(lines[i] , 3) == "#$#": text_type = 1 # subtitle: 2   #$#
             else:
                 text_order += 1 #increase our text order
-                if last_n_chars(lines[i] , 3) == "#P#": text_type = 0 ### paragraphs : 0            #P#         regular paragraphs
+                if last_n_chars(lines[i] , 3) == "#P#": text_type = 2 ### paragraphs : 0            #P#         regular paragraphs
                 elif last_n_chars(lines[i] , 3) == "#B#": text_type = 3 # bullet-points: 3	        #B#			bullet-points
                 elif last_n_chars(lines[i] , 4) == "$tt$": text_type = 4 # table-title: 4	        $tt$		table-title
                 elif last_n_chars(lines[i] , 4) == "$tc$": text_type = 5 # table-column-names: 5	$tc$		table-column-names
