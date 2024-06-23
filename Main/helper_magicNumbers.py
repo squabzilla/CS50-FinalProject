@@ -1,4 +1,4 @@
-class classIDs:
+class magic_classIDs:
     def __init__(self,
                  Barbarian = 0, Bard = 1, Cleric = 2, Druid = 3,
                  Fighter = 4, Monk = 5, Paladin = 6, Ranger = 7,
@@ -15,3 +15,5 @@ class classIDs:
         self.Sorcerer = Sorcerer
         self.Warlock = Warlock
         self.Wizard = Wizard
+
+#class 
