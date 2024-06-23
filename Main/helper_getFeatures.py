@@ -108,7 +108,7 @@ def get_feature_title(feature_id):
         feature_title =  "<h4>" + feature_title["feature_title_text"] + "</h4>"
     return feature_title
 
-def get_accordion_features(feature_id, masterFeature = "featuresMasterAccordion"):
+def get_accordion_features_v1_old_depreciated(feature_id, masterFeature = "featuresMasterAccordion"):
     # Get some local variables to work with
     features = []
     #print(f"get_accordion_features - feature_id: {feature_id}")
@@ -176,7 +176,7 @@ def start_accordion_feature(sql_feature_title, parent_feature = "featuresMasterA
     return feature_full
     
 
-def get_accordion_features_2(feature_id_list):
+def get_accordion_features(feature_id_list):
     text_list = []
     sql_feature_title_list = []
     end_accordion = (f'</div>\n</div>\n</div>\n')
