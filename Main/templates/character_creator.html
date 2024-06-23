@@ -157,6 +157,8 @@
             let features_items = await features_response.json();
             document.getElementById("auto_spells").insertAdjacentHTML("beforeend",features_items)
         </script>
+    
+    
     {% elif new_char.creation_step==8 %}
         <h1>You've completed your character!</h1>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">
