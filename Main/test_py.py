@@ -202,12 +202,11 @@ def main():
     #test_check_if_int()
     #trying_test_if_in_racelist()
     #grab_a_spell()
-    features_list = [287,288,289,290,291,292,293,294,295]
-    count = 0
-    for i in features_list:
-        count += 1
-        i = count
-    print(features_list)
+    empty_list = []
+    print("About to print empty list:")
+    for i in range(len(empty_list)):
+        print(empty_list[i])
+    print("Just printed empty list")
     return True
 main()
 

@@ -241,8 +241,7 @@ class rpg_char_load:
                  str_score = 0, dex_score = 0, con_score = 0, int_score = 0, wis_score = 0, cha_score = 0,
                  char_level = 0, features = [],
                  list_cantrips = [], list_1stlvlSpells = [], list_2ndlvlSpells = [], list_3rdlvlSpells = [], list_4thlvlSpells = [],
-                 list_5thlvlSpells = [], list_6thlvlSpells = [], list_7thlvlSpells = [], list_8thlvlSpells = [], list_9thlvlSpells = []
-                 has_int_spells = False, has_wis_spells = False, has_cha_spells = False):
+                 list_5thlvlSpells = [], list_6thlvlSpells = [], list_7thlvlSpells = [], list_8thlvlSpells = [], list_9thlvlSpells = []):
         self.name = name
         self.race_id = race_id
         self.level1_class_id = level1_class_id
@@ -258,13 +257,16 @@ class rpg_char_load:
         self.background_name = background_name
         self.char_level = char_level
         self.features = features
-        self.int_spells = int_spells
-        self.wis_spells = wis_spells
-        self.cha_spells = cha_spells
-        self.has_int_spells = has_int_spells
-        self.has_wis_spells = has_wis_spells
-        self.has_cha_spells = has_cha_spells
-        
+        self.list_cantrips = list_cantrips
+        self.list_1stlvlSpells = list_1stlvlSpells
+        self.list_2ndlvlSpells = list_2ndlvlSpells
+        self.list_3rdlvlSpells = list_3rdlvlSpells
+        self.list_4thlvlSpells = list_4thlvlSpells
+        self.list_5thlvlSpells = list_5thlvlSpells
+        self.list_6thlvlSpells = list_6thlvlSpells
+        self.list_7thlvlSpells = list_7thlvlSpells
+        self.list_8thlvlSpells = list_8thlvlSpells
+        self.list_9thlvlSpells = list_9thlvlSpells
     
     def get_names_from_IDs(self):
         self.race_name = db.execute("SELECT race_name FROM list_races WHERE race_id = ?", self.race_id)
@@ -298,15 +300,10 @@ class rpg_char_load:
         self.level1_class_id = class_to_copy.class_id
         self.background_id = class_to_copy.background_id
         self.features = class_to_copy.features
-        if class_to_copy.class_id in [magic_classIDs.Bard, magic_classIDs.Sorcerer, magic_classIDs.Warlock]:
-            self.cha_spells = class_to_copy.list_spells
-            self.has_cha_spells = True
-        if class_to_copy.class_id in [magic_classIDs.Cleric, magic_classIDs.Druid, magic_classIDs.Ranger]:
-            self.wis_spells = class_to_copy.list_spells
-            self.has_wis_spells = True
-        if class_to_copy.class_id == magic_classIDs.Wizard:
-            self.int_spells = class_to_copy.list_spells
-            self.has_int_spells = True
+        self.list_cantrips = class_to_copy.list_cantrips
+        self.list_1stlvlSpells = class_to_copy.list_1stlvlSpells
+        # NOTE: Don't worry about how to sort spells
+        # Spells will only be sorted if we load character from db
     
     def print_values(self):
         print(f"Name: {self.name}")
