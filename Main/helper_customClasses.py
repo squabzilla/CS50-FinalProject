@@ -201,11 +201,17 @@ class rpg_char_create:
             spellcasting_ability_id = magic_abilities.wisdom
         elif self.class_id == magic_classIDs.Wizard:
             spellcasting_ability_id = magic_abilities.intelligence
-        
-        
+        for i in range(len(self.list_cantrips)):
+            spell_id = self.list_cantrips[i]
+            self.list_cantrips[i] = {"spell_id": spell_id, "always_prepared": 1, "spellcasting_ability_id": spellcasting_ability_id}
+            # remember: cantrips always prepared - okay well level 3 wizard changes that, but that's a later problem lol
+        for i in range(len(self.list)):
+            spell_id = self.list_1stlvlSpells[i]
+            self.list_1stlvlSpells[i] = {"spell_id": spell_id, "always_prepared": always_prepared, "spellcasting_ability_id": spellcasting_ability_id}
         
     def reset_spells(self):
-        self.list_spells = []
+        self.list_1stlvlSpells = []
+        self.list_cantrips = []
         return True
     
     def print_values(self):
