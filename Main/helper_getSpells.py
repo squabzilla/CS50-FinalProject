@@ -231,7 +231,7 @@ def validate_spell_choices(cantrips_list, spells_leveled_list, class_id):
             return False
     return True
 
-def get_spell_names(list_spells):
+def get_spell_names_for_accordion(list_spells):
     # we are grabbing list from our custom class, at a point where the list_spells has been specifically formatted
     # format of list_spells:
     # {"spell_id": spell_id, "always_prepared": always_prepared, "spellcasting_ability_id": spellcasting_ability_id}
@@ -245,6 +245,12 @@ def get_spell_names(list_spells):
         else:
             print("Error - 'helper_getSpells.py' at 'def get_accordion_spells(list_spells):' - spell not found in database.")
     return list_spells
+
+def get_accordion_spells(list_spells, parent_feature):
+    list_spells = get_spell_names_for_accordion(list_spells)
+    accordion = []
+    ### accordion.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n')
+    ### ignore this entirely
 
 
 def main():
@@ -265,4 +271,4 @@ def main():
     
     return True
     
-main()
+#main()
