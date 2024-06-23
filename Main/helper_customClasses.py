@@ -41,6 +41,7 @@ class rpg_char_create:
         self.spells_known_amount = spells_known_amount
         self.list_cantrips = list_cantrips  # list where we will store items of the known_spell class   FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
         self.list_1stlvlSpells = list_1stlvlSpells
+        self.features = features # realistically, if they're just stored in the correct order here, I can grab the list_order value from the count while looping through it
         # features reference:
         # self.feature.character_id: no, each logged-in user has their own unique user_id which we can retrieve 
         # self.feature.feature_id:   stored in above dictionary  ref: INTEGER
