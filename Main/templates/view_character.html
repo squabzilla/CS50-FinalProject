@@ -27,9 +27,62 @@
     <div class="col" name="char_features" id="char_features">
         <h2 id="mainFeaturesHeader" name="mainFeaturesHeader">Features</h2>
     </div>
-    {% if pc_char.has_int_spells or pc_char.has_wis_spells or pc_char.has_cha_spells %}
-    <div class="col" name="char_spells" id="char_spells">
-        <h2 id="mainFeaturesHeader" name="mainFeaturesHeader">Features</h2>
+    {% if pc_charlist_cantrips != [] %}
+    <div class="accordion" id="accordionSpells">
+        <div class="accordion-item"> <!-- cantrips -->
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsZero" aria-expanded="false" aria-controls="collapseSpellsZero">
+                    Accordion Item #1
+                </button>
+            </h2>
+            <div id="collapseSpellsZero" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                <div class="accordion-body">
+                    <p>This will be cantrips.</p>
+                </div>
+            </div>
+        </div>
+        {% if list_1stlvlSpells != [] %}
+        <div class="accordion-item"> <!-- 1stLevelSpells -->
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsOne" aria-expanded="false" aria-controls="collapseSpellsOne">
+                    Accordion Item #1
+                </button>
+            </h2>
+            <div id="collapseSpellsOne" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                <div class="accordion-body">
+                    <p>This will be cantrips.</p>
+                </div>
+            </div>
+        </div><!-- end 1stLevelSpells -->
+        {% endif %}
+        {% if list_2ndlvlSpells != [] %}
+        <div class="accordion-item"> <!-- 2ndLevelSpells -->
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsTwo" aria-expanded="false" aria-controls="collapseSpellsTwo">
+                    Accordion Item #2
+                </button>
+            </h2>
+            <div id="collapseSpellsTwo" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                <div class="accordion-body">
+                    <p> 1st-level spells.</p>
+                </div>
+            </div>
+        </div> <!-- end 2ndLevelSpells -->
+        {% endif %}
+        {% if list_3rdlvlSpells != [] %}
+        <div class="accordion-item"><!-- 3rdLevelSpells -->
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsThree" aria-expanded="false" aria-controls="collapseSpellsThree">
+                    Accordion Item #3
+                </button>
+            </h2>
+            <div id="collapseSpellsThree" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                <div class="accordion-body">
+                    <p>2nd-level spells</p>
+                </div>
+            </div>
+        </div> <!-- end 3rdLevelSpells -->
+        {% endif %}
     </div>
     {% endif %}
     <!-- NOTES:
