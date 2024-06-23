@@ -184,13 +184,17 @@ def get_accordion_features_2(feature_id_list):
     last_feature_index = len(feature_id_list) - 1
     for i in range(last_feature_index):
         sql_feature_title_list.append(db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id_list[i]))
+    parent_feature = f'accordionCollapseID{sql_feature_title_list[0]["feature_title_id"]}'
+    # initialize parent_feature variable, set it to first possible value I could need of it # good god this syntax is cursed
+    # remember I need it declared OUTSIDE loop so value-changes stick thru loop-iterations
     for i in range(last_feature_index):
         sql_feature_title = sql_feature_title_list[i]
         list_level = sql_feature_title["feature_title_format"]
         if i == 0:
             text_list.append(start_accordion_feature(sql_feature_title))
             continue
-        else:
+        if list_level == 0: # meaning we're starting a new lvl-0 feature and need to end the old one
+            text_list.append(end_accordion)
         
     
     
