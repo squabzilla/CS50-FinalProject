@@ -206,8 +206,7 @@ print("DONE")
 # create list of classes and add values
 print("Creating list_classes table, linking all foreign keys, populating table...", end="")
 db.execute("CREATE TABLE list_classes (\
-    class_key INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
-    class_id INTEGER NOT NULL,\
+    class_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
     class_name TEXT NOT NULL, \
     class_hitdie INTEGER,\
     casting_ability_id INTEGER,\
