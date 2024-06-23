@@ -29,7 +29,7 @@ def highest_spell_slot(var_class_id, var_char_level):
     # and when I get around to warlocks, instead of pact magic, they'll have that
     # so I don't need to worry about future-proofing for warlock pact-casting because I'll be removing that from warlocks
     # when I actually get to adding them
-    half_caster_IDs = [paladin_id, ranger_id]
+    half_caster_IDs = [magic_classIDs.Paladin, magic_classIDs.Ranger]
     third_caster_IDs = []
     caster_level_multiplied = 0
     max_spell_level = 0
@@ -51,7 +51,7 @@ def highest_spell_slot(var_class_id, var_char_level):
         if count == (17 * 3): max_spell_level += 1
         count += 1
     return max_spell_level
-    # TODO:
+    # to-do if I ever use this:
     # support for 1/3 casting-only-with-subclass can come with the level-up table
     # when I actually add that
     # if your level-up-table just has like a multiplier on casting
@@ -72,21 +72,21 @@ def class_spells_by_spell_level(class_id, spell_level):
     list_spells = []
     # if class_id not in [1,2,3,4,7,8,10,11,12]: return False
     # just return empty list if it's not in one of these
-    if class_id == 2: # Bard spells
+    if class_id == magic_classIDs.Bard: # Bard spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE bard_spell = 1 AND spell_level = ?", spell_level)
-    elif class_id == 3: # Cleric spells
+    elif class_id == magic_classIDs.Cleric: # Cleric spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE cleric_spell = 1 AND spell_level = ?", spell_level)
-    elif class_id == 4: # Druid spells
+    elif class_id == magic_classIDs.Druid: # Druid spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE druid_spell = 1 AND spell_level = ?", spell_level)
-    elif class_id == 7: # Paladin spells
+    elif class_id == magic_classIDs.Paladin: # Paladin spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE paladin_spell = 1 AND spell_level = ?", spell_level)
-    elif class_id == 8: # Ranger spells
+    elif class_id == magic_classIDs.Ranger: # Ranger spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE ranger_spell = 1 AND spell_level = ?", spell_level)
-    elif class_id == 10: # Sorcerer spells
+    elif class_id == magic_classIDs.Sorcerer: # Sorcerer spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE sorcerer_spell = 1 AND spell_level = ?", spell_level)
-    elif class_id == 11: # Warlock spells
+    elif class_id == magic_classIDs.Warlock: # Warlock spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE warlock_spell = 1 AND spell_level = ?", spell_level)
-    elif class_id == 12: # Wizard spells
+    elif class_id == magic_classIDs.Wizard: # Wizard spells
         list_spells = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE wizard_spell = 1 AND spell_level = ?", spell_level)
     else:
         return None
