@@ -393,16 +393,6 @@ def create_character():
                 flash("Incorrect number of spells selected")
             #print(f"validate_spell_choices: {validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_char.class_id)}")
             if validate_spell_choices(var_cantrips_list, var_leveled_spells_list, new_char.class_id) == True:
-                # NOTE: 
-                # Changing how spells are stored
-                # they will be stored in lists by level - so a cantrips_list[], lvl1spells_list[], etc
-                # each item in the list will be a dictionary containing values matching our spellbook table in the database
-                # The dictionary will be:
-                # spell_id (spellbook_spell_id INTEGER): int(specific_spell_id)
-                # spell_always_prepared (spell_always_prepared INTEGER): pseudo-boolean - integer value: 0 = False, 1 = True
-                # spellcasting_ability (spellcasting_attrib_id INT): okay need to lookup correct attribute here, and do I want to 0-index attributes
-                    # would be more consistent with how I managed classes? could leave 0 as a NULL value in all my lists
-                    # means I'd have to update quite a few things, but we're at a point where that's not super difficult - I should do it
                 for cantrip in var_cantrips_list:
                     new_char.list_cantrips.append(int(cantrip)) # NOTE: I have no idea if I actually want these as integers or not
                 for spell in var_leveled_spells_list:
@@ -426,7 +416,7 @@ def create_character():
             pc_char = rpg_char_load()
             pc_char.rpg_char_match_values(new_char) # made a function so all the values match, saves me a dozen lines of code here
             pc_char.get_names_from_IDs()
-            # session.pop("new_char")
+            session.pop("new_char")
             # NOTE: I will want above UN-commented (at least in final version)
             # I think - otherwise we risk getting stuck on never resetting character, so character creator always goes to load character
             # However, for testing right now, I don't want to constantly make a new character
