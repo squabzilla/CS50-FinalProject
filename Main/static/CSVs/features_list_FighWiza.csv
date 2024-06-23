@@ -13,7 +13,7 @@
 289,85,4,2,1,"When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield."
 290,86,4,1,0,Two-Weapon Fighting
 291,86,4,2,1,"When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack."
-292,87,4,1,0,Second Wind
+292,87,4,0,0,Second Wind
 293,87,4,2,1,"You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again."
 294,88,4,0,0,Action Surge
 295,88,4,2,1,"Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action."
