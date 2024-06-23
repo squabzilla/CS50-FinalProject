@@ -24,6 +24,5 @@ Show attribute of spell as well. Don't do spell attack/save DC. They require pro
 Also a nice text-box filled with "spell-descriptions to come later"
 
 TO-DO:
-insert-spells appropriately (now that we have a nice spot for them!)
 save spells to database
 load spells from database
