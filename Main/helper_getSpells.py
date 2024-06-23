@@ -202,7 +202,7 @@ def get_char_lvl1_spells(class_id):
         char_lvl1_spells_text = get_char_lvl1_spells_wizard()
     return char_lvl1_spells_text
 
-def validate_spell_choices(cantrip_list, spells_list, class_id):
+def validate_spell_choices(cantrips_list, spells_leveled_list, class_id):
     if class_id in [1,5,6,7,9]: # non-casters
         cantrips_known_amount = 0
         spells_known_amount = 0
@@ -228,16 +228,14 @@ def validate_spell_choices(cantrip_list, spells_list, class_id):
     elif class_id == 12: # Wizard
         cantrips_known_amount = 3
         spells_known_amount = 6
+    if len(cantrips_list) != cantrips_known_amount:
+        print("Error - incorrect number of cantrips")
+        return False
+    if len(spells_leveled_list) != spells_known_amount:
+        print("Error - incorrect number of spells.")
+        return False
     
     full_cantrips_list = class_spell_IDs_by_spell_level(class_id,0)
-    
-    #print("full_cantrips_list:")
-    #print(full_cantrips_list)
-    
-    #print(f"full_cantrips_list item {full_cantrips_list[0]} is of type {type(full_cantrips_list[0])}")
-    #print(f"cantrip_list item {cantrip_list[0]} is of type {type(cantrip_list[0])}")
-    
-    
     for item in cantrip_list:
         if item not in full_cantrips_list:
             return False
