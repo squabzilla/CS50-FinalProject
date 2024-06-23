@@ -208,7 +208,7 @@ print("Creating list_classes table, linking all foreign keys, populating table..
 db.execute("CREATE TABLE list_classes (\
     class_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
     class_name TEXT NOT NULL, \
-    class_hitdie INTEGER,\
+    class_hitdie INTEGER\
     );")
 db.execute("CREATE UNIQUE INDEX id_of_class ON list_classes (class_id);")
 db.execute("CREATE UNIQUE INDEX name_of_class ON list_classes (class_name);")
@@ -358,6 +358,7 @@ db.execute("CREATE TABLE list_feature_descriptions (\
     FOREIGN KEY (feature_class_id) REFERENCES list_classes (class_id) \
     );")
 #db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_descriptions (feature_name);")
+# remember, a feature_id has multiple elements, and thus "lines" in this table
 print("DONE")
 
 
