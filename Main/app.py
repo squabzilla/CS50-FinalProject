@@ -329,6 +329,8 @@ def create_character():
         if new_char.creation_step == 1:
             if type(var_name) is str: # NOTE: this should always be a string, but I'd rather just like double-check?
                 new_char.set_name(var_name)
+                if "pc_char" in session: # pop their old character once one *starts* making a new one
+                    session.pop("pc_char")
         # Step 2 - character race
         elif new_char.creation_step == 2:
             if type(var_race_id) is str: # NOTE: checking strings mainly so isnumeric() doesn't crash the program when handed non-string
@@ -400,8 +402,6 @@ def create_character():
             return redirect("/view_character")
         return render_template("character_creator.html", new_char=new_char)
     else:
-        if "pc_char" in session:
-            session.pop("pc_char")
         new_char = rpg_char_create()
         session["new_char"] = new_char
         return render_template("character_creator.html", new_char=new_char)
