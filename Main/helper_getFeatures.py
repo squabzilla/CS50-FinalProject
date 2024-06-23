@@ -177,6 +177,8 @@ def start_accordion_feature(sql_feature_title, parent_feature = "featuresMasterA
     
 
 def get_accordion_features(feature_id_list):
+    print(f"feature_id_list: {feature_id_list}")
+    # 80
     text_list = []
     sql_feature_title_list = []
     end_accordion = (f'</div>\n</div>\n</div>\n')
