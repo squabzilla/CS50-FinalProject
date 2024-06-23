@@ -254,7 +254,7 @@ def get_accordion_spells(list_spells, parent_feature):
     #for i in len(range(list_spells)):
     for line in list_spells:
         spell_name = line["spell_name"]
-        spell_id = line["spell_name"]
+        spell_id = line["spell_id"]
         accordion.append(f'<div class="accordion-item">\n')
         accordion.append(f'<h4 class="accordion-header">\n') #<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         accordion.append(f'<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#spellCollapseID{spell_id}" aria-expanded="false" aria-controls="spellCollapseID{spell_id}">')
