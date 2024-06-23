@@ -240,7 +240,8 @@ class rpg_char_load:
                  race_name = "", level1_class_name = "", background_name = "", 
                  str_score = 0, dex_score = 0, con_score = 0, int_score = 0, wis_score = 0, cha_score = 0,
                  char_level = 0, features = [],
-                 int_spells = [], wis_spells = [], cha_spells = [],
+                 list_cantrips = [], list_1stlvlSpells = [], list_2ndlvlSpells = [], list_3rdlvlSpells = [], list_4thlvlSpells = [],
+                 list_5thlvlSpells = [], list_6thlvlSpells = [], list_7thlvlSpells = [], list_8thlvlSpells = [], list_9thlvlSpells = []
                  has_int_spells = False, has_wis_spells = False, has_cha_spells = False):
         self.name = name
         self.race_id = race_id
