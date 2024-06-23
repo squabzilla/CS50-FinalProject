@@ -404,9 +404,9 @@ def create_character():
                     # would be more consistent with how I managed classes? could leave 0 as a NULL value in all my lists
                     # means I'd have to update quite a few things, but we're at a point where that's not super difficult - I should do it
                 for cantrip in var_cantrips_list:
-                    new_char.list_spells.append(int(cantrip)) # NOTE: I have no idea if I actually want these as integers or not
+                    new_char.list_cantrips.append(int(cantrip)) # NOTE: I have no idea if I actually want these as integers or not
                 for spell in var_leveled_spells_list:
-                    new_char.list_spells.append(int(spell)) # NOTE: I have no idea if I actually want these as integers or not
+                    new_char.list_1stlvlSpells.append(int(spell)) # NOTE: I have no idea if I actually want these as integers or not
                 new_char.creation_step += 1
             else:
                 flash("Error in spell selection")
