@@ -41,7 +41,7 @@
         <script type="module">
             let class_response = await fetch('/get_class_dropdown');
             let class_dropdown = await class_response.json();
-            console.log(class_dropdown)
+            //console.log(class_dropdown)
             document.getElementById("class_id").insertAdjacentHTML("beforeend",class_dropdown)
         </script>
 
