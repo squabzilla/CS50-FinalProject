@@ -223,18 +223,18 @@ db.execute("CREATE UNIQUE INDEX name_of_class ON list_classes (class_name);")
 # NOTE: class_id NEEDS to stay constant - I change these values, parts of my code breaks
 # as I am assuming that these values DO NOT CHANGE
 # values:
-#   1:  Barbarian
-#   2:  Bard
-#   3:  Cleric
-#   4:  Druid
-#   5:  Fighter
-#   6:  Monk
-#   7:  Paladin
-#   8:  Ranger
-#   9:  Rogue
-#   10: Sorcerer
-#   11: Warlock
-#   12: Wizard
+#   0:  Barbarian
+#   1:  Bard
+#   2:  Cleric
+#   3:  Druid
+#   4:  Fighter
+#   5:  Monk
+#   6:  Paladin
+#   7:  Ranger
+#   8:  Rogue
+#   9: Sorcerer
+#   10: Warlock
+#   11: Wizard
 ####################################################################################################
 
 with open(class_list_csv, "r") as var_file:
