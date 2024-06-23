@@ -2,7 +2,12 @@
 
 {% block title %}Character View{% endblock %}
 
-{% block header %}View your Character{% endblock %}
+{% block header %}View your Character
+<br>
+<form action="/save_button" method="POST" class="form-control mx-auto w-auto border-0">
+    <button class="btn btn-primary" type="submit">Save Character!</button>
+</form>
+{% endblock %}
 
 {% block main %}
 <div class="container text-center">

@@ -226,17 +226,6 @@ def get_race_dropdown():
             race_dropdown += "\n"
     return jsonify(race_dropdown)
 
-# @app.route("/get_raceName_by_raceID")
-# def get_raceName_by_raceID():
-    # race_name = ""
-    # if "new_char" in session:
-        # new_char = session["new_char"]
-        # race_name = db.execute("SELECT race_name FROM list_races WHERE race_id = ?", new_char.race_id)
-        # race_name = race_name[0]["race_name"]
-    # return jsonify(race_name)
-# # NOTE: why don't I put this functionality in my class, then view_character.html can just grab the value from the class-variable it's passed?
-# # NOPE - I need a new class for this, since the rpg_char_create is SPECIFICALLY for making a new character
-# # basically I need a character-loading-class
 
 # NOTE: Classes-stuff
 # some sql operations I'll want my webpage to run (or at least get the results of)
@@ -427,9 +416,18 @@ def view_character():
         flash("Oops - character not created!")
         return redirect("/character_creator")
 
+@app.route("/save_button",  methods=['GET', 'POST'])
+def save_button():
+    if session["user_id"]:
+        flash("Whoops, we aren't ready for that yet!")
+        return redirect("/view_character")
+    else:
+        flash("You must be logged-on to do this.")
+        return redirect("/login")
 
 @app.route("/load_character", methods=['POST'])
-def view_character():
+@login_required
+def load_character():
     # TODO
     return True
 
