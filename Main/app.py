@@ -541,26 +541,6 @@ def testing():
     noup = "vloop"
     return render_template("testing.html", num_var=num_var, string_var=string_var, noup=noup)
 
-# NOTE: I think this is just obsolete?
-@app.route("/character_creator_name", methods=['GET', 'POST'])
-def create_character_step2():
-    # NOTE: Why do I even have this here? Probably just a failed attempt I can delete
-    if request.method == 'POST':
-        character_name = request.form.get("character_name")
-        #character_name = "Bob"
-        new_char = rpg_char_create()
-        new_char.name = character_name
-        session["new_char"] = new_char
-        #print(character_name)
-        #return render_template("character_creator.html", character=new_char, step=2)
-        return redirect("/character_creator")
-    #session["user_id"] = rows[0]["user_id"]
-    else:
-        #print("get-method")
-        #return render_template("character_creator.html", noCharacter="noCharacter")
-        return redirect("/")
-    #wait didn't I try returning a redirect with a value BEFORE I imported redirect?
-    # Could I do that now? Is there value in it?
 
 @app.route("/save_character")
 @login_required
