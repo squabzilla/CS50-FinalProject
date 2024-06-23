@@ -212,6 +212,7 @@ def get_accordion_features(feature_id_list):
             parent_feature = f'accordionCollapseID{sql_feature_title["feature_title_id"]}'
         elif list_level == 1:
             text_list.append(start_accordion_feature(sql_feature_title, parent_feature))
+            text_list.append(end_accordion) #each lvl-1 accordion-item starts *and* finishes its accordion item
         if i == last_feature_index:
             text_list.append(end_accordion) # append final accordion ending on last iteration of loop
     text_list.append(f'</div>\n') #NOTE: closing tag for the master accordion div-tag

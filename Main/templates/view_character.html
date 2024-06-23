@@ -188,7 +188,7 @@
 <script type="module">
     let features_response = await fetch('/view_char_features');
     let features_list = await features_response.json();
-    console.log(features_list)
+    //console.log(features_list)
     document.getElementById("mainFeaturesHeader").insertAdjacentHTML("afterend",features_list)
 </script>
 
