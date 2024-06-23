@@ -12,7 +12,7 @@ from helper_loginRequired import login_required
 import re # custom-built libraries I'm calling needs this, so I'm adding it just in case
 from helper_customClasses import rpg_char_create, rpg_char_load
 from helper_getFeatures import get_feature_text, get_feature_title, get_lvl1_features, check_lvl1_features_choice, complete_lvl1_features_choice, get_accordion_features
-from helper_getSpells import class_spells_by_spell_level, get_char_lvl1_spells, class_spell_names_by_spell_level, class_spell_IDs_by_spell_level, validate_spell_choices
+from helper_getSpells import get_char_lvl1_spells, class_spell_IDs_by_spell_level, validate_spell_choices, get_accordion_spells
 from helper_magicNumbers import generate_magic_classIDs
 magic_classIDs = generate_magic_classIDs()
 # Note: some of these functions won't be called in this version, as functionality to create those classes is to be added later
@@ -408,13 +408,13 @@ def create_character():
                 for spell in var_leveled_spells_list:
                     new_char.list_1stlvlSpells.append(int(spell)) # NOTE: I have no idea if I actually want these as integers or not
                 new_char.creation_step += 1
-                print("Before:")
-                print(f"Cantrips: {new_char.list_cantrips}")
-                print(f"1stlvlSpells: {new_char.list_1stlvlSpells}")
+                #print("Before:")
+                #print(f"Cantrips: {new_char.list_cantrips}")
+                #print(f"1stlvlSpells: {new_char.list_1stlvlSpells}")
                 new_char.set_spell_format()
-                print("After:")
-                print(f"Cantrips: {new_char.list_cantrips}")
-                print(f"1stlvlSpells: {new_char.list_1stlvlSpells}")
+                #print("After:")
+                #print(f"Cantrips: {new_char.list_cantrips}")
+                #print(f"1stlvlSpells: {new_char.list_1stlvlSpells}")
             else:
                 flash("Error in spell selection")
         # remove the keyname from the session if it is there
@@ -471,7 +471,7 @@ def view_character():
         # return jsonify(features_text)
     # return jsonify(features_text)
 
-@app.route("/view_char_features") # NOTE: Part of character viewing
+@app.route("/view_char_features", methods=['GET', 'POST']) # NOTE: Part of character viewing
 def view_char_features():
     features_text = ""
     #features_list = []
@@ -487,8 +487,34 @@ def view_char_features():
         # NOTE: Don't forget master-accordion tag for all of this on view_character.html page
         # NOTE: tag looks like this:  <div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion"></div>
         #features_text = get_accordion_features_2(pc_char.features)
-        return jsonify(features_text)
+        #return jsonify(features_text)
     return jsonify(features_text)
+
+@app.route("/view_char_spells")
+def view_char_spells():
+    spells_text = ""
+    spell_list = []
+    spell_level = request.args.get("spellLevel")
+    parent_feature = request.args.get("parentFeature")
+    # supporting html:
+    # let response = await fetch('/search?q=' + input.value);
+    # val1=a&val2=b
+    
+    
+    if "pc_char" in session:
+        pc_char = session["new_char"]
+        if spell_level not in ["0","1","2","3","4","5","6","7","8","9"]: return spells_text
+        elif spell_level == "0": spell_list = pc_char.list_cantrips
+        elif spell_level == "1": spell_list = pc_char.list_1stlvlSpells
+        elif spell_level == "2": spell_list = pc_char.list_2ndlvlSpells
+        elif spell_level == "3": spell_list = pc_char.list_3rdlvlSpells
+        elif spell_level == "4": spell_list = pc_char.list_4thlvlSpells
+        elif spell_level == "5": spell_list = pc_char.list_5thlvlSpells
+        elif spell_level == "6": spell_list = pc_char.list_6thlvlSpells
+        elif spell_level == "7": spell_list = pc_char.list_7thlvlSpells
+        elif spell_level == "8": spell_list = pc_char.list_8thlvlSpells
+        elif spell_level == "9": spell_list = pc_char.list_9thlvlSpells
+        spells_text = get_accordion_spells(spell_list, parent_feature)
 
 
 # NOTE: code to pass stuff to webpage:
