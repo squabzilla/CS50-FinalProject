@@ -418,7 +418,7 @@ def view_character():
         flash("Oops - character not created!")
         return redirect("/character_creator")
 
-@app.route("/save_button",  methods=['GET', 'POST'])
+@app.route("/save_button", methods=['GET', 'POST'])
 def save_button():
     session.modified = True
     if "user_id" in session:
@@ -428,7 +428,7 @@ def save_button():
         flash("You must be logged-on to do this.")
         return redirect("/login")
 
-@app.route("/load_character", methods=['POST'])
+@app.route("/load_character", methods=['GET', 'POST'])
 @login_required
 def load_character():
     # TODO
