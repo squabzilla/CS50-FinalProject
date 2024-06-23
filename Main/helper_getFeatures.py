@@ -66,12 +66,14 @@ def format_class_feature_text(class_feature):
     index_length = len(class_feature) - 1
     for i in range(len(class_feature)):
         if i == index_length: end_line = ""
+        
         if class_feature[i]["feature_text_type"] == 0:
-            line_text = "<p><i>" + class_feature[i]["feature_text_description"] + "</i></p>" + end_line
-        elif class_feature[i]["feature_text_type"] == 1:
             line_text = "<h3><i>" + class_feature[i]["feature_text_description"] + "</i></h3>" + end_line
-        elif class_feature[i]["feature_text_type"] == 2:
+        elif class_feature[i]["feature_text_type"] == 1:
             line_text = "<h4><i>" + class_feature[i]["feature_text_description"] + "</i></h4>" + end_line
+        elif class_feature[i]["feature_text_type"] == 2:
+            line_text = "<p><i>" + class_feature[i]["feature_text_description"] + "</i></p>" + end_line
+            
         text_list.append(line_text)
         # NOTE: is currently a little over-complicated, but later when I deal with importing:
         # bullet-points or tables from text description, I'll want more flexibility with handling stuff
