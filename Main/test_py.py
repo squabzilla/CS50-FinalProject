@@ -196,17 +196,19 @@ def grab_a_spell():
     sql_val = db.execute("SELECT * FROM list_spells WHERE spell_id = 1")
     print(sql_val)
     #race_dropdown += "<option value=\"" + str(race_list[i]["race_id"]) + "\">" + race_list[i]["race_name"] + "</option>"
+    
+def dicts_and_lists():
+    #sql_feature_title_list.append(db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id_list[i]))
+    feature_id_list = [87,88,89,90]
+    sql_feature_title_list = db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id_list)
+    print(sql_feature_title_list)
 
 def main():
     #test_check_type()
     #test_check_if_int()
     #trying_test_if_in_racelist()
     #grab_a_spell()
-    empty_list = []
-    print("About to print empty list:")
-    for i in range(len(empty_list)):
-        print(empty_list[i])
-    print("Just printed empty list")
+    dicts_and_lists()
     return True
 main()
 
