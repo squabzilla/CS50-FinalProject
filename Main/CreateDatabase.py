@@ -21,7 +21,8 @@
 
 # NOTE: sql formatting and info:
 # PRAGMA table_info(table_name);
-# .mode columns
+# .mode columns     renders display nice
+# .tables           lists all tables
 
 # NOTE: list_spells currently starts at 1, because we only imported 0th and 1st level spells
 # it just so happens that the first spell_id of 0th/1st level spells is spell_id = 1
