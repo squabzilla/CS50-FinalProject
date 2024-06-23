@@ -129,13 +129,10 @@ def get_char_lvl1_spells_wizard():
     spells_lvl1_list = class_spells_by_spell_level(magic_classIDs.Wizard, 1)
     lvl1_length = len(spells_lvl1_list)
     
-    
     # form start:
     wizard_select_spells.append(f'<form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0" name="SpellsCantrips_form" id="SpellsCantrips_form">\n')
-    
     # Start columns
     wizard_select_spells.append(f'<div class="container text-center"><div class="row align-items-start">\n')
-    
     # start SpellsCantrips
     wizard_select_spells.append(f'<div class="col">\n')
     # label-cantrips
@@ -152,7 +149,6 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'</select>\n')
     # end SpellsCantrips
     wizard_select_spells.append(f'</div>\n')
-    
     # start SpellsLeveled
     wizard_select_spells.append(f'<div class="col">\n')
     # label-lvl1spells
@@ -169,19 +165,17 @@ def get_char_lvl1_spells_wizard():
     wizard_select_spells.append(f'</select>\n')
     # end SpellsLeveled
     wizard_select_spells.append(f'</div>\n')
-    
     # end columns
     wizard_select_spells.append(f'</div></div>')
-    
     # Submit button
     wizard_select_spells.append(f'<br>') # break before submit buttons usually looks good
     wizard_select_spells.append(f'<button class="btn btn-primary" type="submit">Submit</button>\n')
     # end form
     wizard_select_spells.append(f'</form>\n')
-    
     # Combine it all together
     spells_text = "".join(wizard_select_spells)
     return spells_text
+
 
 def get_char_lvl1_spells(class_id):
     char_lvl1_spells_text = ""
@@ -237,14 +231,24 @@ def validate_spell_choices(cantrips_list, spells_leveled_list, class_id):
             return False
     return True
 
-#def get_accordion_spells(list_spells)
+def get_accordion_spells(list_spells):
+    # format of list_spells:
+    # {"spell_id": spell_id, "always_prepared": always_prepared, "spellcasting_ability_id": spellcasting_ability_id}
+    list_spell_IDs = []
+    for i in range(len(list_spells)):
+        list_spell_IDs.append(list_spells[i]["spell_id"])
+    sql_spell_names_list = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE feature_title_id IN (?)", list_spell_IDs)
+    for i in range(len(sql_spell_names_list)):
+        if list_spells[i]["spell_id"] == sql_spell_names_list[i]["spell_id"]:
+            return True
+    return False
 
 
 def main():
-    var_cantrip_list = [1,3]
-    var_spell_list = [4,6]
-    var_class_id = 12
-    validate_spell_choices(var_cantrip_list, var_spell_list, var_class_id)
+    var_cantrip_list = [116,186,226]
+    var_spell_list = [48,78,110,165,260,267]
+    var_class_id = 11
+    #validate_spell_choices(var_cantrip_list, var_spell_list, var_class_id)
     
     
     return True
