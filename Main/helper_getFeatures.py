@@ -177,7 +177,7 @@ def start_accordion_feature(sql_feature_title, parent_feature = "featuresMasterA
     
 
 def get_accordion_features(feature_id_list):
-    print(f"feature_id_list: {feature_id_list}")
+    #print(f"feature_id_list: {feature_id_list}")
     # 80
     text_list = []
     sql_feature_title_list = []
@@ -189,9 +189,9 @@ def get_accordion_features(feature_id_list):
         #sql_feature_title_list.append(db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id_list[i]))
     sql_feature_title_list = db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id IN (?)", feature_id_list)
 
-    print("sql_feature_title_list:")
-    for line in sql_feature_title_list:
-        print(line)
+    #print("sql_feature_title_list:")
+    #for line in sql_feature_title_list:
+        #print(line)
     
     parent_feature = f'featureCollapseID{sql_feature_title_list[0]["feature_title_id"]}'
     # declare parent_feature outside loop so value changes stick as I iterate thru loop, as well as set first "parent_feature" value I'll need
