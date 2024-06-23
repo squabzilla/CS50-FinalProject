@@ -289,13 +289,13 @@ class rpg_char_load:
         self.level1_class_id = class_to_copy.class_id
         self.background_id = class_to_copy.background_id
         self.features = class_to_copy.features
-        if class_to_copy.class_id in [1, 9, 10]:
+        if class_to_copy.class_id in [magic_classIDs.Bard, magic_classIDs.Sorcerer, magic_classIDs.Warlock]:
             self.cha_spells = class_to_copy.list_spells
             self.has_cha_spells = True
-        if class_to_copy.class_id in [2, 3, 7]:
+        if class_to_copy.class_id in [magic_classIDs.Cleric, magic_classIDs.Druid, magic_classIDs.Ranger]:
             self.wis_spells = class_to_copy.list_spells
             self.has_wis_spells = True
-        if class_to_copy.class_id == 11:
+        if class_to_copy.class_id == magic_classIDs.Wizard:
             self.int_spells = class_to_copy.list_spells
             self.has_int_spells = True
     
