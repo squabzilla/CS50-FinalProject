@@ -82,7 +82,9 @@ def login():
     """Log user in"""
 
     # Forget any user_id
-    session.clear()
+    # session.clear() # so this is why things screw up when I redirect here
+    if "pc_char" in session: # pop their old character once one *starts* making a new one
+        session.pop("user_id") # Let's have it just pop existing user_ids
 
     # User reached route via POST (as by submitting a form via POST)
     if request.method == "POST":
