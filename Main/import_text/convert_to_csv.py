@@ -91,7 +91,7 @@ def write_csv(input_path_name, output_path_name):
         # text type: no sense declaring here
         text_order = 0
         #print(range(len(lines)))
-        class_count = -1 # this should mean my first class_count is zero-indexed instead of 1-indexed
+        class_count = 0
         class_id = ""
         for i in range(len(lines)):
             if len(lines[6]) >= 6:
@@ -101,8 +101,7 @@ def write_csv(input_path_name, output_path_name):
                     class_id = int(class_id)
                     class_count += 1
                     continue
-            text_id = i - (class_count + 1) # class_count + 1 because I am zero-indexing class_count
-            # because I want text_id to increase on every line EXCEPT lines where class_count increases
+            text_id = i - class_count
             
             
             # Lines ends with:
