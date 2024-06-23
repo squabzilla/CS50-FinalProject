@@ -245,14 +245,14 @@ def get_race_dropdown():
 # doing that in backend to simplify html page
 @app.route("/get_classes") # NOTE: Part of character creation
 def get_classes():
-    class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = {magic_classIDs.Wizard} OR class_id = {magic_classIDs.Fighter}")
+    class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 4 OR class_id = 11")
     # screw it, we only supporting fighters/wizards
-    soup = magic_classIDs.Fighter
+    # Final version will just check class-list and not use magic-numbers anyways
     return jsonify(class_list)
 @app.route("/get_class_dropdown") # NOTE: Part of character creation
 
 def get_class_dropdown():
-    class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = {magic_classIDs.Wizard} OR class_id = {magic_classIDs.Fighter}")
+    class_list = db.execute("SELECT class_id, class_name FROM list_classes WHERE class_id = 4 OR class_id = 11")
     # screw it, we only supporting fighters/wizards
     class_dropdown = ""
     last_index = len(class_list) - 1
