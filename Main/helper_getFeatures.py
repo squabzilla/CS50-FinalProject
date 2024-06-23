@@ -189,6 +189,10 @@ def get_accordion_features(feature_id_list):
         #sql_feature_title_list.append(db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id_list[i]))
     sql_feature_title_list = db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id IN (?)", feature_id_list)
 
+    print("sql_feature_title_list:")
+    for line in sql_feature_title_list:
+        print(line)
+    
     parent_feature = f'accordionCollapseID{sql_feature_title_list[0]["feature_title_id"]}'
     
     text_list.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n') # start the master accordion that all items we loop thru will be inside
