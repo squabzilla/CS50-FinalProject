@@ -421,6 +421,10 @@ def view_character():
 @app.route("/save_button", methods=['GET', 'POST'])
 def save_button():
     session.modified = True
+    if "pc_char" in session:
+        pc_char = session["pc_char"]
+        print("printing pc_char:")
+        print(pc_char)
     if "user_id" in session:
         flash("Whoops, we aren't ready for that yet!")
         return redirect("/view_character")
