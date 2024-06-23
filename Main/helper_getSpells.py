@@ -1,5 +1,7 @@
 from cs50 import SQL
 import re
+from helper_magicNumbers import generate_magic_classIDs
+magic_classIDs = generate_magic_classIDs()
 
 # name of database
 name_of_database = "RPG_characters.db"
@@ -17,18 +19,18 @@ def highest_spell_slot(var_class_id, var_char_level):
     except:
         print("Error: invalid input")
         return False
-    barbarian_id = 1
-    bard_id = 2
-    cleric_id = 3
-    druid_id = 4
-    fighter_id = 5
-    monk_id = 6
-    paladin_id = 7
-    ranger_id = 8
-    rogue_id = 9
-    sorcerer_id = 10
-    warlock_id = 11
-    wizard_id = 12
+    barbarian_id = 0
+    bard_id = 1
+    cleric_id = 2
+    druid_id = 3
+    fighter_id = 4
+    monk_id = 5
+    paladin_id = 6
+    ranger_id = 7
+    rogue_id = 8
+    sorcerer_id = 9
+    warlock_id = 10
+    wizard_id = 11
     # yeah these are magic numbers, but using an SQL query to search by names to grab class_id
     # will take longer, and these numbers SHOULD NOT CHANGE, especially since they're specifically assigned
     # instead of being the auto-incrementing key
