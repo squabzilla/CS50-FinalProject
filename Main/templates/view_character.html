@@ -51,9 +51,9 @@
                 <script type="module">
                     let parentFeature = "parentFeature=collapseSpellsZero"
                     let spellLevel = "spellLevel=0"
-                    let features_response = await fetch('/view_char_features' + '?' + parentFeature + '&' + spellLevel);
-                    let features_list = await features_response.json();
-                    document.getElementById("mainFeaturesHeader").insertAdjacentHTML("afterend",features_list)
+                    let spells_0_response = await fetch('/view_char_features' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_0_list = await features_response.json();
+                    document.getElementById("collapseSpellsZero").insertAdjacentHTML("afterend",spells_0_list)
                 </script>
                 {% if pc_char.list_1stlvlSpells != [] %}
                 <div class="accordion-item"> <!-- 1stLevelSpells -->
@@ -71,9 +71,9 @@
                 <script type="module"> // start 1stLevelSpells script
                     let parentFeature = "parentFeature=collapseSpellsOne"
                     let spellLevel = "spellLevel=1"
-                    let features_response = await fetch('/view_char_features' + '?' + parentFeature + '&' + spellLevel);
-                    let features_list = await features_response.json();
-                    document.getElementById("mainFeaturesHeader").insertAdjacentHTML("afterend",features_list)
+                    let spells_1_response = await fetch('/view_char_features' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_1_list = await features_response.json();
+                    document.getElementById("collapseSpellsOne").insertAdjacentHTML("afterend",spells_1_list)
                 </script> <!-- end 1stLevelSpells script -->
                 {% endif %}
                 {% if pc_char.list_2ndlvlSpells != [] %}
@@ -92,9 +92,9 @@
                 <script type="module"> // start 2ndLevelSpells script
                     let parentFeature = "parentFeature=collapseSpellsTwo"
                     let spellLevel = "spellLevel=2"
-                    let features_response = await fetch('/view_char_features' + '?' + parentFeature + '&' + spellLevel);
-                    let features_list = await features_response.json();
-                    document.getElementById("mainFeaturesHeader").insertAdjacentHTML("afterend",features_list)
+                    let spells_2_response = await fetch('/view_char_features' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_2_list = await features_response.json();
+                    document.getElementById("collapseSpellsTwo").insertAdjacentHTML("afterend",spells_2_list)
                 </script> <!-- end 2ndLevelSpells script -->
                 {% endif %}
                 {% if pc_char.list_3rdlvlSpells != [] %}
@@ -113,8 +113,8 @@
                 <script type="module"> // start 3rdLevelSpells script
                     let parentFeature = "parentFeature=collapseSpellsThree"
                     let spellLevel = "spellLevel=3"
-                    let features_response = await fetch('/view_char_features' + '?' + parentFeature + '&' + spellLevel);
-                    let features_list = await features_response.json();
+                    let spells_3_response = await fetch('/view_char_features' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_3_list = await features_response.json();
                     document.getElementById("mainFeaturesHeader").insertAdjacentHTML("afterend",features_list)
                 </script> <!-- end 3rdLevelSpells script -->
                 {% endif %}
