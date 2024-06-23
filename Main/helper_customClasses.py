@@ -1,5 +1,7 @@
 from cs50 import SQL
 import re
+from helper_magicNumbers import generate_magic_classIDs
+magic_classIDs = generate_magic_classIDs()
 
 # name of database
 name_of_database = "RPG_characters.db"
@@ -156,29 +158,29 @@ class rpg_char_create:
         # 10-Warlock: 2, 2
         # 11-Wizard: 3, 6
         
-        if self.class_id in [0,4,5,6,8]: # non-casters
+        if self.class_id in [magic_classIDs.Barbarian,magic_classIDs.Fighter,magic_classIDs.Monk,magic_classIDs.Paladin,magic_classIDs.Rogue]: # non-casters
             self.cantrips_known_amount = 0
             self.spells_known_amount = 0
             self.creation_step += 1 # Move to next step since we aren't a caster
-        elif self.class_id == 1: # Bard
+        elif self.class_id == magic_classIDs.Bard: # Bard
             self.cantrips_known_amount = 2
             self.spells_known_amount = 4
-        elif self.class_id == 2: # Cleric
+        elif self.class_id == magic_classIDs.Cleric: # Cleric
             self.cantrips_known_amount = 3
             self.spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND cleric_spell = 1;")
-        elif self.class_id == 3: # Druid
+        elif self.class_id == magic_classIDs.Druid: # Druid
             self.cantrips_known_amount = 2
             self.spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND druid_spell = 1;")
-        elif self.class_id == 7: # Ranger - remember changes you made
+        elif self.class_id == magic_classIDs.Ranger: # Ranger - remember changes you made
             self.cantrips_known_amount = 2 # remember that you just GET those two cantrips as ranger
             self.spells_known_amount = 0
-        elif self.class_id == 9: # Sorcerer
+        elif self.class_id == magic_classIDs.Sorcerer: # Sorcerer
             self.cantrips_known_amount = 4
             self.spells_known_amount = 2
-        elif self.class_id == 10: # Warlock
+        elif self.class_id == magic_classIDs.Warlock: # Warlock
             self.cantrips_known_amount = 2
             self.spells_known_amount = 2
-        elif self.class_id == 11: # Wizard
+        elif self.class_id == magic_classIDs.Wizard: # Wizard
             self.cantrips_known_amount = 3
             self.spells_known_amount = 6
         else:
@@ -190,9 +192,9 @@ class rpg_char_create:
         # NOTE: Spells are stored in list of dictionaries, each item of list containing:
         # {"Spell_id": value} (spellbook_spell_id INTEGER), {"always_prepared": value} (spell_always_prepared INTEGER), {"ability": value} (spellcasting_ability_id INT)
         # referencing the database table spellbook
-        if self.class_id in (2, 10, 11): spellcasting_ability_id = "CHA"
-        elif self.class_id in (3,4,8): spellcasting_ability_id = "WIS"
-        elif self.class_id == 12: spellcasting_ability_id = "INT"
+        if self.class_id in (magic_classIDs.Bard, magic_classIDs.Sorcerer, magic_classIDs.Warlock): spellcasting_ability_id = "CHA"
+        elif self.class_id in (magic_classIDs.Cleric,magic_classIDs.Druid,magic_classIDs.Ranger): spellcasting_ability_id = "WIS"
+        elif self.class_id == magic_classIDs.Wizard: spellcasting_ability_id = "INT"
     
     def reset_spells(self):
         self.list_spells = []
