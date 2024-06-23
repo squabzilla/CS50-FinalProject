@@ -248,11 +248,17 @@ def main():
     var_cantrip_list = [116,186,226]
     var_spell_list = [48,78,110,165,260,267]
     var_class_id = 11
-    print("sup")
+    #print("sup")
     #print(get_accordion_spells(var_cantrip_list))
-    print("where is my thing")
+    #print("where is my thing")
     #validate_spell_choices(var_cantrip_list, var_spell_list, var_class_id)
-    
+    sql_spell_names_list = db.execute("SELECT spell_id, spell_name FROM list_spells WHERE feature_title_id IN (?)", var_spell_list)
+    for i in range(len(sql_spell_names_list)):
+        if var_spell_list[i] == sql_spell_names_list[i]["spell_id"]:
+            print("match ",end="")
+        else:
+            print("ERROR ",end="")
+    print()
     
     return True
     
