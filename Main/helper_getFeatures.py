@@ -111,7 +111,7 @@ def get_feature_title(feature_id):
         feature_title =  "<h4>" + feature_title["feature_title_text"] + "</h4>"
     return feature_title
 
-def get_accordion_features(feature_id):
+def get_accordion_features(feature_id, masterFeature = "featuresMasterAccordion"):
     # Get some local variables to work with
     features = []
     #print(f"get_accordion_features - feature_id: {feature_id}")
@@ -135,7 +135,7 @@ def get_accordion_features(feature_id):
     features.append(f'        {feature_title}\n')
     features.append(f'      </button>\n')
     features.append(f'    </h{i}>\n')
-    features.append(f'    <div id="accordionCollapseID{feature_id}" class="accordion-collapse collapse" data-bs-parent="#featuresMasterAccordion">\n')
+    features.append(f'    <div id="accordionCollapseID{feature_id}" class="accordion-collapse collapse" data-bs-parent="#{masterFeature}">\n')
     features.append(f'      <div class="accordion-body">')
     features.append(f'        <p>{feature_text}</p>')
     features.append(f'      </div>')
@@ -146,7 +146,7 @@ def get_accordion_features(feature_id):
     text_full = "".join(features) # apparently faster, and one line of code, to plop all that list into a text
     return text_full
 
-
+#def get_accordion_features_2(feature_id_list):
 
 
 def get_lvl1_features_fighter():

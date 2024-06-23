@@ -471,6 +471,24 @@ def view_char_features():
         return jsonify(features_text)
     return jsonify(features_text)
 
+@app.route("/view_char_features_2") # NOTE: Part of character viewing
+def view_char_features_2():
+    features_text = ""
+    features_list = []
+    class_id = -1
+    if "pc_char" in session:
+        #print("pc in session for view_char_features")
+        pc_char = session["new_char"]
+        #features_list = pc_char.features
+        #print("pc_char features:")
+        #print(pc_char.features)
+        # NOTE: Doing as accordion-style! 
+        # NOTE: Don't forget master-accordion tag for all of this on view_character.html page
+        # NOTE: tag looks like this:  <div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion"></div>
+        #features_text = get_accordion_features_2(pc_char.features)
+        return jsonify(features_text)
+    return jsonify(features_text)
+
 
 # NOTE: code to pass stuff to webpage:
 #   PYTHON code for passing values I want display on webpage:
