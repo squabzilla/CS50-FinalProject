@@ -182,7 +182,8 @@ def get_accordion_features(feature_id_list):
     text_list = []
     sql_feature_title_list = []
     end_accordion = (f'</div>\n</div>\n</div>\n')
-    last_feature_index = len(feature_id_list) - 1
+    number_of_features = len(feature_id_list)
+    last_feature_index = number_of_features - 1
     
     #for i in range(last_feature_index):
         #sql_feature_title_list.append(db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id_list[i]))
@@ -191,7 +192,7 @@ def get_accordion_features(feature_id_list):
     parent_feature = f'accordionCollapseID{sql_feature_title_list[0]["feature_title_id"]}'
     
     text_list.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n') # start the master accordion that all items we loop thru will be inside
-    for i in range(last_feature_index):
+    for i in range(number_of_features):
         sql_feature_title = sql_feature_title_list[i]
         list_level = sql_feature_title["feature_title_format"]
         if i == 0:
