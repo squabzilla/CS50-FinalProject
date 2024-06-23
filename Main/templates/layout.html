@@ -36,13 +36,16 @@ and modified it from there
               <li class="nav-item"><a class="nav-link" href="/character_creator">Create Character</a></li>
               <!--<li class="nav-item"><a class="nav-link" href="/testing">Testing</a></li>-->
               <li class="nav-item"><a class="nav-link" href="/view_character">View Character</a></li>
-            </ul>
+            
             {% if session["user_id"] %}
+            <li class="nav-item"><a class="nav-link" href="/load_character">Load Character</a></li>
+            </ul>
             <ul class="navbar-nav ms-auto mt-2">
-              <li class="nav-item"><a class="nav-link" href="/load_character">Load Character</a></li>
+              
               <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
             </ul>
             {% else %}
+            </ul>
             <ul class="navbar-nav ms-auto mt-2">
               <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
               <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
