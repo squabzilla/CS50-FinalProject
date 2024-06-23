@@ -185,12 +185,10 @@ class rpg_char_create:
         return True
     
     def set_spell_format(self):
-        # TODO
         # NOTE: Spells are stored in list of dictionaries, each item of list containing:
         # {"Spell_id": value} (spellbook_spell_id INTEGER), {"always_prepared": value} (spell_always_prepared INTEGER), {"ability": value} (spellcasting_ability_id INT)
         # referencing the database table spellbook
         # Bard, Cleric, Druid, Ranger, Sorcerer, Warlock, Wizard
-        
         if self.class_id in (magic_classIDs.Bard, magic_classIDs.Ranger, magic_classIDs.Sorcerer, magic_classIDs.Warlock):
             always_prepared = 1 # True, but sqlite doesn't have Booleans, even tho I'm pretty sure 1 = True, but whatever
         elif self.class_id in (magic_classIDs.Cleric, magic_classIDs.Druid, magic_classIDs.Wizard):
@@ -205,7 +203,7 @@ class rpg_char_create:
             spell_id = self.list_cantrips[i]
             self.list_cantrips[i] = {"spell_id": spell_id, "always_prepared": 1, "spellcasting_ability_id": spellcasting_ability_id}
             # remember: cantrips always prepared - okay well level 3 wizard changes that, but that's a later problem lol
-        for i in range(len(self.list)):
+        for i in range(len(self.list_1stlvlSpells)):
             spell_id = self.list_1stlvlSpells[i]
             self.list_1stlvlSpells[i] = {"spell_id": spell_id, "always_prepared": always_prepared, "spellcasting_ability_id": spellcasting_ability_id}
         

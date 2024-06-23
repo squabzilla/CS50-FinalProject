@@ -408,6 +408,11 @@ def create_character():
                 for spell in var_leveled_spells_list:
                     new_char.list_1stlvlSpells.append(int(spell)) # NOTE: I have no idea if I actually want these as integers or not
                 new_char.creation_step += 1
+                print("Before:")
+                print(f"Cantrips: {new_char.list_cantrips}")
+                print(f"1stlvlSpells: {new_char.list_1stlvlSpells}")
+                new_char.set_spell_format()
+                print("After:")
                 print(f"Cantrips: {new_char.list_cantrips}")
                 print(f"1stlvlSpells: {new_char.list_1stlvlSpells}")
             else:
