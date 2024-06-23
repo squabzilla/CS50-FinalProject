@@ -24,10 +24,14 @@
         </div>
     </div>
     <br>
+    {% if pc_char.list_cantrips == [] %}
     <div class="col" name="char_features" id="char_features">
         <h2 id="mainFeaturesHeader" name="mainFeaturesHeader">Features</h2>
     </div>
-    {% if pc_char.list_cantrips != [] %}
+    {% elif pc_char.list_cantrips != [] %}
+    <div class="col" name="char_features" id="char_features">
+        <h2 id="mainFeaturesHeader" name="mainFeaturesHeader">Features</h2>
+    </div>
     <div class="col" name="char_spells" id="char_spells">
         <h2 id="mainSpellsHeader" name="mainSpellsHeader">Spells</h2>
         <div class="accordion" id="accordionSpells">
