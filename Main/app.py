@@ -499,8 +499,6 @@ def view_char_spells():
     # supporting html:
     # let response = await fetch('/search?q=' + input.value);
     # val1=a&val2=b
-    
-    
     if "pc_char" in session:
         pc_char = session["new_char"]
         if spell_level not in ["0","1","2","3","4","5","6","7","8","9"]: return spells_text
@@ -515,6 +513,7 @@ def view_char_spells():
         elif spell_level == "8": spell_list = pc_char.list_8thlvlSpells
         elif spell_level == "9": spell_list = pc_char.list_9thlvlSpells
         spells_text = get_accordion_spells(spell_list, parent_feature)
+    return jsonify(spells_text)
 
 
 # NOTE: code to pass stuff to webpage:
