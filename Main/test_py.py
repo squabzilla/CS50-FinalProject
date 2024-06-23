@@ -199,8 +199,9 @@ def grab_a_spell():
     
 def dicts_and_lists():
     #sql_feature_title_list.append(db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id_list[i]))
-    feature_id_list = [87,88,89,90]
-    sql_feature_title_list = db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id IN ?;", feature_id_list)
+    feature_id_list = [81,82,83,84,85,86,87]
+    sql_feature_title_list = db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id IN (?);", feature_id_list)
+    sql_feature_title_list = db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id IN (81,82,83,84,85,86,87);")
     print(sql_feature_title_list)
 
 def main():
