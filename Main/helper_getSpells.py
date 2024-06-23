@@ -251,6 +251,23 @@ def get_accordion_spells(list_spells, parent_feature):
     accordion = []
     ### accordion.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n')
     ### ignore this entirely
+    #for i in len(range(list_spells)):
+    for line in list_spells:
+        spell_name = line["spell_name"]
+        spell_id = line["spell_name"]
+    accordion.append(f'<div class="accordion-item">\n')
+    accordion.append(f'<h4 class="accordion-header">\n') #<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    accordion.append(f'<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#spellCollapseID{spell_id}" aria-expanded="false" aria-controls="spellCollapseID{spell_id}">')
+    accordion.append(f'{spell_name}\n')
+    accordion.append(f'</button>\n')
+    accordion.append(f'</h4>\n')
+    accordion.append(f'<div id="spellCollapseID{spell_id}" class="accordion-collapse collapse" data-bs-parent="#{parent_feature}">\n')
+    accordion.append(f'<div class="accordion-body">\n')
+    accordion.append(f'<p>Spell text and other info to be added at a later date.</p>\n')
+    accordion.append(f'</div>\n</div>\n</div>\n')
+    
+    accordion_full = "".join(accordion) # apparently faster, and one line of code, to plop all that list into a text
+    return accordion_full
 
 
 def main():
