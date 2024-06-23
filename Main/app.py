@@ -324,11 +324,11 @@ def create_character():
         #var_features_from_select = request.form.get("FeaturesDropdown") # gets single-feature
         var_features_list = request.form.getlist("FeaturesSelect") # gets-list-of-features, used in multi-select
         var_cantrips_list = request.form.getlist("SpellsCantrips") # NOTE: Remember this has to match tag I'm grabbing value from
-        var_leveled_spells_list = request.form.getlist("SpellsLeveled") # NOTE: Remember this has to match tag I'm grabbing value from
+        var_leveled_spells_list = request.form.getlist("Spells1stLevel") # NOTE: Remember this has to match tag I'm grabbing value from
         # NOTE: the name here ("FeaturesSelect") needs to match the same of the element that has the values we're looking for
         # If we're grabbing from a select-box, the name needs to match the select box
         # NOT the name of the master-form, but specifically the select-box
-        empty_list = []
+        
         # NOTE: select_list defaults to empty list by default
         # it is NOT considered equal to none by default, but I can always compare it to an empty list
         
@@ -341,8 +341,8 @@ def create_character():
         ##print(f"var_features_from_select: {var_features_from_select}")
         #print(f"var_features_list: {var_features_list}")
         
-        #print(f"var_cantrips_list: {var_cantrips_list}")
-        #print(f"var_leveled_spells_list: {var_leveled_spells_list}")
+        print(f"var_cantrips_list: {var_cantrips_list}")
+        print(f"var_leveled_spells_list: {var_leveled_spells_list}")
         
         # NOTE: kinda want to set attributes - after race & class
         
