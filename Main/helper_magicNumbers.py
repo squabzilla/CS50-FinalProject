@@ -16,4 +16,12 @@ class generate_magic_classIDs:
         self.Warlock = Warlock
         self.Wizard = Wizard
 
-#class 
+class generate_magic_abilityIDs:
+    def __init__(self, strength = 0, dexterity = 1, constitution = 2, 
+                 intelligence = 3, wisdom = 4, charisma = 5):
+        self.strength = strength
+        self.dexterity = dexterity
+        self.constitution = constitution
+        self.intelligence = intelligence
+        self.wisdom = wisdom
+        self.charisma = charisma

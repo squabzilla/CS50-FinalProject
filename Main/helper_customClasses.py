@@ -1,7 +1,8 @@
 from cs50 import SQL
 import re
-from helper_magicNumbers import generate_magic_classIDs
+from helper_magicNumbers import generate_magic_classIDs, generate_magic_abilityIDs
 magic_classIDs = generate_magic_classIDs()
+magic_abilities = generate_magic_abilityIDs()
 
 # name of database
 name_of_database = "RPG_characters.db"
