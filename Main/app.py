@@ -311,12 +311,12 @@ def get_new_char_spells():
 @app.route("/character_creator", methods=['GET', 'POST'])
 def create_character():
     if request.method == 'POST':
-        #var_step = 1
         new_char = session["new_char"]
+        
+        
         var_name = request.form.get("character_name")
         var_race_id = request.form.get("race_id")
         var_class_id = request.form.get("class_id")
-        
         var_str = request.form.get("attr_str")
         var_dex = request.form.get("attr_dex")
         var_con = request.form.get("attr_con")
@@ -335,20 +335,6 @@ def create_character():
         
         # NOTE: select_list defaults to empty list by default
         # it is NOT considered equal to none by default, but I can always compare it to an empty list
-        
-        # Honestly I'll get rid of all these excessive inputs and print statements once this fully 100% works
-        #print(f"Start - new_char.creation_step: {new_char.creation_step}")
-        #print(f"var_name: {var_name}")
-        #print(f"var_race_id: {var_race_id}")
-        #print(f"var_class_id: {var_class_id}")
-        #print(f"var_background_id {var_background_id}")
-        ##print(f"var_features_from_select: {var_features_from_select}")
-        #print(f"var_features_list: {var_features_list}")
-        
-        #print(f"var_cantrips_list: {var_cantrips_list}")
-        #print(f"var_leveled_spells_list: {var_leveled_spells_list}")
-        
-        # NOTE: kinda want to set attributes - after race & class
         
         # Step 1 - character name
         if new_char.creation_step == 1:
@@ -425,6 +411,8 @@ def create_character():
             return redirect("/view_character")
         return render_template("character_creator.html", new_char=new_char)
     else:
+        if "pc_char" in session:
+            session.pop("pc_char")
         new_char = rpg_char_create()
         session["new_char"] = new_char
         return render_template("character_creator.html", new_char=new_char)
