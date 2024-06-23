@@ -212,11 +212,6 @@ db.execute("CREATE TABLE list_classes (\
     );")
 db.execute("CREATE UNIQUE INDEX id_of_class ON list_classes (class_id);")
 db.execute("CREATE UNIQUE INDEX name_of_class ON list_classes (class_name);")
-# class key is just an auto-incrementing primary key
-# class_id will be a number I assign, including subclass ids
-# with barbarian having class_id = 1, the barbarian-subclasses will start at 1001, all the way up to 1099
-# future-proofing, but still
-# the value of class_key will vary as I add new items to my class list, but class_id will stay constant
 ####################################################################################################
 # NOTE: class_id NEEDS to stay constant - I change these values, parts of my code breaks
 # as I am assuming that these values DO NOT CHANGE
@@ -244,8 +239,8 @@ with open(class_list_csv, "r") as var_file:
         var_class_id = var_row[0]
         var_class_name = var_row[1]
         var_class_hitdie = var_row[2]
-        db.execute("INSERT INTO list_classes (class_key, class_id, class_name, class_hitdie) VALUES(?, ?, ?, ?)", 
-                   var_class_id, var_class_key, var_class_name, var_class_hitdie)
+        db.execute("INSERT INTO list_classes (class_id, class_name, class_hitdie) VALUES(?, ?, ?)", 
+                   var_class_id, var_class_name, var_class_hitdie)
 print("DONE")
 
 # create list of backgrounds and add values
