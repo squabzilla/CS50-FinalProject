@@ -789,7 +789,7 @@ Two-Weapon Fighting#$#
 When you engage in two-weapon fighting, you can
 add your ability modifier to the damage of the
 second attack.#P#
-Second Wind#$#
+Second Wind###
 You have a limited well of stamina that you can draw
 on to protect yourself from harm. On your turn, you
 can use a bonus action to regain hit points equal to

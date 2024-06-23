@@ -13,7 +13,7 @@ Protection#$#
 When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.#P#
 Two-Weapon Fighting#$#
 When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.#P#
-Second Wind#$#
+Second Wind###
 You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.#P#
 Action Surge###
 Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.#P#
