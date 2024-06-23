@@ -53,7 +53,7 @@
                     let spellLevel = "spellLevel=0"
                     let spells_0_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
                     let spells_0_list = await spells_0_response.json();
-                    document.getElementById("collapseSpellsZero").insertAdjacentHTML("afterend",spells_0_list)
+                    document.getElementById("collapseSpellsZero").insertAdjacentHTML("beforeend",spells_0_list)
                 </script>
                 {% if pc_char.list_1stlvlSpells != [] %}
                 <div class="accordion-item"> <!-- 1stLevelSpells -->
@@ -73,7 +73,7 @@
                     let spellLevel = "spellLevel=1"
                     let spells_1_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
                     let spells_1_list = await spells_1_response.json();
-                    document.getElementById("collapseSpellsOne").insertAdjacentHTML("afterend",spells_1_list)
+                    document.getElementById("collapseSpellsOne").insertAdjacentHTML("beforeend",spells_1_list)
                 </script> <!-- end 1stLevelSpells script -->
                 {% endif %}
                 {% if pc_char.list_2ndlvlSpells != [] %}
