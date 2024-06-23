@@ -165,11 +165,9 @@ class rpg_char_create:
             self.spells_known_amount = 4
         elif self.class_id == 3: # Cleric
             self.cantrips_known_amount = 3
-            #self.spells_known_amount = -1 # NOTE: -1 will be used to represent "all" for purely-prepared casters
             self.spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND cleric_spell = 1;")
         elif self.class_id == 4: # Druid
             self.cantrips_known_amount = 2
-            #self.spells_known_amount = -1
             self.spells_known_amount = db.execute("SELECT COUNT(*) FROM list_spells WHERE spell_level = 1 AND druid_spell = 1;")
         elif self.class_id == 8: # Ranger - remember changes you made
             self.cantrips_known_amount = 2 # remember that you just GET those two cantrips as ranger
@@ -187,9 +185,13 @@ class rpg_char_create:
             return False # this shouldn't ever happen, have it here just in case
         return True
     
-    #def add_spells_prepared_caster(self):
-    ######### Prepared casters:
-    #   druid, cleric, paladin
+    def set_spell_format(self):
+        # NOTE: Spells are stored in list of dictionaries, each item of list containing:
+        # {"Spell_id": value} (spellbook_spell_id INTEGER), {"always_prepared": value} (spell_always_prepared INTEGER), {"ability": value} (spellcasting_ability_id INT)
+        # referencing the database table spellbook
+        if self.class_id in (2, 10, 11): spellcasting_ability_id = "CHA"
+        elif self.class_id in (3,4,8): spellcasting_ability_id = "WIS"
+        elif self.class_id == 12: spellcasting_ability_id = "INT"
     
     def reset_spells(self):
         self.list_spells = []

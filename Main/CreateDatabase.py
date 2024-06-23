@@ -309,10 +309,10 @@ db.execute("CREATE TABLE spellbook (\
     spellbook_spell_id INTEGER, \
     spell_always_prepared INTEGER \
     spell_prepared INTEGER, \
-    spellcasting_attrib_id INT, \
+    spellcasting_ability_id INT, \
     FOREIGN KEY(spellbook_caster_id) REFERENCES list_characters(character_id), \
     FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
-    FOREIGN KEY(spellcasting_attrib_id) REFERENCES list_attributes (attrib_id) \
+    FOREIGN KEY(spellcasting_ability_id) REFERENCES list_attributes (attrib_id) \
     );")
 print("DONE")
 
