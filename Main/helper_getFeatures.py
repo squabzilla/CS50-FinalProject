@@ -186,9 +186,9 @@ def get_lvl1_features_wizard():
 
 def get_lvl1_features(class_id):
     lvl1_features_text = ""
-    if class_id == 4:
+    if class_id == magic_classIDs.Fighter:
         lvl1_features_text = get_lvl1_features_fighter() # 80, choose-from: 81-86, 87
-    elif class_id == 11:
+    elif class_id == magic_classIDs.Wizard:
         lvl1_features_text = get_lvl1_features_wizard() # 287-295
     else: # class_id NOT equal to (5 or 12)
         lvl1_features_text = f"error - class_id of {class_id} not supported"
@@ -198,7 +198,7 @@ def check_lvl1_features_choice(class_id, feature_list):
     # Verify that the feature(s) chosen are valid
     if class_id not in [4,11]:
         return False
-    if class_id == 4:
+    if class_id == magic_classIDs.Fighter:
         if type(feature_list) is not list:
             return False
         if len(feature_list) != 1:
@@ -212,7 +212,7 @@ def check_lvl1_features_choice(class_id, feature_list):
         if fighting_styles_choice not in fighting_styles_options:
             return False
         return True # return true if nothing made us return false
-    elif class_id == 11:
+    elif class_id == magic_classIDs.Wizard:
         return True
         # NOTE: since wizard doesn't make any choices, there aren't any selections to verify
         # the "complete_features" function - for classes without choices - ignores user-input
@@ -220,15 +220,15 @@ def check_lvl1_features_choice(class_id, feature_list):
         
         
 def complete_lvl1_features_choice(class_id, feature_list): # assumes valid input, since we run a function to check input first
-    if class_id not in [4,11]:
+    if class_id not in [magic_classIDs.Fighter,magic_classIDs.Wizard]:
         return None
-    if class_id == 4:
+    if class_id == magic_classIDs.Fighter:
         fighter_features = [80, 87] # default features you get no matter what
         fighter_fighting_style = int(feature_list[0])
         fighter_features.append(fighter_fighting_style)
         fighter_features.sort()
         return fighter_features
-    elif class_id == 11:
+    elif class_id == magic_classIDs.Wizard:
         wizard_features = [287,288,289,290,291,292,293,294,295]
         return wizard_features
         
@@ -241,7 +241,7 @@ def check_and_complete_features(class_id, feature_list):
     # when I'm actually trying to implement such a class
     if class_id not in [4,11]:
         return None
-    if class_id == 4:
+    if class_id == magic_classIDs.Fighter:
         fighter_automatic = [80, 87]
         fighter_fighting_styles_options = [81,82,83,84,85,86]
         if len(feature_list) != 1:
@@ -252,7 +252,7 @@ def check_and_complete_features(class_id, feature_list):
             fighter_automatic.append(feature_list[0])
             fighter_automatic.sort()
         return fighter_fighting_styles_options
-    elif class_id == 11:
+    elif class_id == magic_classIDs.Wizard:
         wizard_options = [287,288,289,290,291,292,293,294,295]
         return wizard_options
         
