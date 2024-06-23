@@ -404,6 +404,8 @@ def create_character():
                 for spell in var_leveled_spells_list:
                     new_char.list_spells.append(int(spell)) # NOTE: I have no idea if I actually want these as integers or not
                 new_char.creation_step += 1
+            else:
+                flash("Error in spell selection")
         # remove the keyname from the session if it is there
         # session.pop('key_name')
         # Step 8 - completion
