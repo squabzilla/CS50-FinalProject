@@ -22,3 +22,8 @@ Log in and save, load characters
 Currently working on displaying spells, having spells show up and an accordion list of spells by level seems nice
 Show attribute of spell as well. Don't do spell attack/save DC. They require proficiency bonus anyways and I'm not there.
 Also a nice text-box filled with "spell-descriptions to come later"
+
+TO-DO:
+insert-spells appropriately (now that we have a nice spot for them!)
+save spells to database
+load spells from database
