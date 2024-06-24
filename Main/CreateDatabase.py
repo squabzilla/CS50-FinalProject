@@ -314,8 +314,8 @@ print("DONE")
 # feature_title_text: item [9] of csv (currently)
 print("Creating list_feature_titles table...", end="")
 db.execute("CREATE TABLE list_feature_titles (\
-    feature_title_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
-    feature_title_format INTEGER, \
+    feature_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
+    feature_format INTEGER, \
     feature_title_text TEXT NOT NULL \
     );")
 #db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_titles (feature_title_text);")
@@ -350,12 +350,12 @@ print("Creating list_feature_descriptions table...", end="")
 db.execute("CREATE TABLE list_feature_descriptions (\
     feature_key INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
     feature_id INTEGER, \
-    feature_class_id INTEGER, \
+    from_class_id INTEGER, \
     feature_text_type INTEGER, \
     feature_text_order INTEGER, \
     feature_text_description TEXT, \
-    FOREIGN KEY (feature_id) REFERENCES list_feature_titles (feature_title_id), \
-    FOREIGN KEY (feature_class_id) REFERENCES list_classes (class_id) \
+    FOREIGN KEY (feature_id) REFERENCES list_feature_titles (feature_id), \
+    FOREIGN KEY (from_class_id) REFERENCES list_classes (class_id) \
     );")
 #db.execute("CREATE UNIQUE INDEX name_of_feature ON list_feature_descriptions (feature_name);")
 # remember, a feature_id has multiple elements, and thus "lines" in this table
@@ -371,22 +371,22 @@ with open(features_list_csv, "r") as var_file:
     for var_row in var_reader:
         var_feature_key = var_row[0]
         var_feature_id = var_row[1]
-        var_feature_class_id = var_row[2]
+        var_from_class_id = var_row[2]
         var_feature_text_type = var_row[3]
         var_feature_text_order = var_row[4]
         var_feature_text_actualText = var_row[5]
         # NOTE:Let's import just the titles to the list_feature_titles now
         if var_feature_text_type == "0" or var_feature_text_type == "1":
             db.execute("INSERT INTO list_feature_titles (\
-                feature_title_id, feature_title_format, feature_title_text \
+                feature_id, feature_format, feature_title_text \
                 ) VALUES(?, ?, ?)", 
                 var_feature_id, var_feature_text_type, var_feature_text_actualText)
         # NOTE: now we import feature descriptions
         db.execute("INSERT INTO list_feature_descriptions (\
-            feature_key, feature_id, feature_class_id, \
+            feature_key, feature_id, from_class_id, \
             feature_text_type, feature_text_order, feature_text_description\
             ) VALUES(?, ?, ?, ?, ?, ?)", 
-            var_feature_key, var_feature_id, var_feature_class_id, var_feature_text_type, var_feature_text_order, var_feature_text_actualText)
+            var_feature_key, var_feature_id, var_from_class_id, var_feature_text_type, var_feature_text_order, var_feature_text_actualText)
 print("DONE")
 
 
