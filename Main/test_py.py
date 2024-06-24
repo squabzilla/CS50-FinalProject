@@ -240,6 +240,12 @@ def list_users_characters_testing():
     for item in user_list_characters:
         print(item)
 
+def list_users_characters_testing_2():
+    user_id = 1
+    character_id = 1
+    user_character = db.execute("SELECT * FROM list_characters WHERE character_id = ? AND user_id = ?", user_id, character_id)
+    print(f"Number of characters: {len(user_character)}")
+
 def main():
     #test_check_type()
     #test_check_if_int()
@@ -247,7 +253,7 @@ def main():
     #grab_a_spell()
     #select_sql_maxes()
     #list_testing()
-    list_users_characters_testing()
+    list_users_characters_testing_2()
     return True
 main()
 
