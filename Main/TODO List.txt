@@ -24,4 +24,4 @@ Show attribute of spell as well. Don't do spell attack/save DC. They require pro
 Also a nice text-box filled with "spell-descriptions to come later"
 
 TO-DO:
-load spells from database
+DONE
