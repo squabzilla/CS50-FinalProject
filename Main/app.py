@@ -519,7 +519,7 @@ def load_character():
             flash("How the hell did you get here if you're not logged in?")
             return redirect("/view_character")
         user_id = session["user_id"]
-    user_list_characters = db.execute("SELECT * FROM list_characters WHERE character_user_id = ?", user_id)
+    #user_list_characters = db.execute("SELECT * FROM list_characters WHERE character_user_id = ?", user_id)
     #
     # PRAGMA table_info(list_characters) results:
     # character_id - integer, primary key
@@ -530,6 +530,9 @@ def load_character():
     # character_background_id <- need to turn IDs into names
     # character_level
     # character_str, character_dex, character_con, character_int, character_wis, character_cha
+    # What do I actually want?
+    # character_id, character_name, character_race, character_class
+    user_list_characters = db.execute("SELECT character_id, FROM list_characters WHERE character_user_id = ?", user_id)
     return render_template("load_character.html", user_list_characters)
 
 
