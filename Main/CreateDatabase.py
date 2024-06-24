@@ -299,7 +299,7 @@ print("Creating spellbook table and linking all foreign keys...", end="")
 db.execute("CREATE TABLE spellbook (\
     caster_id INTEGER, \
     spell_id INTEGER, \
-    always_prepared INTEGER \
+    always_prepared INTEGER, \
     prepared INTEGER, \
     spellcasting_ability_id INT, \
     FOREIGN KEY(caster_id) REFERENCES list_characters(character_id), \
