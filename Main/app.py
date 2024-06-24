@@ -552,6 +552,10 @@ def load_character():
 def load_button():
     if request.method == "POST":
         character_id = request.form.get("char_id")
+        pc_char = rpg_char_load()
+        session["pc_char"] = pc_char
+        
+        
         print(f"Character id: {character_id}")
         return redirect("/load_character")
     else:
