@@ -539,21 +539,13 @@ def load_character():
     # character_str, character_dex, character_con, character_int, character_wis, character_cha
     # What do I actually want?
     # character_id, character_name, character_race, character_class
-    user_list_characters = db.execute("SELECT character_id, character_name, character_race_id, character_level1_class_id\
-        FROM list_characters WHERE character_user_id = ?;", user_id)
+    user_list_characters = db.execute("SELECT list_characters.character_id, list_characters.name, \
+        list_races.race_name, list_classes.class_name FROM list_characters \
+        INNER JOIN list_races ON list_characters.race_id = list_races.race_id \
+        INNER JOIN list_classes ON list_characters.level1_class_id = list_classes.class_id \
+        WHERE character_user_id = ?;", user_id)
     if user_list_characters == []:
         return render_template("load_character.html", user_list_characters) # just end early if there's no items
-    # grab our list of races to reference
-    race_list = db.execute("SELECT * FROM list_races;")
-    name = "soup"
-    level = "level"
-    race_dict = {}
-    for i in range(len(race_list)):
-        race_dict.update({race_list[i]["race_id"]: race_list[i]["race_name"]})
-    
-    for i in range(len(user_list_characters)):
-        race_id = user_list_characters[i]["character_race_id"]
-        #user_list_characters[i]["character_race_id"] = 
     return render_template("load_character.html", user_list_characters)
 
 
