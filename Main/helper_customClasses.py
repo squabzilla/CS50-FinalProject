@@ -370,6 +370,8 @@ class rpg_char_load:
         self.wis_score = char_basics["char_wis"]
         self.cha_score = char_basics["char_cha"]
         
+        self.get_names_from_IDs()
+        
         # Features:
         self.features = []
         var_features = db.execute("SELECT feature_id FROM character_features WHERE character_id = ? ORDER BY feature_order ASC", character_id)
