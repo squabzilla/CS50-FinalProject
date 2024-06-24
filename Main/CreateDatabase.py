@@ -270,22 +270,22 @@ print("DONE")
 print("Creating list_characters table and linking all foreign keys...", end="")
 db.execute("CREATE TABLE list_characters (\
     character_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, \
-    character_user_id INTEGER, \
-    character_name TEXT NOT NULL, \
-    character_race_id INTEGER, \
-    character_level1_class_id INTEGER, \
-    character_background_id INTEGER, \
-    character_level INTEGER DEFAULT 1, \
-    character_str INTEGER, \
-    character_dex INTEGER, \
-    character_con INTEGER, \
-    character_int INTEGER, \
-    character_wis INTEGER, \
-    character_cha INTEGER, \
-    FOREIGN KEY(character_user_id) REFERENCES users(user_id), \
-    FOREIGN KEY(character_race_id) REFERENCES list_races(race_id), \
-    FOREIGN KEY(character_level1_class_id) REFERENCES list_classes(class_id), \
-    FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id) \
+    user_id INTEGER, \
+    name TEXT NOT NULL, \
+    race_id INTEGER, \
+    level1_class_id INTEGER, \
+    background_id INTEGER, \
+    level INTEGER DEFAULT 1, \
+    char_str INTEGER, \
+    char_dex INTEGER, \
+    char_con INTEGER, \
+    char_int INTEGER, \
+    char_wis INTEGER, \
+    char_cha INTEGER, \
+    FOREIGN KEY(user_id) REFERENCES users(user_id), \
+    FOREIGN KEY(race_id) REFERENCES list_races(race_id), \
+    FOREIGN KEY(level1_class_id) REFERENCES list_classes(class_id), \
+    FOREIGN KEY(background_id) REFERENCES  list_backgrounds(background_id) \
     );")
 print("DONE")
 
