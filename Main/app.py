@@ -567,13 +567,18 @@ def delete_button():
         user_id = session["user_id"]
         character_id = db.execute("SELECT character_id FROM list_characters WHERE user_id = ? AND character_id = ?", user_id, character_id)
         # NOTE: IMPORTANT: Confirm that user_id belongs to user!
+        # IT WOULD BE VERY EASY TO DELETE ANOTHER USER'S CHARACTERS WITHOUT THAT CHECK
         if len(character_id) != 1:
             flash("Error - cannot authorize character_id")
             return redirect("/load_character")
+        # Get character_id back to correct format
         character_id = character_id[0]["character_id"]
+        # Delete spells - if they don't have spells, SQL simply won't find items to delete
+        db.execute("DELETE FROM spellbook WHERE caster_id = ?", character_id)
+        # Delete features
+        db.execute("DELETE FROM character_features WHERE character_id = ?", character_id)
+        # Now we should be free to delete character without foreign keys constraints
         db.execute("DELETE FROM list_characters WHERE user_id = ? AND character_id = ?", user_id, character_id)
-        # NOTE: user_id isn't *strictly* necessary, but 
-        # IT WOULD BE VERY EASY TO DELETE ANOTHER USER'S CHARACTERS WITHOUT THAT CHECK
         flash("Character deleted!")
         return redirect("/load_character")
     else:
