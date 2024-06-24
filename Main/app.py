@@ -551,7 +551,8 @@ def load_character():
 @login_required
 def load_button():
     if request.method == "POST":
-        #character_id = request.form.get("character_name")
+        character_id = request.form.get("char_id")
+        print("Load button click!")
         return True
     else:
         flash("Error - invalid authorization (GET)")

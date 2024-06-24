@@ -30,8 +30,8 @@
     <td>{{ character["race_name"] }}</td>
     <td>{{ character["class_name"] }}</td>
     <td>
-      <form action="/load_character" method="POST" class="form-control mx-auto w-auto border-0">
-        <input type="hidden" value={{ character["character_id"] }} />
+      <form action="/load_button" method="POST" class="form-control mx-auto w-auto border-0">
+        <input type="hidden" name="char_id" value={{ character["character_id"] }} />
         <button class="btn btn-primary" type="submit">Load</button>
       </form>
     </td>
