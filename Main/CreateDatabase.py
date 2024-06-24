@@ -411,7 +411,7 @@ db.execute("CREATE TABLE specific_pc_features (\
     specific_pc_feature_id INTEGER, \
     specific_pc_feature_order INTEGER, \
     FOREIGN KEY(specific_pc_character_id) REFERENCES list_characters(character_id), \
-    FOREIGN KEY(specific_pc_feature_id) REFERENCES list_features(feature_id) \
+    FOREIGN KEY(specific_pc_feature_id) REFERENCES list_feature_titles(feature_title_id) \
     )")
 print("DONE")
 # NOTE: list order represents the order in which these items will appear in a character's list of features
