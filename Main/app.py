@@ -515,48 +515,46 @@ def save_character():
 
 
 @app.route("/load_character", methods=['GET', 'POST'])
+# I don't think it matters if we do GET or POST on this page, so we won't differentiate options
+# the delete button, on the other hand....
 @login_required
 def load_character():
     # TODO
-    load_not_ready = True
-    if load_not_ready == True:
-        flash("Error - not ready for load function.")
-        return redirect("/")
     # NOTE: I don't think I want separate GET vs POST here?
-    if request.method == "POST": # method post seems to be form submission or something?
-        if "user_id" not in session:
-            flash("How the hell did you get here if you're not logged in?")
-            return redirect("/view_character")
-        user_id = session["user_id"]
-        #user_list_characters = db.execute("SELECT * FROM list_characters WHERE character_user_id = ?", user_id)
-        #
-        # PRAGMA table_info(list_characters) results:
-        # character_id - integer, primary key
-        # character_user_id - foreign key
-        # character_name
-        # character_race_id <- need to turn IDs into names
-        # character_level1_class_id <- need to turn IDs into names
-        # character_background_id <- need to turn IDs into names
-        # character_level
-        # character_str, character_dex, character_con, character_int, character_wis, character_cha
-        # What do I actually want?
-        # character_id, character_name, character_race, character_class
-        user_list_characters = db.execute("SELECT character_id, character_name, character_race_id, character_level1_class_id\
-            FROM list_characters WHERE character_user_id = ?;", user_id)
-        if user_list_characters == []:
-            return render_template("load_character.html", user_list_characters) # just end early if there's no items
-        # grab our list of races to reference
-        race_list = db.execute("SELECT * FROM list_races;")
-        name = "soup"
-        level = "level"
-        race_dict = {}
-        for i in range(len(race_list)):
-            race_dict.update({race_list[i]["race_id"]: race_list[i]["race_name"]})
-        
-        for i in range(len(user_list_characters)):
-            race_id = user_list_characters[i]["character_race_id"]
-            #user_list_characters[i]["character_race_id"] = 
-        return render_template("load_character.html", user_list_characters)
+    #if request.method == "POST": # method post seems to be form submission or something?
+    if "user_id" not in session:
+        flash("How the hell did you get here if you're not logged in?")
+        return redirect("/view_character")
+    user_id = session["user_id"]
+    #user_list_characters = db.execute("SELECT * FROM list_characters WHERE character_user_id = ?", user_id)
+    #
+    # PRAGMA table_info(list_characters) results:
+    # character_id - integer, primary key
+    # character_user_id - foreign key
+    # character_name
+    # character_race_id <- need to turn IDs into names
+    # character_level1_class_id <- need to turn IDs into names
+    # character_background_id <- need to turn IDs into names
+    # character_level
+    # character_str, character_dex, character_con, character_int, character_wis, character_cha
+    # What do I actually want?
+    # character_id, character_name, character_race, character_class
+    user_list_characters = db.execute("SELECT character_id, character_name, character_race_id, character_level1_class_id\
+        FROM list_characters WHERE character_user_id = ?;", user_id)
+    if user_list_characters == []:
+        return render_template("load_character.html", user_list_characters) # just end early if there's no items
+    # grab our list of races to reference
+    race_list = db.execute("SELECT * FROM list_races;")
+    name = "soup"
+    level = "level"
+    race_dict = {}
+    for i in range(len(race_list)):
+        race_dict.update({race_list[i]["race_id"]: race_list[i]["race_name"]})
+    
+    for i in range(len(user_list_characters)):
+        race_id = user_list_characters[i]["character_race_id"]
+        #user_list_characters[i]["character_race_id"] = 
+    return render_template("load_character.html", user_list_characters)
 
 
 # NOTE: code to pass stuff to webpage:
