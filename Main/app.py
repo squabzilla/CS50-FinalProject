@@ -468,6 +468,8 @@ def view_char_spells():
 
 @app.route("/save_button", methods=['GET', 'POST'])
 def save_button():
+    # NOTE: You don't need to be logged-in to click the button,
+    # you need to be logged in for it to WORK.
     session.modified = True
     if "pc_char" not in session:
         #pc_char = session["pc_char"]
