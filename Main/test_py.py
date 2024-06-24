@@ -220,7 +220,13 @@ def main():
     #test_check_if_int()
     #trying_test_if_in_racelist()
     #grab_a_spell()
-    select_sql_maxes()
+    #select_sql_maxes()
+    empty_list = []
+    print(f"length of empty list: {len(empty_list)}")
+    print("Iterating thru empty list:")
+    for i in range(len(empty_list)):
+        print("We are on iteration {i}")
+    print("Finished iterating thru empty list")
     return True
 main()
 
