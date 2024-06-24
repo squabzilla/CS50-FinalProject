@@ -195,7 +195,7 @@ class rpg_char_create:
         self.list_cantrips = []
         return True
     
-    def print_values(self):
+    def print_values(self): # dunno if this still works, but I don't think I use it anywhere
         var_race = db.execute("SELECT race_name FROM list_races WHERE race_id = ?", self.name)[0].get("race_name")
         var_class = db.execute("SELECT class_name FROM list_classes WHERE race_id = ?", self.name)[0].get("class_name")
         var_background = db.execute("SELECT background_name FROM list_backgrounds WHERE race_id = ?", self.name)[0].get("background_name")
@@ -209,18 +209,6 @@ class rpg_char_create:
         #self.background_id = background_id  # character_background_id,  INTEGER and FOREIGN KEY(character_background_id) REFERENCES  list_backgrounds(background_id)
         #self.char_level = char_level        # character_level           INTEGER DEFAULT 1 - class sets default values to 1
         #self.list_spells = list_spells
-        
-    def add_to_database(self):
-        return False
-        # # TODO
-        # db.execute("INSERT INTO list_characters (\
-            # character_user_id, character_name, character_race_id, character_class_id, character_level\
-            # ) VALUES(?, ?, ?, ?, ?)",
-            # self.user_id, self.name, self.race_id, self.class_id, self.char_level)
-        # spells_prepared_casters = [int(1),]
-        # for spell in self.list_spells:
-            # db.execute("INSERT INTO spellbook (\
-                # )")
 
 
 class rpg_char_load:
@@ -360,6 +348,21 @@ class rpg_char_load:
         print("If 1st-level spells, we inserted them")
             
         return True
+    
+    def load_existing_character(self, user_id, character_id):
+        char_basics = db.execute("SELECT * FROM list_characters WHERE character_id = ? AND user_id = ?", user_id, character_id)
+        if len(char_basics) != 1: return False
+        self.name
+        self.race_id
+        self.level1_class_id
+        self.background_id
+        self.char_level
+        self.str_score
+        self.dex_score
+        self.con_score
+        self.int_score
+        self.wis_score
+        self.cha_score
     
     def print_values(self):
         print(f"Name: {self.name}")
