@@ -275,7 +275,7 @@ db.execute("CREATE TABLE list_characters (\
     race_id INTEGER, \
     level1_class_id INTEGER, \
     background_id INTEGER, \
-    level INTEGER DEFAULT 1, \
+    char_level INTEGER DEFAULT 1, \
     char_str INTEGER, \
     char_dex INTEGER, \
     char_con INTEGER, \
@@ -405,13 +405,13 @@ print("DONE")
 
 
 # creates a many-to-many table that links a character with all their respective features/abilities/etc
-print("Creating specific_pc_features table...", end="")
-db.execute("CREATE TABLE specific_pc_features (\
-    specific_pc_character_id INTEGER, \
-    specific_pc_feature_id INTEGER, \
-    specific_pc_feature_order INTEGER, \
-    FOREIGN KEY(specific_pc_character_id) REFERENCES list_characters(character_id), \
-    FOREIGN KEY(specific_pc_feature_id) REFERENCES list_feature_titles(feature_title_id) \
+print("Creating character_features table...", end="")
+db.execute("CREATE TABLE character_features (\
+    character_id INTEGER, \
+    feature_id INTEGER, \
+    feature_order INTEGER, \
+    FOREIGN KEY(character_id) REFERENCES list_characters(character_id), \
+    FOREIGN KEY(feature_id) REFERENCES list_feature_titles(feature_title_id) \
     )")
 print("DONE")
 # NOTE: list order represents the order in which these items will appear in a character's list of features

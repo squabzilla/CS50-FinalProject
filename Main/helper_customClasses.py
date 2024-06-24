@@ -327,8 +327,8 @@ class rpg_char_load:
             #print(f"char_id: {char_id}")
             #print(f"self.features[i]: {self.features[i]}")
             #print(f"i: {i}")
-            db.execute("INSERT INTO specific_pc_features( \
-                    specific_pc_character_id, specific_pc_feature_id, specific_pc_feature_order) \
+            db.execute("INSERT INTO character_features( \
+                    character_id, feature_id, feature_order) \
                     VALUES (?, ?, ?)", char_id, self.features[i], i)
         #print("Inserted features")
         
