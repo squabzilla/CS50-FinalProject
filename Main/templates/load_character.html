@@ -50,7 +50,7 @@
           <form action="/delete_button" method="POST" class="form-control mx-auto w-auto border-0">
             <input type="hidden" name="char_id" value={{ character["character_id"] }} />
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-danger">Yes, delete {{ character["name"] }}.</button>
+            <button type="button" class="btn btn-danger" type="submit">Yes, delete {{ character["name"] }}.</button>
           </form>
         </div>
       </div>
