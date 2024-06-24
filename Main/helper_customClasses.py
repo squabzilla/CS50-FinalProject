@@ -351,10 +351,11 @@ class rpg_char_load:
                 caster_id = char_id
                 spell_id = self.list_1stlvlSpells[i]["spell_id"]
                 always_prepared = self.list_1stlvlSpells[i]["always_prepared"]
+                prepared = always_prepared
                 ability_id = self.list_1stlvlSpells[i]["spellcasting_ability_id"]
                 db.execute("INSERT INTO spellbook(caster_id, spell_id, \
-                    always_prepared, prepared) VALUES (?, ?, ?, ?)",
-                    caster_id, spell_id, always_prepared, ability_id)
+                    always_prepared, prepared, ability_id) VALUES (?, ?, ?, ?)",
+                    caster_id, spell_id, always_prepared, prepared, ability_id)
         print("If 1st-level spells, we inserted them")
             
         return True
