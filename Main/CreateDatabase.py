@@ -297,10 +297,10 @@ print("DONE")
 # also, you can't prepare a "spell_always_prepared" spell, and they don't count towards your spells-prepared limit (if you have one)
 print("Creating spellbook table and linking all foreign keys...", end="")
 db.execute("CREATE TABLE spellbook (\
-    spellbook_caster_id INTEGER, \
-    spellbook_spell_id INTEGER, \
-    spell_always_prepared INTEGER \
-    spell_prepared INTEGER, \
+    caster_id INTEGER, \
+    spell_id INTEGER, \
+    always_prepared INTEGER \
+    prepared INTEGER, \
     spellcasting_ability_id INT, \
     FOREIGN KEY(spellbook_caster_id) REFERENCES list_characters(character_id), \
     FOREIGN KEY(spellbook_spell_id) REFERENCES list_spells(spell_id), \
