@@ -528,19 +528,6 @@ def load_character():
         #flash("How the hell did you get here if you're not logged in?")
         #return redirect("/view_character")
     user_id = session["user_id"]
-    #user_list_characters = db.execute("SELECT * FROM list_characters WHERE character_user_id = ?", user_id)
-    #
-    # PRAGMA table_info(list_characters) results:
-    # character_id - integer, primary key
-    # character_user_id - foreign key
-    # character_name
-    # character_race_id <- need to turn IDs into names
-    # character_level1_class_id <- need to turn IDs into names
-    # character_background_id <- need to turn IDs into names
-    # character_level
-    # character_str, character_dex, character_con, character_int, character_wis, character_cha
-    # What do I actually want?
-    # character_id, character_name, character_race, character_class
     user_list_characters = db.execute("SELECT list_characters.character_id, list_characters.name, \
         list_races.race_name, list_classes.class_name FROM list_characters \
         INNER JOIN list_races ON list_characters.race_id = list_races.race_id \
@@ -558,6 +545,7 @@ def load_button():
         user_id = session["user_id"]
         pc_char = rpg_char_load()
         loading_success = pc_char.load_existing_character(user_id, character_id)
+        # NOTE: user_id isn't strictly necessary, but it makes sure users are only accessing their own characters
         # pass (character_id and user_id) to pc_char to load character
         # load_existing_character returns False if there's an error, or True otherwise
         if loading_success == False:
@@ -570,6 +558,16 @@ def load_button():
         flash("Error - invalid authorization (GET)")
         return redirect("/load_character")
 
+
+@app.route("/delete_button", methods=['GET', 'POST'])
+@login_required
+def delete_button():
+    if request.method == "POST":
+        character_id = request.form.get("char_id")
+        user_id = session["user_id"]
+        db.execute("DELETE FROM list_characters WHERE user_id = ? AND character_id = ?", user_id, character_id)
+        # NOTE: user_id isn't *strictly* necessary, but 
+        # IT WOULD BE VERY EASY TO DELETE ANOTHER USER'S CHARACTERS WITHOUT THAT CHECK
 
 # NOTE: code to pass stuff to webpage:
 #   PYTHON code for passing values I want display on webpage:
