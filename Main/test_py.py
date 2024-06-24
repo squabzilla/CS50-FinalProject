@@ -251,15 +251,20 @@ def list_users_characters_testing_2():
     print(f"Number of characters: {len(user_character_2)}")
 
 def user_max_spell_testing():
-    character_id = 0
+    character_id = 1
     max_spell_level = db.execute("SELECT MAX(spell_level) FROM list_spells JOIN spellbook USING (spell_id) WHERE caster_id = ?", character_id)
     max_spell_level = max_spell_level[0]["MAX(spell_level)"]
-    print(f"Max_spell_level is: {max_spell_level}")
+    #print(f"Max_spell_level is: {max_spell_level}")
     print(f"max_spell_level is of type: {type(max_spell_level)}")
     #if type(max_spell_level) is None:
         #print("Type is none.")
-    if max_spell_level is None:
-        print("Type is none.")
+    #if max_spell_level is None:
+        #print("Type is none.")
+    if max_spell_level is not None:
+        spells_0 = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 0 AND caster_id = ?;", character_id)
+        print("Spells 0:")
+        print(spells_0)
 
 def main():
     #test_check_type()
