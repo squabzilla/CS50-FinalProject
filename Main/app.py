@@ -532,7 +532,8 @@ def load_character():
     # character_str, character_dex, character_con, character_int, character_wis, character_cha
     # What do I actually want?
     # character_id, character_name, character_race, character_class
-    user_list_characters = db.execute("SELECT character_id, FROM list_characters WHERE character_user_id = ?", user_id)
+    user_list_characters = db.execute("SELECT character_id, character_name, character_race_id, character_level1_class_id\
+        FROM list_characters WHERE character_user_id = ?", user_id)
     return render_template("load_character.html", user_list_characters)
 
 
