@@ -20,26 +20,48 @@ def validate_name(var_name):
 
 
 def validate_race(var_race):
-    race_list = db.execute("SELECT race_id FROM list_races") # get-list
-    for i in range(len(race_list)):
-        race_list[i] = race_list[i].get("race_id")
     if type(var_race) is str:
         if var_race.isnumeric() == True:
-            race_race = int(var_race)
+            var_race = int(var_race)
         else:
             return False
     if type(var_race) is not int:
         return False
+    race_list = db.execute("SELECT race_id FROM list_races") # get-list
+    for i in range(len(race_list)):
+        race_list[i] = race_list[i].get("race_id")
     if var_race not in (race_list):
         return False
     return True
 
+def validate_class(var_class):
+    if type(var_class) is str:
+        if var_class.isnumeric() == True:
+            var_class = int(var_class)
+        else:
+            return False
+    if type(var_class) is not int:
+        return False
+    class_list = db.execute("SELECT class_id FROM list_classes")
+    for i in range(len(class_list)):
+        class_list[i] = class_list[i].get("class_id")
+    if var_class not in class_list:
+        return False
+    return True
+
 def validate_background(var_background):
+    if type(var_race) is str:
+        if var_race.isnumeric() == True:
+            var_race = int(var_race)
+        else:
+            return False
+    if type(var_race) is not int:
+        return False
     background_list = db.execute("SELECT background_id FROM list_backgrounds") # get-list
-    print("Item types in background_list:")
-    for item in background_list:
-        print(type(item))
     for i in range(len(background_list)):
-            background_list[i] = background_list[i].get("background_id") 
-            # turn inter-list-values into integer type
+        background_list[i] = background_list[i].get("background_id")
+    if var_background not in background_list:
+        return False
+    return True
+            
             
