@@ -547,6 +547,16 @@ def load_character():
     return render_template("load_character.html", user_list_characters=user_list_characters)
 
 
+@app.route("/load_button", methods=['GET', 'POST'])
+@login_required
+def load_button():
+    if request.method == "POST":
+        #character_id = request.form.get("character_name")
+        return True
+    else:
+        flash("Error - invalid authorization (GET)")
+        return redirect("/load_character")
+
 # NOTE: code to pass stuff to webpage:
 #   PYTHON code for passing values I want display on webpage:
 #1  json_dump = json.dumps(value_I_want_passed_to_webpage)
