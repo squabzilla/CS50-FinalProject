@@ -543,9 +543,7 @@ def load_character():
         list_races.race_name, list_classes.class_name FROM list_characters \
         INNER JOIN list_races ON list_characters.race_id = list_races.race_id \
         INNER JOIN list_classes ON list_characters.level1_class_id = list_classes.class_id \
-        WHERE character_user_id = ?;", user_id)
-    if user_list_characters == []:
-        return render_template("load_character.html", user_list_characters) # just end early if there's no items
+        WHERE list_characters.user_id = ?;", user_id)
     return render_template("load_character.html", user_list_characters)
 
 

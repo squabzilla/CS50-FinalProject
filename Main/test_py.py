@@ -228,13 +228,26 @@ def list_testing():
     print("user_list_characters:")
     print(user_list_characters)
 
+def list_users_characters_testing():
+    user_id = 1
+    user_list_characters = db.execute("SELECT list_characters.character_id, list_characters.name, \
+        list_races.race_name, list_classes.class_name FROM list_characters \
+        INNER JOIN list_races ON list_characters.race_id = list_races.race_id \
+        INNER JOIN list_classes ON list_characters.level1_class_id = list_classes.class_id \
+        WHERE list_characters.user_id = ?;", user_id)
+    print(f"Number of characters: {len(user_list_characters)}")
+    #for i in range(len(user_list_characters)):
+    for item in user_list_characters:
+        print(item)
+
 def main():
     #test_check_type()
     #test_check_if_int()
     #trying_test_if_in_racelist()
     #grab_a_spell()
     #select_sql_maxes()
-    list_testing()
+    #list_testing()
+    list_users_characters_testing()
     return True
 main()
 
