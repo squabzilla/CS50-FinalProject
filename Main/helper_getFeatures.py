@@ -100,11 +100,11 @@ def get_feature_text_no_title(feature_id):
     return feature_text
 
 def get_feature_title(feature_id):
-    sql_feature_title = db.execute("SELECT feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
+    sql_feature_title = db.execute("SELECT feature_format, feature_title_text FROM list_feature_titles WHERE feature_id = ?", feature_id)
     feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
-    if feature_title["feature_title_format"] == 0:
+    if feature_title["feature_format"] == 0:
         feature_title =  "<h3>" + feature_title["feature_title_text"] + "</h3>"
-    elif feature_title["feature_title_format"] == 1:
+    elif feature_title["feature_format"] == 1:
         feature_title =  "<h4>" + feature_title["feature_title_text"] + "</h4>"
     return feature_title
 
@@ -115,11 +115,11 @@ def get_feature_title(feature_id):
     # feature_title = get_feature_title(feature_id)
     # feature_text = get_feature_text_no_title(feature_id)
     # i = 1 # NOTE: This will be used to represent the header number 
-    # sql_feature_title = db.execute("SELECT feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
-    # sql_feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
-    # if sql_feature_title["feature_title_format"] == 0: 
+    # sql_feature_title = db.execute("SELECT feature_format, feature_title_text FROM list_feature_titles WHERE feature_id = ?", feature_id)
+    # sql_feature_title = sql_feature_title[0] # feature_id should be unique key, so we should only get one value
+    # if sql_feature_title["feature_format"] == 0: 
         # i = 3 #<h3>
-    # if sql_feature_title["feature_title_format"] == 1:
+    # if sql_feature_title["feature_format"] == 1:
         # i = 4 #<h4>
     
     # # Now for the html part
@@ -152,11 +152,11 @@ def start_accordion_feature(sql_feature_title, parent_feature = "featuresMasterA
     i = 1 # NOTE: This will be used to represent the header number 
     #sql_feature_title = db.execute("SELECT feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id)
     #sql_feature_title = sql_feature_title[0] # feature_title_id should be unique key, so we should only get one value
-    if sql_feature_title["feature_title_format"] == 0: 
+    if sql_feature_title["feature_format"] == 0: 
         i = 3 #<h3>
-    if sql_feature_title["feature_title_format"] == 1:
+    if sql_feature_title["feature_format"] == 1:
         i = 4 #<h4>
-    feature_id = sql_feature_title["feature_title_id"]
+    feature_id = sql_feature_title["feature_id"]
     feature_title = sql_feature_title["feature_title_text"]
     feature_text = get_feature_text_no_title(feature_id)
     # Now for the html part
@@ -186,27 +186,27 @@ def get_accordion_features(feature_id_list):
     last_feature_index = number_of_features - 1
     
     #for i in range(last_feature_index):
-        #sql_feature_title_list.append(db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id = ?", feature_id_list[i]))
-    sql_feature_title_list = db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id IN (?)", feature_id_list)
+        #sql_feature_title_list.append(db.execute("SELECT feature_id, feature_format, feature_title_text FROM list_feature_titles WHERE feature_id = ?", feature_id_list[i]))
+    sql_feature_title_list = db.execute("SELECT feature_id, feature_format, feature_title_text FROM list_feature_titles WHERE feature_id IN (?)", feature_id_list)
 
     #print("sql_feature_title_list:")
     #for line in sql_feature_title_list:
         #print(line)
     
-    parent_feature = f'featureCollapseID{sql_feature_title_list[0]["feature_title_id"]}'
+    parent_feature = f'featureCollapseID{sql_feature_title_list[0]["feature_id"]}'
     # declare parent_feature outside loop so value changes stick as I iterate thru loop, as well as set first "parent_feature" value I'll need
     
     text_list.append(f'<div class="accordion" id="featuresMasterAccordion" name="featuresMasterAccordion">\n') # start the master accordion that all items we loop thru will be inside
     for i in range(number_of_features):
         sql_feature_title = sql_feature_title_list[i]
-        list_level = sql_feature_title["feature_title_format"]
+        list_level = sql_feature_title["feature_format"]
         if i == 0:
             text_list.append(start_accordion_feature(sql_feature_title))
             continue # because of "continue" this is ONLY thing that happens on first iteration
         if list_level == 0: # meaning we're starting a new lvl-0 feature and need to end the old one
             text_list.append(end_accordion)
             text_list.append(start_accordion_feature(sql_feature_title))
-            parent_feature = f'featureCollapseID{sql_feature_title["feature_title_id"]}'
+            parent_feature = f'featureCollapseID{sql_feature_title["feature_id"]}'
         elif list_level == 1:
             text_list.append(start_accordion_feature(sql_feature_title, parent_feature))
             text_list.append(end_accordion) #each lvl-1 accordion-item starts *and* finishes its accordion item
