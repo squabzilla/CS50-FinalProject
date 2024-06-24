@@ -354,17 +354,62 @@ class rpg_char_load:
         if len(char_basics) != 1:
             return False
         char_basics = char_basics[0]
-        self.name
-        self.race_id
-        self.level1_class_id
-        self.background_id
-        self.char_level
-        self.str_score
-        self.dex_score
-        self.con_score
-        self.int_score
-        self.wis_score
-        self.cha_score
+        self.name = char_basics["name"]
+        self.race_id = char_basics["race_id"]
+        self.level1_class_id = char_basics["level1_class_id"]
+        self.background_id = char_basics["background_id"]
+        self.char_level = char_basics["char_level"]
+        self.str_score = char_basics["char_str"]
+        self.dex_score = char_basics["char_dex"]
+        self.con_score = char_basics["char_con"]
+        self.int_score = char_basics["char_int"]
+        self.wis_score = char_basics["char_wis"]
+        self.cha_score = char_basics["char_cha"]
+        
+        # Spells:
+        # self.list_1stlvlSpells[i] = {"spell_id": spell_id, "always_prepared": always_prepared, "spellcasting_ability_id": spellcasting_ability_id}
+        # sqlite> SELECT * FROM spellbook LIMIT 1;
+        # caster_id  spell_id  always_prepared  prepared  spellcasting_ability_id
+        # ---------  --------  ---------------  --------  -----------------------
+        # 1          186       1                1         3
+        # SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id)
+        # WHERE spell_level = 0 AND caster_id = 1;
+        max_spell_level = db.execute("SELECT MAX(spell_level) FROM list_spells JOIN spellbook USING (spell_id) WHERE caster_id = ?", character_id)
+        max_spell_level = max_spell_level[0]["MAX(spell_level)"]
+        
+        if max_spell_level is not None:
+            #spells_0 = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    #WHERE spell_level = 0 AND caster_id = ?;", character_id)
+            self.list_cantrips = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 0 AND caster_id = ?;", character_id)
+            if max_spell_level >= 1:
+                self.list_1stlvlSpells = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 1 AND caster_id = ?;", character_id)
+            if max_spell_level >= 2:
+                self.list_2ndlvlSpells = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 2 AND caster_id = ?;", character_id)
+            if max_spell_level >= 3:
+                self.list_3rdlvlSpells = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 3 AND caster_id = ?;", character_id)
+            if max_spell_level >= 4:
+                self.list_4thlvlSpells = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 4 AND caster_id = ?;", character_id)
+            if max_spell_level >= 5:
+                self.list_5thlvlSpells = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 5 AND caster_id = ?;", character_id)
+            if max_spell_level >= 6:
+                self.list_6thlvlSpells = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 6 AND caster_id = ?;", character_id)
+            if max_spell_level >= 7:
+                self.list_7thlvlSpells = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 7 AND caster_id = ?;", character_id)
+            if max_spell_level >= 8:
+                self.list_8thlvlSpells = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 8 AND caster_id = ?;", character_id)
+            if max_spell_level >= 9:
+                self.list_9thlvlSpells = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
+                                    WHERE spell_level = 9 AND caster_id = ?;", character_id)
+        
     
     def print_values(self):
         print(f"Name: {self.name}")
