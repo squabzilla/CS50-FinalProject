@@ -94,7 +94,7 @@ def get_feature_text_no_title(feature_id):
     sql_feature_text = db.execute("SELECT feature_format, feature_text_order, feature_text_description \
         FROM list_feature_descriptions \
         WHERE feature_id = ? \
-        AND feature_text_type NOT IN (0,1) \
+        AND feature_format NOT IN (0,1) \
         ORDER BY feature_text_order ASC;", feature_id)
     feature_text = format_class_feature_text(sql_feature_text)
     return feature_text
