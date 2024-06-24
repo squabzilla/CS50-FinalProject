@@ -310,7 +310,7 @@ print("DONE")
 
 
 #features_titles_list_csv
-# feature_title_id: item [1] of csv (currently)
+# feature_id: item [1] of csv (currently)
 # feature_title_text: item [9] of csv (currently)
 print("Creating list_feature_titles table...", end="")
 db.execute("CREATE TABLE list_feature_titles (\
@@ -328,12 +328,12 @@ db.execute("CREATE TABLE list_feature_titles (\
     # next(var_reader)
     # # skip header line, import everything
     # for var_row in var_reader:
-        # var_feature_title_id = var_row[0]
+        # var_feature_id_id = var_row[0]
         # var_feature_title_text = var_row[8]
         # db.execute("INSERT INTO list_feature_titles (\
-            # feature_title_id, feature_title_text \
+            # feature_id, feature_title_text \
             # ) VALUES(?, ?)", 
-            # var_feature_title_id, var_feature_title_text)
+            # var_feature_id_id, var_feature_title_text)
 # print("DONE")
 
 
@@ -411,7 +411,7 @@ db.execute("CREATE TABLE character_features (\
     feature_id INTEGER, \
     feature_order INTEGER, \
     FOREIGN KEY(character_id) REFERENCES list_characters(character_id), \
-    FOREIGN KEY(feature_id) REFERENCES list_feature_titles(feature_title_id) \
+    FOREIGN KEY(feature_id) REFERENCES list_feature_titles(feature_id) \
     )")
 print("DONE")
 # NOTE: list order represents the order in which these items will appear in a character's list of features
