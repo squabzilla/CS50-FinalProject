@@ -417,6 +417,7 @@ class rpg_char_load:
             if max_spell_level >= 9:
                 self.list_9thlvlSpells = db.execute("SELECT spell_id, always_prepared, spellcasting_ability_id FROM spellbook JOIN list_spells USING (spell_id) \
                                     WHERE spell_level = 9 AND caster_id = ?;", character_id)
+        return True
         
     
     def print_values(self):
