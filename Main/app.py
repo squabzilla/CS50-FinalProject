@@ -561,6 +561,7 @@ def load_button():
         if loading_success == False:
             flash("Error in character loading")
             return redirect("/load_character")
+        pc_char.print_values()
         session["pc_char"] = pc_char
         return redirect("/view_character")
     else:
