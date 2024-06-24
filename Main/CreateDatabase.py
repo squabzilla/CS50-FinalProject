@@ -78,7 +78,8 @@ print("DONE")
 print("Creating users table...", end="")
 db.execute("CREATE TABLE users (\
     user_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
-    username TEXT NOT NULL, hash TEXT NOT NULL\
+    username TEXT NOT NULL, \
+    hash TEXT NOT NULL\
     );")
 db.execute("CREATE UNIQUE INDEX usernames ON users (username);")
 print("DONE")
