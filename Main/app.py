@@ -552,8 +552,8 @@ def load_character():
 def load_button():
     if request.method == "POST":
         character_id = request.form.get("char_id")
-        print("Load button click!")
-        return True
+        print(f"Character id: {character_id}")
+        return redirect("/load_character")
     else:
         flash("Error - invalid authorization (GET)")
         return redirect("/load_character")
