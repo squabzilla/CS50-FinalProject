@@ -518,6 +518,11 @@ def save_character():
 @login_required
 def load_character():
     # TODO
+    load_not_ready = True
+    if load_not_ready == True:
+        flash("Error - not ready for load function.")
+        return redirect("/")
+    # NOTE: I don't think I want separate GET vs POST here?
     if request.method == "POST": # method post seems to be form submission or something?
         if "user_id" not in session:
             flash("How the hell did you get here if you're not logged in?")
