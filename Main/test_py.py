@@ -214,6 +214,19 @@ def select_sql_maxes():
     max = int(max)
     #max = max + 1
     print(max)
+    
+def list_testing():
+    empty_list = []
+    print(f"length of empty list: {len(empty_list)}")
+    print("Iterating thru empty list:")
+    for i in range(len(empty_list)):
+        print("We are on iteration {i}")
+    print("Finished iterating thru empty list")
+    user_id = 99
+    user_list_characters = db.execute("SELECT character_id, character_name, character_race_id, character_level1_class_id\
+        FROM list_characters WHERE character_user_id = ?;", user_id)
+    print("user_list_characters:")
+    print(user_list_characters)
 
 def main():
     #test_check_type()
@@ -221,12 +234,7 @@ def main():
     #trying_test_if_in_racelist()
     #grab_a_spell()
     #select_sql_maxes()
-    empty_list = []
-    print(f"length of empty list: {len(empty_list)}")
-    print("Iterating thru empty list:")
-    for i in range(len(empty_list)):
-        print("We are on iteration {i}")
-    print("Finished iterating thru empty list")
+    list_testing()
     return True
 main()
 
