@@ -468,11 +468,11 @@ def view_char_spells():
 @app.route("/save_button", methods=['GET', 'POST'])
 def save_button():
     session.modified = True
-    if "pc_char" in session:
-        pc_char = session["pc_char"]
+    if "pc_char" not in session:
+        #pc_char = session["pc_char"]
         #print("printing pc_char:")
         #print(pc_char)
-    else:
+        flash("Error - no character to save")
         return redirect("/view_character")
     if "user_id" in session:
         #flash("Whoops, we aren't ready for that yet!")
