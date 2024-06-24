@@ -351,7 +351,9 @@ class rpg_char_load:
     
     def load_existing_character(self, user_id, character_id):
         char_basics = db.execute("SELECT * FROM list_characters WHERE character_id = ? AND user_id = ?", user_id, character_id)
-        if len(char_basics) != 1: return False
+        if len(char_basics) != 1:
+            return False
+        char_basics = char_basics[0]
         self.name
         self.race_id
         self.level1_class_id
