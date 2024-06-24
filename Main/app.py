@@ -552,6 +552,7 @@ def load_character():
 def load_button():
     if request.method == "POST":
         character_id = request.form.get("char_id")
+        #print(f"Character id: {character_id}")
         user_id = session["user_id"]
         pc_char = rpg_char_load()
         loading_success = pc_char.load_existing_character(user_id, character_id)
@@ -561,8 +562,7 @@ def load_button():
             flash("Error in character loading")
             return redirect("/load_character")
         session["pc_char"] = pc_char
-        print(f"Character id: {character_id}")
-        return redirect("/load_character")
+        return redirect("/view_character")
     else:
         flash("Error - invalid authorization (GET)")
         return redirect("/load_character")
