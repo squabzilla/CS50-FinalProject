@@ -352,6 +352,7 @@ class rpg_char_load:
     def load_existing_character(self, user_id, character_id):
         char_basics = db.execute("SELECT * FROM list_characters WHERE character_id = ? AND user_id = ?", user_id, character_id)
         if len(char_basics) != 1:
+            print(f"Invalid number of characters: number of characters returned is: {len(char_basics)}")
             return False
         char_basics = char_basics[0]
         self.name = char_basics["name"]
@@ -370,6 +371,7 @@ class rpg_char_load:
         self.features = []
         var_features = db.execute("SELECT feature_id FROM character_features WHERE character_id = ? ORDER BY feature_order ASC", character_id)
         if len(var_features) == 0:
+            print("Error - no features found.")
             return False
         for i in range(len(var_features)):
             #var_features[i] = var_features[i]["feature_id"]
