@@ -251,7 +251,7 @@ def list_users_characters_testing_2():
     print(f"Number of characters: {len(user_character_2)}")
 
 def user_max_spell_testing():
-    character_id = 1
+    character_id = 0
     max_spell_level = db.execute("SELECT MAX(spell_level) FROM list_spells JOIN spellbook USING (spell_id) WHERE caster_id = ?", character_id)
     max_spell_level = max_spell_level[0]["MAX(spell_level)"]
     print(f"Max_spell_level is: {max_spell_level}")
