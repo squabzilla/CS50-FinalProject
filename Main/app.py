@@ -264,6 +264,7 @@ def get_class_dropdown():
 def get_backgrounds():
     background_list = db.execute("SELECT background_id, background_name FROM list_backgrounds")
     return jsonify(background_list)
+
 @app.route("/get_background_dropdown") # NOTE: Part of character creation
 def get_background_dropdown():
     background_list = db.execute("SELECT background_id, background_name FROM list_backgrounds")
@@ -303,7 +304,6 @@ def get_new_char_spells():
 def create_character():
     if request.method == 'POST':
         new_char = session["new_char"]
-        
         
         var_name = request.form.get("character_name")
         var_race_id = request.form.get("race_id")
@@ -364,7 +364,8 @@ def create_character():
                     new_char.set_amount_of_spells_known()
         # Step 7 - spells
         elif new_char.creation_step == 7:
-            if new_char.class_id == magic_classIDs.Cleric or new_char.class_id == magic_classIDs.Druid: # I'm not supporting these classes yet, but while I'm thinking of it, setting spells-known for spells-prepared casters
+            if new_char.class_id == magic_classIDs.Cleric or new_char.class_id == magic_classIDs.Druid:
+                # NOTE: I'm not supporting these classes yet, but while I'm thinking of it, setting spells-known for spells-prepared casters
                 var_leveled_spells_list = class_spell_IDs_by_spell_level(new_char.class_id, 1)
             if new_char.class_id == magic_classIDs.Ranger:
                 var_cantrips_list = class_spell_IDs_by_spell_level(new_char.class_id, 0)
@@ -538,6 +539,8 @@ def load_character():
         return render_template("load_character.html", user_list_characters) # just end early if there's no items
     # grab our list of races to reference
     race_list = db.execute("SELECT * FROM list_races;")
+    name = "soup"
+    level = "level"
     race_dict = {}
     for i in range(len(race_list)):
         race_dict.update({race_list[i]["race_id"]: race_list[i]["race_name"]})
