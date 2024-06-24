@@ -564,6 +564,7 @@ def load_button():
         flash("Error - invalid authorization (GET)")
         return redirect("/load_character")
 
+
 # NOTE: code to pass stuff to webpage:
 #   PYTHON code for passing values I want display on webpage:
 #1  json_dump = json.dumps(value_I_want_passed_to_webpage)
