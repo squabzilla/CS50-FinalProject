@@ -418,26 +418,6 @@ def view_character():
         flash("Oops - character not created!")
         return redirect("/character_creator")
 
-@app.route("/save_button", methods=['GET', 'POST'])
-def save_button():
-    session.modified = True
-    if "pc_char" in session:
-        pc_char = session["pc_char"]
-        print("printing pc_char:")
-        print(pc_char)
-    if "user_id" in session:
-        flash("Whoops, we aren't ready for that yet!")
-        return redirect("/view_character")
-    else:
-        flash("You must be logged-on to do this.")
-        return redirect("/login")
-
-@app.route("/load_character", methods=['GET', 'POST'])
-@login_required
-def load_character():
-    # TODO
-    return render_template("load_character.html")
-
 
 @app.route("/view_char_features", methods=['GET', 'POST']) # NOTE: Part of character viewing
 def view_char_features():
@@ -457,6 +437,7 @@ def view_char_features():
         #features_text = get_accordion_features_2(pc_char.features)
         #return jsonify(features_text)
     return jsonify(features_text)
+
 
 @app.route("/view_char_spells")
 def view_char_spells():
@@ -482,6 +463,39 @@ def view_char_spells():
         elif spell_level == "9": spell_list = pc_char.list_9thlvlSpells
         spells_text = get_accordion_spells(spell_list, parent_feature)
     return jsonify(spells_text)
+
+
+@app.route("/save_button", methods=['GET', 'POST'])
+def save_button():
+    session.modified = True
+    if "pc_char" in session:
+        pc_char = session["pc_char"]
+        #print("printing pc_char:")
+        #print(pc_char)
+    else:
+        return redirect("/view_character")
+    if "user_id" in session:
+        flash("Whoops, we aren't ready for that yet!")
+        return redirect("/view_character")
+    else:
+        flash("You must be logged-on to do this.")
+        return redirect("/login", code=307)
+    
+    
+@app.route("/save_character", methods=["POST"])
+@login_required
+def register():
+    if request.method == "POST":
+        print("Hello world")
+        flash("You got to the save_character page")
+        return redirect("/view_character")
+
+
+@app.route("/load_character", methods=['GET', 'POST'])
+@login_required
+def load_character():
+    # TODO
+    return render_template("load_character.html")
 
 
 # NOTE: code to pass stuff to webpage:
