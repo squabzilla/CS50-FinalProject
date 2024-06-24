@@ -256,7 +256,9 @@ def user_max_spell_testing():
     max_spell_level = max_spell_level[0]["MAX(spell_level)"]
     print(f"Max_spell_level is: {max_spell_level}")
     print(f"max_spell_level is of type: {type(max_spell_level)}")
-    if type(max_spell_level) is None:
+    #if type(max_spell_level) is None:
+        #print("Type is none.")
+    if max_spell_level is None:
         print("Type is none.")
 
 def main():
