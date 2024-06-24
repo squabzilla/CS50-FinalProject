@@ -245,6 +245,10 @@ def list_users_characters_testing_2():
     character_id = 1
     user_character = db.execute("SELECT * FROM list_characters WHERE character_id = ? AND user_id = ?", user_id, character_id)
     print(f"Number of characters: {len(user_character)}")
+    user_id_2 = 0
+    character_id_2 = 0
+    user_character_2 = db.execute("SELECT * FROM list_characters WHERE character_id = ? AND user_id = ?", user_id_2, character_id_2)
+    print(f"Number of characters: {len(user_character_2)}")
 
 def main():
     #test_check_type()
