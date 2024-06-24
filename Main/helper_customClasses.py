@@ -369,6 +369,8 @@ class rpg_char_load:
         # Features:
         self.features = []
         var_features = db.execute("SELECT feature_id FROM character_features WHERE character_id = ? ORDER BY feature_order ASC", character_id)
+        if len(var_features) == 0:
+            return False
         for i in range(len(var_features)):
             #var_features[i] = var_features[i]["feature_id"]
             self.features.append(var_features[i]["feature_id"])
