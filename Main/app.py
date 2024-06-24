@@ -568,6 +568,11 @@ def delete_button():
         db.execute("DELETE FROM list_characters WHERE user_id = ? AND character_id = ?", user_id, character_id)
         # NOTE: user_id isn't *strictly* necessary, but 
         # IT WOULD BE VERY EASY TO DELETE ANOTHER USER'S CHARACTERS WITHOUT THAT CHECK
+        flash("Character deleted!")
+        return redirect("/load_character")
+    else:
+        flash("Error - invalid authorization (GET)")
+        return redirect("/load_character")
 
 # NOTE: code to pass stuff to webpage:
 #   PYTHON code for passing values I want display on webpage:
