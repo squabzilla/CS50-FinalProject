@@ -366,6 +366,14 @@ class rpg_char_load:
         self.wis_score = char_basics["char_wis"]
         self.cha_score = char_basics["char_cha"]
         
+        # Features:
+        self.features = []
+        var_features = db.execute("SELECT feature_id FROM character_features WHERE character_id = ? ORDER BY feature_order ASC", character_id)
+        for i in range(len(var_features)):
+            #var_features[i] = var_features[i]["feature_id"]
+            self.features.append(var_features[i]["feature_id"])
+        #SELECT feature_id FROM character_features WHERE character_id = 1 ORDER BY feature_order ASC;
+        
         # Spells:
         # self.list_1stlvlSpells[i] = {"spell_id": spell_id, "always_prepared": always_prepared, "spellcasting_ability_id": spellcasting_ability_id}
         # sqlite> SELECT * FROM spellbook LIMIT 1;
