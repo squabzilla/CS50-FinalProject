@@ -405,7 +405,7 @@ print("DONE")
 
 
 # creates a many-to-many table that links a character with all their respective features/abilities/etc
-print("Creating individual_character_features table...", end="")
+print("Creating specific_pc_features table...", end="")
 db.execute("CREATE TABLE specific_pc_features (\
     specific_pc_character_id INTEGER, \
     specific_pc_feature_id INTEGER, \

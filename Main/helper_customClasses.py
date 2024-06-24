@@ -292,18 +292,38 @@ class rpg_char_load:
             return False
         return True
         
-    def save_to_database(self, user_id):
+    def save_new_character_to_database(self, user_id):
         #INSERT INTO prod_mast(prod_name, prod_rate, prod_qc)
         #VALUES('Gulha', 55, 'Problems');
-        # insert into-characters db
-        db.execute("INSERT INTO list_characters(character_user_id, character_name, \
-                    character_race_id, \character_level1_class, character_background_id, \
-                    character_level, character_str, character_dex, character_con, \
-                    character_int, character_wis, character_cha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                    user_id, self.name, self.race_id, self.level1_class_id, self.background_id,
+        
+        # NOTE: first we need our character_id:
+        max_char_id = db.execute("SELECT MAX(character_id) FROM list_characters")
+        max_char_id = max_char_id[0]["MAX(character_id)"]
+        if max_char_id == None:
+            max_char_id = -1
+        char_id = max_char_id + 1
+        
+        # creating actual character in SQL DB
+        # insert into: list_characters table
+        # 270 in CreateDatabase.py
+        db.execute("INSERT INTO list_characters(character_id, character_user_id, character_name, \
+                    character_race_id, character_level1_class, character_background_id, character_level, \
+                    character_str, character_dex, character_con, character_int, character_wis, character_cha) \
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                    char_id, user_id, self.name, self.race_id, self.level1_class_id, self.background_id,
                     self.char_level, self.str_score, self.dex_score, self.con_score, 
                     self.int_score, self.wis_score, self.cha_score)
         print("Inserted into list_characters table")
+        
+        # inserting features into SQL DB
+        # insert into: specific_pc_features table
+        # 407 in CreateDatabase.py
+        for i in range(len(self.features)):
+            db.execute("INSERT INTO specific_pc_features( \
+                    specific_pc_character_id, specific_pc_feature_id, specific_pc_feature_order \
+                    VALUES (?, ?, ?)", char_id, self.features[i], i)
+        
+        # spellbook - 292 in db
         return True
     
     def print_values(self):

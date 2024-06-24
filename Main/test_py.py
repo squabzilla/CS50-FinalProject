@@ -204,12 +204,23 @@ def dicts_and_lists():
     #sql_feature_title_list = db.execute("SELECT feature_title_id, feature_title_format, feature_title_text FROM list_feature_titles WHERE feature_title_id IN (81,82,83,84,85,86,87);")
     print(sql_feature_title_list)
 
+def select_sql_maxes():
+    max = db.execute("SELECT MAX(character_id) FROM list_characters")
+    print(f"Value of max is: {max}")
+    max = max[0]["MAX(character_id)"]
+    print(f"Value of max is: {max}")
+    print(f"Type of max is now: {type(max)}")
+    if max == None: max = 0
+    max = int(max)
+    #max = max + 1
+    print(max)
+
 def main():
     #test_check_type()
     #test_check_if_int()
     #trying_test_if_in_racelist()
     #grab_a_spell()
-    dicts_and_lists()
+    select_sql_maxes()
     return True
 main()
 
