@@ -565,6 +565,12 @@ def delete_button():
     if request.method == "POST":
         character_id = request.form.get("char_id")
         user_id = session["user_id"]
+        character_id = db.execute("SELECT character_id FROM list_characters WHERE user_id = ? AND character_id = ?", user_id, character_id)
+        # NOTE: IMPORTANT: Confirm that user_id belongs to user!
+        if len(character_id) != 1:
+            flash("Error - cannot authorize character_id")
+            return redirect("/load_character")
+        character_id = character_id[0]["character_id"]
         db.execute("DELETE FROM list_characters WHERE user_id = ? AND character_id = ?", user_id, character_id)
         # NOTE: user_id isn't *strictly* necessary, but 
         # IT WOULD BE VERY EASY TO DELETE ANOTHER USER'S CHARACTERS WITHOUT THAT CHECK
