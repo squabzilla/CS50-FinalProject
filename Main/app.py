@@ -514,7 +514,23 @@ def save_character():
 @login_required
 def load_character():
     # TODO
-    return render_template("load_character.html")
+    if request.method == "POST":
+        if "user_id" not in session:
+            flash("How the hell did you get here if you're not logged in?")
+            return redirect("/view_character")
+        user_id = session["user_id"]
+    user_list_characters = db.execute("SELECT * FROM list_characters WHERE character_user_id = ?", user_id)
+    #
+    # PRAGMA table_info(list_characters) results:
+    # character_id - integer, primary key
+    # character_user_id - foreign key
+    # character_name
+    # character_race_id <- need to turn IDs into names
+    # character_level1_class_id <- need to turn IDs into names
+    # character_background_id <- need to turn IDs into names
+    # character_level
+    # character_str, character_dex, character_con, character_int, character_wis, character_cha
+    return render_template("load_character.html", user_list_characters)
 
 
 # NOTE: code to pass stuff to webpage:
