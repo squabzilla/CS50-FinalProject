@@ -308,7 +308,7 @@ class rpg_char_load:
         # creating actual character in SQL DB
         # insert into: list_characters table
         # 270 in CreateDatabase.py
-        ###### RuntimeError: table list_characters has no column named character_level1_class
+        # DELETE FROM list_characters;
         db.execute("INSERT INTO list_characters(character_id, character_user_id, character_name, \
                     character_race_id, character_level1_class_id, character_background_id, character_level, \
                     character_str, character_dex, character_con, character_int, character_wis, character_cha) \
@@ -321,6 +321,7 @@ class rpg_char_load:
         # inserting features into SQL DB
         # insert into: specific_pc_features table
         # 407 in CreateDatabase.py
+        ###### RuntimeError: near "VALUES": syntax error
         for i in range(len(self.features)):
             db.execute("INSERT INTO specific_pc_features( \
                     specific_pc_character_id, specific_pc_feature_id, specific_pc_feature_order \
