@@ -250,6 +250,15 @@ def list_users_characters_testing_2():
     user_character_2 = db.execute("SELECT * FROM list_characters WHERE character_id = ? AND user_id = ?", user_id_2, character_id_2)
     print(f"Number of characters: {len(user_character_2)}")
 
+def user_max_spell_testing():
+    character_id = 1
+    max_spell_level = db.execute("SELECT MAX(spell_level) FROM list_spells JOIN spellbook USING (spell_id) WHERE caster_id = ?", character_id)
+    max_spell_level = max_spell_level[0]["MAX(spell_level)"]
+    print(f"Max_spell_level is: {max_spell_level}")
+    print(f"max_spell_level is of type: {type(max_spell_level)}")
+    if type(max_spell_level) is None:
+        print("Type is none.")
+
 def main():
     #test_check_type()
     #test_check_if_int()
@@ -257,7 +266,8 @@ def main():
     #grab_a_spell()
     #select_sql_maxes()
     #list_testing()
-    list_users_characters_testing_2()
+    #list_users_characters_testing_2()
+    user_max_spell_testing()
     return True
 main()
 
