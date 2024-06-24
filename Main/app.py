@@ -554,9 +554,12 @@ def load_button():
         character_id = request.form.get("char_id")
         user_id = session["user_id"]
         pc_char = rpg_char_load()
-        # pass character_id and user_id to pc_char and load
-        
-        
+        loading_success = pc_char.load_existing_character(user_id, character_id)
+        # pass (character_id and user_id) to pc_char to load character
+        # load_existing_character returns False if there's an error, or True otherwise
+        if loading_success == False:
+            flash("Error in character loading")
+            return redirect("/load_character")
         session["pc_char"] = pc_char
         print(f"Character id: {character_id}")
         return redirect("/load_character")
