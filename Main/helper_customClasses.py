@@ -292,9 +292,18 @@ class rpg_char_load:
             return False
         return True
         
-    def save_to_database(self):
+    def save_to_database(self, user_id):
         #INSERT INTO prod_mast(prod_name, prod_rate, prod_qc)
         #VALUES('Gulha', 55, 'Problems');
+        # insert into-characters db
+        db.execute("INSERT INTO list_characters(character_user_id, character_name, \
+                    character_race_id, \character_level1_class, character_background_id, \
+                    character_level, character_str, character_dex, character_con, \
+                    character_int, character_wis, character_cha) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                    user_id, self.name, self.race_id, self.level1_class_id, self.background_id,
+                    self.char_level, self.str_score, self.dex_score, self.con_score, 
+                    self.int_score, self.wis_score, self.cha_score)
+        print("Inserted into list_characters table")
         return True
     
     def print_values(self):

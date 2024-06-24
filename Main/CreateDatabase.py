@@ -179,7 +179,6 @@ with open(race_list_csv, "r") as var_file:
 print("DONE")
 
 # create list of abilities and add values
-#TODO: UPDATE table columns
 print("Creating and populating list_abilities table...", end="")
 db.execute("CREATE TABLE list_abilities(\
     ability_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,\
