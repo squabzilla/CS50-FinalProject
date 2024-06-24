@@ -101,15 +101,16 @@ class rpg_char_create:
             if type(var_int) is str: var_int = int(var_int)
             if type(var_wis) is str: var_wis = int(var_wis)
             if type(var_cha) is str: var_cha = int(var_cha)
-        
-        self.str_score = var_str
-        self.dex_score = var_dex
-        self.con_score = var_con
-        self.int_score = var_int
-        self.wis_score = var_wis
-        self.cha_score = var_cha
-        self.creation_step += 1
-        return True
+            self.str_score = var_str
+            self.dex_score = var_dex
+            self.con_score = var_con
+            self.int_score = var_int
+            self.wis_score = var_wis
+            self.cha_score = var_cha
+            self.creation_step += 1
+            return True
+        else:
+            return False
     
     # Step 5: Set Background
     def set_background_id(self, var_background_id):
