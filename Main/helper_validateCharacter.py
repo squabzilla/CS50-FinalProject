@@ -80,4 +80,10 @@ def check_ability_scores(var_str, var_dex, var_con, var_int, var_wis, var_cha):
     var_sum = var_str + var_dex + var_con + var_int + var_wis + var_cha
     if var_sum != 80:
         return False
-    
+    if var_str < 5 or var_str > 18: return False
+    if var_dex < 5 or var_dex > 18: return False
+    if var_con < 5 or var_con > 18: return False
+    if var_int < 5 or var_int > 18: return False
+    if var_wis < 5 or var_wis > 18: return False
+    if var_cha < 5 or var_cha > 18: return False
+    return True
