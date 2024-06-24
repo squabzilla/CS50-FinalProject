@@ -133,6 +133,8 @@ class rpg_char_create:
         background_list = db.execute("SELECT background_id FROM list_backgrounds") # get-list
         for i in range(len(background_list)):
             background_list[i] = background_list[i].get("background_id") # turn inter-list-values into integer type
+        print(f"var_background_id: {var_background_id} is {type(var_background_id)}")
+        print(f"background_list: {background_list}")
         if var_background_id in background_list: # check for match
             self.background_id = var_background_id
             self.creation_step += 1
