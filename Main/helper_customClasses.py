@@ -211,16 +211,18 @@ class rpg_char_create:
         #self.list_spells = list_spells
         
     def add_to_database(self):
-        # TODO
-        db.execute("INSERT INTO list_characters (\
-            character_user_id, character_name, character_race_id, character_class_id, character_level\
-            ) VALUES(?, ?, ?, ?, ?)",
-            self.user_id, self.name, self.race_id, self.class_id, self.char_level)
+        return False
+        # # TODO
+        # db.execute("INSERT INTO list_characters (\
+            # character_user_id, character_name, character_race_id, character_class_id, character_level\
+            # ) VALUES(?, ?, ?, ?, ?)",
+            # self.user_id, self.name, self.race_id, self.class_id, self.char_level)
         # spells_prepared_casters = [int(1),]
         # for spell in self.list_spells:
             # db.execute("INSERT INTO spellbook (\
                 # )")
-                
+
+
 class rpg_char_load:
     def __init__(self, name = "", 
                  race_id = -1, level1_class_id = -1, background_id = -1, char_level = 0,
@@ -322,8 +324,33 @@ class rpg_char_load:
             db.execute("INSERT INTO specific_pc_features( \
                     specific_pc_character_id, specific_pc_feature_id, specific_pc_feature_order \
                     VALUES (?, ?, ?)", char_id, self.features[i], i)
+        print("Inserted features")
         
         # spellbook - 292 in db
+        # spells should currently be in format:
+        # self.list_1stlvlSpells[i] = {"spell_id": spell_id, "always_prepared": always_prepared, "spellcasting_ability_id": spellcasting_ability_id}
+        if self.list_cantrips != []:
+            for i in range(len(self.list_cantrips)):
+                caster_id = char_id
+                spell_id = self.list_cantrips[i]["spell_id"]
+                always_prepared = self.list_cantrips[i]["always_prepared"]
+                ability_id = self.list_cantrips[i]["spellcasting_ability_id"]
+                db.execute("INSERT INTO spellbook(spellbook_caster_id, spellbook_spell_id, \
+                    spellbook_always_prepared, spellcasting_ability_id VALUES (?, ?, ?)",
+                    caster_id, spell_id, always_prepared, ability_id)
+        print("If cantrips, we inserted them")
+        
+        if self.list_1stlvlSpells != []:
+            for i in range(len(self.list_1stlvlSpells)):
+                caster_id = char_id
+                spell_id = self.list_1stlvlSpells[i]["spell_id"]
+                always_prepared = self.list_1stlvlSpells[i]["always_prepared"]
+                ability_id = self.list_1stlvlSpells[i]["spellcasting_ability_id"]
+                db.execute("INSERT INTO spellbook(spellbook_caster_id, spellbook_spell_id, \
+                    spellbook_always_prepared, spellcasting_ability_id VALUES (?, ?, ?)",
+                    caster_id, spell_id, always_prepared, ability_id)
+        print("If 1st-level spells, we inserted them")
+            
         return True
     
     def print_values(self):

@@ -489,15 +489,20 @@ def save_button():
 @login_required
 def save_character():
     if request.method == "POST":
-        if "pc_char" not in session:
+        if "user_id" not in session:
+            flash("How the hell did you get here if you're not logged in?")
+            return redirect("/view_character")
+            
+        elif "pc_char" not in session:
             flash("Error - no character to save")
             return redirect("/view_character")
         else:
+            user_id = session["user_id"]
             pc_char = session["pc_char"]
             if pc_char.validate_basics == False:
                 flash("Error - invalid character")
                 return redirect("/view_character")
-            else: pc_char.save_to_database()
+            else: pc_char.save_new_character_to_database(user_id)
             #if "user_id" in session: # pop their old character once one *starts* making a new one
                 #session.pop("user_id")
 
