@@ -308,8 +308,9 @@ class rpg_char_load:
         # creating actual character in SQL DB
         # insert into: list_characters table
         # 270 in CreateDatabase.py
+        ###### RuntimeError: table list_characters has no column named character_level1_class
         db.execute("INSERT INTO list_characters(character_id, character_user_id, character_name, \
-                    character_race_id, character_level1_class, character_background_id, character_level, \
+                    character_race_id, character_level1_class_id, character_background_id, character_level, \
                     character_str, character_dex, character_con, character_int, character_wis, character_cha) \
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                     char_id, user_id, self.name, self.race_id, self.level1_class_id, self.background_id,
