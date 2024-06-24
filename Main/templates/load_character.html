@@ -15,9 +15,18 @@
     </thead>
     <tbody>
         {% if user_list_characters != [] %}
-        {% for item in user_list_characters %}
+        {% for character in user_list_characters %}
         <tr>
-            <td>{% user_list_characters %}
+            <td>{{ character["name"] }}</td>
+            <td>{{ character["race_name"] }}</td>
+            <td>{{ character["class_name"] }}</td>
+            <td>
+              <form action="/save_button" method="POST" class="form-control mx-auto w-auto border-0">
+                <input type="hidden" value={{ character["character_id"] }} />
+                <input type="text" value={{ character["character_id"] }} />
+                <button class="btn btn-primary" type="submit">Save Character!</button>
+              </form>
+            </td>
         </tr>
         {% endfor %}
         {% endif %}

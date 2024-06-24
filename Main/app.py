@@ -544,7 +544,7 @@ def load_character():
         INNER JOIN list_races ON list_characters.race_id = list_races.race_id \
         INNER JOIN list_classes ON list_characters.level1_class_id = list_classes.class_id \
         WHERE list_characters.user_id = ?;", user_id)
-    return render_template("load_character.html", user_list_characters)
+    return render_template("load_character.html", user_list_characters=user_list_characters)
 
 
 # NOTE: code to pass stuff to webpage:
