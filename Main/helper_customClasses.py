@@ -285,7 +285,7 @@ class rpg_char_load:
         self.race_id = class_to_copy.race_id
         self.level1_class_id = class_to_copy.class_id
         self.background_id = class_to_copy.background_id
-        self.char_level = class_to_copy.self.char_level
+        self.char_level = class_to_copy.char_level
         
         self.str_score = class_to_copy.str_score
         self.dex_score = class_to_copy.dex_score
