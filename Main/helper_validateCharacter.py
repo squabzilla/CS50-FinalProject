@@ -46,10 +46,10 @@ def validate_class(var_class):
     return True
 
 def validate_background(var_background):
-    if type(var_race) is str:
-        if var_race.isnumeric() == True:
-            var_race = int(var_race)
-    if type(var_race) is not int:
+    if type(var_background) is str:
+        if var_background.isnumeric() == True:
+            var_background = int(var_background)
+    if type(var_background) is not int:
         return False
     background_list = db.execute("SELECT background_id FROM list_backgrounds") # get-list
     for i in range(len(background_list)):
