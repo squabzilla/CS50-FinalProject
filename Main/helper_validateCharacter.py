@@ -44,11 +44,16 @@ def validate_background(var_background):
             background_list[i] = background_list[i].get("background_id") 
             # turn inter-list-values into integer type
             
-def testing():
+def main():
+    background_list = db.execute("SELECT background_id FROM list_backgrounds") # get-list
+    print("Item types in background_list:")
+    for item in background_list:
+        item = item.get("background_id") 
+        print(type(item))
     var_list = ['0','1','2','3','4','5','6']
     if 3 in var_list:
         print("match")
     else:
         print("no match")
         
-testing()
+main()
