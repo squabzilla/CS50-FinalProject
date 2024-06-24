@@ -11,7 +11,8 @@
     {% if new_char.creation_step==1 %}
         <p> We need a name </p>
         <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0 border-0">
-            <input autocomplete="off" autofocus class="form-control w-auto" id="character_name" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">
+            <!--<input autocomplete="off" autofocus class="form-control w-auto" id="character_name" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">-->
+            <input autocomplete="off" autofocus class="form-control w-auto" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
 
