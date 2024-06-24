@@ -449,7 +449,7 @@ def view_char_spells():
     # let response = await fetch('/search?q=' + input.value);
     # val1=a&val2=b
     if "pc_char" in session:
-        pc_char = session["new_char"]
+        pc_char = session["pc_char"]
         if spell_level not in ["0","1","2","3","4","5","6","7","8","9"]: return spells_text
         elif spell_level == "0": spell_list = pc_char.list_cantrips
         elif spell_level == "1": spell_list = pc_char.list_1stlvlSpells
