@@ -240,16 +240,17 @@ class rpg_char_create:
                 
 class rpg_char_load:
     def __init__(self, name = "", 
-                 race_id = -1, level1_class_id = -1, background_id = -1,  
+                 race_id = -1, level1_class_id = -1, background_id = -1, char_level = 0,
                  race_name = "", level1_class_name = "", background_name = "", 
                  str_score = 0, dex_score = 0, con_score = 0, int_score = 0, wis_score = 0, cha_score = 0,
-                 char_level = 0, features = [],
+                 features = [],
                  list_cantrips = [], list_1stlvlSpells = [], list_2ndlvlSpells = [], list_3rdlvlSpells = [], list_4thlvlSpells = [],
                  list_5thlvlSpells = [], list_6thlvlSpells = [], list_7thlvlSpells = [], list_8thlvlSpells = [], list_9thlvlSpells = []):
         self.name = name
         self.race_id = race_id
         self.level1_class_id = level1_class_id
         self.background_id = background_id
+        self.char_level = char_level
         self.str_score = str_score
         self.dex_score = dex_score
         self.con_score = con_score
@@ -259,7 +260,6 @@ class rpg_char_load:
         self.race_name = race_name,
         self.level1_class_name = level1_class_name,
         self.background_name = background_name
-        self.char_level = char_level
         self.features = features
         self.list_cantrips = list_cantrips
         self.list_1stlvlSpells = list_1stlvlSpells
@@ -280,39 +280,31 @@ class rpg_char_load:
         self.background_name = db.execute("SELECT background_name FROM list_backgrounds WHERE background_id = ?", self.background_id)
         self.background_name = self.background_name[0]["background_name"]
     
-    # Charisma:
-        # 01-Bard
-        # 09-Sorcerer
-        # 10-Warlock
-    # Wisdom:
-        # 02-Cleric
-        # 03-Druid
-        # 07-Ranger
-    # Intelligence:
-        # 11-Wizard
-    
     def rpg_char_match_values(self, class_to_copy):
+        self.name = class_to_copy.name
+        self.race_id = class_to_copy.race_id
+        self.level1_class_id = class_to_copy.class_id
+        self.background_id = class_to_copy.background_id
+        self.char_level = class_to_copy.self.char_level
+        
         self.str_score = class_to_copy.str_score
         self.dex_score = class_to_copy.dex_score
         self.con_score = class_to_copy.con_score
         self.int_score = class_to_copy.int_score
         self.wis_score = class_to_copy.wis_score
         self.cha_score = class_to_copy.cha_score
-        self.char_level = class_to_copy.char_level
-        self.name = class_to_copy.name
-        self.race_id = class_to_copy.race_id
-        self.level1_class_id = class_to_copy.class_id
-        self.background_id = class_to_copy.background_id
+        
         self.features = class_to_copy.features
         self.list_cantrips = class_to_copy.list_cantrips
         self.list_1stlvlSpells = class_to_copy.list_1stlvlSpells
         # NOTE: Don't worry about how to sort spells
         # Spells will only be sorted if we load character from db
     
+    
     def print_values(self):
         print(f"Name: {self.name}")
         print(f"race_id: {self.race_id}")
-        print(f"class_id: {self.class_id}")
+        print(f"class_id: {self.level1_class_id}")
         print(f"background_id: {self.background_id}")
         print(f"str_score: {self.str_score}")
         print(f"dex_score: {self.dex_score}")
