@@ -522,9 +522,9 @@ def load_character():
     # TODO
     # NOTE: I don't think I want separate GET vs POST here?
     #if request.method == "POST": # method post seems to be form submission or something?
-    if "user_id" not in session:
-        flash("How the hell did you get here if you're not logged in?")
-        return redirect("/view_character")
+    #if "user_id" not in session:
+        #flash("How the hell did you get here if you're not logged in?")
+        #return redirect("/view_character")
     user_id = session["user_id"]
     #user_list_characters = db.execute("SELECT * FROM list_characters WHERE character_user_id = ?", user_id)
     #
@@ -552,10 +552,12 @@ def load_character():
 def load_button():
     if request.method == "POST":
         character_id = request.form.get("char_id")
+        user_id = session["user_id"]
         pc_char = rpg_char_load()
+        # pass character_id and user_id to pc_char and load
+        
+        
         session["pc_char"] = pc_char
-        
-        
         print(f"Character id: {character_id}")
         return redirect("/load_character")
     else:
