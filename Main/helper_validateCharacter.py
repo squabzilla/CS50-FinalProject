@@ -22,8 +22,7 @@ def validate_name(var_name):
 def validate_race(var_race):
     race_list = db.execute("SELECT race_id FROM list_races") # get-list
     for i in range(len(race_list)):
-        race_list[i] = int(race_list[i].get("race_id"))
-        # turn inter-list-values into integer type
+        race_list[i] = race_list[i].get("race_id")
     if type(var_race) is str:
         if var_race.isnumeric() == True:
             race_race = int(var_race)
@@ -44,16 +43,3 @@ def validate_background(var_background):
             background_list[i] = background_list[i].get("background_id") 
             # turn inter-list-values into integer type
             
-def main():
-    background_list = db.execute("SELECT background_id FROM list_backgrounds") # get-list
-    print("Item types in background_list:")
-    for item in background_list:
-        item = item.get("background_id") 
-        print(type(item))
-    var_list = ['0','1','2','3','4','5','6']
-    if 3 in var_list:
-        print("match")
-    else:
-        print("no match")
-        
-main()

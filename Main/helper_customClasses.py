@@ -84,7 +84,7 @@ class rpg_char_create:
     def set_class_id(self, var_class_id):
         class_list = db.execute("SELECT class_id FROM list_classes") # get-list
         for i in range(len(class_list)):
-            class_list[i] = int(class_list[i].get("class_id")) # turn inter-list-values into integer type
+            class_list[i] = class_list[i].get("class_id")
         if var_class_id in class_list: # check for match
             self.class_id = var_class_id
             self.creation_step += 1
