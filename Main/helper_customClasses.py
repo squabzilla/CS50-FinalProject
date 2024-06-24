@@ -317,14 +317,15 @@ class rpg_char_load:
                     self.char_level, self.str_score, self.dex_score, self.con_score, 
                     self.int_score, self.wis_score, self.cha_score)
         print("Inserted into list_characters table")
-        
+        print("self.features:")
+        print(self.features)
         # inserting features into SQL DB
         # insert into: specific_pc_features table
         # 407 in CreateDatabase.py
         ###### RuntimeError: near "VALUES": syntax error
         for i in range(len(self.features)):
             db.execute("INSERT INTO specific_pc_features( \
-                    specific_pc_character_id, specific_pc_feature_id, specific_pc_feature_order \
+                    specific_pc_character_id, specific_pc_feature_id, specific_pc_feature_order) \
                     VALUES (?, ?, ?)", char_id, self.features[i], i)
         print("Inserted features")
         
