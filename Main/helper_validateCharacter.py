@@ -23,8 +23,6 @@ def validate_race(var_race):
     if type(var_race) is str:
         if var_race.isnumeric() == True:
             var_race = int(var_race)
-        else:
-            return False
     if type(var_race) is not int:
         return False
     race_list = db.execute("SELECT race_id FROM list_races") # get-list
@@ -38,8 +36,6 @@ def validate_class(var_class):
     if type(var_class) is str:
         if var_class.isnumeric() == True:
             var_class = int(var_class)
-        else:
-            return False
     if type(var_class) is not int:
         return False
     class_list = db.execute("SELECT class_id FROM list_classes")
@@ -53,8 +49,6 @@ def validate_background(var_background):
     if type(var_race) is str:
         if var_race.isnumeric() == True:
             var_race = int(var_race)
-        else:
-            return False
     if type(var_race) is not int:
         return False
     background_list = db.execute("SELECT background_id FROM list_backgrounds") # get-list
@@ -63,5 +57,27 @@ def validate_background(var_background):
     if var_background not in background_list:
         return False
     return True
-            
-            
+
+def check_ability_scores(var_str, var_dex, var_con, var_int, var_wis, var_cha):
+    if type(var_str) is str:
+        if var_str.isnumeric() == True: var_str = int(var_str)
+    if type(var_dex) is str:
+        if var_dex.isnumeric() == True: var_dex = int(var_dex)
+    if type(var_con) is str:
+        if var_con.isnumeric() == True: var_con = int(var_con)
+    if type(var_int) is str:
+        if var_int.isnumeric() == True: var_int = int(var_int)
+    if type(var_wis) is str:
+        if var_wis.isnumeric() == True: var_wis = int(var_wis)
+    if type(var_cha) is str:
+        if var_cha.isnumeric() == True: var_cha = int(var_cha)
+    if type(var_str) is not int: return False
+    if type(var_dex) is not int: return False
+    if type(var_con) is not int: return False
+    if type(var_int) is not int: return False
+    if type(var_wis) is not int: return False
+    if type(var_cha) is not int: return False
+    var_sum = var_str + var_dex + var_con + var_int + var_wis + var_cha
+    if var_sum != 80:
+        return False
+    
