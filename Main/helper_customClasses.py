@@ -1,7 +1,7 @@
 from cs50 import SQL
 import re
 from helper_magicNumbers import generate_magic_classIDs, generate_magic_abilityIDs
-from helper_validateCharacter import validate_name, validate_race, validate_class, validate_background
+from helper_validateCharacter import validate_race, validate_class, validate_background, check_ability_scores
 magic_classIDs = generate_magic_classIDs()
 magic_abilities = generate_magic_abilityIDs()
 
@@ -71,10 +71,9 @@ class rpg_char_create:
     
     # Step 2: Set Race
     def set_race_id(self, var_race_id):
-        race_list = db.execute("SELECT race_id FROM list_races") # get-list
-        for i in range(len(race_list)):
-            race_list[i] = int(race_list[i].get("race_id")) # turn inter-list-values into integer type
-        if var_race_id in race_list: # check for match
+        valid_race = validate_race(var_race_id)
+        if valid_race == True:
+            if type(var_race_id) is str: var_race_id = int(var_race_id)
             self.race_id = var_race_id
             self.creation_step += 1
             return True
@@ -83,10 +82,9 @@ class rpg_char_create:
     
     # Step 3: Set Class
     def set_class_id(self, var_class_id):
-        class_list = db.execute("SELECT class_id FROM list_classes") # get-list
-        for i in range(len(class_list)):
-            class_list[i] = class_list[i].get("class_id")
-        if var_class_id in class_list: # check for match
+        valid_class = validate_class(var_class_id)
+        if valid_class == True:
+            if type(var_class_id) is str: var_class_id = int(var_class_id)
             self.class_id = var_class_id
             self.creation_step += 1
             return True
@@ -95,30 +93,14 @@ class rpg_char_create:
     
     # Step 4: Set Attributes
     def set_attributes(self, var_str, var_dex, var_con, var_int, var_wis, var_cha):
-        if type(var_str) is not str or type(var_dex) is not str or type(var_con) is not str \
-        or type(var_int) is not str or type(var_wis) is not str or type(var_cha) is not str:
-            return False
-        # if for some reason something isn't a string, return false
-        # shouldn't ever be the case, but if it is, the web-app won't crash because isnumeric() is only valid on strings
-        if var_str.isnumeric() == False or var_dex.isnumeric() == False or var_con.isnumeric() == False \
-        or var_int.isnumeric() == False or var_wis.isnumeric() == False or var_cha.isnumeric() == False:
-            return False
-        else:
-            var_str = int(var_str)
-            var_dex = int(var_dex)
-            var_con = int(var_con)
-            var_int = int(var_int)
-            var_wis = int(var_wis)
-            var_cha = int(var_cha)
-            # convert them all to integers HUZZAH
-            # You know, one day I'm gonna figure out how to pass stuff around via html/javascript/json/flask
-            # WITH preserved data-types, and I'm gonna be pissed at wasting time doing this
-        var_sum = var_str + var_dex + var_con + var_int + var_wis + var_cha
-        if var_sum != 80:
-            return False
-        # NOTE: since my plan for attributes is they add up to a total of 80
-        # This is *including* the bonuses normally seen from racial modifiers
-        # Note that we don't need "else" because the fail-conditions are returning false
+        valid_attributes = check_ability_scores(var_str, var_dex, var_con, var_int, var_wis, var_cha)
+        if valid_attributes == True:
+            if type(var_str) is str: var_str = int(var_str)
+            if type(var_dex) is str: var_dex = int(var_dex)
+            if type(var_con) is str: var_con = int(var_con)
+            if type(var_int) is str: var_int = int(var_int)
+            if type(var_wis) is str: var_wis = int(var_wis)
+            if type(var_cha) is str: var_cha = int(var_cha)
         
         self.str_score = var_str
         self.dex_score = var_dex
@@ -131,12 +113,9 @@ class rpg_char_create:
     
     # Step 5: Set Background
     def set_background_id(self, var_background_id):
-        background_list = db.execute("SELECT background_id FROM list_backgrounds") # get-list
-        for i in range(len(background_list)):
-            background_list[i] = background_list[i].get("background_id") # turn inter-list-values into integer type
-        print(f"var_background_id: {var_background_id} is {type(var_background_id)}")
-        print(f"background_list: {background_list}")
-        if var_background_id in background_list: # check for match
+        valid_background = validate_background(var_background_id)
+        if valid_background == True:
+            if type(var_background_id) is str: var_background_id = int(var_background_id)
             self.background_id = var_background_id
             self.creation_step += 1
             return True
