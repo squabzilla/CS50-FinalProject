@@ -475,9 +475,11 @@ def save_button():
         flash("Error - no character to save")
         return redirect("/view_character")
     if "user_id" in session:
-        #flash("Whoops, we aren't ready for that yet!")
-        #return redirect("/view_character")
-        return redirect("/save_character", code=307)
+        user_id = session["user_id"]
+        print(f"User_id is as follows: {user_id}")
+        flash("Whoops, we aren't ready for that yet!")
+        return redirect("/view_character")
+        #return redirect("/save_character", code=307)
     else:
         flash("You must be logged-on to do this.")
         return redirect("/login")
@@ -487,9 +489,17 @@ def save_button():
 @login_required
 def save_character():
     if request.method == "POST":
-        print("Hello world")
-        flash("You got to the save_character page")
-        return redirect("/view_character")
+        if "pc_char" not in session:
+            flash("Error - no character to save")
+            return redirect("/view_character")
+        else:
+            pc_char = session["pc_char"]
+            if pc_char.validate_basics == False:
+                flash("Error - invalid character")
+                return redirect("/view_character")
+            else: pc_char.save_to_database()
+            #if "user_id" in session: # pop their old character once one *starts* making a new one
+                #session.pop("user_id")
 
 
 @app.route("/load_character", methods=['GET', 'POST'])

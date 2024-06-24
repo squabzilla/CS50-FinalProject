@@ -1,7 +1,7 @@
 from cs50 import SQL
 import re
 from helper_magicNumbers import generate_magic_classIDs, generate_magic_abilityIDs
-from helper_validateCharacter import validate_race, validate_class, validate_background, check_ability_scores
+from helper_validateCharacter import validate_name, validate_race, validate_class, validate_background, check_ability_scores
 magic_classIDs = generate_magic_classIDs()
 magic_abilities = generate_magic_abilityIDs()
 
@@ -282,7 +282,20 @@ class rpg_char_load:
         self.list_1stlvlSpells = class_to_copy.list_1stlvlSpells
         # NOTE: Don't worry about how to sort spells
         # Spells will only be sorted if we load character from db
-    
+    def validate_basics(self):
+        if validate_name(self.name) == False: return False
+        if validate_race(self.race_id) == False: return False
+        if validate_class(self.class_id) == False: return False
+        if validate_background(self.background_id) == False: return False
+        if check_ability_scores(self.str_score, self.dex_score, self.con_score,
+                                self.int_score, self.wis_score, self.cha_score) == False:
+            return False
+        return True
+        
+    def save_to_database(self):
+        #INSERT INTO prod_mast(prod_name, prod_rate, prod_qc)
+        #VALUES('Gulha', 55, 'Problems');
+        return True
     
     def print_values(self):
         print(f"Name: {self.name}")
