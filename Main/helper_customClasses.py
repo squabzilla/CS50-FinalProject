@@ -309,14 +309,14 @@ class rpg_char_load:
         # insert into: list_characters table
         # 270 in CreateDatabase.py
         # DELETE FROM list_characters;
-        db.execute("INSERT INTO list_characters(character_id, character_user_id, character_name, \
-                    character_race_id, character_level1_class_id, character_background_id, character_level, \
-                    character_str, character_dex, character_con, character_int, character_wis, character_cha) \
+        db.execute("INSERT INTO list_characters(character_id, user_id, name, \
+                    race_id, level1_class_id, background_id, char_level, \
+                    char_str, char_dex, char_con, char_int, char_wis, char_cha) \
                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                     char_id, user_id, self.name, self.race_id, self.level1_class_id, self.background_id,
                     self.char_level, self.str_score, self.dex_score, self.con_score, 
                     self.int_score, self.wis_score, self.cha_score)
-        print("Inserted into list_characters table")
+        #print("Inserted into list_characters table")
         #print("self.features:")
         #print(self.features)
         # inserting features into SQL DB
@@ -324,13 +324,13 @@ class rpg_char_load:
         # 407 in CreateDatabase.py
         ###### RuntimeError: near "VALUES": syntax error
         for i in range(len(self.features)):
-            print(f"char_id: {char_id}")
-            print(f"self.features[i]: {self.features[i]}")
-            print(f"i: {i}")
+            #print(f"char_id: {char_id}")
+            #print(f"self.features[i]: {self.features[i]}")
+            #print(f"i: {i}")
             db.execute("INSERT INTO specific_pc_features( \
                     specific_pc_character_id, specific_pc_feature_id, specific_pc_feature_order) \
                     VALUES (?, ?, ?)", char_id, self.features[i], i)
-        print("Inserted features")
+        #print("Inserted features")
         
         # spellbook - 292 in db
         # spells should currently be in format:
@@ -345,7 +345,7 @@ class rpg_char_load:
                 db.execute("INSERT INTO spellbook(caster_id, spell_id, always_prepared, \
                     prepared, spellcasting_ability_id) VALUES (?, ?, ?, ?, ?)",
                     caster_id, spell_id, always_prepared, prepared, ability_id)
-        print("If cantrips, we inserted them")
+        #print("If cantrips, we inserted them")
         
         if self.list_1stlvlSpells != []:
             for i in range(len(self.list_1stlvlSpells)):
