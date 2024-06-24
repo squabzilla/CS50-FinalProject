@@ -351,6 +351,7 @@ class rpg_char_load:
     
     def load_existing_character(self, user_id, character_id):
         char_basics = db.execute("SELECT * FROM list_characters WHERE character_id = ? AND user_id = ?", user_id, character_id)
+        print(f"user_id: {user_id}; character_id: {character_id};")
         if len(char_basics) != 1:
             print(f"Invalid number of characters: number of characters returned is: {len(char_basics)}")
             return False
