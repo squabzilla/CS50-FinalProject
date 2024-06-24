@@ -476,10 +476,10 @@ def save_button():
         return redirect("/view_character")
     if "user_id" in session:
         user_id = session["user_id"]
-        print(f"User_id is as follows: {user_id}")
-        flash("Whoops, we aren't ready for that yet!")
-        return redirect("/view_character")
-        #return redirect("/save_character", code=307)
+        #print(f"User_id is as follows: {user_id}")
+        #flash("Whoops, we aren't ready for that yet!")
+        #return redirect("/view_character")
+        return redirect("/save_character", code=307)
     else:
         flash("You must be logged-on to do this.")
         return redirect("/login")
@@ -502,7 +502,10 @@ def save_character():
             if pc_char.validate_basics == False:
                 flash("Error - invalid character")
                 return redirect("/view_character")
-            else: pc_char.save_new_character_to_database(user_id)
+            else:
+                pc_char.save_new_character_to_database(user_id)
+                print("holy shit did it actually work")
+                return redirect("/load_character")
             #if "user_id" in session: # pop their old character once one *starts* making a new one
                 #session.pop("user_id")
 
