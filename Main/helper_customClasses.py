@@ -342,7 +342,7 @@ class rpg_char_load:
                 always_prepared = self.list_cantrips[i]["always_prepared"]
                 ability_id = self.list_cantrips[i]["spellcasting_ability_id"]
                 db.execute("INSERT INTO spellbook(spellbook_caster_id, spellbook_spell_id, \
-                    spellbook_always_prepared, spellcasting_ability_id VALUES (?, ?, ?)",
+                    spellbook_always_prepared, spellcasting_ability_id VALUES (?, ?, ?, ?)",
                     caster_id, spell_id, always_prepared, ability_id)
         print("If cantrips, we inserted them")
         
