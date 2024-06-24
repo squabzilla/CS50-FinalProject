@@ -317,8 +317,8 @@ class rpg_char_load:
                     self.char_level, self.str_score, self.dex_score, self.con_score, 
                     self.int_score, self.wis_score, self.cha_score)
         print("Inserted into list_characters table")
-        print("self.features:")
-        print(self.features)
+        #print("self.features:")
+        #print(self.features)
         # inserting features into SQL DB
         # insert into: specific_pc_features table
         # 407 in CreateDatabase.py
@@ -342,7 +342,7 @@ class rpg_char_load:
                 always_prepared = self.list_cantrips[i]["always_prepared"]
                 ability_id = self.list_cantrips[i]["spellcasting_ability_id"]
                 db.execute("INSERT INTO spellbook(spellbook_caster_id, spellbook_spell_id, \
-                    spellbook_always_prepared, spellcasting_ability_id VALUES (?, ?, ?, ?)",
+                    spellbook_always_prepared, spellcasting_ability_id) VALUES (?, ?, ?, ?)",
                     caster_id, spell_id, always_prepared, ability_id)
         print("If cantrips, we inserted them")
         
@@ -353,7 +353,7 @@ class rpg_char_load:
                 always_prepared = self.list_1stlvlSpells[i]["always_prepared"]
                 ability_id = self.list_1stlvlSpells[i]["spellcasting_ability_id"]
                 db.execute("INSERT INTO spellbook(spellbook_caster_id, spellbook_spell_id, \
-                    spellbook_always_prepared, spellcasting_ability_id VALUES (?, ?, ?)",
+                    spellbook_always_prepared, spellcasting_ability_id) VALUES (?, ?, ?, ?)",
                     caster_id, spell_id, always_prepared, ability_id)
         print("If 1st-level spells, we inserted them")
             
