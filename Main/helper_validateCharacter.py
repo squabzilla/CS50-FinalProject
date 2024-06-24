@@ -37,6 +37,9 @@ def validate_race(var_race):
 
 def validate_background(var_background):
     background_list = db.execute("SELECT background_id FROM list_backgrounds") # get-list
+    print("Item types in background_list:")
+    for item in background_list:
+        print(type(item))
     for i in range(len(background_list)):
             background_list[i] = background_list[i].get("background_id") 
             # turn inter-list-values into integer type
