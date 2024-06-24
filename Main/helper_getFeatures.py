@@ -67,11 +67,11 @@ def format_class_feature_text(class_feature):
     for i in range(len(class_feature)):
         if i == index_length: end_line = ""
         
-        if class_feature[i]["feature_text_type"] == 0:
+        if class_feature[i]["feature_format"] == 0:
             line_text = "<h3><i>" + class_feature[i]["feature_text_description"] + "</i></h3>" + end_line
-        elif class_feature[i]["feature_text_type"] == 1:
+        elif class_feature[i]["feature_format"] == 1:
             line_text = "<h4><i>" + class_feature[i]["feature_text_description"] + "</i></h4>" + end_line
-        elif class_feature[i]["feature_text_type"] == 2:
+        elif class_feature[i]["feature_format"] == 2:
             line_text = "<p><i>" + class_feature[i]["feature_text_description"] + "</i></p>" + end_line
             
         text_list.append(line_text)
@@ -81,7 +81,7 @@ def format_class_feature_text(class_feature):
     return text_full
 
 def get_feature_text(feature_id):
-    sql_feature_text = db.execute("SELECT feature_text_type, feature_text_order, feature_text_description \
+    sql_feature_text = db.execute("SELECT feature_format, feature_text_order, feature_text_description \
         FROM list_feature_descriptions \
         WHERE feature_id = ? \
         ORDER BY feature_text_order ASC;", feature_id)
@@ -91,7 +91,7 @@ def get_feature_text(feature_id):
 #SELECT feature_text_type, feature_text_order, feature_text_description FROM list_feature_descriptions WHERE feature_id = 80 AND feature_text_type NOT IN (1,2);
 
 def get_feature_text_no_title(feature_id):
-    sql_feature_text = db.execute("SELECT feature_text_type, feature_text_order, feature_text_description \
+    sql_feature_text = db.execute("SELECT feature_format, feature_text_order, feature_text_description \
         FROM list_feature_descriptions \
         WHERE feature_id = ? \
         AND feature_text_type NOT IN (0,1) \
