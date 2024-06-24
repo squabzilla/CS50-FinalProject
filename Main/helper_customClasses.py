@@ -1,6 +1,7 @@
 from cs50 import SQL
 import re
 from helper_magicNumbers import generate_magic_classIDs, generate_magic_abilityIDs
+from helper_validateCharacter import validate_name, validate_race, validate_class, validate_background
 magic_classIDs = generate_magic_classIDs()
 magic_abilities = generate_magic_abilityIDs()
 
