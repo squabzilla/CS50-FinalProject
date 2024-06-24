@@ -215,7 +215,14 @@ def get_accordion_features(feature_id_list):
     text_list.append(f'</div>\n') #NOTE: closing tag for the master accordion div-tag
     text_full = "".join(text_list) # apparently faster, and one line of code, to plop all that list into a text
     return text_full
-    
+
+# NOTE: At some point I want to rework the features list
+# Once that's complete, I'll make helper-classes that just contain all the "magic-numbers" 
+# for stuff like level 1 fighter or wizard features
+# Until that's done, we just have magic numbers in the code.
+# Also, might be good to split up the feature-formatting-functions that get passed feature_IDs, 
+# and the ones that have the magic-numbers in them
+
 
 def get_lvl1_features_fighter():
     # Features: 80; choose-one-from: 81-86; 87
@@ -324,13 +331,9 @@ def check_and_complete_features(class_id, feature_list):
         wizard_options = [287,288,289,290,291,292,293,294,295]
         return wizard_options
         
-def main():
-    #print(get_feature_text(85))
-    text = get_lvl1_features_fighter
-    #print(text)
-    title = get_feature_title(80)
-    print(title)
-    
-    return True
-    
-#main()
+# NOTE: At some point I want to rework the features list
+# Once that's complete, I'll make helper-classes that just contain all the "magic-numbers" 
+# for stuff like level 1 fighter or wizard features
+# Until that's done, we just have magic numbers in the code.
+# Also, might be good to split up the feature-formatting-functions that get passed feature_IDs, 
+# and the ones that have the magic-numbers in them
