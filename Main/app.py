@@ -475,16 +475,17 @@ def save_button():
     else:
         return redirect("/view_character")
     if "user_id" in session:
-        flash("Whoops, we aren't ready for that yet!")
-        return redirect("/view_character")
+        #flash("Whoops, we aren't ready for that yet!")
+        #return redirect("/view_character")
+        return redirect("/save_character", code=307)
     else:
         flash("You must be logged-on to do this.")
-        return redirect("/login", code=307)
+        return redirect("/login")
     
     
 @app.route("/save_character", methods=["POST"])
 @login_required
-def register():
+def save_character():
     if request.method == "POST":
         print("Hello world")
         flash("You got to the save_character page")
@@ -522,9 +523,3 @@ def testing():
     string_var = "soup"
     noup = "vloop"
     return render_template("testing.html", num_var=num_var, string_var=string_var, noup=noup)
-
-
-@app.route("/save_character")
-@login_required
-def save_character():
-    flash("TO-DO")
