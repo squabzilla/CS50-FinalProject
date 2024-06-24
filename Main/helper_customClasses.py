@@ -324,6 +324,9 @@ class rpg_char_load:
         # 407 in CreateDatabase.py
         ###### RuntimeError: near "VALUES": syntax error
         for i in range(len(self.features)):
+            print(f"char_id: {char_id}")
+            print(f"self.features[i]: {self.features[i]}")
+            print(f"i: {i}")
             db.execute("INSERT INTO specific_pc_features( \
                     specific_pc_character_id, specific_pc_feature_id, specific_pc_feature_order) \
                     VALUES (?, ?, ?)", char_id, self.features[i], i)
