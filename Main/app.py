@@ -507,7 +507,7 @@ def save_character():
                 return redirect("/view_character")
             else:
                 pc_char.save_new_character_to_database(user_id)
-                print("holy shit did it actually work")
+                #print("holy shit did it actually work")
                 return redirect("/load_character")
             #if "user_id" in session: # pop their old character once one *starts* making a new one
                 #session.pop("user_id")
