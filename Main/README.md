@@ -1,4 +1,9 @@
-# YOUR PROJECT TITLE
+# Partial D&D Character Creater
+# Name: William Hovdestad
+# Github username: squabzilla
+# edX username: WillHovdestad
+# Location: Calgary, Alberta, Canada
+# Date: June 25th, 2024
 #### Video Demo:  <URL HERE>
 #### Description:
 
