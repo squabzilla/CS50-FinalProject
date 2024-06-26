@@ -70,6 +70,12 @@ A bunch of code involving the spells belonging to different classes that I didn�
 # helper_validateCharacter.py
 Functions used by the “rpg_char_load” class to validate user-input when a character is loaded.
 
+# requirements.txt
+List of extensions and such this webapp uses, which the gunicorn_config.py requires in order to function properly.
+
+# RPG_characters.db
+The database with all of my user-info and character-creation tables!
+
 # templates folder:
 ## basic_html_structure.html
 A basic guide/outline I mocked-up from online advice, for what the basic parts of an HTML-page should be.
