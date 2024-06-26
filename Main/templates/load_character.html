@@ -23,7 +23,7 @@
       <form action="/load_character" method="POST" class="form-control mx-auto w-auto border-0">
         <input type="hidden" value={{ character['character_id'] }} />
         <!--<button class="btn btn-danger" type="submit">X</button>-->
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">X</button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal_{{ character['character_id'] }}">X</button>
       </form>
     </td>
     <td>{{ character["name"] }}</td>
