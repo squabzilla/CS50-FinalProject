@@ -1,4 +1,4 @@
-# Partial D&D Character Creater
+# Partial D&D Character Creator
 # Name: William Hovdestad
 # Github username: squabzilla
 # edX username: WillHovdestad
