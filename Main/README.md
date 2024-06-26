@@ -70,29 +70,43 @@ Functions used by the “rpg_char_load” class to validate user-input when a ch
 
 # templates folder:
 ## basic_html_structure.html
+A basic guide/outline I mocked-up from online advice, for what the basic parts of an HTML-page should be.
+Either that or I found it on Reddit, I'm genuinely not sure at this point.
 
+## character_creator.html
+The most complex html page, as it does all my character creation steps on one single-URL.
+I really wanted to keep the same page/URL during character creation.
+This involves many instances of javascript calling a particular "page" in order to retrieve specific html-code in JSON format to stick into the page.
+This let's me dynamically create things based on user choices - all on the same "page."
 
+## home.html
+This has nothing special going for it, it's really used as the basic "template" other HTML pages are created off of.
 
+## layout.html
+This page contains the master layout of my web-app, including the nav-bar, a section for flashed messages, and the validator footer.
+### NOTE:
+The validator footer was copied the Week 9 Finance problem. However, it seemed too cute to *not* include in an HTML-based project.
 
+## load_character.html
+Only available to logged-in users, this allows users to load existing characters they have saved - or *delete them*.
+The load-button on this page actually calls the "load_button" app-route, which verifies that we have a valid "rpg_char_load" item in the session.
+If true, we redirect to the view_character app-route.
 
+## login.html
+### NOTE:
+This was copied from the Week 9 Finance problem.
+I wanted this web-app to have log-in functionality, and didn't see a reason to re-invent the wheel.
 
+## register.html
+### NOTE:
+This was copied from the Week 9 Finance problem.
+I wanted this web-app to have log-in functionality, and didn't see a reason to re-invent the wheel.
 
+## testing.html
+This is a page I use to test out random stuff. Irrelevant to the final project.
 
-
-
-
-
-
-
-
-#static folder
-Containing the barely-used style_sheet.css, because just creating the backend and implementing this site took enough time as-is. We also took the “I_heart_validator” PNG (and html text) from the Week 9 Finance problem.
-There are also a lot of CSV files where I created and modified data prior to importing it to the database.
-import_text
-Some python scripts I created to take my specifically-tailored text files, with strange idiosyncrasies from how I imported them from PDF (the stuff imported from PDF being from the  SRD 5.1 on the Creative Commons), and converted them to useable CSVs for either modifying, or importing.
-#NonCode folder
-This folder contains a bunch of miscellaneous, non-code files I referenced throughout the creation of this project.
-
-
-
-Other features of particular note are the “/save_button” vs “/save_character” and the “delete_button” vs “delete -> mention this somewhere in the html section
+## view_character.html
+This page shows up when you create or load a character, to view the basics of them!
+Of note, the save-button:
+a user must be logged-in to save a character, but the save-button is visible regardless.
+It calls the save_button app-route, redirecting you to the save_character app-route if logged in, or the login app-route if not logged in.
