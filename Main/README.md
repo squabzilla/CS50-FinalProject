@@ -17,7 +17,9 @@ While you can also create an account, in order to log in or out of the website, 
 I get zero credit for implementing this.
 Being logged on allows you to save and/or load a character you have created.
 Saving it loads it from the cookie (or Flask “Session”) to the database, while loading it grabs a character from the database and passes the relevant features to the cookie (or Flask “Session”).
+NOTE:
 A major goal of this project was to include client-side AND server-side validation for all user-input.
+P.S. The webapp is currently hosted via https://www.digitalocean.com/ at https://oyster-app-no7gx.ondigitalocean.app/ for the near-future!
 
 # app.py
 This is what runs the main website itself.
