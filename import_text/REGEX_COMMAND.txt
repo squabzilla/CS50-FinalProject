@@ -1,4 +1,0 @@
-FIND:
-[,a-zA-Z] \R
-REPLACE:
- 
