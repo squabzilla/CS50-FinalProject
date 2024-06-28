@@ -1,0 +1,62 @@
+body {
+    /* want to modify how the body looks, specifically change background color */
+    background-color:#202428;
+    color: #dee2e6;
+}
+
+.modifierName{
+    height: 55px;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 6px;
+    /*background-color: aliceblue;*/
+    border: 2px groove gray;
+    /*max-width: 70%;*/
+    max-width: 105px;
+    padding: 0.1em;
+    margin-bottom: .4em;
+    text-align: center;
+    /* Source that greatly helpd with both this and the ModifierNumber section:
+    https://www.digitalocean.com/community/tutorials/css-prevent-line-break
+    */
+}
+.modifierNumber{
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 6px;
+    border: 4px solid white;
+    padding: 1em;
+    margin-bottom: .4em;
+    text-align: center;
+
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    color: black;
+}
+
+.cust_label{
+    margin: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* This part also uses content from the digitalocean.com website,
+    although I'm not sure this part functionally does anything.
+    */
+}
+
+.pageTitle {
+    padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+    /* Personal note on how the padding tag works:
+    from-top, from-right, from-bottom, from-left
+    This could probably be replaced with the H1 tag,
+    it is used for the top "title" in the body of my web-pages
+    (not to be confused with <title> which goes in the header)
+    */
+}
+
+.basicPadding {
+    padding: 0.25rem 0.5rem 0.25rem 1.5rem;
+    /* These will be the main page-headings, will want to modify this */
+    /* modify how our basic paragraphs look */
+}

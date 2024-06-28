@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title id="Page_Title" name="Page_Title">Character Sheet</title>
+    </head>
+    <body>
+        <div id = 'nav_pane'>
+            <script src="nav.js"></script>
+        </div>
+        <div class="pageTitle">
+            <h1>Character sheet</h1>
+        </div>
+        <div class="basicPadding">
+            <div id="CharacterName_section">
+                <form class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputValue" value="Bob the Strong" >
+                    <label for="floatingInputValue">Character Name</label>
+                </form>
+                <p></p>
+            </div>
+            <div id="CharacterRaceClassLevel_section" onchange="calcModifiers(); calcMaxHp()">
+                <span class="cust_label"> Race: </span>
+                <select id="raceSelect"></select>
+                <script type="module" src="races_dropDown.js"></script>
+
+                <span class="cust_label"> Class: </span>
+                <select id="classSelect"></select>
+                <script type="module" src="classes_dropDown.js"></script>
+
+                <span class="cust_label"> Level: </span>
+                <select id="levelSelect"></select>
+                <script type="module" src="levels_dropDown.js"></script>
+
+                <br>
+            </div>
+
+            <div id="attributes_section">
+                <span class="cust_label"> Strength: </span> <select id="str_select" onchange="calcModifiers()"></select>
+                <span class="cust_label"> Dexterity: </span> <select id="dex_select" onchange="calcModifiers()"></select>
+                <span class="cust_label"> Constitution: </span> <select id="con_select" onchange="calcMaxHp();calcModifiers()"></select>
+                <span class="cust_label"> Intelligence: </span> <select id="int_select" onchange="calcModifiers()"></select>
+                <span class="cust_label"> Wisdom: </span> <select id="wis_select" onchange="calcModifiers()"></select>
+                <span class="cust_label"> Charisma: </span> <select id="cha_select" onchange="calcModifiers()"></select>
+                <script type="module" src="modifiers_dropDown.js"></script>
+            </div>
+            <br>
+
+            <span class="modifierName"> Strength Modifier</span>         <span id="str_mod" class="modifierNumber"></span>
+            <span class="modifierName"> Dexterity Modifier</span>        <span id="dex_mod" class="modifierNumber"></span>
+            <span class="modifierName"> Constitution Modifier</span>     <span id="con_mod" class="modifierNumber" value=0></span>
+            <br>
+            <span class="modifierName"> Intelligence Modifier</span >    <span id="int_mod" class="modifierNumber"></span>
+            <span class="modifierName"> Wisdom Modifier</span>           <span id="wis_mod" class="modifierNumber"></span>
+            <span class="modifierName"> Charisma Modifier</span>         <span id="cha_mod" class="modifierNumber"></span>
+            <br>
+
+            <div id="HP_and_profBonus_section">
+                <br>
+                <span class="modifierName"> Maximum Hit-Points </span>
+                <span class="modifierNumber" id="hp_value"></span>
+                <span class="modifierName"> Proficiency Bonus</span>
+                <span class="modifierNumber" id="profBonus"></span>
+            </div>
+
+        </div>
+        <!-- Should the script be here? I dunno, but it works here. -->
+        <script defer>
+            function calcModifiers(){
+                var str_var = document.getElementById("str_select").value;
+                str_var = Math.floor((parseFloat(str_var) - 10) /2);
+                document.getElementById("str_mod").innerHTML = str_var;
+
+                var dex_var = document.getElementById("dex_select").value;
+                dex_var = Math.floor((parseFloat(dex_var) - 10) /2);
+                document.getElementById("dex_mod").innerHTML = dex_var;
+
+                var con_var = document.getElementById("con_select").value;
+                con_var = Math.floor((parseFloat(con_var) - 10) /2);
+                document.getElementById("con_mod").innerHTML = con_var;
+
+                var int_var = document.getElementById("int_select").value;
+                int_var = Math.floor((parseFloat(int_var) - 10) /2);
+                document.getElementById("int_mod").innerHTML = int_var;
+
+                var wis_var = document.getElementById("wis_select").value;
+                wis_var = Math.floor((parseFloat(wis_var) - 10) /2);
+                document.getElementById("wis_mod").innerHTML = wis_var;
+
+                var cha_var = document.getElementById("cha_select").value;
+                cha_var = Math.floor((parseFloat(cha_var) - 10) /2);
+                document.getElementById("cha_mod").innerHTML = cha_var;
+
+            }
+            function calcMaxHp(){
+                // Note: we later added a section to this script to calculate proficiency bonus as well as calculate HP
+                // As it was easier to add here, rather then make a new script and add a bunch of onchange="" tags
+                // Especially since I'd only be adding them to places that already have the tag to call this script
+                // But that explains the not-entirely-accurate name of the script.
+                var calcMaxHp_baseHP = document.getElementById("raceSelect").value;
+                var calcMaxHp_hpPerLvl = document.getElementById("classSelect").value;
+                var calcMaxHp_Lvl = document.getElementById("levelSelect").value;
+                var calcMaxHp_con_var = document.getElementById("con_select").value;
+                calcMaxHp_con_var =  Math.floor((parseFloat(calcMaxHp_con_var) - 10) /2);
+                var maxHP_calc = parseFloat(calcMaxHp_baseHP) + (calcMaxHp_hpPerLvl * calcMaxHp_Lvl) + (calcMaxHp_con_var * calcMaxHp_Lvl);
+                document.getElementById("hp_value").innerHTML = maxHP_calc;
+                var calcMaxHp_profBonus = Math.ceil(parseFloat(calcMaxHp_Lvl)/4) + 1;
+                document.getElementById("profBonus").innerHTML = calcMaxHp_profBonus;
+            }
+        </script>
+    </body>
+</html>
